@@ -64,8 +64,10 @@ if(!isset($location))
 
             $newsCategories = $_POST['newsCategories'];
             $newsCategories_final_array = array();
+            
 
-            if(count($newsCategories) == 1 && $newsCategories[0] == '172')
+            // if(count($newsCategories) == 1 && $newsCategories[0] == '172')
+            if(count($newsCategories) == 1 && $newsCategories[0] == $_SESSION['interview_id'])
             {
                 $isInterview = 1 ;
             }

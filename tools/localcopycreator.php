@@ -3,7 +3,11 @@
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "global/timezone.php";
+
 include "global/district_data.php";
+include "global/cameraman_data.php";
+include "global/createdby_data.php";
+include "global/reporter_data.php";
 
 
 $selected_date = date("Y-m-d");
@@ -539,21 +543,7 @@ strong {
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
                                 <select multiple name="newsCategories[]" id="categories">
 
-                                    <!-- <option value="171">Politics</option>
-                                    <option value="124">Business</option>
-                                    <option value="125">Entertainment</option>
-                                    <option value="179">Sports</option>
-                                    <option value="131">Technology</option>
-                                    <option value="173">Archive Video</option>
-                                    <option value="174">Archive Picture</option>
-                                    <option value="126">Health</option>
-                                    <option value="175">Crime</option>
-                                    <option value="139">Exclusive</option>
-                                    <option value="140">Feature Story</option>
-                                    <option value="172">Interview</option>
-                                    <option value="176">Arts & Culture</option>
-                                    <option value="177">Others</option>
-                                    <option value="178">Hot Topics</option> -->
+                              
 
                                     <?php 
                                         if(isset($category))
@@ -754,9 +744,16 @@ strong {
 
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect2" name="reporter" xxx>
-                                            <option value="rabi lamicchane">Rabi Lamicchane</option>
-                                            <option value="prem baniya">Prem Baniya</option>
-                                            <option value="yuvraj kandel">Yuvraj Kandel</option>
+                                        <?php
+                                                foreach($reporter_global as $reporter)
+                                                {
+
+                                            ?>
+                                                <option value="<?php echo $reporter ; ?>"><?php echo $reporter ; ?></option>
+
+                                            <?php
+                                                }
+                                            ?>
                                         </select>
                                     </div>
 
@@ -777,9 +774,16 @@ strong {
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect2" name="camera_man"
                                             xxx>
-                                            <option value="shiva pangeni">Shiva Pangeni</option>
-                                            <option value="sanjeeb kC">Sanjeeb KC</option>
-                                            <option value="anish luitel">Anish Luitel</option>
+                                            <?php
+                                                foreach($cameraman_global as $cman)
+                                                {
+
+                                            ?>
+                                                <option value="<?php echo $cman ; ?>"><?php echo $cman ; ?></option>
+
+                                            <?php
+                                                }
+                                            ?>
                                         </select>
                                     </div>
 
@@ -807,9 +811,16 @@ strong {
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect2" name="uploaded_by"
                                             xxx>
-                                            <option value="hari bahadur">Hari Bahadur</option>
-                                            <option value="madan bahadur">Madan Bahadur</option>
-                                            <option value="ribik khoteja">Ribik Khoteja</option>
+                                            <?php
+                                                foreach($createdby_global as $cby)
+                                                {
+
+                                            ?>
+                                                <option value="<?php echo $cby ; ?>"><?php echo $cby ; ?></option>
+
+                                            <?php
+                                                }
+                                            ?>
 
                                         </select>
                                     </div>

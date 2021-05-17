@@ -42,8 +42,8 @@ $run_query = mysqli_query($connection , $query_del_nas);
 
 
 
-
-if($type == '172')
+// if($type == '172')
+if($type == $_SESSION['interview_id'])
 {
   // interview
   $files = glob('../'.$interview_path.'/'.$byline_dir.'/*'); // get all file names

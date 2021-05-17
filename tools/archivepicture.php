@@ -322,11 +322,7 @@ h4 {
                             <!-- <div class="form-group mt-3">
                                 <label class="col-lg-12 p-0  h5 text-info">Step 3. Select News category*</label>
                               
-                                <select class="form-control" id="exampleFormControlSelect2" name="category"
-                                            required>
-                                            <option value="168">Archive</option>
-                                            <option value="172">Interview</option>
-                                        </select>
+                               
                             </div> -->
 
                             <!-- series-->
