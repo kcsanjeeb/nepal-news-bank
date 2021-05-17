@@ -85,6 +85,9 @@ if(!isset($location))
                     $thumbImg_status = true ; 
                     $video_long_status = true;
 
+                    $myfile = fopen("../log/archive_picture_log.txt", "a") or die("Unable to open file!");  
+                    fwrite($myfile, "\n--------------- $date_db / $title  ------------------ \n");
+
                     if( $video_long_status &&  $thumbImg_status )
                     {     
                         
@@ -100,6 +103,9 @@ if(!isset($location))
 
                         $title_directory = remove_special_chars($title);
                         mkdir('../'.$archive_path_picture.'/'.$title_directory, 0700 , true);
+
+                        $text = $archive_path_picture."/".$title_directory ." : Folder Created\n";
+                        fwrite($myfile, $text);
                         
                         
                         $gallery_arr = array();
@@ -131,6 +137,12 @@ if(!isset($location))
                                 $gallery_sql =$archive_path_picture_ftp."/".$title_directory."/".$date_file_name."_".$time_file_name."_".$archive_id."_photo_".$counter.".".$fileActualExt_photo;
 
                                 array_push($gallery_arr , $gallery_sql);      
+
+
+                                $text = $archive_path_picture.'/'.$title_directory."/".$date_file_name."_".$time_file_name."_".$archive_id."_photo_".$counter.".".$fileActualExt_photo." : Gallery-$counter Uplaoded Succesfully\n";
+                                fwrite($myfile, $text);
+
+
                                 $counter++;      
 
                             }
@@ -155,6 +167,9 @@ if(!isset($location))
 
                         $thumb_tmp_name = $_FILES['thumb']['tmp_name'] ;
                         move_uploaded_file($thumb_tmp_name, $thumbpath) ;
+
+                        $text = $archive_path_picture.'/'.$title_directory."/".$date_file_name."_".$time_file_name."_".$archive_id."_thumbnail.".$fileActualExt_thumb." : Thumbnail Uplaoded Succesfully\n";
+                        fwrite($myfile, $text);
 
 
                         // $thum_name = $_FILES['thumb']['tmp_name'] ;
@@ -208,11 +223,16 @@ if(!isset($location))
                         ftp_mkdir($ftp, "/".$archive_path_picture_ftp."/".$dir);
                         $file_name = end($thumbpath);
                         ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../$thumbpath", FTP_BINARY);
+                        $text = $file_name." : Thumbnail  Pushed to Remote Succesfully\n";
+                            fwrite($myfile, $text);
                         foreach($gallery_arr as $ar)
                         {
                             $file_name = explode("/" , $ar);
                             $file_name = end($file_name);
                             ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../my_data/$ar", FTP_BINARY); 
+
+                            $text = $file_name." : Gallery  Pushed to Remote Succesfully\n";
+                            fwrite($myfile, $text);
 
                         }
                         ftp_put($ftp, "/$archive_path_picture_ftp/$dir/$thum_name_file", "$thumb_send_path", FTP_BINARY); 
@@ -272,6 +292,9 @@ if(!isset($location))
 
                         $archive_footage_id = $response['id'] ;
                         // echo "Stock Footage ID: ".$response['id']."<br><br>";
+
+                        $text =" Remote Post Created Succesfully\n";
+                            fwrite($myfile, $text);
 
                         $curl = curl_init();
                             curl_setopt_array($curl, array(                    
@@ -404,6 +427,9 @@ if(!isset($location))
     }
 
 }
+
+fwrite($myfile, "------------------------------------------------------- "); 
+fclose($myfile);
 
 if(isset($location))
 {

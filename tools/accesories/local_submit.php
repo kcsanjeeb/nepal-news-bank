@@ -149,6 +149,9 @@ if(!isset($location))
             
             }
 
+            $myfile = fopen("../log/localcopy_log.txt", "a") or die("Unable to open file!");  
+                fwrite($myfile, "\n---------------$newsdate / $byLine_directory ---------------- \n"); 
+
 
             if($date_status)
             {
@@ -159,6 +162,8 @@ if(!isset($location))
                     if(!is_dir('../'.$interview_path.'/'.$byLine_directory_clean))
                     {
                         mkdir('../'.$interview_path.'/'.$byLine_directory_clean, 0700 , true);
+                        $text = "$byLine_directory_clean Folder Created\n";
+                        fwrite($myfile, $text);
                     }
                 }
                 else
@@ -167,12 +172,18 @@ if(!isset($location))
                     {
                         mkdir('../'.$news_path.'/'.$newsdate, 0700 , true);
                         mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0700 , true);
+                        $text = "$newsdate Folder Created\n";
+                        fwrite($myfile, $text);
+                        $text = "$newsdate."/".$byLine_directory_clean Folder Created\n";
+                        fwrite($myfile, $text);
 
                     }
                     else
                     {
                         $byLine_directory_clean = remove_special_chars($byLine_directory);
                         mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0700 , true);
+                        $text = "$byLine_directory_clean Folder Created\n";
+                        fwrite($myfile, $text);
                     }
                 }
                    
@@ -222,6 +233,9 @@ if(!isset($location))
                     // $audio_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_audio.".$fileActualExt_audio;
                     $audio_path =$path_sql."_audio.".$fileActualExt_audio;
 
+                    $text = "$audio_path : Audio Uploaded\n";
+                    fwrite($myfile, $text);
+
 
 
                     $audio_path = "'$audio_path'";
@@ -258,6 +272,8 @@ if(!isset($location))
                     move_uploaded_file($body_tmp_name, $body_path) ; 
                     // $body_path = "news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_body.".$fileActualExt_body;
                     $body_path = $path_sql."_body.".$fileActualExt_body;
+                    $text = "$body_path : News Body Uploaded\n";
+                    fwrite($myfile, $text);
 
                     $body_path = "'$body_path'";
                 }
@@ -292,6 +308,11 @@ if(!isset($location))
                     $video_long_tmp_name = $_FILES['videoLongFile']['tmp_name'] ;
                     move_uploaded_file($video_long_tmp_name, $video_long_path) ;  
                     $video_long_path = $path_sql."_videolong.".$fileActualExt_videolong;
+
+                    $text = "$video_long_path : Video Long Uploaded\n";
+                    fwrite($myfile, $text);
+
+                    
 
                     // if($video_type_i == 'vimeo')
                     // {
@@ -354,6 +375,9 @@ if(!isset($location))
                     // $thumbnail_path = "news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_thumbnail.".$fileActualExt_thumbImg;
                     $thumbnail_path = $path_sql."_thumbnail.".$fileActualExt_thumbImg;
 
+                    $text = "$thumbnail_path : Thumbnail Uploaded\n";
+                    fwrite($myfile, $text);
+
                     $thumbnail_path = "'$thumbnail_path'";
                 }
                 else
@@ -387,6 +411,9 @@ if(!isset($location))
                     move_uploaded_file($videolazy_tmp_name, $videolazy_path) ;
                     // $videoLazy_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_videolazy.".$fileActualExt_videolazy;
                     $videoLazy_path =$path_sql."_videolazy.".$fileActualExt_videolazy;
+
+                    $text = "$videoLazy_path : Video Lazy Uploaded\n";
+                    fwrite($myfile, $text);
 
                     $videoLazy_path = "'$videoLazy_path'";
 
@@ -450,6 +477,9 @@ if(!isset($location))
                     move_uploaded_file($videoExtra_tmp_name, $videoExtra_path) ;
                     // $videoExtra_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_videoextra.".$fileActualExt_videoExtra;
                     $videoExtra_path =$path_sql."_videoextra.".$fileActualExt_videoExtra;
+
+                    $text = "$videoExtra_path : Video Extra Uploaded\n";
+                    fwrite($myfile, $text);
 
                     $videoExtra_path = "'$videoExtra_path'";
 
@@ -530,8 +560,15 @@ if(!isset($location))
                     // $gallery_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_gallery_".$counter.".".$fileActualExt_photo;
                     $gallery_path =$path_sql."_gallery_".$counter.".".$fileActualExt_photo;
 
-                    array_push($gallery_arr , $gallery_path);      
-                    $counter++;      
+                    array_push($gallery_arr , $gallery_path);    
+                    
+                    $text = "$gallery_path : Gallery-$counter Uploaded\n";
+                    fwrite($myfile, $text);
+
+
+                    $counter++;   
+                    
+                    
 
                 }
             
@@ -612,6 +649,10 @@ else
 
 
 
+
+
+fwrite($myfile, "------------------------------------------------------- "); 
+fclose($myfile);
 
 
 header("Location: ".$location_redirect);

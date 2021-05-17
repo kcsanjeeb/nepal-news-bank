@@ -1,0 +1,13 @@
+
+--------------- 2021-05-17 / Test Blog Ann  ------------------ 
+my_data/archive_data/archive_picture/Test Blog Ann : Folder Created
+my_data/archive_data/archive_picture/Test Blog Ann/20210517_132011_29980_photo_0.png : Gallery-0 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Test Blog Ann/20210517_132011_29980_photo_1.jpg : Gallery-1 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Test Blog Ann/20210517_132011_29980_photo_2.jpg : Gallery-2 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Test Blog Ann/20210517_132011_29980_thumbnail.jpg : Thumbnail Uplaoded Succesfully
+ : Thumbnail  Pushed to Remote Succesfully
+20210517_132011_29980_photo_0.png : Gallery  Pushed to Remote Succesfully
+20210517_132011_29980_photo_1.jpg : Gallery  Pushed to Remote Succesfully
+20210517_132011_29980_photo_2.jpg : Gallery  Pushed to Remote Succesfully
+ Remote Post Created Succesfully
+------------------------------------------------------- 

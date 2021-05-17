@@ -481,6 +481,6 @@ else
 }
 
 
-    //    header("Location: ". $location_redirect);
+       header("Location: ". $location_redirect);
 
     exit();

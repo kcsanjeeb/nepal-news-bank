@@ -28,6 +28,22 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 
+$myfile = fopen("../log/news_ticker_log.txt", "a") or die("Unable to open file!");  
+fwrite($myfile, "\n--------------- $title ------------------ \n");
+
+$text = "Title: $title\n";
+fwrite($myfile, $text);
+
+$text = "Content: $content \n";
+fwrite($myfile, $text);
+
+$text = "News Ticker Updated Succesfully \n";
+fwrite($myfile, $text);
+
+
+fwrite($myfile, "------------------------------------------------------- "); 
+fclose($myfile);
+
 
 if(isset($location))
 {

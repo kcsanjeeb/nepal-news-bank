@@ -1,0 +1,7 @@
+
+--------------- Table: test  ------------------ 
+Event:  test
+Location:  test
+Date Time:  test
+test Deleted Succesfully From Live Table
+------------------------------------------------------- 

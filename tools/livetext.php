@@ -125,9 +125,10 @@ input:checked+.slider:before {
     min-width: 1em;
     margin-right: 0.5em;
 }
-iframe{
-    width:150px;
-    height:100px
+
+iframe {
+    width: 150px;
+    height: 100px
 }
 </style>
 
@@ -154,10 +155,10 @@ iframe{
                         </div>
                     </div>
 
-                    
-                        <div class="card-body">
-                            <div class="form-group">
-                                
+
+                    <div class="card-body">
+                        <div class="form-group">
+
                             <form action="accesories/wp_news_iframe.php" method="POST">
 
                                 <div class="row">
@@ -186,31 +187,32 @@ iframe{
                                     </div>
                                     <div class="col-lg-10">
                                         <div class="form-group">
-                                            <textarea id="" type="text" name = "iframe_text" class="form-control" ></textarea>
+                                            <textarea id="" type="text" name="iframe_text"
+                                                class="form-control"></textarea>
                                         </div>
                                     </div>
                                 </div>
 
-                                <input type="hidden" name="insert" value="insert" >
+                                <input type="hidden" name="insert" value="insert">
 
                                 <button type="submit" class="btn btn-primary mb-3 " name="submit">Post Live Video
-                                    </button>
-                                    <br>
+                                </button>
+                                <br>
                             </form>
 
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <table id="example" class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th class="text-center">SN</th>
-                                                    <th class="text-center">Live Title</th>
-                                                    <th class="text-center">Iframe</th>
-                                                    <th class="text-center">Description</th>
-                                                    <th class="text-center">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table id="example" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">SN</th>
+                                                <th class="text-center">Live Title</th>
+                                                <th class="text-center">Iframe</th>
+                                                <th class="text-center">Description</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
                                             <?php
                                                 $sql_iframe = "select * from iframe ";
@@ -221,20 +223,27 @@ iframe{
                                                 {
                                             ?>
 
-                                                <tr>
-                                                    <td><?php echo $counter_rownss ; ?></td>
-                                                    <td><?php echo $rows['iframe_title'] ;?></td>
-                                                    <td><?php echo $rows['iframe_iframe'] ;?></td>
-                                                    <td><?php echo $rows['iframe_text'] ;?></td>
+                                            <tr>
+                                                <td><?php echo $counter_rownss ; ?></td>
+                                                <td><?php echo $rows['iframe_title'] ;?></td>
+                                                <td><?php echo $rows['iframe_iframe'] ;?></td>
+                                                <td><?php echo $rows['iframe_text'] ;?></td>
 
-                                                    <td>
+                                                <td>
                                                     <form action="accesories/wp_news_iframe.php" method="POST">
-                                                        <input type="hidden" name="id_del" value="<?php echo $rows['id'] ;?>">
-                                                        <input type="hidden" name="insert" value="delete" >
-                                                        <button type="submit" class='btn btn-small btn-danger'>Delete</button></td>
-                                                    </form>
-                                                </tr>
-                                            
+                                                        <input type="hidden" name="id_del"
+                                                            value="<?php echo $rows['id'] ;?>">
+                                                        <input type="hidden" name="del_title"
+                                                            value="<?php echo $rows['iframe_title'] ;?>">
+                                                        <input type="hidden" name="del_iframe"
+                                                            value='<?php echo $rows['iframe_iframe'] ;?>'>
+                                                        <input type="hidden" name="insert" value="delete">
+                                                        <button type="submit"
+                                                            class='btn btn-small btn-danger'>Delete</button>
+                                                </td>
+                                                </form>
+                                            </tr>
+
                                             <?php
                                             $counter_rownss++;
                                                 }
@@ -243,13 +252,13 @@ iframe{
 
 
 
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                
+                    </div>
+
                 </div>
 
             </div>
@@ -349,7 +358,11 @@ iframe{
                                                     <td><?php echo $rows['cells'][1]['data'] ; ?></td>
                                                     <td><?php echo $rows['cells'][2]['data'] ; ?></td>
                                                     <td><button class='btn btn-small btn-danger delBtn'
-                                                            data-id="<?php echo $tr['id']; ?> " data-toggle="modal"
+                                                            data-id="<?php echo $tr['id']; ?> "
+                                                            data-event="<?php echo $rows['cells'][0]['data'] ; ?>"
+                                                            data-toggle="modal"
+                                                            data-location="<?php echo $rows['cells'][1]['data'] ; ?>"
+                                                            data-dt="<?php echo $rows['cells'][2]['data'] ; ?>"
                                                             data-target="#exampleModal<?php echo $counter ; ?>">Delete</button>
                                                     </td>
                                                     </td>
@@ -381,7 +394,7 @@ iframe{
     </div>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 
-  
+
     </script>
 
     <script>
@@ -425,7 +438,30 @@ iframe{
                 dataType: "text",
                 success: function(data) {
 
-                    location.reload();
+                    $.ajax({
+
+                        url: "accesories/wp_live_table_log.php",
+                        method: "POST",
+                        data: {
+                            event: event,
+                            location_row: location_row,
+                            DatenTime: DatenTime,
+                            action: "Added"
+
+                        },
+                        dataType: "text",
+                        success: function(data) {
+
+
+
+                            location.reload();
+
+
+                        }
+                    });
+
+
+
 
 
                 }
@@ -438,6 +474,12 @@ iframe{
             $("table").on("click", ".delBtn", function() {
 
                 var id = $(this).data('id');
+
+
+                var event = $(this).data('event');
+                var location_row = $(this).data('location');
+                var DatenTime = $(this).data('dt');
+
                 $.ajax({
 
                     url: "https://nepalnewsbank.com/custom_live_table_api.php?id=" + id,
@@ -448,7 +490,27 @@ iframe{
                     },
                     dataType: "text",
                     success: function(data) {
-                        location.reload();
+                        $.ajax({
+
+                            url: "accesories/wp_live_table_log.php",
+                            method: "POST",
+                            data: {
+                                event: event,
+                                location_row: location_row,
+                                DatenTime: DatenTime,
+                                action: "Deleted"
+
+                            },
+                            dataType: "text",
+                            success: function(data) {
+
+
+
+                                location.reload();
+
+
+                            }
+                        });
 
 
                     }

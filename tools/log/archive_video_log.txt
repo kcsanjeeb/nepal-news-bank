@@ -1,0 +1,8 @@
+
+--------------- 2021-05-17 / Archive Log Test  ------------------ 
+my_data/archive_data/archive_video/Archive Log Test : Folder Created
+my_data/archive_data/archive_video/Archive Log Test/20210517_131105_45003_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Archive Log Test/20210517_131105_45003_thumbnail.png : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 

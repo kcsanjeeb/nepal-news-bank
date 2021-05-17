@@ -8,6 +8,8 @@ include "nas_function/functions.php";
 date_default_timezone_set("Asia/Kathmandu");
 
 
+
+
 if($_POST['insert'] == 'insert')
 {
     $title = mysqli_real_escape_string($connection,$_POST['title']);
@@ -27,18 +29,54 @@ if($_POST['insert'] == 'insert')
 
     $run_query = mysqli_query($connection , $query);
 
+    $myfile = fopen("../log/live_log.txt", "a") or die("Unable to open file!");  
+    fwrite($myfile, "\n--------------- $title ------------------ \n");
+
+    $text = "Title:  $title\n";
+    fwrite($myfile, $text);
+    $text = "Iframe:  ".$iframe."\n";
+    fwrite($myfile, $text);
+    $text = "Live Iframe Added Succesfully \n";
+    fwrite($myfile, $text);   
+
+    
+    fwrite($myfile, "------------------------------------------------------- "); 
+    fclose($myfile);
+
 
 
 }
 
 if($_POST['insert'] == 'delete')
 {
-    $id_del = mysqli_real_escape_string($connection,$_POST['id_del']);     
+    $id_del = mysqli_real_escape_string($connection,$_POST['id_del']);   
+    
+    $del_title = mysqli_real_escape_string($connection,$_POST['del_title']);  
+    $del_iframe = mysqli_real_escape_string($connection,$_POST['del_iframe']);  
     
     $query = "delete from iframe  where id = '$id_del' ;"; 
     $run_query = mysqli_query($connection , $query); 
 
+
+    $myfile = fopen("../log/live_log.txt", "a") or die("Unable to open file!");  
+    fwrite($myfile, "\n--------------- Iframe: $del_title ------------------ \n");
+
+    $text = "Title:  $del_title\n";
+    fwrite($myfile, $text);
+    $text = "Iframe:  ".$del_iframe."\n";
+    fwrite($myfile, $text);
+    $text = "Live Iframe Deleted Succesfully \n";
+    fwrite($myfile, $text);   
+
+    
+    fwrite($myfile, "------------------------------------------------------- "); 
+    fclose($myfile);
+
 }
+
+
+
+
 
 $sql_iframe = "select * from iframe ";
 $run_sql_iframe= mysqli_query($connection, $sql_iframe);

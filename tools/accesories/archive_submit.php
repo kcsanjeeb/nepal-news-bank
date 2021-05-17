@@ -31,6 +31,7 @@ if(!isset($location))
         { 
             if( !empty($_POST['title']) && !empty($_POST['date']) )
             {
+               
             
                 
                     $title = $_POST['title'];
@@ -38,10 +39,13 @@ if(!isset($location))
 
 
                     $date = $_POST['date'];
+                    $date_log = $_POST['date'];
                     $date = mysqli_real_escape_string($connection, $date);
                     $date = str_replace("-","",$date);
 
                     $category = '168';
+
+                    
 
                     $series = $_POST['series'];
                     $series = mysqli_real_escape_string($connection, $series);
@@ -90,6 +94,10 @@ if(!isset($location))
                     $thumbImg_status = true ; 
                     $video_long_status = true;
 
+
+                    $myfile = fopen("../log/archive_video_log.txt", "a") or die("Unable to open file!");  
+                    fwrite($myfile, "\n--------------- $date_log / $title  ------------------ \n");
+
                     if( $video_long_status &&  $thumbImg_status )
                     {     
                         
@@ -105,6 +113,9 @@ if(!isset($location))
 
                         $title_directory = remove_special_chars($title);
                         mkdir('../'.$archive_path_video.'/'.$title_directory, 0700 , true);
+
+                        $text = $archive_path_video."/".$title_directory ." : Folder Created\n";
+                        fwrite($myfile, $text);
                         
                         
                         $fileName = $_FILES['video']['name'] ;
@@ -116,6 +127,9 @@ if(!isset($location))
                         $video_tmp_name = $_FILES['video']['tmp_name'] ;
                         move_uploaded_file($video_tmp_name, $videopath) ;
 
+                        $text = $archive_path_video.'/'.$title_directory."/".$date_file_name."_".$time_file_name."_".$archive_id."_video.".$fileActualExt_video." : Archive Video Uploaded Succesfully\n";
+                        fwrite($myfile, $text);
+
                         $fileName = $_FILES['thumb']['name'] ;
                         $fileExt = explode('.' , $fileName);
                         $fileActualExt_thumb = strtolower(end($fileExt));
@@ -125,6 +139,9 @@ if(!isset($location))
 
                         $thumb_tmp_name = $_FILES['thumb']['tmp_name'] ;
                         move_uploaded_file($thumb_tmp_name, $thumbpath) ;
+
+                        $text = $archive_path_video.'/'.$title_directory."/".$date_file_name."_".$time_file_name."_".$archive_id."_thumbnail.".$fileActualExt_thumb." : Archive Thumbnail Uploaded Succesfully\n";
+                        fwrite($myfile, $text);
 
 
                         // $thum_name = $_FILES['thumb']['tmp_name'] ;
@@ -181,6 +198,9 @@ if(!isset($location))
                         ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$thum_name_file", "$thumb_send_path", FTP_BINARY); 
                         ftp_close($ftp);
 
+                        $text = "Archive Video and Archive Thumbnail Pushed to Remote Succesfully\n";
+                        fwrite($myfile, $text);
+
 
                         $video_link = "$archive_path_video_ftp/".$dir."/".$video_name_file ;
 
@@ -236,6 +256,9 @@ if(!isset($location))
 
                         $archive_footage_id = $response['id'] ;
                         // echo "Stock Footage ID: ".$response['id']."<br><br>";
+
+                        $text = "Archive Video Remote Post Created Succesfully\n";
+                        fwrite($myfile, $text);
 
                         $curl = curl_init();
                             curl_setopt_array($curl, array(                    
@@ -365,6 +388,10 @@ if(!isset($location))
     }
 
 }
+
+fwrite($myfile, "------------------------------------------------------- "); 
+fclose($myfile);
+
 
 if(isset($location))
 {

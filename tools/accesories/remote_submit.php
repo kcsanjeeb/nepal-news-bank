@@ -149,7 +149,7 @@ if(!isset($location))
 
 
                 
-                $myfile = fopen("../pushlog.txt", "a") or die("Unable to open file!");  
+                $myfile = fopen("../log/remotecopy_log.txt", "a") or die("Unable to open file!");  
                 fwrite($myfile, "\n---------------$date_full / $byline_full ---------------- \n"); 
 
                 $dir_byline = remove_special_chars($byline_full) ;
