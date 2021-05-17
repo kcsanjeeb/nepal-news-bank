@@ -4,7 +4,8 @@
 include "accesories/session_handler/session_views.php";
 
   
-date_default_timezone_set("Asia/Kathmandu");
+include "global/timezone.php";
+
 $selected_date = date("Y-m-d");
 
 if(isset($_GET['date']))

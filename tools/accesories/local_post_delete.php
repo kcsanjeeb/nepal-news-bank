@@ -5,7 +5,7 @@ include "session_handler/session_service.php";
 include "connection.php";
 include "nas_function/functions.php";
 
-date_default_timezone_set("Asia/Kathmandu");
+include "../global/timezone.php";
 
 
 

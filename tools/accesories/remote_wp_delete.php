@@ -6,7 +6,7 @@ include "environment/ftp.php";
 include "environment/wp_api_env.php";
 include "environment/vimeo.php";
 include "nas_function/functions.php";
-date_default_timezone_set("Asia/Kathmandu");
+include "../global/timezone.php";
     // ftp_remote($news_ftp_path."/".$sourceName , "../".$gal_img_arr)
   
     

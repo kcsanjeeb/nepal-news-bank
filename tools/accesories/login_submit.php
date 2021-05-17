@@ -3,7 +3,7 @@
 include "connection.php";
 include "nas_function/functions.php";
 session_start();
-date_default_timezone_set("Asia/Kathmandu");
+include "../global/timezone.php";
 
 // implement csrf
 

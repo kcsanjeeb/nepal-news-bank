@@ -1,6 +1,6 @@
 <?php
 include "session_handler/session_service.php";
-
+include "../global/timezone.php";
 $event = $_POST['event'];  
 $location_row =$_POST['location_row']; 
 $DatenTime =$_POST['DatenTime'];   

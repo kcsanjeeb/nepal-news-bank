@@ -4,7 +4,7 @@ include "session_handler/session_service.php";
 include "connection.php";
 include "environment/wp_api_env.php";
 include "nas_function/functions.php";
-
+include "../global/timezone.php";
 
 
 

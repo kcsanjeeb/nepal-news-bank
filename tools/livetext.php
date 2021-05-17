@@ -4,7 +4,7 @@ include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "accesories/connection.php";
   
-date_default_timezone_set("Asia/Kathmandu");
+include "global/timezone.php";
 
 
  $url_table = "$domain_url/custom_live_table_api.php";

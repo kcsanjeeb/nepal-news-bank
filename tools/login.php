@@ -1,6 +1,8 @@
 
 <?php 
   session_start();
+  include "global/timezone.php";
+
 
   if(isset($_SESSION['user_auth']))
   {

@@ -3,6 +3,7 @@
 include "accesories/session_handler/session_views.php";
 include "accesories/connection.php";
 include "accesories/environment/wp_api_env.php";
+include "global/timezone.php";
 
 $url = "$domain_url/wp-json/wp/v2/haru_series";
 $data = '';

@@ -2,7 +2,7 @@
 
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
-date_default_timezone_set("Asia/Kathmandu");
+include "global/timezone.php";
 $selected_date = date("Y-m-d");
 
 

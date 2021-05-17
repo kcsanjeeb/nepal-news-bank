@@ -1,7 +1,7 @@
 <?php
 
 include "session_handler/session_service.php";
-date_default_timezone_set("Asia/Kathmandu");
+include "../global/timezone.php";
 
 
 if(!isset($location))

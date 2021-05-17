@@ -4,6 +4,7 @@ include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "accesories/connection.php";
 
+include "global/timezone.php";
 
 // include "accesories/session_handler/session_views.php";
 

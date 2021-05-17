@@ -3,7 +3,7 @@
 include "session_handler/session_service.php";
 include "connection.php";
 include "environment/wp_api_env.php";
-
+include "../global/timezone.php";
 
 
 $title = mysqli_real_escape_string($connection, $_POST['title']);

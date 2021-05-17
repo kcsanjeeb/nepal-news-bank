@@ -3,7 +3,7 @@
 include "session_handler/session_service.php";
 include "connection.php";
 include "environment/wp_api_env.php";
-
+include "../global/timezone.php";
 
 $post_status = $_GET["wp_post_status"];
 $post_id = $_GET["wp_post_id"];

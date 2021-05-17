@@ -7,7 +7,7 @@ include "connection.php";
 include "environment/ftp.php";
 include "environment/vimeo.php";
 include "nas_function/functions.php";
-date_default_timezone_set("Asia/Kathmandu");
+include "../global/timezone.php";
 
  
 

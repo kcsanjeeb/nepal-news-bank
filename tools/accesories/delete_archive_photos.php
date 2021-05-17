@@ -5,8 +5,9 @@ include "connection.php";
 include "environment/ftp.php";
 include "environment/wp_api_env.php";
 include "nas_function/functions.php";
+include "../global/timezone.php";
 
-date_default_timezone_set("Asia/Kathmandu");
+
 
 
 
