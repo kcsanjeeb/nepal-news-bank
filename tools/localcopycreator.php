@@ -3,6 +3,9 @@
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "global/timezone.php";
+include "global/district_data.php";
+
+
 $selected_date = date("Y-m-d");
 
 
@@ -717,9 +720,18 @@ strong {
 
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect2" name="district" xxx>
-                                            <option value="kathmandu">Kathmandu</option>
-                                            <option value="bhaktapur">Bhaktapur</option>
-                                            <option value="lalitpur">Lalitpur</option>
+                                            <?php
+                                                foreach($district_global as $district)
+                                                {
+
+                                            ?>
+                                                <option value="<?php echo $district ; ?>"><?php echo $district ; ?></option>
+
+                                            <?php
+                                                }
+                                            ?>
+                                            
+                                    
                                         </select>
                                     </div>
 
