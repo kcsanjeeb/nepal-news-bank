@@ -480,7 +480,7 @@ else
     $location_redirect = $_SERVER['HTTP_REFERER'];
 }
 
-
-       header("Location: ". $location_redirect);
+    //    header("Location: ". $_SERVER['HTTP_REFERER']);
+        echo '<script> window.location.href = "'.$location_redirect.'"; </script>'; 
 
     exit();
