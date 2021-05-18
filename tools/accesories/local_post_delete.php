@@ -41,8 +41,6 @@ $query_del_nas = "delete from nas where newsid = '$news_id'";
 $run_query = mysqli_query($connection , $query_del_nas);
 
 
-
-// if($type == '172')
 if($type == $_SESSION['interview_id'])
 {
   // interview

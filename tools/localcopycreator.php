@@ -541,7 +541,7 @@ strong {
                             <div class="form-group mt-3">
                                 <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Category*</label>
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
-                                <select multiple name="newsCategories[]" id="categories">
+                                <select multiple name="newsCategories[]" id="categories" required>
 
                               
 

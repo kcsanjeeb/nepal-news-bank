@@ -1,7 +1,5 @@
 <?php
 
-
-// if( count($newsCategories) == 1 && in_array('172' , $newsCategories_final_array))
 if( count($newsCategories) == 1 && in_array(    $_SESSION['interview_id'] , $newsCategories_final_array))
 {
     

@@ -75,7 +75,6 @@ if(isset($_POST['news_id']))
         $wp_id = $row_content['wp_post_id'];
         
 
-        // if($category_nas == '172')
         if($category_nas == $_SESSION['interview_id'])
         {
             $dir_del = "/".$interview_path."/$byline_ftp";

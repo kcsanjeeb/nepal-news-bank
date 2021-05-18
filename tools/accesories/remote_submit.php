@@ -59,7 +59,8 @@ if(!isset($location))
                 $video_type = $row_content['video_type'];
                 $local_published_date = $row_content['local_published_date'];
 
-                if($category_full == '172')
+                // if($category_full == '172')
+                if($category_full == $_SESSION['interview_id'])
                 {
                     $isInterview = 1;
                 }
@@ -764,7 +765,6 @@ if(!isset($location))
 
                
 
-                // if($category_nas == '172')
                 if($category_nas ==  $_SESSION['interview_id'])
                 {
                     $dir_del = "/".$interview_path."/$byline_ftp";

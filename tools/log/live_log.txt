@@ -5,3 +5,24 @@ Location:  test
 Date Time:  test
 test Deleted Succesfully From Live Table
 ------------------------------------------------------- 
+--------------- News 24 Live ------------------ 
+Title:  News 24 Live
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
+--------------- sanjeeb ------------------ 
+Title:  sanjeeb
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
+--------------- Table: test   ------------------ 
+Event:  test 
+Location:  test 
+Date Time:  12thmay
+test  Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- sanjeeb ------------------ 
+Title:  sanjeeb
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/aC7DSKFUtVI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
