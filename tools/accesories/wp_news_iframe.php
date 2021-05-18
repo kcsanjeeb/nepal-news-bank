@@ -93,7 +93,7 @@ while($rows = mysqli_fetch_assoc($run_sql_iframe))
     // $iframe_text = str_replace(">","%gt;;",$iframe_iframe);
 
     $new_plans['_rtbs_title'] = $title;
-    $new_plans['_rtbs_content'] = $iframe_iframe.'<br>'.$iframe_text ;
+    $new_plans['_rtbs_content'] = $iframe_iframe.'<br><div id="copy-text-iframe">'.$iframe_text.'</div><a href="https://nepalnewsbank.com/live/" id="hookup-button" class="button-background button-background--primary button-background--small">Go to hookup page</a>' ;
 
     array_push($arrays_rows , $new_plans);
 
