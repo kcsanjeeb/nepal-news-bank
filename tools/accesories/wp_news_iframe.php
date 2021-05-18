@@ -89,8 +89,8 @@ while($rows = mysqli_fetch_assoc($run_sql_iframe))
     $iframe_iframe =  $rows['iframe_iframe'] ;
     $iframe_text =  $rows['iframe_text'] ;
 
-    // $iframe_text = str_replace("<","&lt;",$iframe_iframe);
-    // $iframe_text = str_replace(">","%gt;;",$iframe_iframe);
+    $iframe_iframe = str_replace("<","*1*",$iframe_iframe);
+    $iframe_iframe = str_replace(">","*2*",$iframe_iframe);
 
     $new_plans['_rtbs_title'] = $title;
     $new_plans['_rtbs_content'] = $iframe_iframe.'<br>'.$iframe_text ;
@@ -115,11 +115,16 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
 $response = curl_exec($ch);
+$respCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
 
 curl_close($ch);
 
-// // print_r($post);
-// echo $response ;
+
+echo "esponce code: ".$respCode ;
+
+
+echo "<br>esponce code: ".$response ;
 
 if(isset($location))
 {
