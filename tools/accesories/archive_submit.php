@@ -50,6 +50,18 @@ if(!isset($location))
                     $series = $_POST['series'];
                     $series = mysqli_real_escape_string($connection, $series);
 
+                    $description = $_POST['description'];
+                    $description = mysqli_real_escape_string($connection, $description);
+
+                    if($_POST['description'])
+                    {
+                        $description = "'$description'";
+                    }
+                    else
+                    {
+                        $description = "null" ;
+                    }
+
                     $tags = $_POST['newsTag'];
                     $tags_final_array = array();
                     
@@ -203,32 +215,68 @@ if(!isset($location))
 
 
                         $video_link = "$archive_path_video_ftp/".$dir."/".$video_name_file ;
-
-
-                        $data_array =  array(
-                            "status" => "publish" , 
-                            "title" => "$title",                    
-                            "featured_media" => $featured_media_id,
-                            "video_category" => 173,
-                            "video_tag" => $tags,
-
-                            "acf_fields" => array('video_long_link'=>$videopath_sql  , 'video_thumbnail' => $thumbpath_sql
-                        ),
                             
-                            "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
-                                                                            'haru_video_url_type'=> 'insert',
-                                                                            'haru_video_url' => array('mp4' => $domain_url.'/'.$ftp_folder_name_in_server.'/'.$video_link , 'webm' => '')
-                                                                        ),
-                                            'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series")
 
-                                            ),
-                                        
+                        if(isset($_POST['description']))
+                        {
+                            $data_array =  array(
+                                "status" => "publish" , 
+                                "title" => "$title",                    
+                                "featured_media" => $featured_media_id,
+                                "video_category" => 173,
+                                "video_tag" => $tags,
+    
+                                "acf_fields" => array('video_long_link'=>$videopath_sql  , 'video_thumbnail' => $thumbpath_sql
+                            ),
+                                
+                                "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
+                                                                                'haru_video_url_type'=> 'insert',
+                                                                                'haru_video_url' => array('mp4' => $domain_url.'/'.$ftp_folder_name_in_server.'/'.$video_link , 'webm' => '')
+                                                                            ),
+                                                'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series")
+    
+                                                ),
+    
+                                                "content" => $description
+                                            
+                                
+                                
                             
                             
+                            
+                                );
+                        }
+                        else
+                        {
+                            $data_array =  array(
+                                "status" => "publish" , 
+                                "title" => "$title",                    
+                                "featured_media" => $featured_media_id,
+                                "video_category" => 173,
+                                "video_tag" => $tags,
+    
+                                "acf_fields" => array('video_long_link'=>$videopath_sql  , 'video_thumbnail' => $thumbpath_sql
+                            ),
+                                
+                                "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
+                                                                                'haru_video_url_type'=> 'insert',
+                                                                                'haru_video_url' => array('mp4' => $domain_url.'/'.$ftp_folder_name_in_server.'/'.$video_link , 'webm' => '')
+                                                                            ),
+                                                'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series")
+    
+                                                ),
+    
+                                                
+                                            
+                                
+                                
+                            
+                            
+                            
+                                );
+                        }
+
                         
-                        
-                        
-                            );
 
                         $data = json_encode($data_array);
 
@@ -347,12 +395,12 @@ if(!isset($location))
 
                         $query_new_archive = "insert into archive_video(
                             archive_id ,created_date ,  title , series ,tags ,
-                            video   , thumbnail , published_date ,wp_id , wp_media_id
+                            video   , thumbnail , published_date ,wp_id , wp_media_id, description
                             ) 
                             VALUES 
                             ('$archive_id',  '$created_at' , '$title'  , '$series',
                                 '$tags' , '$videopath_sql', '$thumbpath_sql' ,  '$created_at',
-                                '$archive_footage_id','$featured_media_id'
+                                '$archive_footage_id','$featured_media_id' , $description
                                 
                                 )";    
 
