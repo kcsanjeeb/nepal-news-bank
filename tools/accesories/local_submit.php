@@ -33,7 +33,7 @@ if(!isset($location))
    
     if(isset($_POST['submit']))
     {
-        if(isset($_POST['byLine']) && isset($_POST['newsdate'])  )   
+        if(isset($_POST['byLine']) && isset($_POST['newsdate']) && isset($_POST['newsCategories']) && count($_POST['newsCategories']) > 0)   
         {
 
     
