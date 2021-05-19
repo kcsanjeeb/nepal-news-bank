@@ -26,6 +26,81 @@ Title:  sanjeeb
 Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/aC7DSKFUtVI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
 Live Iframe Added Succesfully 
 ------------------------------------------------------- 
+<<<<<<< HEAD
+--------------- test ------------------ 
+Title:  test
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- test ------------------ 
+Title:  test
+Iframe:  <iframe width=\'560\' height=\'315\' src=\'https://www.youtube.com/embed/aC7DSKFUtVI\' title=\'YouTube video player\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: test ------------------ 
+Title:  test
+Iframe:  <iframe width=
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Test ------------------ 
+Title:  Test
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: Test ------------------ 
+Title:  Test
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Bada Business ------------------ 
+Title:  Bada Business
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/xoSnnao_vaw\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+=======
 --------------- new  ------------------ 
 Title:  new 
 Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/aC7DSKFUtVI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
@@ -44,5 +119,11 @@ Live Iframe Added Succesfully
 --------------- Live 1 @ NNB ------------------ 
 Title:  Live 1 @ NNB
 Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/aC7DSKFUtVI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+>>>>>>> 4268a84e692d02d31ead05fed0b75f2938c96cf3
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
+--------------- Live 2 @ NNB ------------------ 
+Title:  Live 2 @ NNB
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HSSSSkblIE4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
 Live Iframe Added Succesfully 
 ------------------------------------------------------- 
