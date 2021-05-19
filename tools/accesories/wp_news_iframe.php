@@ -89,10 +89,15 @@ while($rows = mysqli_fetch_assoc($run_sql_iframe))
     $iframe_iframe =  $rows['iframe_iframe'] ;
     $iframe_text =  $rows['iframe_text'] ;
 
+<<<<<<< HEAD
     // $iframe_iframe = str_replace("<","*1*",$iframe_iframe);
     // $iframe_iframe = str_replace(">","*2*",$iframe_iframe);
 
     print_r($rows);
+=======
+    $iframe_text = str_replace("<","*1*",$iframe_iframe);
+    $iframe_text = str_replace(">","*2*",$iframe_iframe);
+>>>>>>> 37e9245f2879a36130ea248592e35067a7bf90ac
 
     $new_plans['_rtbs_title'] = $title;
     $new_plans['_rtbs_content'] = $iframe_iframe.'<br><div id="copy-text-iframe">'.$iframe_text.'</div><a href="https://nepalnewsbank.com/live/" id="hookup-button" class="button-background button-background--primary button-background--small">Go to hookup page</a>' ;

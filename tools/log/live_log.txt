@@ -122,6 +122,7 @@ Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embe
 >>>>>>> 4268a84e692d02d31ead05fed0b75f2938c96cf3
 Live Iframe Added Succesfully 
 ------------------------------------------------------- 
+<<<<<<< HEAD
 --------------- News 24 Live ------------------ 
 Title:  News 24 Live
 Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
@@ -135,5 +136,20 @@ Live Iframe Added Succesfully
 --------------- News 24 Live ------------------ 
 Title:  News 24 Live
 Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-zzLUlDtJOs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+=======
+--------------- Live 2 @ NNB ------------------ 
+Title:  Live 2 @ NNB
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HSSSSkblIE4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
+--------------- Iframe: Live 1 @ NNB ------------------ 
+Title:  Live 1 @ NNB
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/aC7DSKFUtVI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Deleted Succesfully 
+------------------------------------------------------- 
+--------------- Live 4 @ NNB ------------------ 
+Title:  Live 4 @ NNB
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HSSSSkblIE4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+>>>>>>> 37e9245f2879a36130ea248592e35067a7bf90ac
 Live Iframe Added Succesfully 
 ------------------------------------------------------- 

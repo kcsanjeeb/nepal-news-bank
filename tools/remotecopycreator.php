@@ -344,6 +344,12 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
 
                     <div class="col-9">
+
+                     
+
+                                                        
+                   
+                    
                         <p class="h4 text-info"><b>Step 3.</b> Select following content</p>
 
                         <?php
@@ -1287,10 +1293,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
             </div>
 
             <div class="card-footer text-muted bg-light  ">
-                <strong>NOTE : </strong>
-                <p>1. Please <b style="color:red">Delete Web Post</b> before <b>Deleting Remote Data</b>.</p>
-                <p>2. <b style="color:red">Deleting web post</b> deletes wp post only & to delete database entry we need
-                    to <b>delete remote data</b>. </p>
+                
 
                 <div class="text-right ">
 
