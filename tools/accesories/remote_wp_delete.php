@@ -268,31 +268,36 @@ if( isset($_POST['news_id']) && isset($_POST['wp_id']))
                 ),
             ));
 
+            if($wp_media_id !== null)
+            {
+
+           
+                $response = curl_exec($curl);           
+                $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                $err = curl_error($curl);                    
+                curl_close($curl);
+
+                $url = "$domain_url/wp-json/wp/v2/media/$wp_media_id?force=true" ;
+                $curl = curl_init();
+                curl_setopt_array($curl, array(                    
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'DELETE',
+                CURLOPT_POSTFIELDS => $data ,
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json",
+                        'Authorization: Bearer '.$token_bearer.''
+                    ),
+                ));
+
             $response = curl_exec($curl);           
             $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             $err = curl_error($curl);                    
             curl_close($curl);
-
-            $url = "$domain_url/wp-json/wp/v2/media/$wp_media_id?force=true" ;
-            $curl = curl_init();
-            curl_setopt_array($curl, array(                    
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'DELETE',
-            CURLOPT_POSTFIELDS => $data ,
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json",
-                    'Authorization: Bearer '.$token_bearer.''
-                ),
-            ));
-
-            $response = curl_exec($curl);           
-            $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            $err = curl_error($curl);                    
-            curl_close($curl);
+            }
 
             if($respCode == 200 || $respCode == 202  || $respCode == 204 )
             {
