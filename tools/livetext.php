@@ -418,11 +418,11 @@ iframe {
                 [
                     {"data":
                         "` + event + `","hidden":false,"type":"text","meta":
-                        ["wpdt-tc-000000","wpdt-bc-F9F9F9","wpdt-bold"]},
+                        ["wpdt-tc-000000","wpdt-bc-F9F9F9"]},
                         {"data":"` + location_row + `","hidden":false,"type":"text","meta":
-                            ["wpdt-bold","wpdt-tc-000000","wpdt-bc-F9F9F9"]},
+                            ["wpdt-tc-000000","wpdt-bc-F9F9F9"]},
                             {"data":"` + DatenTime + `","hidden":false,"type":"text","meta":
-                                ["wpdt-bold","wpdt-tc-000000","wpdt-bc-F9F9F9"]}]}
+                                ["wpdt-tc-000000","wpdt-bc-F9F9F9"]}]}
             `;
 
 
