@@ -183,7 +183,7 @@ if(isset($_POST['submit_push']))
                     $featured_media_id = null;
                 }
 
-                echo "News Bodyyyyy $newsbody_full";
+                // echo "News Bodyyyyy $newsbody_full";
 
                 if($newsbody_full != null)
                 {
@@ -249,7 +249,7 @@ if(isset($_POST['submit_push']))
                     $push_videoextra_json = "https://vimeo.com/".$vimeo_video_extra ;
                     $push_videoLazy_json = "https://vimeo.com/".$vimeo_videolazy ;
                 }
-                echo "<br>dadasdsadasd ".count($category_full_arr)."<br>";
+                // echo "<br>dadasdsadasd ".count($category_full_arr)."<br>";
                 if(count($category_full_arr) == 1 && $category_full_arr[0] == '' )
                 {
                     $category_full_arr = null ;
@@ -316,7 +316,7 @@ if(isset($_POST['submit_push']))
             
 
                     $data = json_encode($data_array);
-                    echo $data ;
+                    // echo $data ;
 
 
                 $curl = curl_init();
@@ -345,8 +345,8 @@ if(isset($_POST['submit_push']))
 
                 $post_new_id = $response['id'];
 
-                echo "Wordpress id: $post_new_id";
-                echo $err ;
+                // echo "Wordpress id: $post_new_id";
+                // echo $err ;
 
 
                 $data_blank = '';
@@ -480,7 +480,7 @@ else
     $location_redirect = $_SERVER['HTTP_REFERER'];
 }
 
-    //    header("Location: ". $_SERVER['HTTP_REFERER']);
-        echo '<script> window.location.href = "'.$location_redirect.'"; </script>'; 
+       header("Location: ". $_SERVER['HTTP_REFERER']);
+        // echo '<script> window.location.href = "'.$location_redirect.'"; </script>'; 
 
     exit();

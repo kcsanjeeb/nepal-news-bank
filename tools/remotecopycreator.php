@@ -304,6 +304,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $videoextra = $row_content['videoextra'];
 
                                                         $video_type = $row_content['video_type'];
+
+                                                      
                                                       
 
                                                         
@@ -1144,7 +1146,20 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                             $curs_style_del_remote_files= 'not-allowed;display:none';
 
                                         }
+
+
+                                 
+                                                    
+
+                                        if($videolong_full == null &&  $thumbnail_full == null && $videolazy_full == null && 
+                                        $newsbody_full == null && $audio == null && $videoextra == null && 
+                                        $photos == null && $photos == ''   )
+                                        {
+                                            $dis_pushhh = '';
+                                        }
                                         $status_dis_pushhh = $dis_pushhh ;
+
+                                        
 
                                             // if($sta_g)
                                             // {
@@ -1242,6 +1257,13 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                         </div>
                         <?php
                 }
+            ?>
+
+
+            <?php
+
+
+
                 if($status_dis_pushhh != 'disabled')
                 {
                    
