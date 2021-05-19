@@ -22,3 +22,15 @@ saddasdsdas Folder Created
 ---------------2021-05-18 / DSADSADASD ---------------- 
 DSADSADASD Folder Created
 ------------------------------------------------------- 
+---------------2021-05-18 / बीएन्डसीलाई कानुनविपरीत सिफारिस ---------------- 
+बीएन्डसीलाई कानुनविपरीत सिफारिस Folder Created
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_body.docx : News Body Uploaded
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_gallery_3.png : Gallery-3 Uploaded
+my_data/news_data/2021-05-18/बीएन्डसीलाई कानुनविपरीत सिफारिस/20210518_130704_89419_gallery_4.jpg : Gallery-4 Uploaded
+------------------------------------------------------- 
