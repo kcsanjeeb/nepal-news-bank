@@ -195,7 +195,7 @@ iframe {
 
                                 <input type="hidden" name="insert" value="insert">
 
-                                <button type="submit" class="btn btn-primary mb-3 " name="submit">Post Live Video
+                                <button type="submit" class="btn btn-primary mb-3 " name="submit">Post 
                                 </button>
                                 <br>
                             </form>
@@ -317,7 +317,7 @@ iframe {
                                 <div class="row">
                                     <div class="col-lg-2 col-lg-offset-2">
                                         <button id="addBtn" class="addBtn form-control btn btn-primary">
-                                            Post Schedule
+                                            Post
                                         </button>
                                     </div>
                                 </div>
