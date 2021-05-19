@@ -11,3 +11,15 @@
 20210518_130704_89419_videolazy.mp4 Video Lazy Pushed
 20210518_130704_89419_audio.mp3 Audio Pushed
 ------------------------------------------------------- 
+---------------2021-05-19 09:00:54 / खोप खरिदमा आलटाल ---------------- 
+20210519_090054_72254_gallery_0.jpg Gallery Photo Pushed
+20210519_090054_72254_gallery_1.jpg Gallery Photo Pushed
+20210519_090054_72254_gallery_2.jpg Gallery Photo Pushed
+20210519_090054_72254_gallery_3.jpg Gallery Photo Pushed
+20210519_090054_72254_body.docx News  Body Pushed
+20210519_090054_72254_videolong.mp4 Video Long Pushed
+20210519_090054_72254_videolazy.mp4 Video Lazy Pushed
+20210519_090054_72254_videoextra.mp4 Video Extra  Pushed
+20210519_090054_72254_thumbnail.jpg Thumbnail Pushed
+20210519_090054_72254_audio.mp3 Audio Pushed
+------------------------------------------------------- 

@@ -1,7 +1,5 @@
 <?php
 
-
-
 $cameraman_global = array(
     "shiva pangeni",
     "sanjeeb kC",

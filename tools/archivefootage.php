@@ -197,7 +197,7 @@ h4 {
                                 <input type="date" class="form-control col-lg-2" name="date" placeholder="Title">
                             </div>
                             <div class="form-group">
-                                <label class=" p-0 col-lg-12 h5 text-info">Step 2. Enter Archive Title *
+                                <label class=" p-0 col-lg-12 h5 text-info">Step 2. Enter Title *
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -213,16 +213,29 @@ h4 {
                                 <input class="form-control" name="title" placeholder="Title">
 
                             </div>
-                            <!-- stock video  card -->
-                            <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
-                            <!-- <div class="form-group mt-3">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 3. Select News category*</label>
-                              
-                            </div> -->
+                          
+                            <div class="form-group">
+                                <label class=" p-0 col-lg-12 h5 text-info">Step 3. Enter Description *
+                                    <svg data-toggle="popover" title="News Title"
+                                        data-content="Some content inside the popover"
+                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg>
+
+                                </label>
+                                <textarea class="form-control" name="description" placeholder="Description"></textarea>
+
+                            </div>
+                         
 
                             <!-- series-->
                             <div class="form-group mt-3">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 3. Select Series*
+                                <label class="col-lg-12 p-0  h5 text-info">Step 4. Select Series*
                                 <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -236,12 +249,7 @@ h4 {
                                 </label>
 
                                 <select class="form-control" id="exampleFormControlSelect2" name="series" required>
-                                    <!-- <option value="906">Series 1</option>
-                                    <option value="906">Series 2</option>
-                                    <option value="906">Series 3</option>
-                                    <option value="906">Series 4</option>
-                                    <option value="906">Series 5</option> -->
-
+                               
                                     <?php 
                                         if(isset($series))
                                         {
@@ -259,7 +267,7 @@ h4 {
 
                             <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
                             <div class="form-group">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 4. Select News Tags*
+                                <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Tags*
                                 <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -273,12 +281,7 @@ h4 {
                                 </label>
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" required> -->
                                 <select multiple name="newsTag[]" id="tags">
-                                    <!-- <option value="141">Business</option>
-                                    <option value="142">Entertainment</option>
-                                    <option value="134">Sports</option>
-                                    <option value="135">International</option>
-                                    <option value="136">Glamour</option> -->
-
+                                 
                                     <?php 
                                         if(isset($tags))
                                         {
@@ -296,7 +299,7 @@ h4 {
                                 </select>
                             </div>
 
-                            <label class=" p-0 col-lg-12 h5 text-info pb-2">Step 5. Select Archive Video*</label>
+                            <label class=" p-0 col-lg-12 h5 text-info pb-2">Step 6. Select Archive Video*</label>
                             <div class="row">
 
                                 <div class="col-sm-4 ">
@@ -331,7 +334,7 @@ h4 {
                             </div>
                             <!-- Select one image for news thumbnail-->
                             <div class="form-group ">
-                                <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 6. Select Thumbnail *
+                                <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 7. Select Thumbnail *
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -349,18 +352,13 @@ h4 {
                                 <!-- Image preview -->
                                 <div id="thumbnailID"></div>
                                 <br>
-                                <label class=" p-0 h5 text-info">Step 7.
+                                <label class=" p-0 h5 text-info">Step 8.
                                     <div>
                                         <input value="Post" id="submitbtn" type="submit" name="submit"
                                             class="btn btn-primary mt-2">
                                     </div>
                                     <div>
-                                        <!-- <button id="loaderbtn" class="btn btn-warning mt-2" type="button"
-                                                style="display: none;" disabled>
-                                                <span class="spinner-border spinner-border-sm" role="status"
-                                                    aria-hidden="true"></span>
-                                                Posting Stock Footage ...
-                                            </button> -->
+                                  
                                     </div>
 
 
