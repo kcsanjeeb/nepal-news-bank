@@ -1533,7 +1533,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
 
 
-
+                            $counter_top++;
                         }
                     ?>
                     </ul>
