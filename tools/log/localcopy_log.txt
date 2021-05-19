@@ -69,3 +69,12 @@ sanjeeb Folder Created
 2021-05-19 Folder Created
 INF------------------------------------------------------- 
 >>>>>>> 673b4f10f29dd35c5f45934236f44eb851502e57
+
+---------------2021-05-19 / Testtesttest ---------------- 
+Testtesttest Folder Created
+my_data/news_data/2021-05-19/Testtesttest/20210519_141228_54172_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-19 / testetstetasw ---------------- 
+testetstetasw Folder Created
+my_data/news_data/2021-05-19/testetstetasw/20210519_141626_57790_body.docx : News Body Uploaded
+------------------------------------------------------- 
