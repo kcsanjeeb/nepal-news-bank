@@ -344,16 +344,14 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                 ?>
 
 
-<?php
 
 
+                    <div class="col-9">
 
+                    <?php
 if($status_dis_pushhh != 'disabled')
-{
-   
+{ 
 ?>
-
-
         <form method="POST" action='accesories/local_post_delete.php'>
             <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
             <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
@@ -366,16 +364,12 @@ if($status_dis_pushhh != 'disabled')
 
 }
 ?>
-
-                    <div class="col-9">
-
-
-
+<hr/>
 
 
                         <form method="POST" action="accesories/remote_submit.php">
 
-                            <p class="h4 text-info"><b>Step 3.</b> Select following content</p>
+                      
 
                             <?php
 
@@ -475,7 +469,7 @@ if($status_dis_pushhh != 'disabled')
                                                     unset($_SESSION['notice_remote']);    
                                                 }
                                             ?>
-
+      <p class="h4 text-info"><b>Step 3.</b> Select following content</p>
 
                             <div class="list-group">
                                 <?php
@@ -1299,9 +1293,16 @@ if($status_dis_pushhh != 'disabled')
             ?>
 
 
+
+
                     </div>
                 </div>
             </div>
+
+
+
+
+
 
             <div class="card-footer text-muted bg-light  ">
 
