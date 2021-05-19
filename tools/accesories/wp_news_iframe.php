@@ -89,8 +89,10 @@ while($rows = mysqli_fetch_assoc($run_sql_iframe))
     $iframe_iframe =  $rows['iframe_iframe'] ;
     $iframe_text =  $rows['iframe_text'] ;
 
-    $iframe_iframe = str_replace("<","*1*",$iframe_iframe);
-    $iframe_iframe = str_replace(">","*2*",$iframe_iframe);
+    // $iframe_iframe = str_replace("<","*1*",$iframe_iframe);
+    // $iframe_iframe = str_replace(">","*2*",$iframe_iframe);
+
+    print_r($rows);
 
     $new_plans['_rtbs_title'] = $title;
     $new_plans['_rtbs_content'] = $iframe_iframe.'<br><div id="copy-text-iframe">'.$iframe_text.'</div><a href="https://nepalnewsbank.com/live/" id="hookup-button" class="button-background button-background--primary button-background--small">Go to hookup page</a>' ;
@@ -99,7 +101,6 @@ while($rows = mysqli_fetch_assoc($run_sql_iframe))
 
 
 }
-
 
 
 
@@ -136,4 +137,4 @@ else
 }
 
 
-header("Location: ". $location_redirect);
+// header("Location: ". $location_redirect);
