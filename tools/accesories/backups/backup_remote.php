@@ -189,19 +189,19 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                     <div class="col-3">
 
 
-
-                        <!--   id="remote_form"-->
-                        <p class="h4 text-info"><b>Step 2.</b> Select a byline</p>
-                        <div class="nav card list-group list-group-flush sidebar_byline flex-column nav-pills"
-                            id="v-pills-tab" role="tablist" aria-orientation="vertical" style="flex-wrap: nowrap;">
-                            <?php
+                        <form method="POST" action="accesories/remote_submit.php">
+                            <!--   id="remote_form"-->
+                            <p class="h4 text-info"><b>Step 2.</b> Select a byline</p>
+                                <div class="nav card list-group list-group-flush sidebar_byline flex-column nav-pills"
+                                    id="v-pills-tab" role="tablist" aria-orientation="vertical" style="flex-wrap: nowrap;">
+                                    <?php
                                                             $counter  = 1 ;
                                                             $symbolNumber  = 1 ;
                                                             if($num_rows_byline == 0)
                                                             {
                                                         ?>
-                            <a class="active ml-3 mt-2" href="#">No news available</a>
-                            <?php
+                                    <a class="active ml-3 mt-2" href="#">No news available</a>
+                                    <?php
                                                 }
                                                 while($row_byline = mysqli_fetch_assoc($run_sql_byline))
                                                 {
@@ -239,20 +239,20 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
 
 
-                            <a class="nav-link list-group-item p-2 <?php echo  $active_id ; ?>"
-                                href="remotecopycreator.php?news_id=<?php echo $news_id ; ?>&date=<?php echo $selected_date ; ?>"><?php echo $symbolNumber;?>.
-                                <span class="<?php echo $font_style ; ?>"><?php echo $by_line ; ?></span></a>
+                                <a class="nav-link list-group-item p-2 <?php echo  $active_id ; ?>"
+                                    href="remotecopycreator.php?news_id=<?php echo $news_id ; ?>&date=<?php echo $selected_date ; ?>"><?php echo $symbolNumber;?>.
+                                    <span class="<?php echo $font_style ; ?>"><?php echo $by_line ; ?></span></a>
 
 
-                            <?php  $symbolNumber++;
+                                <?php  $symbolNumber++;
                                     }
                                 ?>
 
-                        </div>
-                    </div>
-                    <!-- ----------------------------------------------------------------------------- -->
+                            </div>
+                            </div>
+                            <!-- ----------------------------------------------------------------------------- -->
 
-                    <?php
+                            <?php
                                             // echo $content_id ;
                                             if(isset($content_id))
                                             {
@@ -344,40 +344,17 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                 ?>
 
 
-<?php
 
-
-
-if($status_dis_pushhh != 'disabled')
-{
-   
-?>
-
-
-        <form method="POST" action='accesories/local_post_delete.php'>
-            <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
-            <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
-            <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
-            <input type="hidden" name="type" value="<?php echo $category_list ?>">
-
-            <input type="submit" value="Delete Local Data" class="btn btn-danger" name="del_nas">
-        </form>
-        <?php
-
-}
-?>
-
-                    <div class="col-9">
+                            <div class="col-9">
 
 
 
 
 
-                        <form method="POST" action="accesories/remote_submit.php">
 
-                            <p class="h4 text-info"><b>Step 3.</b> Select following content</p>
+                                <p class="h4 text-info"><b>Step 3.</b> Select following content</p>
 
-                            <?php
+                                <?php
 
                                                         if(isset($_SESSION['notice_remote']) )
                                                 {
@@ -462,23 +439,23 @@ if($status_dis_pushhh != 'disabled')
 
                                             ?>
 
-                            <div class="alert m-3 alert-success fade show" role="alert"
-                                style="background-color: <?php echo $bg_color ; ?>; color:<?php echo $color ; ?>">
-                                <strong style="color:<?php echo $color_down ; ?>">Notice : </strong>
-                                <?php echo $notice; ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+                                <div class="alert m-3 alert-success fade show" role="alert"
+                                    style="background-color: <?php echo $bg_color ; ?>; color:<?php echo $color ; ?>">
+                                    <strong style="color:<?php echo $color_down ; ?>">Notice : </strong>
+                                    <?php echo $notice; ?>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
 
-                            <?php
+                                <?php
                                                     unset($_SESSION['notice_remote']);    
                                                 }
                                             ?>
 
 
-                            <div class="list-group">
-                                <?php
+                                <div class="list-group">
+                                    <?php
                                                     if($newsbody_full != NULL)
                                             {
 
@@ -530,28 +507,27 @@ if($status_dis_pushhh != 'disabled')
 
                                 ?>
 
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" name="file_name[]"
-                                                aria-label="Checkbox for following text input"
-                                                <?php echo $ischecked ; ?>
-                                                class="files big-checkbox <?php echo $class_comp ; ?>"
-                                                value="<?php echo $value_input ; ?>" <?php echo $input ; ?>>
-                                        </div>
+                            <div class="input-group ">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="file_name[]"
+                                            aria-label="Checkbox for following text input" <?php echo $ischecked ; ?>
+                                            class="files big-checkbox <?php echo $class_comp ; ?>"
+                                            value="<?php echo $value_input ; ?>" <?php echo $input ; ?>>
                                     </div>
-                                    <div class="form-control"><?php echo $message ; ?></div>
                                 </div>
+                                <div class="form-control"><?php echo $message ; ?></div>
+                            </div>
 
-                                <?php
-                                                }
-                                                else
-                                                {
-                                                    $sta_a = 1 ;
-                                                }
-                                    ?>
+                            <?php
+                                            }
+                                            else
+                                            {
+                                                $sta_a = 1 ;
+                                            }
+                                ?>
 
-                                <?php
+                            <?php
 
                                         if($videolong_full != NULL)
                                         {
@@ -641,30 +617,29 @@ if($status_dis_pushhh != 'disabled')
 
                                     ?>
 
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" name="file_name[]"
-                                                aria-label="Checkbox for following text input"
-                                                <?php echo $ischecked ; ?>
-                                                class="files big-checkbox <?php echo $class_comp ; ?>"
-                                                value="<?php echo $value_input ; ?>" <?php echo $input ; ?>>
-                                        </div>
+                            <div class="input-group ">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="file_name[]"
+                                            aria-label="Checkbox for following text input" <?php echo $ischecked ; ?>
+                                            class="files big-checkbox <?php echo $class_comp ; ?>"
+                                            value="<?php echo $value_input ; ?>" <?php echo $input ; ?>>
                                     </div>
-                                    <div class="form-control"><?php echo $message ; ?></div>
                                 </div>
+                                <div class="form-control"><?php echo $message ; ?></div>
+                            </div>
 
-                                <?php
-                                                }
-                                                else
-                                                {
-                                                    $sta_b = 1 ;
-                                                }
-                                    ?>
+                            <?php
+                                            }
+                                            else
+                                            {
+                                                $sta_b = 1 ;
+                                            }
+                                ?>
 
 
 
-                                <?php
+                            <?php
 
                                         if($videolazy_full != NULL)
                                         {
@@ -752,30 +727,29 @@ if($status_dis_pushhh != 'disabled')
                                         
                                 ?>
 
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" name="file_name[]"
-                                                aria-label="Checkbox for following text input "
-                                                <?php echo $ischecked ; ?>
-                                                class="files big-checkbox <?php echo $class_comp ; ?>"
-                                                value="<?php echo $value_input ; ?>" <?php echo $input ; ?>>
-                                        </div>
+                            <div class="input-group ">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="file_name[]"
+                                            aria-label="Checkbox for following text input " <?php echo $ischecked ; ?>
+                                            class="files big-checkbox <?php echo $class_comp ; ?>"
+                                            value="<?php echo $value_input ; ?>" <?php echo $input ; ?>>
                                     </div>
-                                    <div class="form-control"><?php echo $message ; ?></div>
                                 </div>
+                                <div class="form-control"><?php echo $message ; ?></div>
+                            </div>
 
-                                <?php
-                                            }
-                                            else
-                                            {
-                                                $sta_c = 1 ;
-                                            }                                    
-                                    ?>
+                            <?php
+                                        }
+                                        else
+                                        {
+                                            $sta_c = 1 ;
+                                        }                                    
+                                ?>
 
 
-                                <?php
-                                            
+                            <?php
+                                        
                                         if($thumbnail_full != NULL)
                                         {
 
@@ -826,20 +800,19 @@ if($status_dis_pushhh != 'disabled')
                                     
                                 ?>
 
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" name="file_name[]"
-                                                aria-label="Checkbox for following text input"
-                                                <?php echo $ischecked ; ?>
-                                                class="files big-checkbox <?php echo $class_comp ; ?>"
-                                                value="<?php echo $value_input ; ?>" <?php echo $input ; ?>>
-                                        </div>
+                            <div class="input-group ">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="file_name[]"
+                                            aria-label="Checkbox for following text input" <?php echo $ischecked ; ?>
+                                            class="files big-checkbox <?php echo $class_comp ; ?>"
+                                            value="<?php echo $value_input ; ?>" <?php echo $input ; ?>>
                                     </div>
-                                    <div class="form-control"><?php echo $message ; ?></div>
                                 </div>
+                                <div class="form-control"><?php echo $message ; ?></div>
+                            </div>
 
-                                <?php
+                            <?php
                                             }
                                             else
                                             {
@@ -849,7 +822,7 @@ if($status_dis_pushhh != 'disabled')
 
 
 
-                                <?php 
+                            <?php 
                                             if($audio != NULL )
                                             {
                                                 $audio_file_exist = $audio ;
@@ -905,30 +878,29 @@ if($status_dis_pushhh != 'disabled')
 
                                         ?>
 
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" name="file_name[]"
-                                                value="<?php echo $value_input ; ?>" <?php echo $input ; ?>
-                                                aria-label="Checkbox for following text input"
-                                                <?php echo $ischecked ; ?>
-                                                class="files big-checkbox <?php echo $class_comp ; ?>">
-                                        </div>
+                            <div class="input-group ">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="file_name[]" value="<?php echo $value_input ; ?>"
+                                            <?php echo $input ; ?> aria-label="Checkbox for following text input"
+                                            <?php echo $ischecked ; ?>
+                                            class="files big-checkbox <?php echo $class_comp ; ?>">
                                     </div>
-                                    <div class="form-control"><?php echo $message ; ?></div>
                                 </div>
+                                <div class="form-control"><?php echo $message ; ?></div>
+                            </div>
 
-                                <?php
-                                                    
-                                                }
-                                                else
-                                                {
-                                                    $sta_f = 1 ;
-                                                }
-                                    ?>
+                            <?php
+                                                
+                                            }
+                                            else
+                                            {
+                                                $sta_f = 1 ;
+                                            }
+                                ?>
 
-                                <?php 
-                                                if($videoextra != NULL)
+                            <?php 
+                                            if($videoextra != NULL)
                                             {
                                                 
                                                 $video_extra_file_exist = $videoextra ;
@@ -1025,36 +997,35 @@ if($status_dis_pushhh != 'disabled')
                                                 }
                                         ?>
 
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" name="file_name[]"
-                                                value="<?php echo $value_input ; ?>" <?php echo $input ; ?>
-                                                aria-label="Checkbox for following text input"
-                                                <?php echo $ischecked ; ?>
-                                                class="files big-checkbox <?php echo $class_comp ; ?>">
-                                        </div>
+                            <div class="input-group ">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="file_name[]" value="<?php echo $value_input ; ?>"
+                                            <?php echo $input ; ?> aria-label="Checkbox for following text input"
+                                            <?php echo $ischecked ; ?>
+                                            class="files big-checkbox <?php echo $class_comp ; ?>">
                                     </div>
-                                    <div class="form-control"><?php echo $message ; ?></div>
-
                                 </div>
+                                <div class="form-control"><?php echo $message ; ?></div>
 
+                            </div>
+
+
+                            <?php
+                                                
+                                            }
+                                            else
+                                            {
+                                                $sta_g = 1 ;
+                                            }
+                                ?>
+
+                            <p class="h4 text-info mt-3 pl-0"><b>Step 4.</b> Select following images</p>
+                            <ul class=" ">
+
+                                <!-- ---------IMAGE SECTION ------------ -->
 
                                 <?php
-                                                    
-                                                }
-                                                else
-                                                {
-                                                    $sta_g = 1 ;
-                                                }
-                                    ?>
-
-                                <p class="h4 text-info mt-3 pl-0"><b>Step 4.</b> Select following images</p>
-                                <ul class=" ">
-
-                                    <!-- ---------IMAGE SECTION ------------ -->
-
-                                    <?php
                                                 $gal_counter = 1 ;
                                                 $index = 0 ;
                                                 $sta_array = array();
@@ -1091,15 +1062,14 @@ if($status_dis_pushhh != 'disabled')
 
                                                         }
                                             ?>
-                                    <li>
-                                        <input type="checkbox" name="gall_img[]" value="<?php echo $ph_arr ; ?>"
-                                            id="cb<?php echo $gal_counter ; ?>"
-                                            class="files <?php echo $class_gall ; ?>" <?php echo $selected ; ?>
-                                            <?php echo $input ; ?> />
-                                        <label for="cb<?php echo $gal_counter ; ?>"><img
-                                                src="<?php echo $ph_arr ; ?>" /></label>
-                                    </li>
-                                    <?php
+                                <li>
+                                    <input type="checkbox" name="gall_img[]" value="<?php echo $ph_arr ; ?>"
+                                        id="cb<?php echo $gal_counter ; ?>" class="files <?php echo $class_gall ; ?>"
+                                        <?php echo $selected ; ?> <?php echo $input ; ?> />
+                                    <label for="cb<?php echo $gal_counter ; ?>"><img
+                                            src="<?php echo $ph_arr ; ?>" /></label>
+                                </li>
+                                <?php
                                                     }
                                                 
                                                     $gal_counter++;
@@ -1107,15 +1077,15 @@ if($status_dis_pushhh != 'disabled')
                                             ?>
 
 
-                                </ul>
-                                <p class="h4 text-info "><b>Step 5.</b> Pushed By</p>
-                                <select class="form-control form-control-sm" name="pushed_by">
-                                    <option selected value="<?php echo $_SESSION['fuser'] ;?>">
-                                        <?php echo $_SESSION['fuser'] ;?></option>
-                                    <!-- <option <?php  //if($pushed_by_web == 'publisher 2') echo 'selected';   ?>
-                                        value="publisher 2">Publisher 2</option> -->
+                            </ul>
+                            <p class="h4 text-info "><b>Step 5.</b> Pushed By</p>
+                            <select class="form-control form-control-sm" name="pushed_by">
+                                <option selected value="<?php echo $_SESSION['fuser'] ;?>">
+                                    <?php echo $_SESSION['fuser'] ;?></option>
+                                <!-- <option <?php  //if($pushed_by_web == 'publisher 2') echo 'selected';   ?>
+                                    value="publisher 2">Publisher 2</option> -->
 
-                                </select>
+                            </select>
                             </div>
 
                             <p class="h4 text-info mt-3 "><b>Step 6.</b> </p>
@@ -1213,11 +1183,10 @@ if($status_dis_pushhh != 'disabled')
 
                                             // }
 
-                                ?>
+                            ?>
 
-                            <button type="submit" class="btn btn-info sub_push"
-                                style="cursor: <?php echo $curs_style; ?>" <?php echo $dis_pushhh ; ?>
-                                <?php //echo $dis_pushhhh ; ?> value="submit" name="submit">
+                            <button type="submit" class="btn btn-info sub_push" style="cursor: <?php echo $curs_style; ?>"
+                                <?php echo $dis_pushhh ; ?> <?php //echo $dis_pushhhh ; ?> value="submit" name="submit">
                                 Push data to remote
                             </button>
 
@@ -1225,18 +1194,18 @@ if($status_dis_pushhh != 'disabled')
                             <span id="error_push_miss"></span>
 
                             <!-- <button type="submit" class="btn btn-danger"
-                                    style="cursor: <?php //echo $curs_style_del_remote_files; ;?>"
-                                    <?php //echo $dis_del_remote_file ; ?> value="submit" name="del_remote_files">
-                                    Delete Remote Data
-                                </button> -->
+                                style="cursor: <?php //echo $curs_style_del_remote_files; ;?>"
+                                <?php //echo $dis_del_remote_file ; ?> value="submit" name="del_remote_files">
+                                Delete Remote Data
+                            </button> -->
 
 
 
 
                             <?php
-                                            }
-                                            }
-                                    ?>
+                                        }
+                                        }
+                                ?>
 
 
 
@@ -1299,6 +1268,28 @@ if($status_dis_pushhh != 'disabled')
             ?>
 
 
+                        <?php
+
+
+
+                if($status_dis_pushhh != 'disabled')
+                {
+                   
+            ?>
+
+
+                        <form method="POST" action='accesories/local_post_delete.php'>
+                            <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
+                            <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
+                            <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
+                            <input type="hidden" name="type" value="<?php echo $category_list ?>">
+
+                            <input type="submit" value="Delete Local Data" class="btn btn-danger" name="del_nas">
+                        </form>
+                        <?php
+
+                }
+            ?>
                     </div>
                 </div>
             </div>
