@@ -55,7 +55,7 @@ if(!isset($location))
 
                     if($_POST['description'])
                     {
-                        $description = "'$description'";
+                        $description = "'Description: $description'";
                     }
                     else
                     {
@@ -275,7 +275,11 @@ if(!isset($location))
                             
                                 );
                         }
+                        
 
+                    //  echo "<br>";
+                    //  print_r($data_array);
+                    //  echo "<br>";
                         
 
                         $data = json_encode($data_array);

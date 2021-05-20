@@ -58,7 +58,7 @@ if(!isset($location))
 
                     if($_POST['description'])
                     {
-                        $description = "'$description'";
+                        $description = "'Description: $description'";
                     }
                     else
                     {
