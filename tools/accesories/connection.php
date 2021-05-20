@@ -14,12 +14,17 @@ include $path_root."/".$path_uri_exp[1]."/".$path_uri_exp[2]."/global/local_phpm
 
 
 
-        $host = "localhost";
+        // $host = "localhost";
+        // $user = 'root';
+        // $password = 'root';
+        // $db_name="nepalnewsbank";
+        // $connection= mysqli_connect($host , $user , $password , $db_name);
 
+
+        $host = $phpmyadmin_remote_host;
         $user = $phpmyadmin_user;
         $password = $phpmyadmin_password;
-
-        $db_name="nepalnewsbank";
+        $db_name= $phpmyadmin_db_name;
         $connection= mysqli_connect($host , $user , $password , $db_name);
 
 
