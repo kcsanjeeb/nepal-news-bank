@@ -78,3 +78,8 @@ my_data/news_data/2021-05-19/Testtesttest/20210519_141228_54172_body.docx : News
 testetstetasw Folder Created
 my_data/news_data/2021-05-19/testetstetasw/20210519_141626_57790_body.docx : News Body Uploaded
 ------------------------------------------------------- 
+---------------2021-05-19 / test video 2 ---------------- 
+test video 2 Folder Created
+my_data/news_data/2021-05-19/test video 2/20210519_080733_15025_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-19/test video 2/20210519_080733_15025_thumbnail.jpg : Thumbnail Uploaded
+------------------------------------------------------- 

@@ -11,3 +11,21 @@ my_data/archive_data/archive_picture/Test Blog Ann/20210517_132011_29980_thumbna
 20210517_132011_29980_photo_2.jpg : Gallery  Pushed to Remote Succesfully
  Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-05-19 / Archive picture - corona  ------------------ 
+my_data/archive_data/archive_picture/Archive picture - corona : Folder Created
+my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_0.jpg : Gallery-0 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_1.jpg : Gallery-1 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_2.jpg : Gallery-2 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_3.jpg : Gallery-3 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_4.jpg : Gallery-4 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_5.jpg : Gallery-5 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_thumbnail.jpg : Thumbnail Uplaoded Succesfully
+ : Thumbnail  Pushed to Remote Succesfully
+20210519_222624_88084_photo_0.jpg : Gallery  Pushed to Remote Succesfully
+20210519_222624_88084_photo_1.jpg : Gallery  Pushed to Remote Succesfully
+20210519_222624_88084_photo_2.jpg : Gallery  Pushed to Remote Succesfully
+20210519_222624_88084_photo_3.jpg : Gallery  Pushed to Remote Succesfully
+20210519_222624_88084_photo_4.jpg : Gallery  Pushed to Remote Succesfully
+20210519_222624_88084_photo_5.jpg : Gallery  Pushed to Remote Succesfully
+ Remote Post Created Succesfully
+------------------------------------------------------- 

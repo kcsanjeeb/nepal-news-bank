@@ -543,7 +543,7 @@ strong {
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
                                 <select multiple name="newsCategories[]" id="categories" required>
 
-                              
+                                <option class="" value="">Select series</option>
 
                                     <?php 
                                         if(isset($category))
