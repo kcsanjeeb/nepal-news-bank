@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "global/timezone.php";

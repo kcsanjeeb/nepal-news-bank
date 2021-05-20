@@ -29,3 +29,11 @@ my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88
 20210519_222624_88084_photo_5.jpg : Gallery  Pushed to Remote Succesfully
  Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-05-20 / Corona Vaccines picture  ------------------ 
+my_data/archive_data/archive_picture/Corona Vaccines picture : Folder Created
+my_data/archive_data/archive_picture/Corona Vaccines picture/20210520_083136_29773_photo_0.jpg : Gallery-0 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Corona Vaccines picture/20210520_083136_29773_thumbnail.jpg : Thumbnail Uplaoded Succesfully
+ : Thumbnail  Pushed to Remote Succesfully
+20210520_083136_29773_photo_0.jpg : Gallery  Pushed to Remote Succesfully
+ Remote Post Created Succesfully
+------------------------------------------------------- 

@@ -6,18 +6,25 @@ $path_root = $_SERVER['DOCUMENT_ROOT'];
 
 $path_uri = $_SERVER['REQUEST_URI'];
 $path_uri_exp = explode("/" , $path_uri);
-array_pop($path_uri_exp) ; array_pop($path_uri_exp) ;
-$path_uri_imp = implode("/" , $path_uri_exp);
 
 
-include $path_root."/".$path_uri_imp."/global/local_phpmyadmin.php" ;
+include $path_root."/".$path_uri_exp[1]."/".$path_uri_exp[2]."/global/local_phpmyadmin.php";
 
-        $host = "localhost";
 
+
+
+
+        // $host = "localhost";
+        // $user = 'root';
+        // $password = 'root';
+        // $db_name="nepalnewsbank";
+        // $connection= mysqli_connect($host , $user , $password , $db_name);
+
+
+        $host = $phpmyadmin_remote_host;
         $user = $phpmyadmin_user;
         $password = $phpmyadmin_password;
-
-        $db_name="nepalnewsbank";
+        $db_name= $phpmyadmin_db_name;
         $connection= mysqli_connect($host , $user , $password , $db_name);
 
 
