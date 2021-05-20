@@ -46,31 +46,39 @@ FOREIGN KEY(newsid) REFERENCES nas (newsid)
 
 -- ============================================== 3. create archive_video table
 create table archive_video(
-id int primary key auto_increment,
-archive_id varchar(30) unique,
-created_date date,
-title text,
-series int,
-tags text,
-video text,
-thumbnail text,
-published_date datetime,
-wp_id text,
-wp_media_id text
+	
+    id int primary key auto_increment ,
+	archive_id varchar(30) unique,
+	created_date date ,
+    title text,
+    series int ,
+    tags text,
+    video text,
+    thumbnail text,
+    
+    published_date datetime,
+    wp_id text,
+    wp_media_id text,
+    description text
+
 );
 -- ============================================== 4. create archive_photos table
 create table archive_photos(
-id int primary key auto_increment,
-archive_id varchar(30) unique,
-created_date date ,
-title text,
-series int ,
-tags text,
-gallery text,
-thumbnail text,
-published_date datetime,
-wp_id text,
-wp_media_id text
+	
+    id int primary key auto_increment ,
+	archive_id varchar(30) unique,
+	created_date date ,
+    title text,
+    series int ,
+    tags text,
+    gallery text,
+    thumbnail text,
+    
+    published_date datetime,
+    wp_id text,
+    wp_media_id text,
+    description text
+
 );
 -- ============================================== 5. create interview table
 create table interview(

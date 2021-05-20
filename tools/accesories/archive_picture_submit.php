@@ -52,6 +52,20 @@ if(!isset($location))
                     $series = $_POST['series'];
                     $series = mysqli_real_escape_string($connection, $series);
 
+
+                    $description = $_POST['description'];
+                    $description = mysqli_real_escape_string($connection, $description);
+
+                    if($_POST['description'])
+                    {
+                        $description = "'$description'";
+                    }
+                    else
+                    {
+                        $description = "null" ;
+                    }
+
+
                     $tags = $_POST['newsTag'];
                     $tags_final_array = array();
                     
@@ -241,30 +255,62 @@ if(!isset($location))
 
 
 
-                        $data_array =  array(
-                            "status" => "publish" , 
-                            "title" => "$title",                    
-                            "featured_media" => $featured_media_id,
-                            "video_category" => $category,
-                            "video_tag" => $tags,
 
-                            "acf_fields" => array( "gallery" => $gallery_csv_post, 'video_thumbnail' => $thumbpath_sql
-                        ),
-                            
-                            "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
-                                                                            'haru_video_url_type'=> 'insert',
-                                                                            'haru_video_url' => array('mp4' => '' , 'webm' => '')
-                                                                        ),
-                                            'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series")
+                        if(isset($_POST['description']))
+                        {
+                            $data_array =  array(
+                                "status" => "publish" , 
+                                "title" => "$title",                    
+                                "featured_media" => $featured_media_id,
+                                "video_category" => $category,
+                                "video_tag" => $tags,
 
-                                            ),
-                                        
+                                "acf_fields" => array( "gallery" => $gallery_csv_post, 'video_thumbnail' => $thumbpath_sql
+                            ),
+                                
+                                "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
+                                                                                'haru_video_url_type'=> 'insert',
+                                                                                'haru_video_url' => array('mp4' => '' , 'webm' => '')
+                                                                            ),
+                                                'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series")
+
+                                                ),
+                                            
+                                
+                                                "content" => $description
                             
                             
-                        
-                        
-                        
-                            );
+                            
+                                );
+                        }
+                        else
+                        {
+                            $data_array =  array(
+                                "status" => "publish" , 
+                                "title" => "$title",                    
+                                "featured_media" => $featured_media_id,
+                                "video_category" => $category,
+                                "video_tag" => $tags,
+
+                                "acf_fields" => array( "gallery" => $gallery_csv_post, 'video_thumbnail' => $thumbpath_sql
+                            ),
+                                
+                                "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
+                                                                                'haru_video_url_type'=> 'insert',
+                                                                                'haru_video_url' => array('mp4' => '' , 'webm' => '')
+                                                                            ),
+                                                'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series")
+
+                                                ),
+                                            
+                                
+                                
+                            
+                            
+                            
+                                );
+                        }
+
 
                         $data = json_encode($data_array);
 
@@ -385,12 +431,12 @@ if(!isset($location))
                         $query_new_archive = "insert into archive_photos(
                             archive_id ,created_date ,  title , series ,tags ,
                             gallery   , thumbnail , published_date,
-                            wp_id , wp_media_id
+                            wp_id , wp_media_id , description
                             ) 
                             VALUES 
                             ('$archive_id',  '$date_db' , '$title'  , '$series',
                                 '$tags' , $gallery_csv, '$thumbpath_sql' ,  '$created_at',
-                                '$archive_footage_id','$featured_media_id'
+                                '$archive_footage_id','$featured_media_id' , $description
                                 
                                 )";    
 
