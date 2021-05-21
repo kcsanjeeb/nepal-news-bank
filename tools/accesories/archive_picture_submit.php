@@ -99,8 +99,13 @@ if(!isset($location))
                     $thumbImg_status = true ; 
                     $video_long_status = true;
 
-                    $myfile = fopen("../log/archive_picture_log.txt", "a") or die("Unable to open file!");  
-                    fwrite($myfile, "\n--------------- $date_db / $title  ------------------ \n");
+                    
+                    $myfile = fopen("../log/archive_picture_log.txt", "a") or die("Unable to open file!"); 
+
+                    fwrite($myfile, "\n--------------- $date_db / $title  ------------------ \n");     
+                                   
+                    $logged_date = date('Y-m-d H:i:s');
+                    fwrite($myfile, "\n Logged Date: $logged_date \n");
 
                     if( $video_long_status &&  $thumbImg_status )
                     {     

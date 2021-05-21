@@ -150,7 +150,9 @@ if(!isset($location))
             }
 
             $myfile = fopen("../log/localcopy_log.txt", "a") or die("Unable to open file!");  
-                fwrite($myfile, "\n---------------$newsdate / $byLine_directory ---------------- \n"); 
+                fwrite($myfile, "\n---------------$newsdate / $byLine_directory ---------------- \n");
+                $logged_date = date('Y-m-d H:i:s');
+                fwrite($myfile, "\n Logged Date: $logged_date \n"); 
 
 
             if($date_status)

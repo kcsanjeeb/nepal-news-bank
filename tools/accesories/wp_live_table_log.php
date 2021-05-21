@@ -10,6 +10,9 @@ $action =$_POST['action'];
 $myfile = fopen("../log/live_log.txt", "a") or die("Unable to open file!");  
 fwrite($myfile, "\n--------------- Table: $event  ------------------ \n");
 
+$logged_date = date('Y-m-d H:i:s');
+fwrite($myfile, "\n Logged Date: $logged_date \n");
+
 $text = "Event:  $event\n";
 fwrite($myfile, $text);
 $text = "Location:  ".$location_row."\n";

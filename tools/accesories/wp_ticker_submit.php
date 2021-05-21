@@ -31,6 +31,9 @@ curl_close($ch);
 $myfile = fopen("../log/news_ticker_log.txt", "a") or die("Unable to open file!");  
 fwrite($myfile, "\n--------------- $title ------------------ \n");
 
+$logged_date = date('Y-m-d H:i:s');
+fwrite($myfile, "\n Logged Date: $logged_date \n");
+
 $text = "Title: $title\n";
 fwrite($myfile, $text);
 

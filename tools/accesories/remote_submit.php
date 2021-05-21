@@ -153,6 +153,9 @@ if(!isset($location))
                 $myfile = fopen("../log/remotecopy_log.txt", "a") or die("Unable to open file!");  
                 fwrite($myfile, "\n---------------$date_full / $byline_full ---------------- \n"); 
 
+                $logged_date = date('Y-m-d H:i:s');
+                fwrite($myfile, "\n Logged Date: $logged_date \n");
+
                 $dir_byline = remove_special_chars($byline_full) ;
                
                 if($isInterview)

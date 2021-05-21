@@ -32,6 +32,9 @@ if($_POST['insert'] == 'insert')
     $myfile = fopen("../log/live_log.txt", "a") or die("Unable to open file!");  
     fwrite($myfile, "\n--------------- $title ------------------ \n");
 
+    $logged_date = date('Y-m-d H:i:s');
+    fwrite($myfile, "\n Logged Date: $logged_date \n");
+
     $text = "Title:  $title\n";
     fwrite($myfile, $text);
     $text = "Iframe:  ".$iframe."\n";
@@ -60,6 +63,9 @@ if($_POST['insert'] == 'delete')
 
     $myfile = fopen("../log/live_log.txt", "a") or die("Unable to open file!");  
     fwrite($myfile, "\n--------------- Iframe: $del_title ------------------ \n");
+
+    $logged_date = date('Y-m-d H:i:s');
+    fwrite($myfile, "\n Logged Date: $logged_date \n");
 
     $text = "Title:  $del_title\n";
     fwrite($myfile, $text);
