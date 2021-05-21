@@ -13,3 +13,24 @@ my_data/archive_data/archive_video/Test Blog Ann/20210520_103248_53842_thumbnail
 Archive Video and Archive Thumbnail Pushed to Remote Succesfully
 Archive Video Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-05-21 / Test from Lenovo  ------------------ 
+my_data/archive_data/archive_video/Test from Lenovo : Folder Created
+my_data/archive_data/archive_video/Test from Lenovo/20210521_115115_32601_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Test from Lenovo/20210521_115115_32601_thumbnail.png : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 
+--------------- 2021-05-21 / Lenovo Archive Video  ------------------ 
+my_data/archive_data/archive_video/Lenovo Archive Video : Folder Created
+my_data/archive_data/archive_video/Lenovo Archive Video/20210521_120015_57943_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Lenovo Archive Video/20210521_120015_57943_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 
+--------------- 2021-05-21 / Lenovo Archive Video  ------------------ 
+my_data/archive_data/archive_video/Lenovo Archive Video : Folder Created
+my_data/archive_data/archive_video/Lenovo Archive Video/20210521_121102_94351_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Lenovo Archive Video/20210521_121102_94351_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 

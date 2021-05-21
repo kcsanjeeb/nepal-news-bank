@@ -113,7 +113,7 @@ if(!isset($location))
                     if( $video_long_status &&  $thumbImg_status )
                     {     
                         
-                        $archive_id = getId();
+                        $archive_id = getId('archive_video');
                         $created_at = date('Y-m-d H:i:s');
 
                         $time_file_name = date('H:i:s');
@@ -454,5 +454,5 @@ else
     $location_redirect = '../archivefootage.php';
 }
 
-header("Location: ".$location_redirect);
+// header("Location: ".$location_redirect);
 exit();

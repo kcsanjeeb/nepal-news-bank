@@ -193,7 +193,7 @@ if(!isset($location))
             $time_file_name = date('H:i:s');
             $time_file_name = str_replace(":","",$time_file_name);
 
-            $news_id =  getId();
+            $news_id =  getId('nas');
         
 
             $video_type_i = $_POST['video_type'] ;

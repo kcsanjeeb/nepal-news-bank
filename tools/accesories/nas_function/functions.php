@@ -9,19 +9,44 @@ function remove_special_chars($byline)
     return $clean_byline ;
 }
 
-function getId()
+function getId($table)
 {
     include "connection.php";
 
     
-    $sql_news_code = "SELECT FLOOR(RAND() * 99999) AS archive_id
-    FROM archive 
-    WHERE 'archive_id' NOT IN (SELECT archive_id FROM archive)
-    LIMIT 1;";
+    if($table == 'archive_video')
+    {
+        $sql_news_code = "SELECT FLOOR(RAND() * 99999) AS new_id
+        FROM archive_video 
+        WHERE 'archive_id' NOT IN (SELECT archive_id FROM archive_video)
+        LIMIT 1;";
+    }
+
+    if($table == 'archive_photos')
+    {
+        $sql_news_code = "SELECT FLOOR(RAND() * 99999) AS new_id
+        FROM archive_photos 
+        WHERE 'archive_id' NOT IN (SELECT archive_id FROM archive_photos)
+        LIMIT 1;";
+    }
+
+    if($table == 'nas')
+    {
+        $sql_news_code = "SELECT FLOOR(RAND() * 99999) AS new_id
+        FROM nas 
+        WHERE 'newsid' NOT IN (SELECT newsid FROM nas)
+        LIMIT 1;";
+    }
+   
+
+
+
+
+
 
     $run_query = mysqli_query($connection,$sql_news_code);
     $row = mysqli_fetch_assoc($run_query);
-    $new_seed = $row['archive_id'];
+    $new_seed = $row['new_id'];
 
     if(isset($new_seed))
     {

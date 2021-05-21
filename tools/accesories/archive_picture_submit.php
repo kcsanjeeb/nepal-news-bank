@@ -105,7 +105,7 @@ if(!isset($location))
                     if( $video_long_status &&  $thumbImg_status )
                     {     
                         
-                        $archive_id = getId();
+                        $archive_id = getId('archive_photos');
                         $created_at = date('Y-m-d H:i:s');
 
                         $time_file_name = date('H:i:s');
