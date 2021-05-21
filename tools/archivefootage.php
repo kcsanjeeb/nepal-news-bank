@@ -133,7 +133,7 @@ h4 {
             <div class="col-lg-12">
                 <div class="card shadow-lg  mb-5 bg-white rounded">
                     <div class="card-header bg-info ">
-                        <h4>Archive Video RC Creator</h4>
+                        <h4>Archive Video Creator</h4>
                     </div>
                     <div class="card-body">
                         <?php
@@ -256,9 +256,8 @@ h4 {
                                             foreach($series as $series)
                                             {
                                     ?>
-                                    <option value="<?php echo $series['id'] ; ?>"><?php echo $series['name'] ; ?>
-                                    </option>
-                                    <?php
+                                            <option value="<?php echo $series['id'] ; ?>"><?php echo $series['name'] ; ?></option>
+                                            <?php
                                             }
                                         }
                                     ?>

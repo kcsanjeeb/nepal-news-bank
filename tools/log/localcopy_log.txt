@@ -96,3 +96,7 @@ my_data/news_data/2021-05-20/Remote DB News Test/20210520_111158_87253_gallery_0
 my_data/news_data/2021-05-20/Remote DB News Test/20210520_111158_87253_gallery_1.jpg : Gallery-1 Uploaded
 >>>>>>> d7fd0924b9bb7ca744be94a7e724f6fdc0607e88
 ------------------------------------------------------- 
+---------------2021-05-21 / test user ---------------- 
+2021-05-21 Folder Created
+INFmy_data/news_data/2021-05-21/test user/20210521_084558_38977_body.docx : News Body Uploaded
+------------------------------------------------------- 
