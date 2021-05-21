@@ -429,7 +429,7 @@ strong {
                                     </svg>
                                 </label>
                                 <input type="file" id="myfile" name="descFile" xxx>
-                                <small id="emailHelp" class="form-text text-muted">accepted formats : docx, rtf, txt</small>
+                                <small id="emailHelp" class="form-text text-muted">accepted formats : docx </small>
                             </div>
 
 
@@ -543,7 +543,7 @@ strong {
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
                                 <select multiple name="newsCategories[]" id="categories" required>
 
-                              
+                               
 
                                     <?php 
                                         if(isset($category))
@@ -568,7 +568,7 @@ strong {
 
                             <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
                             <div class="form-group">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 6. Select News Tags*</label>
+                                <label class="col-lg-12 p-0  h5 text-info">Step 6. Select News Tags</label>
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
                                 <select multiple name="newsTag[]" id="tags">
 
@@ -826,7 +826,7 @@ strong {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>9.5 Video Type*</strong>
+                                        <label class="col-lg-12 p-0"><strong>9.5 Video Type</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -849,7 +849,7 @@ strong {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>9.6 Series*</strong>
+                                        <label class="col-lg-12 p-0"><strong>9.6 Series</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -864,6 +864,7 @@ strong {
 
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect2" name="series">
+                                         <option class="" value="">Select series</option>
                                        <?php 
                                         if(isset($series))
                                         {

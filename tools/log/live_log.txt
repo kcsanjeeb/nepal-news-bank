@@ -237,3 +237,9 @@ Location:  Lalitpur
 Date Time:  13th May,2021
 Live Event 3 Added Succesfully From Live Table
 ------------------------------------------------------- 
+--------------- Table: Live Event 3  ------------------ 
+Event:  Live Event 3
+Location:  Lalitpur
+Date Time:  13th May,2021
+Live Event 3 Deleted Succesfully From Live Table
+------------------------------------------------------- 

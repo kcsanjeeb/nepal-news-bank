@@ -236,7 +236,7 @@ h4 {
             <div class="col-lg-12">
                 <div class="card shadow-lg  mb-5 bg-white rounded">
                     <div class="card-header bg-info ">
-                        <h4>Archive Picture RC Creator</h4>
+                        <h4>Archive Picture Creator</h4>
                     </div>
                     <div class="card-body">
                         <?php
