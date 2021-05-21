@@ -40,10 +40,6 @@ function getId($table)
    
 
 
-
-
-
-
     $run_query = mysqli_query($connection,$sql_news_code);
     $row = mysqli_fetch_assoc($run_query);
     $new_seed = $row['new_id'];

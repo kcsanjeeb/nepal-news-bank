@@ -33,16 +33,29 @@ $err = curl_error($curl);
 curl_close($curl);
 
 $i= 0 ;
+$containing_video_array = array();
+$not_containing_video_array = array();
 foreach($result as $res)
 {
     
     $series[$i]['id'] = $res['id'];
     $series[$i]['name'] = $res['title']['rendered'];
+
+    if (strpos( strtolower($res['title']['rendered']), 'video') !== false) {
+        array_push($containing_video_array , $series[$i] );
+    }
+    else
+    {
+        array_push($not_containing_video_array , $series[$i] );
+    }
+
+
     $i++;
 
 
 }
 
+$series = array_merge($containing_video_array,$not_containing_video_array);
 
 
 $url = "$domain_url/wp-json/wp/v2/video_tag";
@@ -70,15 +83,27 @@ $err = curl_error($curl);
 curl_close($curl);
 
 $i= 0 ;
+
+
+
 foreach($result as $res)
 {
     
     $tags[$i]['id'] = $res['id'];
     $tags[$i]['name'] = $res['name'];
+
+  
+   
+
+    
+
     $i++;
 
 
 }
+
+
+
 
 
 $sql_content = "select * from archive_video order by published_date desc ";
