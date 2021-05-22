@@ -403,7 +403,7 @@ if(isset($_POST['submit_push']))
 
                             $curl = curl_init();
                             curl_setopt_array($curl, array(                    
-                            CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series_nas",
+                            CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$sn",
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_TIMEOUT => 30,
                             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -421,9 +421,13 @@ if(isset($_POST['submit_push']))
                             $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                             $err = curl_error($curl);                    
                         curl_close($curl);
+
+                      
                         // echo "<br> $domain_url/wp-json/wp/v2/haru_series/$series_nas <br>";
                         //     echo "<br> $err <br>";
                         //     echo "<br> ".print_r($response)." <br>";
+
+
 
                         if($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] == '')
                         {
@@ -440,7 +444,7 @@ if(isset($_POST['submit_push']))
                         $data_update = json_encode($response);
                         $curl = curl_init();
                             curl_setopt_array($curl, array(                    
-                            CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series_nas",
+                            CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$sn",
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_TIMEOUT => 30,
                             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
