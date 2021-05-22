@@ -395,75 +395,75 @@ if(isset($_POST['submit_push']))
 
                     if($series_nas != null)
                     {
-                        $series_nas_exp = explode("," , $series_nas);
+                            $series_nas_exp = explode("," , $series_nas);
 
-                        foreach($series_nas_exp as $sn)
-                        {                  
+                            foreach($series_nas_exp as $sn)
+                            {                  
 
 
+                            $curl = curl_init();
+                            curl_setopt_array($curl, array(                    
+                            CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series_nas",
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_TIMEOUT => 30,
+                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                            CURLOPT_CUSTOMREQUEST => "GET",
+                            // CURLOPT_POSTFIELDS => $data ,
+                                CURLOPT_HTTPHEADER => array(
+                                    "cache-control: no-cache",
+                                    "content-type: application/json",
+                                    'Authorization: Bearer '.$token_bearer.''                            ),
+                            ));
+                        
+                            $response = curl_exec($curl);
+                            $response = json_decode($response);
+                            $response = json_decode(json_encode($response) , true);
+                            $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                            $err = curl_error($curl);                    
+                        curl_close($curl);
+                        // echo "<br> $domain_url/wp-json/wp/v2/haru_series/$series_nas <br>";
+                        //     echo "<br> $err <br>";
+                        //     echo "<br> ".print_r($response)." <br>";
+
+                        if($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] == '')
+                        {
+                            $response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] = array($post_new_id);
+                        }
+                        else
+                        {
+                            array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $post_new_id);
+
+                        }
+
+
+
+                        $data_update = json_encode($response);
                         $curl = curl_init();
-                        curl_setopt_array($curl, array(                    
-                        CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series_nas",
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_TIMEOUT => 30,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => "GET",
-                        // CURLOPT_POSTFIELDS => $data ,
-                            CURLOPT_HTTPHEADER => array(
-                                "cache-control: no-cache",
-                                "content-type: application/json",
-                                'Authorization: Bearer '.$token_bearer.''                            ),
-                        ));
-                    
-                        $response = curl_exec($curl);
-                        $response = json_decode($response);
-                        $response = json_decode(json_encode($response) , true);
-                        $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                        $err = curl_error($curl);                    
-                    curl_close($curl);
-                    // echo "<br> $domain_url/wp-json/wp/v2/haru_series/$series_nas <br>";
-                    //     echo "<br> $err <br>";
-                    //     echo "<br> ".print_r($response)." <br>";
+                            curl_setopt_array($curl, array(                    
+                            CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series_nas",
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_TIMEOUT => 30,
+                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                            CURLOPT_CUSTOMREQUEST => "POST",
+                            CURLOPT_POSTFIELDS => $data_update ,
+                                CURLOPT_HTTPHEADER => array(
+                                    "cache-control: no-cache",
+                                    "content-type: application/json",
+                                    'Authorization: Bearer '.$token_bearer.''                            ),
+                            ));
+                        
+                            $response = curl_exec($curl);
+                            $response = json_decode($response);
+                            $response = json_decode(json_encode($response) , true);
+                            $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                            $err = curl_error($curl);                    
+                        curl_close($curl);
 
-                    if($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] == '')
-                    {
-                        $response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] = array($post_new_id);
-                    }
-                    else
-                    {
-                        array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $post_new_id);
-
-                    }
-
-
-
-                    $data_update = json_encode($response);
-                    $curl = curl_init();
-                        curl_setopt_array($curl, array(                    
-                        CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series_nas",
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_TIMEOUT => 30,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => "POST",
-                        CURLOPT_POSTFIELDS => $data_update ,
-                            CURLOPT_HTTPHEADER => array(
-                                "cache-control: no-cache",
-                                "content-type: application/json",
-                                'Authorization: Bearer '.$token_bearer.''                            ),
-                        ));
-                    
-                        $response = curl_exec($curl);
-                        $response = json_decode($response);
-                        $response = json_decode(json_encode($response) , true);
-                        $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                        $err = curl_error($curl);                    
-                    curl_close($curl);
-
-                    // echo "<br> $domain_url/wp-json/wp/v2/haru_series/$series_nas <br>";
-                    // echo "<br> $err <br>";
-                    // echo "<br> $respCode <br>";
-                    // echo "<br> ".print_r($response)." <br>";
-                    }
+                        // echo "<br> $domain_url/wp-json/wp/v2/haru_series/$series_nas <br>";
+                        // echo "<br> $err <br>";
+                        // echo "<br> $respCode <br>";
+                        // echo "<br> ".print_r($response)." <br>";
+                        }
                 }
            
 

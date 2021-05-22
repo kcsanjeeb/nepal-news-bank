@@ -523,7 +523,7 @@ if(!isset($location))
                 // $vimeo_videoextra = "NULL";
             }
 
-            if($_POST['series'])
+            if(isset($_POST['series']))
             {
                 // $series_name = $_POST['series'] ;
                 // $series = "'$series_name'";

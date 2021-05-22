@@ -61,3 +61,12 @@ my_data/archive_data/archive_video/Multiple Series Test/20210522_175454_84242_th
 Archive Video and Archive Thumbnail Pushed to Remote Succesfully
 Archive Video Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-05-22 / test a V  ------------------ 
+
+ Logged Date: 2021-05-22 22:39:51 
+my_data/archive_data/archive_video/test a V : Folder Created
+my_data/archive_data/archive_video/test a V/20210522_223953_59238_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/test a V/20210522_223953_59238_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 

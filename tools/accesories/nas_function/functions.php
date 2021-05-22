@@ -46,7 +46,7 @@ function getId($table)
 
     if(isset($new_seed))
     {
-        $new_seed = $row['archive_id'];
+        $new_seed = $row['new_id'];
     }
     else
     {

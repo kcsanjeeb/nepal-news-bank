@@ -480,5 +480,5 @@ else
     $location_redirect = '../archivefootage.php';
 }
 
-// header("Location: ".$location_redirect);
+header("Location: ".$location_redirect);
 exit();

@@ -100,3 +100,67 @@ my_data/news_data/2021-05-20/Remote DB News Test/20210520_111158_87253_gallery_1
 2021-05-21 Folder Created
 INFmy_data/news_data/2021-05-21/test user/20210521_084558_38977_body.docx : News Body Uploaded
 ------------------------------------------------------- 
+---------------2021-05-22 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-22 22:29:08 
+2021-05-22 Folder Created
+INFmy_data/news_data/2021-05-22/Updated Attributes/20210522_222908__audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_222908__body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_222908__videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_222908__thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_222908__videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_222908__videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_222908__gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_222908__gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+---------------2021-05-22 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-22 22:32:03 
+Updated Attributes Folder Created
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223203__body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223203__videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223203__thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223203__videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223203__videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223203__gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223203__gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+---------------2021-05-22 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-22 22:33:40 
+Updated Attributes Folder Created
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223340__audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223340__body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223340__videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223340__thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223340__videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223340__videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223340__gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223340__gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+---------------2021-05-22 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-22 22:34:36 
+Updated Attributes Folder Created
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223436_15142_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223436_15142_body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223436_15142_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223436_15142_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223436_15142_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223436_15142_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223436_15142_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223436_15142_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+---------------2021-05-22 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-22 22:35:27 
+Updated Attributes Folder Created
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223527_52839_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223527_52839_body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223527_52839_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223527_52839_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223527_52839_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223527_52839_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223527_52839_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-22/Updated Attributes/20210522_223527_52839_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
