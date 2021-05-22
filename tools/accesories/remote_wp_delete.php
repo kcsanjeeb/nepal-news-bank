@@ -268,7 +268,7 @@ if( isset($_POST['news_id']) && isset($_POST['wp_id']))
                 ),
             ));
 
-            if($wp_media_id !== null)
+            if($wp_media_id != null)
             {
 
            
