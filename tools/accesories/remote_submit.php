@@ -59,6 +59,7 @@ if(!isset($location))
                 $video_type = $row_content['video_type'];
                 $local_published_date = $row_content['local_published_date'];
 
+               
                 // if($category_full == '172')
                 if($category_full == $_SESSION['interview_id'])
                 {
@@ -624,6 +625,9 @@ if(!isset($location))
                         $push_audio = $audio_full_web;
                     }
 
+
+                    
+                 
 
                     
                

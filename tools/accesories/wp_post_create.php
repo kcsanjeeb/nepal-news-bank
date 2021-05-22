@@ -395,6 +395,12 @@ if(isset($_POST['submit_push']))
 
                     if($series_nas != null)
                     {
+                        $series_nas_exp = explode("," , $series_nas);
+
+                        foreach($series_nas_exp as $sn)
+                        {                  
+
+
                         $curl = curl_init();
                         curl_setopt_array($curl, array(                    
                         CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series_nas",
@@ -418,6 +424,18 @@ if(isset($_POST['submit_push']))
                     // echo "<br> $domain_url/wp-json/wp/v2/haru_series/$series_nas <br>";
                     //     echo "<br> $err <br>";
                     //     echo "<br> ".print_r($response)." <br>";
+
+                    if($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] == '')
+                    {
+                        $response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] = array($post_new_id);
+                    }
+                    else
+                    {
+                        array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $post_new_id);
+
+                    }
+
+
 
                     $data_update = json_encode($response);
                     $curl = curl_init();
@@ -446,6 +464,7 @@ if(isset($_POST['submit_push']))
                     // echo "<br> $respCode <br>";
                     // echo "<br> ".print_r($response)." <br>";
                     }
+                }
            
 
                        
