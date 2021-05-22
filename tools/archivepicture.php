@@ -335,7 +335,7 @@ h4 {
                             </div>
 
                             <div class="form-group">
-                                <label class=" p-0 col-lg-12 h5 text-info">Step 3. Enter Description *
+                                <label class=" p-0 col-lg-12 h5 text-info">Step 3. Enter Description 
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -352,7 +352,7 @@ h4 {
 
 
                             <div class="form-group mt-3">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 4. Select Series* <svg
+                                <label class="col-lg-12 p-0  h5 text-info">Step 4. Select Series <svg
                                         data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -386,7 +386,7 @@ h4 {
 
                             <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
                             <div class="form-group">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Tags* <svg
+                                <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Tags <svg
                                         data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -444,7 +444,7 @@ h4 {
 
                             <!-- Select one image for news thumbnail-->
                             <div class="form-group ">
-                                <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 7. Select Thumbnail *
+                                <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 7. Select Thumbnail 
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
