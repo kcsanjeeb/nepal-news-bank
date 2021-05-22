@@ -232,7 +232,10 @@ if(isset($_POST['submit_push']))
                     $cmb2  = array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
                     'haru_video_url_type'=> 'insert',
                     'haru_video_url' => array('mp4' => $push_videolong_disp , 'webm' => '')
-                    ));
+                        ),
+
+                'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series_nas")
+                );
 
                     $push_videoextra_json = $push_videoextra_json ;
                     $push_videoLazy_json = $push_videoLazy_json ;
@@ -244,7 +247,9 @@ if(isset($_POST['submit_push']))
                     $cmb2  = array('haru_video_metabox' => array('haru_video_server' => 'vimeo',
                     'haru_video_id'=> $vimeo_videolong
                 
-                    ));
+                ),
+                'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series_nas")
+                );
 
                     $push_videoextra_json = "https://vimeo.com/".$vimeo_video_extra ;
                     $push_videoLazy_json = "https://vimeo.com/".$vimeo_videolazy ;
