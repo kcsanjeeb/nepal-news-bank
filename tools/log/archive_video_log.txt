@@ -61,12 +61,21 @@ my_data/archive_data/archive_video/Multiple Series Test/20210522_175454_84242_th
 Archive Video and Archive Thumbnail Pushed to Remote Succesfully
 Archive Video Remote Post Created Succesfully
 ------------------------------------------------------- 
+<<<<<<< HEAD
 --------------- 2021-05-22 / test a V  ------------------ 
 
  Logged Date: 2021-05-22 22:39:51 
 my_data/archive_data/archive_video/test a V : Folder Created
 my_data/archive_data/archive_video/test a V/20210522_223953_59238_video.mp4 : Archive Video Uploaded Succesfully
 my_data/archive_data/archive_video/test a V/20210522_223953_59238_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+=======
+--------------- 2021-05-22 / archive video series test  ------------------ 
+
+ Logged Date: 2021-05-22 21:40:11 
+my_data/archive_data/archive_video/archive video series test : Folder Created
+my_data/archive_data/archive_video/archive video series test/20210522_214012_84377_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/archive video series test/20210522_214012_84377_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+>>>>>>> 4bdb4f1c5b4d45186109d1e6d2b7173efb763e85
 Archive Video and Archive Thumbnail Pushed to Remote Succesfully
 Archive Video Remote Post Created Succesfully
 ------------------------------------------------------- 

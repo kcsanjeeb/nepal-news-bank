@@ -70,7 +70,7 @@ justify-content: space-around; color:#fff; font-size:25px; font-weight:600">
     <ul class="navbar-nav">
         <li class="nav-item <?php echo $localcopy_page ; ?>">
             <a class="nav-link mr-3"
-                href="localcopycreator.php">Local-Copy-Creator
+                href="localcopycreator.php">News-collector
             </a>
         </li>
        
