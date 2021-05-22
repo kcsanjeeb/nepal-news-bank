@@ -107,3 +107,17 @@ INFmy_data/news_data/2021-05-21/test user/20210521_084558_38977_body.docx : News
 INFmy_data/news_data/2021-05-22/check news series/20210522_213104__body.docx : News Body Uploaded
 my_data/news_data/2021-05-22/check news series/20210522_213104__videolong.mp4 : Video Long Uploaded
 ------------------------------------------------------- 
+---------------2021-05-22 / normal news test ---------------- 
+
+ Logged Date: 2021-05-22 22:27:16 
+normal news test Folder Created
+my_data/news_data/2021-05-22/normal news test/20210522_222716__body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/normal news test/20210522_222716__videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 
+---------------2021-05-22 / news test 111 ---------------- 
+
+ Logged Date: 2021-05-22 22:28:08 
+news test 111 Folder Created
+my_data/news_data/2021-05-22/news test 111/20210522_222808__body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/news test 111/20210522_222808__videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 
