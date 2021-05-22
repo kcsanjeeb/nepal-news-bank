@@ -34,3 +34,30 @@ my_data/archive_data/archive_video/Lenovo Archive Video/20210521_121102_94351_th
 Archive Video and Archive Thumbnail Pushed to Remote Succesfully
 Archive Video Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-05-22 / Multiple Series Test  ------------------ 
+
+ Logged Date: 2021-05-22 17:45:11 
+my_data/archive_data/archive_video/Multiple Series Test : Folder Created
+my_data/archive_data/archive_video/Multiple Series Test/20210522_174512_37681_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Multiple Series Test/20210522_174512_37681_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 
+--------------- 2021-05-22 / Multiple Series Test  ------------------ 
+
+ Logged Date: 2021-05-22 17:51:42 
+my_data/archive_data/archive_video/Multiple Series Test : Folder Created
+my_data/archive_data/archive_video/Multiple Series Test/20210522_175143_58954_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Multiple Series Test/20210522_175143_58954_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 
+--------------- 2021-05-22 / Multiple Series Test  ------------------ 
+
+ Logged Date: 2021-05-22 17:54:53 
+my_data/archive_data/archive_video/Multiple Series Test : Folder Created
+my_data/archive_data/archive_video/Multiple Series Test/20210522_175454_84242_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Multiple Series Test/20210522_175454_84242_thumbnail.png : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 

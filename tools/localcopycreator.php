@@ -273,7 +273,7 @@ strong {
 
 <body>
 
-   <?php
+    <?php
         include "accesories/navbar/nav.php";
     ?>
     <br>
@@ -366,7 +366,7 @@ strong {
                                             d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                     </svg>
                                 </label>
-                                <input class=" form-control col-lg-2" type="date"  name="newsdate"
+                                <input class=" form-control col-lg-2" type="date" name="newsdate"
                                     value="<?php echo $selected_date ; ?>" xxx>
                                 <!-- make date today's date -->
 
@@ -543,7 +543,7 @@ strong {
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
                                 <select multiple name="newsCategories[]" id="categories" required>
 
-                               
+
 
                                     <?php 
                                         if(isset($category))
@@ -642,11 +642,11 @@ strong {
                             </div>
 
 
-                           
+
 
                             <div class="form-group">
-                            <label class="col-lg-12 p-0"><strong>8.1 Gallery Images JPG / PNG</strong>
-                            <svg data-toggle="popover" title="News Title"
+                                <label class="col-lg-12 p-0"><strong>8.1 Gallery Images JPG / PNG</strong>
+                                    <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
@@ -658,8 +658,7 @@ strong {
                                     </svg>
 
                                 </label><br>
-                                <input type="file" id="pro-image" name="galleryImage[]" 
-                                    accept="image/*" multiple>
+                                <input type="file" id="pro-image" name="galleryImage[]" accept="image/*" multiple>
                                 <!-- onclick="$('#pro-image').click()" -->
                                 <div class="preview-images-zone" style="display:none">
                                 </div>
@@ -715,13 +714,13 @@ strong {
                                                 {
 
                                             ?>
-                                                <option value="<?php echo $district ; ?>"><?php echo $district ; ?></option>
+                                            <option value="<?php echo $district ; ?>"><?php echo $district ; ?></option>
 
                                             <?php
                                                 }
                                             ?>
-                                            
-                                    
+
+
                                         </select>
                                     </div>
 
@@ -744,12 +743,12 @@ strong {
 
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect2" name="reporter" xxx>
-                                        <?php
+                                            <?php
                                                 foreach($reporter_global as $reporter)
                                                 {
 
                                             ?>
-                                                <option value="<?php echo $reporter ; ?>"><?php echo $reporter ; ?></option>
+                                            <option value="<?php echo $reporter ; ?>"><?php echo $reporter ; ?></option>
 
                                             <?php
                                                 }
@@ -779,7 +778,7 @@ strong {
                                                 {
 
                                             ?>
-                                                <option value="<?php echo $cman ; ?>"><?php echo $cman ; ?></option>
+                                            <option value="<?php echo $cman ; ?>"><?php echo $cman ; ?></option>
 
                                             <?php
                                                 }
@@ -816,7 +815,7 @@ strong {
                                                 {
 
                                             ?>
-                                                <option value="<?php echo $cby ; ?>"><?php echo $cby ; ?></option>
+                                            <option value="<?php echo $cby ; ?>"><?php echo $cby ; ?></option>
 
                                             <?php
                                                 }
@@ -863,21 +862,29 @@ strong {
                                             </svg>
 
                                         </label>
-                                        <select class="form-control" id="exampleFormControlSelect2" name="series">
-                                         <option class="" value="">Select series</option>
-                                       <?php 
+                                        
+                                        <select multiple name="series[]" id="series">
+
+                                    <?php 
                                         if(isset($series))
                                         {
                                             foreach($series as $series)
                                             {
                                     ?>
-                                    <option value="<?php echo $series['id'] ; ?>"><?php echo $series['name'] ; ?>
-                                    </option>
+                                    <option value="<?php echo $series['id'] ; ?>"><?php echo $series['name'] ; ?></option>
                                     <?php
                                             }
                                         }
                                     ?>
-                                        </select>
+                                    <!-- <option value="141">Business</option>
+                                    <option value="142">Entertainment</option>
+                                    <option value="134">Sports</option>
+                                    <option value="135">International</option>
+                                    <option value="136">Glamour</option>
+                                   -->
+
+
+                                </select>
                                     </div>
 
                                     <!-- <div class="form-group">
@@ -918,8 +925,10 @@ strong {
                             <button type="submit" class="btn btn-primary" name="submit">Create local copy</button>
 
                             <label class="col-lg-12 p-0 h5 text-info mt-2">Step 11.</label>
-                            <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete local copy</button></span>
-                            <span>please <strong><a href="./remotecopycreator.php">go to Remote Copy Creator</a></strong> tool to delete</span>
+                            <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete local
+                                    copy</button></span>
+                            <span>please <strong><a href="./remotecopycreator.php">go to Remote Copy
+                                        Creator</a></strong> tool to delete</span>
 
                         </form>
                     </div>
@@ -1189,6 +1198,38 @@ strong {
         });
         </script>
 
+        
+<script>
+        $(function() {
+            // Apply the plugin 
+            var series = $('#series').filterMultiSelect();
+
+            $('#jsonbtn3').click((e) => {
+                var b = true;
+                var result = {
+                    ...JSON.parse(series.getSelectedOptionsAsJson(b)),
+
+                }
+                $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+            });
+            $('#jsonbtn3').click((e) => {
+                var b = false;
+                var result = {
+                    ...JSON.parse(series.getSelectedOptionsAsJson(b)),
+
+                }
+                $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+            });
+            $('#form').on('keypress keyup', function(e) {
+                var keyCode = e.keyCode || e.which;
+                if (keyCode === 13) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+        </script>
+
         <!-- count character in news title -->
         <script>
         function charcountupdate(str) {
@@ -1316,6 +1357,7 @@ strong {
 
         });
         </script>
+
 
 </body>
 

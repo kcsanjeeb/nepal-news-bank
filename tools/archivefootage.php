@@ -141,7 +141,6 @@ h4 {
     margin-bottom: 0;
     font-size: 1.2rem;
 }
-
 </style>
 
 <body>
@@ -238,7 +237,7 @@ h4 {
                                 <input class="form-control" name="title" placeholder="Title">
 
                             </div>
-                          
+
                             <div class="form-group">
                                 <label class=" p-0 col-lg-12 h5 text-info">Step 3. Enter Description *
                                     <svg data-toggle="popover" title="News Title"
@@ -256,12 +255,12 @@ h4 {
                                 <textarea class="form-control" name="description" placeholder="Description"></textarea>
 
                             </div>
-                         
+
 
                             <!-- series-->
                             <div class="form-group mt-3">
                                 <label class="col-lg-12 p-0  h5 text-info">Step 4. Select Series*
-                                <svg data-toggle="popover" title="News Title"
+                                    <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
@@ -273,16 +272,17 @@ h4 {
                                     </svg>
                                 </label>
 
-                                <select class="form-control" id="exampleFormControlSelect2" name="series" required>
-                               
+                                <select multiple class="form-control" id="series" name="series[]" required>
+
                                     <?php 
                                         if(isset($series))
                                         {
                                             foreach($series as $series)
                                             {
                                     ?>
-                                            <option value="<?php echo $series['id'] ; ?>"><?php echo $series['name'] ; ?></option>
-                                            <?php
+                                    <option value="<?php echo $series['id'] ; ?>"><?php echo $series['name'] ; ?>
+                                    </option>
+                                    <?php
                                             }
                                         }
                                     ?>
@@ -292,7 +292,7 @@ h4 {
                             <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
                             <div class="form-group">
                                 <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Tags*
-                                <svg data-toggle="popover" title="News Title"
+                                    <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
@@ -305,7 +305,7 @@ h4 {
                                 </label>
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" required> -->
                                 <select multiple name="newsTag[]" id="tags">
-                                 
+
                                     <?php 
                                         if(isset($tags))
                                         {
@@ -382,7 +382,7 @@ h4 {
                                             class="btn btn-primary mt-2">
                                     </div>
                                     <div>
-                                  
+
                                     </div>
 
 
@@ -442,21 +442,26 @@ h4 {
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Are you sure you want to delete Archive Video <strong> <?php echo $byline ; ?> ? </strong>
+                                        Are you sure you want to delete Archive Video <strong> <?php echo $byline ; ?> ?
+                                        </strong>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cancel</button>
                                         <form action="accesories/delete_archive_video.php" method="POST">
-                                            <input type="hidden" class="btn btn-danger" name="archive_id" value="<?php echo $archive_id ; ?>">
-                                            <input type="hidden" class="btn btn-danger" name="wp_id" value="<?php echo $wp_id ; ?>">
-                                            <input type="hidden" class="btn btn-danger" name="wp_media_id" value="<?php echo $media_id ; ?>">
-                                            <input type="hidden" class="btn btn-danger" name="byline" value="<?php echo $byline ; ?>">
-                                            
+                                            <input type="hidden" class="btn btn-danger" name="archive_id"
+                                                value="<?php echo $archive_id ; ?>">
+                                            <input type="hidden" class="btn btn-danger" name="wp_id"
+                                                value="<?php echo $wp_id ; ?>">
+                                            <input type="hidden" class="btn btn-danger" name="wp_media_id"
+                                                value="<?php echo $media_id ; ?>">
+                                            <input type="hidden" class="btn btn-danger" name="byline"
+                                                value="<?php echo $byline ; ?>">
+
                                             <input type="hidden" class="btn btn-danger" name="video"
-                                            value="<?php echo $video ; ?>">
+                                                value="<?php echo $video ; ?>">
                                             <input type="hidden" class="btn btn-danger" name="thumbnail"
-                                            value="<?php echo $thumbnail ; ?>">
+                                                value="<?php echo $thumbnail ; ?>">
 
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
@@ -561,6 +566,37 @@ h4 {
             }
         }
     }
+    </script>
+
+    <script>
+    $(function() {
+        // Apply the plugin 
+        var series = $('#series').filterMultiSelect();
+
+        $('#jsonbtn3').click((e) => {
+            var b = true;
+            var result = {
+                ...JSON.parse(series.getSelectedOptionsAsJson(b)),
+
+            }
+            $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+        });
+        $('#jsonbtn3').click((e) => {
+            var b = false;
+            var result = {
+                ...JSON.parse(series.getSelectedOptionsAsJson(b)),
+
+            }
+            $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+        });
+        $('#form').on('keypress keyup', function(e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    });
     </script>
     <script>
     $(function() {

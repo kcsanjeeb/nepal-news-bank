@@ -349,10 +349,11 @@ h4 {
                                 </label>
                                 <textarea class="form-control" name="description" placeholder="Description"></textarea>
                             </div>
-                         
+
 
                             <div class="form-group mt-3">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 4. Select Series* <svg data-toggle="popover" title="News Title"
+                                <label class="col-lg-12 p-0  h5 text-info">Step 4. Select Series* <svg
+                                        data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
@@ -362,11 +363,11 @@ h4 {
                                         <path
                                             d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                     </svg>
-                            </label>
+                                </label>
 
 
-                                <select class="form-control" id="exampleFormControlSelect2" name="series" required>
-                                
+                                <select multiple class="form-control" id="series" name="series[]" required>
+
                                     <?php 
                                         if(isset($series))
                                         {
@@ -374,6 +375,7 @@ h4 {
                                             {
                                     ?>
                                     <option value="<?php echo $series['id'] ; ?>"><?php echo $series['name'] ; ?>
+
                                     </option>
                                     <?php
                                             }
@@ -384,7 +386,8 @@ h4 {
 
                             <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
                             <div class="form-group">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Tags* <svg data-toggle="popover" title="News Title"
+                                <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Tags* <svg
+                                        data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
@@ -394,10 +397,10 @@ h4 {
                                         <path
                                             d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                     </svg>
-</label>
+                                </label>
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" required> -->
                                 <select multiple name="newsTag[]" id="tags">
-                                   
+
 
                                     <?php 
                                         if(isset($tags))
@@ -417,9 +420,9 @@ h4 {
                             </div>
 
 
-                                   
-                                        <div class="form-group ">
-                                        <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 6. Select Gallery Image *
+
+                            <div class="form-group ">
+                                <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 6. Select Gallery Image *
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -432,14 +435,13 @@ h4 {
                                     </svg>
 
                                 </label> <br>
-                                            <input type="file" id="pro-image" name="galleryImage[]" 
-                                                accept="image/*" multiple>
-                                            <!-- onclick="$('#pro-image').click()" -->
-                                            <div class="preview-images-zone" style="display:none">
-                                            </div>
-                                        </div>
-                                   
-                               
+                                <input type="file" id="pro-image" name="galleryImage[]" accept="image/*" multiple>
+                                <!-- onclick="$('#pro-image').click()" -->
+                                <div class="preview-images-zone" style="display:none">
+                                </div>
+                            </div>
+
+
                             <!-- Select one image for news thumbnail-->
                             <div class="form-group ">
                                 <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 7. Select Thumbnail *
@@ -466,7 +468,7 @@ h4 {
                                             class="btn btn-primary mt-2">
                                     </div>
                                     <div>
-                                    
+
                                     </div>
 
 
@@ -545,15 +547,15 @@ h4 {
                                             <input type="hidden" class="btn btn-danger" name="byline"
                                                 value="<?php echo $byline ; ?>">
 
-                                                <input type="hidden" class="btn btn-danger" name="thumbnail"
-                                            value="<?php echo $thumbnail ; ?>">
+                                            <input type="hidden" class="btn btn-danger" name="thumbnail"
+                                                value="<?php echo $thumbnail ; ?>">
 
                                             <input type="hidden" class="btn btn-danger" name="gallery"
-                                            value="<?php echo $gallery ; ?>">
+                                                value="<?php echo $gallery ; ?>">
 
-                                            
 
-                                            
+
+
 
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
@@ -562,7 +564,7 @@ h4 {
                             </div>
                         </div>
 
-                        
+
                         <?php
                         $counter++;
                         }
@@ -699,6 +701,37 @@ h4 {
             }
         }
     }
+    </script>
+
+    <script>
+    $(function() {
+        // Apply the plugin 
+        var series = $('#series').filterMultiSelect();
+
+        $('#jsonbtn3').click((e) => {
+            var b = true;
+            var result = {
+                ...JSON.parse(series.getSelectedOptionsAsJson(b)),
+
+            }
+            $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+        });
+        $('#jsonbtn3').click((e) => {
+            var b = false;
+            var result = {
+                ...JSON.parse(series.getSelectedOptionsAsJson(b)),
+
+            }
+            $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+        });
+        $('#form').on('keypress keyup', function(e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    });
     </script>
     <script>
     $(function() {

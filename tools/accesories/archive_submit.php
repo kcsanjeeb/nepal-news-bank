@@ -48,7 +48,19 @@ if(!isset($location))
                     
 
                     $series = $_POST['series'];
-                    $series = mysqli_real_escape_string($connection, $series);
+                    
+                    $series_final_array = array();
+                    
+                    foreach($series as $s)
+                    {
+                        if($s != '')
+                        {
+                            array_push( $series_final_array ,$s );
+                        }
+                    }
+                    $series = implode(',', $series_final_array);
+
+
 
                     $description = $_POST['description'];
                     $description = mysqli_real_escape_string($connection, $description);
@@ -73,6 +85,9 @@ if(!isset($location))
                         }
                     }
                     $tags = implode(',', $tags_final_array);
+
+
+
 
 
 
@@ -315,64 +330,72 @@ if(!isset($location))
                         $text = "Archive Video Remote Post Created Succesfully\n";
                         fwrite($myfile, $text);
 
-                        $curl = curl_init();
-                            curl_setopt_array($curl, array(                    
-                            CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series",
-                            CURLOPT_RETURNTRANSFER => true,
-                            CURLOPT_TIMEOUT => 30,
-                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                            CURLOPT_CUSTOMREQUEST => "GET",
-                            // CURLOPT_POSTFIELDS => $data ,
-                                CURLOPT_HTTPHEADER => array(
-                                    "cache-control: no-cache",
-                                    "content-type: application/json",
-                                    'Authorization: Bearer '.$token_bearer.''                            ),
-                            ));
+
+
                         
-                            $response = curl_exec($curl);
-                            $response = json_decode($response);
-                            $response = json_decode(json_encode($response) , true);
-                            $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                            $err = curl_error($curl);                    
-                        curl_close($curl);
-
-
-                        if($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] == '')
+                        foreach($series_final_array as $sr)
                         {
-                            $response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] = array($archive_footage_id);
-                        }
-                        else
-                        {
-                            array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $archive_footage_id);
+
+                      
+
+                            $curl = curl_init();
+                                curl_setopt_array($curl, array(                    
+                                CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$sr",
+                                CURLOPT_RETURNTRANSFER => true,
+                                CURLOPT_TIMEOUT => 30,
+                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                CURLOPT_CUSTOMREQUEST => "GET",
+                                // CURLOPT_POSTFIELDS => $data ,
+                                    CURLOPT_HTTPHEADER => array(
+                                        "cache-control: no-cache",
+                                        "content-type: application/json",
+                                        'Authorization: Bearer '.$token_bearer.''                            ),
+                                ));
+                            
+                                $response = curl_exec($curl);
+                                $response = json_decode($response);
+                                $response = json_decode(json_encode($response) , true);
+                                $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                                $err = curl_error($curl);                    
+                            curl_close($curl);
+
+
+                            if($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] == '')
+                            {
+                                $response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] = array($archive_footage_id);
+                            }
+                            else
+                            {
+                                array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $archive_footage_id);
+
+                            }
+                            // array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $archive_footage_id);
+                            
+                            
+                            $data_update = json_encode($response);
+                            $curl = curl_init();
+                                curl_setopt_array($curl, array(                    
+                                CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$sr",
+                                CURLOPT_RETURNTRANSFER => true,
+                                CURLOPT_TIMEOUT => 30,
+                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                CURLOPT_CUSTOMREQUEST => "POST",
+                                CURLOPT_POSTFIELDS => $data_update ,
+                                    CURLOPT_HTTPHEADER => array(
+                                        "cache-control: no-cache",
+                                        "content-type: application/json",
+                                        'Authorization: Bearer '.$token_bearer.''                            ),
+                                ));
+                            
+                                $response = curl_exec($curl);
+                                $response = json_decode($response);
+                                $response = json_decode(json_encode($response) , true);
+                                $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                                $err = curl_error($curl);                    
+                            curl_close($curl);
+
 
                         }
-                        // array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $archive_footage_id);
-                        
-                        
-                        $data_update = json_encode($response);
-                        $curl = curl_init();
-                            curl_setopt_array($curl, array(                    
-                            CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$series",
-                            CURLOPT_RETURNTRANSFER => true,
-                            CURLOPT_TIMEOUT => 30,
-                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                            CURLOPT_CUSTOMREQUEST => "POST",
-                            CURLOPT_POSTFIELDS => $data_update ,
-                                CURLOPT_HTTPHEADER => array(
-                                    "cache-control: no-cache",
-                                    "content-type: application/json",
-                                    'Authorization: Bearer '.$token_bearer.''                            ),
-                            ));
-                        
-                            $response = curl_exec($curl);
-                            $response = json_decode($response);
-                            $response = json_decode(json_encode($response) , true);
-                            $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                            $err = curl_error($curl);                    
-                        curl_close($curl);
-
-
-
                         // store files in folder
                         // store in database 
 
