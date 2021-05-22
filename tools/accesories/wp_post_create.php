@@ -425,7 +425,7 @@ if(isset($_POST['submit_push']))
                       
                         // echo "<br> $domain_url/wp-json/wp/v2/haru_series/$series_nas <br>";
                         //     echo "<br> $err <br>";
-                        //     echo "<br> ".print_r($response)." <br>";
+                            // echo "<br> ".print_r($response)." <br>";
 
 
 

@@ -11,16 +11,6 @@ $path_uri_exp = explode("/" , $path_uri);
 include $path_root."/".$path_uri_exp[1]."/".$path_uri_exp[2]."/global/local_phpmyadmin.php";
 
 
-
-
-
-        // $host = "localhost";
-        // $user = 'root';
-        // $password = 'root';
-        // $db_name="nepalnewsbank";
-        // $connection= mysqli_connect($host , $user , $password , $db_name);
-
-
         $host = $phpmyadmin_remote_host;
         $user = $phpmyadmin_user;
         $password = $phpmyadmin_password;

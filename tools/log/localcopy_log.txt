@@ -187,3 +187,17 @@ my_data/news_data/2021-05-22/news test 111/20210522_222808__body.docx : News Bod
 my_data/news_data/2021-05-22/news test 111/20210522_222808__videolong.mp4 : Video Long Uploaded
 >>>>>>> 4bdb4f1c5b4d45186109d1e6d2b7173efb763e85
 ------------------------------------------------------- 
+---------------2021-05-22 / news collector test ---------------- 
+
+ Logged Date: 2021-05-22 22:46:21 
+news collector test Folder Created
+my_data/news_data/2021-05-22/news collector test/20210522_224621_25297_body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/news collector test/20210522_224621_25297_videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 
+---------------2021-05-22 / today new news check ---------------- 
+
+ Logged Date: 2021-05-22 23:35:40 
+today new news check Folder Created
+my_data/news_data/2021-05-22/today new news check/20210522_233540_99937_body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/today new news check/20210522_233540_99937_videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 

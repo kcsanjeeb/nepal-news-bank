@@ -348,24 +348,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                     <div class="col-9">
 
-                    <?php
-if($status_dis_pushhh != 'disabled')
-{ 
-?>
-        <form method="POST" action='accesories/local_post_delete.php'>
-            <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
-            <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
-            <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
-            <input type="hidden" name="type" value="<?php echo $category_list ?>">
-
-            <input type="submit" value="Delete Local Data" class="btn btn-danger" name="del_nas">
-        </form>
-        <?php
-
-}
-?>
-<hr/>
-
+                  
 
                         <form method="POST" action="accesories/remote_submit.php">
 
@@ -1296,9 +1279,32 @@ if($status_dis_pushhh != 'disabled')
 
 
                     </div>
+
+                 
+
+                    <?php
+if($status_dis_pushhh != 'disabled')
+{ 
+?>
+   <hr/>
+        <form method="POST" action='accesories/local_post_delete.php'>
+            <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
+            <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
+            <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
+            <input type="hidden" name="type" value="<?php echo $category_list ?>">
+
+            <input type="submit" value="Delete Local Data" class="btn btn-danger" name="del_nas">
+        </form>
+        <hr/>
+        <?php
+
+}
+?>
+
                 </div>
             </div>
 
+   
 
 
 
