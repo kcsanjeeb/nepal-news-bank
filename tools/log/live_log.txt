@@ -243,3 +243,25 @@ Location:  Lalitpur
 Date Time:  13th May,2021
 Live Event 3 Deleted Succesfully From Live Table
 ------------------------------------------------------- 
+--------------- Table: live event 3  ------------------ 
+
+ Logged Date: 2021-05-22 21:49:32 
+Event:  live event 3
+Location:  kathmandu, nepal
+Date Time:  13th May,2021
+live event 3 Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Live 5 @ NNB ------------------ 
+
+ Logged Date: 2021-05-22 21:50:18 
+Title:  Live 5 @ NNB
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/aC7DSKFUtVI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 
+--------------- Live 2 @ NNB ------------------ 
+
+ Logged Date: 2021-05-22 21:53:41 
+Title:  Live 2 @ NNB
+Iframe:  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/HSSSSkblIE4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+Live Iframe Added Succesfully 
+------------------------------------------------------- 

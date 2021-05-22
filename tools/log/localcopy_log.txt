@@ -100,3 +100,10 @@ my_data/news_data/2021-05-20/Remote DB News Test/20210520_111158_87253_gallery_1
 2021-05-21 Folder Created
 INFmy_data/news_data/2021-05-21/test user/20210521_084558_38977_body.docx : News Body Uploaded
 ------------------------------------------------------- 
+---------------2021-05-22 / check news series ---------------- 
+
+ Logged Date: 2021-05-22 21:31:04 
+2021-05-22 Folder Created
+INFmy_data/news_data/2021-05-22/check news series/20210522_213104__body.docx : News Body Uploaded
+my_data/news_data/2021-05-22/check news series/20210522_213104__videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 

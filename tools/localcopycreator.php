@@ -282,7 +282,7 @@ strong {
             <div class="col-lg-12">
                 <div class="card shadow-lg  mb-5 bg-white rounded">
                     <div class="card-header bg-info ">
-                        <h4>LOCAL COPY CREATOR</h4>
+                        <h4>NEWS COLLECTOR</h4>
                     </div>
                     <div class="card-body">
 

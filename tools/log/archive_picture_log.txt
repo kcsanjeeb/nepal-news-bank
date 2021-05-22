@@ -48,3 +48,15 @@ my_data/archive_data/archive_picture/Corona Vaccines picture/20210520_083136_297
 >>>>>>> aaeb2f8eb89b29d21e546034611b492afc758818
  Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-05-22 / Archive picture series test  ------------------ 
+
+ Logged Date: 2021-05-22 21:36:37 
+my_data/archive_data/archive_picture/Archive picture series test : Folder Created
+my_data/archive_data/archive_picture/Archive picture series test/20210522_213638_50244_photo_0.jpg : Gallery-0 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive picture series test/20210522_213638_50244_photo_1.jpg : Gallery-1 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive picture series test/20210522_213638_50244_thumbnail.jpg : Thumbnail Uplaoded Succesfully
+ : Thumbnail  Pushed to Remote Succesfully
+20210522_213638_50244_photo_0.jpg : Gallery  Pushed to Remote Succesfully
+20210522_213638_50244_photo_1.jpg : Gallery  Pushed to Remote Succesfully
+ Remote Post Created Succesfully
+------------------------------------------------------- 
