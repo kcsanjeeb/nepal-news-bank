@@ -68,6 +68,7 @@ function validateDate($date, $format = 'Y-m-d')
 function ftp_remote($folder  , $sourceName )
 {
     include "environment/ftp.php";
+<<<<<<< HEAD
 
     /*
 
@@ -87,6 +88,12 @@ function ftp_remote($folder  , $sourceName )
     
     
 
+=======
+    $ftp = ftp_connect("$ftp_url");
+    ftp_login($ftp, "$ftp_username", "$ftp_password");
+    ftp_pasv($ftp, true);
+    $file_status = ftp_put($ftp, "/$folder", "$sourceName", FTP_BINARY); 
+>>>>>>> c8a1149dee3e98139ef31255a01fc2f7a8403d42
     ftp_close($ftp); 
 
 

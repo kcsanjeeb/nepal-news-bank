@@ -101,8 +101,8 @@ if(!isset($location))
                 }
                 // echo "<br> Responce:  $response";
 
-                if($respCode == 200 || $respCode == 202  || $respCode == 204 )
-                {
+                // if($respCode == 200 || $respCode == 202  || $respCode == 204 )
+                // {
                     
 
                     $sql_del_web = "update web set wp_post_id = null, wp_media_id = null,  wp_post_type= null  where newsid = '$news_id' ";
@@ -113,11 +113,11 @@ if(!isset($location))
                         $_SESSION['notice_remote'] = "success_remote_delete";
                     }
 
-                }
-                else
-                {
-                    $_SESSION['notice_remote'] = "Error_remote_delete";
-                }
+                // }
+                // else
+                // {
+                //     $_SESSION['notice_remote'] = "Error_remote_delete";
+                // }
 
 
 

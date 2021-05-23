@@ -6,7 +6,7 @@
 
   if(isset($_SESSION['user_auth']))
   {
-    header("Location: localcopycreator.php");
+    header("Location: newscollector.php");
   }
 
   ?>

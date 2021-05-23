@@ -2,13 +2,13 @@
 
 <?php
 
-    if(basename($_SERVER['PHP_SELF'])=="localcopycreator.php") 
+    if(basename($_SERVER['PHP_SELF'])=="newscollector.php") 
     { 
-        $localcopy_page = "active";
+        $newscollector_page = "active";
     }
     else
     {
-        $localcopy_page = "";
+        $newscollector_page = "";
     }
 
     if(basename($_SERVER['PHP_SELF'])=="remotecopycreator.php") 
@@ -68,9 +68,9 @@ justify-content: space-around; color:#fff; font-size:25px; font-weight:600">
 
 <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-        <li class="nav-item <?php echo $localcopy_page ; ?>">
+        <li class="nav-item <?php echo $newscollector_page ; ?>">
             <a class="nav-link mr-3"
-                href="localcopycreator.php">News-collector
+                href="newscollector.php">News-Collector
             </a>
         </li>
        

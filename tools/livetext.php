@@ -130,6 +130,11 @@ iframe {
     width: 150px;
     height: 100px
 }
+
+.small-title{
+    font-size:15px;
+    font-weight:600;
+}
 </style>
 
 <body>
@@ -163,7 +168,7 @@ iframe {
 
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <label>Live Title</label>
+                                        <label class="small-title">Live Title</label>
                                     </div>
                                     <div class="col-lg-10">
                                         <div class="form-group">
@@ -173,7 +178,7 @@ iframe {
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <label>Iframe</label>
+                                        <label class="small-title">Iframe</label>
                                     </div>
                                     <div class="col-lg-10">
                                         <div class="form-group">
@@ -183,19 +188,19 @@ iframe {
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <label>Description </label>
+                                        <label class="small-title">Description </label>
                                     </div>
                                     <div class="col-lg-10">
                                         <div class="form-group">
                                             <textarea id="" type="text" name="iframe_text"
-                                                class="form-control"></textarea>
+                                                class="form-control" row="1"></textarea>
                                         </div>
                                     </div>
                                 </div>
 
                                 <input type="hidden" name="insert" value="insert">
 
-                                <button type="submit" class="btn btn-primary mb-3 " name="submit">Post 
+                                <button type="submit" class="btn btn-primary mb-3"  name="submit">Post 
                                 </button>
                                 <br>
                             </form>
@@ -285,9 +290,9 @@ iframe {
 
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <label>Event Name</label>
+                                        <label class="small-title">Event Name</label>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-10">
                                         <div class="form-group">
                                             <input id="name" type="text" class="form-control" />
                                         </div>
@@ -295,9 +300,9 @@ iframe {
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <label>Location</label>
+                                        <label class="small-title">Location</label>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-10">
                                         <div class="form-group">
                                             <input id="addr" type="text" class="form-control" />
                                         </div>
@@ -305,9 +310,9 @@ iframe {
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <label>Date / Time</label>
+                                        <label class="small-title">Date / Time</label>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-10">
                                         <div class="form-group">
                                             <input id="datetime" type="text" class="form-control" />
                                         </div>
@@ -316,7 +321,7 @@ iframe {
 
                                 <div class="row">
                                     <div class="col-lg-2 col-lg-offset-2">
-                                        <button id="addBtn" class="addBtn form-control btn btn-primary">
+                                        <button id="addBtn" class="addBtn btn btn-primary ">
                                             Post
                                         </button>
                                     </div>

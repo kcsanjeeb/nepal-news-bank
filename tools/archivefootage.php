@@ -239,7 +239,7 @@ $run_sql_content= mysqli_query($connection, $sql_content);
                             </div>
 
                             <div class="form-group">
-                                <label class=" p-0 col-lg-12 h5 text-info">Step 3. Enter Description *
+                                <label class=" p-0 col-lg-12 h5 text-info">Step 3. Enter Description 
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -259,7 +259,7 @@ $run_sql_content= mysqli_query($connection, $sql_content);
 
                             <!-- series-->
                             <div class="form-group mt-3">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 4. Select Series*
+                                <label class="col-lg-12 p-0  h5 text-info">Step 4. Select Series
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -291,7 +291,7 @@ $run_sql_content= mysqli_query($connection, $sql_content);
 
                             <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
                             <div class="form-group">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Tags*
+                                <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Tags
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -358,7 +358,7 @@ $run_sql_content= mysqli_query($connection, $sql_content);
                             </div>
                             <!-- Select one image for news thumbnail-->
                             <div class="form-group ">
-                                <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 7. Select Thumbnail *
+                                <label class=" p-0 mt-2 col-lg-12 h5 text-info">Step 7. Select Thumbnail 
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -399,7 +399,7 @@ $run_sql_content= mysqli_query($connection, $sql_content);
         <div class="col-lg-12">
             <div class="card shadow-lg  mb-5 bg-white rounded">
                 <div class="card-header bg-info ">
-                    <h4>ARCHIVE VIDEO LIST</h4>
+                    <h4>Archive Video List</h4>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">

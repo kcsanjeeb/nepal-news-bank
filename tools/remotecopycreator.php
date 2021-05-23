@@ -158,7 +158,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
     <div class="container">
         <div class="card shadow-lg  mb-5 bg-white rounded">
             <div class="card-header bg-info ">
-                <H5 style="color:#fff" class="mb-0">Remote Copy (RC) Creator</H5>
+                <h4 style="color:#fff" class="mb-0">Remote Copy Creator</h4>
             </div>
             <div class="card-header  ">
                 <form class="form-inline">
@@ -1455,7 +1455,7 @@ if($status_dis_pushhh != 'disabled')
                 <div class="card-header bg-info ">
                     <div class="row">
                         <div class="col-lg-9">
-                            <h4>LATEST NEWS LIST</h4>
+                            <h4>Latest News List</h4>
                             <!--  (Datas : <?php // if($nod > 0) echo $nod ; ?> ) -->
                         </div>
                         <div class="col-lg-3 ">

@@ -143,7 +143,7 @@ foreach($result as $res)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <title>Local copy creator</title>
+    <title>News Collector</title>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -282,7 +282,7 @@ strong {
             <div class="col-lg-12">
                 <div class="card shadow-lg  mb-5 bg-white rounded">
                     <div class="card-header bg-info ">
-                        <h4>NEWS COLLECTOR</h4>
+                        <h4>News Collector</h4>
                     </div>
                     <div class="card-body">
 
@@ -292,7 +292,7 @@ strong {
                           {
                             if($_SESSION['notice'] == 'Error')
                             {
-                                $notice  = 'Error while creating local copy!';
+                                $notice  = 'Error while collecting news!';
                                 $bg_color = 'red';
                                 $color = '#000';
                                 $color_down = '#000';
@@ -302,7 +302,7 @@ strong {
 
                             if($_SESSION['notice'] == 'Success')
                             {
-                                $notice  = 'Local copy creation successfull.';
+                                $notice  = 'News collection successfull.';
                                 $bg_color = 'rgb(102, 255, 51,0.5)';
                                 $color = '#009933';
                                 $color_down = '#4BB543';
@@ -922,11 +922,10 @@ strong {
 
                             <label class="col-lg-12 p-0 h5 text-info">Step 10.</label>
 
-                            <button type="submit" class="btn btn-primary" name="submit">Create local copy</button>
+                            <button type="submit" class="btn btn-primary" name="submit">Collect news</button>
 
                             <label class="col-lg-12 p-0 h5 text-info mt-2">Step 11.</label>
-                            <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete local
-                                    copy</button></span>
+                            <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete collected news</button></span>
                             <span>please <strong><a href="./remotecopycreator.php">go to Remote Copy
                                         Creator</a></strong> tool to delete</span>
 
