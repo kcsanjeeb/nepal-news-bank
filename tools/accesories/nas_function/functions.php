@@ -68,13 +68,10 @@ function validateDate($date, $format = 'Y-m-d')
 function ftp_remote($folder  , $sourceName)
 {
     include "environment/ftp.php";
-    // $ftp = ftp_connect("ftp.offixservices.com");
-    // ftp_login($ftp, "offix@offixservices.com", "Offix_(*(*");
     $ftp = ftp_connect("$ftp_url");
     ftp_login($ftp, "$ftp_username", "$ftp_password");
     ftp_pasv($ftp, true);
     $file_status = ftp_put($ftp, "/$folder", "$sourceName", FTP_BINARY); 
-    // ftp_remote('videolong' , '../'.$videolong_full , $sourceName)
     ftp_close($ftp); 
 
     if(isset($file_status))

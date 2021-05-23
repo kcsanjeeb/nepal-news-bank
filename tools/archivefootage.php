@@ -399,7 +399,7 @@ h4 {
         <div class="col-lg-12">
             <div class="card shadow-lg  mb-5 bg-white rounded">
                 <div class="card-header bg-info ">
-                    <h4>ARCHIVE VIDEO LIST</h4>
+                    <h4>Archive Video List</h4>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">

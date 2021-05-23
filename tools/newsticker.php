@@ -129,7 +129,7 @@ $url = "$domain_url/custom_ticker_api.php?datas=fetch";
                     <div class="card-header bg-info text-light ">
                         <div class="row">
                             <div class="col-lg-9">
-                                <h4>NEWS TICKER</h4>
+                                <h4>News Ticker</h4>
                             </div>
                             <div class="col-lg-3 text-right">
                                 
@@ -147,7 +147,7 @@ $url = "$domain_url/custom_ticker_api.php?datas=fetch";
                     <form action = "accesories/wp_ticker_submit.php" method="POST"> 
                         <div class="card-body">
                             <div class="form-group">
-                            <br>
+                        
                             <label class="col-lg-12 p-0 h5 text-info">Title *
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
