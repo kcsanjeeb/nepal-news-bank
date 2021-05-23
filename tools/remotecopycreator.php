@@ -1293,7 +1293,7 @@ if($status_dis_pushhh != 'disabled')
             <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
             <input type="hidden" name="type" value="<?php echo $category_list ?>">
 
-            <input type="submit" value="Delete Local Data" class="btn btn-danger" name="del_nas">
+            <input type="submit" value="Delete Collected News" class="btn btn-danger" name="del_nas">
         </form>
         <hr/>
         <?php
