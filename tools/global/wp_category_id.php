@@ -2,6 +2,10 @@
 
 include "../accesories/environment/wp_api_env.php";
 
+include "../accesories/session_handler/session_service.php";
+
+
+
 $url = "$domain_url/wp-json/wp/v2/video_category/?per_page=99";
  $data = '';
  $curl = curl_init();
@@ -39,4 +43,6 @@ $url = "$domain_url/wp-json/wp/v2/video_category/?per_page=99";
      $i++;
  
  }
-//  echo print_r($category);
+
+
+ header("Location: ../localcopycreator.php");

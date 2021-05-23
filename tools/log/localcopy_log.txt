@@ -201,3 +201,16 @@ today new news check Folder Created
 my_data/news_data/2021-05-22/today new news check/20210522_233540_99937_body.docx : News Body Uploaded
 my_data/news_data/2021-05-22/today new news check/20210522_233540_99937_videolong.mp4 : Video Long Uploaded
 ------------------------------------------------------- 
+---------------2021-06-01 / dev test lorem ---------------- 
+
+ Logged Date: 2021-05-23 13:24:02 
+2021-06-01 Folder Created
+INFmy_data/news_data/2021-06-01/dev test lorem/20210601_132402_85856_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-06-01/dev test lorem/20210601_132402_85856_body.docx : News Body Uploaded
+my_data/news_data/2021-06-01/dev test lorem/20210601_132402_85856_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-01/dev test lorem/20210601_132402_85856_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-06-01/dev test lorem/20210601_132402_85856_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-06-01/dev test lorem/20210601_132402_85856_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-06-01/dev test lorem/20210601_132402_85856_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-06-01/dev test lorem/20210601_132402_85856_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 

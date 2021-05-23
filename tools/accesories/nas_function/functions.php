@@ -65,17 +65,31 @@ function validateDate($date, $format = 'Y-m-d')
     return $d && $d->format($format) === $date;
 }
 
-function ftp_remote($folder  , $sourceName)
+function ftp_remote($folder  , $sourceName )
 {
     include "environment/ftp.php";
-    // $ftp = ftp_connect("ftp.offixservices.com");
-    // ftp_login($ftp, "offix@offixservices.com", "Offix_(*(*");
-    $ftp = ftp_connect("$ftp_url");
-    ftp_login($ftp, "$ftp_username", "$ftp_password");
-    ftp_pasv($ftp, true);
-    $file_status = ftp_put($ftp, "/$folder", "$sourceName", FTP_BINARY); 
-    // ftp_remote('videolong' , '../'.$videolong_full , $sourceName)
+
+    /*
+
+    1. Open
+    2. Close
+    3. Process
+    */
+
+
+        $ftp = ftp_connect("$ftp_url");
+        ftp_login($ftp, "$ftp_username", "$ftp_password");
+        ftp_pasv($ftp, true);
+
+
+
+    $file_status = ftp_put($ftp, "/$folder", "$sourceName", FTP_BINARY);
+    
+    
+
     ftp_close($ftp); 
+
+
 
     if(isset($file_status))
     {

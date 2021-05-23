@@ -36,7 +36,7 @@ if(isset($_POST['submit']))
                         $_SESSION['user_auth'] = 'admin' ;
                         $_SESSION['fuser'] = $username_sent ;
                         $_SESSION['fpass'] = $password_sent ;
-                        $location = "../localcopycreator.php" ; 
+                        $location = "../global/wp_category_id.php" ; 
                     }  
                     else
                     {
