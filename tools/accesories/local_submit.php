@@ -163,7 +163,7 @@ if(!isset($location))
                 {
                     if(!is_dir('../'.$interview_path.'/'.$byLine_directory_clean))
                     {
-                        mkdir('../'.$interview_path.'/'.$byLine_directory_clean, 777 , true);
+                        mkdir('../'.$interview_path.'/'.$byLine_directory_clean, 0777 , true);
                         $text = "$byLine_directory_clean Folder Created\n";
                         fwrite($myfile, $text);
                     }
@@ -172,8 +172,8 @@ if(!isset($location))
                 {
                     if(!is_dir('../'.$news_path.'/'.$newsdate))
                     {
-                        mkdir('../'.$news_path.'/'.$newsdate, 777 , true);
-                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 777 , true);
+                        mkdir('../'.$news_path.'/'.$newsdate, 0777 , true);
+                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777 , true);
                         $text = "$newsdate Folder Created\n";
                         fwrite($myfile, $text);
                         $text = "$newsdate."/".$byLine_directory_clean Folder Created\n";
@@ -183,7 +183,7 @@ if(!isset($location))
                     else
                     {
                         $byLine_directory_clean = remove_special_chars($byLine_directory);
-                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 777 , true);
+                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777 , true);
                         $text = "$byLine_directory_clean Folder Created\n";
                         fwrite($myfile, $text);
                     }
