@@ -21,3 +21,34 @@ my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_videoextra.mp4 :
 my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_gallery_0.jpg : Gallery-0 Uploaded
 my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_gallery_1.jpg : Gallery-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-05-24 / Test Title ---------------- 
+
+ Logged Date: 2021-05-24 21:21:32 
+2021-05-24 Folder Created
+
+---------------2021-05-24 / Test Title ---------------- 
+
+ Logged Date: 2021-05-24 21:36:39 
+Test Title Folder Created
+my_data/news_data/2021-05-24/Test Title/20210524_213639_20920_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-27 / Final Test Title ---------------- 
+
+ Logged Date: 2021-05-24 21:47:41 
+2021-05-27 Folder Created
+
+---------------2021-05-24 / Ribik ---------------- 
+
+ Logged Date: 2021-05-24 21:54:36 
+Ribik Folder Created
+my_data/news_data/2021-05-24/Ribik/20210524_215436_62071_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-24 / Khoteja ---------------- 
+
+ Logged Date: 2021-05-24 21:55:32 
+Khoteja Folder Created
+my_data/news_data/2021-05-24/Khoteja/20210524_215532_83842_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-24/Khoteja/20210524_215532_83842_body.docx : News Body Uploaded
+my_data/news_data/2021-05-24/Khoteja/20210524_215532_83842_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-24/Khoteja/20210524_215532_83842_gallery_0.jpg : Gallery-0 Uploaded
+------------------------------------------------------- 
