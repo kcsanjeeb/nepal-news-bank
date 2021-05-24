@@ -136,11 +136,11 @@ $run_sql_content= mysqli_query($connection, $sql_content);
     <script src="assets/js/multi-select-tags.js"></script>
 </head>
 <style>
-h4 {
-    color: aliceblue;
-    margin-bottom: 0;
-    font-size: 1.2rem;
-}
+    h4 {
+        color: aliceblue;
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
 </style>
 
 <body>
@@ -484,180 +484,180 @@ h4 {
     </div>
 
     <script>
-    function submitloader() {
-        document.getElementById("submitbtn").style.display = "none";
-        document.getElementById("loaderbtn").style.display = "block";
+        function submitloader() {
+            document.getElementById("submitbtn").style.display = "none";
+            document.getElementById("loaderbtn").style.display = "block";
 
-    }
+        }
     </script>
 
     <script>
-    // -------------thumbnail IMAGE VALIDATION------------------------ 
-    function thumbnailValidation() {
-        var fileInput =
-            document.getElementById('thumbnailimg');
+        // -------------thumbnail IMAGE VALIDATION------------------------ 
+        function thumbnailValidation() {
+            var fileInput =
+                document.getElementById('thumbnailimg');
 
-        var filePath = fileInput.value;
-        console.log(filePath)
-        // Allowing file type 
-        var allowedExtensions =
-            /(\.jpg|\.jpeg|\.png|\.gif|\.JPG)$/i;
+            var filePath = fileInput.value;
+            console.log(filePath)
+            // Allowing file type 
+            var allowedExtensions =
+                /(\.jpg|\.jpeg|\.png|\.gif|\.JPG)$/i;
 
-        if (!allowedExtensions.exec(filePath)) {
-            alert('Invalid Video thumbnail file extension.');
-            fileInput.value = '';
-            document.getElementById(
-                    'thumbnailID').innerHTML =
-                '<img style="display:none" class="shadow" src="'
-            '"/>';
-            return false;
-        } else {
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid Video thumbnail file extension.');
+                fileInput.value = '';
+                document.getElementById(
+                        'thumbnailID').innerHTML =
+                    '<img style="display:none" class="shadow" src="'
+                '"/>';
+                return false;
+            } else {
 
-            // Image preview 
-            if (fileInput.files && fileInput.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById(
-                            'thumbnailID').innerHTML =
-                        '<img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="' +
-                        e.target.result +
-                        '"/>';
-                };
+                // Image preview 
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById(
+                                'thumbnailID').innerHTML =
+                            '<img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="' +
+                            e.target.result +
+                            '"/>';
+                    };
 
-                reader.readAsDataURL(fileInput.files[0]);
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
             }
         }
-    }
     </script>
 
     <script>
-    // -------------Video long VALIDATION------------------------ 
-    function videolongValidation() {
-        var fileInput =
-            document.getElementById('videolong');
+        // -------------Video long VALIDATION------------------------ 
+        function videolongValidation() {
+            var fileInput =
+                document.getElementById('videolong');
 
-        var filePath = fileInput.value;
-        console.log(filePath)
-        // Allowing file type 
-        var allowedExtensions =
-            /(\.mp4|\.jpeg)$/i;
+            var filePath = fileInput.value;
+            console.log(filePath)
+            // Allowing file type 
+            var allowedExtensions =
+                /(\.mp4|\.jpeg)$/i;
 
-        if (!allowedExtensions.exec(filePath)) {
-            alert('Invalid Video thumbnail file extension.');
-            fileInput.value = '';
-            document.getElementById(
-                    'videolongID').innerHTML =
-                '<video width="320" height="240" controls style="display:none"><source src="" type="video/mp4"></video>';
-            return false;
-        } else {
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid Video thumbnail file extension.');
+                fileInput.value = '';
+                document.getElementById(
+                        'videolongID').innerHTML =
+                    '<video width="320" height="240" controls style="display:none"><source src="" type="video/mp4"></video>';
+                return false;
+            } else {
 
-            // video long preview 
-            if (fileInput.files && fileInput.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById(
-                            'videolongID').innerHTML =
-                        '<video width="100%" height="160px" controls style="display:block"><source src="' + e
-                        .target.result + '" type="video/mp4"> </video> ';
-                    document.getElementById('videolongplaceholder').style.display = "none"
-                };
+                // video long preview 
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById(
+                                'videolongID').innerHTML =
+                            '<video width="100%" height="160px" controls style="display:block"><source src="' + e
+                            .target.result + '" type="video/mp4"> </video> ';
+                        document.getElementById('videolongplaceholder').style.display = "none"
+                    };
 
-                reader.readAsDataURL(fileInput.files[0]);
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
             }
         }
-    }
     </script>
 
     <script>
-    $(function() {
-        // Apply the plugin 
-        var series = $('#series').filterMultiSelect();
+        $(function () {
+            // Apply the plugin 
+            var series = $('#series').filterMultiSelect();
 
-        $('#jsonbtn3').click((e) => {
-            var b = true;
-            var result = {
-                ...JSON.parse(series.getSelectedOptionsAsJson(b)),
+            $('#jsonbtn3').click((e) => {
+                var b = true;
+                var result = {
+                    ...JSON.parse(series.getSelectedOptionsAsJson(b)),
 
-            }
-            $('#jsonresult3').text(JSON.stringify(result, null, "  "));
-        });
-        $('#jsonbtn3').click((e) => {
-            var b = false;
-            var result = {
-                ...JSON.parse(series.getSelectedOptionsAsJson(b)),
+                }
+                $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+            });
+            $('#jsonbtn3').click((e) => {
+                var b = false;
+                var result = {
+                    ...JSON.parse(series.getSelectedOptionsAsJson(b)),
 
-            }
-            $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+                }
+                $('#jsonresult3').text(JSON.stringify(result, null, "  "));
+            });
+            $('#form').on('keypress keyup', function (e) {
+                var keyCode = e.keyCode || e.which;
+                if (keyCode === 13) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
         });
-        $('#form').on('keypress keyup', function(e) {
-            var keyCode = e.keyCode || e.which;
-            if (keyCode === 13) {
-                e.preventDefault();
-                return false;
-            }
-        });
-    });
     </script>
     <script>
-    $(function() {
-        // Apply the plugin 
-        var tags = $('#tags').filterMultiSelect();
+        $(function () {
+            // Apply the plugin 
+            var tags = $('#tags').filterMultiSelect();
 
-        $('#jsonbtn1').click((e) => {
-            var b = true;
-            var result = {
-                ...JSON.parse(tags.getSelectedOptionsAsJson(b)),
+            $('#jsonbtn1').click((e) => {
+                var b = true;
+                var result = {
+                    ...JSON.parse(tags.getSelectedOptionsAsJson(b)),
 
-            }
-            $('#jsonresult1').text(JSON.stringify(result, null, "  "));
-        });
-        $('#jsonbtn2').click((e) => {
-            var b = false;
-            var result = {
-                ...JSON.parse(tags.getSelectedOptionsAsJson(b)),
+                }
+                $('#jsonresult1').text(JSON.stringify(result, null, "  "));
+            });
+            $('#jsonbtn2').click((e) => {
+                var b = false;
+                var result = {
+                    ...JSON.parse(tags.getSelectedOptionsAsJson(b)),
 
-            }
-            $('#jsonresult2').text(JSON.stringify(result, null, "  "));
+                }
+                $('#jsonresult2').text(JSON.stringify(result, null, "  "));
+            });
+            $('#form').on('keypress keyup', function (e) {
+                var keyCode = e.keyCode || e.which;
+                if (keyCode === 13) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
         });
-        $('#form').on('keypress keyup', function(e) {
-            var keyCode = e.keyCode || e.which;
-            if (keyCode === 13) {
-                e.preventDefault();
-                return false;
-            }
-        });
-    });
     </script>
     <script>
-    // Use the plugin once the DOM has been loaded.
-    $(function() {
-        // Apply the plugin 
-        var categories = $('#categories').filterMultiSelect();
+        // Use the plugin once the DOM has been loaded.
+        $(function () {
+            // Apply the plugin 
+            var categories = $('#categories').filterMultiSelect();
 
-        $('#jsonbtn1').click((e) => {
-            var c = true;
-            var result = {
-                ...JSON.parse(categories.getSelectedOptionsAsJson(c)),
+            $('#jsonbtn1').click((e) => {
+                var c = true;
+                var result = {
+                    ...JSON.parse(categories.getSelectedOptionsAsJson(c)),
 
-            }
-            $('#jsonresult1').text(JSON.stringify(result, null, "  "));
-        });
-        $('#jsonbtn2').click((e) => {
-            var b = false;
-            var result = {
-                ...JSON.parse(categories.getSelectedOptionsAsJson(c)),
+                }
+                $('#jsonresult1').text(JSON.stringify(result, null, "  "));
+            });
+            $('#jsonbtn2').click((e) => {
+                var b = false;
+                var result = {
+                    ...JSON.parse(categories.getSelectedOptionsAsJson(c)),
 
-            }
-            $('#jsonresult2').text(JSON.stringify(result, null, "  "));
+                }
+                $('#jsonresult2').text(JSON.stringify(result, null, "  "));
+            });
+            $('#form').on('keypress keyup', function (e) {
+                var keyCode = e.keyCode || e.which;
+                if (keyCode === 13) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
         });
-        $('#form').on('keypress keyup', function(e) {
-            var keyCode = e.keyCode || e.which;
-            if (keyCode === 13) {
-                e.preventDefault();
-                return false;
-            }
-        });
-    });
     </script>
 </body>
 

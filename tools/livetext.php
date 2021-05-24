@@ -207,7 +207,7 @@ iframe {
 
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <table id="example" class="table table-bordered">
+                                    <table id="example" class="">
                                         <thead>
                                             <tr>
                                                 <th class="text-center">SN</th>
@@ -217,6 +217,9 @@ iframe {
                                                 <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
+                                        
+                                       
+
                                         <tbody>
 
                                             <?php

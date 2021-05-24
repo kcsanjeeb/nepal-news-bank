@@ -67,81 +67,81 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
     <title>NEPAL NEWS BANK DASHBOARD</title>
 
     <style>
-    .disabled {
-        cursor: no-drop;
-    }
+        .disabled {
+            cursor: no-drop;
+        }
 
-    @font-face {
-        font-family: preeti;
-        src: url(preeti.TTF);
-    }
+        @font-face {
+            font-family: preeti;
+            src: url(preeti.TTF);
+        }
 
-    .form-nepali {
-        font-family: preeti;
-        font-size: 19px
-    }
+        .form-nepali {
+            font-family: preeti;
+            font-size: 19px
+        }
     </style>
 
     <style>
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-    }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
 
-    .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
 
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
 
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
 
-    input:checked+.slider {
-        background-color: #2196F3;
-    }
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
 
-    input:focus+.slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
 
-    input:checked+.slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-    }
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
 
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-    }
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
 
-    .slider.round:before {
-        border-radius: 50%;
-    }
+        .slider.round:before {
+            border-radius: 50%;
+        }
     </style>
 </head>
 
@@ -348,11 +348,11 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                     <div class="col-9">
 
-                  
+
 
                         <form method="POST" action="accesories/remote_submit.php">
 
-                      
+
 
                             <?php
 
@@ -452,7 +452,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     unset($_SESSION['notice_remote']);    
                                                 }
                                             ?>
-      <p class="h4 text-info"><b>Step 3.</b> Select following content</p>
+                            <p class="h4 text-info"><b>Step 3.</b> Select following content</p>
 
                             <div class="list-group">
                                 <?php
@@ -1280,12 +1280,13 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                     </div>
 
-                 
+
 
                     <?php
 if($status_dis_pushhh != 'disabled')
 { 
 ?>
+<<<<<<< HEAD
    <hr/>
         <form method="POST" action='accesories/local_post_delete.php'>
             <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
@@ -1297,6 +1298,19 @@ if($status_dis_pushhh != 'disabled')
         </form>
         <hr/>
         <?php
+=======
+                    <hr />
+                    <form method="POST" action='accesories/local_post_delete.php'>
+                        <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
+                        <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
+                        <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
+                        <input type="hidden" name="type" value="<?php echo $category_list ?>">
+
+                        <input type="submit" value="Delete Local Data" class="btn btn-danger" name="del_nas">
+                    </form>
+                    <hr />
+                    <?php
+>>>>>>> 9c80df57e83a976f8ca642dc0c22aa7f306f4571
 
 }
 ?>
@@ -1304,7 +1318,7 @@ if($status_dis_pushhh != 'disabled')
                 </div>
             </div>
 
-   
+
 
 
 
@@ -1583,85 +1597,85 @@ if($status_dis_pushhh != 'disabled')
 
 
     <script>
-    $(document).on('click', '.files', function() {
+        $(document).on('click', '.files', function () {
 
-        if ($(this).is(":checked") == false) {
-            $(this).removeAttr('checked');
-        } else {
-            $(this).attr('checked', 'checked');
-        }
-
-    });
-
-    $("#date").change(function() {
-        var selc_date = $('#date').val();
-        location.href = "remotecopycreator.php?date=" + selc_date;
-
-
-
-    });
-
-
-    $(document).on('click', '.post_type', function() {
-
-        var id = $(this).val();
-        var type = null;
-
-        if ($(this).is(":checked") == false) {
-            type = "draft";
-        } else {
-            $(this).attr('checked', 'checked');
-            type = "publish";
-        }
-
-
-
-        $.ajax({
-            url: "accesories/wp_post_type_update.php?wp_post_id=" + id + "&wp_post_status=" + type,
-            method: "POST",
-            data: {
-
-            },
-            dataType: "text",
-            success: function(data) {
-
-
-
+            if ($(this).is(":checked") == false) {
+                $(this).removeAttr('checked');
+            } else {
+                $(this).attr('checked', 'checked');
             }
+
         });
 
-    });
+        $("#date").change(function () {
+            var selc_date = $('#date').val();
+            location.href = "remotecopycreator.php?date=" + selc_date;
+
+
+
+        });
+
+
+        $(document).on('click', '.post_type', function () {
+
+            var id = $(this).val();
+            var type = null;
+
+            if ($(this).is(":checked") == false) {
+                type = "draft";
+            } else {
+                $(this).attr('checked', 'checked');
+                type = "publish";
+            }
+
+
+
+            $.ajax({
+                url: "accesories/wp_post_type_update.php?wp_post_id=" + id + "&wp_post_status=" + type,
+                method: "POST",
+                data: {
+
+                },
+                dataType: "text",
+                success: function (data) {
+
+
+
+                }
+            });
+
+        });
 
 
 
 
 
 
-    var checkBoxes = $('.compulsory'),
-        submitButton = $('.sub_push');
+        var checkBoxes = $('.compulsory'),
+            submitButton = $('.sub_push');
 
-    if ($('.miss').length > 0) {
-        $("#error_push_miss").html("Error: Please copy the missing file and refresh the tool.").css("color", "red");
-        submitButton.addClass('disabled');
-
-    }
-
-
-
-
-
-
-
-    checkBoxes.change(function() {
-        submitButton.attr("disabled", checkBoxes.is(":not(:checked)"));
-        if (checkBoxes.is(":not(:checked)")) {
+        if ($('.miss').length > 0) {
+            $("#error_push_miss").html("Error: Please copy the missing file and refresh the tool.").css("color", "red");
             submitButton.addClass('disabled');
-            $("#error_push").html("Error: Please select all files.<br>").css("color", "red");
-        } else {
-            submitButton.removeClass('disabled');
-            $("#error_push").html("");
+
         }
-    });
+
+
+
+
+
+
+
+        checkBoxes.change(function () {
+            submitButton.attr("disabled", checkBoxes.is(":not(:checked)"));
+            if (checkBoxes.is(":not(:checked)")) {
+                submitButton.addClass('disabled');
+                $("#error_push").html("Error: Please select all files.<br>").css("color", "red");
+            } else {
+                submitButton.removeClass('disabled');
+                $("#error_push").html("");
+            }
+        });
     </script>
 
 

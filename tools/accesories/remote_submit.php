@@ -1,6 +1,7 @@
 <?php
 
 
+set_time_limit(0);
 
 include "session_handler/session_service.php";
 include "connection.php";
@@ -9,9 +10,11 @@ include "environment/vimeo.php";
 include "nas_function/functions.php";
 include "../global/timezone.php";
 
- 
 
-set_time_limit(0);
+
+
+
+
 
 
  
@@ -150,9 +153,18 @@ if(!isset($location))
                 }
 
 
+
+
                 
                 $myfile = fopen("../log/remotecopy_log.txt", "a") or die("Unable to open file!");  
                 fwrite($myfile, "\n---------------$date_full / $byline_full ---------------- \n"); 
+
+
+                $ftp = ftp_connect("$ftp_url");
+                ftp_login($ftp, "$ftp_username", "$ftp_password");
+                ftp_pasv($ftp, true);
+
+
 
                 $logged_date = date('Y-m-d H:i:s');
                 fwrite($myfile, "\n Logged Date: $logged_date \n");
@@ -161,11 +173,11 @@ if(!isset($location))
                
                 if($isInterview)
                 {
-                    $ftp = ftp_connect("$ftp_url");
-                    ftp_login($ftp, "$ftp_username", "$ftp_password");
-                    ftp_pasv($ftp, true);
+                    // $ftp = ftp_connect("$ftp_url");
+                    // ftp_login($ftp, "$ftp_username", "$ftp_password");
+                    // ftp_pasv($ftp, true);
                     ftp_mkdir($ftp, "/".$interview_path."/".$dir_byline);
-                    ftp_close($ftp);
+                    // ftp_close($ftp);
 
                     $news_ftp_path  = "/".$interview_path."/".$dir_byline;
                     $news_ftp_path_sql  = $interview_path."/".$dir_byline;
@@ -174,27 +186,33 @@ if(!isset($location))
                 else
                 {
 
-                
-                    $folder_exists = is_dir('ftp://'.$ftp_un_prefix.':'.$ftp_password.'@'.$ftp_url.'/'.$news_path.'/'.$local_published_date);
+                    // Folder Exist
+                    $contents =  ftp_mlsd($ftp, "/news_data");
+
+
+                    // $folder_exists = is_dir('ftp://'.$ftp_un_prefix.':'.$ftp_password.'@'.$ftp_url.'/'.$news_path.'/'.$local_published_date);
+                    $folder_exists = in_array($local_published_date, array_column($contents, 'name'));
+                    
+                    
                     if(!$folder_exists)
                     {
-                        echo "here !";
-                        $ftp = ftp_connect("$ftp_url");
-                        ftp_login($ftp, "$ftp_username", "$ftp_password");
-                        ftp_pasv($ftp, true);
+                        // echo "here !";
+                        // $ftp = ftp_connect("$ftp_url");
+                        // ftp_login($ftp, "$ftp_username", "$ftp_password");
+                        // ftp_pasv($ftp, true);
                         $dir = $local_published_date;
-                        echo "/".$news_path."/".$dir;
+                        // echo "/".$news_path."/".$dir;
                          ftp_mkdir($ftp, "/".$news_path."/".$dir);
                         // ftp_mkdir($ftp, "/hehehhe");
-                        ftp_close($ftp);
+                        // ftp_close($ftp);
                     }
 
-                    $ftp = ftp_connect("$ftp_url");
-                    ftp_login($ftp, "$ftp_username", "$ftp_password");
-                    ftp_pasv($ftp, true);
+                    // $ftp = ftp_connect("$ftp_url");
+                    // ftp_login($ftp, "$ftp_username", "$ftp_password");
+                    // ftp_pasv($ftp, true);
                     $dir_byline = remove_special_chars($byline_full) ;
                     ftp_mkdir($ftp, "/".$news_path."/".$local_published_date."/".$dir_byline);
-                    ftp_close($ftp);
+                    // ftp_close($ftp);
 
                     $news_ftp_path  = "/".$news_path."/".$local_published_date."/".$dir_byline;
                     $news_ftp_path_sql  = "$news_path/".$local_published_date."/".$dir_byline;
@@ -212,7 +230,8 @@ if(!isset($location))
                             $sourceName = explode("/" ,$gal_img_arr ) ;
                             $sourceName = end($sourceName );
 
-                            if(ftp_remote($news_ftp_path."/".$sourceName , "../".$gal_img_arr))
+                            // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$gal_img_arr))
+                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$gal_img_arr , FTP_BINARY))
                             {
                                 $gal_img_arr = "$news_ftp_path_sql/$sourceName" ;
                                 array_push($gallery_full_web_arr , $gal_img_arr);
@@ -257,7 +276,8 @@ if(!isset($location))
                             $sourceName = end($sourceName );
 
                             // if(ftp_remote('newsbody' , '../'.$newsbody_full , $sourceName))
-                            if(ftp_remote($news_ftp_path."/".$sourceName , "../".$newsbody_full))
+                            // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$newsbody_full))
+                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$newsbody_full , FTP_BINARY))
                             { 
 
                                 $text = "$sourceName News  Body Pushed\n";
@@ -299,7 +319,8 @@ if(!isset($location))
 
                             if($video_type == 'selfhost')
                             {
-                                if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolong_full))
+                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolong_full))
+                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolong_full , FTP_BINARY))
                                 {
 
                                     $text = "$sourceName Video Long Pushed\n";
@@ -388,7 +409,8 @@ if(!isset($location))
 
                             if($video_type == 'selfhost')
                             {
-                                if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolazy_full))
+                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolazy_full))
+                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolazy_full , FTP_BINARY))
                                 {
                                     $text = "$sourceName Video Lazy Pushed\n";
                                     fwrite($myfile, $text);                            
@@ -473,7 +495,8 @@ if(!isset($location))
 
                             if($video_type == 'selfhost')
                             {
-                                if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videoextra_full))
+                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videoextra_full))
+                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videoextra_full , FTP_BINARY))
                                 {
                                     // $push_videoextra = "'$videoextra_full'" ;
                                     $text = "$sourceName Video Extra  Pushed\n";
@@ -554,7 +577,9 @@ if(!isset($location))
                         {
                             $sourceName = explode("/" ,$thumbnail_full ) ;
                             $sourceName = end($sourceName );
-                            if(ftp_remote($news_ftp_path."/".$sourceName , "../".$thumbnail_full))
+                            // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$thumbnail_full))
+                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$thumbnail_full , FTP_BINARY))
+
                             {
                                 // $push_thumbnail = "'$thumbnail_full'" ;
                                 $text = "$sourceName Thumbnail Pushed\n";
@@ -593,7 +618,9 @@ if(!isset($location))
                         {
                             $sourceName = explode("/" ,$audio_full ) ;
                             $sourceName = end($sourceName );
-                            if(ftp_remote($news_ftp_path."/".$sourceName , "../".$audio_full))
+                            // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$audio_full))
+                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$audio_full , FTP_BINARY))
+
                             {
                                 // $push_audio = "'$audio_full'" ;
                                 $text = "$sourceName Audio Pushed\n";
@@ -629,7 +656,7 @@ if(!isset($location))
                     
                  
 
-                    
+                ftp_close($ftp); 
                
                 fwrite($myfile, "------------------------------------------------------- "); 
                 fclose($myfile);
@@ -640,6 +667,10 @@ if(!isset($location))
                 $pushed_at = date('Y-m-d H:i:s');
 
                 // For temporary use ,  will delete and insert if exist in remote
+                // if(!$connection)
+                // {
+                    $connection= mysqli_connect($host , $user , $password , $db_name);
+                // }
 
                 $sql_test_local = "select * from web where newsid = '$news_id' ";
                 $run_sql_test_local= mysqli_query($connection, $sql_test_local);
@@ -719,6 +750,8 @@ if(!isset($location))
         
         $_SESSION['notice_remote'] = "Error";
     }
+
+
 
 
     if(isset($_POST['del_remote_files']))

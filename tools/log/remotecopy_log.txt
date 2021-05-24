@@ -86,6 +86,103 @@
 20210522_233540_99937_videolong.mp4 Video Long Pushed
 >>>>>>> 98378c9e3254860f1c1428eeaace516f568e35e3
 ------------------------------------------------------- 
+<<<<<<< HEAD
+---------------2021-05-22 22:35:28 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-23 10:31:05 
+20210522_223527_52839_gallery_0.jpg Gallery Photo Pushed
+20210522_223527_52839_gallery_1.jpg Gallery Photo Pushed
+20210522_223527_52839_body.docx News  Body Pushed
+20210522_223527_52839_videolong.mp4 Video Long Pushed
+20210522_223527_52839_videolazy.mp4 Video Lazy Pushed
+20210522_223527_52839_videoextra.mp4 Video Extra  Pushed
+20210522_223527_52839_thumbnail.jpg Thumbnail Pushed
+20210522_223527_52839_audio.mp3 Audio Pushed
+------------------------------------------------------- 
+---------------2021-05-22 22:35:28 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-23 10:38:44 
+20210522_223527_52839_gallery_0.jpg Gallery Photo Pushed
+20210522_223527_52839_gallery_1.jpg Gallery Photo Pushed
+20210522_223527_52839_body.docx News  Body Pushed
+20210522_223527_52839_videolong.mp4 Video Long Pushed
+20210522_223527_52839_videolazy.mp4 Video Lazy Pushed
+20210522_223527_52839_videoextra.mp4 Video Extra  Pushed
+20210522_223527_52839_thumbnail.jpg Thumbnail Pushed
+20210522_223527_52839_audio.mp3 Audio Pushed
+------------------------------------------------------- 
+---------------2021-05-22 22:35:28 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-23 12:17:17 
+20210522_223527_52839_gallery_0.jpg Gallery Photo Pushed
+20210522_223527_52839_gallery_1.jpg Gallery Photo Pushed
+20210522_223527_52839_body.docx News  Body Pushed
+20210522_223527_52839_videolong.mp4 Video Long Pushed
+20210522_223527_52839_videolazy.mp4 Video Lazy Pushed
+20210522_223527_52839_videoextra.mp4 Video Extra  Pushed
+20210522_223527_52839_thumbnail.jpg Thumbnail Pushed
+20210522_223527_52839_audio.mp3 Audio Pushed
+------------------------------------------------------- 
+---------------2021-05-22 22:35:28 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-23 12:29:30 
+20210522_223527_52839_gallery_0.jpg Gallery Photo Pushed
+20210522_223527_52839_gallery_1.jpg Gallery Photo Pushed
+20210522_223527_52839_body.docx News  Body Pushed
+20210522_223527_52839_videolong.mp4 Video Long Pushed
+20210522_223527_52839_videolazy.mp4 Video Lazy Pushed
+20210522_223527_52839_videoextra.mp4 Video Extra  Pushed
+20210522_223527_52839_thumbnail.jpg Thumbnail Pushed
+20210522_223527_52839_audio.mp3 Audio Pushed
+------------------------------------------------------- 
+---------------2021-05-22 22:35:28 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-23 12:49:51 
+20210522_223527_52839_gallery_0.jpg Gallery Photo Pushed
+20210522_223527_52839_gallery_1.jpg Gallery Photo Pushed
+20210522_223527_52839_body.docx News  Body Pushed
+20210522_223527_52839_videolong.mp4 Video Long Pushed
+20210522_223527_52839_videolazy.mp4 Video Lazy Pushed
+20210522_223527_52839_videoextra.mp4 Video Extra  Pushed
+20210522_223527_52839_thumbnail.jpg Thumbnail Pushed
+20210522_223527_52839_audio.mp3 Audio Pushed
+------------------------------------------------------- 
+---------------2021-05-22 22:35:28 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-23 13:07:03 
+20210522_223527_52839_gallery_0.jpg Gallery Photo Pushed
+20210522_223527_52839_gallery_1.jpg Gallery Photo Pushed
+20210522_223527_52839_body.docx News  Body Pushed
+20210522_223527_52839_videolong.mp4 Video Long Pushed
+20210522_223527_52839_videolazy.mp4 Video Lazy Pushed
+20210522_223527_52839_videoextra.mp4 Video Extra  Pushed
+20210522_223527_52839_thumbnail.jpg Thumbnail Pushed
+20210522_223527_52839_audio.mp3 Audio Pushed
+------------------------------------------------------- 
+---------------2021-05-22 22:35:28 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-05-23 13:13:12 
+20210522_223527_52839_gallery_0.jpg Gallery Photo Pushed
+20210522_223527_52839_gallery_1.jpg Gallery Photo Pushed
+20210522_223527_52839_body.docx News  Body Pushed
+20210522_223527_52839_videolong.mp4 Video Long Pushed
+20210522_223527_52839_videolazy.mp4 Video Lazy Pushed
+20210522_223527_52839_videoextra.mp4 Video Extra  Pushed
+20210522_223527_52839_thumbnail.jpg Thumbnail Pushed
+20210522_223527_52839_audio.mp3 Audio Pushed
+------------------------------------------------------- 
+---------------2021-05-23 13:24:04 / dev test lorem ---------------- 
+
+ Logged Date: 2021-05-23 13:24:41 
+20210601_132402_85856_gallery_0.jpg Gallery Photo Pushed
+20210601_132402_85856_gallery_1.jpg Gallery Photo Pushed
+20210601_132402_85856_body.docx News  Body Pushed
+20210601_132402_85856_videolong.mp4 Video Long Pushed
+20210601_132402_85856_videolazy.mp4 Video Lazy Pushed
+20210601_132402_85856_videoextra.mp4 Video Extra  Pushed
+20210601_132402_85856_thumbnail.png Thumbnail Pushed
+20210601_132402_85856_audio.mp3 Audio Pushed
+=======
 ---------------2021-05-22 23:35:42 / today new news check ---------------- 
 
  Logged Date: 2021-05-22 23:50:28 
@@ -96,6 +193,7 @@
 
  Logged Date: 2021-05-22 23:55:09 
 20210522_235452_73020_body.docx News  Body Pushed
+<<<<<<< HEAD
 ------------------------------------------------------- 
 ---------------2021-05-23 09:26:28 / संसद् विघटनका दुई महिना : दाहाल–नेपाल समूहले समर्थन नपाएका तीन मुद्दा ---------------- 
 
@@ -104,4 +202,7 @@
 20210523_092627_4765_videolong.mp4 Video Long Pushed
 20210523_092627_4765_videoextra.mp4 Video Extra  Pushed
 20210523_092627_4765_thumbnail.jpg Thumbnail Pushed
+=======
+>>>>>>> c8a1149dee3e98139ef31255a01fc2f7a8403d42
+>>>>>>> 9c80df57e83a976f8ca642dc0c22aa7f306f4571
 ------------------------------------------------------- 

@@ -12,19 +12,10 @@ include "nas_function/functions.php";
 include "../global/timezone.php";
 
 
-
-
-
-
-
-
 // -------------- VARIABLE DECLARATION ----------------
 $archive_path_picture = 'my_data/archive_data/archive_picture';
 $archive_path_picture_ftp = 'archive_data/archive_picture';
 // ----------------------------------------------------
-
-
-
 
 
 if(!isset($location))
