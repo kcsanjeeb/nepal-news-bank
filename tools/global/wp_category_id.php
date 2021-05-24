@@ -45,4 +45,4 @@ $url = "$domain_url/wp-json/wp/v2/video_category/?per_page=99";
  }
 
 
- header("Location: ../localcopycreator.php");
+ header("Location: ../newscollector.php");

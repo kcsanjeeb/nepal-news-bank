@@ -4,10 +4,7 @@ include "connection.php";
 include "nas_function/functions.php";
 session_start();
 include "../global/timezone.php";
-
 // implement csrf
-
-
 
 
 if(isset($_POST['submit']))
@@ -36,11 +33,9 @@ if(isset($_POST['submit']))
                         $_SESSION['user_auth'] = 'admin' ;
                         $_SESSION['fuser'] = $username_sent ;
                         $_SESSION['fpass'] = $password_sent ;
-<<<<<<< HEAD
+
                         $location = "../global/wp_category_id.php" ; 
-=======
-                        $location = "../newscollector.php" ; 
->>>>>>> c8a1149dee3e98139ef31255a01fc2f7a8403d42
+                        
                     }  
                     else
                     {
