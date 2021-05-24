@@ -21,3 +21,15 @@ my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_videoextra.mp4 :
 my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_gallery_0.jpg : Gallery-0 Uploaded
 my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_gallery_1.jpg : Gallery-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-05-24 / longss ---------------- 
+
+ Logged Date: 2021-05-24 17:29:18 
+2021-05-24 Folder Created
+INFmy_data/news_data/2021-05-24/longss/20210524_172918_89034_body.docx : News Body Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
