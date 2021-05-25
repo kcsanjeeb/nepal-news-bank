@@ -126,7 +126,9 @@ if(!isset($location))
 
 
                         $title_directory = remove_special_chars($title);
-                        mkdir('../'.$archive_path_picture.'/'.$title_directory, 0700 , true);
+                        mkdir('../'.$archive_path_picture.'/'.$title_directory, 0777 , true);
+                        
+                    	chmod('../'.$archive_path_picture.'/'.$title_directory, 0777);
 
                         $text = $archive_path_picture."/".$title_directory ." : Folder Created\n";
                         fwrite($myfile, $text);

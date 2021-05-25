@@ -8,6 +8,7 @@ my_data/news_data/2021-05-23/संसद् विघटनका दुई म
 my_data/news_data/2021-05-23/संसद् विघटनका दुई महिना  दाहाल–नेपाल समूहले समर्थन नपाएका तीन मुद्दा/20210523_092627_4765_thumbnail.jpg : Thumbnail Uploaded
 my_data/news_data/2021-05-23/संसद् विघटनका दुई महिना  दाहाल–नेपाल समूहले समर्थन नपाएका तीन मुद्दा/20210523_092627_4765_videoextra.mp4 : Video Extra Uploaded
 ------------------------------------------------------- 
+<<<<<<< HEAD
 ---------------2021-05-24 / एमसीसी विरेध ---------------- 
 
  Logged Date: 2021-05-24 09:58:50 
@@ -57,4 +58,459 @@ my_data/news_data/2021-05-25/उपत्यककाका अस्पता�
 my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_7.jpg : Gallery-7 Uploaded
 my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_8.jpg : Gallery-8 Uploaded
 my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_9.jpg : Gallery-9 Uploaded
+=======
+---------------2021-06-02 / 2nd jun post ---------------- 
+
+ Logged Date: 2021-05-24 13:12:07 
+2021-06-02 Folder Created
+10105my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_body.docx : News Body Uploaded
+my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-06-02/2nd jun post/20210602_131208_52567_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+<<<<<<< HEAD
+---------------2021-05-24 / Test Title ---------------- 
+
+ Logged Date: 2021-05-24 21:21:32 
+2021-05-24 Folder Created
+
+---------------2021-05-24 / Test Title ---------------- 
+
+ Logged Date: 2021-05-24 21:36:39 
+Test Title Folder Created
+my_data/news_data/2021-05-24/Test Title/20210524_213639_20920_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-27 / Final Test Title ---------------- 
+
+ Logged Date: 2021-05-24 21:47:41 
+2021-05-27 Folder Created
+
+---------------2021-05-24 / Ribik ---------------- 
+
+ Logged Date: 2021-05-24 21:54:36 
+Ribik Folder Created
+my_data/news_data/2021-05-24/Ribik/20210524_215436_62071_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-24 / Khoteja ---------------- 
+
+ Logged Date: 2021-05-24 21:55:32 
+Khoteja Folder Created
+my_data/news_data/2021-05-24/Khoteja/20210524_215532_83842_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-24/Khoteja/20210524_215532_83842_body.docx : News Body Uploaded
+my_data/news_data/2021-05-24/Khoteja/20210524_215532_83842_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-24/Khoteja/20210524_215532_83842_gallery_0.jpg : Gallery-0 Uploaded
+=======
+---------------2021-05-24 / longss ---------------- 
+
+ Logged Date: 2021-05-24 17:29:18 
+2021-05-24 Folder Created
+INFmy_data/news_data/2021-05-24/longss/20210524_172918_89034_body.docx : News Body Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-05-24/longss/20210524_172918_89034_gallery_1.jpg : Gallery-1 Uploaded
+>>>>>>> 289f115dee459bc98edecf4653ac53c8175f34b4
+------------------------------------------------------- 
+---------------2021-06-01 / Anjit ---------------- 
+
+ Logged Date: 2021-05-24 22:52:25 
+
+---------------2021-06-01 / Anjit ---------------- 
+
+ Logged Date: 2021-05-24 22:52:56 
+
+---------------2021-06-01 / Anjit ---------------- 
+
+ Logged Date: 2021-05-24 22:53:18 
+2021-06-01 Folder Created
+
+---------------2021-05-28 / mobile ---------------- 
+
+ Logged Date: 2021-05-24 22:56:36 
+2021-05-28 Folder Created
+
+---------------2021-05-28 / ss ---------------- 
+
+ Logged Date: 2021-05-24 23:00:39 
+ss Folder Created
+my_data/news_data/2021-05-28/ss/20210528_230039_79029_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-06-02 / sadsad ---------------- 
+
+ Logged Date: 2021-05-24 23:03:35 
+2021-06-02 Folder Created
+
+---------------2021-06-03 / zxfddf ---------------- 
+
+ Logged Date: 2021-05-24 23:04:36 
+2021-06-03 Folder Created
+
+---------------2021-06-07 / sadsadsa ---------------- 
+
+ Logged Date: 2021-05-24 23:06:23 
+2021-06-07 Folder Created
+
+---------------2021-06-10 / sdesad ---------------- 
+
+ Logged Date: 2021-05-24 23:08:07 
+2021-06-10 Folder Created
+
+---------------2021-06-10 / sdesad ---------------- 
+
+ Logged Date: 2021-05-24 23:09:56 
+sdesad Folder Created
+my_data/news_data/2021-06-10/sdesad/20210610_230956_30662_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-06-11 / zxdsafds ---------------- 
+
+ Logged Date: 2021-05-24 23:10:47 
+2021-06-11 Folder Created
+
+---------------2021-06-12 / asdsad ---------------- 
+
+ Logged Date: 2021-05-24 23:13:35 
+2021-06-12 Folder Created
+
+---------------2021-05-29 / sadsad ---------------- 
+
+ Logged Date: 2021-05-24 23:19:17 
+2021-05-29 Folder Created
+
+---------------2021-05-16 / aedaed ---------------- 
+
+ Logged Date: 2021-05-24 23:22:36 
+2021-05-16 Folder Created
+
+---------------2021-05-19 / aaa ---------------- 
+
+ Logged Date: 2021-05-24 23:28:15 
+2021-05-19 Folder Created
+
+---------------2021-05-19 / aaa ---------------- 
+
+ Logged Date: 2021-05-24 23:29:04 
+aaa Folder Created
+my_data/news_data/2021-05-19/aaa/20210519_232904_73992_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-19 / sanjeeb ---------------- 
+
+ Logged Date: 2021-05-24 23:29:42 
+sanjeeb Folder Created
+my_data/news_data/2021-05-19/sanjeeb/20210519_232942_84069_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-07-01 / Final ---------------- 
+
+ Logged Date: 2021-05-24 23:30:35 
+2021-07-01 Folder Created
+
+---------------2021-07-01 / Final ---------------- 
+
+ Logged Date: 2021-05-24 23:31:47 
+Final Folder Created
+my_data/news_data/2021-07-01/Final/20210701_233147_85919_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-07-01/Final/20210701_233147_85919_body.docx : News Body Uploaded
+my_data/news_data/2021-07-01/Final/20210701_233147_85919_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-07-01/Final/20210701_233147_85919_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-07-01/Final/20210701_233147_85919_gallery_0.jpg : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-18 / sdsad ---------------- 
+
+ Logged Date: 2021-05-24 23:32:28 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / adsf ---------------- 
+
+ Logged Date: 2021-05-24 23:35:33 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / adsf ---------------- 
+
+ Logged Date: 2021-05-24 23:38:48 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / adsf ---------------- 
+
+ Logged Date: 2021-05-24 23:38:54 
+adsf Folder Created
+my_data/news_data/2021-05-18/adsf/20210518_233854_94717_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:39:47 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:40:11 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:40:38 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:41:06 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:41:38 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:42:25 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:42:47 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:43:06 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:43:29 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:43:52 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:44:48 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:45:22 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:46:28 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:46:58 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:48:09 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:48:59 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:49:50 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:53:41 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:58:07 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / sdfsf ---------------- 
+
+ Logged Date: 2021-05-24 23:58:15 
+sdfsf Folder Created
+my_data/news_data/2021-05-18/sdfsf/20210518_235815_64686_audio.mp3 : Audio Uploaded
+------------------------------------------------------- 
+---------------2021-05-18 / dsfsdf ---------------- 
+
+ Logged Date: 2021-05-25 00:00:15 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / dsfsdf ---------------- 
+
+ Logged Date: 2021-05-25 00:00:30 
+dsfsdf Folder Created
+my_data/news_data/2021-05-18/dsfsdf/20210518_000030_95446_audio.mp3 : Audio Uploaded
+------------------------------------------------------- 
+---------------2021-05-18 / zxdfcdf ---------------- 
+
+ Logged Date: 2021-05-25 00:01:41 
+2021-05-18 Folder Created
+
+---------------2021-05-18 / zxdfcdf ---------------- 
+
+ Logged Date: 2021-05-25 00:01:51 
+zxdfcdf Folder Created
+my_data/news_data/2021-05-18/zxdfcdf/20210518_000151_34892_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-17 / asdsadas ---------------- 
+
+ Logged Date: 2021-05-25 00:05:18 
+2021-05-17 Folder Created
+
+---------------2021-05-17 / asdsadas ---------------- 
+
+ Logged Date: 2021-05-25 00:07:34 
+
+---------------2021-05-17 / asdsadas ---------------- 
+
+ Logged Date: 2021-05-25 00:09:06 
+2021-05-17.'/'.asdsadas Folder Created
+2021-05-17 Folder Created
+my_data/news_data/2021-05-17/asdsadas/20210517_000906_41063_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-17 / sadsa ---------------- 
+
+ Logged Date: 2021-05-25 00:09:44 
+2021-05-17.'/'.sadsa Folder Created
+2021-05-17 Folder Created
+my_data/news_data/2021-05-17/sadsa/20210517_000944_24177_audio.mp3 : Audio Uploaded
+------------------------------------------------------- 
+---------------2021-05-16 / final ---------------- 
+
+ Logged Date: 2021-05-25 00:11:31 
+final Folder Created
+my_data/news_data/2021-05-16/final/20210516_001131_20036_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-16/final/20210516_001131_20036_body.docx : News Body Uploaded
+my_data/news_data/2021-05-16/final/20210516_001131_20036_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-16/final/20210516_001131_20036_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-16/final/20210516_001131_20036_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-15 / aaa ---------------- 
+
+ Logged Date: 2021-05-25 00:13:07 
+2021-05-15 Folder Created
+
+---------------2021-05-15 / aaa ---------------- 
+
+ Logged Date: 2021-05-25 00:13:36 
+2021-05-15 Folder Created
+2021-05-15.'/'.aaa Folder Created
+my_data/news_data/2021-05-15/aaa/20210515_001336_97771_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-15 / sdsad ---------------- 
+
+ Logged Date: 2021-05-25 00:14:16 
+2021-05-15 Folder Created
+2021-05-15.'/'.sdsad Folder Created
+my_data/news_data/2021-05-15/sdsad/20210515_001416_78107_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-15/sdsad/20210515_001416_78107_body.docx : News Body Uploaded
+my_data/news_data/2021-05-15/sdsad/20210515_001416_78107_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-15/sdsad/20210515_001416_78107_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-15 / sadsadsad ---------------- 
+
+ Logged Date: 2021-05-25 00:15:04 
+2021-05-15 Folder Created
+2021-05-15.'/'.sadsadsad Folder Created
+my_data/news_data/2021-05-15/sadsadsad/20210515_001504_67527_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-15/sadsadsad/20210515_001504_67527_body.docx : News Body Uploaded
+my_data/news_data/2021-05-15/sadsadsad/20210515_001504_67527_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-15/sadsadsad/20210515_001504_67527_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-15/sadsadsad/20210515_001504_67527_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-01 / asdsadsad ---------------- 
+
+ Logged Date: 2021-05-25 00:17:37 
+2021-05-01 Folder Created
+2021-05-01.'/'.asdsadsad Folder Created
+my_data/news_data/2021-05-01/asdsadsad/20210501_001737_66948_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-01/asdsadsad/20210501_001737_66948_body.docx : News Body Uploaded
+my_data/news_data/2021-05-01/asdsadsad/20210501_001737_66948_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-01/asdsadsad/20210501_001737_66948_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-01/asdsadsad/20210501_001737_66948_gallery_0.jpg : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-22 / Final Test Title ---------------- 
+
+ Logged Date: 2021-05-25 12:57:33 
+2021-05-22 Folder Created
+2021-05-22/Final Test TitleFolder Created
+my_data/news_data/2021-05-22/Final Test Title/20210522_125733_18934_body.docx : News Body Uploaded
+------------------------------------------------------- 
+---------------2021-05-25 / New Test ---------------- 
+
+ Logged Date: 2021-05-25 12:58:20 
+2021-05-25 Folder Created
+2021-05-25/New TestFolder Created
+my_data/news_data/2021-05-25/New Test/20210525_125820_34886_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-25/New Test/20210525_125820_34886_body.docx : News Body Uploaded
+my_data/news_data/2021-05-25/New Test/20210525_125820_34886_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-25/New Test/20210525_125820_34886_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-25/New Test/20210525_125820_34886_gallery_0.jpg : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-25 / anjit ---------------- 
+
+ Logged Date: 2021-05-25 13:00:49 
+anjit Folder Created
+my_data/news_data/2021-05-25/anjit/20210525_130049_26193_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-25/anjit/20210525_130049_26193_body.docx : News Body Uploaded
+my_data/news_data/2021-05-25/anjit/20210525_130049_26193_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-25/anjit/20210525_130049_26193_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-25/anjit/20210525_130049_26193_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-25 / ribiik ---------------- 
+
+ Logged Date: 2021-05-25 13:01:32 
+ribiik Folder Created
+my_data/news_data/2021-05-25/ribiik/20210525_130132_51517_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-25/ribiik/20210525_130132_51517_body.docx : News Body Uploaded
+my_data/news_data/2021-05-25/ribiik/20210525_130132_51517_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-25/ribiik/20210525_130132_51517_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-25/ribiik/20210525_130132_51517_gallery_0.jpg : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-25 / sanjeeb ---------------- 
+
+ Logged Date: 2021-05-25 13:10:21 
+sanjeeb Folder Created
+my_data/news_data/2021-05-25/sanjeeb/20210525_131021_47092_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-25/sanjeeb/20210525_131021_47092_body.docx : News Body Uploaded
+my_data/news_data/2021-05-25/sanjeeb/20210525_131021_47092_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-25/sanjeeb/20210525_131021_47092_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-25/sanjeeb/20210525_131021_47092_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-05-25 / offix ---------------- 
+
+ Logged Date: 2021-05-25 13:16:41 
+offix Folder Created
+my_data/news_data/2021-05-25/offix/20210525_131641_95820_videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 
+---------------2021-05-25 / offix ---------------- 
+
+ Logged Date: 2021-05-25 13:22:20 
+offix Folder Created
+my_data/news_data/2021-05-25/offix/20210525_132220_36460_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-25/offix/20210525_132220_36460_videolazy.mp4 : Video Lazy Uploaded
+------------------------------------------------------- 
+---------------2021-05-25 / ribik ---------------- 
+
+ Logged Date: 2021-05-25 13:23:43 
+ribik Folder Created
+my_data/news_data/2021-05-25/ribik/20210525_132343_65415_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-25/ribik/20210525_132343_65415_body.docx : News Body Uploaded
+my_data/news_data/2021-05-25/ribik/20210525_132343_65415_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-25/ribik/20210525_132343_65415_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-25/ribik/20210525_132343_65415_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-25/ribik/20210525_132343_65415_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-25/ribik/20210525_132343_65415_gallery_0.png : Gallery-0 Uploaded
+>>>>>>> 58561661040c5fcce4502286673b44f442b2d82e
 ------------------------------------------------------- 

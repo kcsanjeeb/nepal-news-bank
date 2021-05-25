@@ -30,7 +30,8 @@ $news_path = 'my_data/news_data';
 
 if(!isset($location))
 {
-   
+
+   print_r($_POST);
     if(isset($_POST['submit']))
     {
         if(isset($_POST['byLine']) && isset($_POST['newsdate']) && isset($_POST['newsCategories']) && count($_POST['newsCategories']) > 0)   
@@ -148,12 +149,13 @@ if(!isset($location))
                 $newsdate = mysqli_real_escape_string($connection, $newsdate);
             
             }
-
-            $myfile = fopen("../log/newscollector_log.txt", "a") or die("Unable to open file!");  
+            
+           
+            
+            	$myfile = fopen("../log/newscollector_log.txt", "a") or die("Unable to open file!");  
                 fwrite($myfile, "\n---------------$newsdate / $byLine_directory ---------------- \n");
                 $logged_date = date('Y-m-d H:i:s');
                 fwrite($myfile, "\n Logged Date: $logged_date \n"); 
-
 
             if($date_status)
             {
@@ -163,31 +165,52 @@ if(!isset($location))
                 {
                     if(!is_dir('../'.$interview_path.'/'.$byLine_directory_clean))
                     {
-                        mkdir('../'.$interview_path.'/'.$byLine_directory_clean, 0700 , true);
+                        mkdir('../'.$interview_path.'/'.$byLine_directory_clean, 0777 , true);
+                        
+                        chmod('../'.$interview_path.'/'.$byLine_directory_clean, 0777);
+                     
                         $text = "$byLine_directory_clean Folder Created\n";
                         fwrite($myfile, $text);
                     }
                 }
                 else
                 {
+                 
                     if(!is_dir('../'.$news_path.'/'.$newsdate))
                     {
-                        mkdir('../'.$news_path.'/'.$newsdate, 0700 , true);
-                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0700 , true);
+                    
+                   
+                   
+                        mkdir('../'.$news_path.'/'.$newsdate, 0777 , true);
+                        
+                        chmod('../'.$news_path.'/'.$newsdate, 0777);
+                        
+                       
+                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777 , true);
+                        
+                        chmod('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777);
+                        
                         $text = "$newsdate Folder Created\n";
                         fwrite($myfile, $text);
-                        $text = "$newsdate."/".$byLine_directory_clean Folder Created\n";
+                        $text = $newsdate."/".$byLine_directory_clean."Folder Created\n";
                         fwrite($myfile, $text);
+                       
 
                     }
                     else
                     {
+                    
                         $byLine_directory_clean = remove_special_chars($byLine_directory);
-                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0700 , true);
+                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777 , true);
+                        
+                        chmod('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777);
+                           
                         $text = "$byLine_directory_clean Folder Created\n";
                         fwrite($myfile, $text);
                     }
                 }
+                
+                                            
                    
             }
 
@@ -215,10 +238,11 @@ if(!isset($location))
             }
 
 
-            
+
             if(isset($_FILES['audio'])   && !empty($_FILES['audio']['name']))
             {
                 $fileName = $_FILES['audio']['name'] ;
+
                 $fileExt = explode('.' , $fileName);
                 $fileActualExt_audio = strtolower(end($fileExt));
 
