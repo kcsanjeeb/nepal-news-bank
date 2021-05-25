@@ -210,13 +210,16 @@ iframe {
                                     <table id="example" class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">SN</th>
-                                                <th class="text-center">Live Title</th>
-                                                <th class="text-center">Iframe</th>
-                                                <th class="text-center">Description</th>
-                                                <th class="text-center">Action</th>
+                                                <th  style="width:5%">SN</th>
+                                                <th style="width:25%">Live Title</th>
+                                                <th style="width:20%">Iframe</th>
+                                                <th style="width:55%">Description</th>
+                                                <th style="width:5%">Action</th>
                                             </tr>
                                         </thead>
+                                        
+                                       
+
                                         <tbody>
 
                                             <?php
