@@ -23,3 +23,38 @@ my_data/news_data/2021-05-24/एमसीसी विरेध/20210524_095850_
 my_data/news_data/2021-05-24/एमसीसी विरेध/20210524_095850_63242_gallery_2.jpg : Gallery-2 Uploaded
 my_data/news_data/2021-05-24/एमसीसी विरेध/20210524_095850_63242_gallery_3.jpg : Gallery-3 Uploaded
 ------------------------------------------------------- 
+---------------2021-05-24 / नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए ---------------- 
+
+ Logged Date: 2021-05-24 17:19:49 
+नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए Folder Created
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_body.docx : News Body Uploaded
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_3.jpg : Gallery-3 Uploaded
+------------------------------------------------------- 
+---------------2021-05-25 / उपत्यककाका अस्पतालमा अक्सिजन अभाव ---------------- 
+
+ Logged Date: 2021-05-25 10:29:07 
+2021-05-25 Folder Created
+INFmy_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_audio.wav : Audio Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_body.docx : News Body Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_3.jpg : Gallery-3 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_4.jpg : Gallery-4 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_5.jpg : Gallery-5 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_6.jpg : Gallery-6 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_7.jpg : Gallery-7 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_8.jpg : Gallery-8 Uploaded
+my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_9.jpg : Gallery-9 Uploaded
+------------------------------------------------------- 

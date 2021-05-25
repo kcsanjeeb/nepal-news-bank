@@ -38,7 +38,6 @@ tools/my_data/news_data/2021-05-19/खोप खरिदमा आलटाल/
 tools/my_data/news_data/2021-05-19/खोप खरिदमा आलटाल/20210519_090054_72254_gallery_0.jpg
 tools/my_data/news_data/2021-05-19/खोप खरिदमा आलटाल/20210519_090054_72254_body.docx
 tools/my_data/news_data/2021-05-19/खोप खरिदमा आलटाल/20210519_090054_72254_audio.mp3
-<<<<<<< HEAD
 tools/my_data/news_data/2021-05-19/test video 2/20210519_080733_15025_videolong.mp4
 tools/my_data/news_data/2021-05-19/test video 2/20210519_080733_15025_thumbnail.jpg
 tools/my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_thumbnail.jpg
@@ -48,10 +47,6 @@ tools/my_data/archive_data/archive_picture/Archive picture - corona/20210519_222
 tools/my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_2.jpg
 tools/my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_1.jpg
 tools/my_data/archive_data/archive_picture/Archive picture - corona/20210519_222624_88084_photo_0.jpg
-=======
-tools/my_data/archive_data/archive_video/Test Blog Ann/20210520_103248_53842_video.mp4
-tools/my_data/archive_data/archive_video/Test Blog Ann/20210520_103248_53842_thumbnail.jpg
->>>>>>> d7fd0924b9bb7ca744be94a7e724f6fdc0607e88
 tools/my_data/news_data/2021-05-22/check news series/20210522_213104__videolong.mp4
 tools/my_data/news_data/2021-05-22/check news series/20210522_213104__body.docx
 tools/my_data/archive_data/archive_video/archive video series test/20210522_214012_84377_video.mp4
@@ -84,3 +79,53 @@ tools/my_data/news_data/2021-05-24/एमसीसी विरेध/20210524_0
 tools/my_data/news_data/2021-05-24/एमसीसी विरेध/20210524_095850_63242_gallery_0.jpg
 tools/my_data/news_data/2021-05-24/एमसीसी विरेध/20210524_095850_63242_body.docx
 tools/my_data/news_data/2021-05-24/एमसीसी विरेध/20210524_095850_63242_audio.mp3
+tools/log/newscollector_log.txt
+tools/log/remotecopy_log.txt
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_body.docx
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_0.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_1.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_2.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_3.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_thumbnail.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videoextra.mp4
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videolazy.mp4
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videolong.mp4
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_audio.wav
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_body.docx
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_0.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_1.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_2.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_3.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_4.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_5.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_6.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_7.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_8.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_9.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_thumbnail.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_videoextra.mp4
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_videolazy.mp4
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_videoextra.mp4
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_thumbnail.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_9.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_8.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_7.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_4.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_3.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_2.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_1.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_0.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_body.docx
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_audio.wav
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videolong.mp4
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videolazy.mp4
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_videoextra.mp4
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_thumbnail.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_3.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_2.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_1.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_gallery_0.jpg
+tools/my_data/news_data/2021-05-24/नेपाल इन्भेष्टमेण्ट र हिमालय बैंक एकआपसमा गाभिए/20210524_171949_64564_body.docx
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_5.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_gallery_6.jpg
+tools/my_data/news_data/2021-05-25/उपत्यककाका अस्पतालमा अक्सिजन अभाव/20210525_102907_50137_videolong.mp4
