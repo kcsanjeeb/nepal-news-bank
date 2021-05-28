@@ -234,13 +234,13 @@ if(isset($_POST['submit']))
                         fwrite($myfile, "\n ".$file_name."_video_".$counter.".".$fileActualExt." \n");
                     }
                     else {
-                        continue ;
+                       // continue ;
                     }
                     
                     
                 }
                 else {
-                   continue;
+                   // continue;
                 }
 
 
@@ -471,6 +471,7 @@ if(isset($_POST['submit']))
             }
         }
 
+        $connection= mysqli_connect($host , $user , $password , $db_name);
 
         $query_new_archives = "insert into archives(
             archive_id ,created_date ,  title , series ,tags ,
