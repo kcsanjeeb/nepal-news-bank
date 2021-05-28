@@ -37,6 +37,14 @@ function getId($table)
         WHERE 'newsid' NOT IN (SELECT newsid FROM nas)
         LIMIT 1;";
     }
+
+    if($table == 'archives')
+    {
+        $sql_news_code = "SELECT FLOOR(RAND() * 99999) AS new_id
+        FROM archives 
+        WHERE 'archive_id' NOT IN (SELECT archive_id FROM archives)
+        LIMIT 1;";
+    }
    
 
 

@@ -140,7 +140,30 @@ if(!isset($location))
             // {
             //     $lang_selec = "NULL";
             // }   
-            
+            if(isset($_POST['series']))
+            {
+                // $series_name = $_POST['series'] ;
+                // $series = "'$series_name'";
+
+                $series_name = $_POST['series'];
+                    
+                    $series_final_array = array();
+                    
+                    foreach($series_name as $s)
+                    {
+                        if($s != '')
+                        {
+                            array_push( $series_final_array ,$s );
+                        }
+                    }
+                    $series = implode(',', $series_final_array);
+                    $series = "'$series'";
+
+            }
+            else
+            {
+                $series = 'NULL';
+            }
 
             $newsdate = $_POST['newsdate'];
             if(validateDate(date('Y-m-d',strtotime($newsdate))) == 1 )
@@ -547,30 +570,7 @@ if(!isset($location))
                 // $vimeo_videoextra = "NULL";
             }
 
-            if(isset($_POST['series']))
-            {
-                // $series_name = $_POST['series'] ;
-                // $series = "'$series_name'";
-
-                $series_name = $_POST['series'];
-                    
-                    $series_final_array = array();
-                    
-                    foreach($series_name as $s)
-                    {
-                        if($s != '')
-                        {
-                            array_push( $series_final_array ,$s );
-                        }
-                    }
-                    $series = implode(',', $series_final_array);
-                    $series = "'$series'";
-
-            }
-            else
-            {
-                $series = 'NULL';
-            }
+            
 
 
 

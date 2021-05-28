@@ -15,4 +15,3 @@ else
     $location = '../login.php';    
 }
 
-

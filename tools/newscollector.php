@@ -862,21 +862,22 @@ strong {
                                             </svg>
 
                                         </label>
-                                        
+
                                         <select multiple name="series[]" id="series">
 
-                                    <?php 
+                                            <?php 
                                         if(isset($series))
                                         {
                                             foreach($series as $series)
                                             {
                                     ?>
-                                    <option value="<?php echo $series['id'] ; ?>"><?php echo $series['name'] ; ?></option>
-                                    <?php
+                                            <option value="<?php echo $series['id'] ; ?>">
+                                                <?php echo $series['name'] ; ?></option>
+                                            <?php
                                             }
                                         }
                                     ?>
-                                    <!-- <option value="141">Business</option>
+                                            <!-- <option value="141">Business</option>
                                     <option value="142">Entertainment</option>
                                     <option value="134">Sports</option>
                                     <option value="135">International</option>
@@ -884,7 +885,7 @@ strong {
                                    -->
 
 
-                                </select>
+                                        </select>
                                     </div>
 
                                     <!-- <div class="form-group">
@@ -925,7 +926,8 @@ strong {
                             <button type="submit" class="btn btn-primary" name="submit">Collect news</button>
 
                             <label class="col-lg-12 p-0 h5 text-info mt-2">Step 11.</label>
-                            <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete collected news</button></span>
+                            <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete collected
+                                    news</button></span>
                             <span>please <strong><a href="./remotecopycreator.php">go to Remote Copy
                                         Creator</a></strong> tool to delete</span>
 
@@ -1197,8 +1199,8 @@ strong {
         });
         </script>
 
-        
-<script>
+
+        <script>
         $(function() {
             // Apply the plugin 
             var series = $('#series').filterMultiSelect();
@@ -1347,14 +1349,6 @@ strong {
 
 
 
-        $(document).on('change', '#categories', function() {
-
-            // var conceptName = $(".cat_opt").val();
-
-            // alert(conceptName);
-            console.log("Hello");
-
-        });
         </script>
 
 

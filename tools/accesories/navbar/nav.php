@@ -56,6 +56,15 @@
         $livetext_page = "";
     }
 
+    if(basename($_SERVER['PHP_SELF'])=="archive.php") 
+    { 
+        $archive_page = "active";
+    }
+    else
+    {
+        $archive_page = "";
+    }
+
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary  " style="background-color:#17a2b8 !important;  display: flex;
 justify-content: space-around; color:#fff; font-size:25px; font-weight:600">
@@ -87,6 +96,12 @@ justify-content: space-around; color:#fff; font-size:25px; font-weight:600">
             <a class="nav-link mr-3"
                 href="archivepicture.php">Archive-Picture-Creator</a>
         </li>
+
+        <li class="nav-item <?php echo $archive_page ; ?>">
+            <a class="nav-link mr-3"
+                href="archivepicture.php">Archives</a>
+        </li>
+
         <li class="nav-item <?php echo $newsticker_page ; ?>">
             <a class="nav-link mr-3"
                 href="newsticker.php">Ticker</a>
