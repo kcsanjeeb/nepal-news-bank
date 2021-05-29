@@ -99,7 +99,7 @@ justify-content: space-around; color:#fff; font-size:25px; font-weight:600">
 
         <li class="nav-item <?php echo $archive_page ; ?>">
             <a class="nav-link mr-3"
-                href="archivepicture.php">Archives</a>
+                href="archive.php">Archives</a>
         </li>
 
         <li class="nav-item <?php echo $newsticker_page ; ?>">

@@ -194,7 +194,7 @@ foreach($result as $res)
                                             {
                                              
 
-                                                if( strpos( strtolower($category['name']), "archive" ) !== false) {
+                                                if( strpos( strtolower($category['name']), "archive" ) === false) {
                                                    continue ;
                                                 }
                                     ?>

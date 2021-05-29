@@ -250,8 +250,8 @@ if(!isset($location))
                             ),
                                 
                                 "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
-                                                                                'haru_video_url_type'=> 'insert',
-                                                                                'haru_video_url' => array('mp4' => $domain_url.'/'.$ftp_folder_name_in_server.'/'.$video_link , 'webm' => '')
+                                                                                'haru_video_url_type'=> 'insert'
+                                                                                
                                                                             ),
                                                 'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series")
     

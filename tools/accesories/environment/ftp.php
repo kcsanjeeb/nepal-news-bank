@@ -22,4 +22,3 @@ $ftp_un_suffix = $domain_name_ftp;
 $ftp_username = "$ftp_un_prefix@$ftp_un_suffix";
 // $ftp_password = "nepalnewsbank";
 
-
