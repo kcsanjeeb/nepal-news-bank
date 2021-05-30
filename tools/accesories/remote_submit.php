@@ -162,7 +162,7 @@ if(!isset($location))
 
                 $ftp = ftp_connect("$ftp_url");
                 ftp_login($ftp, "$ftp_username", "$ftp_password");
-                ftp_pasv($ftp, true);
+                // ftp_pasv($ftp, true);
 
 
 
@@ -231,7 +231,7 @@ if(!isset($location))
                             $sourceName = end($sourceName );
 
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$gal_img_arr))
-                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$gal_img_arr , FTP_BINARY))
+                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$gal_img_arr , FTP_ASCII))
                             {
                                 $gal_img_arr = "$news_ftp_path_sql/$sourceName" ;
                                 array_push($gallery_full_web_arr , $gal_img_arr);
@@ -277,7 +277,7 @@ if(!isset($location))
 
                             // if(ftp_remote('newsbody' , '../'.$newsbody_full , $sourceName))
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$newsbody_full))
-                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$newsbody_full , FTP_BINARY))
+                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$newsbody_full , FTP_ASCII))
                             { 
 
                                 $text = "$sourceName News  Body Pushed\n";
@@ -320,7 +320,7 @@ if(!isset($location))
                             if($video_type == 'selfhost')
                             {
                                 // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolong_full))
-                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolong_full , FTP_BINARY))
+                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolong_full , FTP_ASCII))
                                 {
 
                                     $text = "$sourceName Video Long Pushed\n";
@@ -410,7 +410,7 @@ if(!isset($location))
                             if($video_type == 'selfhost')
                             {
                                 // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolazy_full))
-                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolazy_full , FTP_BINARY))
+                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolazy_full , FTP_ASCII))
                                 {
                                     $text = "$sourceName Video Lazy Pushed\n";
                                     fwrite($myfile, $text);                            
@@ -496,7 +496,7 @@ if(!isset($location))
                             if($video_type == 'selfhost')
                             {
                                 // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videoextra_full))
-                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videoextra_full , FTP_BINARY))
+                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videoextra_full , FTP_ASCII))
                                 {
                                     // $push_videoextra = "'$videoextra_full'" ;
                                     $text = "$sourceName Video Extra  Pushed\n";
@@ -578,7 +578,7 @@ if(!isset($location))
                             $sourceName = explode("/" ,$thumbnail_full ) ;
                             $sourceName = end($sourceName );
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$thumbnail_full))
-                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$thumbnail_full , FTP_BINARY))
+                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$thumbnail_full , FTP_ASCII))
 
                             {
                                 // $push_thumbnail = "'$thumbnail_full'" ;
@@ -619,7 +619,7 @@ if(!isset($location))
                             $sourceName = explode("/" ,$audio_full ) ;
                             $sourceName = end($sourceName );
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$audio_full))
-                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$audio_full , FTP_BINARY))
+                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$audio_full , FTP_ASCII))
 
                             {
                                 // $push_audio = "'$audio_full'" ;

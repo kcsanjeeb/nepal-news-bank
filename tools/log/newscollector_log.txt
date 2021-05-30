@@ -514,3 +514,19 @@ my_data/news_data/2021-05-25/ribik/20210525_132343_65415_videoextra.mp4 : Video 
 my_data/news_data/2021-05-25/ribik/20210525_132343_65415_gallery_0.png : Gallery-0 Uploaded
 >>>>>>> 58561661040c5fcce4502286673b44f442b2d82e
 ------------------------------------------------------- 
+
+
+---------------2021-05-30 / HELLO New World ---------------- 
+
+ Logged Date: 2021-05-30 22:45:56 
+2021-05-30 Folder Created
+2021-05-30/HELLO New WorldFolder Created
+my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_body.docx : News Body Uploaded
+my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 

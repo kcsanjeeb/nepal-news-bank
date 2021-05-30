@@ -79,3 +79,12 @@ my_data/archive_data/archive_video/archive video series test/20210522_214012_843
 Archive Video and Archive Thumbnail Pushed to Remote Succesfully
 Archive Video Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-06-02 / Test FTP  ------------------ 
+
+ Logged Date: 2021-05-30 22:56:35 
+my_data/archive_data/archive_video/Test FTP : Folder Created
+my_data/archive_data/archive_video/Test FTP/20210602_225636_17453_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Test FTP/20210602_225636_17453_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+Archive Video and Archive Thumbnail Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 

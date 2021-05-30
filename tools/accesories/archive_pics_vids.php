@@ -110,7 +110,7 @@ if(isset($_POST['submit']))
 
     $ftp = ftp_connect("$ftp_url");
     ftp_login($ftp, "$ftp_username", "$ftp_password");
-    ftp_pasv($ftp, true);
+    // ftp_pasv($ftp, true);
 
     ftp_mkdir($ftp, "/".$ftp_path);
 
@@ -134,7 +134,7 @@ if(isset($_POST['submit']))
 
             $sourceName = $file_name."_thumbnail.".$fileActualExt_thumbImg;
 
-            if(ftp_put($ftp, $ftp_path."/".$sourceName, $thumbnail_path , FTP_BINARY))
+            if(ftp_put($ftp, $ftp_path."/".$sourceName, $thumbnail_path , FTP_ASCII))
             {
                 $thumbnail_path ="$local_path_clean/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
                 $thumbnail_path_remote ="$ftp_path/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
@@ -228,7 +228,7 @@ if(isset($_POST['submit']))
                     
                     $sourceName = $file_name."_video_".$counter.".".$fileActualExt;
 
-                    if(ftp_put($ftp, $ftp_path."/".$sourceName, $video_path , FTP_BINARY))
+                    if(ftp_put($ftp, $ftp_path."/".$sourceName, $video_path , FTP_ASCII))
                     {
                         $text = "";
                         fwrite($myfile, "\n ".$file_name."_video_".$counter.".".$fileActualExt." \n");
@@ -284,7 +284,7 @@ if(isset($_POST['submit']))
 
                 $sourceName = $file_name."_picture_".$counter.".".$fileActualExt; 
 
-                if(ftp_put($ftp, $ftp_path."/".$sourceName, $pic_path , FTP_BINARY))
+                if(ftp_put($ftp, $ftp_path."/".$sourceName, $pic_path , FTP_ASCII))
                 {
                     $text = "";
                         fwrite($myfile, "\n ".$file_name."_picture_".$counter.".".$fileActualExt." \n");

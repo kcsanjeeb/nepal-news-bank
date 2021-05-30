@@ -109,7 +109,7 @@ $files = glob('../'.$archive_path_video.'/'.$byline_dir.'/*'); // get all file n
 
   $ftp = ftp_connect("$ftp_url");
   ftp_login($ftp, "$ftp_username", "$ftp_password");
-  ftp_pasv($ftp, true);
+//   ftp_pasv($ftp, true);
 
   $dir = $thumbnail ;
   ftp_delete($ftp, $dir);

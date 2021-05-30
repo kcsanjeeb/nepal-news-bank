@@ -248,20 +248,20 @@ if(!isset($location))
                         $dir = $title_directory;
                         ftp_mkdir($ftp, "/".$archive_path_picture_ftp."/".$dir);
                         $file_name = end($thumbpath);
-                        ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../$thumbpath", FTP_BINARY);
+                        ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../$thumbpath", FTP_ASCII);
                         $text = $file_name." : Thumbnail  Pushed to Remote Succesfully\n";
                             fwrite($myfile, $text);
                         foreach($gallery_arr as $ar)
                         {
                             $file_name = explode("/" , $ar);
                             $file_name = end($file_name);
-                            ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../my_data/$ar", FTP_BINARY); 
+                            ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../my_data/$ar", FTP_ASCII); 
 
                             $text = $file_name." : Gallery  Pushed to Remote Succesfully\n";
                             fwrite($myfile, $text);
 
                         }
-                        ftp_put($ftp, "/$archive_path_picture_ftp/$dir/$thum_name_file", "$thumb_send_path", FTP_BINARY); 
+                        ftp_put($ftp, "/$archive_path_picture_ftp/$dir/$thum_name_file", "$thumb_send_path", FTP_ASCII); 
                         ftp_close($ftp);
 
 
