@@ -481,7 +481,7 @@ if(isset($_POST['submit']))
             VALUES 
             ('$archive_id',  '$created_at_db' , '$title'  , '$series',
                 '$tags' , $thumbnail_path_remote_sql , '$newsCategories' , '$data_videos' , '$data_pics' , '$created_at',
-                '$post_new_id','$featured_media_id' 
+                $post_new_id_sql,$featured_media_id_sql 
                 
                 )";    
 

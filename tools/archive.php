@@ -3,8 +3,8 @@ error_reporting(0);
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "global/timezone.php";
-
-
+include "accesories/connection.php";
+include "accesories/nas_function/functions.php";
 
 
 
@@ -121,6 +121,9 @@ foreach($result as $res)
 }
 
 
+$sql_content_archive = "select * from archives order by created_date desc ";
+$run_sql_content= mysqli_query($connection, $sql_content_archive);
+
 
 
 ?>
@@ -158,11 +161,11 @@ foreach($result as $res)
 
 <body>
 
-<?php
+    <?php
         include "accesories/navbar/nav.php";
     ?>
     <br>
- 
+
 
     <form method="POST" action="accesories/archive_pics_vids.php" enctype="multipart/form-data">
 
@@ -476,6 +479,102 @@ foreach($result as $res)
 
 
     </form>
+
+
+    <div class="container">
+
+    <div class="col-lg-12">
+        <div class="card shadow-lg  mb-5 bg-white rounded">
+            <div class="card-header bg-info text-light">
+                <h4>Archives List</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+
+                    <?php
+                   
+                        $counter = 1;
+                            while($row_content = mysqli_fetch_assoc($run_sql_content))
+                            {
+                                $byline = $row_content['title'];
+                                $archive_id = $row_content['archive_id'];
+
+                                $media_id = $row_content['wp_media_id'];
+                                $wp_id = $row_content['wp_id'];
+
+
+                             
+
+                                
+
+                        ?>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <p class="m-0"><strong><?php echo $counter; ?>.</strong> <?php echo $byline; ?></p>
+
+
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                            data-target="#exampleModal<?php echo $counter ; ?>">
+                            Delete
+                        </button>
+                    </li>
+
+
+
+
+                    <div class="modal fade" id="exampleModal<?php echo $counter ; ?>" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Delete Archive Video</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete Archive Post <strong> <?php echo $byline ; ?> ?
+                                    </strong>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <form action="accesories/delete_archive.php" method="POST">
+
+                                        <input type="hidden" class="btn btn-danger" name="archive_id"
+                                            value="<?php echo $archive_id ; ?>">
+                                        <input type="hidden" class="btn btn-danger" name="wp_id"
+                                            value="<?php echo $wp_id ; ?>">
+                                        <input type="hidden" class="btn btn-danger" name="wp_media_id"
+                                            value="<?php echo $media_id ; ?>">
+                                        <input type="hidden" class="btn btn-danger" name="byline"
+                                            value="<?php echo $byline ; ?>">
+
+
+                                     
+
+
+
+
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <?php
+                        $counter++;
+                        }
+                    ?>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
 
 
 
@@ -813,7 +912,8 @@ foreach($result as $res)
     //         }
     //     }
     // }
-    // </script>
+    // 
+    </script>
 
 
 </body>
