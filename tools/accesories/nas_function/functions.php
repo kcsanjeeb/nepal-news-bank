@@ -121,7 +121,7 @@ function ftp_delete_rem($dir , $type)
     include "environment/ftp.php";
     $ftp = ftp_connect("$ftp_url");
     ftp_login($ftp, "$ftp_username", "$ftp_password");
-    // ftp_pasv($ftp, true);
+    ftp_pasv($ftp, true);
 
     if($type == 'folder')
     {

@@ -530,3 +530,102 @@ my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_videoextra.mp
 my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_gallery_0.jpg : Gallery-0 Uploaded
 my_data/news_data/2021-05-30/HELLO New World/20210530_224556_58073_gallery_1.jpg : Gallery-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-07-01 / July first ---------------- 
+
+ Logged Date: 2021-05-31 08:59:33 
+2021-07-01 Folder Created
+2021-07-01/July firstFolder Created
+my_data/news_data/2021-07-01/July first/20210701_085933_6922_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-07-01/July first/20210701_085933_6922_body.docx : News Body Uploaded
+my_data/news_data/2021-07-01/July first/20210701_085933_6922_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-07-01/July first/20210701_085933_6922_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-07-01/July first/20210701_085933_6922_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-07-01/July first/20210701_085933_6922_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-07-01/July first/20210701_085933_6922_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-07-01/July first/20210701_085933_6922_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+---------------2021-08-01 / August 1 ---------------- 
+
+ Logged Date: 2021-05-31 09:14:40 
+2021-08-01 Folder Created
+2021-08-01/August 1Folder Created
+my_data/news_data/2021-08-01/August 1/20210801_091440_11297_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-08-01/August 1/20210801_091440_11297_body.docx : News Body Uploaded
+my_data/news_data/2021-08-01/August 1/20210801_091440_11297_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-08-01/August 1/20210801_091440_11297_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-08-01/August 1/20210801_091440_11297_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-08-01/August 1/20210801_091440_11297_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-08-01/August 1/20210801_091440_11297_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-08-01/August 1/20210801_091440_11297_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+---------------2021-05-31 / Nepal Rastryi mandap ---------------- 
+
+ Logged Date: 2021-05-31 09:25:23 
+2021-05-31 Folder Created
+2021-05-31/Nepal Rastryi mandapFolder Created
+my_data/news_data/2021-05-31/Nepal Rastryi mandap/20210531_092523_99221_body.docx : News Body Uploaded
+my_data/news_data/2021-05-31/Nepal Rastryi mandap/20210531_092523_99221_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-31/Nepal Rastryi mandap/20210531_092523_99221_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-05-31/Nepal Rastryi mandap/20210531_092523_99221_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-05-31/Nepal Rastryi mandap/20210531_092523_99221_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-05-31/Nepal Rastryi mandap/20210531_092523_99221_gallery_2.jpg : Gallery-2 Uploaded
+------------------------------------------------------- 
+---------------2021-05-31 / PASV ---------------- 
+
+ Logged Date: 2021-05-31 09:53:53 
+PASV Folder Created
+my_data/news_data/2021-05-31/PASV/20210531_095353_57037_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-05-31/PASV/20210531_095353_57037_body.docx : News Body Uploaded
+my_data/news_data/2021-05-31/PASV/20210531_095353_57037_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-31/PASV/20210531_095353_57037_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-05-31/PASV/20210531_095353_57037_videolazy.mp4 : Video Lazy Uploaded
+my_data/news_data/2021-05-31/PASV/20210531_095353_57037_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-05-31/PASV/20210531_095353_57037_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-31/PASV/20210531_095353_57037_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+---------------2021-05-31 / Bonus Test ---------------- 
+
+ Logged Date: 2021-05-31 10:37:31 
+Bonus Test Folder Created
+my_data/news_data/2021-05-31/Bonus Test/20210531_103731_15894_body.docx : News Body Uploaded
+my_data/news_data/2021-05-31/Bonus Test/20210531_103731_15894_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-31/Bonus Test/20210531_103731_15894_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-05-31/Bonus Test/20210531_103731_15894_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-05-31/Bonus Test/20210531_103731_15894_gallery_1.jpg : Gallery-1 Uploaded
+------------------------------------------------------- 
+---------------2021-05-31 / Bonus Test ---------------- 
+
+ Logged Date: 2021-05-31 10:41:30 
+Bonus Test Folder Created
+my_data/news_data/2021-05-31/Bonus Test/20210531_104130_61321_body.docx : News Body Uploaded
+my_data/news_data/2021-05-31/Bonus Test/20210531_104130_61321_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-31/Bonus Test/20210531_104130_61321_thumbnail.png : Thumbnail Uploaded
+------------------------------------------------------- 
+---------------2021-05-31 / xZxzxZX ---------------- 
+
+ Logged Date: 2021-05-31 10:42:10 
+xZxzxZX Folder Created
+my_data/news_data/2021-05-31/xZxzxZX/20210531_104210_29472_body.docx : News Body Uploaded
+my_data/news_data/2021-05-31/xZxzxZX/20210531_104210_29472_videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 
+---------------2021-05-31 / dadasdasd ---------------- 
+
+ Logged Date: 2021-05-31 10:44:27 
+dadasdasd Folder Created
+my_data/news_data/2021-05-31/dadasdasd/20210531_104427_89636_body.docx : News Body Uploaded
+my_data/news_data/2021-05-31/dadasdasd/20210531_104427_89636_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-05-31/dadasdasd/20210531_104427_89636_thumbnail.png : Thumbnail Uploaded
+------------------------------------------------------- 
+---------------2021-05-31 / dasdadad ---------------- 
+
+ Logged Date: 2021-05-31 10:46:04 
+dasdadad Folder Created
+my_data/news_data/2021-05-31/dasdadad/20210531_104604_45072_body.docx : News Body Uploaded
+my_data/news_data/2021-05-31/dasdadad/20210531_104604_45072_videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 
+---------------2021-05-31 / anjittt ---------------- 
+
+ Logged Date: 2021-05-31 10:47:59 
+anjittt Folder Created
+my_data/news_data/2021-05-31/anjittt/20210531_104759_27729_videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 

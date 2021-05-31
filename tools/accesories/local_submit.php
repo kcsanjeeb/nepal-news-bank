@@ -15,8 +15,6 @@ include "../global/timezone.php";
 
 
 
-
-
 // -------------- VARIABLE DECLARATION ----------------
 $interview_path = 'my_data/interview_data';
 $news_path = 'my_data/news_data';
@@ -194,6 +192,8 @@ if(!isset($location))
                      
                         $text = "$byLine_directory_clean Folder Created\n";
                         fwrite($myfile, $text);
+
+                        $bonus_media_path = '../'.$interview_path.'/'.$byLine_directory_clean;
                     }
                 }
                 else
@@ -217,6 +217,8 @@ if(!isset($location))
                         fwrite($myfile, $text);
                         $text = $newsdate."/".$byLine_directory_clean."Folder Created\n";
                         fwrite($myfile, $text);
+
+                        $bonus_media_path = '../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean;
                        
 
                     }
@@ -230,6 +232,8 @@ if(!isset($location))
                            
                         $text = "$byLine_directory_clean Folder Created\n";
                         fwrite($myfile, $text);
+
+                        $bonus_media_path = '../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean;
                     }
                 }
                 
@@ -619,6 +623,42 @@ if(!isset($location))
             }
             $gallery_csv = implode("," , $gallery_arr) ;
             $gallery_csv = "'$gallery_csv'";
+
+        
+        if(count($_FILES['bonus_media']['name']) > 0)
+        {
+            mkdir($bonus_media_path.'/bonus_media', 0777 , true);                        
+            chmod($bonus_media_path.'/bonus_media', 0777);
+
+            foreach ($_FILES["bonus_media"]["name"] as $p => $name)
+            {        
+                
+                $fileName= $_FILES['bonus_media']['name'][$p];
+                $fileTmpName = $_FILES['bonus_media']['tmp_name'][$p];  
+                $fileSize = $_FILES['bonus_media']['size'][$p];
+                $fileType = $_FILES['bonus_media']['type'][$p];            
+
+                $fileExt = explode('.' , $fileName);            
+
+                        
+                    $fileTmpName = $_FILES['bonus_media']['tmp_name'][$p];  
+
+                    $file_path =$bonus_media_path.'/bonus_media'.'/'.$fileName;
+
+                    move_uploaded_file($fileTmpName, $file_path) ;                            
+                    
+
+           
+            
+
+            }
+        
+        
+        }
+
+
+
+
 
             $created_at = date('Y-m-d H:i:s');
             $created_at = "'$created_at'";

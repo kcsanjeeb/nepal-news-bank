@@ -162,7 +162,7 @@ if(!isset($location))
 
                 $ftp = ftp_connect("$ftp_url");
                 ftp_login($ftp, "$ftp_username", "$ftp_password");
-                // ftp_pasv($ftp, true);
+                ftp_pasv($ftp, true);
 
 
 
