@@ -226,8 +226,8 @@ if(!isset($location))
                         ftp_pasv($ftp, true);
                         $dir = $title_directory;
                         ftp_mkdir($ftp, "/".$archive_path_video_ftp."/".$dir);
-                        ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$video_name_file", "$video_send_path", FTP_ASCII); 
-                        ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$thum_name_file", "$thumb_send_path", FTP_ASCII); 
+                        ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$video_name_file", "$video_send_path", FTP_BINARY); 
+                        ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$thum_name_file", "$thumb_send_path", FTP_BINARY); 
                         ftp_close($ftp);
 
                         $text = "Archive Video and Archive Thumbnail Pushed to Remote Succesfully\n";

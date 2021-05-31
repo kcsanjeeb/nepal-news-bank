@@ -172,7 +172,10 @@ if(isset($_POST['submit_push']))
                     
                     $result = curl_exec( $ch );
                     $result = json_decode($result);
-                    $result = json_decode(json_encode($result) , true);                        
+                    $result = json_decode(json_encode($result) , true);  
+                    $respCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                    $err = curl_error($ch);   
+                    echo "<br>POST:<br> Error: $err <br> Resp Code:$respCode <br><br> ";                       
                     curl_close( $ch );
                     
                     $featured_media_id  = $result['id'];
@@ -343,7 +346,8 @@ if(isset($_POST['submit_push']))
                 $response = json_decode($response);
                 $response = json_decode(json_encode($response) , true);
                 $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                $err = curl_error($curl);                    
+                $err = curl_error($curl);   
+                echo "<br>POST:<br> Error: $err <br> Resp Code:$respCode <br><br> ";                 
                 curl_close($curl);
                 // echo "POST NEW ID: <br> ".$response['id']." <br><br><br><br><br><br>";
                 // echo "Response Code: $respCode";
