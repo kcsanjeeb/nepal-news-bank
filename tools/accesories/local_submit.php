@@ -21,23 +21,25 @@ $news_path = 'my_data/news_data';
 // ----------------------------------------------------
 
 
+$myfile = fopen("../log/newscollector_log.txt", "a") or die("Unable to open file!");  
+                fwrite($myfile, "\n---------------$newsdate / $byLine_directory ---------------- \n");
 
 
-
-
-
+              
 if(!isset($location))
 {
 
-   print_r($_POST);
     if(isset($_POST['submit']))
     {
         if(isset($_POST['byLine']) && isset($_POST['newsdate']) && isset($_POST['newsCategories']) && count($_POST['newsCategories']) > 0)   
         {
 
-    
+            
             
             $byLine = $_POST['byLine'] ;
+            $byLine = rtrim ( $byLine ) ;
+
+
             $byLine = mysqli_real_escape_string($connection, $byLine);
             $byLine_directory = $byLine ;
             $byLine = "'$byLine'";
@@ -173,8 +175,7 @@ if(!isset($location))
             
            
             
-            	$myfile = fopen("../log/newscollector_log.txt", "a") or die("Unable to open file!");  
-                fwrite($myfile, "\n---------------$newsdate / $byLine_directory ---------------- \n");
+            	
                 $logged_date = date('Y-m-d H:i:s');
                 fwrite($myfile, "\n Logged Date: $logged_date \n"); 
 
@@ -625,13 +626,16 @@ if(!isset($location))
             $gallery_csv = "'$gallery_csv'";
 
         
-        if(count($_FILES['bonus_media']['name']) > 0)
+
+        if(!empty($_FILES['bonus_media']['name'][0]))
         {
             mkdir($bonus_media_path.'/bonus_media', 0777 , true);                        
             chmod($bonus_media_path.'/bonus_media', 0777);
-
+            
+           
+          
             foreach ($_FILES["bonus_media"]["name"] as $p => $name)
-            {        
+            {  
                 
                 $fileName= $_FILES['bonus_media']['name'][$p];
                 $fileTmpName = $_FILES['bonus_media']['tmp_name'][$p];  
@@ -640,14 +644,18 @@ if(!isset($location))
 
                 $fileExt = explode('.' , $fileName);            
 
-                        
+                    
                     $fileTmpName = $_FILES['bonus_media']['tmp_name'][$p];  
 
-                    $file_path =$bonus_media_path.'/bonus_media'.'/'.$fileName;
+                    $fileName = str_replace(" ","_",$fileName);
+
+                    $file_name_final = $date_file_name."_".$time_file_name."_".$news_id."_".$fileName;
+
+                    $file_path =$bonus_media_path.'/bonus_media'.'/'.$file_name_final;
 
                     move_uploaded_file($fileTmpName, $file_path) ;                            
                     
-
+              
            
             
 

@@ -31,7 +31,7 @@ if(!isset($location))
                 
                     $title = $_POST['title'];
                     $title = mysqli_real_escape_string($connection, $title);
-
+                    $title = rtrim ( $title ) ;
 
                     $date = $_POST['date'];
                     $date = mysqli_real_escape_string($connection, $date);
