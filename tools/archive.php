@@ -347,7 +347,7 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
 
                                                                 <input type="file" id="videolong" name="video[]"
                                                                     onchange="return videolongValidation('videolong' , 'videolongID' , 'videolongplaceholder' )"
-                                                                    required>
+                                                                    >
 
 
                                                             </div>
