@@ -379,3 +379,23 @@
 20210531_095353_57037_thumbnail.png Thumbnail Pushed
 20210531_095353_57037_audio.mp3 Audio Pushed
 ------------------------------------------------------- 
+---------------2021-06-01 07:54:42 / test bonus ---------------- 
+
+ Logged Date: 2021-06-01 07:56:45 
+20210601_075441_44371_body.docx News  Body Pushed
+20210601_075441_44371_thumbnail.jpg Thumbnail Pushed
+------------------------------------------------------- 
+---------------2021-06-01 08:18:05 / कोरोना कहरले थला परेको चलचित्र उद्योग ---------------- 
+
+ Logged Date: 2021-06-01 08:19:23 
+20210601_081804_47587_gallery_0.jpg Gallery Photo Pushed
+20210601_081804_47587_gallery_1.jpg Gallery Photo Pushed
+20210601_081804_47587_gallery_2.jpg Gallery Photo Pushed
+20210601_081804_47587_gallery_3.jpg Gallery Photo Pushed
+20210601_081804_47587_gallery_4.jpg Gallery Photo Pushed
+20210601_081804_47587_body.docx News  Body Pushed
+20210601_081804_47587_videolong.mp4 Video Long Pushed
+20210601_081804_47587_videoextra.mp4 Video Extra  Pushed
+20210601_081804_47587_thumbnail.jpg Thumbnail Pushed
+20210601_081804_47587_audio.mp3 Audio Pushed
+------------------------------------------------------- 

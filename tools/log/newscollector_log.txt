@@ -629,6 +629,7 @@ my_data/news_data/2021-05-31/dasdadad/20210531_104604_45072_videolong.mp4 : Vide
 anjittt Folder Created
 my_data/news_data/2021-05-31/anjittt/20210531_104759_27729_videolong.mp4 : Video Long Uploaded
 ------------------------------------------------------- 
+<<<<<<< HEAD
 ---------------2021-06-01 / hello world  ---------------- 
 
  Logged Date: 2021-06-01 13:59:41 
@@ -692,4 +693,28 @@ my_data/news_data/2021-06-01/tst f22/20210601_141540_95472_videolong.mp4 : Video
  Logged Date: 2021-06-01 14:25:54 
 rtrim test Folder Created
 my_data/news_data/2021-06-01/rtrim test/20210601_142554_61149_body.docx : News Body Uploaded
+=======
+---------------2021-06-01 / test bonus ---------------- 
+
+ Logged Date: 2021-06-01 07:54:41 
+2021-06-01 Folder Created
+2021-06-01/test bonusFolder Created
+my_data/news_data/2021-06-01/test bonus/20210601_075441_44371_body.docx : News Body Uploaded
+my_data/news_data/2021-06-01/test bonus/20210601_075441_44371_thumbnail.jpg : Thumbnail Uploaded
+------------------------------------------------------- 
+---------------2021-06-01 / कोरोना कहरले थला परेको चलचित्र उद्योग ---------------- 
+
+ Logged Date: 2021-06-01 08:18:04 
+कोरोना कहरले थला परेको चलचित्र उद्योग Folder Created
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_body.docx : News Body Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_videoextra.mp4 : Video Extra Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_gallery_3.jpg : Gallery-3 Uploaded
+my_data/news_data/2021-06-01/कोरोना कहरले थला परेको चलचित्र उद्योग/20210601_081804_47587_gallery_4.jpg : Gallery-4 Uploaded
+>>>>>>> c57a840a851eb2d91f3ea1be27c7dd4e478b7850
 ------------------------------------------------------- 

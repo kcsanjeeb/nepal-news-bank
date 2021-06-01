@@ -391,7 +391,7 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
                         <div class="card-header bg-info text-light ">
                             <div class="row">
                                 <div class="col-lg-9">
-                                    <h4>Archive Picture</h4>
+                                    <h4>Archive Pictures</h4>
                                 </div>
 
 
@@ -462,13 +462,10 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
                         </div>
 
                     </div>
-                    <div class="row">
-                        <button type="submit" class="btn btn-primary col-lg-6 float-right mb-5"
+                  
+                        <button type="submit" class="btn btn-primary float-right mb-5"
                             name="submit">Post</button>
-                        <div class="col-lg-6">
-                            Press on the post button to post archive.
-                        </div>
-                    </div>
+              
 
                     <br>
                     <br>
@@ -486,7 +483,7 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
     <div class="col-lg-12">
         <div class="card shadow-lg  mb-5 bg-white rounded">
             <div class="card-header bg-info text-light">
-                <h4>Archives List</h4>
+                <h4>Archive List</h4>
             </div>
             <div class="card-body">
                 <ul class="list-group">

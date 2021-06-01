@@ -328,7 +328,7 @@ if(isset($_POST['submit']))
 
 
     $data_array =  array(
-        "status" => "draft" , 
+        "status" => "publish" , 
         "title" => "$title",
         "slug" => "$title",
         "acf_fields" => array(  "archive_video_all" => $data_videos,
