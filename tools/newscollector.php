@@ -613,9 +613,11 @@ strong {
                             </div>
 
 
+                        
                             <!-- Select one audio file -->
                             <STRONG class=" h5 text-info">Step 8. Select Images </strong>
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
+                          
 
 
 
@@ -642,6 +644,7 @@ strong {
                             </div>
 
 
+                           
 
 
                             <div class="form-group">
@@ -664,14 +667,10 @@ strong {
                                 </div>
                             </div>
 
-                            <STRONG class="h5 text-info">Step 9. Select Others (Optional) </strong>
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
 
-                            <div class="row">
-                                <div class="col-lg-6">
-
-                                    <!-- <div class="form-group">
-                                        <label class="col-lg-12 p-0">11. Is Exclusive?*
+                            <div class="form-group">
+                            <label class="col-lg-12 p-0  h5 text-info">Step 9. Select Series</label>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -686,15 +685,57 @@ strong {
 
                                         </label>
 
+                                        <select multiple name="series[]" id="series">
 
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input " id="customSwitch1" value="1" >
-                                            <label class="custom-control-label" for="customSwitch1"></label>
-                                        </div>
+                                            <?php 
+                                        if(isset($series))
+                                        {
+                                            foreach($series as $series)
+                                            {
+                                    ?>
+                                            <option value="<?php echo $series['id'] ; ?>">
+                                                <?php echo $series['name'] ; ?></option>
+                                            <?php
+                                            }
+                                        }
+                                    ?>
+                                          
 
-                                    </div> -->
+
+                                        </select>
+                                    </div>
+
+                         
+                            
+                            <!-- The body of news. Should extract text from file like txt and docs and pass to sql -->
+                            <div class="form-group">
+                                <label class="col-lg-12 p-0 h5 text-info">Step 10. Select Bonus Media
+                                    <svg data-toggle="popover" title="News Title"
+                                        data-content="Some content inside the popover"
+                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg>
+                                </label>
+                                <input type="file" id="" name="bonus_media[]" multiple >
+                            </div>
+
+                            <HR style="    border-top: 1px solid rgba(0,0,0)">
+
+
+                            <label class="col-lg-12 p-0  h5 text-info">Step 11. Select Others (optional)</label>
+                  
+
+                            <div class="row">
+                                <div class="col-lg-6">
+
+                                
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>9.1. District*</strong>
+                                        <label class="col-lg-12 p-0"><strong>11.1. District*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -727,7 +768,7 @@ strong {
 
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>9.2 Reporter*</strong>
+                                        <label class="col-lg-12 p-0"><strong>11.2 Reporter*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -757,7 +798,7 @@ strong {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>9.3 Camera Man*</strong>
+                                        <label class="col-lg-12 p-0"><strong>11.3 Camera Man*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -794,7 +835,7 @@ strong {
 
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>9.4 Created By*</strong>
+                                        <label class="col-lg-12 p-0"><strong>11.4 Created By*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -825,7 +866,7 @@ strong {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>9.5 Video Type</strong>
+                                        <label class="col-lg-12 p-0"><strong>11.5 Video Type</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -847,90 +888,15 @@ strong {
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>9.6 Series</strong>
-                                            <svg data-toggle="popover" title="News Title"
-                                                data-content="Some content inside the popover"
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
+                                    
 
-                                        </label>
-
-                                        <select multiple name="series[]" id="series">
-
-                                            <?php 
-                                        if(isset($series))
-                                        {
-                                            foreach($series as $series)
-                                            {
-                                    ?>
-                                            <option value="<?php echo $series['id'] ; ?>">
-                                                <?php echo $series['name'] ; ?></option>
-                                            <?php
-                                            }
-                                        }
-                                    ?>
-                                            <!-- <option value="141">Business</option>
-                                    <option value="142">Entertainment</option>
-                                    <option value="134">Sports</option>
-                                    <option value="135">International</option>
-                                    <option value="136">Glamour</option>
-                                   -->
-
-
-                                        </select>
-                                    </div>
-
-                                    <!-- <div class="form-group">
-                                        <label class="col-lg-12 p-0">15. Available for*
-                                            <svg data-toggle="popover" title="News Title"
-                                                data-content="Some content inside the popover"
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
-
-                                        </label>
-                                        <select class="form-control" id="exampleFormControlSelect2" name="subs_type"
-                                            xxx>
-                                            <option value="basic">Basic</option>
-                                            <option value="premium">Premium</option>
-                                            <option value="platinum">Platinum</option>
-                                        </select>                                       
-                                    </div> -->
+                                 
                                 </div>
                             </div>
 
 
 
-                            <!-- The body of news. Should extract text from file like txt and docs and pass to sql -->
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 12. Select Bonus Media
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-                                </label>
-                                <input type="file" id="" name="bonus_media[]" multiple >
-                               
+                            
 
 
 
