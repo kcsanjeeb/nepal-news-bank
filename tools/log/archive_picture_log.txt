@@ -70,3 +70,17 @@ my_data/archive_data/archive_picture/Archive picture series test2/20210522_22231
 20210522_222314__photo_0.jpg : Gallery  Pushed to Remote Succesfully
  Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-06-02 / Pic Sub New  ------------------ 
+
+ Logged Date: 2021-06-02 13:45:20 
+my_data/archive_data/archive_picture/Pic Sub New : Folder Created
+my_data/archive_data/archive_picture/Pic Sub New/20210602_134521_53121_photo_0.png : Gallery-0 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Pic Sub New/20210602_134521_53121_photo_1.png : Gallery-1 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Pic Sub New/20210602_134521_53121_photo_2.jpg : Gallery-2 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Pic Sub New/20210602_134521_53121_thumbnail.jpg : Thumbnail Uplaoded Succesfully
+20210602_134521_53121_photo_0.png : Gallery  Pushed to Remote Succesfully
+20210602_134521_53121_photo_1.png : Gallery  Pushed to Remote Succesfully
+20210602_134521_53121_photo_2.jpg : Gallery  Pushed to Remote Succesfully
+20210602_134521_53121_thumbnail.jpg : Thumbnail  Pushed to Remote Succesfully
+ Remote Post Created Succesfully
+------------------------------------------------------- 

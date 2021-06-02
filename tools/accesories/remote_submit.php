@@ -218,6 +218,10 @@ if(!isset($location))
                     $news_ftp_path_sql  = "$news_path/".$local_published_date."/".$dir_byline;
 
                 }
+
+                $files_to_push = array();
+                $file_to_push_gall = array();
+
                
                 if(isset($_POST['gall_img']))
                 {
@@ -231,23 +235,27 @@ if(!isset($location))
                             $sourceName = end($sourceName );
 
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$gal_img_arr))
-                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$gal_img_arr , FTP_BINARY))
-                            {
-                                $gal_img_arr = "$news_ftp_path_sql/$sourceName" ;
-                                array_push($gallery_full_web_arr , $gal_img_arr);
 
-                                $text = "$sourceName Gallery Photo Pushed\n";
-                                fwrite($myfile, $text);
+                            array_push($files_to_push , $sourceName );
+                            array_push($file_to_push_gall , $sourceName );
+
+                            // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$gal_img_arr , FTP_BINARY))
+                            // {
+                            //     $gal_img_arr = "$news_ftp_path_sql/$sourceName" ;
+                            //     array_push($gallery_full_web_arr , $gal_img_arr);
+
+                            //     $text = "$sourceName Gallery Photo Pushed\n";
+                            //     fwrite($myfile, $text);
 
                                 
-                            }
-                            else
-                            {
-                                $text = "$sourceName Gallery Photo Failed to Pushed\n";                           
+                            // }
+                            // else
+                            // {
+                            //     $text = "$sourceName Gallery Photo Failed to Pushed\n";                           
 
-                                fwrite($myfile, $text);
-                                $_SESSION['notice_remote'] = "Error";
-                            }
+                            //     fwrite($myfile, $text);
+                            //     $_SESSION['notice_remote'] = "Error";
+                            // }
 
                             
                         }
@@ -255,8 +263,9 @@ if(!isset($location))
     
                 }
                
-                $gall_img = implode(',' , $gallery_full_web_arr) ;
+                
 
+               
 
 
 
@@ -267,6 +276,7 @@ if(!isset($location))
                 $pushed_by = mysqli_real_escape_string($connection, $pushed_by);
                 
 
+                
 
                     if(in_array('newsbody' ,$file_type ))
                     {
@@ -277,23 +287,30 @@ if(!isset($location))
 
                             // if(ftp_remote('newsbody' , '../'.$newsbody_full , $sourceName))
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$newsbody_full))
-                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$newsbody_full , FTP_BINARY))
-                            { 
 
-                                $text = "$sourceName News  Body Pushed\n";
-                                fwrite($myfile, $text);
-                                
+                            array_push($files_to_push , $sourceName );
+                            $news_body_py =  $sourceName ;
+                            // ======= old ftp -------------------
 
-                                $push_newsbody = "'$news_ftp_path_sql/$sourceName'" ;
-                            }
-                            else
-                            {
-                                $push_newsbody = "NULL";
-                                $text = "$sourceName News Body Failed to Pushed\n";
-                                fwrite($myfile, $text);                            
+                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$newsbody_full , FTP_BINARY))
+                                // { 
 
-                                $_SESSION['notice_remote'] = "Error";
-                            }
+                                //     $text = "$sourceName News  Body Pushed\n";
+                                //     fwrite($myfile, $text);
+                                    
+
+                                //     $push_newsbody = "'$news_ftp_path_sql/$sourceName'" ;
+                                // }
+                                // else
+                                // {
+                                //     $push_newsbody = "NULL";
+                                //     $text = "$sourceName News Body Failed to Pushed\n";
+                                //     fwrite($myfile, $text);                            
+
+                                //     $_SESSION['notice_remote'] = "Error";
+                                // }
+
+                            // ======= old ftp -------------------
                         
                         }
                         else
@@ -320,24 +337,29 @@ if(!isset($location))
                             if($video_type == 'selfhost')
                             {
                                 // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolong_full))
-                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolong_full , FTP_BINARY))
-                                {
-
-                                    $text = "$sourceName Video Long Pushed\n";
-                                    fwrite($myfile, $text);                        
 
 
-                                    $push_videoLong = "'$news_ftp_path_sql/$sourceName'" ;
-                                }
-                                else
-                                {
-                                    $push_videoLong = "NULL";
-                                    $text = "$sourceName Video Long Failed to Pushed\n";
-                                    fwrite($myfile, $text);
+                                array_push($files_to_push , $sourceName );
+
+                                $videolong_py =  $sourceName ;
+                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolong_full , FTP_BINARY))
+                                // {
+
+                                //     $text = "$sourceName Video Long Pushed\n";
+                                //     fwrite($myfile, $text);                        
+
+
+                                //     $push_videoLong = "'$news_ftp_path_sql/$sourceName'" ;
+                                // }
+                                // else
+                                // {
+                                //     $push_videoLong = "NULL";
+                                //     $text = "$sourceName Video Long Failed to Pushed\n";
+                                //     fwrite($myfile, $text);
                                     
 
-                                    $_SESSION['notice_remote'] = "Error";
-                                }
+                                //     $_SESSION['notice_remote'] = "Error";
+                                // }
                                 $vimeo_videolong =  "NULL" ;
                             }
 
@@ -410,23 +432,26 @@ if(!isset($location))
                             if($video_type == 'selfhost')
                             {
                                 // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolazy_full))
-                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolazy_full , FTP_BINARY))
-                                {
-                                    $text = "$sourceName Video Lazy Pushed\n";
-                                    fwrite($myfile, $text);                            
 
-                                    $push_videoLazy = "'$news_ftp_path_sql/$sourceName'" ;
+                                array_push($files_to_push , $sourceName );
+                                $videolazy_py =  $sourceName ;
+                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolazy_full , FTP_BINARY))
+                                // {
+                                //     $text = "$sourceName Video Lazy Pushed\n";
+                                //     fwrite($myfile, $text);                            
 
-                                }
-                                else
-                                {
-                                    $push_videoLazy = "NULL";
-                                    $text = "$sourceName Video Lazy Failed to Pushed\n";
-                                    fwrite($myfile, $text);
+                                //     $push_videoLazy = "'$news_ftp_path_sql/$sourceName'" ;
+
+                                // }
+                                // else
+                                // {
+                                //     $push_videoLazy = "NULL";
+                                //     $text = "$sourceName Video Lazy Failed to Pushed\n";
+                                //     fwrite($myfile, $text);
                                     
 
-                                    $_SESSION['notice_remote'] = "Error";
-                                }
+                                //     $_SESSION['notice_remote'] = "Error";
+                                // }
 
                                 $vimeo_videolazy = "NULL";
                             }
@@ -496,25 +521,29 @@ if(!isset($location))
                             if($video_type == 'selfhost')
                             {
                                 // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videoextra_full))
-                                if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videoextra_full , FTP_BINARY))
-                                {
-                                    // $push_videoextra = "'$videoextra_full'" ;
-                                    $text = "$sourceName Video Extra  Pushed\n";
-                                    fwrite($myfile, $text);
+
+                                array_push($files_to_push , $sourceName );
+                                $videoextra_py =  $sourceName ;
+
+                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videoextra_full , FTP_BINARY))
+                                // {
+                                //     // $push_videoextra = "'$videoextra_full'" ;
+                                //     $text = "$sourceName Video Extra  Pushed\n";
+                                //     fwrite($myfile, $text);
                                     
 
-                                    $push_videoextra = "'$news_ftp_path_sql/$sourceName'" ;
+                                //     $push_videoextra = "'$news_ftp_path_sql/$sourceName'" ;
 
-                                }
-                                else
-                                {
-                                    $push_videoextra = "NULL";
-                                    $text = "$sourceName Video Extra Failed to Pushed\n";
-                                    fwrite($myfile, $text);
+                                // }
+                                // else
+                                // {
+                                //     $push_videoextra = "NULL";
+                                //     $text = "$sourceName Video Extra Failed to Pushed\n";
+                                //     fwrite($myfile, $text);
                                     
 
-                                    $_SESSION['notice_remote'] = "Error";
-                                }
+                                //     $_SESSION['notice_remote'] = "Error";
+                                // }
                                 $vimeo_videoextra = 'NULL';
                             }
 
@@ -578,26 +607,28 @@ if(!isset($location))
                             $sourceName = explode("/" ,$thumbnail_full ) ;
                             $sourceName = end($sourceName );
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$thumbnail_full))
-                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$thumbnail_full , FTP_BINARY))
 
-                            {
-                                // $push_thumbnail = "'$thumbnail_full'" ;
-                                $text = "$sourceName Thumbnail Pushed\n";
-                                fwrite($myfile, $text);
+                            array_push($files_to_push , $sourceName );
+                            $thumb_py =  $sourceName ;
+                            // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$thumbnail_full , FTP_BINARY))
+                            // {
+                            //     // $push_thumbnail = "'$thumbnail_full'" ;
+                            //     $text = "$sourceName Thumbnail Pushed\n";
+                            //     fwrite($myfile, $text);
                                 
 
-                                $push_thumbnail = "'$news_ftp_path_sql/$sourceName'" ;
+                            //     $push_thumbnail = "'$news_ftp_path_sql/$sourceName'" ;
 
-                            }
-                            else
-                            {
-                                $push_thumbnail = "NULL";
-                                $text = "$sourceName Thumbnail Failed to Pushed\n";
-                                fwrite($myfile, $text);
+                            // }
+                            // else
+                            // {
+                            //     $push_thumbnail = "NULL";
+                            //     $text = "$sourceName Thumbnail Failed to Pushed\n";
+                            //     fwrite($myfile, $text);
                                 
 
-                                $_SESSION['notice_remote'] = "Error";
-                            }
+                            //     $_SESSION['notice_remote'] = "Error";
+                            // }
 
                             
                         }
@@ -619,26 +650,29 @@ if(!isset($location))
                             $sourceName = explode("/" ,$audio_full ) ;
                             $sourceName = end($sourceName );
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$audio_full))
-                            if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$audio_full , FTP_BINARY))
 
-                            {
-                                // $push_audio = "'$audio_full'" ;
-                                $text = "$sourceName Audio Pushed\n";
-                                fwrite($myfile, $text);
+                            array_push($files_to_push , $sourceName );
+                            $audio_py =  $sourceName ;
+
+                            // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$audio_full , FTP_BINARY))
+                            // {
+                            //     // $push_audio = "'$audio_full'" ;
+                            //     $text = "$sourceName Audio Pushed\n";
+                            //     fwrite($myfile, $text);
                                 
 
-                                $push_audio = "'$news_ftp_path_sql/$sourceName'" ;
+                            //     $push_audio = "'$news_ftp_path_sql/$sourceName'" ;
 
-                            }
-                            else
-                            {
-                                $push_audio = "NULL";
-                                $text = "$sourceName Audio Failed to Pushed\n";
-                                fwrite($myfile, $text);
+                            // }
+                            // else
+                            // {
+                            //     $push_audio = "NULL";
+                            //     $text = "$sourceName Audio Failed to Pushed\n";
+                            //     fwrite($myfile, $text);
                                 
 
-                                $_SESSION['notice_remote'] = "Error";
-                            }
+                            //     $_SESSION['notice_remote'] = "Error";
+                            // }
 
                             
                         }
@@ -652,16 +686,230 @@ if(!isset($location))
                         $push_audio = $audio_full_web;
                     }
 
+                    ftp_close($ftp); 
+                
+                /*
+                    1. execute python
+                    2. get responve
+                    4, evaluate and logs
+                */
 
-                    
+                 $files_to_push_csv = implode("," , $files_to_push);
+                
+
+                 $news_ftp_path_py  = $news_ftp_path;
+                 $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
+                 $local_file_py = '../my_data'.$news_ftp_path_py.'/';
                  
 
-                ftp_close($ftp); 
+                 
+
+                 $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
+
+               
+            
+                 $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
+                //  $push_remote_py_resp_arr = explode("," , $push_remote_py_resp);
+                        
+
+                
+                 
+                if(in_array($news_body_py , $files_to_push))
+                {
+                    echo "1a<br>";
+                    // echo $news_body_py;
+                    echo '<br>';
+                    // print_r($push_remote_py_resp_arr);
+                    
+                    // if(in_array($news_body_py , $push_remote_py_resp_arr)) 
+                    if (strpos( $push_remote_py_resp, $news_body_py) !== false)        
+                    {
+                        echo "<br>1b<br>";
+
+                        $text = "$news_body_py News  Body Pushed\n";
+                        fwrite($myfile, $text);
+                        
+
+                        $push_newsbody = "'$news_ftp_path_sql/$news_body_py'" ;
+                    }
+
+                    else
+                    {
+                        echo "1c<br>";
+                        $news_body_py = "NULL";
+                        $text = "$sourceName News Body Failed to Pushed\n";
+                        fwrite($myfile, $text);                            
+
+                        $_SESSION['notice_remote'] = "Error";
+                    }
+                }
+           
+                if(in_array($videolong_py , $files_to_push))
+                {
+                    echo "2a<br>";
+                    if (strpos( $push_remote_py_resp, $videolong_py) !== false)
+                    {
+                        echo "2b<br>";
+
+                            $text = "$videolong_py Video Long Pushed\n";
+                            fwrite($myfile, $text);                        
+
+
+                            $push_videoLong = "'$news_ftp_path_sql/$videolong_py'" ;
+                    }
+                    else
+                    {
+                        echo "2c<br>";
+                        $push_videoLong = "NULL";
+                        $text = "$videolong_py Video Long Failed to Pushed\n";
+                        fwrite($myfile, $text);
+                        
+
+                        $_SESSION['notice_remote'] = "Error";
+                    }
+   
+                }
+
+
+                if(in_array($videolazy_py , $files_to_push))
+                {
+                    echo "3a<br>";
+                    // if(in_array($videolazy_py , $push_remote_py_resp_arr))
+                    if (strpos( $push_remote_py_resp, $videolazy_py) !== false)
+                    {
+                        echo "3b<br>";
+                            $text = "$videolazy_py Video lazy Pushed\n";
+                            fwrite($myfile, $text);                        
+
+
+                            $push_videoLazy = "'$news_ftp_path_sql/$videolazy_py'" ;
+                    }
+                    else
+                    {
+                        echo "3c<br>";
+                        $push_videoLazy = "NULL";
+                        $text = "$videolong_py Video Lazy Failed to Pushed\n";
+                        fwrite($myfile, $text);
+                        
+
+                        $_SESSION['notice_remote'] = "Error";
+                    }
+   
+                }
+
+                if(in_array($videoextra_py , $files_to_push))
+                {
+                    echo "4a<br>";
+                    // if(in_array($videoextra_py , $push_remote_py_resp_arr))
+                    if (strpos( $push_remote_py_resp, $videoextra_py) !== false)
+                    {
+                        echo "4b<br>";
+
+                            $text = "$videoextra_py Video Extra Pushed\n";
+                            fwrite($myfile, $text);                        
+
+
+                            $push_videoextra = "'$news_ftp_path_sql/$videoextra_py'" ;
+                    }
+                    else
+                    {
+                        echo "4c<br>";
+                        $push_videoextra = "NULL";
+                        $text = "$videoextra_py Video Extra Failed to Pushed\n";
+                        fwrite($myfile, $text);
+                        
+
+                        $_SESSION['notice_remote'] = "Error";
+                    }
+   
+                }
+
+                if(in_array($thumb_py , $files_to_push))
+                {
+                    echo "5a<br>";
+                    // if(in_array($thumb_py , $push_remote_py_resp_arr))
+                    if (strpos( $push_remote_py_resp, $thumb_py) !== false)
+                    {
+
+                        echo "5b<br>";
+                            $text = "$thumb_py Thumbnail Pushed\n";
+                            fwrite($myfile, $text);                        
+
+
+                            $push_thumbnail = "'$news_ftp_path_sql/$thumb_py'" ;
+                    }
+                    else
+                    {
+                        echo "5c<br>";
+                        $push_thumbnail = "NULL";
+                        $text = "$thumb_py Thumbnail Failed to Pushed\n";
+                        fwrite($myfile, $text);
+                        
+
+                        $_SESSION['notice_remote'] = "Error";
+                    }
+   
+                }
+
+                if(in_array($audio_py , $files_to_push))
+                {
+                    echo "6a<br>";
+                    // if(in_array($audio_py , $push_remote_py_resp_arr))
+                    if (strpos( $push_remote_py_resp, $audio_py) !== false)
+                    {
+                        echo "6b<br>";
+                            $text = "$audio_py Audio Pushed\n";
+                            fwrite($myfile, $text);                        
+
+
+                            $push_audio = "'$news_ftp_path_sql/$audio_py'" ;
+                    }
+                    else
+                    {
+                        echo "6c<br>";
+                        $push_audio = "NULL";
+                        $text = "$audio_py Audio Failed to Pushed\n";
+                        fwrite($myfile, $text);
+                        
+
+                        $_SESSION['notice_remote'] = "Error";
+                    }
+   
+                }
+
+                foreach($file_to_push_gall as $sent_gal)
+                {
+                    echo "7aa<br>";
+                    // if(in_array($sent_gal ,$push_remote_py_resp_arr ))
+                    if (strpos( $push_remote_py_resp, $sent_gal) !== false)
+                    {
+                        echo "7b<br>";
+                            $gal_img_arr = "$news_ftp_path_sql/$sent_gal" ;
+                            array_push($gallery_full_web_arr , $gal_img_arr);
+
+                            $text = "$sent_gal Gallery Photo Pushed\n";
+                            fwrite($myfile, $text);
+                    }
+                    else 
+                    {
+                        echo "7c<br>";
+                            $text = "$sent_gal Gallery Photo Failed to Pushed\n";                       
+                            fwrite($myfile, $text);
+                            $_SESSION['notice_remote'] = "Error";
+                    }
+                }
+                $gall_img = implode(',' , $gallery_full_web_arr) ;
+
+                
+             
+                 
+
+               
                
                 fwrite($myfile, "------------------------------------------------------- "); 
                 fclose($myfile);
 
-
+         
             
 
                 $pushed_at = date('Y-m-d H:i:s');

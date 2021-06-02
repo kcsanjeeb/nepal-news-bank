@@ -23,3 +23,69 @@
 
  20210601_080835_15113_picture_0.jpg 
 ------------------------------------------------------- 
+--------------- 2021-06-02 / json  ------------------ 
+
+ Logged Date: 2021-06-02 17:02:34 
+
+ 20210602_170234_20911_video_0.mp4 
+------------------------------------------------------- 
+--------------- 2021-06-02 / json test  ------------------ 
+
+ Logged Date: 2021-06-02 17:12:14 
+
+ 20210602_171214_2461_video_0.mp4 
+------------------------------------------------------- 
+--------------- 2021-06-02 / Final All  ------------------ 
+
+ Logged Date: 2021-06-02 18:45:32 
+
+ 20210602_184532_33472_video_0.mp4 Pushed to remote Success
+
+ 20210602_184532_33472_video_1.mp4 Pushed to remote Success
+
+ 20210602_184532_33472_thumbnail.png Pushed to remote Success
+------------------------------------------------------- 
+--------------- 2021-06-02 / Anjit Dai  ------------------ 
+
+ Logged Date: 2021-06-02 18:59:01 
+
+ 20210602_185901_91270_video_0.mp4 Pushed to remote Success
+
+ 20210602_185901_91270_video_1.mp4 Pushed to remote Success
+
+ 20210602_185901_91270_picture_0.png Pushed to remote Success
+
+ 20210602_185901_91270_picture_1.png Pushed to remote Success
+
+ 20210602_185901_91270_picture_2.png Pushed to remote Success
+
+ 20210602_185901_91270_picture_3.png Pushed to remote Success
+
+ 20210602_185901_91270_picture_4.png Pushed to remote Success
+
+ 20210602_185901_91270_picture_5.jpg Pushed to remote Success
+
+  Pushed to remote Failes
+------------------------------------------------------- 
+--------------- 2021-06-02 / Anjit Dai Nepal  ------------------ 
+
+ Logged Date: 2021-06-02 19:01:44 
+
+ 20210602_190144_92693_video_0.mp4 Pushed to remote Success
+
+ 20210602_190144_92693_video_1.mp4 Pushed to remote Success
+
+ 20210602_190144_92693_picture_0.png Pushed to remote Success
+
+ 20210602_190144_92693_picture_1.png Pushed to remote Success
+
+ 20210602_190144_92693_picture_2.jpg Pushed to remote Success
+
+ 20210602_190144_92693_picture_3.png Pushed to remote Success
+
+ 20210602_190144_92693_picture_4.png Pushed to remote Success
+
+ 20210602_190144_92693_picture_5.jpg Pushed to remote Success
+
+ 20210602_190144_92693_thumbnail.png Pushed to remote Success
+------------------------------------------------------- 

@@ -231,12 +231,6 @@ if(!isset($location))
                         $featured_media_id  = $result['id'];
 
 
-                        // $video_name = $_FILES['video']['tmp_name'] ;
-                        // $fileName_video = $_FILES['video']['name'] ;
-                    
-                        // move_uploaded_file($video_name, "holds/$video_name_file") ;
-                        
-                        // $video_send_path = $videopath;
                         $thumb_send_path = $thumbpath;
                             
 
@@ -248,21 +242,76 @@ if(!isset($location))
                         $dir = $title_directory;
                         ftp_mkdir($ftp, "/".$archive_path_picture_ftp."/".$dir);
                         $file_name = end($thumbpath);
-                        ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../$thumbpath", FTP_BINARY);
-                        $text = $file_name." : Thumbnail  Pushed to Remote Succesfully\n";
-                            fwrite($myfile, $text);
+
+                        
+                        $files_to_push = array();
+                        $array_sent_gallery = array();
+                        
+                        // ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../$thumbpath", FTP_BINARY);
+
+
+                        // $text = $file_name." : Thumbnail  Pushed to Remote Succesfully\n";
+                        // fwrite($myfile, $text);
+
+
+                        
                         foreach($gallery_arr as $ar)
                         {
                             $file_name = explode("/" , $ar);
                             $file_name = end($file_name);
-                            ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../my_data/$ar", FTP_BINARY); 
+                            
+                            array_push($files_to_push , $file_name);
+                            array_push($array_sent_gallery , $file_name);
+                            // ftp_put($ftp, "/".$archive_path_picture_ftp."/$dir/$file_name", "../my_data/$ar", FTP_BINARY); 
 
-                            $text = $file_name." : Gallery  Pushed to Remote Succesfully\n";
-                            fwrite($myfile, $text);
+                            // $text = $file_name." : Gallery  Pushed to Remote Succesfully\n";
+                            // fwrite($myfile, $text);
 
                         }
-                        ftp_put($ftp, "/$archive_path_picture_ftp/$dir/$thum_name_file", "$thumb_send_path", FTP_BINARY); 
+
+                        array_push($files_to_push , $thum_name_file);
+                        $sent_thumb = $thum_name_file;
+
+                        // ftp_put($ftp, "/$archive_path_picture_ftp/$dir/$thum_name_file", "$thumbpath", FTP_BINARY); 
+
                         ftp_close($ftp);
+
+
+
+                        $news_ftp_path_py  = "/$archive_path_picture_ftp/$dir";
+                        $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
+                        $local_file_py = '../my_data'.$news_ftp_path_py.'/';
+                        $files_to_push_csv = implode("," , $files_to_push);
+
+                        $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
+
+                        $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
+                        
+                        foreach($array_sent_gallery as $asg)
+                        {
+                            if (strpos( $push_remote_py_resp, $asg) !== false)
+                            {
+                                $text = $asg." : Gallery  Pushed to Remote Succesfully\n";
+                                fwrite($myfile, $text);
+                            }
+                            else {
+                                
+                                $text = $asg." : Gallery  Pushed to Remote Failed\n";
+                                fwrite($myfile, $text);
+                            }
+                        }
+
+                        if (strpos( $push_remote_py_resp, $sent_thumb) !== false)
+                        {
+                            $text = $sent_thumb." : Thumbnail  Pushed to Remote Succesfully\n";
+                            fwrite($myfile, $text);
+                        }
+                        else {
+                            
+                            $text = $sent_thumb." : Thumbnail  Pushed to Remote Failed\n";
+                            fwrite($myfile, $text);
+                        }
+
 
 
 

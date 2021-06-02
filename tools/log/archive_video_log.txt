@@ -88,3 +88,13 @@ my_data/archive_data/archive_video/Test FTP/20210602_225636_17453_thumbnail.jpg 
 Archive Video and Archive Thumbnail Pushed to Remote Succesfully
 Archive Video Remote Post Created Succesfully
 ------------------------------------------------------- 
+--------------- 2021-06-02 / Anjit Test Video NEW FTP  ------------------ 
+
+ Logged Date: 2021-06-02 13:53:31 
+my_data/archive_data/archive_video/Anjit Test Video NEW FTP : Folder Created
+my_data/archive_data/archive_video/Anjit Test Video NEW FTP/20210602_135333_99669_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Anjit Test Video NEW FTP/20210602_135333_99669_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+20210602_135333_99669_video.mp4 : Video  Pushed to Remote Succesfully
+20210602_135333_99669_thumbnail.jpg : Thumbnail  Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 

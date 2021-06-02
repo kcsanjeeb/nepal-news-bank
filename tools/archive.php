@@ -200,6 +200,14 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
                                                 if( strpos( strtolower($category['name']), "archive" ) === false) {
                                                    continue ;
                                                 }
+
+                                                if( strpos( strtolower($category['name']), "archive picture" ) !== false) {
+                                                    continue ;
+                                                 }
+
+                                                 if( strpos( strtolower($category['name']), "archive video" ) !== false) {
+                                                    continue ;
+                                                 }
                                     ?>
                     <option class="cat_opt" value="<?php echo $category['id'] ; ?>">
                         <?php echo $category['name'] ; ?></option>
@@ -428,9 +436,9 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
 
                                                             <input type="file" id="thumbnailimg"
                                                                 onchange="return thumbnailValidation('thumbnailimg' , 'thumbnailID')"
-                                                                name="pic[]" accept="image/*" xxx>
+                                                                name="pic[0][]" accept="image/*" xxx multiple>
                                                             <!-- Image preview -->
-                                                            <div id="thumbnailID"></div>
+                                                            <!-- <div id="thumbnailID"></div> -->
                                                         </div>
 
 
@@ -722,6 +730,7 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
 
             var counter = $(this).attr("data-id");
 
+            var counter_arr = counter ;
 
             $html = `
 
@@ -734,8 +743,8 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
 
                                                         <input type="file" id="thumbnailimg` + counter + `"
                                                             onchange="return thumbnailValidation('thumbnailimg` +
-                counter + `' , 'thumbnailID` + counter + `' )" name="pic[]"
-                                                            accept="image/*" xxx>
+                counter + `' , 'thumbnailID` + counter + `' )" name="pic[`+counter_arr+`][]"
+                                                            accept="image/*" xxx multiple> 
                                                         <!-- Image preview -->
                                                         <div id="thumbnailID` + counter + `"></div>
                                                     </div>
@@ -910,6 +919,51 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
     //     }
     // }
     // 
+    </script>
+
+<script>
+    $(document).ready(function() {
+        document.getElementById('pro-image').addEventListener('change', readImage, false);
+        // $( ".preview-images-zone" ).sortable();
+        $(document).on('click', '.image-cancel', function() {
+            let no = $(this).data('no');
+            $(".preview-image.preview-show-" + no).remove();
+        });
+
+        $("#pro-image").click(function() {
+            // $(".preview-images-zone").empty();
+        });
+
+    });
+    var num = 0;
+
+    function readImage() {
+        if (window.File && window.FileList && window.FileReader) {
+            var files = event.target.files; //FileList object
+            $(".preview-images-zone").css("display", "block");
+            var output = $(".preview-images-zone");
+            for (let i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (!file.type.match('image')) continue;
+                var picReader = new FileReader();
+                picReader.addEventListener('load', function(event) {
+                    var picFile = event.target;
+                    var html = '<div class="preview-image  preview-show-' + num + '">' +
+                        '<a  class="image-cancel" data-no="' + num + '">x</a>' +
+                        '<div class="image-zone"><img id="pro-img-' + num + '" src="' + picFile.result +
+                        '"></div>' +
+                        '</div>';
+                    output.append(html);
+                    num = num + 1;
+                });
+                picReader.readAsDataURL(file);
+            }
+            // $("#pro-image").val('');
+        } else {
+            console.log('Browser not support');
+        }
+    }
+
     </script>
 
 

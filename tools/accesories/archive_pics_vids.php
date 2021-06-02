@@ -18,8 +18,15 @@ $archive_path_ftp = 'archive_data';
 
 // print_r($_POST);
 // print_r($_FILES);
+// print_r($_FILES['pic']['name'][4]);
+
+// print_r(array_keys($_FILES['pic']['name']));
 
 // exit();
+
+
+
+
 if(isset($_POST['submit']))
 {
 
@@ -90,7 +97,7 @@ if(isset($_POST['submit']))
 
     $file_name = $date_file_name."_".$time_file_name."_".$archive_id;
 
-
+ 
 
     $myfile = fopen("../log/archive_log.txt", "a") or die("Unable to open file!"); 
     fwrite($myfile, "\n--------------- $created_at_db / $title  ------------------ \n");     
@@ -115,7 +122,13 @@ if(isset($_POST['submit']))
 
     ftp_mkdir($ftp, "/".$ftp_path);
 
-    
+    ftp_close($ftp); 
+
+
+    $files_to_push = array();
+    $videos_py = array();
+    $photos_py = array();
+
     if(isset($_FILES['thumbImg'])   && !empty($_FILES['thumbImg']['name']))
     {
         $fileName = $_FILES['thumbImg']['name'] ;
@@ -135,11 +148,14 @@ if(isset($_POST['submit']))
 
             $sourceName = $file_name."_thumbnail.".$fileActualExt_thumbImg;
 
-            if(ftp_put($ftp, $ftp_path."/".$sourceName, $thumbnail_path , FTP_BINARY))
-            {
-                $thumbnail_path ="$local_path_clean/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
-                $thumbnail_path_remote ="$ftp_path/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
-                $thumbnail_path_remote_sql = "'$thumbnail_path_remote'";
+            array_push($files_to_push , $sourceName) ;
+            $thumb_py = $sourceName ;
+
+            // if(ftp_put($ftp, $ftp_path."/".$sourceName, $thumbnail_path , FTP_BINARY))
+            // {
+                // $thumbnail_path ="$local_path_clean/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
+                // $thumbnail_path_remote ="$ftp_path/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
+                // $thumbnail_path_remote_sql = "'$thumbnail_path_remote'";
 
                         $wp_media_file = file_get_contents($thumbnail_path );
                         $wp_media_file_name = explode("/" ,$thumbnail_path);
@@ -166,15 +182,14 @@ if(isset($_POST['submit']))
 
                         if(!isset($featured_media_id)) $featured_media_id = "NULL";
 
-            }
-
-            else
-            {
-                $thumbnail_path_remote_sql = "NULL" ;
-                $thumbnail_path_remote= "NULL" ;
-            }
+            // }
+            // else
+            // {
+            //     $thumbnail_path_remote_sql = "NULL" ;
+            //     $thumbnail_path_remote= "NULL" ;
+            // }
             
-            // send to ftp
+          
             
         }
         else
@@ -190,22 +205,19 @@ if(isset($_POST['submit']))
         $thumbnail_path_remote= "NULL" ;
     }
 
-
-
-
-
-
-
-
     if(count($_POST['video']) == count($_FILES['video']['name']))
     {
         $data_videos = array();
         $counter = 0 ;
 
+        $data_vids_rows = array();
+
         foreach($_POST['video'] as $vid)
         {
        
             $desc = mysqli_real_escape_string($connection, $vid['desc']);
+            $data_vids_row['desc'] = $desc ;
+
 
             // upload File of $_FILES['video']['name'][$counter]
             // push file to ftp 
@@ -229,14 +241,20 @@ if(isset($_POST['submit']))
                     
                     $sourceName = $file_name."_video_".$counter.".".$fileActualExt;
 
-                    if(ftp_put($ftp, $ftp_path."/".$sourceName, $video_path , FTP_BINARY))
-                    {
-                        $text = "";
-                        fwrite($myfile, "\n ".$file_name."_video_".$counter.".".$fileActualExt." \n");
-                    }
-                    else {
-                       // continue ;
-                    }
+                    array_push($files_to_push , $sourceName) ;
+                    array_push($videos_py , $sourceName) ;
+
+                    $data_vids_row['video'] = $video_path_remote ;
+
+                    // if(ftp_put($ftp, $ftp_path."/".$sourceName, $video_path , FTP_BINARY))
+                    // {
+                   
+                    //     $text = "";
+                    //     fwrite($myfile, "\n ".$file_name."_video_".$counter.".".$fileActualExt." \n");
+                    // }
+                    // else {
+                    //    // continue ;
+                    // }
                     
                     
                 }
@@ -246,78 +264,172 @@ if(isset($_POST['submit']))
 
 
   
-            $data = $video_path_remote.":".$desc;
+
+            array_push($data_vids_rows , $data_vids_row);
 
             array_push($data_videos , $data);
             $counter++;
 
         }
 
+        $data_videos = json_encode($data_vids_rows);
+
         
     }
+
 
     if(count($_POST['pic']) == count($_FILES['pic']['name']))
     {
         $counter = 0 ;
-        $data_pics = array();
+        $file_name_counter = 0;
+    
+
+        $data_pics_rows = array();
+
+        $pic_key = array_keys($_FILES['pic']['name']);
 
         foreach($_POST['pic'] as $pic)
         {
+            // $data_pics_row = array();
+
             $desc = mysqli_real_escape_string($connection, $pic['desc']);
+            $data_pics_row['desc'] = $desc ;
 
-            $fileName = $_FILES['pic']['name'][$counter] ;      
-            $fileExt = explode('.' , $fileName);
-            $fileActualExt = strtolower(end($fileExt));
-            $file_type =    $_FILES['pic']['type'][$counter];
-            $file_type_explode = explode("/" , $file_type);
-            $allowed = array('image' );
+            $data_pics_row['photos'] = array();
 
-            if (in_array($file_type_explode[0] , $allowed ))
-            {
+            $key_file_pic = $pic_key[$counter];
+
+            $multi_row = 0 ;
               
+            foreach($_FILES['pic']['name'][$key_file_pic] as $files_row)
+            {
+                
 
-                $pic_path =$local_path."/".$file_name."_picture_".$counter.".".$fileActualExt;
-                $pic_tmp_name = $_FILES['pic']['tmp_name'][$counter] ;
-                move_uploaded_file($pic_tmp_name, $pic_path) ;
+                $fileName = $_FILES['pic']['name'][$key_file_pic][$multi_row] ;
+                $fileExt = explode('.' , $fileName);
+                $fileActualExt = strtolower(end($fileExt));
+                $file_type =    $_FILES['pic']['type'][$key_file_pic][$multi_row];
+                $file_type_explode = explode("/" , $file_type);
+                $allowed = array('image' );
 
-                $pic_path_remote ="$ftp_path/".$file_name."_picture_".$counter.".".$fileActualExt; 
-                $pic_path_remote_sql ="'$pic_path_remote'";  
-
-                $sourceName = $file_name."_picture_".$counter.".".$fileActualExt; 
-
-                if(ftp_put($ftp, $ftp_path."/".$sourceName, $pic_path , FTP_BINARY))
+                if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    $text = "";
-                        fwrite($myfile, "\n ".$file_name."_picture_".$counter.".".$fileActualExt." \n");
-                }else {
-                    continue ;
+                  
+
+                    $pic_path =$local_path."/".$file_name."_picture_".$file_name_counter.".".$fileActualExt;
+                    $pic_tmp_name = $_FILES['pic']['tmp_name'][$key_file_pic][$multi_row];
+                    move_uploaded_file($pic_tmp_name, $pic_path) ;
+
+                    $pic_path_remote ="$ftp_path/".$file_name."_picture_".$file_name_counter.".".$fileActualExt; 
+                    $pic_path_remote_sql ="'$pic_path_remote'";  
+
+                    $sourceName = $file_name."_picture_".$file_name_counter.".".$fileActualExt; 
+
+                    // if(ftp_put($ftp, $ftp_path."/".$sourceName, $pic_path , FTP_BINARY))
+                    // {
+                        // $text = "";
+
+                        //     fwrite($myfile, "\n ".$file_name."_picture_".$file_name_counter.".".$fileActualExt." \n");
+
+                    // }else {
+                    //     continue ;
+                    // }
+
+                    array_push($files_to_push , $sourceName) ;
+                    array_push($photos_py , $sourceName) ;
+
+                    array_push($data_pics_row['photos'] , $pic_path_remote) ;
+
+                    
+                }
+                else {
+
+                    // continue;
                 }
 
-                
-                // send to ftp
+
+                $file_name_counter++;
+                $multi_row++;
+
             }
-            else {
-               continue;
-            }
 
+            // $data = $pic_path_remote."*`".$desc;
 
-            $data = $pic_path_remote.":".$desc;
-
-            array_push($data_pics , $data);
+            // array_push($data_pics , $data);
+            array_push($data_pics_rows , $data_pics_row);
             $counter++;
+
         }
 
+        $data_pics = json_encode($data_pics_rows);
 
-      
     }
-    ftp_close($ftp); 
+
+    // echo $data_pics ;
+
+
+
+    $news_ftp_path_py  = "/$ftp_path";
+    $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
+    $local_file_py = '../my_data'.$news_ftp_path_py.'/';
+
+    $files_to_push_csv = implode("," , $files_to_push);
+
+    $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
+    $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
+
+
+
+    foreach($videos_py as $asg)
+    {
+        if (strpos( $push_remote_py_resp, $asg) !== false)
+        {
+                fwrite($myfile, "\n $asg Pushed to remote Success\n");
+        }
+        else {
+            
+            fwrite($myfile, "\n $asg Pushed to remote Failes\n");;
+        }
+    }
+
+    foreach($photos_py as $asg)
+    {
+        if (strpos( $push_remote_py_resp, $asg) !== false)
+        {
+                fwrite($myfile, "\n $asg Pushed to remote Success\n");
+        }
+        else {
+            
+            fwrite($myfile, "\n $asg Pushed to remote Failes\n");;
+        }
+    }
+
+    if (strpos( $push_remote_py_resp, $thumb_py) !== false)
+    {
+        $thumbnail_path ="$local_path_clean/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
+        $thumbnail_path_remote ="$ftp_path/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
+        $thumbnail_path_remote_sql = "'$thumbnail_path_remote'";
+
+        fwrite($myfile, "\n $thumb_py Pushed to remote Success\n");;
+    }
+    else {
+        
+        $thumbnail_path_remote_sql = "NULL" ;
+        $thumbnail_path_remote= "NULL" ;
+        fwrite($myfile, "\n $thumb_py Pushed to remote Failes\n");;
+    }
+
+
+
+
+   
 
     $tags_array = explode("," , $tags);
     $newsCategories_array = explode("," , $newsCategories);
     $series_array = explode("," , $series);
 
-    $data_videos = implode("," , $data_videos) ;
-    $data_pics = implode("," , $data_pics);
+    // $data_videos = implode("~~" , $data_videos) ;
+    // $data_pics = implode("~~" , $data_pics);
 
     $cmb2  = array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
                     'haru_video_url_type'=> 'insert',                  

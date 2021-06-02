@@ -226,12 +226,56 @@ if(!isset($location))
                         ftp_pasv($ftp, true);
                         $dir = $title_directory;
                         ftp_mkdir($ftp, "/".$archive_path_video_ftp."/".$dir);
-                        ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$video_name_file", "$video_send_path", FTP_BINARY); 
-                        ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$thum_name_file", "$thumb_send_path", FTP_BINARY); 
+
+                        $files_to_push = array();                        
+                        array_push($files_to_push , $video_name_file);
+                        array_push($files_to_push , $thum_name_file);
+
+                        $video_sent = $video_name_file ;
+                        $thumb_sent = $thum_name_file ;
+
+                        // ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$video_name_file", "$video_send_path", FTP_BINARY); 
+                        // ftp_put($ftp, "/".$archive_path_video_ftp."/$dir/$thum_name_file", "$thumb_send_path", FTP_BINARY);                   
+                        
+
                         ftp_close($ftp);
 
-                        $text = "Archive Video and Archive Thumbnail Pushed to Remote Succesfully\n";
-                        fwrite($myfile, $text);
+                        // $text = "Archive Video and Archive Thumbnail Pushed to Remote Succesfully\n";
+                        // fwrite($myfile, $text);
+
+
+                        $news_ftp_path_py  = "/$archive_path_video_ftp/$dir";
+                        $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
+                        $local_file_py = '../my_data'.$news_ftp_path_py.'/';
+                        $files_to_push_csv = implode("," , $files_to_push);
+
+                        $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
+                        $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
+
+                        
+                        if (strpos( $push_remote_py_resp, $video_sent) !== false)
+                        {
+                            $text = $video_sent." : Video  Pushed to Remote Succesfully\n";
+                            fwrite($myfile, $text);
+                        }
+                        else {
+                            
+                            $text = $video_sent." : Video  Pushed to Remote Failed\n";
+                            fwrite($myfile, $text);
+                        }
+
+                        if (strpos( $push_remote_py_resp, $thumb_sent) !== false)
+                        {
+                            $text = $thumb_sent." : Thumbnail  Pushed to Remote Succesfully\n";
+                            fwrite($myfile, $text);
+                        }
+                        else 
+                        {
+                            
+                            $text = $thumb_sent." : Thumbnail  Pushed to Remote Failed\n";
+                            fwrite($myfile, $text);
+                        }
+
 
 
                         $video_link = "$archive_path_video_ftp/".$dir."/".$video_name_file ;
