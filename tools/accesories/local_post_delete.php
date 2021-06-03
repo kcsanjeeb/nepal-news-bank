@@ -17,7 +17,7 @@ $news_path = 'my_data/news_data';
 
 
 
-print_r($_POST);
+// print_r($_POST);
 
 $news_id = $_POST['news_id'] ;
 $news_id = mysqli_real_escape_string($connection, $news_id);
@@ -46,6 +46,22 @@ if($type == $_SESSION['interview_id'])
   // interview
   $files = glob('../'.$interview_path.'/'.$byline_dir.'/*'); // get all file names
   foreach($files as $file){ // iterate files
+
+    if(end(explode("/" , $file)) == 'bonus_media')
+    {
+      $files_bonus = glob('../'.$news_path.'/'.$date.'/'.$byline_dir.'/bonus_media'); // get all file names
+      foreach($files_bonus as $fb){
+
+        if(is_file($fb)) {
+          unlink($fb); // delete file
+        }  
+
+      }
+      rmdir('../'.$news_path.'/'.$date.'/'.$byline_dir.'/bonus_media');
+      
+    }
+
+
     if(is_file($file)) {
       unlink($file); // delete file
     }
@@ -56,6 +72,20 @@ else
 {
   $files = glob('../'.$news_path.'/'.$date.'/'.$byline_dir.'/*'); // get all file names
   foreach($files as $file){ // iterate files
+
+    if(end(explode("/" , $file)) == 'bonus_media')
+    {
+      $files_bonus = glob('../'.$news_path.'/'.$date.'/'.$byline_dir.'/bonus_media/*'); // get all file names
+      foreach($files_bonus as $fb){
+
+        if(is_file($fb)) {
+          unlink($fb); // delete file
+        }  
+
+      }
+      rmdir('../'.$news_path.'/'.$date.'/'.$byline_dir.'/bonus_media');
+    }
+
     if(is_file($file)) {
       unlink($file); // delete file
     }
@@ -64,7 +94,7 @@ else
 }
 
 
-
+// print_r($files);
 if(isset($location))
 {
     $location_redirect = $location;

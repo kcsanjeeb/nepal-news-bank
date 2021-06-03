@@ -768,3 +768,24 @@ Large test Folder Created
 my_data/news_data/2021-06-02/Large test/20210602_213007_47578_body.docx : News Body Uploaded
 my_data/news_data/2021-06-02/Large test/20210602_213007_47578_videolong.mp4 : Video Long Uploaded
 ------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-03 21:21:02 
+2021-06-03 Folder Created
+2021-06-03/Multi FolderFolder Created
+my_data/news_data/2021-06-03/Multi Folder/20210603_212102_75451_body.docx : News Body Uploaded
+my_data/news_data/2021-06-03/Multi Folder/20210603_212102_75451_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-03/Multi Folder/20210603_212102_75451_thumbnail.png : Thumbnail Uploaded
+------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-03 21:24:27 
+Updated Attributes Folder Created
+my_data/news_data/2021-06-03/Updated Attributes/20210603_212427_77155_body.docx : News Body Uploaded
+------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-03 21:37:38 
+dsadsada Folder Created
+my_data/news_data/2021-06-03/dsadsada/20210603_213738_50718_body.docx : News Body Uploaded
+------------------------------------------------------- 

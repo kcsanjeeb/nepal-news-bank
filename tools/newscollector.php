@@ -721,8 +721,17 @@ strong {
                                             d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                     </svg>
                                 </label>
-                                <input type="file" id="" name="bonus_media[]" multiple >
+
+                                <div id="bonus_selectors" class="row" >
+
+                                    <div>
+                                        <input type="file" id="" name="bonus_media[]" multiple >
+                                     </div>
+
+                                </div>
+                               
                             </div>
+                            <button id="add_bonus_folder" type="button">Add Bonus Media From Diff. Folder</button>
 
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
 
@@ -927,7 +936,8 @@ strong {
         var s = document.getElementsByName('lang_selec')[0];
 
         function changeOrg() {
-            var value = s.options[s.selectedIndex].value;
+            // var value = s.options[s.selectedIndex].value;
+            var value = '';
             // console.log(value);
             if (value == 'nepali') {
                 document.getElementById('formByline').innerHTML =
@@ -1282,19 +1292,7 @@ strong {
 
 
 
-        $(document).on('click', '.exclusive', function() {
-
-            var condition = $(this).prop("checked");
-
-            if (condition == 1) {
-                var value = 1;
-            } else {
-                var value = 0;
-            }
-
-            $(".exclusive").val(value);
-
-        });
+       
         </script>
         <script>
         // Use the plugin once the DOM has been loaded.
@@ -1328,7 +1326,21 @@ strong {
         });
 
 
+//----------------Bonus Adde ---------------------------
 
+$(document).on('click', '#add_bonus_folder', function() {
+
+
+    var html = `
+        <div>
+            <input type="file" id="" name="bonus_media[]" multiple >
+        </div>
+
+    `;
+
+    $("#bonus_selectors").append(html);
+
+});
 
         </script>
 
