@@ -761,3 +761,10 @@ my_data/news_data/2021-06-02/News Test22/20210602_113424_40923_gallery_2.jpg : G
 my_data/news_data/2021-06-02/News Test22/20210602_113424_40923_gallery_3.jpg : Gallery-3 Uploaded
 my_data/news_data/2021-06-02/News Test22/20210602_113424_40923_gallery_4.jpg : Gallery-4 Uploaded
 ------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-02 21:30:07 
+Large test Folder Created
+my_data/news_data/2021-06-02/Large test/20210602_213007_47578_body.docx : News Body Uploaded
+my_data/news_data/2021-06-02/Large test/20210602_213007_47578_videolong.mp4 : Video Long Uploaded
+------------------------------------------------------- 

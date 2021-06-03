@@ -10,7 +10,7 @@ def save_ftp( filename , my_ftp_url ,my_ftp_username ,my_ftp_password ,  my_ftp_
     ftp.login(my_ftp_username,  my_ftp_password)   
     ftp.cwd(my_ftp_remote_path)
     file = open(my_local_path+filename,'rb')                  
-    ftp.storbinary('STOR '+filename, file)      
+    ftp.storbinary('STOR '+filename, file , 3000000)      
     file.close()
     ftp.quit()
     file_completed.append(filename)
