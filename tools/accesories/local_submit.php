@@ -22,7 +22,6 @@ $news_path = 'my_data/news_data';
 
 
 $myfile = fopen("../log/newscollector_log.txt", "a") or die("Unable to open file!");  
-                fwrite($myfile, "\n---------------$newsdate / $byLine_directory ---------------- \n");
 
 
               
@@ -172,7 +171,8 @@ if(!isset($location))
                 $newsdate = mysqli_real_escape_string($connection, $newsdate);
             
             }
-            
+            fwrite($myfile, "\n---------------$newsdate / $byLine_directory ---------------- \n");
+
            
             
             	
@@ -256,6 +256,7 @@ if(!isset($location))
             {
                 $path_destination ="../".$interview_path."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id;
                 $path_sql = $interview_path."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id;
+
 
             }
             else
@@ -665,6 +666,58 @@ if(!isset($location))
         }
 
 
+        
+        if(!empty($_FILES['additional_files']['name'][0]))
+        {
+            $zip = new ZipArchive(); // Load zip library 
+            $zip_name =$path_destination."_additional_files.zip";
+            $additional_path_sql = $path_sql."_additional_files.zip"; 
+            $additional_path_sql = "'$additional_path_sql'";
+
+            /*
+                 1. create zip folder -- done
+                 2. add all files to zip -- done
+                 3. store zip -- done
+                 4. add attribute in nas db
+                 5  store path in nas db
+            */ 
+            if($zip->open($zip_name, ZIPARCHIVE::CREATE)===TRUE)
+            { 
+                $counter_file_zip = 0;
+                foreach ($_FILES["additional_files"]["name"] as $p => $name)
+                {  
+                    
+                    $fileName= $_FILES['additional_files']['name'][$p];
+                    $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];  
+                    $fileSize = $_FILES['additional_files']['size'][$p];
+                    $fileType = $_FILES['additional_files']['type'][$p]; 
+
+
+                    $fileExt_exp = explode('.' , $fileName);
+                    $fileActualExt = strtolower(end($fileExt_exp));
+                               
+
+                    $fileExt = explode('.' , $fileName);    
+                    
+                    $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_additional_file_".$counter_file_zip.".".$fileActualExt;
+
+                        
+                        $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];                  
+                        $zip->addFile($fileTmpName , $new_zip_file_name);
+                        $counter_file_zip++ ;
+                }
+            
+
+            }
+
+            $zip->close();
+        
+        
+        }
+        else {
+            $additional_path_sql = 'NULL';
+        }
+
 
 
 
@@ -681,7 +734,7 @@ if(!isset($location))
                 videolong,  videolazy  ,thumbnail ,
                 audio ,  photos ,  newsbody ,  videoextra ,
                 tag_list , uploaded_by , reporter ,
-                camera_man , district , video_type, series
+                camera_man , district , video_type, series ,  additional_file
               
                 ) 
                 VALUES 
@@ -690,7 +743,7 @@ if(!isset($location))
                 $video_long_path , $videoLazy_path  , $thumbnail_path,
                 $audio_path , $gallery_csv , $body_path , $videoExtra_path ,
                 $tags ,$uploaded_by ,  $reporter , 
-                $camera_man , $district,  $video_type, $series
+                $camera_man , $district,  $video_type, $series , $additional_path_sql
               
                 
                             

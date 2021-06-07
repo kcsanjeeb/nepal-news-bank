@@ -62,6 +62,8 @@ if(!isset($location))
                 $video_type = $row_content['video_type'];
                 $local_published_date = $row_content['local_published_date'];
 
+                $additional_file_full = $row_content['additional_file'];
+
                
                 // if($category_full == '172')
                 if($category_full == $_SESSION['interview_id'])
@@ -94,6 +96,8 @@ if(!isset($location))
                     $videoextra_full_web = $row_content_web['videoextra'];
                     $gallery_full_web = $row_content_web['photos'];
                     $gallery_full_web_arr = explode(',' ,  $gallery_full_web) ;
+
+                    $additional_files_full_web = $row_content_web['additional_file'];
 
                     if($videolong_full_web == NULL)
                         $videolong_full_web = "NULL";
@@ -137,6 +141,13 @@ if(!isset($location))
                     else
                         $gallery_full_web = "'$gallery_full_web'";
 
+                    
+                    if($additional_files_full_web == NULL)
+                        $additional_files_full_web = "NULL";
+
+                    else
+                        $additional_files_full_web = "'$additional_files_full_web'";
+
 
                 }
                 else
@@ -149,6 +160,7 @@ if(!isset($location))
                     $audio_full_web = "NULL";
                     $videoextra_full_web = "NULL";
                     $gallery_full_web = "NULL";
+                    $additional_files_full_web = "NULL";
                     $gallery_full_web_arr = array();
                 }
 
@@ -686,6 +698,58 @@ if(!isset($location))
                         $push_audio = $audio_full_web;
                     }
 
+
+                    
+                    if(in_array('additional_files' ,$file_type ))
+                    {
+                        if(file_exists('../'.$additional_file_full))
+                        {
+                            $sourceName = explode("/" ,$additional_file_full ) ;
+                            $sourceName = end($sourceName );
+
+                            // if(ftp_remote('newsbody' , '../'.$newsbody_full , $sourceName))
+                            // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$newsbody_full))
+
+                            array_push($files_to_push , $sourceName );
+                            $additional_file_py =  $sourceName ;
+                            // ======= old ftp -------------------
+
+                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$newsbody_full , FTP_BINARY))
+                                // { 
+
+                                //     $text = "$sourceName News  Body Pushed\n";
+                                //     fwrite($myfile, $text);
+                                    
+
+                                //     $push_newsbody = "'$news_ftp_path_sql/$sourceName'" ;
+                                // }
+                                // else
+                                // {
+                                //     $push_newsbody = "NULL";
+                                //     $text = "$sourceName News Body Failed to Pushed\n";
+                                //     fwrite($myfile, $text);                            
+
+                                //     $_SESSION['notice_remote'] = "Error";
+                                // }
+
+                            // ======= old ftp -------------------
+                        
+                        }
+                        else
+                        {
+                            $push_additional_file = "NULL";
+                        }
+                        
+
+                    }
+                    else
+                    {
+                        $push_additional_file = $additional_files_full_web;
+                    }
+
+
+                    
+
                     ftp_close($ftp); 
                 
                 /*
@@ -736,7 +800,7 @@ if(!isset($location))
                     else
                     {
                         echo "1c<br>";
-                        $news_body_py = "NULL";
+                        $push_newsbody = "NULL";
                         $text = "$sourceName News Body Failed to Pushed\n";
                         fwrite($myfile, $text);                            
 
@@ -901,7 +965,32 @@ if(!isset($location))
                 $gall_img = implode(',' , $gallery_full_web_arr) ;
 
                 
-             
+                if(in_array($additional_file_py , $files_to_push))
+                {
+                    
+                    
+                    // if(in_array($news_body_py , $push_remote_py_resp_arr)) 
+                    if (strpos( $push_remote_py_resp, $additional_file_py) !== false)        
+                    {
+                        echo "<br>1b<br>";
+
+                        $text = "$additional_file_py Additional Files Pushed\n";
+                        fwrite($myfile, $text);
+                        
+
+                        $push_additional_file = "'$news_ftp_path_sql/$additional_file_py'" ;
+                    }
+
+                    else
+                    {
+                        echo "1c<br>";
+                        $push_additional_file = "NULL";
+                        $text = "$sourceName News Body Failed to Pushed\n";
+                        fwrite($myfile, $text);                            
+
+                        $_SESSION['notice_remote'] = "Error";
+                    }
+                }
                  
 
                
@@ -930,7 +1019,7 @@ if(!isset($location))
                        videolong = $push_videoLong , videolazy = $push_videoLazy  ,thumbnail = $push_thumbnail ,
                         audio = $push_audio  , photos = '$gall_img' , videoextra = $push_videoextra, newsbody = $push_newsbody,  
                          pushed_by = '$pushed_by' ,   pushed_date = '$pushed_at' ,
-                         vimeo_videolong = $vimeo_videolong , vimeo_videolazy = $vimeo_videolazy , vimeo_video_extra = $vimeo_videoextra
+                         vimeo_videolong = $vimeo_videolong , vimeo_videolazy = $vimeo_videolazy , vimeo_video_extra = $vimeo_videoextra, additional_file = $push_additional_file
                          where newsid = '$news_id'  ;";
                         // ) 
                         // VALUES 
@@ -950,13 +1039,13 @@ if(!isset($location))
                         newsid ,  videolong , videolazy ,thumbnail ,
                         audio   , photos , videoextra, newsbody ,  
                          pushed_by ,   pushed_date , wp_post_id,
-                         vimeo_videolong , vimeo_videolazy , vimeo_video_extra
+                         vimeo_videolong , vimeo_videolazy , vimeo_video_extra , additional_file
                         ) 
                         VALUES 
                         ('$news_id',  $push_videoLong ,$push_videoLazy  , $push_thumbnail,
                              $push_audio , '$gall_img', $push_videoextra , $push_newsbody , 
                             '$pushed_by' ,'$pushed_at' , $wp_post,
-                            $vimeo_videolong , $vimeo_videolazy , $vimeo_videoextra
+                            $vimeo_videolong , $vimeo_videolazy , $vimeo_videoextra , $push_additional_file
                             
                             )";    
 

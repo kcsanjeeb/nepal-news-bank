@@ -67,81 +67,81 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
     <title>NEPAL NEWS BANK DASHBOARD</title>
 
     <style>
-        .disabled {
-            cursor: no-drop;
-        }
+    .disabled {
+        cursor: no-drop;
+    }
 
-        @font-face {
-            font-family: preeti;
-            src: url(preeti.TTF);
-        }
+    @font-face {
+        font-family: preeti;
+        src: url(preeti.TTF);
+    }
 
-        .form-nepali {
-            font-family: preeti;
-            font-size: 19px
-        }
+    .form-nepali {
+        font-family: preeti;
+        font-size: 19px
+    }
     </style>
 
     <style>
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
 
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
 
-        input:checked+.slider {
-            background-color: #2196F3;
-        }
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
 
-        input:focus+.slider {
-            box-shadow: 0 0 1px #2196F3;
-        }
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
 
-        input:checked+.slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-        }
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
 
-        /* Rounded sliders */
-        .slider.round {
-            border-radius: 34px;
-        }
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
 
-        .slider.round:before {
-            border-radius: 50%;
-        }
+    .slider.round:before {
+        border-radius: 50%;
+    }
     </style>
 </head>
 
@@ -278,6 +278,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $thumbnail_full = $row_content['thumbnail'];
                                                         $videolazy_full = $row_content['videolazy'];                            
                                                         $newsbody_full = $row_content['newsbody'];
+                                                        $additional_full = $row_content['additional_file'];
 
                                                         $videolong = explode('/' ,$videolong_full );
                                                         $videolong = end($videolong) ; 
@@ -294,6 +295,9 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $newsbody = explode('/' ,$newsbody_full );
                                                         $newsbody = end($newsbody) ; 
 
+                                                        $additional = explode('/' ,$additional_full );
+                                                        $additional = end($additional) ; 
+
 
 
 
@@ -304,7 +308,6 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $audio = $row_content['audio'];
 
                                                         $videoextra = $row_content['videoextra'];
-
                                                         $video_type = $row_content['video_type'];
 
                                                       
@@ -323,6 +326,10 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     $newsbody_full_web = $row_content_web['newsbody'];
                                                     $audio_full_web = $row_content_web['audio'];
                                                     $videoextra_full_web = $row_content_web['videoextra'];
+
+                                                        
+                                                    $additional_full_web = $row_content_web['additional_file'];
+
                                                     $gallery_full_web = $row_content_web['photos'];
                                                     $gallery_full_web = explode("," , $gallery_full_web);
 
@@ -904,6 +911,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 }
                                     ?>
 
+
+
                                 <?php 
                                                 if($videoextra != NULL)
                                             {
@@ -1015,8 +1024,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                     <div class="form-control"><?php echo $message ; ?></div>
 
                                 </div>
-
-
+                      
                                 <?php
                                                     
                                                 }
@@ -1024,7 +1032,101 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 {
                                                     $sta_g = 1 ;
                                                 }
-                                    ?>
+                                ?>
+                            <!------------------------- Additional File Remote ----------------------------------->
+
+                            <?php 
+                                                if($additional_full != NULL)
+                                            {
+                                                
+                                                $additional_file_exist = $additional_full ;
+                                                $additional_full = explode('/' ,$additional );
+                                                $additional = end($additional_full) ;
+
+                                                
+                                              
+                                                if(file_exists($additional_file_exist))
+                                                {                                             
+
+                                                   
+                                                        
+                                                    
+                                                        if($additional_full_web != NULL)
+                                                        {
+                                                            
+                                                            $input = 'disabled';
+                                                            $value_input = '';
+                                                            $ischecked = '';
+                                                            $message = '<span>'.$additional.'</span><span class="float-right">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                                            </svg></span>
+                                                            ';
+                                                            $class_comp = '';
+                                                            $sta_z = 1 ;
+
+                                                           
+                                                            
+                                                        }
+                                                        else
+                                                        {
+                                                            
+                                                            $input = '';
+                                                            $value_input = 'additional_files';
+                                                            $message = '<span>'.$additional.'</span><span class="float-right">
+                                                            </span>
+                                                            ';
+                                                            $ischecked = 'checked';
+                                                            $rem_to_push = 1 ;
+                                                            $class_comp = 'compulsory';
+                                                        }
+                                                  
+
+                                                
+                                                
+                                                    
+                                                }
+                                                else
+                                                {
+                                                    
+                                                    $input = 'disabled';
+                                                    $value_input = '';
+                                                    $ischecked = 'checked';
+                                                    $message = '<span>'.$additional.'</span><span class="float-right">
+                                                    <span class="text-danger pr-2">Video Extra File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
+                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                                    </svg></span>
+                                                        ';
+                                                        $class_comp = 'compulsory miss';
+                                                }
+                                        ?>
+
+                                <div class="input-group ">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="checkbox" name="file_name[]"
+                                                value="<?php echo $value_input ; ?>" <?php echo $input ; ?>
+                                                aria-label="Checkbox for following text input"
+                                                <?php echo $ischecked ; ?>
+                                                class="files big-checkbox <?php echo $class_comp ; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-control"><?php echo $message ; ?></div>
+
+                                </div>
+                      
+                                <?php
+                                                    
+                                                }
+                                                else
+                                                {
+                                                    $sta_z = 1 ;
+                                                }
+                                ?>
+
+
+                            <!------------------------- Additional File Remote End ------------------------------->
+
 
                                 <p class="h4 text-info mt-3 pl-0"><b>Step 4.</b> Select following images</p>
                                 <ul class=" ">
@@ -1132,7 +1234,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                                         // echo "Hello: $sta_a  && $sta_b  && $sta_c && $sta_d && $sta_e  && $sta_h && $sta_g && $sta_f";
 
-                                        if($sta_a  && $sta_b  && $sta_c  && $sta_e  && $sta_h && $sta_g && $sta_f)
+                                        if($sta_a  && $sta_b  && $sta_c  && $sta_e  && $sta_h && $sta_g && $sta_f && $sta_z)
                                         {
 
                                             $dis_pushhh = 'disabled';
@@ -1286,17 +1388,17 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 if($status_dis_pushhh != 'disabled')
 { 
 ?>
-   <hr/>
-        <form method="POST" action='accesories/local_post_delete.php'>
-            <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
-            <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
-            <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
-            <input type="hidden" name="type" value="<?php echo $category_list ?>">
+                    <hr />
+                    <form method="POST" action='accesories/local_post_delete.php'>
+                        <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
+                        <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
+                        <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
+                        <input type="hidden" name="type" value="<?php echo $category_list ?>">
 
-            <input type="submit" value="Delete Collected News" class="btn btn-danger" name="del_nas">
-        </form>
-        <hr/>
-        <?php
+                        <input type="submit" value="Delete Collected News" class="btn btn-danger" name="del_nas">
+                    </form>
+                    <hr />
+                    <?php
 
 }
 ?>
@@ -1583,85 +1685,85 @@ if($status_dis_pushhh != 'disabled')
 
 
     <script>
-        $(document).on('click', '.files', function () {
+    $(document).on('click', '.files', function() {
 
-            if ($(this).is(":checked") == false) {
-                $(this).removeAttr('checked');
-            } else {
-                $(this).attr('checked', 'checked');
-            }
+        if ($(this).is(":checked") == false) {
+            $(this).removeAttr('checked');
+        } else {
+            $(this).attr('checked', 'checked');
+        }
 
-        });
+    });
 
-        $("#date").change(function () {
-            var selc_date = $('#date').val();
-            location.href = "remotecopycreator.php?date=" + selc_date;
-
-
-
-        });
-
-
-        $(document).on('click', '.post_type', function () {
-
-            var id = $(this).val();
-            var type = null;
-
-            if ($(this).is(":checked") == false) {
-                type = "draft";
-            } else {
-                $(this).attr('checked', 'checked');
-                type = "publish";
-            }
+    $("#date").change(function() {
+        var selc_date = $('#date').val();
+        location.href = "remotecopycreator.php?date=" + selc_date;
 
 
 
-            $.ajax({
-                url: "accesories/wp_post_type_update.php?wp_post_id=" + id + "&wp_post_status=" + type,
-                method: "POST",
-                data: {
-
-                },
-                dataType: "text",
-                success: function (data) {
+    });
 
 
+    $(document).on('click', '.post_type', function() {
 
-                }
-            });
+        var id = $(this).val();
+        var type = null;
 
-        });
-
-
-
-
-
-
-        var checkBoxes = $('.compulsory'),
-            submitButton = $('.sub_push');
-
-        if ($('.miss').length > 0) {
-            $("#error_push_miss").html("Error: Please copy the missing file and refresh the tool.").css("color", "red");
-            submitButton.addClass('disabled');
-
+        if ($(this).is(":checked") == false) {
+            type = "draft";
+        } else {
+            $(this).attr('checked', 'checked');
+            type = "publish";
         }
 
 
 
+        $.ajax({
+            url: "accesories/wp_post_type_update.php?wp_post_id=" + id + "&wp_post_status=" + type,
+            method: "POST",
+            data: {
+
+            },
+            dataType: "text",
+            success: function(data) {
 
 
 
-
-        checkBoxes.change(function () {
-            submitButton.attr("disabled", checkBoxes.is(":not(:checked)"));
-            if (checkBoxes.is(":not(:checked)")) {
-                submitButton.addClass('disabled');
-                $("#error_push").html("Error: Please select all files.<br>").css("color", "red");
-            } else {
-                submitButton.removeClass('disabled');
-                $("#error_push").html("");
             }
         });
+
+    });
+
+
+
+
+
+
+    var checkBoxes = $('.compulsory'),
+        submitButton = $('.sub_push');
+
+    if ($('.miss').length > 0) {
+        $("#error_push_miss").html("Error: Please copy the missing file and refresh the tool.").css("color", "red");
+        submitButton.addClass('disabled');
+
+    }
+
+
+
+
+
+
+
+    checkBoxes.change(function() {
+        submitButton.attr("disabled", checkBoxes.is(":not(:checked)"));
+        if (checkBoxes.is(":not(:checked)")) {
+            submitButton.addClass('disabled');
+            $("#error_push").html("Error: Please select all files.<br>").css("color", "red");
+        } else {
+            submitButton.removeClass('disabled');
+            $("#error_push").html("");
+        }
+    });
     </script>
 
 

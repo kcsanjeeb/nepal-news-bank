@@ -1354,7 +1354,7 @@ strong {
         });
 
 
-//----------------Bonus Adde ---------------------------
+//----------------Bonus Folder Adder ---------------------------
 
 $(document).on('click', '#add_bonus_folder', function() {
 
@@ -1370,9 +1370,27 @@ $(document).on('click', '#add_bonus_folder', function() {
 
 });
 
+
+//----------------Additional Folder Adder---------------------------
+
+$(document).on('click', '#add_additional_folder', function() {
+
+
+var html = `
+    <div>
+        <input type="file" id="" name="additional_files[]" multiple >
+    </div>
+
+`;
+
+$("#additional_selectors").append(html);
+
+});
+
         </script>
 
 
 </body>
 
 </html>
+

@@ -818,3 +818,62 @@ my_data/news_data/2021-06-05/बजेट कार्यान्वयनम�
 my_data/news_data/2021-06-05/बजेट कार्यान्वयनमा दुविधा छैनः अर्थमन्त्री/20210605_154523_65476_gallery_2.jpg : Gallery-2 Uploaded
 my_data/news_data/2021-06-05/बजेट कार्यान्वयनमा दुविधा छैनः अर्थमन्त्री/20210605_154523_65476_gallery_3.jpg : Gallery-3 Uploaded
 ------------------------------------------------------- 
+--------------- /  ---------------- 
+------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-07 17:11:13 
+2021-06-07 Folder Created
+2021-06-07/testFolder Created
+------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-07 17:18:24 
+test Folder Created
+------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-07 17:22:46 
+test Folder Created
+------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-07 17:25:39 
+test Folder Created
+------------------------------------------------------- 
+--------------- /  ---------------- 
+
+ Logged Date: 2021-06-07 17:34:27 
+Additional File Test Folder Created
+my_data/news_data/2021-06-07/Additional File Test/20210607_173427_96015_body.docx : News Body Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_173427_96015_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_173427_96015_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_173427_96015_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-06-07 / Additional File Test ---------------- 
+
+ Logged Date: 2021-06-07 17:39:56 
+Additional File Test Folder Created
+my_data/news_data/2021-06-07/Additional File Test/20210607_173956_15591_body.docx : News Body Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_173956_15591_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_173956_15591_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_173956_15591_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-06-07 / Additional File Test ---------------- 
+
+ Logged Date: 2021-06-07 17:42:54 
+Additional File Test Folder Created
+my_data/news_data/2021-06-07/Additional File Test/20210607_174254_40124_body.docx : News Body Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_174254_40124_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_174254_40124_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_174254_40124_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 
+---------------2021-06-07 / Additional File Test ---------------- 
+
+ Logged Date: 2021-06-07 17:45:19 
+Additional File Test Folder Created
+my_data/news_data/2021-06-07/Additional File Test/20210607_174519_88827_body.docx : News Body Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_174519_88827_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_174519_88827_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-07/Additional File Test/20210607_174519_88827_gallery_0.png : Gallery-0 Uploaded
+------------------------------------------------------- 

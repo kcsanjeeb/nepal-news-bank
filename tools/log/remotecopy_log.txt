@@ -437,3 +437,12 @@
 20210605_154523_65476_gallery_2.jpg Gallery Photo Pushed
 20210605_154523_65476_gallery_3.jpg Gallery Photo Pushed
 ------------------------------------------------------- 
+---------------2021-06-07 17:45:21 / Additional File Test ---------------- 
+
+ Logged Date: 2021-06-07 18:29:48 
+20210607_174519_88827_body.docx News  Body Pushed
+20210607_174519_88827_videolong.mp4 Video Long Pushed
+20210607_174519_88827_thumbnail.jpg Thumbnail Pushed
+20210607_174519_88827_gallery_0.png Gallery Photo Pushed
+20210607_174519_88827_additional_files.zip Additional Files Pushed
+------------------------------------------------------- 
