@@ -446,6 +446,12 @@ strong {
                                     </svg>
                                 </label>
 
+                                
+                                <input type="text" class="form-control col-lg-12 pl-0"
+                                        placeholder="Enter Additional File Description" name="additional_files_description" id="input_box" xxx
+                                        >
+                                <br>
+
                                 <div id="additional_selectors"  >
 
                                     <div>
@@ -463,6 +469,7 @@ strong {
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
                             <div class="row">
                                 <!--Select video and pass to sql-->
+
 
 
 

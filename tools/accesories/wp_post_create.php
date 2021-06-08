@@ -39,6 +39,12 @@ if(isset($_POST['submit_push']))
             $tags_full = $row_content['tag_list'];
             $video_type = $row_content['video_type'];
             $additional_file_full = $row_content['additional_file'];
+            $additional_files_description_full = $row_content['additional_files_description'];
+
+            if($additional_files_description_full == NULL)
+                $additional_files_description_full = "NULL";
+            else
+                $additional_files_description_full = $additional_files_description_full ;
 
             
             $series_nas = $row_content['series'];
@@ -291,7 +297,8 @@ if(isset($_POST['submit_push']))
                                             'audio' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
-                                            "additional_files" => $push_additional_json
+                                            "additional_files" => $push_additional_json,
+                                            "additional_files_description" => "$additional_files_description_full"
                                            
             ),
                     "featured_media" => $featured_media_id,
@@ -317,7 +324,8 @@ if(isset($_POST['submit_push']))
                                             'audio' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
-                                            "additional_files" => $push_additional_json
+                                            "additional_files" => $push_additional_json,
+                                            "additional_files_description" => "$additional_files_description_full"
                                            
             ),
                    

@@ -164,6 +164,19 @@ if(!isset($location))
                 $series = 'NULL';
             }
 
+            if(isset($_POST['additional_files_description']))
+            {
+                $additional_files_description = $_POST['additional_files_description'];
+                $additional_files_description = mysqli_real_escape_string($connection, $additional_files_description);    
+                $additional_files_description = "'$additional_files_description'";
+            }
+            else
+            {
+                $additional_files_description = "NULL";
+            }
+
+
+
             $newsdate = $_POST['newsdate'];
             if(validateDate(date('Y-m-d',strtotime($newsdate))) == 1 )
             {
@@ -734,7 +747,7 @@ if(!isset($location))
                 videolong,  videolazy  ,thumbnail ,
                 audio ,  photos ,  newsbody ,  videoextra ,
                 tag_list , uploaded_by , reporter ,
-                camera_man , district , video_type, series ,  additional_file
+                camera_man , district , video_type, series ,  additional_file , additional_files_description
               
                 ) 
                 VALUES 
@@ -743,7 +756,7 @@ if(!isset($location))
                 $video_long_path , $videoLazy_path  , $thumbnail_path,
                 $audio_path , $gallery_csv , $body_path , $videoExtra_path ,
                 $tags ,$uploaded_by ,  $reporter , 
-                $camera_man , $district,  $video_type, $series , $additional_path_sql
+                $camera_man , $district,  $video_type, $series , $additional_path_sql , $additional_files_description
               
                 
                             

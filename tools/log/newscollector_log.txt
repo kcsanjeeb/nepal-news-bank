@@ -883,4 +883,15 @@ my_data/news_data/2021-06-07/Additional File Test/20210607_174519_88827_gallery_
 2021-06-08 Folder Created
 2021-06-08/ftp check todayFolder Created
 my_data/news_data/2021-06-08/ftp check today/20210608_075711_21084_body.docx : News Body Uploaded
+------------------------------------------------------- ------------------------------------------------------- 
+---------------2021-06-08 / Add FIle Desc Test ---------------- 
+
+ Logged Date: 2021-06-08 21:27:25 
+2021-06-08 Folder Created
+2021-06-08/Add FIle Desc TestFolder Created
+my_data/news_data/2021-06-08/Add FIle Desc Test/20210608_212725_98348_body.docx : News Body Uploaded
+my_data/news_data/2021-06-08/Add FIle Desc Test/20210608_212725_98348_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-08/Add FIle Desc Test/20210608_212725_98348_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-08/Add FIle Desc Test/20210608_212725_98348_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-06-08/Add FIle Desc Test/20210608_212725_98348_gallery_1.jpg : Gallery-1 Uploaded
 ------------------------------------------------------- 
