@@ -432,10 +432,34 @@ strong {
                                 <small id="emailHelp" class="form-text text-muted">accepted formats : docx </small>
                             </div>
 
+                            <div class="form-group">
+                                <label class="col-lg-12 p-0 h5 text-info">Step 4. Select Additional Files
+                                    <svg data-toggle="popover" title="News Title"
+                                        data-content="Some content inside the popover"
+                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg>
+                                </label>
+
+                                <div id="additional_selectors"  >
+
+                                    <div>
+                                        <input type="file" id="" name="additional_files[]" multiple >
+                                     </div>
+
+                                </div>
+                               
+                            </div>
+                            <button id="add_additional_folder" type="button">Add New</button>
 
 
                             <!-- <STRONG> SELECT VIDEOS </strong> -->
-                            <label class="col-lg-12 p-0 h5 text-info">Step 4. Select Videos</label>
+                            <label class="col-lg-12 p-0 h5 text-info">Step 5. Select Videos</label>
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
                             <div class="row">
                                 <!--Select video and pass to sql-->
@@ -451,7 +475,7 @@ strong {
                                             id="videolongplaceholder" alt="...">
                                         <div id="videolongID"></div>
                                         <div class="card-body">
-                                            <span><strong>4.1 Video long</strong></span>
+                                            <span><strong>5.1 Video long</strong></span>
                                             <div class="float-right">
                                                 <svg data-toggle="popover" title="News Title"
                                                     data-content="Some content inside the popover"
@@ -482,7 +506,7 @@ strong {
                                             id="videolazyplaceholder" alt="...">
                                         <div id="videolazyID"></div>
                                         <div class="card-body">
-                                            <span><strong>4.2 Video lazy</strong></span>
+                                            <span><strong>5.2 Video lazy</strong></span>
                                             <div class="float-right">
                                                 <svg data-toggle="popover" title="News Title"
                                                     data-content="Some content inside the popover"
@@ -512,7 +536,7 @@ strong {
                                             id="videoextraplaceholder" alt="...">
                                         <div id="videoextraID"></div>
                                         <div class="card-body">
-                                            <span><strong>4.3 Video extra</strong></span>
+                                            <span><strong>5.3 Video extra</strong></span>
                                             <div class="float-right">
                                                 <svg data-toggle="popover" title="News Title"
                                                     data-content="Some content inside the popover"
@@ -539,7 +563,7 @@ strong {
 
                             <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
                             <div class="form-group mt-3">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 5. Select News Category*</label>
+                                <label class="col-lg-12 p-0  h5 text-info">Step 6. Select News Category*</label>
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
                                 <select multiple name="newsCategories[]" id="categories" required>
 
@@ -568,7 +592,7 @@ strong {
 
                             <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
                             <div class="form-group">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 6. Select News Tags</label>
+                                <label class="col-lg-12 p-0  h5 text-info">Step 7. Select News Tags</label>
                                 <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
                                 <select multiple name="newsTag[]" id="tags">
 
@@ -596,7 +620,7 @@ strong {
 
 
                             <div class="form-group ">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 7. Select Audio
+                                <label class="col-lg-12 p-0 h5 text-info">Step 8. Select Audio
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -615,7 +639,7 @@ strong {
 
                         
                             <!-- Select one audio file -->
-                            <STRONG class=" h5 text-info">Step 8. Select Images </strong>
+                            <STRONG class=" h5 text-info">Step 9. Select Images </strong>
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
                           
 
@@ -624,7 +648,7 @@ strong {
 
                             <!-- Select one image for news thumbnail-->
                             <div class="form-group">
-                                <label class="col-lg-12 p-0"><strong>8.1 Video Thumbnail JPG / PNG</strong>
+                                <label class="col-lg-12 p-0"><strong>9.1 Video Thumbnail JPG / PNG</strong>
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -648,7 +672,7 @@ strong {
 
 
                             <div class="form-group">
-                                <label class="col-lg-12 p-0"><strong>8.1 Gallery Images JPG / PNG</strong>
+                                <label class="col-lg-12 p-0"><strong>9.2 Gallery Images JPG / PNG</strong>
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -670,7 +694,7 @@ strong {
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
 
                             <div class="form-group">
-                            <label class="col-lg-12 p-0  h5 text-info">Step 9. Select Series</label>
+                            <label class="col-lg-12 p-0  h5 text-info">Step 10. Select Series</label>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -709,7 +733,7 @@ strong {
                             
                             <!-- The body of news. Should extract text from file like txt and docs and pass to sql -->
                             <div class="form-group">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 10. Select Bonus Media
+                                <label class="col-lg-12 p-0 h5 text-info">Step 11. Select Bonus Media
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -722,7 +746,7 @@ strong {
                                     </svg>
                                 </label>
 
-                                <div id="bonus_selectors" class="row" >
+                                <div id="bonus_selectors" >
 
                                     <div>
                                         <input type="file" id="" name="bonus_media[]" multiple >
@@ -731,40 +755,14 @@ strong {
                                 </div>
                                
                             </div>
-                            <button id="add_bonus_folder" type="button">Add Bonus Media From Diff. Folder</button>
+                            <button id="add_bonus_folder" type="button">Add Bonus </button>
 
                             <!-- <HR style="    border-top: 1px solid rgba(0,0,0)"> -->
 
-                            <br>
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 10. Select Additional Files
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-                                </label>
-
-                                <div id="additional_selectors" class="row" >
-
-                                    <div>
-                                        <input type="file" id="" name="additional_files[]" multiple >
-                                     </div>
-
-                                </div>
-                               
-                            </div>
-                            <button id="add_additional_folder" type="button">Add Additional Files From Diff. Folder</button>
-
-                            <HR style="    border-top: 1px solid rgba(0,0,0)">
+                            
 
 
-                            <label class="col-lg-12 p-0  h5 text-info">Step 11. Select Others (optional)</label>
+                            <label class="col-lg-12 p-0  h5 text-info">Step 12. Select Others (optional)</label>
                   
 
                             <div class="row">
@@ -772,7 +770,7 @@ strong {
 
                                 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>11.1. District*</strong>
+                                        <label class="col-lg-12 p-0"><strong>13.1. District*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -805,7 +803,7 @@ strong {
 
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>11.2 Reporter*</strong>
+                                        <label class="col-lg-12 p-0"><strong>13.2 Reporter*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -835,7 +833,7 @@ strong {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>11.3 Camera Man*</strong>
+                                        <label class="col-lg-12 p-0"><strong>13.3 Camera Man*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -872,7 +870,7 @@ strong {
 
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>11.4 Created By*</strong>
+                                        <label class="col-lg-12 p-0"><strong>13.4 Created By*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -903,7 +901,7 @@ strong {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>11.5 Video Type</strong>
+                                        <label class="col-lg-12 p-0"><strong>13.5 Video Type</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"

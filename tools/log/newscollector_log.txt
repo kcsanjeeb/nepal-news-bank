@@ -877,3 +877,10 @@ my_data/news_data/2021-06-07/Additional File Test/20210607_174519_88827_videolon
 my_data/news_data/2021-06-07/Additional File Test/20210607_174519_88827_thumbnail.jpg : Thumbnail Uploaded
 my_data/news_data/2021-06-07/Additional File Test/20210607_174519_88827_gallery_0.png : Gallery-0 Uploaded
 ------------------------------------------------------- 
+---------------2021-06-08 / ftp check today ---------------- 
+
+ Logged Date: 2021-06-08 07:57:11 
+2021-06-08 Folder Created
+2021-06-08/ftp check todayFolder Created
+my_data/news_data/2021-06-08/ftp check today/20210608_075711_21084_body.docx : News Body Uploaded
+------------------------------------------------------- 
