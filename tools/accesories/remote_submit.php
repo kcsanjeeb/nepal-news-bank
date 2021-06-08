@@ -1127,6 +1127,7 @@ if(!isset($location))
                 $thumbnail_full = $row_content['thumbnail'];
                 $videolazy_full = $row_content['videolazy'];                            
                 $newsbody_full = $row_content['newsbody'];
+                $additional_file_full = $row_content['additional_file'];
 
                 $vimeo_videolong_web = $row_content['vimeo_videolong'];
                 $vimeo_videolazy_web = $row_content['vimeo_videolazy'];
@@ -1248,6 +1249,17 @@ if(!isset($location))
                         // $path =  "$last/$end";
                         echo $audio; 
                         ftp_delete_rem($audio , 'file');
+                    }
+
+                    if($additional_file_full != NULL)
+                    {
+                        // $file = explode("/" , $audio);
+                        // $reverse_file = array_reverse($file);
+                        // $last = $reverse_file[1];
+                        // $end = $reverse_file[0];
+                        // $path =  "$last/$end";
+                        echo $additional_file_full; 
+                        ftp_delete_rem($additional_file_full , 'file');
                     }
 
                    

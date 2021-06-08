@@ -65,6 +65,7 @@ if(isset($_POST['news_id']))
         $thumbnail_full = $row_content['thumbnail'];
         $videolazy_full = $row_content['videolazy'];                            
         $newsbody_full = $row_content['newsbody'];
+        $additional_file_full = $row_content['additional_file'];
 
         $photos = $row_content['photos'];
         $photos_array = explode(',' , $photos);
@@ -193,6 +194,20 @@ if(isset($_POST['news_id']))
                 echo $ph; 
                 ftp_delete_rem($ph , 'file');
             }    
+
+            
+            if($additional_file_full != NULL)
+            {
+                // $file = explode("/" , $audio);
+                // $reverse_file = array_reverse($file);
+                // $last = $reverse_file[1];
+                // $end = $reverse_file[0];
+                // $path =  "$last/$end";
+                echo $additional_file_full; 
+                ftp_delete_rem($additional_file_full , 'file');
+            }
+
+            
             ftp_delete_rem($dir_del , 'folder');
             
 

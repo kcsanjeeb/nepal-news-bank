@@ -38,6 +38,7 @@ if(isset($_POST['submit_push']))
             $category_full = $row_content['category_list'];
             $tags_full = $row_content['tag_list'];
             $video_type = $row_content['video_type'];
+            $additional_file_full = $row_content['additional_file'];
 
             
             $series_nas = $row_content['series'];
@@ -56,6 +57,10 @@ if(isset($_POST['submit_push']))
                         $thumbnail_full_web = $row_content_web['thumbnail'];
                         $videolazy_full_web = $row_content_web['videolazy'];                            
                         $newsbody_full_web = $row_content_web['newsbody'];
+
+                        $additional_file_web = $row_content_web['additional_file'];
+
+
                         $audio_full_web = $row_content_web['audio'];
                         $videoextra_full_web = $row_content_web['videoextra'];
                         $gallery_full_web = $row_content_web['photos'];
@@ -63,7 +68,7 @@ if(isset($_POST['submit_push']))
 
                         $vimeo_video_extra = $row_content_web['vimeo_video_extra'];
                         $vimeo_videolazy = $row_content_web['vimeo_videolazy'];
-                        $videoextra_full_web = $row_content_web['videoextra'];
+                        $vimeo_videolong = $row_content_web['vimeo_videolong'];
 
 
 
@@ -90,6 +95,17 @@ if(isset($_POST['submit_push']))
 
                         else
                             $newsbody_full_web = "'$newsbody_full_web'";
+
+
+
+                        if($newsbody_full_web == NULL)
+                            $newsbody_full_web = "NULL";
+
+                        else
+                            $newsbody_full_web = "'$newsbody_full_web'";
+
+
+
 
                         if($audio_full_web == NULL)
                             $audio_full_web = "NULL";
@@ -127,6 +143,7 @@ if(isset($_POST['submit_push']))
 
             $push_newsbody = $newsbody_full_web;
             $push_videoLong = $videolong_full_web;
+            $push_additional = $additional_file_web;
             $push_videoLazy = $videolazy_full_web;
             $push_thumbnail = $thumbnail_full_web;
             $push_audio = $audio_full_web;
@@ -212,14 +229,8 @@ if(isset($_POST['submit_push']))
                 $push_videoextra_json = str_replace("'","",$push_videoextra);
                 $push_newsbody_json = str_replace("'","",$push_newsbody);
                 $push_audio_json = str_replace("'","",$push_audio);
+                $push_additional_json = str_replace("'","",$push_additional);
                 
-                // $gallery_full_web_json = str_replace("'","",$gall_img);
-                // $gallery_full_web_json_exp = explode("," ,$gallery_full_web_json);
-
-                // if(count($gallery_full_web_json_exp) == 0)
-                // {
-                //     $gallery_full_web_json = "NULL";
-                // }
 
                 
 
@@ -279,7 +290,8 @@ if(isset($_POST['submit_push']))
                                             'video_extra_link' => $push_videoextra_json ,   'news_body_file' => $push_newsbody_json ,
                                             'audio' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
-                                            "video_thumbnail" => $thumbnail_full_web_json
+                                            "video_thumbnail" => $thumbnail_full_web_json,
+                                            "additional_files" => $push_additional_json
                                            
             ),
                     "featured_media" => $featured_media_id,
@@ -304,7 +316,8 @@ if(isset($_POST['submit_push']))
                                             'video_extra_link' => $push_videoextra_json ,   'news_body_file' => $push_newsbody_json ,
                                             'audio' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
-                                            "video_thumbnail" => $thumbnail_full_web_json
+                                            "video_thumbnail" => $thumbnail_full_web_json,
+                                            "additional_files" => $push_additional_json
                                            
             ),
                    
