@@ -41,10 +41,24 @@ if(isset($_POST['submit_push']))
             $additional_file_full = $row_content['additional_file'];
             $additional_files_description_full = $row_content['additional_files_description'];
 
+            $audio_description_full = $row_content['audio_description'];
+            $audio_bites_description_full = $row_content['audio_bites_description'];
+
+
             if($additional_files_description_full == NULL)
                 $additional_files_description_full = "NULL";
             else
                 $additional_files_description_full = $additional_files_description_full ;
+            
+            if($audio_description_full == NULL)
+                $audio_description_full = "NULL";
+            else
+                $audio_description_full = $audio_description_full ;
+
+            if($audio_bites_description_full == NULL)
+                $audio_bites_description_full = "NULL";
+            else
+                $audio_bites_description_full = $audio_bites_description_full ;
 
             
             $series_nas = $row_content['series'];
@@ -65,6 +79,8 @@ if(isset($_POST['submit_push']))
                         $newsbody_full_web = $row_content_web['newsbody'];
 
                         $additional_file_web = $row_content_web['additional_file'];
+
+                        $audio_bites_web = $row_content_web['audio_bites'];
 
 
                         $audio_full_web = $row_content_web['audio'];
@@ -130,6 +146,21 @@ if(isset($_POST['submit_push']))
 
                         else
                             $gallery_full_web = "'$gallery_full_web'";
+                        
+                        
+
+                        if($additional_file_web == NULL)
+                            $additional_file_web = "NULL";
+
+                        else
+                            $additional_file_web = "'$additional_file_web'";
+                        
+                        
+                        if($audio_bites_web == NULL)
+                            $audio_bites_web = "NULL";
+
+                        else
+                            $audio_bites_web = "'$audio_bites_web'";
 
 
                     }
@@ -143,6 +174,11 @@ if(isset($_POST['submit_push']))
                         $audio_full_web = "NULL";
                         $videoextra_full_web = "NULL";
                         $gallery_full_web = "NULL";
+
+                        $additional_file_web = "NULL";
+                        $audio_bites_web = "NULL";
+
+
                         $gallery_full_web_arr = array();
                     }
                 
@@ -154,6 +190,8 @@ if(isset($_POST['submit_push']))
             $push_thumbnail = $thumbnail_full_web;
             $push_audio = $audio_full_web;
             $push_videoextra = $videoextra_full_web;
+
+            $push_audio_bites = $audio_bites_web;
 
             $gallery_full_web_json = str_replace("'","",$gallery_full_web);
             $gallery_full_web_json_exp = explode("," ,$gallery_full_web_json);
@@ -236,6 +274,7 @@ if(isset($_POST['submit_push']))
                 $push_newsbody_json = str_replace("'","",$push_newsbody);
                 $push_audio_json = str_replace("'","",$push_audio);
                 $push_additional_json = str_replace("'","",$push_additional);
+                $push_audio_bites_json = str_replace("'","",$push_audio_bites);
                 
 
                 
@@ -298,7 +337,11 @@ if(isset($_POST['submit_push']))
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
                                             "additional_files" => $push_additional_json,
-                                            "additional_files_description" => "$additional_files_description_full"
+                                            "additional_files_description" => $additional_files_description_full,
+                                            "audio_description" =>$audio_description_full,
+                                            "audio_bites_description" => $audio_bites_description_full,
+                                            "audio_bites" =>$push_audio_bites_json
+
                                            
             ),
                     "featured_media" => $featured_media_id,
@@ -325,7 +368,10 @@ if(isset($_POST['submit_push']))
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
                                             "additional_files" => $push_additional_json,
-                                            "additional_files_description" => "$additional_files_description_full"
+                                            "additional_files_description" => "$additional_files_description_full",
+                                            "audio_description" =>$audio_description_full,
+                                            "audio_bites_description" => $audio_bites_description_full,
+                                            "audio_bites" =>$push_audio_bites_json
                                            
             ),
                    

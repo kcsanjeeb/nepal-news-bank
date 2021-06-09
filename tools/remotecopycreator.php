@@ -280,6 +280,13 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $newsbody_full = $row_content['newsbody'];
                                                         $additional_full = $row_content['additional_file'];
 
+
+                                                        $audio_description_full = $row_content['audio_description'];
+                                                        $audio_bites_description_full = $row_content['audio_bites_description'];
+                                                        $audio_bites_full = $row_content['audio_bites'];
+
+
+
                                                         $videolong = explode('/' ,$videolong_full );
                                                         $videolong = end($videolong) ; 
 
@@ -329,6 +336,9 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                                                         
                                                     $additional_full_web = $row_content_web['additional_file'];
+
+                                                    $audio_bites_full_web = $row_content_web['audio_bites'];
+
 
                                                     $gallery_full_web = $row_content_web['photos'];
                                                     $gallery_full_web = explode("," , $gallery_full_web);
@@ -463,6 +473,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                             <div class="list-group">
                                 <?php
+                                $handle_push_nofile = array();
+                                $handle_push_nopush = array();
                                                     if($newsbody_full != NULL)
                                             {
 
@@ -481,9 +493,11 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $ischecked = '';
                                                         $class_comp = '';
                                                         $sta_a = 1 ;
+                                                       
                                                     }
                                                     else
                                                     {
+
                                                         $input = '';
                                                         $value_input = 'newsbody';
                                                         $message = '<span>'.$newsbody.'</span><span class="float-right">
@@ -493,6 +507,9 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $rem_to_push = 1 ;
                                                         $ischecked = 'checked';
                                                         $class_comp = 'compulsory';
+                                                        array_push($handle_push_nopush , 0);
+                                                        
+
                                                     }
 
 
@@ -510,6 +527,10 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         ';
                                                         $ischecked = '';
                                                         $class_comp = 'compulsory miss';
+                                                    
+                                                    array_push($handle_push_nofile , 0);
+
+                                                    
                                                 }
 
                                 ?>
@@ -559,6 +580,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $ischecked = '';
                                                         $class_comp = '';
                                                         $sta_b = 1 ;
+
                                                     }
                                                     else
                                                     {
@@ -571,6 +593,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $rem_to_push = 1 ;
                                                         $ischecked = 'checked';
                                                         $class_comp = 'compulsory';
+                                       
+                                                        array_push($handle_push_nopush , 0);
                                                     }
                                                 }
 
@@ -588,6 +612,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $ischecked = '';
                                                         $class_comp = '';
                                                         $sta_b = 1 ;
+                                              
                                                     } 
                                                     else
                                                     {
@@ -600,6 +625,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $rem_to_push = 1 ;
                                                         $ischecked = 'checked';
                                                         $class_comp = 'compulsory';
+                                                        array_push($handle_push_nopush , 0);
                                                     }
                                                     
                                                 }
@@ -621,6 +647,9 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     ';
                                                     $ischecked = '';
                                                     $class_comp = 'compulsory miss';
+
+                                                    array_push($handle_push_nofile , 0);
+                                                   
                                             }
 
                                     ?>
@@ -683,6 +712,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $rem_to_push = 1 ;
                                                         $ischecked = 'checked';
                                                         $class_comp = 'compulsory';
+                                                        array_push($handle_push_nopush , 0);
                                                     }
                                                 }
 
@@ -712,6 +742,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $rem_to_push = 1 ;
                                                         $ischecked = 'checked';
                                                         $class_comp = 'compulsory';
+                                                        array_push($handle_push_nopush , 0);
                                                     }
 
                                                 }
@@ -731,6 +762,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                                 </svg></span>
                                                     ';
+
+                                                    array_push($handle_push_nofile , 0);
                                             }
 
                                         
@@ -789,6 +822,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     ';
                                                     $rem_to_push = 1 ;
                                                     $class_comp = 'compulsory';
+
+                                                    array_push($handle_push_nopush , 0);
                                             }
                                         
                                             
@@ -805,6 +840,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                             </svg></span>
                                                 ';
                                                 $class_comp = 'compulsory miss';
+
+                                                array_push($handle_push_nofile , 0);
                                         }
 
                                     
@@ -868,6 +905,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     ';
                                                     $rem_to_push = 1 ;
                                                     $class_comp = 'compulsory';
+                                                    array_push($handle_push_nopush , 0);
+
                                                     }
                                                 
                                                 
@@ -885,6 +924,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     </svg></span>
                                                         ';
                                                         $class_comp = 'compulsory miss';
+                                                        array_push($handle_push_nofile , 0);
                                                 }
 
                                         ?>
@@ -960,6 +1000,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                             $ischecked = 'checked';
                                                             $rem_to_push = 1 ;
                                                             $class_comp = 'compulsory';
+                                                            array_push($handle_push_nopush , 0);
                                                         }
                                                     }
 
@@ -979,6 +1020,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                             ';
                                                             $class_comp = '';
                                                             $sta_g = 1 ;
+
                                                             
                                                         }
                                                         else
@@ -991,6 +1033,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                             $ischecked = 'checked';
                                                             $rem_to_push = 1 ;
                                                             $class_comp = 'compulsory';
+                                                            array_push($handle_push_nopush , 0);
                                                         }
                                                     }
                                                 
@@ -1008,6 +1051,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     </svg></span>
                                                         ';
                                                         $class_comp = 'compulsory miss';
+
+                                                        array_push($handle_push_nofile , 0);
                                                 }
                                         ?>
 
@@ -1079,6 +1124,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                             $ischecked = 'checked';
                                                             $rem_to_push = 1 ;
                                                             $class_comp = 'compulsory';
+                                                            array_push($handle_push_nopush , 0);
                                                         }
                                                   
 
@@ -1091,13 +1137,14 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     
                                                     $input = 'disabled';
                                                     $value_input = '';
-                                                    $ischecked = 'checked';
+                                                    $ischecked = '';
                                                     $message = '<span>'.$additional.'</span><span class="float-right">
                                                     <span class="text-danger pr-2">Video Extra File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
                                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                                     </svg></span>
                                                         ';
                                                         $class_comp = 'compulsory miss';
+                                                        array_push($handle_push_nofile , 0);
                                                 }
                                         ?>
 
@@ -1127,6 +1174,116 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                             <!------------------------- Additional File Remote End ------------------------------->
 
+                              <!------------------------- Audio Bites File Remote ----------------------------------->
+
+                              <?php 
+                              $is_audio_bites_pushed_array = array();
+                                            if($audio_bites_full != NULL)
+                                            {
+                                                $audio_bites_full_exp = explode("," ,$audio_bites_full );
+                                                $audio_bites_full_web_exp = explode("," ,$audio_bites_full_web );
+                                                echo "<br>";
+                                                
+                                                foreach($audio_bites_full_exp as $ab)
+                                                {
+                                                
+                                                    $ab_exist = $ab ;
+                                                    $ab_full = explode('/' ,$ab );
+                                                    $ab_msg = end($ab_full) ;
+
+                                                
+                                                   
+                                                    if(file_exists($ab))
+                                                    {
+                                                        $rem_check = explode("/" , $ab);    
+                                                        // print_r($rem_check)   ;
+                                                        array_shift($rem_check);
+                                                        // print_r($rem_check)   ;
+                                                        $rem_check = implode("/" , $rem_check);
+                                                        // echo "<br>-----------Check state: $rem_check------------<br>"  ;                   
+   
+                                                            if(in_array($rem_check , $audio_bites_full_web_exp ))
+                                                            {
+                                                                
+                                                                $input = 'disabled';
+                                                                $value_input = '';
+                                                                $ischecked = '';
+                                                                $message = '<span>'.$ab_msg.'</span><span class="float-right">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                                                </svg></span>
+                                                                ';
+                                                                $class_comp = '';
+                                                                array_push($is_audio_bites_pushed_array , 1);
+
+                                                            
+                                                                
+                                                            }
+                                                            else
+                                                            {
+                                                                
+                                                                $input = '';
+                                                                $value_input = $ab;
+                                                                $message = '<span>'.$ab_msg.'</span><span class="float-right">
+                                                                </span>
+                                                                ';
+                                                                $ischecked = 'checked';
+                                                                $rem_to_push = 1 ;
+                                                                $class_comp = 'compulsory';
+                                                                array_push($is_audio_bites_pushed_array , 0);
+                                                                array_push($handle_push_nopush , 0);
+                                                            }
+                                                    
+
+                                                    
+                                                    
+                                                        
+                                                    }
+
+                                                    else
+                                                    {
+                                                        
+                                                        $input = 'disabled';
+                                                        $value_input = '';
+                                                        $ischecked = '';
+                                                        $message = '<span>'.$ab_msg.'</span><span class="float-right">
+                                                        <span class="text-danger pr-2">Audio Bites File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
+                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                                        </svg></span>
+                                                            ';
+                                                            $class_comp = 'compulsory miss';
+                                                            array_push($is_audio_bites_pushed_array , 0);
+                                                            array_push($handle_push_nofile , 0);
+                                                    }
+                                        ?>
+
+                                                    <div class="input-group ">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">
+                                                                <input type="checkbox" name="audio_bites[]"
+                                                                    value="<?php echo $value_input ; ?>" <?php echo $input ; ?>
+                                                                    aria-label="Checkbox for following text input"
+                                                                    <?php echo $ischecked ; ?>
+                                                                    class="files big-checkbox <?php echo $class_comp ; ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-control"><?php echo $message ; ?></div>
+
+                                                    </div>
+
+                      
+                                <?php
+                                                }                                                    
+                                            }
+                                            else
+                                            {
+                                                array_push($is_audio_bites_pushed_array , 1);
+                                            }
+                                ?>
+
+
+                            <!------------------------- Audio bites File Remote End ------------------------------->
+
 
                                 <p class="h4 text-info mt-3 pl-0"><b>Step 4.</b> Select following images</p>
                                 <ul class=" ">
@@ -1137,8 +1294,10 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 $gal_counter = 1 ;
                                                 $index = 0 ;
                                                 $sta_array = array();
+                                                
                                                 foreach($photos_array as $ph_arr)
                                                 {
+                                                    if(empty($ph_arr)) continue ;
                                                     
                                                    
                                                     if(file_exists($ph_arr))
@@ -1167,6 +1326,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                             $rem_to_push = 1 ;
                                                             array_push($sta_array , 0);
                                                             $class_gall = "compulsory";
+                                                            array_push($handle_push_nopush , 0);
 
                                                         }
                                             ?>
@@ -1179,6 +1339,9 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 src="<?php echo $ph_arr ; ?>" /></label>
                                     </li>
                                     <?php
+                                                    }
+                                                    else {
+                                                        array_push($handle_push_nofile , 0);
                                                     }
                                                 
                                                     $gal_counter++;
@@ -1212,6 +1375,17 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                         {
                                             $sta_h = 1 ;
                                         }
+
+                                        if(in_array(0 , $is_audio_bites_pushed_array))
+                                        {
+                                            $sta_y = 0 ;
+                                        }
+                                        else
+                                        {
+                                            $sta_y = 1 ;
+                                        }
+
+                                        
                                         
 
                                         if(isset($sta_g))
@@ -1232,26 +1406,60 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                             $sta_f = 1 ;
                                         }
 
-                                        // echo "Hello: $sta_a  && $sta_b  && $sta_c && $sta_d && $sta_e  && $sta_h && $sta_g && $sta_f";
+                                        // echo "Hello: $sta_a  && $sta_b  && $sta_c  && $sta_e  && $sta_h && $sta_g && $sta_f && $sta_z && $sta_y";
 
-                                        if($sta_a  && $sta_b  && $sta_c  && $sta_e  && $sta_h && $sta_g && $sta_f && $sta_z)
-                                        {
+                                        // if($sta_a  && $sta_b  && $sta_c  && $sta_e  && $sta_h && $sta_g && $sta_f && $sta_z && $sta_y)
+                                        // {
 
-                                            $dis_pushhh = 'disabled';
-                                            $curs_style= 'not-allowed';
+                                        //     $dis_pushhh = 'disabled';
+                                        //     $curs_style= 'not-allowed';
 
-                                            if($wp_id == NULL)
-                                            {
-                                                $dis_del_remote_file = '';
-                                                $curs_style_del_remote_files= '';
-                                            }
-                                            else
-                                            {
-                                                $dis_del_remote_file = 'disabled';
-                                                $curs_style_del_remote_files= 'not-allowed;display:none';
-                                            }
+                                        //     if($wp_id == NULL)
+                                        //     {
+                                        //         $dis_del_remote_file = '';
+                                        //         $curs_style_del_remote_files= '';
+                                        //     }
+                                        //     else
+                                        //     {
+                                        //         $dis_del_remote_file = 'disabled';
+                                        //         $curs_style_del_remote_files= 'not-allowed;display:none';
+                                        //     }
 
                                             
+
+                                        // }
+                                        // else
+                                        // {
+                                        //     $dis_pushhh = '';
+                                        //     $curs_style= '';
+
+                                        //     $dis_del_remote_file = 'disabled';
+                                        //     $curs_style_del_remote_files= 'not-allowed;display:none';
+
+                                        // }
+                                       
+                                        // print_r($handle_push_nofile );
+                                        // print_r($handle_push_nopush );
+                                        // echo empty($handle_push_nofile ) ."-------".empty($handle_push_nopush);
+                                        if(empty($handle_push_nofile ) && empty($handle_push_nopush))
+                                        {   
+                                            
+                                                $dis_pushhh = 'disabled';
+                                                $curs_style= 'not-allowed';
+
+                                                if($wp_id == NULL)
+                                                {
+                                                    $dis_del_remote_file = '';
+                                                    $curs_style_del_remote_files= '';
+                                                }
+                                                else
+                                                {
+                                                    $dis_del_remote_file = 'disabled';
+                                                    $curs_style_del_remote_files= 'not-allowed;display:none';
+                                                }
+
+                                                $allow_create_post = 1;
+    
 
                                         }
                                         else
@@ -1264,6 +1472,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                                         }
 
+                                        
 
                                  
                                                     
@@ -1337,7 +1546,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                             }
                                             else
                                             {
-                                                if($sta_a  && $sta_b  && $sta_c  && $sta_e)
+                                                if( $allow_create_post)
                                                 {
                                                     $dis_pushhh = '';
                                                 }
@@ -1385,7 +1594,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
 
                     <?php
-if($status_dis_pushhh != 'disabled')
+// if($status_dis_pushhh != 'disabled')
+if(!in_array(0 , $handle_push_nopush) && $wp_id == null)
 { 
 ?>
                     <hr />

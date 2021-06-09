@@ -164,6 +164,8 @@ if(!isset($location))
                 $series = 'NULL';
             }
 
+
+
             if(isset($_POST['additional_files_description']))
             {
                 $additional_files_description = $_POST['additional_files_description'];
@@ -174,6 +176,33 @@ if(!isset($location))
             {
                 $additional_files_description = "NULL";
             }
+
+
+            if(isset($_POST['audio_desc']))
+            {
+                $audio_desc = $_POST['audio_desc'];
+                $audio_desc = mysqli_real_escape_string($connection, $audio_desc);    
+                $audio_desc = "'$audio_desc'";
+            }
+            else
+            {
+                $audio_desc = "NULL";
+            }
+
+
+            if(isset($_POST['audio_bites_desc']))
+            {
+                $audio_bites_desc = $_POST['audio_bites_desc'];
+                $audio_bites_desc = mysqli_real_escape_string($connection, $audio_bites_desc);    
+                $audio_bites_desc = "'$audio_bites_desc'";
+            }
+            else
+            {
+                $audio_bites_desc = "NULL";
+            }
+
+
+
 
 
 
@@ -727,8 +756,61 @@ if(!isset($location))
         
         
         }
-        else {
+        else 
+        {
             $additional_path_sql = 'NULL';
+        }
+
+        if(!empty($_FILES['audio_bites']['name'][0]))
+        {
+            $counter = 0 ;
+            $audio_bites_arr = array();
+            foreach ($_FILES["audio_bites"]["name"] as $p => $name)
+            {        
+                
+                $fileName_photo= $_FILES['audio_bites']['name'][$p];
+                $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
+                $fileSize_photo = $_FILES['audio_bites']['size'][$p];
+                // $filenotice_photo = $_FILES['galleryImage']['notice'][$p];
+                $fileType_photo = $_FILES['audio_bites']['type'][$p];            
+
+                $fileExt_photo = explode('.' , $fileName_photo);
+                $fileActualExt_photo = strtolower(end($fileExt_photo));
+
+                $file_type_explode = explode("/" , $fileType_photo);
+                $allowed = array('audio'  );
+
+                if (in_array($file_type_explode[0] , $allowed ))
+                {                    
+                    $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
+                    $fileActualExt_photo = strtolower(end($fileExt_photo));  
+
+                    $audio_bites_path =$path_destination."_audio_bites_".$counter.".".$fileActualExt_photo;
+
+                    move_uploaded_file($fileTmpName_photo, $audio_bites_path) ;
+                    $audio_bites_path =$path_sql."_audio_bites_".$counter.".".$fileActualExt_photo;
+
+                    array_push($audio_bites_arr , $audio_bites_path);    
+                    
+                    $text = "$audio_bites_path : Audio Bites-$counter Uploaded\n";
+                    fwrite($myfile, $text);
+
+
+                    $counter++;   
+                    
+                    
+
+                }
+            
+
+            }
+            $audio_bites_csv = implode("," , $audio_bites_arr) ;
+            $audio_bites_csv = "'$audio_bites_csv'";
+        
+        }
+        else 
+        {
+            $audio_bites_csv = "NULL";
         }
 
 
@@ -747,7 +829,8 @@ if(!isset($location))
                 videolong,  videolazy  ,thumbnail ,
                 audio ,  photos ,  newsbody ,  videoextra ,
                 tag_list , uploaded_by , reporter ,
-                camera_man , district , video_type, series ,  additional_file , additional_files_description
+                camera_man , district , video_type, series ,  additional_file , additional_files_description,
+                audio_description , audio_bites_description , audio_bites
               
                 ) 
                 VALUES 
@@ -756,7 +839,8 @@ if(!isset($location))
                 $video_long_path , $videoLazy_path  , $thumbnail_path,
                 $audio_path , $gallery_csv , $body_path , $videoExtra_path ,
                 $tags ,$uploaded_by ,  $reporter , 
-                $camera_man , $district,  $video_type, $series , $additional_path_sql , $additional_files_description
+                $camera_man , $district,  $video_type, $series , $additional_path_sql , $additional_files_description,
+                $audio_desc , $audio_bites_desc , $audio_bites_csv
               
                 
                             

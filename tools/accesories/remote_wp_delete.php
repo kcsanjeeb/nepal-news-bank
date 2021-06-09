@@ -194,6 +194,7 @@ if(isset($_POST['news_id']))
                 echo $ph; 
                 ftp_delete_rem($ph , 'file');
             }    
+            
 
             
             if($additional_file_full != NULL)

@@ -94,8 +94,14 @@ if(!isset($location))
                     $newsbody_full_web = $row_content_web['newsbody'];
                     $audio_full_web = $row_content_web['audio'];
                     $videoextra_full_web = $row_content_web['videoextra'];
+
                     $gallery_full_web = $row_content_web['photos'];
                     $gallery_full_web_arr = explode(',' ,  $gallery_full_web) ;
+
+                    $audio_bites_full_web = $row_content_web['audio_bites'];
+                    $audio_bites_web_arr = explode(',' ,  $audio_bites_full_web) ;
+
+                    
 
                     $additional_files_full_web = $row_content_web['additional_file'];
 
@@ -147,6 +153,15 @@ if(!isset($location))
 
                     else
                         $additional_files_full_web = "'$additional_files_full_web'";
+                    
+                       
+                    if($audio_bites_full_web == NULL)
+                        $audio_bites_full_web = "NULL";
+                    else {
+                        $audio_bites_full_web = $audio_bites_web_arr;
+                    }
+
+            
 
 
                 }
@@ -162,6 +177,7 @@ if(!isset($location))
                     $gallery_full_web = "NULL";
                     $additional_files_full_web = "NULL";
                     $gallery_full_web_arr = array();
+                    $audio_bites_full_web = "NULL";
                 }
 
 
@@ -275,12 +291,29 @@ if(!isset($location))
     
                 }
                
+                $file_to_push_audio_bites= array();
+                if(isset($_POST['audio_bites']))
+                {
+                    $audio_bites = $_POST['audio_bites'];
                 
+                    foreach($audio_bites as $ab)
+                    {
+                        if(file_exists('../'.$ab))
+                        {
+                            $sourceName = explode("/" ,$ab ) ;
+                            $sourceName = end($sourceName );
 
+
+                            array_push($files_to_push , $sourceName );
+                            array_push($file_to_push_audio_bites , $sourceName );
+
+                            
+                        }
+                    }
+    
+                }
                
-
-
-
+                
 
                 $file_type = $_POST['file_name'];
 
@@ -991,7 +1024,56 @@ if(!isset($location))
                         $_SESSION['notice_remote'] = "Error";
                     }
                 }
-                 
+                
+                $push_audio_bites_array = array();
+                if(count($file_to_push_audio_bites) > 0)
+                {
+
+                    foreach($file_to_push_audio_bites as $sent_ab)
+                    {
+                        echo "7aa<br>";
+                        // if(in_array($sent_gal ,$push_remote_py_resp_arr ))
+                        if (strpos( $push_remote_py_resp, $sent_ab) !== false)
+                        {
+                            echo "7b<br>";
+                                $ab_arr = "$news_ftp_path_sql/$sent_ab" ;
+
+                                array_push($push_audio_bites_array , $ab_arr);
+    
+                                $text = "$sent_ab Audio Bites Pushed\n";
+                                fwrite($myfile, $text);
+                        }
+                        else 
+                        {
+                            echo "7c<br>";
+                                $text = "$sent_ab Audio Bites Failed to Pushed\n";                       
+                                fwrite($myfile, $text);
+                                $_SESSION['notice_remote'] = "Error";
+                        }
+                    }
+
+                }
+                if(count($push_audio_bites_array) > 0)
+                {
+                    if(count($audio_bites_web_arr > 0))
+                    {
+                        foreach($audio_bites_web_arr as $old_values)
+                        {
+                            array_push($push_audio_bites_array ,$old_values );
+                        }
+
+                    }
+                   
+
+                    $push_audio_bites = implode("," , $push_audio_bites_array);
+                    $push_audio_bites = "'$push_audio_bites'";
+                  
+                }
+                else {
+                    $push_audio_bites = "NULL";
+                }
+                
+               
 
                
                
@@ -1019,7 +1101,8 @@ if(!isset($location))
                        videolong = $push_videoLong , videolazy = $push_videoLazy  ,thumbnail = $push_thumbnail ,
                         audio = $push_audio  , photos = '$gall_img' , videoextra = $push_videoextra, newsbody = $push_newsbody,  
                          pushed_by = '$pushed_by' ,   pushed_date = '$pushed_at' ,
-                         vimeo_videolong = $vimeo_videolong , vimeo_videolazy = $vimeo_videolazy , vimeo_video_extra = $vimeo_videoextra, additional_file = $push_additional_file
+                         vimeo_videolong = $vimeo_videolong , vimeo_videolazy = $vimeo_videolazy , vimeo_video_extra = $vimeo_videoextra, additional_file = $push_additional_file,
+                         audio_bites = $push_audio_bites
                          where newsid = '$news_id'  ;";
                         // ) 
                         // VALUES 
@@ -1039,13 +1122,13 @@ if(!isset($location))
                         newsid ,  videolong , videolazy ,thumbnail ,
                         audio   , photos , videoextra, newsbody ,  
                          pushed_by ,   pushed_date , wp_post_id,
-                         vimeo_videolong , vimeo_videolazy , vimeo_video_extra , additional_file
+                         vimeo_videolong , vimeo_videolazy , vimeo_video_extra , additional_file , audio_bites
                         ) 
                         VALUES 
                         ('$news_id',  $push_videoLong ,$push_videoLazy  , $push_thumbnail,
                              $push_audio , '$gall_img', $push_videoextra , $push_newsbody , 
                             '$pushed_by' ,'$pushed_at' , $wp_post,
-                            $vimeo_videolong , $vimeo_videolazy , $vimeo_videoextra , $push_additional_file
+                             $vimeo_videolong , $vimeo_videolazy , $vimeo_videoextra , $push_additional_file , $push_audio_bites
                             
                             )";    
 
@@ -1141,6 +1224,8 @@ if(!isset($location))
 
                 $wp_id = $row_content['wp_post_id'];
 
+
+                $audio_bites = $row_content['audio_bites'];
                
 
                 if($category_nas ==  $_SESSION['interview_id'])

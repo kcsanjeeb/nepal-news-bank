@@ -639,15 +639,27 @@ strong {
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <strong>8.1 Audio Description</strong> 
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" name="audio_desc" rows="3"></textarea>
                                         <br>
                                         <strong>8.2 Select Audio File</strong> 
                                         <input type="file" id="img" name="audio">
                                     </div>
                                     <div class="col-lg-6">
                                     <strong>8.3 Audio Bites Description</strong> 
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea><br>
-                                        <strong>8.4 Select Audio Bites Files</strong> 
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" name="audio_bites_desc"  rows="3"></textarea><br>
+                                        <strong>8.4 Select Audio Bites Files</strong>
+
+
+                                        <div id="audio_bites_selector" class="row">
+
+                                            <div> 
+                                                <input type="file" id="img" name="audio_bites[]">
+                                            </div>
+
+                                        </div> 
+                                        
+
+                                        <button id="add_audio_bites" type="button">Add New</button>
                                     </div>    
                                 </div>
                              
@@ -1401,6 +1413,21 @@ var html = `
 $("#additional_selectors").append(html);
 
 });
+
+$(document).on('click', '#add_audio_bites', function() {
+
+
+var html = `
+    <div> 
+        <input type="file" id="img" name="audio_bites[]">
+    </div>
+
+`;
+
+$("#audio_bites_selector").append(html);
+
+});
+
 
         </script>
 
