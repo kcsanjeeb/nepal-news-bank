@@ -447,17 +447,12 @@ strong {
                                 </label>
 
                                 
-                                <input type="text" class="form-control col-lg-12 pl-0"
-                                        placeholder="Enter Additional File Description" name="additional_files_description" id="input_box" xxx
-                                        >
-                                <br>
-
-                                <div id="additional_selectors"  >
-
+                                <input type="text" class="form-control col-lg-12 pl-0" placeholder="Enter Additional File Description" name="additional_files_description" id="input_box">
+                                
+                                <div id="additional_selectors">
                                     <div>
                                         <input type="file" id="" name="additional_files[]" multiple >
                                      </div>
-
                                 </div>
                                
                             </div>
@@ -625,6 +620,7 @@ strong {
                                 </select>
                             </div>
 
+                            <HR style="    border-top: 1px solid rgba(0,0,0)">
 
                             <div class="form-group ">
                                 <label class="col-lg-12 p-0 h5 text-info">Step 8. Select Audio
@@ -640,16 +636,30 @@ strong {
                                     </svg>
 
                                 </label><br>
-                                <input type="file" id="img" name="audio">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <strong>8.1 Audio Description</strong> 
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <br>
+                                        <strong>8.2 Select Audio File</strong> 
+                                        <input type="file" id="img" name="audio">
+                                    </div>
+                                    <div class="col-lg-6">
+                                    <strong>8.3 Audio Bites Description</strong> 
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea><br>
+                                        <strong>8.4 Select Audio Bites Files</strong> 
+                                    </div>    
+                                </div>
+                             
                             </div>
 
 
                         
                             <!-- Select one audio file -->
-                            <STRONG class=" h5 text-info">Step 9. Select Images </strong>
+                          
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
                           
-
+                            <STRONG class=" h5 text-info">Step 9. Select Images </strong>
 
 
 
