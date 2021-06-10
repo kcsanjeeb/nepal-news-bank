@@ -908,3 +908,15 @@ my_data/news_data/2021-06-09/Audio Bites Test/20210609_140502_36218_audio_bites_
 my_data/news_data/2021-06-09/Audio Bites Test/20210609_140502_36218_audio_bites_1.mp3 : Audio Bites-1 Uploaded
 my_data/news_data/2021-06-09/Audio Bites Test/20210609_140502_36218_audio_bites_2.mp3 : Audio Bites-2 Uploaded
 ------------------------------------------------------- 
+---------------2021-06-09 / Test Now at night ---------------- 
+
+ Logged Date: 2021-06-09 21:57:37 
+Test Now at night Folder Created
+my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_audio.mp3 : Audio Uploaded
+my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_body.docx : News Body Uploaded
+my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_videolong.mp4 : Video Long Uploaded
+my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+------------------------------------------------------- 

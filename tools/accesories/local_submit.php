@@ -14,7 +14,6 @@ include "../global/timezone.php";
 
 
 
-
 // -------------- VARIABLE DECLARATION ----------------
 $interview_path = 'my_data/interview_data';
 $news_path = 'my_data/news_data';
@@ -679,6 +678,8 @@ if(!isset($location))
           
             foreach ($_FILES["bonus_media"]["name"] as $p => $name)
             {  
+                if(empty($_FILES['bonus_media']['name'][$p])) continue ;
+
                 
                 $fileName= $_FILES['bonus_media']['name'][$p];
                 $fileTmpName = $_FILES['bonus_media']['tmp_name'][$p];  
@@ -727,7 +728,8 @@ if(!isset($location))
             { 
                 $counter_file_zip = 0;
                 foreach ($_FILES["additional_files"]["name"] as $p => $name)
-                {  
+                { 
+                    if(empty($_FILES['additional_files']['name'][$p])) continue ; 
                     
                     $fileName= $_FILES['additional_files']['name'][$p];
                     $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];  
@@ -766,7 +768,8 @@ if(!isset($location))
             $counter = 0 ;
             $audio_bites_arr = array();
             foreach ($_FILES["audio_bites"]["name"] as $p => $name)
-            {        
+            {      
+                if(empty($_FILES['audio_bites']['name'][$p])) continue ;   
                 
                 $fileName_photo= $_FILES['audio_bites']['name'][$p];
                 $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  

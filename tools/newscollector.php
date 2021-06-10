@@ -451,12 +451,12 @@ strong {
                                 
                                 <div id="additional_selectors">
                                     <div>
-                                        <input type="file" id="" name="additional_files[]" multiple >
+                                        <input type="file" id="" class="additional_folder" name="additional_files[]" multiple >
                                      </div>
                                 </div>
                                
                             </div>
-                            <button id="add_additional_folder" type="button">Add New</button>
+                            <!-- <button id="add_additional_folder" type="button">Add New</button> -->
 
 
                             <!-- <STRONG> SELECT VIDEOS </strong> -->
@@ -653,13 +653,13 @@ strong {
                                         <div id="audio_bites_selector" class="row">
 
                                             <div> 
-                                                <input type="file" id="img" name="audio_bites[]">
+                                                <input type="file"  class="audio_bites" id="img" name="audio_bites[]">
                                             </div>
 
                                         </div> 
                                         
 
-                                        <button id="add_audio_bites" type="button">Add New</button>
+                                        <!-- <button id="add_audio_bites" type="button">Add New</button> -->
                                     </div>    
                                 </div>
                              
@@ -778,13 +778,13 @@ strong {
                                 <div id="bonus_selectors" >
 
                                     <div>
-                                        <input type="file" id="" name="bonus_media[]" multiple >
+                                        <input type="file" class="bonus_media" name="bonus_media[]" multiple >
                                      </div>
 
                                 </div>
                                
                             </div>
-                            <button id="add_bonus_folder" type="button">Add Bonus </button>
+                            <!-- <button id="add_bonus_folder" type="button">Add Bonus </button> -->
 
                             <!-- <HR style="    border-top: 1px solid rgba(0,0,0)"> -->
 
@@ -1383,48 +1383,67 @@ strong {
 
 //----------------Bonus Folder Adder ---------------------------
 
-$(document).on('click', '#add_bonus_folder', function() {
+// $(document).on('click', '#add_bonus_folder', function() {
+    $(document).on('change', '.bonus_media', function() {
 
+    if($(this)[0].files.length > 0)
+    {
+  
 
-    var html = `
-        <div>
-            <input type="file" id="" name="bonus_media[]" multiple >
-        </div>
+            var html = `
+                <div>
+                    <input type="file" class='bonus_media' name="bonus_media[]" multiple >
+                </div>
 
-    `;
+            `;
 
-    $("#bonus_selectors").append(html);
+        
+
+            $("#bonus_selectors").append(html);
+
+    }
 
 });
 
 
 //----------------Additional Folder Adder---------------------------
 
-$(document).on('click', '#add_additional_folder', function() {
+// $(document).on('click', '#add_additional_folder', function() {
 
+    $(document).on('change', '.additional_folder', function() {
 
-var html = `
-    <div>
-        <input type="file" id="" name="additional_files[]" multiple >
-    </div>
+        if($(this)[0].files.length > 0)
+    {
+        var html = `
+            <div>
+                <input type="file" class="additional_folder" id="" name="additional_files[]" multiple >
+            </div>
 
-`;
+        `;
 
-$("#additional_selectors").append(html);
+        $("#additional_selectors").append(html);
+    }
 
 });
 
-$(document).on('click', '#add_audio_bites', function() {
 
+//----------------Audio Bites Adder---------------------------
 
-var html = `
-    <div> 
-        <input type="file" id="img" name="audio_bites[]">
-    </div>
+// $(document).on('click', '#add_audio_bites', function() {
 
-`;
+    $(document).on('change', '.audio_bites', function() {
 
-$("#audio_bites_selector").append(html);
+        if($(this)[0].files.length > 0)
+        {
+             var html = `
+                <div> 
+                    <input type="file" class="audio_bites" id="img" name="audio_bites[]">
+                </div>
+
+            `;
+
+            $("#audio_bites_selector").append(html);
+        }
 
 });
 
