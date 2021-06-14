@@ -28,18 +28,18 @@ if(!isset($location))
             {
 
                 $row_content = mysqli_fetch_assoc($run_sql_content);
-                $videolong_full = $row_content['videolong'];
+                $regularfeed_full = $row_content['regular_feed'];
                 $preview_full = $row_content['previewgif'];
                 $thumbnail_full = $row_content['thumbnail'];
-                $videolazy_full = $row_content['videolazy'];                            
+                $readyversion_full = $row_content['ready_version'];                            
                 $newsbody_full = $row_content['newsbody'];
                 $wp_media_id = $row_content['wp_media_id'];
 
                 $photos = $row_content['photos'];
                 $photos_array = explode(',' , $photos);
 
-                $audio = $row_content['audio'];
-                $videoextra = $row_content['videoextra'];
+                $audio = $row_content['audio_complete_story'];
+                $roughcut = $row_content['rough_cut'];
 
                 $wp_id = $row_content['wp_post_id'];
 

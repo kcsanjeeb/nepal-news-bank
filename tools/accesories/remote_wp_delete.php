@@ -61,17 +61,17 @@ if(isset($_POST['news_id']))
 
 
         $row_content = mysqli_fetch_assoc($run_sql_content);
-        $videolong_full = $row_content['videolong'];
+        $regularfeed_full = $row_content['regular_feed'];
         $thumbnail_full = $row_content['thumbnail'];
-        $videolazy_full = $row_content['videolazy'];                            
+        $readyversion_full = $row_content['ready_version'];                            
         $newsbody_full = $row_content['newsbody'];
         $additional_file_full = $row_content['additional_file'];
 
         $photos = $row_content['photos'];
         $photos_array = explode(',' , $photos);
 
-        $audio = $row_content['audio'];
-        $videoextra = $row_content['videoextra'];
+        $audio = $row_content['audio_complete_story'];
+        $roughcut = $row_content['rough_cut'];
 
         $wp_id = $row_content['wp_post_id'];
         
@@ -92,27 +92,27 @@ if(isset($_POST['news_id']))
         
         if($video_type_nas == 'selfhost')
         { 
-            if($videolong_full != NULL)
+            if($regularfeed_full != NULL)
             {
-                echo $videolong_full;                                     
-                ftp_delete_rem($videolong_full,'file');                                
+                echo $regularfeed_full;                                     
+                ftp_delete_rem($regularfeed_full,'file');                                
             }
 
-            if($videolazy_full != NULL)
+            if($readyversion_full != NULL)
             {          
-                echo $videolazy_full;               
-                ftp_delete_rem($videolazy_full  ,'file');
+                echo $readyversion_full;               
+                ftp_delete_rem($readyversion_full  ,'file');
             }
 
-            if($videoextra != NULL)
+            if($roughcut != NULL)
             {
-                // $file = explode("/" , $videoextra);
+                // $file = explode("/" , $roughcut);
                 // $reverse_file = array_reverse($file);
                 // $last = $reverse_file[1];
                 // $end = $reverse_file[0];
                 // $path =  "$last/$end";
-                echo $videoextra; 
-                ftp_delete_rem($videoextra  ,'file');
+                echo $roughcut; 
+                ftp_delete_rem($roughcut  ,'file');
             }
 
         }
@@ -120,15 +120,15 @@ if(isset($_POST['news_id']))
         if($video_type_nas == 'vimeo')
         {
 
-            if($vimeo_videolong_web != NULL)
+            if($vimeo_regularfeed_web != NULL)
             {
-                $uri="/videos/$vimeo_videolong_web";
+                $uri="/videos/$vimeo_regularfeed_web";
                 $response = $client->request($uri, [], 'DELETE');                           
             }
 
-            if($vimeo_videolazy_web != NULL)
+            if($vimeo_readyversion_web != NULL)
             {
-                $uri="/videos/$vimeo_videolazy_web";
+                $uri="/videos/$vimeo_readyversion_web";
                 $response = $client->request($uri, [], 'DELETE'); 
             }
 
@@ -212,8 +212,8 @@ if(isset($_POST['news_id']))
             ftp_delete_rem($dir_del , 'folder');
             
 
-            $sql_del_web = "update web set videolong = null , videolazy = null ,
-                            thumbnail = null, audio = null , photos = null , videoextra = null , newsbody = null where newsid = '$news_id' ";
+            $sql_del_web = "update web set regular_feed = null , ready_version = null ,
+                            thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , newsbody = null where newsid = '$news_id' ";
             $run_sql_del_web= mysqli_query($connection, $sql_del_web);
 
 
@@ -249,18 +249,18 @@ if( isset($_POST['news_id']) && isset($_POST['wp_id']))
         {
 
             $row_content = mysqli_fetch_assoc($run_sql_content);
-            $videolong_full = $row_content['videolong'];
+            $regularfeed_full = $row_content['regular_feed'];
             $preview_full = $row_content['previewgif'];
             $thumbnail_full = $row_content['thumbnail'];
-            $videolazy_full = $row_content['videolazy'];                            
+            $readyversion_full = $row_content['ready_version'];                            
             $newsbody_full = $row_content['newsbody'];
             $wp_media_id = $row_content['wp_media_id'];
 
             $photos = $row_content['photos'];
             $photos_array = explode(',' , $photos);
 
-            $audio = $row_content['audio'];
-            $videoextra = $row_content['videoextra'];
+            $audio = $row_content['audio_complete_story'];
+            $roughcut = $row_content['rough_cut'];
 
             $wp_id = $row_content['wp_post_id'];
 

@@ -28,11 +28,11 @@ if(isset($_POST['submit_push']))
 
             $row_content = mysqli_fetch_assoc($run_sql_content);
             $byline_full = $row_content['byline'];
-            $videolong_full = $row_content['videolong'];
+            $regularfeed_full = $row_content['regular_feed'];
             $thumbnail_full = $row_content['thumbnail'];
-            $videolazy_full = $row_content['videolazy'];                        
-            $audio_full = $row_content['audio'];
-            $videoextra_full = $row_content['videoextra'];       
+            $readyversion_full = $row_content['ready_version'];                        
+            $audio_full = $row_content['audio_complete_story'];
+            $roughcut_full = $row_content['rough_cut'];       
             $newsbody_full = $row_content['newsbody'];
             $date_full = $row_content['created_date'];
             $category_full = $row_content['category_list'];
@@ -73,9 +73,9 @@ if(isset($_POST['submit_push']))
                     {
                     
                         $row_content_web = mysqli_fetch_assoc($run_sql_content_web);                
-                        $videolong_full_web = $row_content_web['videolong'];
+                        $regularfeed_full_web = $row_content_web['regular_feed'];
                         $thumbnail_full_web = $row_content_web['thumbnail'];
-                        $videolazy_full_web = $row_content_web['videolazy'];                            
+                        $readyversion_full_web = $row_content_web['ready_version'];                            
                         $newsbody_full_web = $row_content_web['newsbody'];
 
                         $additional_file_web = $row_content_web['additional_file'];
@@ -83,21 +83,21 @@ if(isset($_POST['submit_push']))
                         $audio_bites_web = $row_content_web['audio_bites'];
 
 
-                        $audio_full_web = $row_content_web['audio'];
-                        $videoextra_full_web = $row_content_web['videoextra'];
+                        $audio_full_web = $row_content_web['audio_complete_story'];
+                        $roughcut_full_web = $row_content_web['rough_cut'];
                         $gallery_full_web = $row_content_web['photos'];
                         $gallery_full_web_arr = explode(',' ,  $gallery_full_web) ;
 
-                        $vimeo_video_extra = $row_content_web['vimeo_video_extra'];
-                        $vimeo_videolazy = $row_content_web['vimeo_videolazy'];
-                        $vimeo_videolong = $row_content_web['vimeo_videolong'];
+                        $vimeo_rough_cut = $row_content_web['vimeo_rough_cut'];
+                        $vimeo_readyversion = $row_content_web['vimeo_ready_version'];
+                        $vimeo_regularfeed = $row_content_web['vimeo_regular_feed'];
 
 
 
-                        if($videolong_full_web == NULL)
-                            $videolong_full_web = "NULL";
+                        if($regularfeed_full_web == NULL)
+                            $regularfeed_full_web = "NULL";
                         else
-                            $videolong_full_web = "'$videolong_full_web'";
+                            $regularfeed_full_web = "'$regularfeed_full_web'";
 
                     
                         if($thumbnail_full_web == NULL)
@@ -106,11 +106,11 @@ if(isset($_POST['submit_push']))
                         else
                             $thumbnail_full_web = "'$thumbnail_full_web'";
 
-                        if($videolazy_full_web == NULL)
-                            $videolazy_full_web = "NULL";
+                        if($readyversion_full_web == NULL)
+                            $readyversion_full_web = "NULL";
 
                         else
-                            $videolazy_full_web = "'$videolazy_full_web'";
+                            $readyversion_full_web = "'$readyversion_full_web'";
 
                         if($newsbody_full_web == NULL)
                             $newsbody_full_web = "NULL";
@@ -135,11 +135,11 @@ if(isset($_POST['submit_push']))
                             $audio_full_web = "'$audio_full_web'";
 
 
-                        if($videoextra_full_web == NULL)
-                            $videoextra_full_web = "NULL";
+                        if($roughcut_full_web == NULL)
+                            $roughcut_full_web = "NULL";
 
                         else
-                            $videoextra_full_web = "'$videoextra_full_web'";
+                            $roughcut_full_web = "'$roughcut_full_web'";
 
                         if($gallery_full_web == '')
                             $gallery_full_web = "NULL";
@@ -167,12 +167,12 @@ if(isset($_POST['submit_push']))
                     else
                     {
                         
-                        $videolong_full_web = "NULL";
+                        $regularfeed_full_web = "NULL";
                         $thumbnail_full_web = "NULL";
-                        $videolazy_full_web = "NULL";                            
+                        $readyversion_full_web = "NULL";                            
                         $newsbody_full_web = "NULL";
                         $audio_full_web = "NULL";
-                        $videoextra_full_web = "NULL";
+                        $roughcut_full_web = "NULL";
                         $gallery_full_web = "NULL";
 
                         $additional_file_web = "NULL";
@@ -184,12 +184,12 @@ if(isset($_POST['submit_push']))
                 
 
             $push_newsbody = $newsbody_full_web;
-            $push_videoLong = $videolong_full_web;
+            $push_regularFeed = $regularfeed_full_web;
             $push_additional = $additional_file_web;
-            $push_videoLazy = $videolazy_full_web;
+            $push_readyVersion = $readyversion_full_web;
             $push_thumbnail = $thumbnail_full_web;
             $push_audio = $audio_full_web;
-            $push_videoextra = $videoextra_full_web;
+            $push_roughcut = $roughcut_full_web;
 
             $push_audio_bites = $audio_bites_web;
 
@@ -267,10 +267,10 @@ if(isset($_POST['submit_push']))
                
 
 
-                $push_videoLazy_json = str_replace("'","",$push_videoLazy);
-                $push_videoLong_json = str_replace("'","",$push_videoLong);
-                $push_videoLazy_json = str_replace("'","",$push_videoLazy);
-                $push_videoextra_json = str_replace("'","",$push_videoextra);
+                $push_readyVersion_json = str_replace("'","",$push_readyVersion);
+                $push_regularFeed_json = str_replace("'","",$push_regularFeed);
+                $push_readyVersion_json = str_replace("'","",$push_readyVersion);
+                $push_roughcut_json = str_replace("'","",$push_roughcut);
                 $push_newsbody_json = str_replace("'","",$push_newsbody);
                 $push_audio_json = str_replace("'","",$push_audio);
                 $push_additional_json = str_replace("'","",$push_additional);
@@ -284,34 +284,34 @@ if(isset($_POST['submit_push']))
 
                 $video_type = $video_type ;
 
-                $push_videolong_disp =  $domain_url.'/'.$ftp_folder_name_in_server.'/'.$push_videoLong_json;
+                $push_regularfeed_disp =  $domain_url.'/'.$ftp_folder_name_in_server.'/'.$push_regularFeed_json;
 
                 if($video_type == 'selfhost')
                 {
                     $cmb2  = array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
                     'haru_video_url_type'=> 'insert',
-                    'haru_video_url' => array('mp4' => $push_videolong_disp , 'webm' => '')
+                    'haru_video_url' => array('mp4' => $push_regularfeed_disp , 'webm' => '')
                         ),
 
                 'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series_nas")
                 );
 
-                    $push_videoextra_json = $push_videoextra_json ;
-                    $push_videoLazy_json = $push_videoLazy_json ;
+                    $push_roughcut_json = $push_roughcut_json ;
+                    $push_readyVersion_json = $push_readyVersion_json ;
 
                 }
 
                 if($video_type == 'vimeo')
                 {
                     $cmb2  = array('haru_video_metabox' => array('haru_video_server' => 'vimeo',
-                    'haru_video_id'=> $vimeo_videolong
+                    'haru_video_id'=> $vimeo_regularfeed
                 
                 ),
                 'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series_nas")
                 );
 
-                    $push_videoextra_json = "https://vimeo.com/".$vimeo_video_extra ;
-                    $push_videoLazy_json = "https://vimeo.com/".$vimeo_videolazy ;
+                    $push_roughcut_json = "https://vimeo.com/".$vimeo_rough_cut ;
+                    $push_readyVersion_json = "https://vimeo.com/".$vimeo_readyversion ;
                 }
                 // echo "<br>dadasdsadasd ".count($category_full_arr)."<br>";
                 if(count($category_full_arr) == 1 && $category_full_arr[0] == '' )
@@ -331,8 +331,8 @@ if(isset($_POST['submit_push']))
                     "status" => "draft" , 
                     "title" => "$byline_full",
                     "slug" => "$byline_full",
-                    "acf_fields" => array('video_long_link'=>$push_videoLong_json,'video_lazy_link'=>$push_videoLazy_json,
-                                            'video_extra_link' => $push_videoextra_json ,   'news_body_file' => $push_newsbody_json ,
+                    "acf_fields" => array('video_long_link'=>$push_regularFeed_json,'video_lazy_link'=>$push_readyVersion_json,
+                                            'video_extra_link' => $push_roughcut_json ,   'news_body_file' => $push_newsbody_json ,
                                             'audio' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
@@ -362,8 +362,8 @@ if(isset($_POST['submit_push']))
                     "status" => "draft" , 
                     "title" => "$byline_full",
                     "slug" => "$byline_full",
-                    "acf_fields" => array('video_long_link'=>$push_videoLong_json,'video_lazy_link'=>$push_videoLazy_json,
-                                            'video_extra_link' => $push_videoextra_json ,   'news_body_file' => $push_newsbody_json ,
+                    "acf_fields" => array('video_long_link'=>$push_regularFeed_json,'video_lazy_link'=>$push_readyVersion_json,
+                                            'video_extra_link' => $push_roughcut_json ,   'news_body_file' => $push_newsbody_json ,
                                             'audio' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,

@@ -309,42 +309,39 @@ if(!isset($location))
 
 
 
-            if(isset($_FILES['audio'])   && !empty($_FILES['audio']['name']))
+            if(isset($_FILES['audio_complete_story'])   && !empty($_FILES['audio_complete_story']['name']))
             {
-                $fileName = $_FILES['audio']['name'] ;
+                $fileName = $_FILES['audio_complete_story']['name'] ;
 
                 $fileExt = explode('.' , $fileName);
                 $fileActualExt_audio = strtolower(end($fileExt));
 
-                $file_type = $_FILES['audio']['type'] ;
+                $file_type = $_FILES['audio_complete_story']['type'] ;
                 $file_type_explode = explode("/" , $file_type);
                 $allowed = array('audio'  );
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    // $audio_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_audio.".$fileActualExt_audio;
-                    $audio_path =$path_destination."_audio.".$fileActualExt_audio;
-                    $audio_tmp_name = $_FILES['audio']['tmp_name'] ;
-                    move_uploaded_file($audio_tmp_name, $audio_path) ;
-                    // $audio_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_audio.".$fileActualExt_audio;
-                    $audio_path =$path_sql."_audio.".$fileActualExt_audio;
+                    $audio_complete_story_path =$path_destination."_audio_complete_story.".$fileActualExt_audio;
+                    $audio_complete_story_tmp_name = $_FILES['audio_complete_story']['tmp_name'] ;
+                    move_uploaded_file($audio_complete_story_tmp_name, $audio_complete_story_path) ;
+                    $audio_complete_story_path =$path_sql."_audio_complete_story.".$fileActualExt_audio;
 
-                    $text = "$audio_path : Audio Uploaded\n";
+                    $text = "$audio_complete_story_path : Audio Complete Story Uploaded\n";
                     fwrite($myfile, $text);
 
-
-
-                    $audio_path = "'$audio_path'";
+                    
+                    $audio_complete_story_path = "'$audio_complete_story_path'";
                 }
                 else
                 {
-                    $audio_path = "NULL" ;
+                    $audio_complete_story_path = "NULL" ;
                 }
 
             }
             else
             {
-                $audio_path = "NULL" ;
+                $audio_complete_story_path = "NULL" ;
             }
 
 
@@ -385,69 +382,40 @@ if(!isset($location))
             }
 
 
-            if(isset($_FILES['videoLongFile'])   && !empty($_FILES['videoLongFile']['name']))
+            if(isset($_FILES['regularFeeddFile'])   && !empty($_FILES['regularFeeddFile']['name']))
             {
-                $fileName = $_FILES['videoLongFile']['name'] ;
+                $fileName = $_FILES['regularFeeddFile']['name'] ;
                 $fileExt = explode('.' , $fileName);
-                $fileActualExt_videolong = strtolower(end($fileExt));
+                $fileActualExt_regularFeeddFile = strtolower(end($fileExt));
 
-                $file_type = $_FILES['videoLongFile']['type'] ;
+                $file_type = $_FILES['regularFeeddFile']['type'] ;
                 $file_type_explode = explode("/" , $file_type);
                 $allowed = array('video'  );
 
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    // $video_long_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_videolong.".$fileActualExt_videolong;
-                    $video_long_path =$path_destination."_videolong.".$fileActualExt_videolong;
+                    $regular_filed_path =$path_destination."_regularfeed.".$fileActualExt_regularFeeddFile;
 
-                    $video_long_tmp_name = $_FILES['videoLongFile']['tmp_name'] ;
-                    move_uploaded_file($video_long_tmp_name, $video_long_path) ;  
-                    $video_long_path = $path_sql."_videolong.".$fileActualExt_videolong;
+                    $regular_field_tmp_name = $_FILES['regularFeeddFile']['tmp_name'] ;
+                    move_uploaded_file($regular_field_tmp_name, $regular_filed_path) ;  
+                    $regular_filed_path = $path_sql."_regularfeed.".$fileActualExt_regularFeeddFile;
 
-                    $text = "$video_long_path : Video Long Uploaded\n";
+                    $text = "$regular_filed_path : Regular Field Uploaded\n";
                     fwrite($myfile, $text);
 
-                    
 
-                    // if($video_type_i == 'vimeo')
-                    // {
-                        
-                    //         $video_long_path_vim ="../".$newsdate."/".$date_file_name."_".$time_file_name."_".$news_id."_videolong.".$fileActualExt_videolong;
-                    
-                    //         $file_name = $video_long_path_vim;
-                    //         $uri = $client->upload($file_name, array(
-                    //         "name" => "$news_id"."_videolong",
-                    //         "description" => ""
-                    //         ));
-
-
-                    //         $response = $client->request($uri . '?fields=transcode.status');
-                        
-                    //         $response = $client->request($uri . '?fields=link');
-
-                    //         $id = explode("/" , $response['body']['link']);
-                    //         $id = end($id);
-
-                    //         $vimeo_videolong =  "'$id'" ;
-                    // }
-                    // else
-                    // {
-                    //     $vimeo_videolong = "NULL";
-                    // }
-
-                    $video_long_path = "'$video_long_path'";
+                    $regular_filed_path = "'$regular_filed_path'";
                 }
                 else
                 {
-                    $video_long_path = "NULL" ;
+                    $regular_filed_path = "NULL" ;
                 }
 
             }
             else
             {
-                $video_long_path = "NULL" ;
-                // $vimeo_videolong = "NULL";
+                $regular_filed_path = "NULL" ;
             }
 
 
@@ -488,133 +456,76 @@ if(!isset($location))
             }
 
 
-            if(isset($_FILES['videoLazy'])   && !empty($_FILES['videoLazy']['name']))
+            if(isset($_FILES['readyVersionFile'])   && !empty($_FILES['readyVersionFile']['name']))
             {
-                $fileName = $_FILES['videoLazy']['name'] ;
-                $fileExt_videolazy = explode('.' , $fileName);
-                $fileActualExt_videolazy = strtolower(end($fileExt_videolazy));
+                $fileName = $_FILES['readyVersionFile']['name'] ;
+                $fileExt_readyVersion = explode('.' , $fileName);
+                $fileActualExt_readyVersion = strtolower(end($fileExt_readyVersion));
 
-                $file_type = $_FILES['videoLazy']['type'] ;
+                $file_type = $_FILES['readyVersionFile']['type'] ;
                 $file_type_explode = explode("/" , $file_type);
                 $allowed = array('video'  );
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    // $videolazy_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_videolazy.".$fileActualExt_videolazy;
-                    $videolazy_path =$path_destination."_videolazy.".$fileActualExt_videolazy;
+                    $readyversion_path =$path_destination."_readyversion.".$fileActualExt_readyVersion;
 
-                    $videolazy_tmp_name = $_FILES['videoLazy']['tmp_name'] ;
-                    move_uploaded_file($videolazy_tmp_name, $videolazy_path) ;
-                    // $videoLazy_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_videolazy.".$fileActualExt_videolazy;
-                    $videoLazy_path =$path_sql."_videolazy.".$fileActualExt_videolazy;
+                    $readyversion_tmp_path = $_FILES['readyVersionFile']['tmp_name'] ;
+                    move_uploaded_file($readyversion_tmp_path, $readyversion_path) ;
+                    $readyVersion_path =$path_sql."_readyversion.".$fileActualExt_readyVersion;
 
-                    $text = "$videoLazy_path : Video Lazy Uploaded\n";
+                    $text = "$readyVersion_path : Ready Version Uploaded\n";
                     fwrite($myfile, $text);
 
-                    $videoLazy_path = "'$videoLazy_path'";
+                    $readyVersion_path = "'$readyVersion_path'";
 
-
-                    // if($video_type_i == 'vimeo')
-                    // {
-                        
-                    //         $videolazy_path_vim ="../".$newsdate."/".$date_file_name."_".$time_file_name."_".$news_id."_videolazy.".$fileActualExt_videolazy;
-                    
-                            // $file_name = $videolazy_path_vim;
-                            // $uri = $client->upload($file_name, array(
-                            // "name" => "$news_id"."_videolazy",
-                            // "description" => ""
-                            // ));
-
-
-                            // $response = $client->request($uri . '?fields=transcode.status');
-                        
-                            // $response = $client->request($uri . '?fields=link');
-
-                            // $id = explode("/" , $response['body']['link']);
-                            // $id = end($id);
-
-                            // $vimeo_videolazy =  "'$id'" ;
-                    // }
-                    // else
-                    // {
-                    //     $vimeo_videolazy = "NULL";
-                    // }
                 }
                 else
                 {
-                    $videoLazy_path = "NULL" ;
+                    $readyVersion_path = "NULL" ;
                 }
 
             }
             else
             {
-                $videoLazy_path = "NULL" ;
-                // $vimeo_videolazy = "NULL";
+                $readyVersion_path = "NULL" ;
             }
 
 
             
-            if(isset($_FILES['videoExtra'])   && !empty($_FILES['videoExtra']['name']))
+            if(isset($_FILES['roughCutFile'])   && !empty($_FILES['roughCutFile']['name']))
             {
-                $fileName = $_FILES['videoExtra']['name'] ;
+                $fileName = $_FILES['roughCutFile']['name'] ;
                 $fileExt = explode('.' , $fileName);
-                $fileActualExt_videoExtra = strtolower(end($fileExt));
+                $fileActualExt_roughcut = strtolower(end($fileExt));
 
-                $file_type = $_FILES['videoExtra']['type'] ;
+                $file_type = $_FILES['roughCutFile']['type'] ;
                 $file_type_explode = explode("/" , $file_type);
                 $allowed = array('video'  );
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    // $videoExtra_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_videoextra.".$fileActualExt_videoExtra;
-                    $videoExtra_path =$path_destination."_videoextra.".$fileActualExt_videoExtra;
+                    $roughCut_path =$path_destination."_roughcut.".$fileActualExt_roughcut;
 
-                    $videoExtra_tmp_name = $_FILES['videoExtra']['tmp_name'] ;
-                    move_uploaded_file($videoExtra_tmp_name, $videoExtra_path) ;
-                    // $videoExtra_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_videoextra.".$fileActualExt_videoExtra;
-                    $videoExtra_path =$path_sql."_videoextra.".$fileActualExt_videoExtra;
+                    $roughcut_tmp_name = $_FILES['roughCutFile']['tmp_name'] ;
+                    move_uploaded_file($roughcut_tmp_name, $roughCut_path) ;
+                    $roughCut_path =$path_sql."_roughcut.".$fileActualExt_roughcut;
 
-                    $text = "$videoExtra_path : Video Extra Uploaded\n";
+                    $text = "$roughCut_path : Rough Cut Uploaded\n";
                     fwrite($myfile, $text);
 
-                    $videoExtra_path = "'$videoExtra_path'";
+                    $roughCut_path = "'$roughCut_path'";
 
-                    // if($video_type_i == 'vimeo')
-                    // {
-                        
-                    //     $videoExtra_path_vim ="../".$newsdate."/".$date_file_name."_".$time_file_name."_".$news_id."_videoextra.".$fileActualExt_videoExtra;
-                    
-                    //         $file_name = $videoExtra_path_vim;
-                    //         $uri = $client->upload($file_name, array(
-                    //         "name" => "$news_id"."_videoextra",
-                    //         "description" => ""
-                    //         ));
-
-
-                    //         $response = $client->request($uri . '?fields=transcode.status');
-                        
-                    //         $response = $client->request($uri . '?fields=link');
-
-                    //         $id = explode("/" , $response['body']['link']);
-                    //         $id = end($id);
-
-                    //         $vimeo_videoextra =  "'$id'" ;
-                    // }
-                    // else
-                    // {
-                    //     $vimeo_videoextra = "NULL";
-                    // }
                 }
                 else
                 {
-                    $videoExtra_path = "NULL" ;
+                    $roughCut_path = "NULL" ;
                 }
 
             }
             else
             {
-                $videoExtra_path = "NULL" ;
-                // $vimeo_videoextra = "NULL";
+                $roughCut_path = "NULL" ;
             }
 
             
@@ -829,8 +740,8 @@ if(!isset($location))
             $query_new_news = "insert into nas(
                 newsid , created_date ,  local_published_date ,
                 byline ,  category_list ,                                       
-                videolong,  videolazy  ,thumbnail ,
-                audio ,  photos ,  newsbody ,  videoextra ,
+                regular_feed,  ready_version  ,thumbnail ,
+                audio_complete_story ,  photos ,  newsbody ,  rough_cut ,
                 tag_list , uploaded_by , reporter ,
                 camera_man , district , video_type, series ,  additional_file , additional_files_description,
                 audio_description , audio_bites_description , audio_bites
@@ -839,8 +750,8 @@ if(!isset($location))
                 VALUES 
                 ($news_id, $created_at ,  $newsdate , 
                 $byLine , $newsCategories,
-                $video_long_path , $videoLazy_path  , $thumbnail_path,
-                $audio_path , $gallery_csv , $body_path , $videoExtra_path ,
+                $regular_filed_path , $readyVersion_path  , $thumbnail_path,
+                $audio_complete_story_path , $gallery_csv , $body_path , $roughCut_path ,
                 $tags ,$uploaded_by ,  $reporter , 
                 $camera_man , $district,  $video_type, $series , $additional_path_sql , $additional_files_description,
                 $audio_desc , $audio_bites_desc , $audio_bites_csv

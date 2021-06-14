@@ -474,10 +474,10 @@ strong {
                                 <div class="col-sm-4">
                                     <div class="card ">
                                         <img src="./assets/images/placeholder.jpg" class="card-img-top "
-                                            id="videolongplaceholder" alt="...">
-                                        <div id="videolongID"></div>
+                                            id="regularfeedplaceholder" alt="...">
+                                        <div id="regularfeedID"></div>
                                         <div class="card-body">
-                                            <span><strong>5.1 Video long</strong></span>
+                                            <span><strong>5.1 Regular Feed</strong></span>
                                             <div class="float-right">
                                                 <svg data-toggle="popover" title="News Title"
                                                     data-content="Some content inside the popover"
@@ -492,8 +492,8 @@ strong {
                                                 </svg>
                                             </div>
 
-                                            <input type="file" id="videolong" name="videoLongFile"
-                                                onchange="return videolongValidation()" xxx>
+                                            <input type="file" id="regularfeed" name="regularFeeddFile"
+                                                onchange="return regularFeedValidation()" xxx>
                                             <small id="emailHelp" class="form-text text-muted">5min to 7min
                                                 video</small>
 
@@ -505,10 +505,10 @@ strong {
                                 <div class="col-sm-4">
                                     <div class="card ">
                                         <img src="./assets/images/placeholder.jpg" class="card-img-top "
-                                            id="videolazyplaceholder" alt="...">
-                                        <div id="videolazyID"></div>
+                                            id="readyVersionplaceholder" alt="...">
+                                        <div id="readyversionID"></div>
                                         <div class="card-body">
-                                            <span><strong>5.2 Video lazy</strong></span>
+                                            <span><strong>5.2 Ready Version</strong></span>
                                             <div class="float-right">
                                                 <svg data-toggle="popover" title="News Title"
                                                     data-content="Some content inside the popover"
@@ -522,8 +522,8 @@ strong {
                                                         d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                                 </svg>
                                             </div>
-                                            <input type="file" id="videolazy" name="videoLazy"
-                                                onchange="return videolazyValidation()">
+                                            <input type="file" id="readyversion" name="readyVersionFile"
+                                                onchange="return readyVersionValidation()">
                                             <small id="emailHelp" class="form-text text-muted">Video should be less than
                                                 3 minutes</small>
 
@@ -535,10 +535,10 @@ strong {
                                 <div class="col-sm-4">
                                     <div class="card ">
                                         <img src="./assets/images/placeholder.jpg" class="card-img-top "
-                                            id="videoextraplaceholder" alt="...">
-                                        <div id="videoextraID"></div>
+                                            id="roughcutplaceholder" alt="...">
+                                        <div id="roughcutID"></div>
                                         <div class="card-body">
-                                            <span><strong>5.3 Video extra</strong></span>
+                                            <span><strong>5.3 Rough Cut</strong></span>
                                             <div class="float-right">
                                                 <svg data-toggle="popover" title="News Title"
                                                     data-content="Some content inside the popover"
@@ -552,8 +552,8 @@ strong {
                                                         d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                                 </svg>
                                             </div>
-                                            <input type="file" id="videoextra" name="videoExtra"
-                                                onchange="return videoextraValidation()">
+                                            <input type="file" id="roughcut" name="roughCutFile"
+                                                onchange="return roughcutValidation()">
                                             <small id="emailHelp" class="form-text text-muted">Video should be less than
                                                 3 minutes</small>
 
@@ -638,11 +638,11 @@ strong {
                                 </label><br>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <strong>8.1 Audio Description</strong> 
+                                        <strong>8.1 Audio Complete Description</strong> 
                                         <textarea class="form-control" id="exampleFormControlTextarea1" name="audio_desc" rows="3"></textarea>
                                         <br>
-                                        <strong>8.2 Select Audio File</strong> 
-                                        <input type="file" id="img" name="audio">
+                                        <strong>8.2 Select Audio Complete Story</strong> 
+                                        <input type="file" id="img" name="audio_complete_story">
                                     </div>
                                     <div class="col-lg-6">
                                     <strong>8.3 Audio Bites Description</strong> 
@@ -1094,9 +1094,9 @@ strong {
         </script>
         <script>
         // -------------Video long VALIDATION------------------------ 
-        function videolongValidation() {
+        function regularFeedValidation() {
             var fileInput =
-                document.getElementById('videolong');
+                document.getElementById('regularfeed');
 
             var filePath = fileInput.value;
             console.log(filePath)
@@ -1108,7 +1108,7 @@ strong {
                 alert('Invalid Video thumbnail file extension.');
                 fileInput.value = '';
                 document.getElementById(
-                        'videolongID').innerHTML =
+                        'regularfeedID').innerHTML =
                     '<video width="320" height="240" controls style="display:none"><source src="" type="video/mp4"></video>';
                 return false;
             } else {
@@ -1118,10 +1118,10 @@ strong {
                     var reader = new FileReader();
                     reader.onload = function(e) {
                         document.getElementById(
-                                'videolongID').innerHTML =
+                                'regularfeedID').innerHTML =
                             '<video width="100%" height="160px" controls style="display:block"><source src="' + e
                             .target.result + '" type="video/mp4"> </video> ';
-                        document.getElementById('videolongplaceholder').style.display = "none"
+                        document.getElementById('regularfeedplaceholder').style.display = "none"
                     };
 
                     reader.readAsDataURL(fileInput.files[0]);
@@ -1132,9 +1132,9 @@ strong {
 
         <script>
         // -------------Video lazy VALIDATION------------------------ 
-        function videolazyValidation() {
+        function readyVersionValidation() {
             var fileInput =
-                document.getElementById('videolazy');
+                document.getElementById('readyversion');
 
             var filePath = fileInput.value;
             console.log(filePath)
@@ -1146,7 +1146,7 @@ strong {
                 alert('Invalid Video lazy file extension.');
                 fileInput.value = '';
                 document.getElementById(
-                        'videolazyID').innerHTML =
+                        'readyversionID').innerHTML =
                     '<video width="320" height="240" controls style="display:none"><source src="" type="video/mp4"></video>';
                 return false;
             } else {
@@ -1156,10 +1156,10 @@ strong {
                     var reader = new FileReader();
                     reader.onload = function(e) {
                         document.getElementById(
-                                'videolazyID').innerHTML =
+                                'readyversionID').innerHTML =
                             '<video width="100%" height="160px" controls style="display:block"><source src="' + e
                             .target.result + '" type="video/mp4"> </video> ';
-                        document.getElementById('videolazyplaceholder').style.display = "none"
+                        document.getElementById('readyVersionplaceholder').style.display = "none"
                     };
 
                     reader.readAsDataURL(fileInput.files[0]);
@@ -1169,9 +1169,9 @@ strong {
         </script>
         <script>
         // -------------Video extra VALIDATION------------------------ 
-        function videoextraValidation() {
+        function roughcutValidation() {
             var fileInput =
-                document.getElementById('videoextra');
+                document.getElementById('roughcut');
 
             var filePath = fileInput.value;
             console.log(filePath)
@@ -1183,7 +1183,7 @@ strong {
                 alert('Invalid Video lazy file extension.');
                 fileInput.value = '';
                 document.getElementById(
-                        'videoextraID').innerHTML =
+                        'roughcutID').innerHTML =
                     '<video width="320" height="240" controls style="display:none"><source src="" type="video/mp4"></video>';
 
                 return false;
@@ -1194,10 +1194,10 @@ strong {
                     var reader = new FileReader();
                     reader.onload = function(e) {
                         document.getElementById(
-                                'videoextraID').innerHTML =
+                                'roughcutID').innerHTML =
                             '<video width="100%" height="160px" controls style="display:block"><source src="' + e
                             .target.result + '" type="video/mp4"> </video> ';
-                        document.getElementById('videoextraplaceholder').style.display = "none"
+                        document.getElementById('roughcutplaceholder').style.display = "none"
                     };
 
 

@@ -50,11 +50,11 @@ if(!isset($location))
             {
                 $row_content = mysqli_fetch_assoc($run_sql_content);
                 $byline_full = $row_content['byline'];
-                $videolong_full = $row_content['videolong'];
+                $regularfeed_full = $row_content['regular_feed'];
                 $thumbnail_full = $row_content['thumbnail'];
-                $videolazy_full = $row_content['videolazy'];                        
-                $audio_full = $row_content['audio'];
-                $videoextra_full = $row_content['videoextra'];       
+                $readyversion_full = $row_content['ready_version'];                        
+                $audio_full = $row_content['audio_complete_story'];
+                $roughcut_full = $row_content['rough_cut'];       
                 $newsbody_full = $row_content['newsbody'];
                 $date_full = $row_content['created_date'];
                 $category_full = $row_content['category_list'];
@@ -88,12 +88,12 @@ if(!isset($location))
                 {
                    
                     $row_content_web = mysqli_fetch_assoc($run_sql_content_web);                
-                    $videolong_full_web = $row_content_web['videolong'];
+                    $regularfeed_full_web = $row_content_web['regular_feed'];
                     $thumbnail_full_web = $row_content_web['thumbnail'];
-                    $videolazy_full_web = $row_content_web['videolazy'];                            
+                    $readyversion_full_web = $row_content_web['ready_version'];                            
                     $newsbody_full_web = $row_content_web['newsbody'];
-                    $audio_full_web = $row_content_web['audio'];
-                    $videoextra_full_web = $row_content_web['videoextra'];
+                    $audio_full_web = $row_content_web['audio_complete_story'];
+                    $roughcut_full_web = $row_content_web['rough_cut'];
 
                     $gallery_full_web = $row_content_web['photos'];
                     $gallery_full_web_arr = explode(',' ,  $gallery_full_web) ;
@@ -105,10 +105,10 @@ if(!isset($location))
 
                     $additional_files_full_web = $row_content_web['additional_file'];
 
-                    if($videolong_full_web == NULL)
-                        $videolong_full_web = "NULL";
+                    if($regularfeed_full_web == NULL)
+                        $regularfeed_full_web = "NULL";
                     else
-                        $videolong_full_web = "'$videolong_full_web'";
+                        $regularfeed_full_web = "'$regularfeed_full_web'";
 
                   
                     if($thumbnail_full_web == NULL)
@@ -117,11 +117,11 @@ if(!isset($location))
                     else
                         $thumbnail_full_web = "'$thumbnail_full_web'";
 
-                    if($videolazy_full_web == NULL)
-                        $videolazy_full_web = "NULL";
+                    if($readyversion_full_web == NULL)
+                        $readyversion_full_web = "NULL";
 
                     else
-                        $videolazy_full_web = "'$videolazy_full_web'";
+                        $readyversion_full_web = "'$readyversion_full_web'";
 
                     if($newsbody_full_web == NULL)
                         $newsbody_full_web = "NULL";
@@ -135,11 +135,11 @@ if(!isset($location))
                         $audio_full_web = "'$audio_full_web'";
 
 
-                    if($videoextra_full_web == NULL)
-                        $videoextra_full_web = "NULL";
+                    if($roughcut_full_web == NULL)
+                        $roughcut_full_web = "NULL";
 
                     else
-                        $videoextra_full_web = "'$videoextra_full_web'";
+                        $roughcut_full_web = "'$roughcut_full_web'";
 
                     if($gallery_full_web == NULL)
                         $gallery_full_web = "NULL";
@@ -168,12 +168,12 @@ if(!isset($location))
                 else
                 {
                     
-                    $videolong_full_web = "NULL";
+                    $regularfeed_full_web = "NULL";
                     $thumbnail_full_web = "NULL";
-                    $videolazy_full_web = "NULL";                            
+                    $readyversion_full_web = "NULL";                            
                     $newsbody_full_web = "NULL";
                     $audio_full_web = "NULL";
-                    $videoextra_full_web = "NULL";
+                    $roughcut_full_web = "NULL";
                     $gallery_full_web = "NULL";
                     $additional_files_full_web = "NULL";
                     $gallery_full_web_arr = array();
@@ -371,49 +371,49 @@ if(!isset($location))
                     }
 
                   
-                    if(in_array('videoLong' ,$file_type ))
+                    if(in_array('regularFeed' ,$file_type ))
                     {
-                        if(file_exists('../'.$videolong_full))
+                        if(file_exists('../'.$regularfeed_full))
                         {
-                            $sourceName = explode("/" ,$videolong_full ) ;
+                            $sourceName = explode("/" ,$regularfeed_full ) ;
                             $sourceName = end($sourceName );
 
 
                             if($video_type == 'selfhost')
                             {
-                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolong_full))
+                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$regularfeed_full))
 
 
                                 array_push($files_to_push , $sourceName );
 
-                                $videolong_py =  $sourceName ;
-                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolong_full , FTP_BINARY))
+                                $regularfeed_py =  $sourceName ;
+                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$regularfeed_full , FTP_BINARY))
                                 // {
 
                                 //     $text = "$sourceName Video Long Pushed\n";
                                 //     fwrite($myfile, $text);                        
 
 
-                                //     $push_videoLong = "'$news_ftp_path_sql/$sourceName'" ;
+                                //     $push_regularFeed= "'$news_ftp_path_sql/$sourceName'" ;
                                 // }
                                 // else
                                 // {
-                                //     $push_videoLong = "NULL";
+                                //     $push_regularFeed= "NULL";
                                 //     $text = "$sourceName Video Long Failed to Pushed\n";
                                 //     fwrite($myfile, $text);
                                     
 
                                 //     $_SESSION['notice_remote'] = "Error";
                                 // }
-                                $vimeo_videolong =  "NULL" ;
+                                $vimeo_regularfeed =  "NULL" ;
                             }
 
                             if($video_type == 'vimeo')
                             {
                                 echo "Video Long Vime<br>";
 
-                                $file_name = '../'.$videolong_full;
-                                $vimeo_vl_name = end(explode("/" ,$videolong_full ));
+                                $file_name = '../'.$regularfeed_full;
+                                $vimeo_vl_name = end(explode("/" ,$regularfeed_full ));
                                 $uri = $client->upload($file_name, array(
                                 "name" => $vimeo_vl_name,
                                 "description" => ""
@@ -427,23 +427,23 @@ if(!isset($location))
                                 $id = explode("/" , $response['body']['link']);
                                 $id = end($id);
     
-                                $vimeo_videolong =  "'$id'" ;
+                                $vimeo_regularfeed =  "'$id'" ;
                                 print_r($response);
                                 
-                                echo "Video Long ID vimeo_videolong<br>";
-                                if(isset($vimeo_videolong))
+                                echo "Video Long ID vimeo_regularfeed<br>";
+                                if(isset($vimeo_regularfeed))
                                 {
 
-                                    $text = "$sourceName Video Long Pushed to VIMEO\n";
+                                    $text = "$sourceName Regular Feed Pushed to VIMEO\n";
                                     fwrite($myfile, $text);                        
 
 
-                                    $push_videoLong = "NULL" ;
+                                    $push_regularFeed= "NULL" ;
                                 }
                                 else
                                 {
-                                    $push_videoLong = "NULL";
-                                    $text = "$sourceName Video Long Failed to Pushed\n";
+                                    $push_regularFeed= "NULL";
+                                    $text = "$sourceName Regular Feed Failed to Pushed\n";
                                     fwrite($myfile, $text);
                                     
 
@@ -456,41 +456,41 @@ if(!isset($location))
                         }
                         else
                         {
-                            $push_videoLong = "NULL";
+                            $push_regularFeed= "NULL";
                         }
                         
 
                     }
                     else
                     {
-                        $push_videoLong = $videolong_full_web;
-                        $vimeo_videolong =  "NULL" ;
+                        $push_regularFeed= $regularfeed_full_web;
+                        $vimeo_regularfeed =  "NULL" ;
                     }
                     
-                    if(in_array('videoLazy' ,$file_type ))
+                    if(in_array('ReadyVersion' ,$file_type ))
                     {
-                        if(file_exists('../'.$videolazy_full))
+                        if(file_exists('../'.$readyversion_full))
                         {
-                            $sourceName = explode("/" ,$videolazy_full ) ;
+                            $sourceName = explode("/" ,$readyversion_full ) ;
                             $sourceName = end($sourceName );
 
                             if($video_type == 'selfhost')
                             {
-                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videolazy_full))
+                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$readyversion_full))
 
                                 array_push($files_to_push , $sourceName );
-                                $videolazy_py =  $sourceName ;
-                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videolazy_full , FTP_BINARY))
+                                $readyversion_py =  $sourceName ;
+                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$readyversion_full , FTP_BINARY))
                                 // {
                                 //     $text = "$sourceName Video Lazy Pushed\n";
                                 //     fwrite($myfile, $text);                            
 
-                                //     $push_videoLazy = "'$news_ftp_path_sql/$sourceName'" ;
+                                //     $push_readyVesion = "'$news_ftp_path_sql/$sourceName'" ;
 
                                 // }
                                 // else
                                 // {
-                                //     $push_videoLazy = "NULL";
+                                //     $push_readyVesion = "NULL";
                                 //     $text = "$sourceName Video Lazy Failed to Pushed\n";
                                 //     fwrite($myfile, $text);
                                     
@@ -498,13 +498,13 @@ if(!isset($location))
                                 //     $_SESSION['notice_remote'] = "Error";
                                 // }
 
-                                $vimeo_videolazy = "NULL";
+                                $vimeo_readyversion = "NULL";
                             }
 
                             if($video_type == 'vimeo')
                             {
-                                $file_name = '../'.$videolazy_full;
-                                $vimeo_vla_name = end(explode("/" ,$videolazy_full ));
+                                $file_name = '../'.$readyversion_full;
+                                $vimeo_vla_name = end(explode("/" ,$readyversion_full ));
                                 $uri = $client->upload($file_name, array(
                                 "name" => $vimeo_vla_name,
                                 "description" => ""
@@ -518,21 +518,21 @@ if(!isset($location))
                                 $id = explode("/" , $response['body']['link']);
                                 $id = end($id);
     
-                                $vimeo_videolazy =  "'$id'" ;
+                                $vimeo_readyversion =  "'$id'" ;
                                 print_r($response);
 
-                                if(isset($vimeo_videolazy))
+                                if(isset($vimeo_readyversion))
                                 {
 
                                     $text = "$sourceName Video Lon:azyg Pushed to VIMEO\n";
                                     fwrite($myfile, $text);                        
 
 
-                                    $push_videoLazy = "NULL" ;
+                                    $push_readyVesion = "NULL" ;
                                 }
                                 else
                                 {
-                                    $push_videoLazy = "NULL";
+                                    $push_readyVesion = "NULL";
                                     $text = "$sourceName Video Long Failed to Pushed\n";
                                     fwrite($myfile, $text);
                                     
@@ -545,57 +545,57 @@ if(!isset($location))
                         }
                         else
                         {
-                            $push_videoLazy = "NULL";
-                            $vimeo_videolazy = "NULL";
+                            $push_readyVesion = "NULL";
+                            $vimeo_readyversion = "NULL";
                         }
                         
                     }
                     else
                     {
-                        $push_videoLazy = $videolazy_full_web;
-                        $vimeo_videolazy = "NULL";
+                        $push_readyVesion = $readyversion_full_web;
+                        $vimeo_readyversion = "NULL";
                     }
 
-                    if(in_array('videoextra' ,$file_type ))
+                    if(in_array('RoughCut' ,$file_type ))
                     {
-                        if(file_exists('../'.$videoextra_full))
+                        if(file_exists('../'.$roughcut_full))
                         {
-                            $sourceName = explode("/" ,$videoextra_full ) ;
+                            $sourceName = explode("/" ,$roughcut_full ) ;
                             $sourceName = end($sourceName );
 
                             if($video_type == 'selfhost')
                             {
-                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$videoextra_full))
+                                // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$roughcut_full))
 
                                 array_push($files_to_push , $sourceName );
-                                $videoextra_py =  $sourceName ;
+                                $roughcut_py =  $sourceName ;
 
-                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$videoextra_full , FTP_BINARY))
+                                // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$roughcut_full , FTP_BINARY))
                                 // {
-                                //     // $push_videoextra = "'$videoextra_full'" ;
+                                //     // $push_roughcut = "'$roughcut_full'" ;
                                 //     $text = "$sourceName Video Extra  Pushed\n";
                                 //     fwrite($myfile, $text);
                                     
 
-                                //     $push_videoextra = "'$news_ftp_path_sql/$sourceName'" ;
+                                //     $push_roughcut = "'$news_ftp_path_sql/$sourceName'" ;
 
                                 // }
                                 // else
                                 // {
-                                //     $push_videoextra = "NULL";
+                                //     $push_roughcut = "NULL";
                                 //     $text = "$sourceName Video Extra Failed to Pushed\n";
                                 //     fwrite($myfile, $text);
                                     
 
                                 //     $_SESSION['notice_remote'] = "Error";
                                 // }
-                                $vimeo_videoextra = 'NULL';
+                                $vimeo_roughcut = 'NULL';
                             }
 
                             if($video_type == 'vimeo')
                             {
-                                $file_name = '../'.$videoextra_full;
-                                $vimeo_ve_name = end(explode("/" ,$videoextra_full ));
+                                $file_name = '../'.$roughcut_full;
+                                $vimeo_ve_name = end(explode("/" ,$roughcut_full ));
                                 $uri = $client->upload($file_name, array(
                                 "name" => vimeo_ve_name,
                                 "description" => ""
@@ -609,22 +609,22 @@ if(!isset($location))
                                 $id = explode("/" , $response['body']['link']);
                                 $id = end($id);
     
-                                $vimeo_videoextra =  "'$id'" ;
+                                $vimeo_roughcut =  "'$id'" ;
                                 print_r($response);
 
-                                if(isset($vimeo_videoextra))
+                                if(isset($vimeo_roughcut))
                                 {
 
-                                    $text = "$sourceName Video Long Pushed to VIMEO\n";
+                                    $text = "$sourceName Rough Cut Pushed to VIMEO\n";
                                     fwrite($myfile, $text);                        
 
 
-                                    $push_videoextra = "NULL" ;
+                                    $push_roughcut = "NULL" ;
                                 }
                                 else
                                 {
-                                    $push_videoextra = "NULL";
-                                    $text = "$sourceName Video Long Failed to Pushed\n";
+                                    $push_roughcut = "NULL";
+                                    $text = "$sourceName Rough Cut Failed to Pushed\n";
                                     fwrite($myfile, $text);
                                     
 
@@ -635,13 +635,13 @@ if(!isset($location))
                         }
                         else
                         {
-                            $push_videoextra = "NULL";
+                            $push_roughcut = "NULL";
                         }
                     }
                     else
                     {
-                        $push_videoextra = $videoextra_full_web;
-                        $vimeo_videoextra = 'NULL';
+                        $push_roughcut = $roughcut_full_web;
+                        $vimeo_roughcut = 'NULL';
                     }
 
               
@@ -841,24 +841,24 @@ if(!isset($location))
                     }
                 }
            
-                if(in_array($videolong_py , $files_to_push))
+                if(in_array($regularfeed_py , $files_to_push))
                 {
                     echo "2a<br>";
-                    if (strpos( $push_remote_py_resp, $videolong_py) !== false)
+                    if (strpos( $push_remote_py_resp, $regularfeed_py) !== false)
                     {
                         echo "2b<br>";
 
-                            $text = "$videolong_py Video Long Pushed\n";
+                            $text = "$regularfeed_py Regular Feed Pushed\n";
                             fwrite($myfile, $text);                        
 
 
-                            $push_videoLong = "'$news_ftp_path_sql/$videolong_py'" ;
+                            $push_regularFeed= "'$news_ftp_path_sql/$regularfeed_py'" ;
                     }
                     else
                     {
                         echo "2c<br>";
-                        $push_videoLong = "NULL";
-                        $text = "$videolong_py Video Long Failed to Pushed\n";
+                        $push_regularFeed= "NULL";
+                        $text = "$regularfeed_py Regular Field Failed to Pushed\n";
                         fwrite($myfile, $text);
                         
 
@@ -868,24 +868,24 @@ if(!isset($location))
                 }
 
 
-                if(in_array($videolazy_py , $files_to_push))
+                if(in_array($readyversion_py , $files_to_push))
                 {
                     echo "3a<br>";
-                    // if(in_array($videolazy_py , $push_remote_py_resp_arr))
-                    if (strpos( $push_remote_py_resp, $videolazy_py) !== false)
+                    // if(in_array($readyversion_py , $push_remote_py_resp_arr))
+                    if (strpos( $push_remote_py_resp, $readyversion_py) !== false)
                     {
                         echo "3b<br>";
-                            $text = "$videolazy_py Video lazy Pushed\n";
+                            $text = "$readyversion_py Ready Version Pushed\n";
                             fwrite($myfile, $text);                        
 
 
-                            $push_videoLazy = "'$news_ftp_path_sql/$videolazy_py'" ;
+                            $push_readyVesion = "'$news_ftp_path_sql/$readyversion_py'" ;
                     }
                     else
                     {
                         echo "3c<br>";
-                        $push_videoLazy = "NULL";
-                        $text = "$videolong_py Video Lazy Failed to Pushed\n";
+                        $push_readyVesion = "NULL";
+                        $text = "$readyversion_py Ready Version Failed to Pushed\n";
                         fwrite($myfile, $text);
                         
 
@@ -894,25 +894,25 @@ if(!isset($location))
    
                 }
 
-                if(in_array($videoextra_py , $files_to_push))
+                if(in_array($roughcut_py , $files_to_push))
                 {
                     echo "4a<br>";
-                    // if(in_array($videoextra_py , $push_remote_py_resp_arr))
-                    if (strpos( $push_remote_py_resp, $videoextra_py) !== false)
+                    // if(in_array($roughcut_py , $push_remote_py_resp_arr))
+                    if (strpos( $push_remote_py_resp, $roughcut_py) !== false)
                     {
                         echo "4b<br>";
 
-                            $text = "$videoextra_py Video Extra Pushed\n";
+                            $text = "$roughcut_py Rough Cut Pushed\n";
                             fwrite($myfile, $text);                        
 
 
-                            $push_videoextra = "'$news_ftp_path_sql/$videoextra_py'" ;
+                            $push_roughcut = "'$news_ftp_path_sql/$roughcut_py'" ;
                     }
                     else
                     {
                         echo "4c<br>";
-                        $push_videoextra = "NULL";
-                        $text = "$videoextra_py Video Extra Failed to Pushed\n";
+                        $push_roughcut = "NULL";
+                        $text = "$roughcut_py Rough Cut Failed to Pushed\n";
                         fwrite($myfile, $text);
                         
 
@@ -1098,16 +1098,16 @@ if(!isset($location))
                 {
 
                     $query_new_news_update = "update  web set 
-                       videolong = $push_videoLong , videolazy = $push_videoLazy  ,thumbnail = $push_thumbnail ,
-                        audio = $push_audio  , photos = '$gall_img' , videoextra = $push_videoextra, newsbody = $push_newsbody,  
+                       regular_feed = $push_regularFeed, ready_version = $push_readyVesion  ,thumbnail = $push_thumbnail ,
+                       audio_complete_story = $push_audio  , photos = '$gall_img' , rough_cut = $push_roughcut, newsbody = $push_newsbody,  
                          pushed_by = '$pushed_by' ,   pushed_date = '$pushed_at' ,
-                         vimeo_videolong = $vimeo_videolong , vimeo_videolazy = $vimeo_videolazy , vimeo_video_extra = $vimeo_videoextra, additional_file = $push_additional_file,
+                         vimeo_regular_feed = $vimeo_regularfeed , vimeo_ready_version = $vimeo_readyversion , vimeo_rough_cut = $vimeo_roughcut, additional_file = $push_additional_file,
                          audio_bites = $push_audio_bites
                          where newsid = '$news_id'  ;";
                         // ) 
                         // VALUES 
-                        // ('$news_id',  $push_videoLong ,$push_videoLazy , $push_preview , $push_thumbnail,
-                        //      $push_audio , '$gall_img', $push_videoextra , '$newsbody_full' , 
+                        // ('$news_id',  $push_regularFeed,$push_readyVesion , $push_preview , $push_thumbnail,
+                        //      $push_audio , '$gall_img', $push_roughcut , '$newsbody_full' , 
                         //     '$pushed_by' ,'$pushed_at'
                             
                         //     )";  
@@ -1119,16 +1119,16 @@ if(!isset($location))
                 {
                     $wp_post = "NULL";
                     $query_new_news_push = "insert into web(
-                        newsid ,  videolong , videolazy ,thumbnail ,
-                        audio   , photos , videoextra, newsbody ,  
+                        newsid ,  regular_feed , ready_version ,thumbnail ,
+                        audio_complete_story   , photos , rough_cut, newsbody ,  
                          pushed_by ,   pushed_date , wp_post_id,
-                         vimeo_videolong , vimeo_videolazy , vimeo_video_extra , additional_file , audio_bites
+                         vimeo_regular_feed , vimeo_ready_version , vimeo_rough_cut , additional_file , audio_bites
                         ) 
                         VALUES 
-                        ('$news_id',  $push_videoLong ,$push_videoLazy  , $push_thumbnail,
-                             $push_audio , '$gall_img', $push_videoextra , $push_newsbody , 
+                        ('$news_id',  $push_regularFeed,$push_readyVesion  , $push_thumbnail,
+                             $push_audio , '$gall_img', $push_roughcut , $push_newsbody , 
                             '$pushed_by' ,'$pushed_at' , $wp_post,
-                             $vimeo_videolong , $vimeo_videolazy , $vimeo_videoextra , $push_additional_file , $push_audio_bites
+                             $vimeo_regularfeed , $vimeo_readyversion , $vimeo_roughcut , $push_additional_file , $push_audio_bites
                             
                             )";    
 
@@ -1206,21 +1206,21 @@ if(!isset($location))
 
 
                 $row_content = mysqli_fetch_assoc($run_sql_content);
-                $videolong_full = $row_content['videolong'];
+                $regularfeed_full = $row_content['regular_feed'];
                 $thumbnail_full = $row_content['thumbnail'];
-                $videolazy_full = $row_content['videolazy'];                            
+                $readyversion_full = $row_content['ready_version'];                            
                 $newsbody_full = $row_content['newsbody'];
                 $additional_file_full = $row_content['additional_file'];
 
-                $vimeo_videolong_web = $row_content['vimeo_videolong'];
-                $vimeo_videolazy_web = $row_content['vimeo_videolazy'];
-                $vimeo_video_extra_web = $row_content['vimeo_video_extra'];
+                $vimeo_regularfeed_web = $row_content['vimeo_regular_feed'];
+                $vimeo_readyversion_web = $row_content['vimeo_ready_version'];
+                $vimeo_rough_cut_web = $row_content['vimeo_rough_cut'];
 
                 $photos = $row_content['photos'];
                 $photos_array = explode(',' , $photos);
 
-                $audio = $row_content['audio'];
-                $videoextra = $row_content['videoextra'];
+                $audio = $row_content['audio_complete_story'];
+                $roughcut = $row_content['rough_cut'];
 
                 $wp_id = $row_content['wp_post_id'];
 
@@ -1244,27 +1244,27 @@ if(!isset($location))
                 
                 if($video_type_nas == 'selfhost')
                 { 
-                    if($videolong_full != NULL)
+                    if($regularfeed_full != NULL)
                     {
-                        echo $videolong_full;                                     
-                        ftp_delete_rem($videolong_full,'file');                                
+                        echo $regularfeed_full;                                     
+                        ftp_delete_rem($regularfeed_full,'file');                                
                     }
 
-                    if($videolazy_full != NULL)
+                    if($readyversion_full != NULL)
                     {          
-                        echo $videolazy_full;               
-                        ftp_delete_rem($videolazy_full  ,'file');
+                        echo $readyversion_full;               
+                        ftp_delete_rem($readyversion_full  ,'file');
                     }
 
-                    if($videoextra != NULL)
+                    if($roughcut != NULL)
                     {
-                        // $file = explode("/" , $videoextra);
+                        // $file = explode("/" , $roughcut);
                         // $reverse_file = array_reverse($file);
                         // $last = $reverse_file[1];
                         // $end = $reverse_file[0];
                         // $path =  "$last/$end";
-                        echo $videoextra; 
-                        ftp_delete_rem($videoextra  ,'file');
+                        echo $roughcut; 
+                        ftp_delete_rem($roughcut  ,'file');
                     }
 
                 }
@@ -1274,21 +1274,21 @@ if(!isset($location))
                 if($video_type_nas == 'vimeo')
                 {
 
-                    if($vimeo_videolong_web != NULL)
+                    if($vimeo_regularfeed_web != NULL)
                     {
-                        $uri="/videos/$vimeo_videolong_web";
+                        $uri="/videos/$vimeo_regularfeed_web";
                         $response = $client->request($uri, [], 'DELETE');                           
                     }
 
-                    if($vimeo_videolazy_web != NULL)
+                    if($vimeo_readyversion_web != NULL)
                     {
-                        $uri="/videos/$vimeo_videolazy_web";
+                        $uri="/videos/$vimeo_readyversion_web";
                         $response = $client->request($uri, [], 'DELETE'); 
                     }
 
-                    if($vimeo_video_extra_web != NULL)
+                    if($vimeo_rough_cut_web != NULL)
                     {
-                        $uri="/videos/$vimeo_video_extra_web";
+                        $uri="/videos/$vimeo_rough_cut_web";
                         $response = $client->request($uri, [], 'DELETE'); 
                     }
 
@@ -1362,8 +1362,8 @@ if(!isset($location))
                     ftp_delete_rem($dir_del , 'folder');
                     
 
-                    $sql_del_web = "update web set videolong = null , videolazy = null ,
-                                    thumbnail = null, audio = null , photos = null , videoextra = null , newsbody = null where newsid = '$news_id' ";
+                    $sql_del_web = "update web set regular_feed = null , ready_version = null ,
+                                    thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , newsbody = null where newsid = '$news_id' ";
                     $run_sql_del_web= mysqli_query($connection, $sql_del_web);
 
 

@@ -547,3 +547,18 @@
 20210609_215737_10362_additional_files.zip Additional Files Pushed
 20210609_215737_10362_audio_bites_0.mp3 Audio Bites Pushed
 ------------------------------------------------------- 
+---------------2021-06-14 15:10:40 / Name Changed ---------------- 
+
+ Logged Date: 2021-06-14 15:24:37 
+20210614_151038_77706_body.docx News  Body Pushed
+20210614_151038_77706_regularfield.mp4 Regular Feed Pushed
+20210614_151038_77706_readyversion.mp4 Ready Version Pushed
+20210614_151038_77706_roughcut.mp4 Rough Cut Pushed
+20210614_151038_77706_thumbnail.png Thumbnail Pushed
+20210614_151038_77706_audio_complete_story.mp3 Audio Pushed
+20210614_151038_77706_gallery_0.jpg Gallery Photo Pushed
+20210614_151038_77706_gallery_1.jpg Gallery Photo Pushed
+20210614_151038_77706_additional_files.zip Additional Files Pushed
+20210614_151038_77706_audio_bites_0.mp3 Audio Bites Pushed
+20210614_151038_77706_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 

@@ -920,3 +920,19 @@ my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_gallery_0.p
 my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_gallery_1.jpg : Gallery-1 Uploaded
 my_data/news_data/2021-06-09/Test Now at night/20210609_215737_10362_audio_bites_0.mp3 : Audio Bites-0 Uploaded
 ------------------------------------------------------- 
+---------------2021-06-14 / Name Changed ---------------- 
+
+ Logged Date: 2021-06-14 15:10:38 
+2021-06-14 Folder Created
+2021-06-14/Name ChangedFolder Created
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_body.docx : News Body Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706__regularfield.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_readyversion.mp4 : Ready Version Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_roughcut.mp4 : Rough Cut Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 
