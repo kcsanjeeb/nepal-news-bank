@@ -73,6 +73,9 @@ if(isset($_POST['news_id']))
         $audio = $row_content['audio_complete_story'];
         $roughcut = $row_content['rough_cut'];
 
+        $audio_bites = $row_content['audio_bites'];
+        $audio_bites_array = explode(',' , $audio_bites);
+
         $wp_id = $row_content['wp_post_id'];
         
 
@@ -208,12 +211,23 @@ if(isset($_POST['news_id']))
                 ftp_delete_rem($additional_file_full , 'file');
             }
 
+            foreach($audio_bites_array as $ph)
+            {
+                // $file = explode("/" , $ph);
+                // $reverse_file = array_reverse($file);
+                // $last = $reverse_file[1];
+                // $end = $reverse_file[0];
+                // $path =  "$last/$end";
+                echo $ph; 
+                ftp_delete_rem($ph , 'file');
+            }  
+
             
             ftp_delete_rem($dir_del , 'folder');
             
 
             $sql_del_web = "update web set regular_feed = null , ready_version = null ,
-                            thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , newsbody = null where newsid = '$news_id' ";
+                            thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , newsbody = null , additional_files = null ,  audio_bites = null where newsid = '$news_id' ";
             $run_sql_del_web= mysqli_query($connection, $sql_del_web);
 
 

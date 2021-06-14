@@ -290,7 +290,7 @@ if(!isset($location))
                                 "video_category" => 173,
                                 "video_tag" => $tags,
     
-                                "acf_fields" => array('video_long_link'=>$videopath_sql  , 'video_thumbnail' => $thumbpath_sql
+                                "acf_fields" => array('regular_feed_link'=>$videopath_sql  , 'video_thumbnail' => $thumbpath_sql
                             ),
                                 
                                 "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
@@ -319,7 +319,7 @@ if(!isset($location))
                                 "video_category" => 173,
                                 "video_tag" => $tags,
     
-                                "acf_fields" => array('video_long_link'=>$videopath_sql  , 'video_thumbnail' => $thumbpath_sql
+                                "acf_fields" => array('regular_feed_link'=>$videopath_sql  , 'video_thumbnail' => $thumbpath_sql
                             ),
                                 
                                 "cmb2" => array('haru_video_metabox' => array('haru_video_server' => 'selfhost',
