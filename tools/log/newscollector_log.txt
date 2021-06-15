@@ -936,3 +936,19 @@ my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_gallery_1.jpg : 
 my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_audio_bites_0.mp3 : Audio Bites-0 Uploaded
 my_data/news_data/2021-06-14/Name Changed/20210614_151038_77706_audio_bites_1.mp3 : Audio Bites-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-06-15 / News Test sanjeeb ---------------- 
+
+ Logged Date: 2021-06-15 12:38:21 
+2021-06-15 Folder Created
+2021-06-15/News Test sanjeebFolder Created
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_body.docx : News Body Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_regularfeed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_readyversion.mp4 : Ready Version Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_roughcut.mp4 : Rough Cut Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 

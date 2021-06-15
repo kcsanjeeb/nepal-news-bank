@@ -577,3 +577,18 @@
 20210614_151038_77706_audio_bites_0.mp3 Audio Bites Pushed
 20210614_151038_77706_audio_bites_1.mp3 Audio Bites Pushed
 ------------------------------------------------------- 
+---------------2021-06-15 12:38:23 / News Test sanjeeb ---------------- 
+
+ Logged Date: 2021-06-15 12:39:57 
+20210615_123821_13097_body.docx News  Body Pushed
+20210615_123821_13097_regularfeed.mp4 Regular Feed Pushed
+20210615_123821_13097_readyversion.mp4 Ready Version Pushed
+20210615_123821_13097_roughcut.mp4 Rough Cut Pushed
+20210615_123821_13097_thumbnail.jpg Thumbnail Pushed
+20210615_123821_13097_gallery_0.jpg Gallery Photo Pushed
+20210615_123821_13097_gallery_1.jpg Gallery Photo Pushed
+20210615_123821_13097_gallery_2.jpg Gallery Photo Pushed
+20210615_123821_13097_additional_files.zip Additional Files Pushed
+20210615_123821_13097_audio_bites_0.mp3 Audio Bites Pushed
+20210615_123821_13097_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 
