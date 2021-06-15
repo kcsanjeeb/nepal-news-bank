@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 {
 
     $title = $_POST['title'];
-    $title = mysqli_real_escape_string($connection, $title);
+    // $title = mysqli_real_escape_string($connection, $title);
     $title = rtrim ( $title ) ;
     // $title = "Test Anjit";
     $tags = $_POST['newsTag'];
@@ -215,7 +215,7 @@ if(isset($_POST['submit']))
         foreach($_POST['video'] as $vid)
         {
        
-            $desc = mysqli_real_escape_string($connection, $vid['desc']);
+            $desc = $vid['desc'];
             $data_vids_row['desc'] = $desc ;
 
 
@@ -272,7 +272,7 @@ if(isset($_POST['submit']))
 
         }
 
-        $data_videos = json_encode($data_vids_rows);
+        $data_videos = json_encode($data_vids_rows , JSON_UNESCAPED_UNICODE);
 
         
     }
@@ -292,7 +292,7 @@ if(isset($_POST['submit']))
         {
             // $data_pics_row = array();
 
-            $desc = mysqli_real_escape_string($connection, $pic['desc']);
+            $desc =  $pic['desc'];
             $data_pics_row['desc'] = $desc ;
 
             $data_pics_row['photos'] = array();
@@ -361,7 +361,7 @@ if(isset($_POST['submit']))
 
         }
 
-        $data_pics = json_encode($data_pics_rows);
+        $data_pics = json_encode($data_pics_rows , JSON_UNESCAPED_UNICODE);
 
     }
 
@@ -464,7 +464,7 @@ if(isset($_POST['submit']))
 
         $data = json_encode($data_array);
 
-        echo $data ;
+        // echo $data ;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(                    
@@ -582,6 +582,10 @@ if(isset($_POST['submit']))
 
 
             }
+            $series = "'$series'";
+        }
+        else {
+            $series = 'null';
         }
 
         $connection= mysqli_connect($host , $user , $password , $db_name);
@@ -600,7 +604,7 @@ if(isset($_POST['submit']))
 
             $run_query = mysqli_query($connection , $query_new_archives);
 
-            echo $query_new_archives ;
+            // echo $query_new_archives ;
 
 
 

@@ -197,7 +197,7 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
                                             {
                                              
 
-                                                if( strpos( strtolower($category['name']), "archive" ) === false) {
+                                                if( strpos( strtolower($category['name']), "archive mix" ) === false) {
                                                    continue ;
                                                 }
 
