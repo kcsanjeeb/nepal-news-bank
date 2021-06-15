@@ -445,16 +445,14 @@ strong {
                                             d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                     </svg>
                                 </label>
-
-                                
-                                <input type="text" class="form-control col-lg-12 pl-0" placeholder="Enter Additional File Description" name="additional_files_description" id="input_box">
-                                
                                 <div id="additional_selectors">
                                     <div>
                                         <input type="file" id="" class="additional_folder" name="additional_files[]" multiple >
                                      </div>
                                 </div>
-                               
+                                <textarea type="text" class="form-control col-lg-12 pl-0 mt-2" placeholder="Description" name="additional_files_description" id="input_box" rows="5" ></textarea>
+                                
+                                
                             </div>
                             <!-- <button id="add_additional_folder" type="button">Add New</button> -->
 
@@ -637,29 +635,21 @@ strong {
 
                                 </label><br>
                                 <div class="row">
+                                    
                                     <div class="col-lg-6">
-                                        <strong>8.1 Audio Complete Description</strong> 
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" name="audio_desc" rows="3"></textarea>
-                                        <br>
-                                        <strong>8.2 Select Audio Complete Story</strong> 
+                                        <strong>8.1 Select Audio Complete Story</strong> 
+                                        <div class="mt-2">
                                         <input type="file" id="img" name="audio_complete_story">
+                                        </div>
+                                        <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_desc" rows="5" placeholder="Description"></textarea>
+                                        
                                     </div>
                                     <div class="col-lg-6">
-                                    <strong>8.3 Audio Bites Description</strong> 
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" name="audio_bites_desc"  rows="3"></textarea><br>
-                                        <strong>8.4 Select Audio Bites Files</strong>
-
-
-                                        <div id="audio_bites_selector" class="row">
-
-                                            <div> 
+                                        <strong>8.2 Select Audio Bites</strong>
+                                        <div id="audio_bites_selector" class="mt-2" >
                                                 <input type="file"  class="audio_bites" id="img" name="audio_bites[]">
-                                            </div>
-
                                         </div> 
-                                        
-
-                                        <!-- <button id="add_audio_bites" type="button">Add New</button> -->
+                                        <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_bites_desc"  rows="5" placeholder="Description"></textarea>
                                     </div>    
                                 </div>
                              
@@ -799,7 +789,7 @@ strong {
 
                                 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>13.1. District*</strong>
+                                        <label class="col-lg-12 p-0"><strong>12.1. District*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -832,7 +822,7 @@ strong {
 
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>13.2 Reporter*</strong>
+                                        <label class="col-lg-12 p-0"><strong>12.2 Reporter*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -862,7 +852,7 @@ strong {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>13.3 Camera Man*</strong>
+                                        <label class="col-lg-12 p-0"><strong>12.3 Camera Man*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -899,7 +889,7 @@ strong {
 
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>13.4 Created By*</strong>
+                                        <label class="col-lg-12 p-0"><strong>12.4 Created By*</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -930,7 +920,7 @@ strong {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>13.5 Video Type</strong>
+                                        <label class="col-lg-12 p-0"><strong>12.5 Video Type</strong>
                                             <svg data-toggle="popover" title="News Title"
                                                 data-content="Some content inside the popover"
                                                 xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -966,11 +956,11 @@ strong {
 
 
 
-                            <label class="col-lg-12 p-0 h5 text-info">Step 10.</label>
+                            <label class="col-lg-12 p-0 h5 text-info">Step 13.</label>
 
                             <button type="submit" class="btn btn-primary" name="submit">Collect news</button>
 
-                            <label class="col-lg-12 p-0 h5 text-info mt-2">Step 11.</label>
+                            <label class="col-lg-12 p-0 h5 text-info mt-2">Step 14.</label>
                             <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete collected
                                     news</button></span>
                             <span>please <strong><a href="./remotecopycreator.php">go to Remote Copy
