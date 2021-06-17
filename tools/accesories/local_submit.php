@@ -365,7 +365,7 @@ if(!isset($location))
                 if (in_array($file_type , $allowed_body_type  ))
                 {
                     // $body_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_body.".$fileActualExt_body;
-                    $body_path =$path_destination."_body.".$fileActualExt_body;
+                    $body_path =$path_destination."_newsfile.".$fileActualExt_body;
 
                     $body_tmp_name = $_FILES['descFile']['tmp_name'] ;
                     move_uploaded_file($body_tmp_name, $body_path) ; 
@@ -401,11 +401,11 @@ if(!isset($location))
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    $regular_filed_path =$path_destination."_regularfeed.".$fileActualExt_regularFeeddFile;
+                    $regular_filed_path =$path_destination."_regular_feed.".$fileActualExt_regularFeeddFile;
 
                     $regular_field_tmp_name = $_FILES['regularFeeddFile']['tmp_name'] ;
                     move_uploaded_file($regular_field_tmp_name, $regular_filed_path) ;  
-                    $regular_filed_path = $path_sql."_regularfeed.".$fileActualExt_regularFeeddFile;
+                    $regular_filed_path = $path_sql."_regular_feed.".$fileActualExt_regularFeeddFile;
 
                     $text = "$regular_filed_path : Regular Field Uploaded\n";
                     fwrite($myfile, $text);
@@ -474,11 +474,11 @@ if(!isset($location))
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    $readyversion_path =$path_destination."_readyversion.".$fileActualExt_readyVersion;
+                    $readyversion_path =$path_destination."_ready_version.".$fileActualExt_readyVersion;
 
                     $readyversion_tmp_path = $_FILES['readyVersionFile']['tmp_name'] ;
                     move_uploaded_file($readyversion_tmp_path, $readyversion_path) ;
-                    $readyVersion_path =$path_sql."_readyversion.".$fileActualExt_readyVersion;
+                    $readyVersion_path =$path_sql."_ready_version.".$fileActualExt_readyVersion;
 
                     $text = "$readyVersion_path : Ready Version Uploaded\n";
                     fwrite($myfile, $text);
@@ -511,11 +511,11 @@ if(!isset($location))
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    $roughCut_path =$path_destination."_roughcut.".$fileActualExt_roughcut;
+                    $roughCut_path =$path_destination."_rough_cut.".$fileActualExt_roughcut;
 
                     $roughcut_tmp_name = $_FILES['roughCutFile']['tmp_name'] ;
                     move_uploaded_file($roughcut_tmp_name, $roughCut_path) ;
-                    $roughCut_path =$path_sql."_roughcut.".$fileActualExt_roughcut;
+                    $roughCut_path =$path_sql."_rough_cut.".$fileActualExt_roughcut;
 
                     $text = "$roughCut_path : Rough Cut Uploaded\n";
                     fwrite($myfile, $text);
