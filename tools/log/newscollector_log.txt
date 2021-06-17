@@ -952,3 +952,94 @@ my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_gallery_2.j
 my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_audio_bites_0.mp3 : Audio Bites-0 Uploaded
 my_data/news_data/2021-06-15/News Test sanjeeb/20210615_123821_13097_audio_bites_1.mp3 : Audio Bites-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-06-17 / Dir System Updated ---------------- 
+
+ Logged Date: 2021-06-17 13:04:10 
+2021-06-17 Folder Created
+2021-06-17/Dir System UpdatedFolder Created
+/20210617_130410_41280_audio_complete_story.mp3 : Audio Complete Story Uploaded
+/20210617_130410_41280_body.docx : News Body Uploaded
+/20210617_130410_41280_regularfeed.mp4 : Regular Field Uploaded
+/20210617_130410_41280_thumbnail.jpg : Thumbnail Uploaded
+/20210617_130410_41280_readyversion.mp4 : Ready Version Uploaded
+/20210617_130410_41280_roughcut.mp4 : Rough Cut Uploaded
+/gallery/20210617_130410_41280_gallery_0.png : Gallery-0 Uploaded
+/gallery/20210617_130410_41280_gallery_1.png : Gallery-1 Uploaded
+/gallery/20210617_130410_41280_gallery_2.jpg : Gallery-2 Uploaded
+/gallery/20210617_130410_41280_gallery_3.jpg : Gallery-3 Uploaded
+/audio_bites/20210617_130410_41280_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+/audio_bites/20210617_130410_41280_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+/audio_bites/20210617_130410_41280_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+------------------------------------------------------- 
+---------------2021-06-17 / Updated Folder ---------------- 
+
+ Logged Date: 2021-06-17 13:08:55 
+Updated Folder Folder Created
+my_data/news_data/2021-06-17/Updated Folder/20210617_130855_2202_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_130855_2202_body.docx : News Body Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_130855_2202_regularfeed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_130855_2202_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_130855_2202_readyversion.mp4 : Ready Version Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_130855_2202_roughcut.mp4 : Rough Cut Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_130855_2202_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_130855_2202_gallery_1.png : Gallery-1 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_130855_2202_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_130855_2202_gallery_3.jpg : Gallery-3 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_130855_2202_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_130855_2202_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_130855_2202_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+------------------------------------------------------- 
+---------------2021-06-17 / Updated Folder ---------------- 
+
+ Logged Date: 2021-06-17 13:11:18 
+Updated Folder Folder Created
+my_data/news_data/2021-06-17/Updated Folder/20210617_131118_41882_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131118_41882_body.docx : News Body Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131118_41882_regularfeed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131118_41882_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131118_41882_readyversion.mp4 : Ready Version Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131118_41882_roughcut.mp4 : Rough Cut Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131118_41882_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131118_41882_gallery_1.png : Gallery-1 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131118_41882_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131118_41882_gallery_3.jpg : Gallery-3 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131118_41882_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131118_41882_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131118_41882_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+------------------------------------------------------- 
+---------------2021-06-17 / Updated Folder ---------------- 
+
+ Logged Date: 2021-06-17 13:13:21 
+Updated Folder Folder Created
+my_data/news_data/2021-06-17/Updated Folder/20210617_131321_73223_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131321_73223_body.docx : News Body Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131321_73223_regularfeed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131321_73223_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131321_73223_readyversion.mp4 : Ready Version Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131321_73223_roughcut.mp4 : Rough Cut Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131321_73223_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131321_73223_gallery_1.png : Gallery-1 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131321_73223_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131321_73223_gallery_3.jpg : Gallery-3 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131321_73223_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131321_73223_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131321_73223_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+------------------------------------------------------- 
+---------------2021-06-17 / Updated Folder ---------------- 
+
+ Logged Date: 2021-06-17 13:14:10 
+Updated Folder Folder Created
+my_data/news_data/2021-06-17/Updated Folder/20210617_131410_66018_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131410_66018_body.docx : News Body Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131410_66018_regularfeed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131410_66018_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131410_66018_readyversion.mp4 : Ready Version Uploaded
+my_data/news_data/2021-06-17/Updated Folder/20210617_131410_66018_roughcut.mp4 : Rough Cut Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131410_66018_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131410_66018_gallery_1.png : Gallery-1 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131410_66018_gallery_2.jpg : Gallery-2 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/gallery/20210617_131410_66018_gallery_3.jpg : Gallery-3 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131410_66018_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131410_66018_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+my_data/news_data/2021-06-17/Updated Folder/audio_bites/20210617_131410_66018_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+------------------------------------------------------- 

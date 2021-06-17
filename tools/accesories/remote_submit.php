@@ -254,13 +254,21 @@ if(!isset($location))
                 if(isset($_POST['gall_img']))
                 {
                     $gall_img = $_POST['gall_img'];
+                    $count_gall_push = 0 ;
                 
                     foreach($gall_img as $gal_img_arr)
                     {
+                        if($count_gall_push == 0)
+                        {
+                            ftp_mkdir($ftp, "/".$news_path."/".$local_published_date."/".$dir_byline."/gallery");
+                        }
                         if(file_exists('../'.$gal_img_arr))
                         {
+
                             $sourceName = explode("/" ,$gal_img_arr ) ;
                             $sourceName = end($sourceName );
+                            $sourceName = "gallery/".$sourceName ;
+
 
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$gal_img_arr))
 
@@ -287,6 +295,7 @@ if(!isset($location))
 
                             
                         }
+                        $count_gall_push++ ;
                     }
     
                 }
@@ -295,13 +304,20 @@ if(!isset($location))
                 if(isset($_POST['audio_bites']))
                 {
                     $audio_bites = $_POST['audio_bites'];
+                    $count_ab_push = 0 ;
                 
                     foreach($audio_bites as $ab)
                     {
+                        if($count_ab_push == 0)
+                        {
+                            ftp_mkdir($ftp, "/".$news_path."/".$local_published_date."/".$dir_byline."/audio_bites");
+                        }
+
                         if(file_exists('../'.$ab))
                         {
                             $sourceName = explode("/" ,$ab ) ;
                             $sourceName = end($sourceName );
+                            $sourceName = "audio_bites/".$sourceName;
 
 
                             array_push($files_to_push , $sourceName );
@@ -309,6 +325,7 @@ if(!isset($location))
 
                             
                         }
+                        $count_ab_push++;
                     }
     
                 }

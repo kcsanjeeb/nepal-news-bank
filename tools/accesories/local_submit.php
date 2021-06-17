@@ -295,15 +295,21 @@ if(!isset($location))
         
             if($isInterview == 1 )
             {
-                $path_destination ="../".$interview_path."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id;
-                $path_sql = $interview_path."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id;
+                $file_name_nas = $date_file_name."_".$time_file_name."_".$news_id ;
+                $file_path_nas = $interview_path."/".$byLine_directory_clean ;
+
+                $path_destination ="../".$file_path_nas."/".$file_name_nas;
+                $path_sql = $file_path_nas."/".$file_name_nas;
 
 
             }
             else
             {
-                $path_destination ="../".$news_path."/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id;
-                $path_sql =$news_path."/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id;
+                $file_name_nas = $date_file_name."_".$time_file_name."_".$news_id;
+                $file_path_nas = $news_path."/".$newsdate."/".$byLine_directory_clean ;
+
+                $path_destination ="../".$file_path_nas."/".$file_name_nas;
+                $path_sql =$file_path_nas."/".$file_name_nas;
 
             }
 
@@ -551,15 +557,23 @@ if(!isset($location))
                 $allowed = array('image'  );
 
                 if (in_array($file_type_explode[0] , $allowed ))
-                {                    
+                { 
+                    
+                    if($counter == 0)
+                    {
+                        mkdir('../'.$file_path_nas.'/gallery', 0777 , true);                        
+                        chmod('../'.$file_path_nas.'/gallery', 0777);
+                    }
+
+
                     $fileTmpName_photo = $_FILES['galleryImage']['tmp_name'][$p];  
                     $fileActualExt_photo = strtolower(end($fileExt_photo));                     
                     // $gallery_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_gallery_".$counter.".".$fileActualExt_photo;
-                    $gallery_path =$path_destination."_gallery_".$counter.".".$fileActualExt_photo;
+                    $gallery_path ="../".$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
 
                     move_uploaded_file($fileTmpName_photo, $gallery_path) ;
                     // $gallery_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_gallery_".$counter.".".$fileActualExt_photo;
-                    $gallery_path =$path_sql."_gallery_".$counter.".".$fileActualExt_photo;
+                    $gallery_path =$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
 
                     array_push($gallery_arr , $gallery_path);    
                     
@@ -680,7 +694,9 @@ if(!isset($location))
             $audio_bites_arr = array();
             foreach ($_FILES["audio_bites"]["name"] as $p => $name)
             {      
-                if(empty($_FILES['audio_bites']['name'][$p])) continue ;   
+                if(empty($_FILES['audio_bites']['name'][$p])) continue ;  
+                
+               
                 
                 $fileName_photo= $_FILES['audio_bites']['name'][$p];
                 $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
@@ -689,20 +705,27 @@ if(!isset($location))
                 $fileType_photo = $_FILES['audio_bites']['type'][$p];            
 
                 $fileExt_photo = explode('.' , $fileName_photo);
-                $fileActualExt_photo = strtolower(end($fileExt_photo));
+                $file_actual_ext_ab = strtolower(end($fileExt_photo));
 
                 $file_type_explode = explode("/" , $fileType_photo);
                 $allowed = array('audio'  );
 
                 if (in_array($file_type_explode[0] , $allowed ))
-                {                    
-                    $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
-                    $fileActualExt_photo = strtolower(end($fileExt_photo));  
+                {     
+                    if($counter == 0)
+                    {
+                        mkdir('../'.$file_path_nas.'/audio_bites', 0777 , true);                        
+                        chmod('../'.$file_path_nas.'/audio_bites', 0777);
+                    }
 
-                    $audio_bites_path =$path_destination."_audio_bites_".$counter.".".$fileActualExt_photo;
+                    $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
+                    $file_actual_ext_ab = strtolower(end($fileExt_photo));  
+
+                    
+                    $audio_bites_path ="../".$file_path_nas."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
 
                     move_uploaded_file($fileTmpName_photo, $audio_bites_path) ;
-                    $audio_bites_path =$path_sql."_audio_bites_".$counter.".".$fileActualExt_photo;
+                    $audio_bites_path =$file_path_nas."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
 
                     array_push($audio_bites_arr , $audio_bites_path);    
                     
