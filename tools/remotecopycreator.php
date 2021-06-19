@@ -277,7 +277,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         // $preview_full = $row_content['previewgif'];
                                                         $thumbnail_full = $row_content['thumbnail'];
                                                         $readyversion_full = $row_content['ready_version'];                            
-                                                        $newsbody_full = $row_content['newsbody'];
+                                                        $newsbody_full = $row_content['news_file'];
                                                         $additional_full = $row_content['additional_file'];
 
 
@@ -330,7 +330,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     // $preview_full_web = $row_content_web['previewgif'];
                                                     $thumbnail_full_web = $row_content_web['thumbnail'];
                                                     $readyversion_full_web = $row_content_web['ready_version'];                            
-                                                    $newsbody_full_web = $row_content_web['newsbody'];
+                                                    $newsbody_full_web = $row_content_web['news_file'];
                                                     $audio_full_web = $row_content_web['audio_complete_story'];
                                                     $roughcut_full_web = $row_content_web['rough_cut'];
 
@@ -499,7 +499,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     {
 
                                                         $input = '';
-                                                        $value_input = 'newsbody';
+                                                        $value_input = 'news_file';
                                                         $message = '<span>'.$newsbody.'</span><span class="float-right">
                                                         </span>
                                                         ';

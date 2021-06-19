@@ -64,7 +64,7 @@ if(isset($_POST['news_id']))
         $regularfeed_full = $row_content['regular_feed'];
         $thumbnail_full = $row_content['thumbnail'];
         $readyversion_full = $row_content['ready_version'];                            
-        $newsbody_full = $row_content['newsbody'];
+        $newsbody_full = $row_content['news_file'];
         $additional_file_full = $row_content['additional_file'];
 
         $photos = $row_content['photos'];
@@ -227,7 +227,7 @@ if(isset($_POST['news_id']))
             
 
             $sql_del_web = "update web set regular_feed = null , ready_version = null ,
-                            thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , newsbody = null , additional_files = null ,  audio_bites = null where newsid = '$news_id' ";
+                            thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , news_file = null , additional_files = null ,  audio_bites = null where newsid = '$news_id' ";
             $run_sql_del_web= mysqli_query($connection, $sql_del_web);
 
 
@@ -267,7 +267,7 @@ if( isset($_POST['news_id']) && isset($_POST['wp_id']))
             $preview_full = $row_content['previewgif'];
             $thumbnail_full = $row_content['thumbnail'];
             $readyversion_full = $row_content['ready_version'];                            
-            $newsbody_full = $row_content['newsbody'];
+            $newsbody_full = $row_content['news_file'];
             $wp_media_id = $row_content['wp_media_id'];
 
             $photos = $row_content['photos'];

@@ -232,7 +232,7 @@ if(!isset($location))
                         
                         chmod('../'.$interview_path.'/'.$byLine_directory_clean, 0777);
                      
-                        $text = "$byLine_directory_clean Folder Created\n";
+                        $text = "$byLine_directory_clean : Folder Created\n";
                         fwrite($myfile, $text);
 
                         $bonus_media_path = '../'.$interview_path.'/'.$byLine_directory_clean;
@@ -255,9 +255,9 @@ if(!isset($location))
                         
                         chmod('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777);
                         
-                        $text = "$newsdate Folder Created\n";
+                        $text = "$newsdate : Folder Created\n";
                         fwrite($myfile, $text);
-                        $text = $newsdate."/".$byLine_directory_clean."Folder Created\n";
+                        $text = $newsdate."/".$byLine_directory_clean." : Folder Created\n";
                         fwrite($myfile, $text);
 
                         $bonus_media_path = '../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean;
@@ -365,13 +365,13 @@ if(!isset($location))
                 if (in_array($file_type , $allowed_body_type  ))
                 {
                     // $body_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_body.".$fileActualExt_body;
-                    $body_path =$path_destination."_newsfile.".$fileActualExt_body;
+                    $body_path =$path_destination."_news_file.".$fileActualExt_body;
 
                     $body_tmp_name = $_FILES['descFile']['tmp_name'] ;
                     move_uploaded_file($body_tmp_name, $body_path) ; 
                     // $body_path = "news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_body.".$fileActualExt_body;
-                    $body_path = $path_sql."_body.".$fileActualExt_body;
-                    $text = "$body_path : News Body Uploaded\n";
+                    $body_path = $path_sql."_news_file.".$fileActualExt_body;
+                    $text = "$body_path : News File Uploaded\n";
                     fwrite($myfile, $text);
 
                     $body_path = "'$body_path'";
@@ -764,7 +764,7 @@ if(!isset($location))
                 newsid , created_date ,  local_published_date ,
                 byline ,  category_list ,                                       
                 regular_feed,  ready_version  ,thumbnail ,
-                audio_complete_story ,  photos ,  newsbody ,  rough_cut ,
+                audio_complete_story ,  photos ,  news_file ,  rough_cut ,
                 tag_list , uploaded_by , reporter ,
                 camera_man , district , video_type, series ,  additional_file , additional_files_description,
                 audio_description , audio_bites_description , audio_bites

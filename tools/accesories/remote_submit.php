@@ -55,7 +55,7 @@ if(!isset($location))
                 $readyversion_full = $row_content['ready_version'];                        
                 $audio_full = $row_content['audio_complete_story'];
                 $roughcut_full = $row_content['rough_cut'];       
-                $newsbody_full = $row_content['newsbody'];
+                $newsbody_full = $row_content['news_file'];
                 $date_full = $row_content['created_date'];
                 $category_full = $row_content['category_list'];
                 $tags_full = $row_content['tag_list'];
@@ -91,7 +91,7 @@ if(!isset($location))
                     $regularfeed_full_web = $row_content_web['regular_feed'];
                     $thumbnail_full_web = $row_content_web['thumbnail'];
                     $readyversion_full_web = $row_content_web['ready_version'];                            
-                    $newsbody_full_web = $row_content_web['newsbody'];
+                    $newsbody_full_web = $row_content_web['news_file'];
                     $audio_full_web = $row_content_web['audio_complete_story'];
                     $roughcut_full_web = $row_content_web['rough_cut'];
 
@@ -340,7 +340,7 @@ if(!isset($location))
 
                 
 
-                    if(in_array('newsbody' ,$file_type ))
+                    if(in_array('news_file' ,$file_type ))
                     {
                         if(file_exists('../'.$newsbody_full))
                         {
@@ -1116,7 +1116,7 @@ if(!isset($location))
 
                     $query_new_news_update = "update  web set 
                        regular_feed = $push_regularFeed, ready_version = $push_readyVesion  ,thumbnail = $push_thumbnail ,
-                       audio_complete_story = $push_audio  , photos = '$gall_img' , rough_cut = $push_roughcut, newsbody = $push_newsbody,  
+                       audio_complete_story = $push_audio  , photos = '$gall_img' , rough_cut = $push_roughcut, news_file = $push_newsbody,  
                          pushed_by = '$pushed_by' ,   pushed_date = '$pushed_at' ,
                          vimeo_regular_feed = $vimeo_regularfeed , vimeo_ready_version = $vimeo_readyversion , vimeo_rough_cut = $vimeo_roughcut, additional_file = $push_additional_file,
                          audio_bites = $push_audio_bites
@@ -1137,7 +1137,7 @@ if(!isset($location))
                     $wp_post = "NULL";
                     $query_new_news_push = "insert into web(
                         newsid ,  regular_feed , ready_version ,thumbnail ,
-                        audio_complete_story   , photos , rough_cut, newsbody ,  
+                        audio_complete_story   , photos , rough_cut, news_file ,  
                          pushed_by ,   pushed_date , wp_post_id,
                          vimeo_regular_feed , vimeo_ready_version , vimeo_rough_cut , additional_file , audio_bites
                         ) 
@@ -1226,7 +1226,7 @@ if(!isset($location))
                 $regularfeed_full = $row_content['regular_feed'];
                 $thumbnail_full = $row_content['thumbnail'];
                 $readyversion_full = $row_content['ready_version'];                            
-                $newsbody_full = $row_content['newsbody'];
+                $newsbody_full = $row_content['news_file'];
                 $additional_file_full = $row_content['additional_file'];
 
                 $vimeo_regularfeed_web = $row_content['vimeo_regular_feed'];
@@ -1380,7 +1380,7 @@ if(!isset($location))
                     
 
                     $sql_del_web = "update web set regular_feed = null , ready_version = null ,
-                                    thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , newsbody = null where newsid = '$news_id' ";
+                                    thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , news_file = null where newsid = '$news_id' ";
                     $run_sql_del_web= mysqli_query($connection, $sql_del_web);
 
 

@@ -33,7 +33,7 @@ if(isset($_POST['submit_push']))
             $readyversion_full = $row_content['ready_version'];                        
             $audio_full = $row_content['audio_complete_story'];
             $roughcut_full = $row_content['rough_cut'];       
-            $newsbody_full = $row_content['newsbody'];
+            $newsbody_full = $row_content['news_file'];
             $date_full = $row_content['created_date'];
             $category_full = $row_content['category_list'];
             $tags_full = $row_content['tag_list'];
@@ -76,7 +76,7 @@ if(isset($_POST['submit_push']))
                         $regularfeed_full_web = $row_content_web['regular_feed'];
                         $thumbnail_full_web = $row_content_web['thumbnail'];
                         $readyversion_full_web = $row_content_web['ready_version'];                            
-                        $newsbody_full_web = $row_content_web['newsbody'];
+                        $newsbody_full_web = $row_content_web['news_file'];
 
                         $additional_file_web = $row_content_web['additional_file'];
 

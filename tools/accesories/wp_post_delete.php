@@ -32,7 +32,7 @@ if(!isset($location))
                 $preview_full = $row_content['previewgif'];
                 $thumbnail_full = $row_content['thumbnail'];
                 $readyversion_full = $row_content['ready_version'];                            
-                $newsbody_full = $row_content['newsbody'];
+                $newsbody_full = $row_content['news_file'];
                 $wp_media_id = $row_content['wp_media_id'];
 
                 $photos = $row_content['photos'];
