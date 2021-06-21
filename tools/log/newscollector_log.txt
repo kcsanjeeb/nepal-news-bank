@@ -1,0 +1,374 @@
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 15:14:30 
+2021-06-20 : Folder Created
+2021-06-20/Test News Upadte : Folder Created
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_news_file.docx : News File Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_regular_feed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_thumbnail.png : Thumbnail Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_ready_version.mp4 : Ready Version Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/gallery/20210620_151430_44180_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/gallery/20210620_151430_44180_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/gallery/20210620_151430_44180_gallery_2.jpg : Gallery-2 Uploaded
+../my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_additional_files.zip Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/audio_bites/20210620_151430_44180_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-20/Test News Upadte/audio_bites/20210620_151430_44180_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 15:53:52 
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_thumbnail.jpg : Thumbnail Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 17:08:37 
+Test Normal News Folder Created
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_news_file.docx : News File Uploaded
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_regular_feed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_ready_version.mp4 : Ready Version Uploaded
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_rough_cut.mp4 : Rough Cut Uploaded
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_0.png : Gallery-0 Uploaded
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_1.jpg : Gallery-1 Uploaded
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_2.jpg : Gallery-2 Uploaded
+../my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_additional_files.zip Uploaded
+my_data/news_data/2021-06-20/Test Normal News/audio_bites/20210620_170837_35689_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-20/Test Normal News/audio_bites/20210620_170837_35689_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+my_data/news_data/2021-06-20/Test Normal News/audio_bites/20210620_170837_35689_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:07:30 
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_thumbnail.jpg : Thumbnail Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:15:41 
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_thumbnail.jpg : Thumbnail Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:23:55 
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:25:33 
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:26:28 
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:27:41 
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:28:47 
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:39:36 
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_rough_cut.mp4 : Rough Cut Uploaded
+------------------------------------------------------- 
+---------------2021-06-20 / Test News Upadte ---------------- 
+
+ Logged Date: 2021-06-20 18:41:59 
+my_data/news_data/2021-06-20/Test News Upadte/20210620_151430_44180_regular_feed.mp4 : Regular Feed Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:03:26 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:09:21 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:12:58 
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:13:39 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:15:44 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:17:24 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:22:11 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:31:15 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:35:08 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.png : Thumbnail Replaced
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:37:59 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.png : Thumbnail Replaced
+20210620_170837_35689_thumbnail.png : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:43:11 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.png : Thumbnail Replaced
+20210620_170837_35689_thumbnail.png : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:45:49 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 19:52:51 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+
+ Key  || update nas set local_published_date = '2021-06-20' , byline = 'Test Normal News' , category_list = '176,124' , tag_list = '192,193',
+                                uploaded_by ='Ram',  reporter = 'Reporter 1' , camera_man = 'shiva pangeni', district = 'Kathmandu', 
+                                video_type = 'selfhost' , series = NULL ,additional_files_description =  'अघिल्लो दिनको तुलनामा यो करिब २.१३ प्रतिशतले घटेको हो । सो दिन बजार खुलेदेखि नै बजार घट्न थालेको हो । यो क्रम अन्त्यसम्म चलिरहयो । कारोबारमा आएका १३ उपसमूहमध्ये सबैको परिसूचक घटेपछि समग्र नेप्सेमा दबाब परेको हो' ,
+                                audio_description =  'अघिल्लो दिनको तुलनामा यो करिब २.१३ प्रतिशतले घटेको हो । सो दिन बजार खुलेदेखि नै बजार घट्न थालेको हो । यो क्रम अन्त्यसम्म चलिरहयो । कारोबारमा आएका १३ उपसमूहमध्ये सबैको परिसूचक घटेपछि समग्र नेप्सेमा दबाब परेको हो' , audio_bites_description =  'अघिल्लो दिनको तुलनामा यो करिब २.१३ प्रतिशतले घटेको हो । सो दिन बजार खुलेदेखि नै बजार घट्न थालेको हो । यो क्रम अन्त्यसम्म चलिरहयो । कारोबारमा आएका १३ उपसमूहमध्ये सबैको परिसूचक घटेपछि समग्र नेप्सेमा दबाब परेको हो' where  newsid = '35689'; 20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:14:39 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:36:33 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:37:56 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:39:11 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:41:09 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:43:54 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:45:22 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.png : Thumbnail Replaced
+20210620_170837_35689_thumbnail.png : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:46:56 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.png : Thumbnail Replaced
+20210620_170837_35689_thumbnail.png : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 20:57:32 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.png : Thumbnail Replaced
+20210620_170837_35689_thumbnail.png : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 21:00:03 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 21:02:44 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.jpg : Thumbnail Replaced
+20210620_170837_35689_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 21:04:32 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_thumbnail.png : Thumbnail Replaced
+20210620_170837_35689_thumbnail.png : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 21:10:43 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_regular_feed.mp4 : Regular Feed Replaced
+20210620_170837_35689_regular_feed.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 21:14:03 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_regular_feed.mp4 : Regular Feed Replaced
+20210620_170837_35689_regular_feed.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 21:15:49 
+my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_news_file.docx : News File Replaced
+20210620_170837_35689_news_file.docx : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 22:30:43 
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_3.jpg : Gallery-3 Uploaded
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_4.jpg : Gallery-4 Uploaded
+gallery/20210620_170837_35689_gallery_3.jpg : Succesfully Pushed
+gallery/20210620_170837_35689_gallery_4.jpg : Succesfully Pushed
+gallery/20210620_170837_35689_gallery_3.jpg : Succesfully Pushed
+gallery/20210620_170837_35689_gallery_4.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 22:33:18 
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_4.jpg : Gallery-4 Uploaded
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_5.jpg : Gallery-5 Uploaded
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 22:40:03 
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_6.jpg : Gallery-6 Uploaded
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-20 22:50:56 
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_7.jpg : Gallery-7 Uploaded
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 08:52:53 
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_8.jpg : Gallery-8 Uploaded
+gallery/20210620_170837_35689_gallery_8.jpg : Succesfully Pushed
+gallery/20210620_170837_35689_gallery_8.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 08:59:03 
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_9.jpg : Gallery-9 Uploaded
+gallery/20210620_170837_35689_gallery_9.jpg : Succesfully Pushed
+gallery/20210620_170837_35689_gallery_9.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 09:14:13 
+my_data/news_data/2021-06-20/Test Normal News/gallery/20210620_170837_35689_gallery_10.jpg : Gallery-10 Uploaded
+gallery/20210620_170837_35689_gallery_10.jpg : Succesfully Pushed
+gallery/20210620_170837_35689_gallery_10.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 10:32:01 
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 10:42:11 
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 10:45:22 
+../my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_additional_files.zip Uploaded
+20210620_170837_35689_additional_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 10:47:53 
+../my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_additional_files.zip Updated
+20210620_170837_35689_additional_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 10:52:11 
+../my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_additional_files.zip Updated
+20210620_170837_35689_additional_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 10:57:05 
+../my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_additional_files.zip Updated
+20210620_170837_35689_additional_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 11:00:19 
+../my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_additional_files.zip Updated
+20210620_170837_35689_additional_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 11:02:36 
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 12:54:36 
+../my_data/news_data/2021-06-20/Test Normal News/20210620_170837_35689_additional_files.zip Updated
+20210620_170837_35689_additional_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 13:52:53 
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 14:05:07 
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 14:05:48 
+my_data/news_data/2021-06-20/Test Normal News/audio_bites/20210620_170837_35689_audio_bites_3.mp3 : Audio Bites-3 Uploaded
+ Uploaded
+
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 14:16:36 
+my_data/news_data/2021-06-20/Test Normal News/audio_bites/20210620_170837_35689_audio_bites_3.mp3 : Audio Bites-3 Uploaded
+ Uploaded
+audio_bites/20210620_170837_35689_audio_bites_3.mp3 : Succesfully Pushed
+audio_bites/20210620_170837_35689_audio_bites_3.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 14:18:50 
+my_data/news_data/2021-06-20/Test Normal News/audio_bites/20210620_170837_35689_audio_bites_4.mp3 : Audio Bites-4 Uploaded
+my_data/news_data/2021-06-20/Test Normal News/audio_bites/20210620_170837_35689_audio_bites_5.mp3 : Audio Bites-5 Uploaded
+ Uploaded
+audio_bites/20210620_170837_35689_audio_bites_4.mp3 : Succesfully Pushed
+audio_bites/20210620_170837_35689_audio_bites_5.mp3 : Succesfully Pushed
+audio_bites/20210620_170837_35689_audio_bites_4.mp3 : Succesfully Pushed
+audio_bites/20210620_170837_35689_audio_bites_5.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-06-20 / Test Normal News ---------------- 
+
+ Logged Date: 2021-06-21 14:50:17 
+------------------------------------------------------- 

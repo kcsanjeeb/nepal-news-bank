@@ -596,8 +596,8 @@ if(isset($_POST['submit']))
             wp_id , wp_media_id
             ) 
             VALUES 
-            ('$archive_id',  '$created_at_db' , '$title'  , '$series',
-                '$tags' , $thumbnail_path_remote_sql , '$newsCategories' , '$data_videos' , '$data_pics' , '$created_at',
+            ('$archive_id',  '$created_at_db' , '$title'  , $series,
+                $tags , $thumbnail_path_remote_sql , $newsCategories , '$data_videos' , '$data_pics' , '$created_at',
                 $post_new_id_sql,$featured_media_id_sql 
                 
                 )";    

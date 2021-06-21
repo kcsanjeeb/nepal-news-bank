@@ -201,7 +201,8 @@ if(!isset($location))
             }
 
 
-
+            $created_at_value = date('Y-m-d H:i:s');
+            $created_at = "'$created_at_value'";
 
 
 
@@ -284,13 +285,13 @@ if(!isset($location))
             }
 
             $date_file_name = str_replace("-","",$newsdate);
-            $time_file_name = date('H:i:s');
+            // $time_file_name = date('H:i:s');
+            $time_file_name = end(explode(" " , $created_at_value));
             $time_file_name = str_replace(":","",$time_file_name);
 
             $news_id =  getId('nas');
         
 
-            $video_type_i = $_POST['video_type'] ;
 
         
             if($isInterview == 1 )
@@ -635,51 +636,71 @@ if(!isset($location))
 
 
         
-        if(!empty($_FILES['additional_files']['name'][0]))
+        // if(!empty($_FILES['additional_files']['name'][0]))
+        if(count($_FILES['additional_files']['name']) > 0)
         {
-            $zip = new ZipArchive(); // Load zip library 
-            $zip_name =$path_destination."_additional_files.zip";
-            $additional_path_sql = $path_sql."_additional_files.zip"; 
-            $additional_path_sql = "'$additional_path_sql'";
 
-            /*
-                 1. create zip folder -- done
-                 2. add all files to zip -- done
-                 3. store zip -- done
-                 4. add attribute in nas db
-                 5  store path in nas db
-            */ 
-            if($zip->open($zip_name, ZIPARCHIVE::CREATE)===TRUE)
-            { 
-                $counter_file_zip = 0;
-                foreach ($_FILES["additional_files"]["name"] as $p => $name)
-                { 
-                    if(empty($_FILES['additional_files']['name'][$p])) continue ; 
-                    
-                    $fileName= $_FILES['additional_files']['name'][$p];
-                    $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];  
-                    $fileSize = $_FILES['additional_files']['size'][$p];
-                    $fileType = $_FILES['additional_files']['type'][$p]; 
-
-
-                    $fileExt_exp = explode('.' , $fileName);
-                    $fileActualExt = strtolower(end($fileExt_exp));
-                               
-
-                    $fileExt = explode('.' , $fileName);    
-                    
-                    $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_additional_file_".$counter_file_zip.".".$fileActualExt;
-
-                        
-                        $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];                  
-                        $zip->addFile($fileTmpName , $new_zip_file_name);
-                        $counter_file_zip++ ;
-                }
             
+            foreach ($_FILES["additional_files"]["name"] as $p => $name)
+            {
+                if(empty($_FILES['additional_files']['name'][$p])) continue ; 
+
+                $create_zip = 1;
 
             }
 
-            $zip->close();
+            if($create_zip)
+            {
+
+                $zip = new ZipArchive(); // Load zip library 
+                $zip_name =$path_destination."_additional_files.zip";
+                $additional_path_sql = $path_sql."_additional_files.zip"; 
+                $additional_path_sql = "'$additional_path_sql'";
+
+                /*
+                    1. create zip folder -- done
+                    2. add all files to zip -- done
+                    3. store zip -- done
+                    4. add attribute in nas db
+                    5  store path in nas db
+                */ 
+
+                if($zip->open($zip_name, ZIPARCHIVE::CREATE)===TRUE)
+                { 
+                    $counter_file_zip = 0;
+                    foreach ($_FILES["additional_files"]["name"] as $p => $name)
+                    { 
+                        if(empty($_FILES['additional_files']['name'][$p])) continue ; 
+                        
+                        $fileName= $_FILES['additional_files']['name'][$p];
+                        $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];  
+                        $fileSize = $_FILES['additional_files']['size'][$p];
+                        $fileType = $_FILES['additional_files']['type'][$p]; 
+
+
+                        $fileExt_exp = explode('.' , $fileName);
+                        $fileActualExt = strtolower(end($fileExt_exp));
+                                
+
+                        $fileExt = explode('.' , $fileName);    
+                        
+                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_additional_file_".$counter_file_zip.".".$fileActualExt;
+
+                            
+                            $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];                  
+                            $zip->addFile($fileTmpName , $new_zip_file_name);
+                            $counter_file_zip++ ;
+                    }
+                
+
+                }
+
+                $zip->close();
+                $text = "$zip_name Uploaded\n";
+                fwrite($myfile, $text);
+
+
+            }
         
         
         }
@@ -753,8 +774,7 @@ if(!isset($location))
 
 
 
-            $created_at = date('Y-m-d H:i:s');
-            $created_at = "'$created_at'";
+          
 
             $newsdate = "'$newsdate'";
             $news_id = "'$news_id'";

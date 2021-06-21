@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "global/timezone.php";
@@ -8,11 +8,29 @@ include "global/district_data.php";
 include "global/cameraman_data.php";
 include "global/createdby_data.php";
 include "global/reporter_data.php";
+include "accesories/connection.php";
 
 
-$selected_date = date("Y-m-d");
 
+if(isset($_GET['id']))
+{
+    $news_id =  mysqli_real_escape_string($connection, $_GET['id']);
+    $query_fetch_news = "select * from nas where newsid = '$news_id'";
+    $run_sql_fetch_news= mysqli_query($connection, $query_fetch_news);
+    $num_rows_news = mysqli_num_rows($run_sql_fetch_news);
+    
+    if($num_rows_news == '1')
+    {
+        $news_row_details = mysqli_fetch_assoc($run_sql_fetch_news);
+        $access_id = 1 ;
+    }
+ 
+}
 
+if(!$access_id)
+{
+    header("Location: login.php");
+}
 
 
  // fetch tags id
@@ -132,6 +150,15 @@ foreach($result as $res)
 
 
 
+
+
+
+
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +170,7 @@ foreach($result as $res)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <title>News Collector</title>
+    <title>News Edit</title>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -282,17 +309,17 @@ strong {
             <div class="col-lg-12">
                 <div class="card shadow-lg  mb-5 bg-white rounded">
                     <div class="card-header bg-info ">
-                        <h4>News Collector</h4>
+                        <h4>News | <?php echo $news_row_details['byline'] ; ?></h4>
                     </div>
                     <div class="card-body">
 
                         <?php
 
-                          if(isset($_SESSION['notice']) )
+                          if(isset($_SESSION['notice_edit']) )
                           {
-                            if($_SESSION['notice'] == 'Error')
+                            if($_SESSION['notice_edit'] == 'Error')
                             {
-                                $notice  = 'Error while collecting news!';
+                                $notice  = 'Error while updating news!';
                                 $bg_color = 'red';
                                 $color = '#000';
                                 $color_down = '#000';
@@ -300,14 +327,12 @@ strong {
 
                             }
 
-                            if($_SESSION['notice'] == 'Success')
+                            if($_SESSION['notice_edit'] == 'Success')
                             {
-                                $notice  = 'News collection successfull.';
+                                $notice  = 'News updated successfull.';
                                 $bg_color = 'rgb(102, 255, 51,0.5)';
                                 $color = '#009933';
-                                $color_down = '#4BB543';
-                                $notice2 = "Database logging successfull.";
-                                $sta = "succ";
+                                $color_down = '#4BB543';                         
                                
 
                             }
@@ -323,32 +348,19 @@ strong {
                             </button>
                         </div>
                         <?php 
-                            if(isset($sta))
-                            {
-                        ?>
-                        <div class="alert  alert-success fade show" role="alert"
-                            style="background-color: <?php echo $bg_color ; ?>; color:<?php echo $color ; ?>">
-                            <strong style="color:<?php echo $color_down ; ?>">Notice : </strong> <?php echo $notice2; ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <?php
-                            }
-                      
+                                          
 
-
-
-                                unset($_SESSION['notice']);
+                                unset($_SESSION['notice_edit']);
                               
                           }
 
                       ?>
 
 
-                        <form method="POST" enctype="multipart/form-data" action="accesories/local_submit.php">
+                        <form method="POST" enctype="multipart/form-data" action="accesories/local_update.php">
                             <!-- <form method="POST" enctype="multipart/form-data" action="accesories/test.php"> -->
                             <!-- The headline for news. -->
+                            <input type='hidden' name="newsid" value="<?php echo $news_id ; ?>">
 
                             <STRONG>NEWS </strong>
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
@@ -367,7 +379,7 @@ strong {
                                     </svg>
                                 </label>
                                 <input class=" form-control col-lg-2" type="date" name="newsdate"
-                                    value="<?php echo $selected_date ; ?>" xxx>
+                                    value="<?php echo $news_row_details['local_published_date'] ; ?>" readonly xxx>
                                 <!-- make date today's date -->
 
 
@@ -388,8 +400,8 @@ strong {
                                 </label>
                                 <div class="form-inline">
                                     <input type="text" class="form-control col-lg-12 pl-0"
-                                        placeholder="Enter / Paste news byline" name="byLine" id="input_box" xxx
-                                        onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)">
+                                        placeholder="Enter / Paste news byline" name="byLine" id="input_box" xxx readonly
+                                        value="<?php echo $news_row_details['byline'] ; ?>"  onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)">
                                     <!-- <input type="text" class="form-control col-lg-10" placeholder="Enter news byline" name="byLine" id="input_box" xxx  onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)"> -->
                                     <!-- <div id="formByline" class="col-lg-10 pl-0">
                                     </div> -->
@@ -429,6 +441,19 @@ strong {
                                     </svg>
                                 </label>
                                 <input type="file" id="myfile" name="descFile" xxx>
+                                <?php
+                                    if($news_row_details['news_file'] != null  )
+                                    {
+                                        $file_name = $news_row_details['news_file'] ;
+                                        $file_name = explode("/" , $file_name);
+                                        $file_name = end($file_name);
+
+                                ?>
+                                    <br>
+                                    <small>Existing File: <?php echo $file_name ; ?></small>
+                                <?php
+                                    }
+                                ?>
                                 <small id="emailHelp" class="form-text text-muted">accepted formats : docx </small>
                             </div>
 
@@ -450,7 +475,19 @@ strong {
                                         <input type="file" id="" class="additional_folder" name="additional_files[]" multiple >
                                      </div>
                                 </div>
-                                <textarea type="text" class="form-control col-lg-12 pl-0 mt-2" placeholder="Description" name="additional_files_description" id="input_box" rows="5" ></textarea>
+                                <?php
+                                    if($news_row_details['additional_file'] != null  )
+                                    {
+                                        $file_name = $news_row_details['additional_file'] ;
+                                        $file_name = explode("/" , $file_name);
+                                        $file_name = end($file_name);
+
+                                ?>
+                                    <small>Existing File: <?php echo $file_name ; ?></small>
+                                <?php
+                                    }
+                                ?>
+                                <textarea type="text" class="form-control col-lg-12 pl-0 mt-2" placeholder="Description" name="additional_files_description" id="input_box" rows="5" ><?php echo $news_row_details['additional_files_description'] ; ?></textarea>
                                 
                                 
                             </div>
@@ -471,9 +508,36 @@ strong {
                                 <!-- video long card -->
                                 <div class="col-sm-4">
                                     <div class="card ">
+
+                                    <?php
+
+                                        if($news_row_details['regular_feed'] == null )
+                                        {
+
+                                ?>
+                            <div id="regularfeedID">
                                         <img src="./assets/images/placeholder.jpg" class="card-img-top "
                                             id="regularfeedplaceholder" alt="...">
-                                        <div id="regularfeedID"></div>
+                                            </div>
+                                    <?php
+                                        }
+                                        else {
+                                    ?>
+
+                                        <div id="regularfeedID">
+
+                                            <video width="100%" height="160px" controls style="display:block"><source src="<?php echo $news_row_details['regular_feed'] ; ?>" type="video/mp4"> </video>
+
+                                        </div>
+
+
+                                    <?php
+                                        }
+                                        ?>
+
+                                        
+
+
                                         <div class="card-body">
                                             <span><strong>5.1 Regular Feed</strong></span>
                                             <div class="float-right">
@@ -490,8 +554,8 @@ strong {
                                                 </svg>
                                             </div>
 
-                                            <input type="file" id="regularfeed" name="regularFeeddFile"
-                                                onchange="return regularFeedValidation()" xxx>
+                                            <input type="file" id="regularfeed" name="regularFeeddFile" text="Your label here."
+                                                onchange="return regularFeedValidation()"  xxx>
                                             <small id="emailHelp" class="form-text text-muted">5min to 7min
                                                 video</small>
 
@@ -502,9 +566,35 @@ strong {
                                 <!-- video lazy card -->
                                 <div class="col-sm-4">
                                     <div class="card ">
+
+
+                                                                            <?php
+
+                                        if($news_row_details['ready_version'] == null )
+                                        {
+
+                                        ?>
+                                        <div id="readyversionID">
+
                                         <img src="./assets/images/placeholder.jpg" class="card-img-top "
                                             id="readyVersionplaceholder" alt="...">
-                                        <div id="readyversionID"></div>
+                                        </div>
+                                        <?php
+                                        }
+                                        else {
+                                        ?>
+
+                                        <div id="readyversionID">
+
+                                            <video width="100%" height="160px" controls style="display:block"><source src="<?php echo $news_row_details['ready_version'] ; ?>" type="video/mp4"> </video>
+
+                                        </div>
+
+
+                                        <?php
+                                        }
+                                        ?>
+
                                         <div class="card-body">
                                             <span><strong>5.2 Ready Version</strong></span>
                                             <div class="float-right">
@@ -532,9 +622,37 @@ strong {
                                 <!-- video extra card -->
                                 <div class="col-sm-4">
                                     <div class="card ">
+
+
+
+                                    <?php
+
+                                        if($news_row_details['rough_cut'] == null )
+                                        {
+
+                                        ?>
+                                        <div id="roughcutID">
+
                                         <img src="./assets/images/placeholder.jpg" class="card-img-top "
                                             id="roughcutplaceholder" alt="...">
-                                        <div id="roughcutID"></div>
+                                            </div>
+                                        <?php
+                                        }
+                                        else {
+                                        ?>
+
+                                        <div id="roughcutID">
+
+                                            <video width="100%" height="160px" controls style="display:block"><source src="<?php echo $news_row_details['rough_cut'] ; ?>" type="video/mp4"> </video>
+
+                                        </div>
+
+
+                                        <?php
+                                        }
+                                        ?>
+
+
                                         <div class="card-body">
                                             <span><strong>5.3 Rough Cut</strong></span>
                                             <div class="float-right">
@@ -570,6 +688,7 @@ strong {
 
 
                                     <?php 
+                                    $existing_categories = explode("," , $news_row_details['category_list']);
                                         if(isset($category))
                                         {
                                             foreach($category as $category)
@@ -579,8 +698,15 @@ strong {
                                                 if( strpos( strtolower($category['name']), "archive" ) !== false) {
                                                    continue ;
                                                 }
+                                                if(in_array($category['id'] , $existing_categories))
+                                                {
+                                                    $is_selected = "selected" ;
+                                                }
+                                                else {
+                                                    $is_selected = "" ;
+                                                }
                                     ?>
-                                    <option class="cat_opt" value="<?php echo $category['id'] ; ?>">
+                                    <option class="cat_opt" value="<?php echo $category['id'] ; ?>" <?php echo $is_selected ; ?> >
                                         <?php echo $category['name'] ; ?></option>
                                     <?php
                                             }
@@ -599,20 +725,25 @@ strong {
                                     <?php 
                                         if(isset($tags))
                                         {
+                                            $existing_tags = explode("," , $news_row_details['tag_list']);
                                             foreach($tags as $tag)
                                             {
+
+                                                if(in_array($tag['id'] , $existing_tags))
+                                                {
+                                                    $is_selected = "selected" ;
+                                                }
+                                                else {
+                                                    $is_selected = "" ;
+                                                }
+                                                
                                     ?>
-                                    <option value="<?php echo $tag['id'] ; ?>"><?php echo $tag['name'] ; ?></option>
+                                    <option value="<?php echo $tag['id'] ; ?>" <?php echo $is_selected ; ?>><?php echo $tag['name'] ; ?></option>
                                     <?php
                                             }
                                         }
                                     ?>
-                                    <!-- <option value="141">Business</option>
-                                    <option value="142">Entertainment</option>
-                                    <option value="134">Sports</option>
-                                    <option value="135">International</option>
-                                    <option value="136">Glamour</option>
-                                   -->
+                             
 
 
                                 </select>
@@ -641,7 +772,7 @@ strong {
                                         <div class="mt-2">
                                         <input type="file" id="img" name="audio_complete_story">
                                         </div>
-                                        <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_desc" rows="5" placeholder="Description"></textarea>
+                                        <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_desc" rows="5" placeholder="Description"><?php echo $news_row_details['audio_description'] ; ?></textarea>
                                         
                                     </div>
                                     <div class="col-lg-6">
@@ -649,7 +780,7 @@ strong {
                                         <div id="audio_bites_selector" class="mt-2" >
                                                 <input type="file"  class="audio_bites" id="img" name="audio_bites[]">
                                         </div> 
-                                        <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_bites_desc"  rows="5" placeholder="Description"></textarea>
+                                        <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_bites_desc"  rows="5" placeholder="Description"><?php echo $news_row_details['audio_bites_description'] ; ?></textarea>
                                     </div>    
                                 </div>
                              
@@ -733,10 +864,19 @@ strong {
                                             <?php 
                                         if(isset($series))
                                         {
+                                            $existing_series = explode("," , $news_row_details['series']);
+
                                             foreach($series as $series)
                                             {
+                                                if(in_array($series['id'] , $existing_series))
+                                                {
+                                                    $is_selected = "selected" ;
+                                                }
+                                                else {
+                                                    $is_selected = "" ;
+                                                }
                                     ?>
-                                            <option value="<?php echo $series['id'] ; ?>">
+                                            <option value="<?php echo $series['id'] ; ?>" <?php echo $is_selected ; ?> >
                                                 <?php echo $series['name'] ; ?></option>
                                             <?php
                                             }
@@ -807,9 +947,14 @@ strong {
                                             <?php
                                                 foreach($district_global as $district)
                                                 {
-
+                                                    if($news_row_details['district'] == $district)
+                                                        $is_selected = "selected" ;
+                                                    else {
+                                                        $is_selected = "" ;
+                                                    }
                                             ?>
-                                            <option value="<?php echo $district ; ?>"><?php echo $district ; ?></option>
+                                         
+                                            <option value="<?php echo $district ; ?>" <?php echo $is_selected ; ?>><?php echo $district ; ?></option>
 
                                             <?php
                                                 }
@@ -841,9 +986,14 @@ strong {
                                             <?php
                                                 foreach($reporter_global as $reporter)
                                                 {
+                                                    if($news_row_details['reporter'] == $reporter)
+                                                        $is_selected = "selected" ;
+                                                    else {
+                                                        $is_selected = "" ;
+                                                    }
 
                                             ?>
-                                            <option value="<?php echo $reporter ; ?>"><?php echo $reporter ; ?></option>
+                                            <option value="<?php echo $reporter ; ?>" <?php echo $is_selected ; ?>><?php echo $reporter ; ?></option>
 
                                             <?php
                                                 }
@@ -871,9 +1021,15 @@ strong {
                                             <?php
                                                 foreach($cameraman_global as $cman)
                                                 {
+                                                    if($news_row_details['camera_man'] == $cman)
+                                                    $is_selected = "selected" ;
+                                                else {
+                                                    $is_selected = "" ;
+                                                }
+                                               
 
                                             ?>
-                                            <option value="<?php echo $cman ; ?>"><?php echo $cman ; ?></option>
+                                            <option value="<?php echo $cman ; ?>"  <?php echo $is_selected ; ?>><?php echo $cman ; ?></option>
 
                                             <?php
                                                 }
@@ -908,9 +1064,15 @@ strong {
                                             <?php
                                                 foreach($createdby_global as $cby)
                                                 {
+                                                   
+                                                    if($news_row_details['uploaded_by'] == $cby)
+                                                        $is_selected = "selected" ;
+                                                    else {
+                                                        $is_selected = "" ;
+                                                    }
 
                                             ?>
-                                            <option value="<?php echo $cby ; ?>"><?php echo $cby ; ?></option>
+                                            <option value="<?php echo $cby ; ?>"  <?php echo $is_selected ; ?>><?php echo $cby ; ?></option>
 
                                             <?php
                                                 }
@@ -936,8 +1098,9 @@ strong {
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect2" name="video_type"
                                             xxx>
-                                            <option value="selfhost">Selfhost</option>
-                                            <option value="vimeo">Vimeo</option>
+
+                                            <option value="selfhost" <?php if( $news_row_details['video_type'] == 'selfhost') echo "selected" ; ?> >Selfhost</option>
+                                            <option value="vimeo" <?php if( $news_row_details['video_type'] == 'vimeo') echo "selected" ; ?>>Vimeo</option>
 
                                         </select>
                                     </div>
@@ -958,13 +1121,9 @@ strong {
 
                             <label class="col-lg-12 p-0 h5 text-info">Step 13.</label>
 
-                            <button type="submit" class="btn btn-primary" name="submit">Collect news</button>
+                            <button type="submit" class="btn btn-primary" name="submit">Edit news</button>
 
-                            <label class="col-lg-12 p-0 h5 text-info mt-2">Step 14.</label>
-                            <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete collected
-                                    news</button></span>
-                            <span>please <strong><a href="./remotecopycreator.php">go to Remote Copy
-                                        Creator</a></strong> tool to delete</span>
+                            
 
                         </form>
                     </div>

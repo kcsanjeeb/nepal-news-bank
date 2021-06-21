@@ -1,0 +1,11 @@
+
+--------------- 2021-06-20 / Archive Video Test  ------------------ 
+
+ Logged Date: 2021-06-20 17:54:55 
+my_data/archive_data/archive_video/Archive Video Test : Folder Created
+my_data/archive_data/archive_video/Archive Video Test/20210620_175457_95770_video.mp4 : Archive Video Uploaded Succesfully
+my_data/archive_data/archive_video/Archive Video Test/20210620_175457_95770_thumbnail.jpg : Archive Thumbnail Uploaded Succesfully
+20210620_175457_95770_video.mp4 : Video  Pushed to Remote Succesfully
+20210620_175457_95770_thumbnail.jpg : Thumbnail  Pushed to Remote Succesfully
+Archive Video Remote Post Created Succesfully
+------------------------------------------------------- 

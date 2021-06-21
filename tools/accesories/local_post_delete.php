@@ -61,6 +61,34 @@ if($type == $_SESSION['interview_id'])
       
     }
 
+    if(end(explode("/" , $file)) == 'audio_bites')
+    {
+      $files_bonus = glob('../'.$news_path.'/'.$date.'/'.$byline_dir.'/audio_bites'); // get all file names
+      foreach($files_bonus as $fb){
+
+        if(is_file($fb)) {
+          unlink($fb); // delete file
+        }  
+
+      }
+      rmdir('../'.$news_path.'/'.$date.'/'.$byline_dir.'/audio_bites');
+      
+    }
+
+    if(end(explode("/" , $file)) == 'gallery')
+    {
+      $files_bonus = glob('../'.$news_path.'/'.$date.'/'.$byline_dir.'/gallery'); // get all file names
+      foreach($files_bonus as $fb){
+
+        if(is_file($fb)) {
+          unlink($fb); // delete file
+        }  
+
+      }
+      rmdir('../'.$news_path.'/'.$date.'/'.$byline_dir.'/gallery');
+      
+    }
+
 
     if(is_file($file)) {
       unlink($file); // delete file
@@ -86,6 +114,35 @@ else
       rmdir('../'.$news_path.'/'.$date.'/'.$byline_dir.'/bonus_media');
     }
 
+    
+    if(end(explode("/" , $file)) == 'audio_bites')
+    {
+      $files_bonus = glob('../'.$news_path.'/'.$date.'/'.$byline_dir.'/audio_bites'); // get all file names
+      foreach($files_bonus as $fb){
+
+        if(is_file($fb)) {
+          unlink($fb); // delete file
+        }  
+
+      }
+      rmdir('../'.$news_path.'/'.$date.'/'.$byline_dir.'/audio_bites');
+      
+    }
+
+    if(end(explode("/" , $file)) == 'gallery')
+    {
+      $files_bonus = glob('../'.$news_path.'/'.$date.'/'.$byline_dir.'/gallery'); // get all file names
+      foreach($files_bonus as $fb){
+
+        if(is_file($fb)) {
+          unlink($fb); // delete file
+        }  
+
+      }
+      rmdir('../'.$news_path.'/'.$date.'/'.$byline_dir.'/gallery');
+      
+    }
+    
     if(is_file($file)) {
       unlink($file); // delete file
     }

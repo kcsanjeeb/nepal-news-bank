@@ -1,0 +1,36 @@
+
+--------------- 2021-06-20 / Test Archive Picture  ------------------ 
+
+ Logged Date: 2021-06-20 17:17:10 
+my_data/archive_data/archive_picture/Test Archive Picture : Folder Created
+my_data/archive_data/archive_picture/Test Archive Picture/20210620_171711_92827_photo_0.jpg : Gallery-0 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Test Archive Picture/20210620_171711_92827_photo_1.jpg : Gallery-1 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Test Archive Picture/20210620_171711_92827_photo_2.jpg : Gallery-2 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Test Archive Picture/20210620_171711_92827_photo_3.jpg : Gallery-3 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Test Archive Picture/20210620_171711_92827_thumbnail.jpg : Thumbnail Uplaoded Succesfully
+
+--------------- 2021-06-20 / Archive Picture test  ------------------ 
+
+ Logged Date: 2021-06-20 17:46:42 
+my_data/archive_data/archive_picture/Archive Picture test : Folder Created
+my_data/archive_data/archive_picture/Archive Picture test/20210620_174643_47266_photo_0.jpg : Gallery-0 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive Picture test/20210620_174643_47266_photo_1.jpg : Gallery-1 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive Picture test/20210620_174643_47266_photo_2.jpg : Gallery-2 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive Picture test/20210620_174643_47266_thumbnail.jpg : Thumbnail Uplaoded Succesfully
+
+--------------- 2021-06-20 / Archive Picture test  ------------------ 
+
+ Logged Date: 2021-06-20 17:51:33 
+my_data/archive_data/archive_picture/Archive Picture test : Folder Created
+my_data/archive_data/archive_picture/Archive Picture test/20210620_175134_45980_photo_0.jpg : Gallery-0 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive Picture test/20210620_175134_45980_photo_1.jpg : Gallery-1 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive Picture test/20210620_175134_45980_photo_2.jpg : Gallery-2 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive Picture test/20210620_175134_45980_photo_3.jpg : Gallery-3 Uplaoded Succesfully
+my_data/archive_data/archive_picture/Archive Picture test/20210620_175134_45980_thumbnail.jpg : Thumbnail Uplaoded Succesfully
+20210620_175134_45980_photo_0.jpg : Gallery  Pushed to Remote Succesfully
+20210620_175134_45980_photo_1.jpg : Gallery  Pushed to Remote Succesfully
+20210620_175134_45980_photo_2.jpg : Gallery  Pushed to Remote Succesfully
+20210620_175134_45980_photo_3.jpg : Gallery  Pushed to Remote Succesfully
+20210620_175134_45980_thumbnail.jpg : Thumbnail  Pushed to Remote Succesfully
+ Remote Post Created Succesfully
+------------------------------------------------------- 

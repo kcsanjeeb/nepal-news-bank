@@ -158,7 +158,7 @@ if(!isset($location))
                     if($audio_bites_full_web == NULL)
                         $audio_bites_full_web = "NULL";
                     else {
-                        $audio_bites_full_web = $audio_bites_web_arr;
+                        $audio_bites_full_web = "'$audio_bites_full_web'";
                     }
 
             
@@ -1070,6 +1070,9 @@ if(!isset($location))
                     }
 
                 }
+
+
+
                 if(count($push_audio_bites_array) > 0)
                 {
                     if(count($audio_bites_web_arr > 0))
@@ -1087,7 +1090,8 @@ if(!isset($location))
                   
                 }
                 else {
-                    $push_audio_bites = "NULL";
+
+                    $push_audio_bites = $audio_bites_full_web;
                 }
                 
                
@@ -1379,8 +1383,7 @@ if(!isset($location))
                     ftp_delete_rem($dir_del , 'folder');
                     
 
-                    $sql_del_web = "update web set regular_feed = null , ready_version = null ,
-                                    thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , news_file = null where newsid = '$news_id' ";
+                    $sql_del_web = "delete from web where newsid = '$news_id' ";
                     $run_sql_del_web= mysqli_query($connection, $sql_del_web);
 
 

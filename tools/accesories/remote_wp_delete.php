@@ -226,8 +226,10 @@ if(isset($_POST['news_id']))
             ftp_delete_rem($dir_del , 'folder');
             
 
-            $sql_del_web = "update web set regular_feed = null , ready_version = null ,
-                            thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , news_file = null , additional_files = null ,  audio_bites = null where newsid = '$news_id' ";
+            // $sql_del_web = "update web set regular_feed = null , ready_version = null ,
+            //                 thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , news_file = null , additional_files = null ,  audio_bites = null where newsid = '$news_id' ";
+            
+            $sql_del_web = "delete from web where newsid = '$news_id' ";
             $run_sql_del_web= mysqli_query($connection, $sql_del_web);
 
 

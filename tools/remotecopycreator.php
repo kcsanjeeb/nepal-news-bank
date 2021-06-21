@@ -469,7 +469,11 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     unset($_SESSION['notice_remote']);    
                                                 }
                                             ?>
-                            <p class="h4 text-info"><b>Step 3.</b> Select following content</p>
+
+
+                                <p class="h4 text-info"><b>Step 3.</b> Select following content
+                                    <a href="news_edit.php?id=<?php echo $content_id ; ?>" ><button type="button"  class="btn btn-warning mr-5"> EDIT </button> </a>
+                                </p>
 
                             <div class="list-group">
                                 <?php
@@ -757,7 +761,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 $ischecked = '';
                                                 $class_comp = 'compulsory miss';
                                                 $message = '<span>'.$readyversion.'</span><span class="float-right">
-                                                <span class="text-danger pr-2">Video Lazy File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
+                                                <span class="text-danger pr-2">Ready Vesion File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
                                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                                 </svg></span>
                                                     ';
@@ -918,7 +922,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     $value_input = '';
                                                     $ischecked = '';
                                                     $message = '<span>'.$audio.'</span><span class="float-right">
-                                                    <span class="text-danger pr-2">Audio File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
+                                                    <span class="text-danger pr-2">AC Store File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
                                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                                     </svg></span>
                                                         ';
@@ -956,14 +960,14 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 if($roughcut != NULL)
                                             {
                                                 
-                                                $ready_version_file_exist = $roughcut ;
+                                                $rouhh_cut_file_exist = $roughcut ;
                                                 $roughcut_full = explode('/' ,$roughcut );
                                                 $roughcut = end($roughcut_full) ;
 
                                                 
                                               
 
-                                                if(file_exists($ready_version_file_exist))
+                                                if(file_exists($rouhh_cut_file_exist))
                                                 {
                                                     
 
@@ -1043,9 +1047,9 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     
                                                     $input = 'disabled';
                                                     $value_input = '';
-                                                    $ischecked = 'checked';
+                                                    $ischecked = '';
                                                     $message = '<span>'.$roughcut.'</span><span class="float-right">
-                                                    <span class="text-danger pr-2">Video Extra File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
+                                                    <span class="text-danger pr-2">Rough Cut File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
                                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                                     </svg></span>
                                                         ';
@@ -1138,7 +1142,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     $value_input = '';
                                                     $ischecked = '';
                                                     $message = '<span>'.$additional.'</span><span class="float-right">
-                                                    <span class="text-danger pr-2">Video Extra File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
+                                                    <span class="text-danger pr-2">Additional File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
                                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                                     </svg></span>
                                                         ';
@@ -1293,25 +1297,30 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 $gal_counter = 1 ;
                                                 $index = 0 ;
                                                 $sta_array = array();
-                                                
+
+
                                                 foreach($photos_array as $ph_arr)
                                                 {
-                                                    if(empty($ph_arr)) continue ;
+                                                    if(empty($ph_arr)) break ;
                                                     
                                                    
                                                     if(file_exists($ph_arr))
                                                     {
-                                                        $exp_pharr = explode("/" , $ph_arr);
-                                                        $exp_pharr = end($exp_pharr);
+                                                        $exp_pharr_arr = explode("/" , $ph_arr);
+                                                        $exp_pharr = end($exp_pharr_arr);
 
-                                                        $web_gall = explode("/" , $gallery_full_web[$index]);
+                                                        array_shift($exp_pharr_arr);
+                                                        $implde_remote_format = implode("/" , $exp_pharr_arr);
                                                         
-                                                        $web_gall = end($web_gall);
+                                                        // $web_gall = explode("/" , $gallery_full_web[$index]);                                                        
+                                                        // $web_gall = end($web_gall);
 
-                                                        $index++ ; 
+                                                        // $index++ ; 
 
                                                    
-                                                        if($exp_pharr ==  $web_gall)
+                                                        // if($exp_pharr ==  $web_gall)
+
+                                                        if(in_array($implde_remote_format , $gallery_full_web))
                                                         {
                                                             $input = 'disabled' ;
                                                             $selected = '';
@@ -1469,6 +1478,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                             $dis_del_remote_file = 'disabled';
                                             $curs_style_del_remote_files= 'not-allowed;display:none';
 
+                                            $allow_create_post = 0;
+
                                         }
 
                                         
@@ -1594,8 +1605,21 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                     <?php
 // if($status_dis_pushhh != 'disabled')
-if(!in_array(0 , $handle_push_nopush) && $wp_id == null)
+
+if($num_rows_content_web > 0)
+{
+    $delete_allowed = 0 ;
+}
+else {
+    $delete_allowed = 1 ;
+}
+
+
+
+// if(!in_array(0 , $handle_push_nopush) && $wp_id == null)
+if($delete_allowed )
 { 
+    
 ?>
                     <hr />
                     <form method="POST" action='accesories/local_post_delete.php'>
