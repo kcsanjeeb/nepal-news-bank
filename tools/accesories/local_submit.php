@@ -709,6 +709,8 @@ if(!isset($location))
             $additional_path_sql = 'NULL';
         }
 
+        if(empty($additional_path_sql)) $additional_path_sql = 'NULL';
+
         if(!empty($_FILES['audio_bites']['name'][0]))
         {
             $counter = 0 ;

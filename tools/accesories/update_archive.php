@@ -555,84 +555,86 @@ if(isset($_POST['submit']))
         
 
 
-        // if($series != null && $series != '' )
-        // {
-        //         $series_exp = explode("," , $series);
+        if($series != null && $series != '' )
+        {       
+                $existing_series = $news_row_details['series'];
+                $existing_series_exp = explode("," , $existing_series);
 
-        //         foreach($series_exp as $sn)
-        //         {                  
+                $series_exp = explode("," , $series);
 
+                foreach($series_exp as $sn)
+                {                  
+                    if(in_array( $sn , $existing_series_exp)) continue ;
 
-        //         $curl = curl_init();
-        //         curl_setopt_array($curl, array(                    
-        //         CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$sn",
-        //         CURLOPT_RETURNTRANSFER => true,
-        //         CURLOPT_TIMEOUT => 30,
-        //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        //         CURLOPT_CUSTOMREQUEST => "GET",
-        //         // CURLOPT_POSTFIELDS => $data ,
-        //             CURLOPT_HTTPHEADER => array(
-        //                 "cache-control: no-cache",
-        //                 "content-type: application/json",
-        //                 'Authorization: Bearer '.$token_bearer.''                            ),
-        //         ));
+                $curl = curl_init();
+                curl_setopt_array($curl, array(                    
+                CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$sn",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                // CURLOPT_POSTFIELDS => $data ,
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json",
+                        'Authorization: Bearer '.$token_bearer.''                            ),
+                ));
             
-        //         $response = curl_exec($curl);
-        //         $response = json_decode($response);
-        //         $response = json_decode(json_encode($response) , true);
-        //         $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        //         $err = curl_error($curl);                    
-        //     curl_close($curl);
+                $response = curl_exec($curl);
+                $response = json_decode($response);
+                $response = json_decode(json_encode($response) , true);
+                $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                $err = curl_error($curl);                    
+            curl_close($curl);
 
 
 
 
 
-        //     if($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] == '')
-        //     {
-        //         $response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] = array($post_new_id);
-        //     }
-        //     else
-        //     {
-        //         array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $post_new_id);
+            if($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] == '')
+            {
+                $response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] = array($post_new_id);
+            }
+            else
+            {
+                array_push($response['cmb2']['haru_series_attached_videos_field']['haru_series_attached_videos'] , $post_new_id);
 
-        //     }
+            }
 
 
 
-        //     $data_update = json_encode($response);
-        //     $curl = curl_init();
-        //         curl_setopt_array($curl, array(                    
-        //         CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$sn",
-        //         CURLOPT_RETURNTRANSFER => true,
-        //         CURLOPT_TIMEOUT => 30,
-        //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        //         CURLOPT_CUSTOMREQUEST => "POST",
-        //         CURLOPT_POSTFIELDS => $data_update ,
-        //             CURLOPT_HTTPHEADER => array(
-        //                 "cache-control: no-cache",
-        //                 "content-type: application/json",
-        //                 'Authorization: Bearer '.$token_bearer.''                            ),
-        //         ));
+            $data_update = json_encode($response);
+            $curl = curl_init();
+                curl_setopt_array($curl, array(                    
+                CURLOPT_URL => "$domain_url/wp-json/wp/v2/haru_series/$sn",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $data_update ,
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json",
+                        'Authorization: Bearer '.$token_bearer.''                            ),
+                ));
             
-        //         $response = curl_exec($curl);
-        //         $response = json_decode($response);
-        //         $response = json_decode(json_encode($response) , true);
-        //         $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        //         $err = curl_error($curl);                    
-        //     curl_close($curl);
+                $response = curl_exec($curl);
+                $response = json_decode($response);
+                $response = json_decode(json_encode($response) , true);
+                $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                $err = curl_error($curl);                    
+            curl_close($curl);
 
 
-        //     }
-        //     $series = "'$series'";
-        // }
-        // else {
-        //     $series = 'null';
-        // }
+            }
+            $series = "'$series'";
+        }
+        
+
+        $update_query .= "update archives set series = $series  where archive_id = '$news_id';";
 
 
-
-        $connection= mysqli_connect($host , $user , $password , $db_name);
+    $connection= mysqli_connect($host , $user , $password , $db_name);
 
 
     $update_query .= "update archives set series =  $series ,tags =  '$tags' , categories = '$newsCategories' where archive_id = '$news_id'; ";
@@ -655,10 +657,10 @@ if(isset($location))
 }
 else
 {
-    $location_redirect = '../archive.php';
+    $location_redirect = $_SERVER['HTTP_REFERER'];
 }
 
-// header("Location: ".$location_redirect);
+header("Location: ".$location_redirect);
 exit();
 
 

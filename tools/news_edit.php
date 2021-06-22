@@ -4,6 +4,7 @@
     1. Completed File Insertion / Single file Replace in nas, web and mysql
     2. File Deletion -- All Left
     3. Updated ACF Fields in WP POST -- All Left
+    4. series, tags, and other multiple select db value check
 
 */
 

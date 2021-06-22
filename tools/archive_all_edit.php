@@ -352,9 +352,9 @@ foreach($result as $res)
                 </svg>
 
                 </label><br>
-                <input type="file" id="thumbnailimga"
+                <!-- <input type="file" id="thumbnailimga"
                     onchange="return thumbnailValidation('thumbnailimga' , 'thumbnailIDa' )" name="thumbImg"
-                    accept="image/*" xxx>
+                    accept="image/*" xxx> -->
                 <!-- Image preview -->
                 <div id="thumbnailIDa">
                     <?php
@@ -608,7 +608,7 @@ foreach($result as $res)
 
                                                     <td data-name="del">
 
-                                                        <button name="del0"
+                                                        <button name="del0" data-id = '<?php echo $counter ; ?>'
                                                             class='btn btn-danger glyphicon glyphicon-remove row-remove pics-row-del'><span
                                                                 aria-hidden="true">Delete</span></button>
                                                     </td>
@@ -812,7 +812,7 @@ foreach($result as $res)
                         }
                     });
 
-                //  $(this).closest('.vid-row').remove();
+                 $(this).closest('.vid-row').remove();
 
             }
 
@@ -873,7 +873,37 @@ foreach($result as $res)
 
         $(document).on("click", ".pics-row-del", function() {
 
-            $(this).closest('.pic-row').remove();
+
+            var confirm_status =  confirm("Are you sure you want to delete this row?");
+
+            if(confirm_status == true)
+            {
+                var index = $(this).attr("data-id");
+                var newsid = $('#newsid').val();
+                console.log(index);
+
+                $.ajax({
+                        url: "accesories/update_row_delete_archive.php",
+                        method: "POST",
+                        data: {
+                            index: index,
+                            type: 'picture',
+                            newsid : newsid
+
+                        },
+                        dataType: "text",
+                        success: function(data) {
+
+
+
+                        }
+                    });
+
+                    $(this).closest('.pic-row').remove();
+
+            }
+
+            // $(this).closest('.pic-row').remove();
 
         });
 
