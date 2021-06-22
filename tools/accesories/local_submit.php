@@ -188,6 +188,17 @@ if(!isset($location))
                 $audio_desc = "NULL";
             }
 
+            if(isset($_POST['gallery_desc']))
+            {
+                $gallery_desc = $_POST['gallery_desc'];
+                $gallery_desc = mysqli_real_escape_string($connection, $gallery_desc);    
+                $gallery_desc = "'$gallery_desc'";
+            }
+            else
+            {
+                $gallery_desc = "NULL";
+            }
+
 
             if(isset($_POST['audio_bites_desc']))
             {
@@ -789,7 +800,7 @@ if(!isset($location))
                 audio_complete_story ,  photos ,  news_file ,  rough_cut ,
                 tag_list , uploaded_by , reporter ,
                 camera_man , district , video_type, series ,  additional_file , additional_files_description,
-                audio_description , audio_bites_description , audio_bites
+                audio_description , audio_bites_description , audio_bites , gallery_description
               
                 ) 
                 VALUES 
@@ -799,7 +810,7 @@ if(!isset($location))
                 $audio_complete_story_path , $gallery_csv , $body_path , $roughCut_path ,
                 $tags ,$uploaded_by ,  $reporter , 
                 $camera_man , $district,  $video_type, $series , $additional_path_sql , $additional_files_description,
-                $audio_desc , $audio_bites_desc , $audio_bites_csv
+                $audio_desc , $audio_bites_desc , $audio_bites_csv , $gallery_desc
               
                 
                             

@@ -704,6 +704,7 @@ strong {
                                     </svg>
 
                                 </label><br>
+                                <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="gallery_desc" rows="5" placeholder="Description"></textarea>
                                 <input type="file" id="pro-image" name="galleryImage[]" accept="image/*" multiple>
                                 <!-- onclick="$('#pro-image').click()" -->
                                 <div class="preview-images-zone" style="display:none">

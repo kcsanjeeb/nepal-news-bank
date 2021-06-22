@@ -41,6 +41,8 @@ if(isset($_POST['submit_push']))
             $additional_file_full = $row_content['additional_file'];
             $additional_files_description_full = $row_content['additional_files_description'];
 
+            $gallery_description_full = $row_content['gallery_description'];
+
             $audio_description_full = $row_content['audio_description'];
             $audio_bites_description_full = $row_content['audio_bites_description'];
 
@@ -59,6 +61,12 @@ if(isset($_POST['submit_push']))
                 $audio_bites_description_full = "NULL";
             else
                 $audio_bites_description_full = $audio_bites_description_full ;
+            
+
+            if($gallery_description_full == NULL)
+                $gallery_description_full = "NULL";
+            else
+                $gallery_description_full = $gallery_description_full ;
 
             
             $series_nas = $row_content['series'];
@@ -340,7 +348,8 @@ if(isset($_POST['submit_push']))
                                             "additional_files_description" => $additional_files_description_full,
                                             "audio_description" =>$audio_description_full,
                                             "audio_bites_description" => $audio_bites_description_full,
-                                            "audio_bites" =>$push_audio_bites_json
+                                            "audio_bites" =>$push_audio_bites_json,
+                                            "gallery_description" =>$gallery_description_full
 
                                            
             ),
@@ -371,7 +380,8 @@ if(isset($_POST['submit_push']))
                                             "additional_files_description" => "$additional_files_description_full",
                                             "audio_description" =>$audio_description_full,
                                             "audio_bites_description" => $audio_bites_description_full,
-                                            "audio_bites" =>$push_audio_bites_json
+                                            "audio_bites" =>$push_audio_bites_json,
+                                            "gallery_description" =>$gallery_description_full
                                            
             ),
                    
