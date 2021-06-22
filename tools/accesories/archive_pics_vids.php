@@ -267,7 +267,7 @@ if(isset($_POST['submit']))
 
             array_push($data_vids_rows , $data_vids_row);
 
-            array_push($data_videos , $data);
+            // array_push($data_videos , $data);
             $counter++;
 
         }
@@ -276,7 +276,10 @@ if(isset($_POST['submit']))
 
         
     }
-
+    else
+    {
+        $data_videos = null ;
+    }
 
     if(count($_POST['pic']) == count($_FILES['pic']['name']))
     {
@@ -363,6 +366,10 @@ if(isset($_POST['submit']))
 
         $data_pics = json_encode($data_pics_rows , JSON_UNESCAPED_UNICODE);
 
+    }
+    else
+    {
+        $data_pics = null ;
     }
 
     // echo $data_pics ;
@@ -597,10 +604,11 @@ if(isset($_POST['submit']))
             ) 
             VALUES 
             ('$archive_id',  '$created_at_db' , '$title'  , $series,
-                $tags , $thumbnail_path_remote_sql , $newsCategories , '$data_videos' , '$data_pics' , '$created_at',
+                '$tags' , $thumbnail_path_remote_sql , '$newsCategories' , '$data_videos' , '$data_pics' , '$created_at',
                 $post_new_id_sql,$featured_media_id_sql 
                 
-                )";    
+                )"; 
+                echo   $query_new_archives ; 
 
             $run_query = mysqli_query($connection , $query_new_archives);
 

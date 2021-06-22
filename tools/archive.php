@@ -197,7 +197,7 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
                                             {
                                              
 
-                                                if( strpos( strtolower($category['name']), "archive mix" ) === false) {
+                                                if( strpos( strtolower($category['name']), "archive" ) === false) {
                                                    continue ;
                                                 }
 
@@ -517,7 +517,10 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <p class="m-0"><strong><?php echo $counter; ?>.</strong> <?php echo $byline; ?></p>
 
-
+                        <a href="archive_all_edit.php?id=<?php echo $archive_id ; ?>"> <button type="button" class="btn btn-secondary btn-sm" 
+                            >
+                            Edit
+                        </button> </a>
                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                             data-target="#exampleModal<?php echo $counter ; ?>">
                             Delete

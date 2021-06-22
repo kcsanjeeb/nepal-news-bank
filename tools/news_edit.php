@@ -1,5 +1,12 @@
 <?php
 
+/*
+    1. Completed File Insertion / Single file Replace in nas, web and mysql
+    2. File Deletion -- All Left
+    3. Updated ACF Fields in WP POST -- All Left
+
+*/
+
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "global/timezone.php";

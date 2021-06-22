@@ -653,8 +653,8 @@ if(!isset($location))
             {
 
                 $zip = new ZipArchive(); // Load zip library 
-                $zip_name =$path_destination."_additional_files.zip";
-                $additional_path_sql = $path_sql."_additional_files.zip"; 
+                $zip_name =$path_destination."_news_additional_files_.zip";
+                $additional_path_sql = $path_sql."_news_additional_files_.zip"; 
                 $additional_path_sql = "'$additional_path_sql'";
 
                 /*
@@ -684,7 +684,7 @@ if(!isset($location))
 
                         $fileExt = explode('.' , $fileName);    
                         
-                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_additional_file_".$counter_file_zip.".".$fileActualExt;
+                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_news_additional_file_".$counter_file_zip.".".$fileActualExt;
 
                             
                             $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];                  
