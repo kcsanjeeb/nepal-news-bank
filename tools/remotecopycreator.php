@@ -472,7 +472,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
 
                                 <p class="h4 text-info"><b>Step 3.</b> Select following content
-                                    <a href="news_edit.php?id=<?php echo $content_id ; ?>" ><button type="button"  class="btn btn-warning mr-5"> EDIT </button> </a>
+                                    <!-- <a href="news_edit.php?id=<?php //echo $content_id ; ?>" ><button type="button"  class="btn btn-warning mr-5"> EDIT </button> </a> -->
                                 </p>
 
                             <div class="list-group">
