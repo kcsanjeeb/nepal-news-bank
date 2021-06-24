@@ -434,9 +434,11 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
 
                                                         <div class="form-group">
 
-                                                            <input type="file" id="thumbnailimg"
+                                                            <input type="file" id="thumbnailimg" class="pic"
                                                                 onchange="return thumbnailValidation('thumbnailimg' , 'thumbnailID')"
                                                                 name="pic[0][]" accept="image/*" xxx multiple>
+                                                            
+                                                          
                                                             <!-- Image preview -->
                                                             <!-- <div id="thumbnailID"></div> -->
                                                         </div>
@@ -589,40 +591,47 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
     <script>
     // -------------thumbnail IMAGE VALIDATION------------------------ 
     function thumbnailValidation(thumbnailimg, thumbnailID) {
-        var fileInput =
-            document.getElementById(thumbnailimg);
 
-        var filePath = fileInput.value;
-        console.log(filePath)
-        // Allowing file type 
-        var allowedExtensions =
-            /(\.jpg|\.jpeg|\.png|\.gif|\.JPG)$/i;
+        if(thumbnailimg == 'thumbnailimga')
+        {
 
-        if (!allowedExtensions.exec(filePath)) {
-            alert('Invalid Video thumbnail file extension.');
-            fileInput.value = '';
-            document.getElementById(
-                    thumbnailID).innerHTML =
-                '<img style="display:none" class="shadow" src="'
-            '"/>';
-            return false;
-        } else {
+                var fileInput =
+                    document.getElementById(thumbnailimg);
 
-            // Image preview 
-            if (fileInput.files && fileInput.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
+                var filePath = fileInput.value;
+                console.log(filePath)
+                // Allowing file type 
+                var allowedExtensions =
+                    /(\.jpg|\.jpeg|\.png|\.gif|\.JPG)$/i;
+
+                if (!allowedExtensions.exec(filePath)) {
+                    alert('Invalid Video thumbnail file extension.');
+                    fileInput.value = '';
                     document.getElementById(
                             thumbnailID).innerHTML =
-                        '<img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="' +
-                        e.target.result +
-                        '"/>';
-                };
+                        '<img style="display:none" class="shadow" src="'
+                    '"/>';
+                    return false;
+                } else {
 
-                reader.readAsDataURL(fileInput.files[0]);
-            }
+                    // Image preview 
+                    if (fileInput.files && fileInput.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            document.getElementById(
+                                    thumbnailID).innerHTML =
+                                '<img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="' +
+                                e.target.result +
+                                '"/>';
+                        };
+
+                        reader.readAsDataURL(fileInput.files[0]);
+                    }
+                }
         }
     }
+
+    
     </script>
 
     <script>
@@ -744,7 +753,7 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
 
                                                     <div class="form-group">
 
-                                                        <input type="file" id="thumbnailimg` + counter + `"
+                                                        <input type="file" class="pic" id="thumbnailimg` + counter + `"
                                                             onchange="return thumbnailValidation('thumbnailimg` +
                 counter + `' , 'thumbnailID` + counter + `' )" name="pic[`+counter_arr+`][]"
                                                             accept="image/*" xxx multiple> 
@@ -967,6 +976,16 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
         }
     }
 
+    $(document).on('change', '.pic', function() {
+
+if($(this)[0].files.length > 0)
+{
+   
+    $(this).clone().appendTo((this).closest(".form-group")).val('');
+
+}
+
+});
     </script>
 
 

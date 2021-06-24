@@ -306,7 +306,7 @@ if(isset($_POST['submit']))
               
             foreach($_FILES['pic']['name'][$key_file_pic] as $files_row)
             {
-                
+               
 
                 $fileName = $_FILES['pic']['name'][$key_file_pic][$multi_row] ;
                 $fileExt = explode('.' , $fileName);
@@ -314,6 +314,8 @@ if(isset($_POST['submit']))
                 $file_type =    $_FILES['pic']['type'][$key_file_pic][$multi_row];
                 $file_type_explode = explode("/" , $file_type);
                 $allowed = array('image' );
+
+                if(empty($fileName)) continue ;
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
