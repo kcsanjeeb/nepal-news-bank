@@ -95,3 +95,19 @@ gallery/20210625_124419_11926_gallery_1.jpg Gallery Photo Pushed
 audio_bites/20210625_124419_11926_audio_bites_0.mp3 Audio Bites Pushed
 audio_bites/20210625_124419_11926_audio_bites_1.mp3 Audio Bites Pushed
 ------------------------------------------------------- 
+---------------2021-06-25 14:39:23 / तिब्बतमा बुलेट ट्रेन सञ्‍चालन ---------------- 
+
+ Logged Date: 2021-06-25 14:40:06 
+20210625_143923_19754_news_file.docx News  Body Pushed
+20210625_143923_19754_regular_feed.mp4 Regular Feed Pushed
+20210625_143923_19754_ready_version.mp4 Ready Version Pushed
+20210625_143923_19754_rough_cut.mp4 Rough Cut Pushed
+20210625_143923_19754_thumbnail.jpg Thumbnail Pushed
+20210625_143923_19754_audio_complete_story.mp3 Audio Pushed
+gallery/20210625_143923_19754_gallery_0.jpg Gallery Photo Pushed
+gallery/20210625_143923_19754_gallery_1.jpg Gallery Photo Pushed
+gallery/20210625_143923_19754_gallery_2.jpg Gallery Photo Pushed
+20210625_143923_19754_extra_files.zip Extra Files Pushed
+audio_bites/20210625_143923_19754_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210625_143923_19754_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 
