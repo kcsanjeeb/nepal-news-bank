@@ -695,7 +695,7 @@ if(!isset($location))
 
                         $fileExt = explode('.' , $fileName);    
                         
-                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_extra_file".$counter_file_zip.".".$fileActualExt;
+                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_extra_file_".$counter_file_zip.".".$fileActualExt;
 
                             
                             $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];                  
