@@ -278,7 +278,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $thumbnail_full = $row_content['thumbnail'];
                                                         $readyversion_full = $row_content['ready_version'];                            
                                                         $newsbody_full = $row_content['news_file'];
-                                                        $additional_full = $row_content['additional_file'];
+                                                        $extra_full = $row_content['extra_files'];
 
 
                                                         $audio_description_full = $row_content['audio_description'];
@@ -302,8 +302,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $newsbody = explode('/' ,$newsbody_full );
                                                         $newsbody = end($newsbody) ; 
 
-                                                        $additional = explode('/' ,$additional_full );
-                                                        $additional = end($additional) ; 
+                                                        $extra = explode('/' ,$extra_full );
+                                                        $extra = end($extra) ; 
 
 
 
@@ -335,7 +335,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     $roughcut_full_web = $row_content_web['rough_cut'];
 
                                                         
-                                                    $additional_full_web = $row_content_web['additional_file'];
+                                                    $extra_full_web = $row_content_web['extra_files'];
 
                                                     $audio_bites_full_web = $row_content_web['audio_bites'];
 
@@ -1084,28 +1084,28 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                             <!------------------------- Additional File Remote ----------------------------------->
 
                             <?php 
-                                                if($additional_full != NULL)
+                                                if($extra_full != NULL)
                                             {
                                                 
-                                                $additional_file_exist = $additional_full ;
-                                                $additional_full = explode('/' ,$additional );
-                                                $additional = end($additional_full) ;
+                                                $extra_file_exist = $extra_full ;
+                                                $extra_full = explode('/' ,$extra );
+                                                $extra = end($extra_full) ;
 
                                                 
                                               
-                                                if(file_exists($additional_file_exist))
+                                                if(file_exists($extra_file_exist))
                                                 {                                             
 
                                                    
                                                         
                                                     
-                                                        if($additional_full_web != NULL)
+                                                        if($extra_full_web != NULL)
                                                         {
                                                             
                                                             $input = 'disabled';
                                                             $value_input = '';
                                                             $ischecked = '';
-                                                            $message = '<span>'.$additional.'</span><span class="float-right">
+                                                            $message = '<span>'.$extra.'</span><span class="float-right">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
                                                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                                             </svg></span>
@@ -1120,8 +1120,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         {
                                                             
                                                             $input = '';
-                                                            $value_input = 'additional_files';
-                                                            $message = '<span>'.$additional.'</span><span class="float-right">
+                                                            $value_input = 'extra_files';
+                                                            $message = '<span>'.$extra.'</span><span class="float-right">
                                                             </span>
                                                             ';
                                                             $ischecked = 'checked';
@@ -1141,7 +1141,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     $input = 'disabled';
                                                     $value_input = '';
                                                     $ischecked = '';
-                                                    $message = '<span>'.$additional.'</span><span class="float-right">
+                                                    $message = '<span>'.$extra.'</span><span class="float-right">
                                                     <span class="text-danger pr-2">Additional File Doesnt Exist Locally</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill text-danger" viewBox="0 0 16 16">
                                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                                     </svg></span>

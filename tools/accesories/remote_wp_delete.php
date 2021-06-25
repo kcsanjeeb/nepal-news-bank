@@ -65,7 +65,7 @@ if(isset($_POST['news_id']))
         $thumbnail_full = $row_content['thumbnail'];
         $readyversion_full = $row_content['ready_version'];                            
         $newsbody_full = $row_content['news_file'];
-        $additional_file_full = $row_content['additional_file'];
+        $extra_file_full = $row_content['extra_files'];
 
         $photos = $row_content['photos'];
         $photos_array = explode(',' , $photos);
@@ -200,15 +200,15 @@ if(isset($_POST['news_id']))
             
 
             
-            if($additional_file_full != NULL)
+            if($extra_file_full != NULL)
             {
                 // $file = explode("/" , $audio);
                 // $reverse_file = array_reverse($file);
                 // $last = $reverse_file[1];
                 // $end = $reverse_file[0];
                 // $path =  "$last/$end";
-                echo $additional_file_full; 
-                ftp_delete_rem($additional_file_full , 'file');
+                echo $extra_file_full; 
+                ftp_delete_rem($extra_file_full , 'file');
             }
 
             foreach($audio_bites_array as $ph)
@@ -227,7 +227,7 @@ if(isset($_POST['news_id']))
             
 
             // $sql_del_web = "update web set regular_feed = null , ready_version = null ,
-            //                 thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , news_file = null , additional_files = null ,  audio_bites = null where newsid = '$news_id' ";
+            //                 thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , news_file = null , extra_files = null ,  audio_bites = null where newsid = '$news_id' ";
             
             $sql_del_web = "delete from web where newsid = '$news_id' ";
             $run_sql_del_web= mysqli_query($connection, $sql_del_web);

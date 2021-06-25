@@ -39,36 +39,65 @@ if(isset($_POST['newsid']))
     if(isset($_POST['type']) && $_POST['type'] == 'video' && isset($_POST['index']) )
     {
         $index = $_POST['index'] ;
-
         $videos = $news_row_details['archive_videos'] ;
         $videos_decode = json_decode($videos , true);
-
         $video_row = $videos_decode[$index] ;
-        $video_to_delete = $video_row['video'];
-        
-        // delete in local
-        // delete in ftp
-        // update mysql
-        // update acf
-        if(file_exists("../my_data/".$video_to_delete)) unlink("../my_data/".$video_to_delete);
-        ftp_delete_rem($video_to_delete , 'file');
 
-        $data_videos_rows = array();
-
-        $counter = 0 ;
-        foreach($videos_decode as $vd)
-        {
-            
-            if($counter == $index) 
+        if(isset($_POST['attr_type']) )
+        {  
+            if( $_POST['attr_type'] == 'video_desc')
             {
-                $counter++;
-                continue ;
+                $new_desc = $_POST['row_desc'] ;
+                $new_desc =  mysqli_real_escape_string($connection, $new_desc);
+                $video_row['desc'] = $new_desc ;
+
+                $data_videos_rows = array();
+                $counter_desc = 0 ;
+                foreach($videos_decode as $vd)
+                {            
+                    if($counter_desc == $index) 
+                    {
+                        array_push($data_videos_rows , $video_row);
+                        $counter_desc++;
+                        continue ;
+                    }
+    
+                    array_push($data_videos_rows , $vd);
+    
+                    $counter_desc++;
+                }
+
+             
+                
+
             }
 
-            array_push($data_videos_rows , $vd);
-
-            $counter++;
         }
+        else
+        {
+            $video_to_delete = $video_row['video'];  
+            if(file_exists("../my_data/".$video_to_delete)) unlink("../my_data/".$video_to_delete);
+            ftp_delete_rem($video_to_delete , 'file');
+
+            $data_videos_rows = array();
+            $counter = 0 ;
+            foreach($videos_decode as $vd)
+            {            
+                if($counter == $index) 
+                {
+                    $counter++;
+                    continue ;
+                }
+
+                array_push($data_videos_rows , $vd);
+
+                $counter++;
+            }
+        }
+        
+           
+
+
 
             $data_videos = json_encode($data_videos_rows , JSON_UNESCAPED_UNICODE);
             $update_query .= "update archives set archive_videos = '$data_videos' where archive_id = '$news_id';";
@@ -92,8 +121,7 @@ if(isset($_POST['newsid']))
 
         $pictures_to_delete = $pictures_row['photos'];
 
-        print_r($pictures_to_delete);
-
+   
 
         
         // delete in local
@@ -101,27 +129,64 @@ if(isset($_POST['newsid']))
         // update mysql
         // update acf
 
-        foreach($pictures_to_delete as $pics_del)
-        {
-            if(file_exists("../my_data/".$pics_del)) unlink("../my_data/".$pics_del);
-            ftp_delete_rem($pics_del , 'file');
-        }
-     
-
-        $data_pics_rows = array();
-
-        $counter = 0 ;
-        foreach($pictures_decode as $pd)
-        {
-           if($counter == $index) 
+        if(isset($_POST['attr_type']) )
+        {  
+            if( $_POST['attr_type'] == 'pics_desc')
             {
-                $counter++;
-                continue ;
+                $new_desc = $_POST['row_desc'] ;
+                $new_desc =  mysqli_real_escape_string($connection, $new_desc);
+
+                $pictures_row['desc'] = $new_desc ;
+
+                $data_pics_rows = array();
+                $counter_desc = 0 ;
+                foreach($pictures_decode as $vd)
+                {            
+                    if($counter_desc == $index) 
+                    {
+                      
+                        array_push($data_pics_rows , $pictures_row);
+                        $counter_desc++;
+                        continue ;
+                    }
+    
+                    array_push($data_pics_rows , $vd);
+    
+                    $counter_desc++;
+                }
+      
+               
+
+
             }
 
-            array_push($data_pics_rows , $pd);
-            $counter++;
         }
+
+        else
+        {        
+                foreach($pictures_to_delete as $pics_del)
+                {
+                    if(file_exists("../my_data/".$pics_del)) unlink("../my_data/".$pics_del);
+                    ftp_delete_rem($pics_del , 'file');
+                }
+            
+                $data_pics_rows = array();
+
+                $counter = 0 ;
+                foreach($pictures_decode as $pd)
+                {
+                if($counter == $index) 
+                    {
+                        $counter++;
+                        continue ;
+                    }
+
+                    array_push($data_pics_rows , $pd);
+                    $counter++;
+                }
+        }
+
+
 
             $data_pics = json_encode($data_pics_rows , JSON_UNESCAPED_UNICODE);
             $update_query .= "update archives set archive_photos = '$data_pics' where archive_id = '$news_id';";
@@ -132,6 +197,9 @@ if(isset($_POST['newsid']))
         $data_pics = $news_row_details['archive_photos'];
     }
 
+
+
+    
     $series = $news_row_details['series'];
     $title = $news_row_details['title'];
     $thumbnail_path_remote = $news_row_details['thumbnail'];    

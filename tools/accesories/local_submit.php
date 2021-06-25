@@ -165,15 +165,15 @@ if(!isset($location))
 
 
 
-            if(isset($_POST['additional_files_description']))
+            if(isset($_POST['extra_files_description']))
             {
-                $additional_files_description = $_POST['additional_files_description'];
-                $additional_files_description = mysqli_real_escape_string($connection, $additional_files_description);    
-                $additional_files_description = "'$additional_files_description'";
+                $extra_files_description = $_POST['extra_files_description'];
+                $extra_files_description = mysqli_real_escape_string($connection, $extra_files_description);    
+                $extra_files_description = "'$extra_files_description'";
             }
             else
             {
-                $additional_files_description = "NULL";
+                $extra_files_description = "NULL";
             }
 
 
@@ -647,14 +647,14 @@ if(!isset($location))
 
 
         
-        // if(!empty($_FILES['additional_files']['name'][0]))
-        if(count($_FILES['additional_files']['name']) > 0)
+        // if(!empty($_FILES['extra_files']['name'][0]))
+        if(count($_FILES['extra_files']['name']) > 0)
         {
 
             
-            foreach ($_FILES["additional_files"]["name"] as $p => $name)
+            foreach ($_FILES["extra_files"]["name"] as $p => $name)
             {
-                if(empty($_FILES['additional_files']['name'][$p])) continue ; 
+                if(empty($_FILES['extra_files']['name'][$p])) continue ; 
 
                 $create_zip = 1;
 
@@ -664,9 +664,9 @@ if(!isset($location))
             {
 
                 $zip = new ZipArchive(); // Load zip library 
-                $zip_name =$path_destination."_news_additional_files_.zip";
-                $additional_path_sql = $path_sql."_news_additional_files_.zip"; 
-                $additional_path_sql = "'$additional_path_sql'";
+                $zip_name =$path_destination."_extra_files.zip";
+                $extra_files = $path_sql."_extra_files.zip"; 
+                $extra_files = "'$extra_files'";
 
                 /*
                     1. create zip folder -- done
@@ -679,14 +679,14 @@ if(!isset($location))
                 if($zip->open($zip_name, ZIPARCHIVE::CREATE)===TRUE)
                 { 
                     $counter_file_zip = 0;
-                    foreach ($_FILES["additional_files"]["name"] as $p => $name)
+                    foreach ($_FILES["extra_files"]["name"] as $p => $name)
                     { 
-                        if(empty($_FILES['additional_files']['name'][$p])) continue ; 
+                        if(empty($_FILES['extra_files']['name'][$p])) continue ; 
                         
-                        $fileName= $_FILES['additional_files']['name'][$p];
-                        $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];  
-                        $fileSize = $_FILES['additional_files']['size'][$p];
-                        $fileType = $_FILES['additional_files']['type'][$p]; 
+                        $fileName= $_FILES['extra_files']['name'][$p];
+                        $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];  
+                        $fileSize = $_FILES['extra_files']['size'][$p];
+                        $fileType = $_FILES['extra_files']['type'][$p]; 
 
 
                         $fileExt_exp = explode('.' , $fileName);
@@ -695,10 +695,10 @@ if(!isset($location))
 
                         $fileExt = explode('.' , $fileName);    
                         
-                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_news_additional_file_".$counter_file_zip.".".$fileActualExt;
+                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_extra_file".$counter_file_zip.".".$fileActualExt;
 
                             
-                            $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];                  
+                            $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];                  
                             $zip->addFile($fileTmpName , $new_zip_file_name);
                             $counter_file_zip++ ;
                     }
@@ -717,10 +717,13 @@ if(!isset($location))
         }
         else 
         {
-            $additional_path_sql = 'NULL';
+            $extra_files = 'NULL';
         }
 
-        if(empty($additional_path_sql)) $additional_path_sql = 'NULL';
+        if(empty($extra_files)) $extra_files = 'NULL';
+
+
+
 
         if(!empty($_FILES['audio_bites']['name'][0]))
         {
@@ -799,7 +802,7 @@ if(!isset($location))
                 regular_feed,  ready_version  ,thumbnail ,
                 audio_complete_story ,  photos ,  news_file ,  rough_cut ,
                 tag_list , uploaded_by , reporter ,
-                camera_man , district , video_type, series ,  additional_file , additional_files_description,
+                camera_man , district , video_type, series ,  extra_files , extra_files_description,
                 audio_description , audio_bites_description , audio_bites , gallery_description
               
                 ) 
@@ -809,7 +812,7 @@ if(!isset($location))
                 $regular_filed_path , $readyVersion_path  , $thumbnail_path,
                 $audio_complete_story_path , $gallery_csv , $body_path , $roughCut_path ,
                 $tags ,$uploaded_by ,  $reporter , 
-                $camera_man , $district,  $video_type, $series , $additional_path_sql , $additional_files_description,
+                $camera_man , $district,  $video_type, $series , $extra_files , $extra_files_description,
                 $audio_desc , $audio_bites_desc , $audio_bites_csv , $gallery_desc
               
                 

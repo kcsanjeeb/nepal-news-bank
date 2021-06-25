@@ -285,7 +285,11 @@ if(isset($_POST['submit']))
         if($news_row_details['archive_videos'] != null)
         {
             $json_existing_video = $news_row_details['archive_videos'];
-            $json_existing_video_decoded = json_decode($json_existing_video , true);
+            
+            if($json_existing_video == 'null' || $json_existing_video == null  ) 
+                $json_existing_video_decoded = arary();
+            else 
+                $json_existing_video_decoded = json_decode($json_existing_video , true);
 
             foreach($data_vids_rows as $newdata)
             {

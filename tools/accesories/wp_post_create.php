@@ -38,8 +38,8 @@ if(isset($_POST['submit_push']))
             $category_full = $row_content['category_list'];
             $tags_full = $row_content['tag_list'];
             $video_type = $row_content['video_type'];
-            $additional_file_full = $row_content['additional_file'];
-            $additional_files_description_full = $row_content['additional_files_description'];
+            $extra_file_full = $row_content['extra_files'];
+            $extra_files_description_full = $row_content['extra_files_description'];
 
             $gallery_description_full = $row_content['gallery_description'];
 
@@ -47,10 +47,10 @@ if(isset($_POST['submit_push']))
             $audio_bites_description_full = $row_content['audio_bites_description'];
 
 
-            if($additional_files_description_full == NULL)
-                $additional_files_description_full = "NULL";
+            if($extra_files_description_full == NULL)
+                $extra_files_description_full = "NULL";
             else
-                $additional_files_description_full = $additional_files_description_full ;
+                $extra_files_description_full = $extra_files_description_full ;
             
             if($audio_description_full == NULL)
                 $audio_description_full = "NULL";
@@ -86,7 +86,7 @@ if(isset($_POST['submit_push']))
                         $readyversion_full_web = $row_content_web['ready_version'];                            
                         $newsbody_full_web = $row_content_web['news_file'];
 
-                        $additional_file_web = $row_content_web['additional_file'];
+                        $extra_file_web = $row_content_web['extra_files'];
 
                         $audio_bites_web = $row_content_web['audio_bites'];
 
@@ -157,11 +157,11 @@ if(isset($_POST['submit_push']))
                         
                         
 
-                        if($additional_file_web == NULL)
-                            $additional_file_web = "NULL";
+                        if($extra_file_web == NULL)
+                            $extra_file_web = "NULL";
 
                         else
-                            $additional_file_web = "'$additional_file_web'";
+                            $extra_file_web = "'$extra_file_web'";
                         
                         
                         if($audio_bites_web == NULL)
@@ -183,7 +183,7 @@ if(isset($_POST['submit_push']))
                         $roughcut_full_web = "NULL";
                         $gallery_full_web = "NULL";
 
-                        $additional_file_web = "NULL";
+                        $extra_file_web = "NULL";
                         $audio_bites_web = "NULL";
 
 
@@ -193,7 +193,7 @@ if(isset($_POST['submit_push']))
 
             $push_newsbody = $newsbody_full_web;
             $push_regularFeed = $regularfeed_full_web;
-            $push_additional = $additional_file_web;
+            $push_extra = $extra_file_web;
             $push_readyVersion = $readyversion_full_web;
             $push_thumbnail = $thumbnail_full_web;
             $push_audio = $audio_full_web;
@@ -281,7 +281,7 @@ if(isset($_POST['submit_push']))
                 $push_roughcut_json = str_replace("'","",$push_roughcut);
                 $push_newsbody_json = str_replace("'","",$push_newsbody);
                 $push_audio_json = str_replace("'","",$push_audio);
-                $push_additional_json = str_replace("'","",$push_additional);
+                $push_extra_json = str_replace("'","",$push_extra);
                 $push_audio_bites_json = str_replace("'","",$push_audio_bites);
                 
 
@@ -344,8 +344,8 @@ if(isset($_POST['submit_push']))
                                             'audio_complete_story' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
-                                            "additional_files" => $push_additional_json,
-                                            "additional_files_description" => $additional_files_description_full,
+                                            "extra_files" => $push_extra_json,
+                                            "extra_files_description" => $extra_files_description_full,
                                             "audio_description" =>$audio_description_full,
                                             "audio_bites_description" => $audio_bites_description_full,
                                             "audio_bites" =>$push_audio_bites_json,
@@ -376,8 +376,8 @@ if(isset($_POST['submit_push']))
                                             'audio' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
-                                            "additional_files" => $push_additional_json,
-                                            "additional_files_description" => "$additional_files_description_full",
+                                            "extra_files" => $push_extra_json,
+                                            "extra_files_description" => "$extra_files_description_full",
                                             "audio_description" =>$audio_description_full,
                                             "audio_bites_description" => $audio_bites_description_full,
                                             "audio_bites" =>$push_audio_bites_json,

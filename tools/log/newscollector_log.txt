@@ -408,3 +408,32 @@ my_data/news_data/2021-06-23/Test News Wed/gallery/20210623_211723_29215_gallery
 my_data/news_data/2021-06-23/Test News Wed/audio_bites/20210623_211723_29215_audio_bites_0.mp3 : Audio Bites-0 Uploaded
 my_data/news_data/2021-06-23/Test News Wed/audio_bites/20210623_211723_29215_audio_bites_1.mp3 : Audio Bites-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-06-25 / Attr Updated ---------------- 
+
+ Logged Date: 2021-06-25 12:40:49 
+2021-06-25 : Folder Created
+2021-06-25/Attr Updated : Folder Created
+my_data/news_data/2021-06-25/Attr Updated/20210625_124049_37480_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-25/Attr Updated/20210625_124049_37480_news_file.docx : News File Uploaded
+my_data/news_data/2021-06-25/Attr Updated/20210625_124049_37480_regular_feed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-25/Attr Updated/20210625_124049_37480_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-25/Attr Updated/gallery/20210625_124049_37480_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-06-25/Attr Updated/gallery/20210625_124049_37480_gallery_1.jpg : Gallery-1 Uploaded
+../my_data/news_data/2021-06-25/Attr Updated/20210625_124049_37480_extra_files_.zip Uploaded
+my_data/news_data/2021-06-25/Attr Updated/audio_bites/20210625_124049_37480_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-25/Attr Updated/audio_bites/20210625_124049_37480_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 
+---------------2021-06-25 / Check attr changes ---------------- 
+
+ Logged Date: 2021-06-25 12:44:19 
+Check attr changes Folder Created
+my_data/news_data/2021-06-25/Check attr changes/20210625_124419_11926_audio_complete_story.mp3 : Audio Complete Story Uploaded
+my_data/news_data/2021-06-25/Check attr changes/20210625_124419_11926_news_file.docx : News File Uploaded
+my_data/news_data/2021-06-25/Check attr changes/20210625_124419_11926_regular_feed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-25/Check attr changes/20210625_124419_11926_thumbnail.jpg : Thumbnail Uploaded
+my_data/news_data/2021-06-25/Check attr changes/gallery/20210625_124419_11926_gallery_0.jpg : Gallery-0 Uploaded
+my_data/news_data/2021-06-25/Check attr changes/gallery/20210625_124419_11926_gallery_1.jpg : Gallery-1 Uploaded
+../my_data/news_data/2021-06-25/Check attr changes/20210625_124419_11926_extra_files.zip Uploaded
+my_data/news_data/2021-06-25/Check attr changes/audio_bites/20210625_124419_11926_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+my_data/news_data/2021-06-25/Check attr changes/audio_bites/20210625_124419_11926_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 

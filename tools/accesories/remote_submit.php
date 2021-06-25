@@ -62,7 +62,7 @@ if(!isset($location))
                 $video_type = $row_content['video_type'];
                 $local_published_date = $row_content['local_published_date'];
 
-                $additional_file_full = $row_content['additional_file'];
+                $extra_file_full = $row_content['extra_files'];
 
                
                 // if($category_full == '172')
@@ -103,7 +103,7 @@ if(!isset($location))
 
                     
 
-                    $additional_files_full_web = $row_content_web['additional_file'];
+                    $extra_files_full_web = $row_content_web['extra_files'];
 
                     if($regularfeed_full_web == NULL)
                         $regularfeed_full_web = "NULL";
@@ -148,11 +148,11 @@ if(!isset($location))
                         $gallery_full_web = "'$gallery_full_web'";
 
                     
-                    if($additional_files_full_web == NULL)
-                        $additional_files_full_web = "NULL";
+                    if($extra_files_full_web == NULL)
+                        $extra_files_full_web = "NULL";
 
                     else
-                        $additional_files_full_web = "'$additional_files_full_web'";
+                        $extra_files_full_web = "'$extra_files_full_web'";
                     
                        
                     if($audio_bites_full_web == NULL)
@@ -175,7 +175,7 @@ if(!isset($location))
                     $audio_full_web = "NULL";
                     $roughcut_full_web = "NULL";
                     $gallery_full_web = "NULL";
-                    $additional_files_full_web = "NULL";
+                    $extra_files_full_web = "NULL";
                     $gallery_full_web_arr = array();
                     $audio_bites_full_web = "NULL";
                 }
@@ -750,18 +750,18 @@ if(!isset($location))
 
 
                     
-                    if(in_array('additional_files' ,$file_type ))
+                    if(in_array('extra_files' ,$file_type ))
                     {
-                        if(file_exists('../'.$additional_file_full))
+                        if(file_exists('../'.$extra_file_full))
                         {
-                            $sourceName = explode("/" ,$additional_file_full ) ;
+                            $sourceName = explode("/" ,$extra_file_full ) ;
                             $sourceName = end($sourceName );
 
                             // if(ftp_remote('newsbody' , '../'.$newsbody_full , $sourceName))
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$newsbody_full))
 
                             array_push($files_to_push , $sourceName );
-                            $additional_file_py =  $sourceName ;
+                            $extra_file_py =  $sourceName ;
                             // ======= old ftp -------------------
 
                                 // if(ftp_put($ftp, $news_ftp_path."/".$sourceName, "../".$newsbody_full , FTP_BINARY))
@@ -787,14 +787,14 @@ if(!isset($location))
                         }
                         else
                         {
-                            $push_additional_file = "NULL";
+                            $push_extra_file = "NULL";
                         }
                         
 
                     }
                     else
                     {
-                        $push_additional_file = $additional_files_full_web;
+                        $push_extra_file = $extra_files_full_web;
                     }
 
 
@@ -1015,26 +1015,26 @@ if(!isset($location))
                 $gall_img = implode(',' , $gallery_full_web_arr) ;
 
                 
-                if(in_array($additional_file_py , $files_to_push))
+                if(in_array($extra_file_py , $files_to_push))
                 {
                     
                     
                     // if(in_array($news_body_py , $push_remote_py_resp_arr)) 
-                    if (strpos( $push_remote_py_resp, $additional_file_py) !== false)        
+                    if (strpos( $push_remote_py_resp, $extra_file_py) !== false)        
                     {
                         echo "<br>1b<br>";
 
-                        $text = "$additional_file_py Additional Files Pushed\n";
+                        $text = "$extra_file_py Extra Files Pushed\n";
                         fwrite($myfile, $text);
                         
 
-                        $push_additional_file = "'$news_ftp_path_sql/$additional_file_py'" ;
+                        $push_extra_file = "'$news_ftp_path_sql/$extra_file_py'" ;
                     }
 
                     else
                     {
                         echo "1c<br>";
-                        $push_additional_file = "NULL";
+                        $push_extra_file = "NULL";
                         $text = "$sourceName News Body Failed to Pushed\n";
                         fwrite($myfile, $text);                            
 
@@ -1122,7 +1122,7 @@ if(!isset($location))
                        regular_feed = $push_regularFeed, ready_version = $push_readyVesion  ,thumbnail = $push_thumbnail ,
                        audio_complete_story = $push_audio  , photos = '$gall_img' , rough_cut = $push_roughcut, news_file = $push_newsbody,  
                          pushed_by = '$pushed_by' ,   pushed_date = '$pushed_at' ,
-                         vimeo_regular_feed = $vimeo_regularfeed , vimeo_ready_version = $vimeo_readyversion , vimeo_rough_cut = $vimeo_roughcut, additional_file = $push_additional_file,
+                         vimeo_regular_feed = $vimeo_regularfeed , vimeo_ready_version = $vimeo_readyversion , vimeo_rough_cut = $vimeo_roughcut, extra_files = $push_extra_file,
                          audio_bites = $push_audio_bites
                          where newsid = '$news_id'  ;";
                         // ) 
@@ -1143,13 +1143,13 @@ if(!isset($location))
                         newsid ,  regular_feed , ready_version ,thumbnail ,
                         audio_complete_story   , photos , rough_cut, news_file ,  
                          pushed_by ,   pushed_date , wp_post_id,
-                         vimeo_regular_feed , vimeo_ready_version , vimeo_rough_cut , additional_file , audio_bites
+                         vimeo_regular_feed , vimeo_ready_version , vimeo_rough_cut , extra_files , audio_bites
                         ) 
                         VALUES 
                         ('$news_id',  $push_regularFeed,$push_readyVesion  , $push_thumbnail,
                              $push_audio , '$gall_img', $push_roughcut , $push_newsbody , 
                             '$pushed_by' ,'$pushed_at' , $wp_post,
-                             $vimeo_regularfeed , $vimeo_readyversion , $vimeo_roughcut , $push_additional_file , $push_audio_bites
+                             $vimeo_regularfeed , $vimeo_readyversion , $vimeo_roughcut , $push_extra_file , $push_audio_bites
                             
                             )";    
 
@@ -1231,7 +1231,7 @@ if(!isset($location))
                 $thumbnail_full = $row_content['thumbnail'];
                 $readyversion_full = $row_content['ready_version'];                            
                 $newsbody_full = $row_content['news_file'];
-                $additional_file_full = $row_content['additional_file'];
+                $extra_file_full = $row_content['extra_files'];
 
                 $vimeo_regularfeed_web = $row_content['vimeo_regular_feed'];
                 $vimeo_readyversion_web = $row_content['vimeo_ready_version'];
@@ -1357,15 +1357,15 @@ if(!isset($location))
                         ftp_delete_rem($audio , 'file');
                     }
 
-                    if($additional_file_full != NULL)
+                    if($extra_file_full != NULL)
                     {
                         // $file = explode("/" , $audio);
                         // $reverse_file = array_reverse($file);
                         // $last = $reverse_file[1];
                         // $end = $reverse_file[0];
                         // $path =  "$last/$end";
-                        echo $additional_file_full; 
-                        ftp_delete_rem($additional_file_full , 'file');
+                        echo $extra_file_full; 
+                        ftp_delete_rem($extra_file_full , 'file');
                     }
 
                    

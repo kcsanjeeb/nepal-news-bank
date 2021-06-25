@@ -433,7 +433,7 @@ strong {
                             </div>
 
                             <div class="form-group">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 4. Select Additional Files
+                                <label class="col-lg-12 p-0 h5 text-info">Step 4. Select Extra Files
                                     <svg data-toggle="popover" title="News Title"
                                         data-content="Some content inside the popover"
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -445,16 +445,16 @@ strong {
                                             d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                     </svg>
                                 </label>
-                                <div id="additional_selectors">
+                                <div id="extra_selectors">
                                     <div>
-                                        <input type="file" id="" class="additional_folder" name="additional_files[]" multiple >
+                                        <input type="file" id="" class="extra_folder" name="extra_files[]" multiple >
                                      </div>
                                 </div>
-                                <textarea type="text" class="form-control col-lg-12 pl-0 mt-2" placeholder="Description" name="additional_files_description" id="input_box" rows="5" ></textarea>
+                                <textarea type="text" class="form-control col-lg-12 pl-0 mt-2" placeholder="Description" name="extra_files_description" id="input_box" rows="5" ></textarea>
                                 
                                 
                             </div>
-                            <!-- <button id="add_additional_folder" type="button">Add New</button> -->
+                            <!-- <button id="add_extra_folder" type="button">Add New</button> -->
 
 
                             <!-- <STRONG> SELECT VIDEOS </strong> -->
@@ -1399,20 +1399,20 @@ strong {
 
 //----------------Additional Folder Adder---------------------------
 
-// $(document).on('click', '#add_additional_folder', function() {
+// $(document).on('click', '#add_extra_folder', function() {
 
-    $(document).on('change', '.additional_folder', function() {
+    $(document).on('change', '.extra_folder', function() {
 
         if($(this)[0].files.length > 0)
     {
         var html = `
             <div>
-                <input type="file" class="additional_folder" id="" name="additional_files[]" multiple >
+                <input type="file" class="extra_folder" id="" name="extra_files[]" multiple >
             </div>
 
         `;
 
-        $("#additional_selectors").append(html);
+        $("#extra_selectors").append(html);
     }
 
 });

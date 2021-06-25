@@ -278,7 +278,8 @@ if(isset($_POST['submit']))
     }
     else
     {
-        $data_videos = null ;
+        $data_videos = array() ;
+        $data_videos = json_encode($data_videos , JSON_UNESCAPED_UNICODE);
     }
 
     if(count($_POST['pic']) == count($_FILES['pic']['name']))
@@ -371,7 +372,9 @@ if(isset($_POST['submit']))
     }
     else
     {
-        $data_pics = null ;
+        $data_pics = array() ;
+        $data_pics = json_encode($data_pics , JSON_UNESCAPED_UNICODE);
+
     }
 
     // echo $data_pics ;

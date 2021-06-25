@@ -439,7 +439,7 @@ foreach($result as $res)
 
                                                             <div class="card-body">
 
-                                                                <input type="file" id="videolong"
+                                                                <input type="file" id="videolong" disabled
                                                                     onchange="return videolongValidation('videolong' , 'videolongID' , 'videolongplaceholder' )">
 
 
@@ -449,16 +449,18 @@ foreach($result as $res)
 
                                                     </td>
 
-                                                    <td data-name="desc">
-                                                        <textarea rows="10" placeholder="Description"
-                                                            class="form-control"><?php echo $video['desc'] ; ?></textarea>
+                                                    <td data-name="desc" data-desc="<?php echo $video['desc'] ; ?>"
+                                                        data-type="video" data-index="<?php echo $counter ; ?>"
+                                                        class="edit_model">
+                                                        <textarea rows="10" placeholder="Description" 
+                                                            class="form-control desc_area"><?php echo $video['desc'] ; ?></textarea>
                                                     </td>
 
                                                     <td data-name="del">
                                                         <button name="del0" type="button"
-                                                            class='btn btn-danger glyphicon glyphicon-remove row-remove vid-row-del' data-id="<?php echo $counter ; ?>"><span
-                                                                aria-hidden="true"
-                                                                data-index=<?php echo $counter ; ?>>Delete</span></button>
+                                                            class='btn btn-danger glyphicon glyphicon-remove row-remove vid-row-del'
+                                                            data-id="<?php echo $counter ; ?>"><span aria-hidden="true"
+                                                                data-index="<?php echo $counter ; ?>">Delete</span></button>
                                                     </td>
 
 
@@ -475,7 +477,7 @@ foreach($result as $res)
                                         </table>
                                     </div>
                                 </div>
-                                <a class="btn btn-primary float-right add-videos" data-id="0" >Add Row</a>
+                                <a class="btn btn-primary float-right add-videos" data-id="0">Add Row</a>
                             </div>
                         </div>
 
@@ -537,31 +539,34 @@ foreach($result as $res)
 
                                                 <tr id='addr0' data-id="0" class="hidden pic-row">
                                                     <td data-name="name">
-                                                       <?php
+                                                        <?php
                                                             $pics = $pictures['photos'];
                                                           
                                                             $pic_loop = 0 ;
 
                                                         ?>
-                                                            <div id="carouselExampleFade<?php echo $counter  ; ?>" class="carousel slide carousel-fade" data-ride="carousel">
-                                                                <div class="carousel-inner">
+                                                        <div id="carouselExampleFade<?php echo $counter  ; ?>"
+                                                            class="carousel slide carousel-fade" data-ride="carousel">
+                                                            <div class="carousel-inner">
 
-                                                                    <?php
+                                                                <?php
                                                                         foreach($pics as $pic)
                                                                         {
                                                                     ?>
 
-                                                                        <div class="carousel-item <?php if($pic_loop == 0) echo 'active' ; ?>">
-                                                                            <img src="my_data/<?php echo $pic ; ?>" class="d-block w-100" alt="...">
-                                                                        </div>
+                                                                <div
+                                                                    class="carousel-item <?php if($pic_loop == 0) echo 'active' ; ?>">
+                                                                    <img src="my_data/<?php echo $pic ; ?>"
+                                                                        class="d-block w-100" alt="...">
+                                                                </div>
 
-                                                                    <?php
+                                                                <?php
                                                                     $pic_loop++;
                                                                         }
                                                                     ?>
 
 
-                                                                    <!-- <div class="carousel-item">
+                                                                <!-- <div class="carousel-item">
                                                                         <img src="my_data/archive_data/Test New Local/20210621_172448_87111_picture_3.jpg" class="d-block w-100" alt="...">
                                                                     </div>
                                                                     <div class="carousel-item">
@@ -569,16 +574,22 @@ foreach($result as $res)
                                                                     </div> -->
 
 
-                                                                </div>
-                                                                <a class="carousel-control-prev" href="#carouselExampleFade<?php echo $counter  ; ?>" role="button" data-slide="prev">
-                                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                                    <span class="sr-only">Previous</span>
-                                                                </a>
-                                                                <a class="carousel-control-next" href="#carouselExampleFade<?php echo $counter  ; ?>" role="button" data-slide="next">
-                                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                                    <span class="sr-only">Next</span>
-                                                                </a>
                                                             </div>
+                                                            <a class="carousel-control-prev"
+                                                                href="#carouselExampleFade<?php echo $counter  ; ?>"
+                                                                role="button" data-slide="prev">
+                                                                <span class="carousel-control-prev-icon"
+                                                                    aria-hidden="true"></span>
+                                                                <span class="sr-only">Previous</span>
+                                                            </a>
+                                                            <a class="carousel-control-next"
+                                                                href="#carouselExampleFade<?php echo $counter  ; ?>"
+                                                                role="button" data-slide="next">
+                                                                <span class="carousel-control-next-icon"
+                                                                    aria-hidden="true"></span>
+                                                                <span class="sr-only">Next</span>
+                                                            </a>
+                                                        </div>
 
 
                                                         <?php
@@ -587,7 +598,7 @@ foreach($result as $res)
 
                                                         <div class="form-group">
 
-                                                            <input type="file" id="thumbnailimg"
+                                                            <input type="file" id="thumbnailimg" disabled
                                                                 onchange="return thumbnailValidation('thumbnailimg' , 'thumbnailID')"
                                                                 accept="image/*" xxx multiple>
                                                             <!-- Image preview -->
@@ -601,14 +612,16 @@ foreach($result as $res)
 
                                                     </td>
 
-                                                    <td data-name="desc">
+                                                    <td data-name="desc" class="edit_model"
+                                                        data-desc="<?php echo $pictures['desc'] ; ?>"
+                                                        data-type="picture" data-index="<?php echo $counter ; ?>">
                                                         <textarea rows="10" placeholder="Description"
-                                                            class="form-control" readonly><?php echo $pictures['desc'] ; ?></textarea>
+                                                            class="form-control desc_area "><?php echo $pictures['desc'] ; ?></textarea>
                                                     </td>
 
                                                     <td data-name="del">
 
-                                                        <button name="del0" data-id = '<?php echo $counter ; ?>'
+                                                        <button name="del0" data-id='<?php echo $counter ; ?>'
                                                             class='btn btn-danger glyphicon glyphicon-remove row-remove pics-row-del'><span
                                                                 aria-hidden="true">Delete</span></button>
                                                     </td>
@@ -647,8 +660,36 @@ foreach($result as $res)
     </form>
 
 
+    <!-- Description Edit Model -->
 
+    <div class="modal fade" id="exampleModalCenter_up" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Description</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
+                <div class="modal-body">
+                    <textarea rows="10" placeholder="Description" class="form-control" id="up_desc"></textarea>
+                </div>
+
+                <input type="hidden" name="index" value="" id="up_index">
+                <input type="hidden" name="type" value="" id="up_type">
+                <input type="hidden" name="type" value="" id="index_textbox">
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="sub_desc_update">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Description Model Edit End -->
 
 
     <script>
@@ -787,38 +828,35 @@ foreach($result as $res)
 
         $(document).on("click", ".vid-row-del", function() {
 
-            var confirm_status =  confirm("Are you sure you want to delete this row?");
+            var confirm_status = confirm("Are you sure you want to delete this row?");
 
-            if(confirm_status == true)
-            {
+            if (confirm_status == true) {
                 var index = $(this).attr("data-id");
                 var newsid = $('#newsid').val();
                 console.log(index);
 
                 $.ajax({
-                        url: "accesories/update_row_delete_archive.php",
-                        method: "POST",
-                        data: {
-                            index: index,
-                            type: 'video',
-                            newsid : newsid
+                    url: "accesories/update_row_delete_archive.php",
+                    method: "POST",
+                    data: {
+                        index: index,
+                        type: 'video',
+                        newsid: newsid
 
-                        },
-                        dataType: "text",
-                        success: function(data) {
+                    },
+                    dataType: "text",
+                    success: function(data) {
 
 
 
-                        }
-                    });
+                    }
+                });
 
-                 $(this).closest('.vid-row').remove();
+                $(this).closest('.vid-row').remove();
 
             }
 
         });
-
-
 
 
         $(document).on("click", ".add-pic", function() {
@@ -836,7 +874,7 @@ foreach($result as $res)
 
                                                     <div class="form-group">
 
-                                                        <input type="file" id="thumbnailimg` + counter + `"
+                                                        <input type="file" class="pic" id="thumbnailimg` + counter + `"
                                                             onchange="return thumbnailValidation('thumbnailimg` +
                 counter + `' , 'thumbnailID` + counter + `' )" name="pic[` + counter_arr + `][]"
                                                             accept="image/*" xxx multiple> 
@@ -858,8 +896,8 @@ foreach($result as $res)
                                                             aria-hidden="true">Delete</span></button>
                                                 </td>
                                             </tr>
-      `;
-            counter++;
+            `;
+                    counter++;
 
 
 
@@ -874,32 +912,31 @@ foreach($result as $res)
         $(document).on("click", ".pics-row-del", function() {
 
 
-            var confirm_status =  confirm("Are you sure you want to delete this row?");
+            var confirm_status = confirm("Are you sure you want to delete this row?");
 
-            if(confirm_status == true)
-            {
+            if (confirm_status == true) {
                 var index = $(this).attr("data-id");
                 var newsid = $('#newsid').val();
-                console.log(index);
+                // console.log(index);
 
                 $.ajax({
-                        url: "accesories/update_row_delete_archive.php",
-                        method: "POST",
-                        data: {
-                            index: index,
-                            type: 'picture',
-                            newsid : newsid
+                    url: "accesories/update_row_delete_archive.php",
+                    method: "POST",
+                    data: {
+                        index: index,
+                        type: 'picture',
+                        newsid: newsid
 
-                        },
-                        dataType: "text",
-                        success: function(data) {
+                    },
+                    dataType: "text",
+                    success: function(data) {
 
 
 
-                        }
-                    });
+                    }
+                });
 
-                    $(this).closest('.pic-row').remove();
+                $(this).closest('.pic-row').remove();
 
             }
 
@@ -908,7 +945,87 @@ foreach($result as $res)
         });
 
 
+        $(document).on('change', '.pic', function() {
+
+            if ($(this)[0].files.length > 0) {
+
+                $(this).clone().appendTo((this).closest(".form-group")).val('');
+
+            }
+
+        });
+
+
+        $(document).on('click', '.edit_model', function() {
+
+            var index = $(this).attr("data-index");
+            var desc = $(this).attr("data-desc");
+            var type = $(this).attr("data-type");
+
+            var index_textbox = $(".edit_model").index(this);
+
+
+
+
+            $("#up_index").val(index);
+            $("#up_desc").val(desc);
+            $("#up_type").val(type);
+            $("#index_textbox").val(index_textbox);
+
+            $('#exampleModalCenter_up').modal('show');
+            $("#up_desc").focus();
+
+
+        });
+
+        $('#exampleModalCenter_up').on('shown.bs.modal', function () {
+            $('#up_desc').focus();
+        })
+
+        $(document).on('click', '#sub_desc_update', function() {
+
+            var index = $("#up_index").val();
+            var desc = $("#up_desc").val();
+            var type = $("#up_type").val();
+            var index_textbox = $("#index_textbox").val();
+            var newsid = $('#newsid').val();
+
+            if (type == 'video') {
+                attr = 'video_desc';
+            } else {
+                attr = 'pics_desc';
+            }
+
+            $.ajax({
+                url: "accesories/update_row_delete_archive.php",
+                method: "POST",
+                data: {
+                    index: index,
+                    type: type,
+                    newsid: newsid,
+                    attr_type: attr,
+                    row_desc: desc
+
+                },
+                dataType: "text",
+                success: function(data) {
+                    $( ".desc_area:eq( "+index_textbox+" )" ).val( desc );
+                    $('#exampleModalCenter_up').modal('toggle');
+
+
+
+                }
+            });
+            
+            
+
+
+
+        });
+
     });
+
+ 
     </script>
 
     <script>
