@@ -212,6 +212,8 @@ if(isset($_POST['submit']))
         $data_videos = array();
         $counter = 0 ;
 
+        
+
         $data_vids_rows = array();
 
         $row_dir_name_root = "archive_videos";
@@ -221,9 +223,15 @@ if(isset($_POST['submit']))
 
         ftp_mkdir($ftp, "/".$ftp_path.'/'.$row_dir_name_root);
 
+        
+        $folder_counter = 1 ;
+        $file_counter = 1 ;
+
+
         foreach($_POST['video'] as $vid)
         {
-            $row_dir_name = "archive_video_$counter";
+    
+            $row_dir_name = "archive_video_$folder_counter";
             $row_file_path = $row_dir_name_root."/".$row_dir_name;
             
             mkdir('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777 , true);    
@@ -260,14 +268,14 @@ if(isset($_POST['submit']))
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
 
-                    $video_path =$local_path."/".$row_file_path."/".$file_name."_video_".$counter.".".$fileActualExt;
+                    $video_path =$local_path."/".$row_file_path."/".$file_name."_video_".$file_counter.".".$fileActualExt;
                     $video_tmp_name = $_FILES['video']['tmp_name'][$counter] ;
                     move_uploaded_file($video_tmp_name, $video_path) ;
 
-                    $video_path_remote ="$ftp_path/".$row_file_path."/".$file_name."_video_".$counter.".".$fileActualExt; 
+                    $video_path_remote ="$ftp_path/".$row_file_path."/".$file_name."_video_".$file_counter.".".$fileActualExt; 
                     $video_path_remote_sql ="'$video_path_remote'";  
                     
-                    $sourceName = $file_name."_video_".$counter.".".$fileActualExt;
+                    $sourceName = $file_name."_video_".$file_counter.".".$fileActualExt;
                     $sourceName = $row_file_path."/".$sourceName ;
 
                     array_push($files_to_push , $sourceName) ;
@@ -298,6 +306,8 @@ if(isset($_POST['submit']))
 
             // array_push($data_videos , $data);
             $counter++;
+            $folder_counter++;
+            $file_counter++;
 
         }
 
@@ -314,7 +324,7 @@ if(isset($_POST['submit']))
     if(count($_POST['pic']) == count($_FILES['pic']['name']))
     {
         $counter = 0 ;
-        $file_name_counter = 0;
+        
     
 
         $data_pics_rows = array();
@@ -328,11 +338,16 @@ if(isset($_POST['submit']))
 
         ftp_mkdir($ftp, "/".$ftp_path.'/'.$row_dir_name_root);
 
+        $file_name_counter = 1;
+        $folder_counter = 1 ;
+
+
         foreach($_POST['pic'] as $pic)
         {
-            // $data_pics_row = array();        
+            // $data_pics_row = array();
+            
 
-            $row_dir_name = "archive_picture_$counter";
+            $row_dir_name = "archive_picture_$folder_counter";
             $row_file_path = $row_dir_name_root."/".$row_dir_name;
             
             mkdir('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777 , true);    
@@ -421,6 +436,7 @@ if(isset($_POST['submit']))
             // array_push($data_pics , $data);
             array_push($data_pics_rows , $data_pics_row);
             $counter++;
+            $folder_counter++;
 
         }
 
@@ -673,7 +689,7 @@ if(isset($_POST['submit']))
                 $post_new_id_sql,$featured_media_id_sql 
                 
                 )"; 
-                echo   $query_new_archives ; 
+                // echo   $query_new_archives ; 
 
             $run_query = mysqli_query($connection , $query_new_archives);
 

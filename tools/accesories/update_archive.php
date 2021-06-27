@@ -248,23 +248,22 @@ if(isset($_POST['submit']))
 
         }
 
-            
-
+        $folder_counter = 1 ;
+        $file_counter = 1 ;
 
         foreach($_POST['video'] as $vid)
         {
 
-            $counter_folder = 0 ;
 
             do{
-                $row_dir_name = "archive_video_$counter_folder";
+                $row_dir_name = "archive_video_$folder_counter";
                 if(!is_dir($local_path.'/'.$row_dir_name_root.'/'.$row_dir_name ))
                 {
                     $status_dir = 0 ;
                 }
                 else
                 {
-                    $counter_folder++;
+                    $folder_counter++;
                     $status_dir = 1 ;
                 }
 
@@ -334,7 +333,7 @@ if(isset($_POST['submit']))
                         // foreach($file_names as $fn)
                         // {
                             $fn = implode("," ,$file_names );
-                            if (strpos( $fn, $file_name."_video_".$counter_file.".".$fileActualExt) !== false)
+                            if (strpos( $fn, $file_name."_video_".$file_counter.".".$fileActualExt) !== false)
                             {
                                 $status = 1;
                                 $counter_file++;
@@ -350,16 +349,16 @@ if(isset($_POST['submit']))
                     }while($status);
 
 
-                        $video_path =$local_path."/".$row_dir_name_root."/".$row_dir_name."/".$file_name."_video_".$counter_file.".".$fileActualExt;
+                        $video_path =$local_path."/".$row_dir_name_root."/".$row_dir_name."/".$file_name."_video_".$file_counter.".".$fileActualExt;
 
                         $video_tmp_name = $_FILES['video']['tmp_name'][$counter] ;
                         move_uploaded_file($video_tmp_name, $video_path) ;
 
-                    $video_path_remote ="$ftp_path/".$row_dir_name_root."/".$row_dir_name."/".$file_name."_video_".$counter_file.".".$fileActualExt; 
+                    $video_path_remote ="$ftp_path/".$row_dir_name_root."/".$row_dir_name."/".$file_name."_video_".$file_counter.".".$fileActualExt; 
                     $video_path_remote_sql ="'$video_path_remote'";  
 
                                         
-                    $sourceName = $file_name."_video_".$counter_file.".".$fileActualExt;
+                    $sourceName = $file_name."_video_".$file_counter.".".$fileActualExt;
                     $sourceName = $row_dir_name_root."/".$row_dir_name."/".$file_name."_video_".$counter_file.".".$fileActualExt;
 
                     array_push($files_to_push , $sourceName) ;
@@ -368,6 +367,7 @@ if(isset($_POST['submit']))
                     $data_vids_row['video'] = $video_path_remote ;
 
                     $counter_file++;
+                    $file_counter++ ;
 
                     
                     
@@ -376,6 +376,8 @@ if(isset($_POST['submit']))
 
             array_push($data_vids_rows , $data_vids_row);
             $counter++;
+            $folder_counter++ ;
+            
 
         }
 
@@ -410,7 +412,6 @@ if(isset($_POST['submit']))
     if(count($_POST['pic']) == count($_FILES['pic']['name']))
     {
         $counter = 0 ;
-        $file_name_counter = 0;
     
 
         $data_pics_rows = array();
@@ -448,21 +449,23 @@ if(isset($_POST['submit']))
 
         }
 
+        $file_name_counter = 1;
+        $folder_counter = 1 ;
+
         foreach($_POST['pic'] as $pic)
         {
             // $data_pics_row = array();
 
-            $counter_folder = 0 ;
 
             do{
-                $row_dir_name = "archive_picture_$counter_folder";
+                $row_dir_name = "archive_picture_$folder_counter";
                 if(!is_dir($local_path.'/'.$row_dir_name_root.'/'.$row_dir_name ))
                 {
                     $status_dir = 0 ;
                 }
                 else
                 {
-                    $counter_folder++;
+                    $folder_counter++;
                     $status_dir = 1 ;
                 }
 
@@ -579,6 +582,7 @@ if(isset($_POST['submit']))
             if(count($data_pics_row['photos'] > 0))
                 array_push($data_pics_rows , $data_pics_row);
             $counter++;
+            $folder_counter++;
 
         }
 
