@@ -186,6 +186,8 @@ if(!isset($location))
             else
             {
                 $audio_desc = "NULL";
+
+            
             }
 
             if(isset($_POST['gallery_desc']))
@@ -197,6 +199,7 @@ if(!isset($location))
             else
             {
                 $gallery_desc = "NULL";
+               
             }
 
 
@@ -209,6 +212,8 @@ if(!isset($location))
             else
             {
                 $audio_bites_desc = "NULL";
+
+            
             }
 
 
@@ -350,6 +355,11 @@ if(!isset($location))
 
                     
                     $audio_complete_story_path = "'$audio_complete_story_path'";
+
+                    if($audio_desc == "NULL")
+                    {
+                        $audio_desc = "Audio description.";
+                    }
                 }
                 else
                 {
@@ -604,6 +614,13 @@ if(!isset($location))
             $gallery_csv = implode("," , $gallery_arr) ;
             $gallery_csv = "'$gallery_csv'";
 
+          
+            if(count($gallery_arr) > 0 && $gallery_desc == 'NULL')
+            {
+                $gallery_desc = "Gallery description";
+            }
+
+
         
 
         if(!empty($_FILES['bonus_media']['name'][0]))
@@ -710,6 +727,14 @@ if(!isset($location))
                 $text = "$zip_name Uploaded\n";
                 fwrite($myfile, $text);
 
+                  
+                                
+ 
+                    if($extra_files_description == "NULL")
+                    {
+                        $extra_files_description =  "Extra file description";
+                    }
+
 
             }
         
@@ -780,6 +805,11 @@ if(!isset($location))
             }
             $audio_bites_csv = implode("," , $audio_bites_arr) ;
             $audio_bites_csv = "'$audio_bites_csv'";
+
+            if(count($audio_bites_arr) > 0 && $audio_bites_desc == "NULL")
+            {
+                $audio_bites_desc = "Audio bites description";
+            }
         
         }
         else 

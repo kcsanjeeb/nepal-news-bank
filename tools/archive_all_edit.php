@@ -178,6 +178,19 @@ foreach($result as $res)
 .table-sortable tbody tr {
     cursor: move;
 }
+
+.imp {
+    display: none !important;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
 </style>
 
 <body>
@@ -191,471 +204,486 @@ foreach($result as $res)
     <form method="POST" action="accesories/update_archive.php" enctype="multipart/form-data">
 
 
-
-
-        <div class="container">
-
-
-            <!-- Title -->
-            <div class="form-group mt-3">
-                <label class="col-lg-12 p-0  h5 text-info">Step 1. News Title</label>
-
-                <input type="text" class="form-control" value="<?php echo $news_row_details['title'] ; ?>"
-                    placeholder="Title" readonly>
-            </div>
-
-            <!-- Category -->
-            <div class="form-group mt-3">
-                <label class="col-lg-12 p-0  h5 text-info">Step 2. Select News Category*</label>
-                <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
-                <select multiple name="newsCategories[]" id="categories" required>
-
-
-
-                    <?php 
-                                        if(isset($category))
-                                        {
-                                            $existing_categories = explode("," , $news_row_details['categories']);
-
-                                            foreach($category as $category)
-                                            {
-                                             
-
-                                                if( strpos( strtolower($category['name']), "archive" ) === false) {
-                                                   continue ;
-                                                }
-
-                                                if( strpos( strtolower($category['name']), "archive picture" ) !== false) {
-                                                    continue ;
-                                                 }
-
-                                                 if( strpos( strtolower($category['name']), "archive video" ) !== false) {
-                                                    continue ;
-                                                 }
-
-                                                 if(in_array($category['id'] , $existing_categories))
-                                                 {
-                                                     $is_selected = "selected" ;
-                                                 }
-                                                 else {
-                                                     $is_selected = "" ;
-                                                 }
-
-
-                                    ?>
-                    <option class="cat_opt" value="<?php echo $category['id'] ; ?>" <?php echo $is_selected ; ?>>
-                        <?php echo $category['name'] ; ?></option>
-                    <?php
-                                            }
-                                        }
-                                    ?>
-
-                </select>
-            </div>
-
-            <!-- Tags -->
-            <div class="form-group">
-                <label class="col-lg-12 p-0  h5 text-info">Step 3. Select News Tags</label>
-                <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
-                <select multiple name="newsTag[]" id="tags">
-
-                    <?php 
-                                        if(isset($tags))
-                                        {
-                                            $existing_tags = explode("," , $news_row_details['tags']);
-                                            foreach($tags as $tag)
-                                            {
-
-                                                if(in_array($tag['id'] , $existing_tags))
-                                                {
-                                                    $is_selected = "selected" ;
-                                                }
-                                                else {
-                                                    $is_selected = "" ;
-                                                }
-                                    ?>
-                    <option value="<?php echo $tag['id'] ; ?>" <?php echo $is_selected ; ?>><?php echo $tag['name'] ; ?>
-                    </option>
-                    <?php
-                                            }
-                                        }
-                                    ?>
-                    <!-- <option value="141">Business</option>
-                                    <option value="142">Entertainment</option>
-                                    <option value="134">Sports</option>
-                                    <option value="135">International</option>
-                                    <option value="136">Glamour</option>
-                                   -->
-
-
-                </select>
-            </div>
-
-            <!-- Series -->
-            <div class="form-group">
-                <label class="col-lg-12 p-0  h5 text-info">Step 4. Series</label>
-                <svg data-toggle="popover" title="News Title" data-content="Some content inside the popover"
-                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                    class="bi bi-info-circle float-right help_icon" data-toggle="tooltip" data-placement="left"
-                    title="Tooltip on left" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path
-                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                </svg>
-
-                </label>
-
-                <select multiple name="series[]" id="series">
-
-                    <?php 
-                                        if(isset($series))
-                                        {
-                                            $existing_series = explode("," , $news_row_details['series']);
-                                            foreach($series as $series)
-                                            {
-
-                                                if(in_array($series['id'] , $existing_series))
-                                                {
-                                                    $is_selected = "selected" ;
-                                                }
-                                                else {
-                                                    $is_selected = "" ;
-                                                }
-                                    ?>
-                    <option value="<?php echo $series['id'] ; ?>" <?php echo $is_selected ; ?>>
-                        <?php echo $series['name'] ; ?></option>
-                    <?php
-                                            }
-                                        }
-                                    ?>
-                    <!-- <option value="141">Business</option>
-                                    <option value="142">Entertainment</option>
-                                    <option value="134">Sports</option>
-                                    <option value="135">International</option>
-                                    <option value="136">Glamour</option>
-                                   -->
-
-
-                </select>
-            </div>
-
-            <!-- Select one image for news thumbnail-->
-            <div class="form-group">
-                <label class="col-lg-12 p-0  h5 text-info">Step 5. Thumbnail</label>
-                <svg data-toggle="popover" title="News Title" data-content="Some content inside the popover"
-                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                    class="bi bi-info-circle float-right help_icon" data-toggle="tooltip" data-placement="left"
-                    title="Tooltip on left" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path
-                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                </svg>
-
-                </label><br>
-                <!-- <input type="file" id="thumbnailimga"
-                    onchange="return thumbnailValidation('thumbnailimga' , 'thumbnailIDa' )" name="thumbImg"
-                    accept="image/*" xxx> -->
-                <!-- Image preview -->
-                <div id="thumbnailIDa">
-                    <?php
-                        if(isset($news_row_details['series']))
-                        {
-                    ?>
-                    <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow"
-                        src="<?php echo 'my_data/'.$news_row_details['thumbnail'] ; ?>" />
-                    <?php
-                        }
-                    ?>
-
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card shadow-lg  mb-5 bg-white rounded">
-                        <div class="card-header bg-info text-light ">
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <h4>Archive Videos</h4>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row clearfix">
-                                    <div class="col-md-12 table-responsive">
-                                        <table class="table table-bordered table-hover table-sortable" id="tab_logic">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:15%" class="text-center">
-                                                        Video
-                                                    </th>
-
-                                                    <th style="width:70%" class="text-center">
-                                                        Description
-                                                    </th>
-
-                                                    <th style="width:20%;" class="text-center">
-                                                        Action
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="vid-rows">
-
-                                                <?php
-
-                                                $json_video = $news_row_details['archive_videos'];
-                                                $json_decode_videos = json_decode($json_video , true);
-
-                                               
-                                                $counter = 0 ;
-                                                foreach($json_decode_videos as  $video)
-                                                {
-                                            ?>
-
-
-                                                <tr id='addr0' data-id="0" class="hidden vid-row">
-                                                    <td data-name="name">
-
-                                                        <div class="card" style="width:100%">
-                                                            <!-- <img src="./assets/images/placeholder.jpg"
-                                                                class="card-img-top " id="videolongplaceholder"
-                                                                alt="..."> -->
-
-
-                                                            <div id="videolongID">
-
-                                                                <video width="100%" height="160px" controls
-                                                                    style="display:block">
-                                                                    <source
-                                                                        src="<?php echo 'my_data/'.$video['video'] ; ?>"
-                                                                        type="video/mp4">
-                                                                </video>
-
-                                                            </div>
-
-                                                            <div class="card-body">
-
-                                                                <input type="file" id="videolong" disabled
-                                                                    onchange="return videolongValidation('videolong' , 'videolongID' , 'videolongplaceholder' )">
-
-
-                                                            </div>
-                                                        </div>
-
-
-                                                    </td>
-
-                                                    <td data-name="desc" data-desc="<?php echo $video['desc'] ; ?>"
-                                                        data-type="video" data-index="<?php echo $counter ; ?>"
-                                                        class="edit_model">
-                                                        <textarea rows="10" placeholder="Description" 
-                                                            class="form-control desc_area"><?php echo $video['desc'] ; ?></textarea>
-                                                    </td>
-
-                                                    <td data-name="del">
-                                                        <button name="del0" type="button"
-                                                            class='btn btn-danger glyphicon glyphicon-remove row-remove vid-row-del'
-                                                            data-id="<?php echo $counter ; ?>"><span aria-hidden="true"
-                                                                data-index="<?php echo $counter ; ?>">Delete</span></button>
-                                                    </td>
-
-
-
-                                                </tr>
-
-                                                <?php
-                                            $counter++;
-                                                }
-                                            ?>
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <a class="btn btn-primary float-right add-videos" data-id="0">Add Row</a>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
+        <div class="d-flex justify-content-center loader" id="preloader_boot" style="display:none !important">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
 
+        <div class="collector">
+
+            <div class="container">
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card shadow-lg  mb-5 bg-white rounded">
-                        <div class="card-header bg-info text-light ">
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <h4>Archive Pictures</h4>
-                                </div>
+                <!-- Title -->
+                <div class="form-group mt-3">
+                    <label class="col-lg-12 p-0  h5 text-info">Step 1. News Title</label>
+
+                    <input type="text" class="form-control" value="<?php echo $news_row_details['title'] ; ?>"
+                        placeholder="Title" readonly>
+                </div>
+
+                <!-- Category -->
+                <div class="form-group mt-3">
+                    <label class="col-lg-12 p-0  h5 text-info">Step 2. Select News Category*</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
+                    <select multiple name="newsCategories[]" id="categories" required>
 
 
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row clearfix">
-                                    <div class="col-md-12 table-responsive">
-                                        <table class="table table-bordered table-hover table-sortable" id="tab_logic">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:15%" class="text-center">
-                                                        Image
-                                                    </th>
 
-                                                    <th style="width:65%" class="text-center">
-                                                        Description
-                                                    </th>
+                        <?php 
+                                            if(isset($category))
+                                            {
+                                                $existing_categories = explode("," , $news_row_details['categories']);
 
-                                                    <th style="width:20%" class="text-center">
-                                                        Action
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="pics-rows">
-
-                                                <?php
-
-                                                $json_pictures = $news_row_details['archive_photos'];
-                                                $json_pictures_videos = json_decode($json_pictures , true);
-
-
-                                                $counter = 0 ;
-                                                foreach($json_pictures_videos as  $pictures)
+                                                foreach($category as $category)
                                                 {
-                                                   
-                                            ?>
+                                                
 
-                                                <tr id='addr0' data-id="0" class="hidden pic-row">
-                                                    <td data-name="name">
-                                                        <?php
-                                                            $pics = $pictures['photos'];
-                                                          
-                                                            $pic_loop = 0 ;
+                                                    if( strpos( strtolower($category['name']), "archive" ) === false) {
+                                                    continue ;
+                                                    }
 
-                                                        ?>
-                                                        <div id="carouselExampleFade<?php echo $counter  ; ?>"
-                                                            class="carousel slide carousel-fade" data-ride="carousel">
-                                                            <div class="carousel-inner">
+                                                    if( strpos( strtolower($category['name']), "archive picture" ) !== false) {
+                                                        continue ;
+                                                    }
 
-                                                                <?php
-                                                                        foreach($pics as $pic)
-                                                                        {
-                                                                    ?>
+                                                    if( strpos( strtolower($category['name']), "archive video" ) !== false) {
+                                                        continue ;
+                                                    }
 
-                                                                <div
-                                                                    class="carousel-item <?php if($pic_loop == 0) echo 'active' ; ?>">
-                                                                    <img src="my_data/<?php echo $pic ; ?>"
-                                                                        class="d-block w-100" alt="...">
+                                                    if(in_array($category['id'] , $existing_categories))
+                                                    {
+                                                        $is_selected = "selected" ;
+                                                    }
+                                                    else {
+                                                        $is_selected = "" ;
+                                                    }
+
+
+                                        ?>
+                        <option class="cat_opt" value="<?php echo $category['id'] ; ?>" <?php echo $is_selected ; ?>>
+                            <?php echo $category['name'] ; ?></option>
+                        <?php
+                                                }
+                                            }
+                                        ?>
+
+                    </select>
+                </div>
+
+                <!-- Tags -->
+                <div class="form-group">
+                    <label class="col-lg-12 p-0  h5 text-info">Step 3. Select News Tags</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
+                    <select multiple name="newsTag[]" id="tags">
+
+                        <?php 
+                                            if(isset($tags))
+                                            {
+                                                $existing_tags = explode("," , $news_row_details['tags']);
+                                                foreach($tags as $tag)
+                                                {
+
+                                                    if(in_array($tag['id'] , $existing_tags))
+                                                    {
+                                                        $is_selected = "selected" ;
+                                                    }
+                                                    else {
+                                                        $is_selected = "" ;
+                                                    }
+                                        ?>
+                        <option value="<?php echo $tag['id'] ; ?>" <?php echo $is_selected ; ?>>
+                            <?php echo $tag['name'] ; ?>
+                        </option>
+                        <?php
+                                                }
+                                            }
+                                        ?>
+                        <!-- <option value="141">Business</option>
+                                        <option value="142">Entertainment</option>
+                                        <option value="134">Sports</option>
+                                        <option value="135">International</option>
+                                        <option value="136">Glamour</option>
+                                    -->
+
+
+                    </select>
+                </div>
+
+                <!-- Series -->
+                <div class="form-group">
+                    <label class="col-lg-12 p-0  h5 text-info">Step 4. Series</label>
+                    <svg data-toggle="popover" title="News Title" data-content="Some content inside the popover"
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip" data-placement="left"
+                        title="Tooltip on left" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>
+
+                    </label>
+
+                    <select multiple name="series[]" id="series">
+
+                        <?php 
+                                            if(isset($series))
+                                            {
+                                                $existing_series = explode("," , $news_row_details['series']);
+                                                foreach($series as $series)
+                                                {
+
+                                                    if(in_array($series['id'] , $existing_series))
+                                                    {
+                                                        $is_selected = "selected" ;
+                                                    }
+                                                    else {
+                                                        $is_selected = "" ;
+                                                    }
+                                        ?>
+                        <option value="<?php echo $series['id'] ; ?>" <?php echo $is_selected ; ?>>
+                            <?php echo $series['name'] ; ?></option>
+                        <?php
+                                                }
+                                            }
+                                        ?>
+                        <!-- <option value="141">Business</option>
+                                        <option value="142">Entertainment</option>
+                                        <option value="134">Sports</option>
+                                        <option value="135">International</option>
+                                        <option value="136">Glamour</option>
+                                    -->
+
+
+                    </select>
+                </div>
+
+                <!-- Select one image for news thumbnail-->
+                <div class="form-group">
+                    <label class="col-lg-12 p-0  h5 text-info">Step 5. Thumbnail</label>
+                    <svg data-toggle="popover" title="News Title" data-content="Some content inside the popover"
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip" data-placement="left"
+                        title="Tooltip on left" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>
+
+                    </label><br>
+                    <!-- <input type="file" id="thumbnailimga"
+                        onchange="return thumbnailValidation('thumbnailimga' , 'thumbnailIDa' )" name="thumbImg"
+                        accept="image/*" xxx> -->
+                    <!-- Image preview -->
+                    <div id="thumbnailIDa">
+                        <?php
+                            if(isset($news_row_details['series']))
+                            {
+                        ?>
+                        <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow"
+                            src="<?php echo 'my_data/'.$news_row_details['thumbnail'] ; ?>" />
+                        <?php
+                            }
+                        ?>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card shadow-lg  mb-5 bg-white rounded">
+                            <div class="card-header bg-info text-light ">
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <h4>Archive Videos</h4>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row clearfix">
+                                        <div class="col-md-12 table-responsive">
+                                            <table class="table table-bordered table-hover table-sortable"
+                                                id="tab_logic">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:15%" class="text-center">
+                                                            Video
+                                                        </th>
+
+                                                        <th style="width:70%" class="text-center">
+                                                            Description
+                                                        </th>
+
+                                                        <th style="width:20%;" class="text-center">
+                                                            Action
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="vid-rows">
+
+                                                    <?php
+
+                                                    $json_video = $news_row_details['archive_videos'];
+                                                    $json_decode_videos = json_decode($json_video , true);
+
+                                                
+                                                    $counter = 0 ;
+                                                    foreach($json_decode_videos as  $video)
+                                                    {
+                                                ?>
+
+
+                                                    <tr id='addr0' data-id="0" class="hidden vid-row">
+                                                        <td data-name="name">
+
+                                                            <div class="card" style="width:100%">
+                                                                <!-- <img src="./assets/images/placeholder.jpg"
+                                                                    class="card-img-top " id="videolongplaceholder"
+                                                                    alt="..."> -->
+
+
+                                                                <div id="videolongID">
+
+                                                                    <video width="100%" height="160px" controls
+                                                                        style="display:block">
+                                                                        <source
+                                                                            src="<?php echo 'my_data/'.$video['video'] ; ?>"
+                                                                            type="video/mp4">
+                                                                    </video>
+
                                                                 </div>
 
-                                                                <?php
-                                                                    $pic_loop++;
-                                                                        }
-                                                                    ?>
+                                                                <div class="card-body">
+
+                                                                    <input type="file" id="videolong" disabled
+                                                                        onchange="return videolongValidation('videolong' , 'videolongID' , 'videolongplaceholder' )">
 
 
-                                                                <!-- <div class="carousel-item">
-                                                                        <img src="my_data/archive_data/Test New Local/20210621_172448_87111_picture_3.jpg" class="d-block w-100" alt="...">
-                                                                    </div>
-                                                                    <div class="carousel-item">
-                                                                        <img src="my_data/archive_data/Test New Local/20210621_172448_87111_picture_2.jpg" class="d-block w-100" alt="...">
-                                                                    </div> -->
-
-
+                                                                </div>
                                                             </div>
-                                                            <a class="carousel-control-prev"
-                                                                href="#carouselExampleFade<?php echo $counter  ; ?>"
-                                                                role="button" data-slide="prev">
-                                                                <span class="carousel-control-prev-icon"
-                                                                    aria-hidden="true"></span>
-                                                                <span class="sr-only">Previous</span>
-                                                            </a>
-                                                            <a class="carousel-control-next"
-                                                                href="#carouselExampleFade<?php echo $counter  ; ?>"
-                                                                role="button" data-slide="next">
-                                                                <span class="carousel-control-next-icon"
-                                                                    aria-hidden="true"></span>
-                                                                <span class="sr-only">Next</span>
-                                                            </a>
-                                                        </div>
 
 
-                                                        <?php
-                                                           
-                                                        ?>
+                                                        </td>
 
-                                                        <div class="form-group">
+                                                        <td data-name="desc" data-desc="<?php echo $video['desc'] ; ?>"
+                                                            data-type="video" data-index="<?php echo $counter ; ?>"
+                                                            class="edit_model">
+                                                            <textarea rows="10" placeholder="Description"
+                                                                class="form-control desc_area"><?php echo $video['desc'] ; ?></textarea>
+                                                        </td>
 
-                                                            <input type="file" id="thumbnailimg" disabled
-                                                                onchange="return thumbnailValidation('thumbnailimg' , 'thumbnailID')"
-                                                                accept="image/*" xxx multiple>
-                                                            <!-- Image preview -->
-                                                            <!-- <div id="thumbnailID"></div> -->
+                                                        <td data-name="del">
+                                                            <button name="del0" type="button"
+                                                                class='btn btn-danger glyphicon glyphicon-remove row-remove vid-row-del'
+                                                                data-id="<?php echo $counter ; ?>"><span
+                                                                    aria-hidden="true"
+                                                                    data-index="<?php echo $counter ; ?>">Delete</span></button>
+                                                        </td>
 
 
 
+                                                    </tr>
 
-                                                        </div>
-
-
-                                                    </td>
-
-                                                    <td data-name="desc" class="edit_model"
-                                                        data-desc="<?php echo $pictures['desc'] ; ?>"
-                                                        data-type="picture" data-index="<?php echo $counter ; ?>">
-                                                        <textarea rows="10" placeholder="Description"
-                                                            class="form-control desc_area "><?php echo $pictures['desc'] ; ?></textarea>
-                                                    </td>
-
-                                                    <td data-name="del">
-
-                                                        <button name="del0" data-id='<?php echo $counter ; ?>'
-                                                            class='btn btn-danger glyphicon glyphicon-remove row-remove pics-row-del'><span
-                                                                aria-hidden="true">Delete</span></button>
-                                                    </td>
-                                                </tr>
-
-
-
-                                                <?php
+                                                    <?php
                                                 $counter++;
-                                                }
-                                            ?>
+                                                    }
+                                                ?>
 
 
-
-                                            </tbody>
-                                        </table>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
+                                    <a class="btn btn-primary float-right add-videos" data-id="0">Add Row</a>
                                 </div>
-                                <a class="btn btn-primary float-right add-pic" data-id="0"> Add Row</a>
                             </div>
+
+
                         </div>
 
                     </div>
-
-                    <button type="submit" class="btn btn-primary float-right mb-5" name="submit">Post</button>
-
-
-                    <br>
-                    <br>
                 </div>
             </div>
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card shadow-lg  mb-5 bg-white rounded">
+                            <div class="card-header bg-info text-light ">
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <h4>Archive Pictures</h4>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row clearfix">
+                                        <div class="col-md-12 table-responsive">
+                                            <table class="table table-bordered table-hover table-sortable"
+                                                id="tab_logic">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:15%" class="text-center">
+                                                            Image
+                                                        </th>
+
+                                                        <th style="width:65%" class="text-center">
+                                                            Description
+                                                        </th>
+
+                                                        <th style="width:20%" class="text-center">
+                                                            Action
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="pics-rows">
+
+                                                    <?php
+
+                                                    $json_pictures = $news_row_details['archive_photos'];
+                                                    $json_pictures_videos = json_decode($json_pictures , true);
+
+
+                                                    $counter = 0 ;
+                                                    foreach($json_pictures_videos as  $pictures)
+                                                    {
+                                                    
+                                                ?>
+
+                                                    <tr id='addr0' data-id="0" class="hidden pic-row">
+                                                        <td data-name="name">
+                                                            <?php
+                                                                $pics = $pictures['photos'];
+                                                            
+                                                                $pic_loop = 0 ;
+
+                                                            ?>
+                                                            <div id="carouselExampleFade<?php echo $counter  ; ?>"
+                                                                class="carousel slide carousel-fade"
+                                                                data-ride="carousel">
+                                                                <div class="carousel-inner">
+
+                                                                    <?php
+                                                                            foreach($pics as $pic)
+                                                                            {
+                                                                        ?>
+
+                                                                    <div
+                                                                        class="carousel-item <?php if($pic_loop == 0) echo 'active' ; ?>">
+                                                                        <img src="my_data/<?php echo $pic ; ?>"
+                                                                            class="d-block w-100" alt="...">
+                                                                    </div>
+
+                                                                    <?php
+                                                                        $pic_loop++;
+                                                                            }
+                                                                        ?>
+
+
+                                                                    <!-- <div class="carousel-item">
+                                                                            <img src="my_data/archive_data/Test New Local/20210621_172448_87111_picture_3.jpg" class="d-block w-100" alt="...">
+                                                                        </div>
+                                                                        <div class="carousel-item">
+                                                                            <img src="my_data/archive_data/Test New Local/20210621_172448_87111_picture_2.jpg" class="d-block w-100" alt="...">
+                                                                        </div> -->
+
+
+                                                                </div>
+                                                                <a class="carousel-control-prev"
+                                                                    href="#carouselExampleFade<?php echo $counter  ; ?>"
+                                                                    role="button" data-slide="prev">
+                                                                    <span class="carousel-control-prev-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                                <a class="carousel-control-next"
+                                                                    href="#carouselExampleFade<?php echo $counter  ; ?>"
+                                                                    role="button" data-slide="next">
+                                                                    <span class="carousel-control-next-icon"
+                                                                        aria-hidden="true"></span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </div>
+
+
+                                                            <?php
+                                                            
+                                                            ?>
+
+                                                            <div class="form-group">
+
+                                                                <input type="file" id="thumbnailimg" disabled
+                                                                    onchange="return thumbnailValidation('thumbnailimg' , 'thumbnailID')"
+                                                                    accept="image/*" xxx multiple>
+                                                                <!-- Image preview -->
+                                                                <!-- <div id="thumbnailID"></div> -->
+
+
+
+
+                                                            </div>
+
+
+                                                        </td>
+
+                                                        <td data-name="desc" class="edit_model"
+                                                            data-desc="<?php echo $pictures['desc'] ; ?>"
+                                                            data-type="picture" data-index="<?php echo $counter ; ?>">
+                                                            <textarea rows="10" placeholder="Description"
+                                                                class="form-control desc_area "><?php echo $pictures['desc'] ; ?></textarea>
+                                                        </td>
+
+                                                        <td data-name="del">
+
+                                                            <button name="del0" data-id='<?php echo $counter ; ?>'
+                                                                class='btn btn-danger glyphicon glyphicon-remove row-remove pics-row-del'><span
+                                                                    aria-hidden="true">Delete</span></button>
+                                                        </td>
+                                                    </tr>
+
+
+
+                                                    <?php
+                                                    $counter++;
+                                                    }
+                                                ?>
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-primary float-right add-pic" data-id="0"> Add Row</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary float-right mb-5 preloader_on"
+                            name="submit">Post</button>
+
+
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="newsid" id="newsid" value="<?php echo $news_id; ?>">
+
         </div>
 
-        <input type="hidden" name="newsid" id="newsid" value="<?php echo $news_id; ?>">
 
     </form>
 
@@ -831,6 +859,12 @@ foreach($result as $res)
             var confirm_status = confirm("Are you sure you want to delete this row?");
 
             if (confirm_status == true) {
+
+                $(".collector").css("filter", "blur(2px)");
+                $("#preloader_boot").removeClass("imp");
+                $("#preloader_boot").css("display", "");
+
+
                 var index = $(this).attr("data-id");
                 var newsid = $('#newsid').val();
                 console.log(index);
@@ -848,11 +882,17 @@ foreach($result as $res)
                     success: function(data) {
 
 
+                        // $(".collector").css("filter", "");
+                        // $('#preloader_boot').addClass('imp');
+                        location.reload();
+
 
                     }
                 });
 
-                $(this).closest('.vid-row').remove();
+                // $(this).closest('.vid-row').remove();
+
+
 
             }
 
@@ -897,7 +937,7 @@ foreach($result as $res)
                                                 </td>
                                             </tr>
             `;
-                    counter++;
+            counter++;
 
 
 
@@ -915,6 +955,13 @@ foreach($result as $res)
             var confirm_status = confirm("Are you sure you want to delete this row?");
 
             if (confirm_status == true) {
+
+                
+                $(".collector").css("filter", "blur(2px)");
+                $("#preloader_boot").removeClass("imp");
+                $("#preloader_boot").css("display", "");
+
+
                 var index = $(this).attr("data-id");
                 var newsid = $('#newsid').val();
                 // console.log(index);
@@ -931,12 +978,16 @@ foreach($result as $res)
                     dataType: "text",
                     success: function(data) {
 
+                        // $(".collector").css("filter", "");
+                        // $('#preloader_boot').addClass('imp');
+                        location.reload();
 
 
                     }
                 });
+                // $(this).closest('.pic-row').remove();
 
-                $(this).closest('.pic-row').remove();
+
 
             }
 
@@ -978,11 +1029,15 @@ foreach($result as $res)
 
         });
 
-        $('#exampleModalCenter_up').on('shown.bs.modal', function () {
+        $('#exampleModalCenter_up').on('shown.bs.modal', function() {
             $('#up_desc').focus();
         })
 
         $(document).on('click', '#sub_desc_update', function() {
+
+            $(".collector").css("filter", "blur(2px)");
+            $("#preloader_boot").removeClass("imp");
+            $("#preloader_boot").css("display", "");
 
             var index = $("#up_index").val();
             var desc = $("#up_desc").val();
@@ -995,6 +1050,9 @@ foreach($result as $res)
             } else {
                 attr = 'pics_desc';
             }
+
+            $('#exampleModalCenter_up').modal('toggle');
+
 
             $.ajax({
                 url: "accesories/update_row_delete_archive.php",
@@ -1009,23 +1067,31 @@ foreach($result as $res)
                 },
                 dataType: "text",
                 success: function(data) {
-                    $( ".desc_area:eq( "+index_textbox+" )" ).val( desc );
-                    $('#exampleModalCenter_up').modal('toggle');
+                    $(".desc_area:eq( " + index_textbox + " )").val(desc);
 
 
+                    $(".collector").css("filter", "");
+                    $('#preloader_boot').addClass('imp');
 
                 }
             });
-            
-            
+
+
 
 
 
         });
 
-    });
+        $(".preloader_on").click(function() {
 
- 
+            $(".collector").css("filter", "blur(2px)");
+            $("#preloader_boot").css("display", "");
+
+        });
+
+        
+
+    });
     </script>
 
     <script>

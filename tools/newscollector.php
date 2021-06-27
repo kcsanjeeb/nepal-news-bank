@@ -269,6 +269,20 @@ strong {
     color: #535a5c;
     font-weight: 700
 }
+/* 
+.collector {
+    filter: blur(2px);
+} */
+
+.loader{
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
 </style>
 
 <body>
@@ -278,701 +292,732 @@ strong {
     ?>
     <br>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card shadow-lg  mb-5 bg-white rounded">
-                    <div class="card-header bg-info ">
-                        <h4>News Collector</h4>
-                    </div>
-                    <div class="card-body">
-
-                        <?php
-
-                          if(isset($_SESSION['notice']) )
-                          {
-                            if($_SESSION['notice'] == 'Error')
-                            {
-                                $notice  = 'Error while collecting news!';
-                                $bg_color = 'red';
-                                $color = '#000';
-                                $color_down = '#000';
-                                
-
-                            }
-
-                            if($_SESSION['notice'] == 'Success')
-                            {
-                                $notice  = 'News collection successfull.';
-                                $bg_color = 'rgb(102, 255, 51,0.5)';
-                                $color = '#009933';
-                                $color_down = '#4BB543';
-                                $notice2 = "Database logging successfull.";
-                                $sta = "succ";
-                               
-
-                            }
 
 
-                          ?>
 
-                        <div class="alert  alert-success fade show" role="alert"
-                            style="background-color: <?php echo $bg_color ; ?>; color:<?php echo $color ; ?>">
-                            <strong style="color:<?php echo $color_down ; ?>">Notice : </strong> <?php echo $notice; ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+        <div class="d-flex justify-content-center loader" id="preloader_boot" style="display:none !important;" >
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+
+
+        <div class="collector">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card shadow-lg  mb-5 bg-white rounded">
+                        <div class="card-header bg-info ">
+                            <h4>News Collector</h4>
                         </div>
-                        <?php 
-                            if(isset($sta))
-                            {
-                        ?>
-                        <div class="alert  alert-success fade show" role="alert"
-                            style="background-color: <?php echo $bg_color ; ?>; color:<?php echo $color ; ?>">
-                            <strong style="color:<?php echo $color_down ; ?>">Notice : </strong> <?php echo $notice2; ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <?php
-                            }
-                      
+                        <div class="card-body">
 
+                            <?php
 
-
-                                unset($_SESSION['notice']);
-                              
-                          }
-
-                      ?>
-
-
-                        <form method="POST" enctype="multipart/form-data" action="accesories/local_submit.php">
-                            <!-- <form method="POST" enctype="multipart/form-data" action="accesories/test.php"> -->
-                            <!-- The headline for news. -->
-
-                            <STRONG>NEWS </strong>
-                            <HR style="    border-top: 1px solid rgba(0,0,0)">
-
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 1. Select News Date*
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-                                </label>
-                                <input class=" form-control col-lg-2" type="date" name="newsdate"
-                                    value="<?php echo $selected_date ; ?>" xxx>
-                                <!-- make date today's date -->
-
-
-                            </div>
-                            <div class="form-group">
-                                <label class=" p-0 col-lg-12 h5 text-info">Step 2. Enter News Byline*
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-
-                                </label>
-                                <div class="form-inline">
-                                    <input type="text" class="form-control col-lg-12 pl-0"
-                                        placeholder="Enter / Paste news byline" name="byLine" id="input_box" xxx
-                                        onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)">
-                                    <!-- <input type="text" class="form-control col-lg-10" placeholder="Enter news byline" name="byLine" id="input_box" xxx  onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)"> -->
-                                    <!-- <div id="formByline" class="col-lg-10 pl-0">
-                                    </div> -->
-                                    <!-- <select class="custom-select my-1 col-lg-2" name='lang_selec'
-                                        onchange="changeOrg()">
-                                        <option value="nepali">Nepali Language</option>
-                                        <option value="english">English Language</option>
-                                    </select> -->
-                                </div>
-
-                                <small id="emailHelp" class="form-text text-muted">
-                                    <span id=charcount></span>
-
-                                </small>
-
-
-
-                            </div>
-
-
-
-
-
-
-                            <!-- The body of news. Should extract text from file like txt and docs and pass to sql -->
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 3. Select News Body File
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-                                </label>
-                                <input type="file" id="myfile" name="descFile" xxx>
-                                <small id="emailHelp" class="form-text text-muted">accepted formats : docx </small>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 4. Select Extra Files
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-                                </label>
-                                <div id="extra_selectors">
-                                    <div>
-                                        <input type="file" id="" class="extra_folder" name="extra_files[]" multiple >
-                                     </div>
-                                </div>
-                                <textarea type="text" class="form-control col-lg-12 pl-0 mt-2" placeholder="Description" name="extra_files_description" id="input_box" rows="5" ></textarea>
-                                
-                                
-                            </div>
-                            <!-- <button id="add_extra_folder" type="button">Add New</button> -->
-
-
-                            <!-- <STRONG> SELECT VIDEOS </strong> -->
-                            <label class="col-lg-12 p-0 h5 text-info">Step 5. Select Videos</label>
-                            <HR style="    border-top: 1px solid rgba(0,0,0)">
-                            <div class="row">
-                                <!--Select video and pass to sql-->
-
-
-
-
-
-
-                                <!-- video long card -->
-                                <div class="col-sm-4">
-                                    <div class="card ">
-                                        <img src="./assets/images/placeholder.jpg" class="card-img-top "
-                                            id="regularfeedplaceholder" alt="...">
-                                        <div id="regularfeedID"></div>
-                                        <div class="card-body">
-                                            <span><strong>5.1 Regular Feed</strong></span>
-                                            <div class="float-right">
-                                                <svg data-toggle="popover" title="News Title"
-                                                    data-content="Some content inside the popover"
-                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                    data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                    viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                                </svg>
-                                            </div>
-
-                                            <input type="file" id="regularfeed" name="regularFeeddFile"
-                                                onchange="return regularFeedValidation()" xxx>
-                                            <small id="emailHelp" class="form-text text-muted">5min to 7min
-                                                video</small>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- --------------- -->
-                                <!-- video lazy card -->
-                                <div class="col-sm-4">
-                                    <div class="card ">
-                                        <img src="./assets/images/placeholder.jpg" class="card-img-top "
-                                            id="readyVersionplaceholder" alt="...">
-                                        <div id="readyversionID"></div>
-                                        <div class="card-body">
-                                            <span><strong>5.2 Ready Version</strong></span>
-                                            <div class="float-right">
-                                                <svg data-toggle="popover" title="News Title"
-                                                    data-content="Some content inside the popover"
-                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                    data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                    viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                                </svg>
-                                            </div>
-                                            <input type="file" id="readyversion" name="readyVersionFile"
-                                                onchange="return readyVersionValidation()">
-                                            <small id="emailHelp" class="form-text text-muted">Video should be less than
-                                                3 minutes</small>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- --------------- -->
-                                <!-- video extra card -->
-                                <div class="col-sm-4">
-                                    <div class="card ">
-                                        <img src="./assets/images/placeholder.jpg" class="card-img-top "
-                                            id="roughcutplaceholder" alt="...">
-                                        <div id="roughcutID"></div>
-                                        <div class="card-body">
-                                            <span><strong>5.3 Rough Cut</strong></span>
-                                            <div class="float-right">
-                                                <svg data-toggle="popover" title="News Title"
-                                                    data-content="Some content inside the popover"
-                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                    data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                    viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                                </svg>
-                                            </div>
-                                            <input type="file" id="roughcut" name="roughCutFile"
-                                                onchange="return roughcutValidation()">
-                                            <small id="emailHelp" class="form-text text-muted">Video should be less than
-                                                3 minutes</small>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- --------------- -->
-
-                            <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
-                            <div class="form-group mt-3">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 6. Select News Category*</label>
-                                <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
-                                <select multiple name="newsCategories[]" id="categories" required>
-
-
-
-                                    <?php 
-                                        if(isset($category))
-                                        {
-                                            foreach($category as $category)
-                                            {
-                                             
-
-                                                if( strpos( strtolower($category['name']), "archive" ) !== false) {
-                                                   continue ;
-                                                }
-                                    ?>
-                                    <option class="cat_opt" value="<?php echo $category['id'] ; ?>">
-                                        <?php echo $category['name'] ; ?></option>
-                                    <?php
-                                            }
-                                        }
-                                    ?>
-
-                                </select>
-                            </div>
-
-                            <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0  h5 text-info">Step 7. Select News Tags</label>
-                                <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
-                                <select multiple name="newsTag[]" id="tags">
-
-                                    <?php 
-                                        if(isset($tags))
-                                        {
-                                            foreach($tags as $tag)
-                                            {
-                                    ?>
-                                    <option value="<?php echo $tag['id'] ; ?>"><?php echo $tag['name'] ; ?></option>
-                                    <?php
-                                            }
-                                        }
-                                    ?>
-                                    <!-- <option value="141">Business</option>
-                                    <option value="142">Entertainment</option>
-                                    <option value="134">Sports</option>
-                                    <option value="135">International</option>
-                                    <option value="136">Glamour</option>
-                                   -->
-
-
-                                </select>
-                            </div>
-
-                            <HR style="    border-top: 1px solid rgba(0,0,0)">
-
-                            <div class="form-group ">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 8. Select Audio
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-
-                                </label><br>
-                                <div class="row">
-                                    
-                                    <div class="col-lg-6">
-                                        <strong>8.1 Select Audio Complete Story</strong> 
-                                        <div class="mt-2">
-                                        <input type="file" id="img" name="audio_complete_story">
-                                        </div>
-                                        <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_desc" rows="5" placeholder="Description"></textarea>
+                                if(isset($_SESSION['notice']) )
+                                {
+                                    if($_SESSION['notice'] == 'Error')
+                                    {
+                                        $notice  = 'Error while collecting news!';
+                                        $bg_color = 'red';
+                                        $color = '#000';
+                                        $color_down = '#000';
                                         
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <strong>8.2 Select Audio Bites</strong>
-                                        <div id="audio_bites_selector" class="mt-2" >
-                                                <input type="file"  class="audio_bites" id="img" name="audio_bites[]">
-                                        </div> 
-                                        <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_bites_desc"  rows="5" placeholder="Description"></textarea>
-                                    </div>    
-                                </div>
-                             
-                            </div>
 
+                                    }
 
-                        
-                            <!-- Select one audio file -->
-                          
-                            <HR style="    border-top: 1px solid rgba(0,0,0)">
-                          
-                            <STRONG class=" h5 text-info">Step 9. Select Images </strong>
-
-
-
-                            <!-- Select one image for news thumbnail-->
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0"><strong>9.1 Video Thumbnail JPG / PNG</strong>
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-
-                                </label><br>
-                                <input type="file" id="thumbnailimg" onchange="return thumbnailValidation()"
-                                    name="thumbImg" accept="image/*" xxx>
-                                <!-- Image preview -->
-                                <div id="thumbnailID"></div>
-                            </div>
-
-
-                           
-
-
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0"><strong>9.2 Gallery Images JPG / PNG</strong>
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-
-                                </label><br>
-                                <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="gallery_desc" rows="5" placeholder="Description"></textarea>
-                                <input type="file" id="pro-image" name="galleryImage[]" accept="image/*" multiple>
-                                <!-- onclick="$('#pro-image').click()" -->
-                                <div class="preview-images-zone" style="display:none">
-                                </div>
-                            </div>
-
-                            <HR style="    border-top: 1px solid rgba(0,0,0)">
-
-                            <div class="form-group">
-                            <label class="col-lg-12 p-0  h5 text-info">Step 10. Select Series</label>
-                                            <svg data-toggle="popover" title="News Title"
-                                                data-content="Some content inside the popover"
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
-
-                                        </label>
-
-                                        <select multiple name="series[]" id="series">
-
-                                            <?php 
-                                        if(isset($series))
-                                        {
-                                            foreach($series as $series)
-                                            {
-                                    ?>
-                                            <option value="<?php echo $series['id'] ; ?>">
-                                                <?php echo $series['name'] ; ?></option>
-                                            <?php
-                                            }
-                                        }
-                                    ?>
-                                          
-
-
-                                        </select>
-                                    </div>
-
-                         
-                            
-                            <!-- The body of news. Should extract text from file like txt and docs and pass to sql -->
-                            <div class="form-group">
-                                <label class="col-lg-12 p-0 h5 text-info">Step 11. Select Bonus Media
-                                    <svg data-toggle="popover" title="News Title"
-                                        data-content="Some content inside the popover"
-                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
-                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-                                </label>
-
-                                <div id="bonus_selectors" >
-
-                                    <div>
-                                        <input type="file" class="bonus_media" name="bonus_media[]" multiple >
-                                     </div>
-
-                                </div>
-                               
-                            </div>
-                            <!-- <button id="add_bonus_folder" type="button">Add Bonus </button> -->
-
-                            <!-- <HR style="    border-top: 1px solid rgba(0,0,0)"> -->
-
-                            
-
-
-                            <label class="col-lg-12 p-0  h5 text-info">Step 12. Select Others (optional)</label>
-                  
-
-                            <div class="row">
-                                <div class="col-lg-6">
-
-                                
-                                    <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>12.1. District*</strong>
-                                            <svg data-toggle="popover" title="News Title"
-                                                data-content="Some content inside the popover"
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
-
-                                        </label>
-                                        <select class="form-control" id="exampleFormControlSelect2" name="district" xxx>
-                                            <?php
-                                                foreach($district_global as $district)
-                                                {
-
-                                            ?>
-                                            <option value="<?php echo $district ; ?>"><?php echo $district ; ?></option>
-
-                                            <?php
-                                                }
-                                            ?>
-
-
-                                        </select>
-                                    </div>
-
-
-
-                                    <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>12.2 Reporter*</strong>
-                                            <svg data-toggle="popover" title="News Title"
-                                                data-content="Some content inside the popover"
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
-
-
-                                        </label>
-                                        <select class="form-control" id="exampleFormControlSelect2" name="reporter" xxx>
-                                            <?php
-                                                foreach($reporter_global as $reporter)
-                                                {
-
-                                            ?>
-                                            <option value="<?php echo $reporter ; ?>"><?php echo $reporter ; ?></option>
-
-                                            <?php
-                                                }
-                                            ?>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>12.3 Camera Man*</strong>
-                                            <svg data-toggle="popover" title="News Title"
-                                                data-content="Some content inside the popover"
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
-
-                                        </label>
-                                        <select class="form-control" id="exampleFormControlSelect2" name="camera_man"
-                                            xxx>
-                                            <?php
-                                                foreach($cameraman_global as $cman)
-                                                {
-
-                                            ?>
-                                            <option value="<?php echo $cman ; ?>"><?php echo $cman ; ?></option>
-
-                                            <?php
-                                                }
-                                            ?>
-                                        </select>
-                                    </div>
-
-
-
-
-                                </div>
-                                <div class="col-lg-6">
-
-
-                                    <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>12.4 Created By*</strong>
-                                            <svg data-toggle="popover" title="News Title"
-                                                data-content="Some content inside the popover"
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
-
-                                        </label>
-                                        <select class="form-control" id="exampleFormControlSelect2" name="uploaded_by"
-                                            xxx>
-                                            <?php
-                                                foreach($createdby_global as $cby)
-                                                {
-
-                                            ?>
-                                            <option value="<?php echo $cby ; ?>"><?php echo $cby ; ?></option>
-
-                                            <?php
-                                                }
-                                            ?>
-
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-12 p-0"><strong>12.5 Video Type</strong>
-                                            <svg data-toggle="popover" title="News Title"
-                                                data-content="Some content inside the popover"
-                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-info-circle float-right help_icon"
-                                                data-toggle="tooltip" data-placement="left" title="Tooltip on left"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
-
-                                        </label>
-                                        <select class="form-control" id="exampleFormControlSelect2" name="video_type"
-                                            xxx>
-                                            <option value="selfhost">Selfhost</option>
-                                            <option value="vimeo">Vimeo</option>
-
-                                        </select>
-                                    </div>
-
+                                    if($_SESSION['notice'] == 'Success')
+                                    {
+                                        $notice  = 'News collection successfull.';
+                                        $bg_color = 'rgb(102, 255, 51,0.5)';
+                                        $color = '#009933';
+                                        $color_down = '#4BB543';
+                                        $notice2 = "Database logging successfull.";
+                                        $sta = "succ";
                                     
 
-                                 
-                                </div>
+                                    }
+
+
+                                ?>
+
+                            <div class="alert  alert-success fade show" role="alert"
+                                style="background-color: <?php echo $bg_color ; ?>; color:<?php echo $color ; ?>">
+                                <strong style="color:<?php echo $color_down ; ?>">Notice : </strong> <?php echo $notice; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-
-
-
+                            <?php 
+                                    if(isset($sta))
+                                    {
+                                ?>
+                            <div class="alert  alert-success fade show" role="alert"
+                                style="background-color: <?php echo $bg_color ; ?>; color:<?php echo $color ; ?>">
+                                <strong style="color:<?php echo $color_down ; ?>">Notice : </strong> <?php echo $notice2; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <?php
+                                    }
                             
 
 
 
+                                        unset($_SESSION['notice']);
+                                    
+                                }
+
+                            ?>
 
 
-                            <label class="col-lg-12 p-0 h5 text-info">Step 13.</label>
+                            <form method="POST" enctype="multipart/form-data" id="collector_form" action="accesories/local_submit.php">
+                                <!-- <form method="POST" enctype="multipart/form-data" action="accesories/test.php"> -->
+                                <!-- The headline for news. -->
 
-                            <button type="submit" class="btn btn-primary" name="submit">Collect news</button>
+                                <STRONG>NEWS </strong>
+                                <HR style="    border-top: 1px solid rgba(0,0,0)">
 
-                            <label class="col-lg-12 p-0 h5 text-info mt-2">Step 14.</label>
-                            <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete collected
-                                    news</button></span>
-                            <span>please <strong><a href="./remotecopycreator.php">go to Remote Copy
-                                        Creator</a></strong> tool to delete</span>
+                                <div class="form-group">
+                                    <label class="col-lg-12 p-0 h5 text-info">Step 1. Select News Date*
+                                        <svg data-toggle="popover" title="News Title"
+                                            data-content="Some content inside the popover"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                            class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                            data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg>
+                                    </label>
+                                    <input class=" form-control col-lg-2" type="date" name="newsdate"
+                                        value="<?php echo $selected_date ; ?>" xxx>
+                                    <!-- make date today's date -->
 
-                        </form>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class=" p-0 col-lg-12 h5 text-info">Step 2. Enter News Byline*
+                                        <svg data-toggle="popover" title="News Title"
+                                            data-content="Some content inside the popover"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                            class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                            data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg>
+
+                                    </label>
+                                    <div class="form-inline">
+                                        <input type="text" class="form-control col-lg-12 pl-0"
+                                            placeholder="Enter / Paste news byline" name="byLine" id="input_box" xxx
+                                            onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)">
+                                        <!-- <input type="text" class="form-control col-lg-10" placeholder="Enter news byline" name="byLine" id="input_box" xxx  onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)"> -->
+                                        <!-- <div id="formByline" class="col-lg-10 pl-0">
+                                            </div> -->
+                                        <!-- <select class="custom-select my-1 col-lg-2" name='lang_selec'
+                                                onchange="changeOrg()">
+                                                <option value="nepali">Nepali Language</option>
+                                                <option value="english">English Language</option>
+                                            </select> -->
+                                    </div>
+
+                                    <small id="emailHelp" class="form-text text-muted">
+                                        <span id=charcount></span>
+
+                                    </small>
+
+
+
+                                </div>
+
+
+
+
+
+
+                                <!-- The body of news. Should extract text from file like txt and docs and pass to sql -->
+                                <div class="form-group">
+                                    <label class="col-lg-12 p-0 h5 text-info">Step 3. Select News Body File
+                                        <svg data-toggle="popover" title="News Title"
+                                            data-content="Some content inside the popover"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                            class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                            data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg>
+                                    </label>
+                                    <input type="file" id="myfile" name="descFile" xxx>
+                                    <small id="emailHelp" class="form-text text-muted">accepted formats : docx </small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-12 p-0 h5 text-info">Step 4. Select Extra Files
+                                        <svg data-toggle="popover" title="News Title"
+                                            data-content="Some content inside the popover"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                            class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                            data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg>
+                                    </label>
+                                    <div id="extra_selectors">
+                                        <div>
+                                            <input type="file" id="" class="extra_folder" name="extra_files[]" multiple>
+                                        </div>
+                                    </div>
+                                    <textarea type="text" class="form-control col-lg-12 pl-0 mt-2" placeholder="Description"
+                                        name="extra_files_description" id="input_box" rows="5"></textarea>
+
+
+                                </div>
+                                <!-- <button id="add_extra_folder" type="button">Add New</button> -->
+
+
+                                <!-- <STRONG> SELECT VIDEOS </strong> -->
+                                <label class="col-lg-12 p-0 h5 text-info">Step 5. Select Videos</label>
+                                <HR style="    border-top: 1px solid rgba(0,0,0)">
+                                <div class="row">
+                                    <!--Select video and pass to sql-->
+
+
+
+
+
+
+                                    <!-- video long card -->
+                                    <div class="col-sm-4">
+                                        <div class="card ">
+                                            <img src="./assets/images/placeholder.jpg" class="card-img-top "
+                                                id="regularfeedplaceholder" alt="...">
+                                            <div id="regularfeedID"></div>
+                                            <div class="card-body">
+                                                <span><strong>5.1 Regular Feed</strong></span>
+                                                <div class="float-right">
+                                                    <svg data-toggle="popover" title="News Title"
+                                                        data-content="Some content inside the popover"
+                                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        fill="currentColor" class="bi bi-info-circle float-right help_icon"
+                                                        data-toggle="tooltip" data-placement="left" title="Tooltip on left"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path
+                                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                    </svg>
+                                                </div>
+
+                                                <input type="file" id="regularfeed" name="regularFeeddFile"
+                                                    onchange="return regularFeedValidation()" xxx>
+                                                <small id="emailHelp" class="form-text text-muted">5min to 7min
+                                                    video</small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- --------------- -->
+                                    <!-- video lazy card -->
+                                    <div class="col-sm-4">
+                                        <div class="card ">
+                                            <img src="./assets/images/placeholder.jpg" class="card-img-top "
+                                                id="readyVersionplaceholder" alt="...">
+                                            <div id="readyversionID"></div>
+                                            <div class="card-body">
+                                                <span><strong>5.2 Ready Version</strong></span>
+                                                <div class="float-right">
+                                                    <svg data-toggle="popover" title="News Title"
+                                                        data-content="Some content inside the popover"
+                                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        fill="currentColor" class="bi bi-info-circle float-right help_icon"
+                                                        data-toggle="tooltip" data-placement="left" title="Tooltip on left"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path
+                                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                    </svg>
+                                                </div>
+                                                <input type="file" id="readyversion" name="readyVersionFile"
+                                                    onchange="return readyVersionValidation()">
+                                                <small id="emailHelp" class="form-text text-muted">Video should be less than
+                                                    3 minutes</small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- --------------- -->
+                                    <!-- video extra card -->
+                                    <div class="col-sm-4">
+                                        <div class="card ">
+                                            <img src="./assets/images/placeholder.jpg" class="card-img-top "
+                                                id="roughcutplaceholder" alt="...">
+                                            <div id="roughcutID"></div>
+                                            <div class="card-body">
+                                                <span><strong>5.3 Rough Cut</strong></span>
+                                                <div class="float-right">
+                                                    <svg data-toggle="popover" title="News Title"
+                                                        data-content="Some content inside the popover"
+                                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        fill="currentColor" class="bi bi-info-circle float-right help_icon"
+                                                        data-toggle="tooltip" data-placement="left" title="Tooltip on left"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path
+                                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                    </svg>
+                                                </div>
+                                                <input type="file" id="roughcut" name="roughCutFile"
+                                                    onchange="return roughcutValidation()">
+                                                <small id="emailHelp" class="form-text text-muted">Video should be less than
+                                                    3 minutes</small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- --------------- -->
+
+                                <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
+                                <div class="form-group mt-3">
+                                    <label class="col-lg-12 p-0  h5 text-info">Step 6. Select News Category*</label>
+                                    <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
+                                    <select multiple name="newsCategories[]" id="categories" required>
+
+
+
+                                        <?php 
+                                                if(isset($category))
+                                                {
+                                                    foreach($category as $category)
+                                                    {
+                                                    
+
+                                                        if( strpos( strtolower($category['name']), "archive" ) !== false) {
+                                                        continue ;
+                                                        }
+                                            ?>
+                                        <option class="cat_opt" value="<?php echo $category['id'] ; ?>">
+                                            <?php echo $category['name'] ; ?></option>
+                                        <?php
+                                                    }
+                                                }
+                                            ?>
+
+                                    </select>
+                                </div>
+
+                                <!-- The tags for news. example: sports,football,messi,goal. Should be in CSV(comma separated format) -->
+                                <div class="form-group">
+                                    <label class="col-lg-12 p-0  h5 text-info">Step 7. Select News Tags</label>
+                                    <!-- <input type="text" class="form-control" placeholder="Enter news byline" name="newsTag" xxx> -->
+                                    <select multiple name="newsTag[]" id="tags">
+
+                                        <?php 
+                                                if(isset($tags))
+                                                {
+                                                    foreach($tags as $tag)
+                                                    {
+                                            ?>
+                                        <option value="<?php echo $tag['id'] ; ?>"><?php echo $tag['name'] ; ?></option>
+                                        <?php
+                                                    }
+                                                }
+                                            ?>
+                                        <!-- <option value="141">Business</option>
+                                            <option value="142">Entertainment</option>
+                                            <option value="134">Sports</option>
+                                            <option value="135">International</option>
+                                            <option value="136">Glamour</option>
+                                        -->
+
+
+                                    </select>
+                                </div>
+
+                                <HR style="    border-top: 1px solid rgba(0,0,0)">
+
+                                <div class="form-group ">
+                                    <label class="col-lg-12 p-0 h5 text-info">Step 8. Select Audio
+                                        <svg data-toggle="popover" title="News Title"
+                                            data-content="Some content inside the popover"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                            class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                            data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg>
+
+                                    </label><br>
+                                    <div class="row">
+
+                                        <div class="col-lg-6">
+                                            <strong>8.1 Select Audio Complete Story</strong>
+                                            <div class="mt-2">
+                                                <input type="file" id="img" name="audio_complete_story">
+                                            </div>
+                                            <textarea class="form-control mt-2" id="exampleFormControlTextarea1"
+                                                name="audio_desc" rows="5" placeholder="Description"></textarea>
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <strong>8.2 Select Audio Bites</strong>
+                                            <div id="audio_bites_selector" class="mt-2">
+                                                <input type="file" class="audio_bites" id="img" name="audio_bites[]">
+                                            </div>
+                                            <textarea class="form-control mt-2" id="exampleFormControlTextarea1"
+                                                name="audio_bites_desc" rows="5" placeholder="Description"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- Select one audio file -->
+
+                                <HR style="    border-top: 1px solid rgba(0,0,0)">
+
+                                <STRONG class=" h5 text-info">Step 9. Select Images </strong>
+
+
+
+                                <!-- Select one image for news thumbnail-->
+                                <div class="form-group">
+                                    <label class="col-lg-12 p-0"><strong>9.1 Video Thumbnail JPG / PNG</strong>
+                                        <svg data-toggle="popover" title="News Title"
+                                            data-content="Some content inside the popover"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                            class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                            data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg>
+
+                                    </label><br>
+                                    <input type="file" id="thumbnailimg" onchange="return thumbnailValidation()"
+                                        name="thumbImg" accept="image/*" xxx>
+                                    <!-- Image preview -->
+                                    <div id="thumbnailID"></div>
+                                </div>
+
+
+
+
+
+                                <div class="form-group">
+                                    <label class="col-lg-12 p-0"><strong>9.2 Gallery Images JPG / PNG</strong>
+                                        <svg data-toggle="popover" title="News Title"
+                                            data-content="Some content inside the popover"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                            class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                            data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg>
+
+                                    </label><br>
+                                    <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="gallery_desc"
+                                        rows="5" placeholder="Description"></textarea>
+                                    <input type="file" id="pro-image" name="galleryImage[]" accept="image/*" multiple>
+                                    <!-- onclick="$('#pro-image').click()" -->
+                                    <div class="preview-images-zone" style="display:none">
+                                    </div>
+                                </div>
+
+                                <HR style="    border-top: 1px solid rgba(0,0,0)">
+
+                                <div class="form-group">
+                                    <label class="col-lg-12 p-0  h5 text-info">Step 10. Select Series</label>
+                                    <svg data-toggle="popover" title="News Title"
+                                        data-content="Some content inside the popover" xmlns="http://www.w3.org/2000/svg"
+                                        width="20" height="20" fill="currentColor"
+                                        class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                        data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg>
+
+                                    </label>
+
+                                    <select multiple name="series[]" id="series">
+
+                                        <?php 
+                                                if(isset($series))
+                                                {
+                                                    foreach($series as $series)
+                                                    {
+                                            ?>
+                                        <option value="<?php echo $series['id'] ; ?>">
+                                            <?php echo $series['name'] ; ?></option>
+                                        <?php
+                                                    }
+                                                }
+                                            ?>
+
+
+
+                                    </select>
+                                </div>
+
+
+
+                                <!-- The body of news. Should extract text from file like txt and docs and pass to sql -->
+                                <div class="form-group">
+                                    <label class="col-lg-12 p-0 h5 text-info">Step 11. Select Bonus Media
+                                        <svg data-toggle="popover" title="News Title"
+                                            data-content="Some content inside the popover"
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                            class="bi bi-info-circle float-right help_icon" data-toggle="tooltip"
+                                            data-placement="left" title="Tooltip on left" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg>
+                                    </label>
+
+                                    <div id="bonus_selectors">
+
+                                        <div>
+                                            <input type="file" class="bonus_media" name="bonus_media[]" multiple>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <!-- <button id="add_bonus_folder" type="button">Add Bonus </button> -->
+
+                                <!-- <HR style="    border-top: 1px solid rgba(0,0,0)"> -->
+
+
+
+
+                                <label class="col-lg-12 p-0  h5 text-info">Step 12. Select Others (optional)</label>
+
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+
+
+                                        <div class="form-group">
+                                            <label class="col-lg-12 p-0"><strong>12.1. District*</strong>
+                                                <svg data-toggle="popover" title="News Title"
+                                                    data-content="Some content inside the popover"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="currentColor" class="bi bi-info-circle float-right help_icon"
+                                                    data-toggle="tooltip" data-placement="left" title="Tooltip on left"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                </svg>
+
+                                            </label>
+                                            <select class="form-control" id="exampleFormControlSelect2" name="district" xxx>
+                                                <?php
+                                                        foreach($district_global as $district)
+                                                        {
+
+                                                    ?>
+                                                <option value="<?php echo $district ; ?>"><?php echo $district ; ?></option>
+
+                                                <?php
+                                                        }
+                                                    ?>
+
+
+                                            </select>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label class="col-lg-12 p-0"><strong>12.2 Reporter*</strong>
+                                                <svg data-toggle="popover" title="News Title"
+                                                    data-content="Some content inside the popover"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="currentColor" class="bi bi-info-circle float-right help_icon"
+                                                    data-toggle="tooltip" data-placement="left" title="Tooltip on left"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                </svg>
+
+
+                                            </label>
+                                            <select class="form-control" id="exampleFormControlSelect2" name="reporter" xxx>
+                                                <?php
+                                                        foreach($reporter_global as $reporter)
+                                                        {
+
+                                                    ?>
+                                                <option value="<?php echo $reporter ; ?>"><?php echo $reporter ; ?></option>
+
+                                                <?php
+                                                        }
+                                                    ?>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-12 p-0"><strong>12.3 Camera Man*</strong>
+                                                <svg data-toggle="popover" title="News Title"
+                                                    data-content="Some content inside the popover"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="currentColor" class="bi bi-info-circle float-right help_icon"
+                                                    data-toggle="tooltip" data-placement="left" title="Tooltip on left"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                </svg>
+
+                                            </label>
+                                            <select class="form-control" id="exampleFormControlSelect2" name="camera_man"
+                                                xxx>
+                                                <?php
+                                                        foreach($cameraman_global as $cman)
+                                                        {
+
+                                                    ?>
+                                                <option value="<?php echo $cman ; ?>"><?php echo $cman ; ?></option>
+
+                                                <?php
+                                                        }
+                                                    ?>
+                                            </select>
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-lg-6">
+
+
+                                        <div class="form-group">
+                                            <label class="col-lg-12 p-0"><strong>12.4 Created By*</strong>
+                                                <svg data-toggle="popover" title="News Title"
+                                                    data-content="Some content inside the popover"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="currentColor" class="bi bi-info-circle float-right help_icon"
+                                                    data-toggle="tooltip" data-placement="left" title="Tooltip on left"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                </svg>
+
+                                            </label>
+                                            <select class="form-control" id="exampleFormControlSelect2" name="uploaded_by"
+                                                xxx>
+                                                <?php
+                                                        foreach($createdby_global as $cby)
+                                                        {
+
+                                                    ?>
+                                                <option value="<?php echo $cby ; ?>"><?php echo $cby ; ?></option>
+
+                                                <?php
+                                                        }
+                                                    ?>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-12 p-0"><strong>12.5 Video Type</strong>
+                                                <svg data-toggle="popover" title="News Title"
+                                                    data-content="Some content inside the popover"
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="currentColor" class="bi bi-info-circle float-right help_icon"
+                                                    data-toggle="tooltip" data-placement="left" title="Tooltip on left"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                </svg>
+
+                                            </label>
+                                            <select class="form-control" id="exampleFormControlSelect2" name="video_type"
+                                                xxx>
+                                                <option value="selfhost">Selfhost</option>
+                                                <option value="vimeo">Vimeo</option>
+
+                                            </select>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+                                <label class="col-lg-12 p-0 h5 text-info">Step 13.</label>
+
+                                <button type="submit" class="btn btn-primary" id="submit_news" name="submit">Collect news</button>
+
+                                <label class="col-lg-12 p-0 h5 text-info mt-2">Step 14.</label>
+                                <span><button class="btn btn-danger disabled " style="cursor: no-drop;">Delete collected
+                                        news</button></span>
+                                <span>please <strong><a href="./remotecopycreator.php">go to Remote Copy
+                                            Creator</a></strong> tool to delete</span>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- FORM DOM FOR LANGUAGE SELECTION IN NEWS TITLE--- -->
 
@@ -1335,10 +1380,6 @@ strong {
                 console.log('Browser not support');
             }
         }
-
-
-
-       
         </script>
         <script>
         // Use the plugin once the DOM has been loaded.
@@ -1372,71 +1413,79 @@ strong {
         });
 
 
-//----------------Bonus Folder Adder ---------------------------
+        //----------------Bonus Folder Adder ---------------------------
 
-// $(document).on('click', '#add_bonus_folder', function() {
-    $(document).on('change', '.bonus_media', function() {
+        // $(document).on('click', '#add_bonus_folder', function() {
+        $(document).on('change', '.bonus_media', function() {
 
-    if($(this)[0].files.length > 0)
-    {
-  
+            if ($(this)[0].files.length > 0) {
 
-            var html = `
+
+                var html = `
                 <div>
                     <input type="file" class='bonus_media' name="bonus_media[]" multiple >
                 </div>
 
             `;
 
-        
-
-            $("#bonus_selectors").append(html);
-
-    }
-
-});
 
 
-//----------------Additional Folder Adder---------------------------
+                $("#bonus_selectors").append(html);
 
-// $(document).on('click', '#add_extra_folder', function() {
+            }
 
-    $(document).on('change', '.extra_folder', function() {
+        });
 
-        if($(this)[0].files.length > 0)
-    {
-        var html = `
+
+        //----------------Additional Folder Adder---------------------------
+
+        // $(document).on('click', '#add_extra_folder', function() {
+
+        $(document).on('change', '.extra_folder', function() {
+
+            if ($(this)[0].files.length > 0) {
+                var html = `
             <div>
                 <input type="file" class="extra_folder" id="" name="extra_files[]" multiple >
             </div>
 
         `;
 
-        $("#extra_selectors").append(html);
-    }
+                $("#extra_selectors").append(html);
+            }
 
-});
+        });
 
 
-//----------------Audio Bites Adder---------------------------
+        //----------------Audio Bites Adder---------------------------
 
-// $(document).on('click', '#add_audio_bites', function() {
+        // $(document).on('click', '#add_audio_bites', function() {
 
-    $(document).on('change', '.audio_bites', function() {
+        $(document).on('change', '.audio_bites', function() {
 
-        if($(this)[0].files.length > 0)
-        {
-             var html = `
+            if ($(this)[0].files.length > 0) {
+                var html = `
                 <div> 
                     <input type="file" class="audio_bites" id="img" name="audio_bites[]">
                 </div>
 
             `;
 
-            $("#audio_bites_selector").append(html);
-        }
+                $("#audio_bites_selector").append(html);
+            }
 
-});
+        });
+
+        
+        $(document).on('click', '#submit_news', function() {
+
+            $(".collector").css("filter", "blur(2px)");
+            $("#preloader_boot").css("display", "");
+            $('form#collector_form').submit();
+
+
+        });
+
 
 
         </script>
@@ -1445,4 +1494,3 @@ strong {
 </body>
 
 </html>
-

@@ -471,3 +471,18 @@ my_data/news_data/2021-06-25/तिब्बतमा बुलेट ट्र�
 my_data/news_data/2021-06-25/तिब्बतमा बुलेट ट्रेन सञ्‍चालन/audio_bites/20210625_143923_19754_audio_bites_0.mp3 : Audio Bites-0 Uploaded
 my_data/news_data/2021-06-25/तिब्बतमा बुलेट ट्रेन सञ्‍चालन/audio_bites/20210625_143923_19754_audio_bites_1.mp3 : Audio Bites-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-06-26 / Test Prre ---------------- 
+
+ Logged Date: 2021-06-26 10:45:27 
+2021-06-26 : Folder Created
+2021-06-26/Test Prre : Folder Created
+my_data/news_data/2021-06-26/Test Prre/20210626_104527_32221_news_file.docx : News File Uploaded
+my_data/news_data/2021-06-26/Test Prre/20210626_104527_32221_regular_feed.mp4 : Regular Field Uploaded
+my_data/news_data/2021-06-26/Test Prre/20210626_104527_32221_thumbnail.jpg : Thumbnail Uploaded
+------------------------------------------------------- ------------------------------------------------------- ------------------------------------------------------- 
+---------------2021-06-26 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-06-26 18:44:23 
+Updated Attributes Folder Created
+my_data/news_data/2021-06-26/Updated Attributes/20210626_184423_25475_regular_feed.mp4 : Regular Field Uploaded
+------------------------------------------------------- 
