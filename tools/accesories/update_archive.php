@@ -289,7 +289,7 @@ if(isset($_POST['submit']))
             }
             else
             {
-                $data_vids_row['desc'] = "Archive video description" ;
+                $data_vids_row['desc'] = "Archive video description." ;
             }
 
             
@@ -488,7 +488,7 @@ if(isset($_POST['submit']))
             }
             else
             {
-                $data_pics_row['desc'] = "Archive picture description" ;
+                $data_pics_row['desc'] = "Archive picture description." ;
             }
 
 
