@@ -362,7 +362,7 @@ if(isset($_POST['submit']))
 
             if(isset($desc) && !empty($desc))
             {
-                $$data_pics_row['desc'] = $desc ;
+                $data_pics_row['desc'] = $desc ;
             }
             else
             {
@@ -450,6 +450,7 @@ if(isset($_POST['submit']))
 
     }
 
+    echo $data_pics ;
     // echo $data_pics ;
 
     ftp_close($ftp); 
@@ -711,7 +712,7 @@ else
     $location_redirect = '../archive.php';
 }
 
-header("Location: ".$location_redirect);
+// header("Location: ".$location_redirect);
 exit();
 
 
