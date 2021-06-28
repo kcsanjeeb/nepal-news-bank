@@ -483,7 +483,7 @@ if(isset($_POST['submit']))
 
 
             $desc =  $pic['desc'];
-            $data_pics_row['desc'] = $desc ;
+       
             
             if(isset($desc) && !empty($desc))
             {
