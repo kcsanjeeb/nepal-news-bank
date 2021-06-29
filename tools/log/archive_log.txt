@@ -511,3 +511,151 @@
 
  20210628_151819_749_thumbnail.jpg Pushed to remote Success
 ------------------------------------------------------- 
+--------------- 2021-06-29 / test  ------------------ 
+
+ Logged Date: 2021-06-29 11:01:09 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 14:08:22 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 14:13:40 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 14:14:36 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 14:17:26 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 14:21:42 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 14:23:16 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 14:30:34 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 14:35:32 
+
+ archive_videos/archive_video_1/20210629_143532_95835_video_1.mp4 Pushed to remote Success
+
+ 20210629_143532_95835_thumbnail.jpg Pushed to remote Success
+------------------------------------------------------- 
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 15:24:05 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 15:28:59 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 15:33:41 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 15:37:15 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 15:45:46 
+
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 15:46:56 
+
+ archive_videos/archive_video_2/20210629_143532_95835_video_2.mp4 Pushed to remote Failes
+
+ archive_pictures/archive_picture_1/20210629_143532_95835_picture_1.jpg Pushed to remote Failes
+------------------------------------------------------- 
+--------------- 2021-06-29 / test any dir  ------------------ 
+
+ Logged Date: 2021-06-29 15:49:28 
+
+ archive_videos/archive_video_3/20210629_143532_95835_video_3.mp4 Pushed to remote Success
+
+ archive_pictures/archive_picture_2/20210629_143532_95835_picture_2.jpg Pushed to remote Success
+------------------------------------------------------- 
+--------------- 2021-06-29 / test  ------------------ 
+
+ Logged Date: 2021-06-29 16:03:07 
+
+ archive_videos/archive_video_1/20210629_160307_19504_video_1.mp4 Pushed to remote Success
+
+ archive_videos/archive_video_2/20210629_160307_19504_video_2.mp4 Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210629_160307_19504_picture_1.png Pushed to remote Success
+
+ archive_pictures/archive_picture_2/20210629_160307_19504_picture_2.jpg Pushed to remote Success
+
+ 20210629_160307_19504_thumbnail.jpg Pushed to remote Success
+------------------------------------------------------- 
+--------------- 2021-06-29 / kp dai  ------------------ 
+
+ Logged Date: 2021-06-29 16:07:27 
+
+ archive_videos/archive_video_1/20210629_160727_43463_video_1.mp4 Pushed to remote Success
+
+ archive_videos/archive_video_2/20210629_160727_43463_video_2.mp4 Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210629_160727_43463_picture_1.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_2/20210629_160727_43463_picture_2.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_2/20210629_160727_43463_picture_3.png Pushed to remote Success
+
+ 20210629_160727_43463_thumbnail.jpg Pushed to remote Success
+------------------------------------------------------- 
+--------------- 2021-06-29 / विषालु च्याउ खाँदा पोखरामा एकै परिवारका ६ सहित ८ जना बिरामी  ------------------ 
+
+ Logged Date: 2021-06-29 16:14:14 
+
+--------------- 2021-06-29 / hello world  ------------------ 
+
+ Logged Date: 2021-06-29 17:35:17 
+
+ archive_videos/archive_video_1/20210629_173517_224_video_1.mp4 Pushed to remote Success
+
+ archive_videos/archive_video_2/20210629_173517_224_video_2.mp4 Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210629_173517_224_picture_1.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210629_173517_224_picture_2.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_2/20210629_173517_224_picture_3.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_2/20210629_173517_224_picture_4.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_2/20210629_173517_224_picture_5.jpg Pushed to remote Success
+
+ 20210629_173517_224_thumbnail.jpg Pushed to remote Success
+------------------------------------------------------- 
+--------------- 2021-06-29 / माओवादीद्वारा मंगलबार पनि प्रदेशसभा बैठक अवरुद्ध  ------------------ 
+
+ Logged Date: 2021-06-29 21:52:10 
+
+ archive_videos/archive_video_1/20210629_215210_96089_video_1.mp4 Pushed to remote Success
+
+ archive_videos/archive_video_2/20210629_215210_96089_video_2.mp4 Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210629_215210_96089_picture_1.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210629_215210_96089_picture_2.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210629_215210_96089_picture_3.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_2/20210629_215210_96089_picture_4.jpg Pushed to remote Success
+
+ 20210629_215210_96089_thumbnail.jpg Pushed to remote Success
+------------------------------------------------------- 

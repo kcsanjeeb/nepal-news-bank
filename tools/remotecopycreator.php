@@ -300,6 +300,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                             $newsid_local = $row_content['newsid'];
                                                             $category_list = $row_content['category_list'];
 
+                                                            $dir_path = $row_content['dir_path'];
+
 
 
                                                             $regularfeed_full = $row_content['regular_feed'];
@@ -369,8 +371,8 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         $audio_bites_full_web = $row_content_web['audio_bites'];
 
 
-                                                        $gallery_full_web = $row_content_web['photos'];
-                                                        $gallery_full_web = explode("," , $gallery_full_web);
+                                                        $gallery_full_web_csv = $row_content_web['photos'];
+                                                        $gallery_full_web = explode("," , $gallery_full_web_csv);
 
                                                         $pushed_by_web = $row_content_web['pushed_by'];
 
@@ -1228,13 +1230,15 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                         if(file_exists($ab))
                                                         {
                                                             $rem_check = explode("/" , $ab);    
+                                                            $file_name = end($rem_check);
                                                             // print_r($rem_check)   ;
                                                             array_shift($rem_check);
                                                             // print_r($rem_check)   ;
                                                             $rem_check = implode("/" , $rem_check);
-                                                            // echo "<br>-----------Check state: $rem_check------------<br>"  ;                   
-    
-                                                                if(in_array($rem_check , $audio_bites_full_web_exp ))
+                                                            // echo "<br>-----------Check state: $rem_check------------<br>"  ; 
+
+                                                            if (strpos( $audio_bites_full_web, $file_name ) !== false)
+                                                                // if(in_array($rem_check , $audio_bites_full_web_exp ))
                                                                 {
                                                                     
                                                                     $input = 'disabled';
@@ -1335,11 +1339,11 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                     
                                                         if(file_exists($ph_arr))
                                                         {
-                                                            $exp_pharr_arr = explode("/" , $ph_arr);
-                                                            $exp_pharr = end($exp_pharr_arr);
+                                                            // $exp_pharr_arr = explode("/" , $ph_arr);
+                                                            // $exp_pharr = end($exp_pharr_arr);
 
-                                                            array_shift($exp_pharr_arr);
-                                                            $implde_remote_format = implode("/" , $exp_pharr_arr);
+                                                            // array_shift($exp_pharr_arr);
+                                                            // $implde_remote_format = implode("/" , $exp_pharr_arr);
                                                             
                                                             // $web_gall = explode("/" , $gallery_full_web[$index]);                                                        
                                                             // $web_gall = end($web_gall);
@@ -1348,8 +1352,13 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                                                     
                                                             // if($exp_pharr ==  $web_gall)
+                                                            // echo " $implde_remote_format";
 
-                                                            if(in_array($implde_remote_format , $gallery_full_web))
+                                                            // echo $ph_arr ;
+                                                            $file_name = explode("/",$ph_arr) ;
+                                                            $file_name = end($file_name) ;
+                                                            if (strpos( $gallery_full_web_csv, $file_name ) !== false)
+                                                            // if(in_array($implde_remote_format , $gallery_full_web))
                                                             {
                                                                 $input = 'disabled' ;
                                                                 $selected = '';
@@ -1366,6 +1375,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                                 array_push($handle_push_nopush , 0);
 
                                                             }
+
                                                 ?>
                                         <li>
                                             <input type="checkbox" name="gall_img[]" value="<?php echo $ph_arr ; ?>"
@@ -1373,7 +1383,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 class="files <?php echo $class_gall ; ?>" <?php echo $selected ; ?>
                                                 <?php echo $input ; ?> />
                                             <label for="cb<?php echo $gal_counter ; ?>"><img
-                                                    src="<?php echo $ph_arr ; ?>" /></label>
+                                                    src="E:/my_data/news_data/2021-06-29/Updated Attributes/gallery/20210629_220703_7947_gallery_0.jpg" /></label>
                                         </li>
                                         <?php
                                                         }
@@ -1653,10 +1663,12 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                             ?>
                         <hr />
                         <form method="POST" action='accesories/local_post_delete.php'>
+
                             <input type="hidden" name="news_id" value="<?php echo $newsid_local ; ?>">
                             <input type="hidden" name="byline" value="<?php echo $byline_local ; ?>">
                             <input type="hidden" name="date" value="<?php echo $date_local ; ?>">
                             <input type="hidden" name="type" value="<?php echo $category_list ?>">
+                            <input type="hidden" name="dir_path" value="<?php echo $dir_path ?>">
 
                             <input type="submit" value="Delete Collected News " class="btn btn-danger preloader_on" name="del_nas">
                         </form>

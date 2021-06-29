@@ -5,7 +5,13 @@ include "accesories/environment/wp_api_env.php";
 include "global/timezone.php";
 include "accesories/connection.php";
 include "accesories/nas_function/functions.php";
+include "global/file_paths.php";
 
+
+$archive_path = $local_archive_all_path ;
+$archive_path_ftp = $ftp_archive_all_path ;
+$archive_path_exp = explode("/" , $archive_path);
+$archive_path_ftp_exp = explode("/" , $archive_path_ftp);
 
 if(isset($_GET['id']))
 {
@@ -378,11 +384,11 @@ foreach($result as $res)
                     <!-- Image preview -->
                     <div id="thumbnailIDa">
                         <?php
-                            if(isset($news_row_details['series']))
+                            if(isset($news_row_details['thumbnail']))
                             {
                         ?>
                         <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow"
-                            src="<?php echo 'my_data/'.$news_row_details['thumbnail'] ; ?>" />
+                            src="<?php echo $archive_path_exp[0]."/".$news_row_details['thumbnail'] ; ?>" />
                         <?php
                             }
                         ?>
@@ -452,7 +458,7 @@ foreach($result as $res)
                                                                     <video width="100%" height="160px" controls
                                                                         style="display:block">
                                                                         <source
-                                                                            src="<?php echo 'my_data/'.$video['video'] ; ?>"
+                                                                            src="<?php echo $archive_path_exp[0]."/".$video['video'] ; ?>"
                                                                             type="video/mp4">
                                                                     </video>
 
@@ -580,7 +586,7 @@ foreach($result as $res)
 
                                                                     <div
                                                                         class="carousel-item <?php if($pic_loop == 0) echo 'active' ; ?>">
-                                                                        <img src="my_data/<?php echo $pic ; ?>"
+                                                                        <img src=<?php echo $archive_path_exp[0]."/".$pic ; ?>"
                                                                             class="d-block w-100" alt="...">
                                                                     </div>
 

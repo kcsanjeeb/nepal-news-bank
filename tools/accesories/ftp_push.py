@@ -23,6 +23,10 @@ def save_ftp( filename , my_ftp_url ,my_ftp_username ,my_ftp_password ,  my_ftp_
 
 if __name__ == "__main__":
 
+    symss = 'gallery/20210629_220703_7947_gallery_0.jpg,gallery/20210629_220703_7947_gallery_1.jpg,gallery/20210629_220703_7947_gallery_2.jpg,audio_bites/20210629_220703_7947_audio_bites_0.mp3,audio_bites/20210629_220703_7947_audio_bites_1.mp3,audio_bites/20210629_220703_7947_audio_bites_2.mp3,20210629_220703_7947_news_file.docx,20210629_220703_7947_regular_feed.mp4,20210629_220703_7947_ready_version.mp4,20210629_220703_7947_rough_cut.mp4,20210629_220703_7947_thumbnail.jpg,20210629_220703_7947_audio_complete_story.mp3,20210629_220703_7947_extra_files.zip ftp.nepalnewsbank.com sanjeeb@nepalnewsbank.com sanjeeb /news_data/2021-06-29/Updated`~Attributes E:/my_data/news_data/2021-06-29/Updated`~Attributes/'
+   
+   
+    symss_array = symss.split(' ')
     my_ftp_url= sys.argv[2]
     my_ftp_username= sys.argv[3]
     my_ftp_password = sys.argv[4]

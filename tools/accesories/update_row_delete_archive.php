@@ -11,8 +11,8 @@ include "nas_function/functions.php";
 include "../global/timezone.php";
 
 // -------------- VARIABLE DECLARATION ----------------
-$archive_path = 'my_data/archive_data';
-$archive_path_ftp = 'archive_data';
+// $archive_path = 'my_data/archive_data';
+// $archive_path_ftp = 'archive_data';
 // ----------------------------------------------------
 
 
@@ -26,6 +26,9 @@ if(isset($_POST['newsid']))
     $run_sql_fetch_news= mysqli_query($connection, $query_fetch_news);
     $num_rows_news = mysqli_num_rows($run_sql_fetch_news);
     $news_row_details = mysqli_fetch_assoc($run_sql_fetch_news);
+
+    $archive_path = $news_row_details['local_dir'] ;
+    $archive_path_ftp = $news_row_details['ftp_dir'] ;
 
     if($num_rows_news <  1)
     {
@@ -76,7 +79,9 @@ if(isset($_POST['newsid']))
         else
         {
             $video_to_delete = $video_row['video'];  
-            if(file_exists("../my_data/".$video_to_delete)) unlink("../my_data/".$video_to_delete);
+            $video_to_delete_local = $video_row['video_local'];  
+
+            if(file_exists($video_to_delete_local)) unlink($video_to_delete_local);
             ftp_delete_rem($video_to_delete , 'file');
 
             $data_videos_rows = array();
@@ -120,6 +125,7 @@ if(isset($_POST['newsid']))
         $pictures_row = $pictures_decode[$index] ;
 
         $pictures_to_delete = $pictures_row['photos'];
+        $pictures_to_delete_local = $pictures_row['photos_local'];
 
    
 
@@ -163,11 +169,13 @@ if(isset($_POST['newsid']))
         }
 
         else
-        {        
+        {     
+                $index_counter = 0 ;   
                 foreach($pictures_to_delete as $pics_del)
                 {
-                    if(file_exists("../my_data/".$pics_del)) unlink("../my_data/".$pics_del);
+                    if(file_exists($pictures_to_delete_local[$index_counter])) unlink($pictures_to_delete_local[$index_counter]);
                     ftp_delete_rem($pics_del , 'file');
+                    $index_counter++;
                 }
             
                 $data_pics_rows = array();

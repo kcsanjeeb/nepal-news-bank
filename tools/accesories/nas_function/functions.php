@@ -228,3 +228,29 @@ function ftp_login_nas($username, $password)
     
     return $response ;
 }
+
+
+function recursive_ftp_folder($ftp ,  $path)
+{
+    $files_list =  ftp_mlsd($ftp, $path);
+    foreach($files_list as $file)
+    {      
+
+        if($file['name'] == '.' || $file['name'] == '..') continue ;
+
+        if($file['type'] == 'dir')
+        {
+            $file_path = $path.'/'.$file['name'] ;
+            recursive_ftp_folder($ftp ,   $file_path);
+            ftp_rmdir($ftp, $file_path);
+            // echo "<br>$file_path</br>";
+        }
+        else
+        {
+            ftp_delete($ftp, $path."/".$file['name']);
+            // echo "<br>".$file['name']."</br>";
+
+        }
+    }
+    return 1;
+}

@@ -7,7 +7,8 @@ include "environment/wp_api_env.php";
 include "environment/vimeo.php";
 include "nas_function/functions.php";
 include "../global/timezone.php";
-    // ftp_remote($news_ftp_path."/".$sourceName , "../".$gal_img_arr)
+include "../global/file_paths.php";
+
   
     
     require "vimeo/vendor/autoload.php" ;
@@ -77,48 +78,13 @@ if(isset($_POST['news_id']))
         $audio_bites_array = explode(',' , $audio_bites);
 
         $wp_id = $row_content['wp_post_id'];
-        
 
-        if($category_nas == $_SESSION['interview_id'])
-        {
-            $dir_del = "/".$interview_path."/$byline_ftp";
+        $ftp_dir = $row_content['ftp_dir'];
+        $dir_del = "/".$ftp_dir;
 
-        }
-        else
-        {
-            $dir_del = "/".$news_path."/$date/$byline_ftp";
-
-        }
+       
 
 
-
-        
-        if($video_type_nas == 'selfhost')
-        { 
-            if($regularfeed_full != NULL)
-            {
-                echo $regularfeed_full;                                     
-                ftp_delete_rem($regularfeed_full,'file');                                
-            }
-
-            if($readyversion_full != NULL)
-            {          
-                echo $readyversion_full;               
-                ftp_delete_rem($readyversion_full  ,'file');
-            }
-
-            if($roughcut != NULL)
-            {
-                // $file = explode("/" , $roughcut);
-                // $reverse_file = array_reverse($file);
-                // $last = $reverse_file[1];
-                // $end = $reverse_file[0];
-                // $path =  "$last/$end";
-                echo $roughcut; 
-                ftp_delete_rem($roughcut  ,'file');
-            }
-
-        }
 
         if($video_type_nas == 'vimeo')
         {
@@ -143,105 +109,25 @@ if(isset($_POST['news_id']))
 
         }
 
-
-
-           
-
-            if($thumbnail_full != NULL)
-            {
-                echo $thumbnail_full; 
-                // $file = explode("/" , $thumbnail_full);
-                // $reverse_file = array_reverse($file);
-                // $last = $reverse_file[1];
-                // $end = $reverse_file[0];
-                // $path =  "$last/$end";
                 
-                ftp_delete_rem($thumbnail_full , 'file');
-            }
+        $ftp = ftp_connect("$ftp_url");
+        ftp_login($ftp, "$ftp_username", "$ftp_password");
+        ftp_pasv($ftp, true);
+
+
+        if(recursive_ftp_folder($ftp ,  $dir_del))
+        {
+            ftp_rmdir($ftp, $dir_del);
+        }
+
+
+        ftp_close($ftp);
+
+
+
+
+            
             
-
-           
-
-            if($newsbody_full != NULL)
-            {echo $newsbody_full; 
-                // $file = explode("/" , $newsbody_full);
-                // $reverse_file = array_reverse($file);
-                // $last = $reverse_file[1];
-                // $end = $reverse_file[0];
-                // $path =  "$last/$end";
-              
-                ftp_delete_rem($newsbody_full , 'file');
-            }
-
-
-            if($audio != NULL)
-            {
-                // $file = explode("/" , $audio);
-                // $reverse_file = array_reverse($file);
-                // $last = $reverse_file[1];
-                // $end = $reverse_file[0];
-                // $path =  "$last/$end";
-                echo $audio; 
-                ftp_delete_rem($audio , 'file');
-            }
-
-           
-
-            foreach($photos_array as $ph)
-            {
-                // $file = explode("/" , $ph);
-                // $reverse_file = array_reverse($file);
-                // $last = $reverse_file[1];
-                // $end = $reverse_file[0];
-                // $path =  "$last/$end";
-                echo $ph; 
-                ftp_delete_rem($ph , 'file');
-            }    
-            
-
-            
-            if($extra_file_full != NULL)
-            {
-                // $file = explode("/" , $audio);
-                // $reverse_file = array_reverse($file);
-                // $last = $reverse_file[1];
-                // $end = $reverse_file[0];
-                // $path =  "$last/$end";
-                echo $extra_file_full; 
-                ftp_delete_rem($extra_file_full , 'file');
-            }
-
-            foreach($audio_bites_array as $ph)
-            {
-                // $file = explode("/" , $ph);
-                // $reverse_file = array_reverse($file);
-                // $last = $reverse_file[1];
-                // $end = $reverse_file[0];
-                // $path =  "$last/$end";
-                echo $ph; 
-                ftp_delete_rem($ph , 'file');
-            }  
-
-            
-            ftp_delete_rem($dir_del , 'folder');
-            
-
-            // $sql_del_web = "update web set regular_feed = null , ready_version = null ,
-            //                 thumbnail = null, audio_complete_story = null , photos = null , rough_cut = null , news_file = null , extra_files = null ,  audio_bites = null where newsid = '$news_id' ";
-            
-            $sql_del_web = "delete from web where newsid = '$news_id' ";
-            $run_sql_del_web= mysqli_query($connection, $sql_del_web);
-
-
-
-            if($run_sql_del_web)
-            {
-                $_SESSION['notice_remote'] = "success_remotefile_delete";
-            }
-            else
-            {
-                $_SESSION['notice_remote'] = "failed_remotefile_delete";
-            }
 
             
     }
@@ -278,36 +164,16 @@ if( isset($_POST['news_id']) && isset($_POST['wp_id']))
             $audio = $row_content['audio_complete_story'];
             $roughcut = $row_content['rough_cut'];
 
-            $wp_id = $row_content['wp_post_id'];
+            $wp_id = (int) $row_content['wp_post_id'];
 
             $data = array();
             $data = json_encode($data);
             $data = '';
 
-            $url = "$domain_url/wp-json/wp/v2/haru_video/$wp_id" ;
-            $curl = curl_init();
-            curl_setopt_array($curl, array(                    
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'DELETE',
-            CURLOPT_POSTFIELDS => $data ,
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json",
-                    'Authorization: Bearer '.$token_bearer.''
-                ),
-            ));
-
             if($wp_media_id != null)
             {
 
-           
-                $response = curl_exec($curl);           
-                $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                $err = curl_error($curl);                    
-                curl_close($curl);
+
 
                 $url = "$domain_url/wp-json/wp/v2/media/$wp_media_id?force=true" ;
                 $curl = curl_init();
@@ -329,24 +195,78 @@ if( isset($_POST['news_id']) && isset($_POST['wp_id']))
             $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             $err = curl_error($curl);                    
             curl_close($curl);
+
             }
+
+            echo "<br>------------Media--------------<br>";
+            echo "$url ::: $respCode";
+            echo "<br>--------------------------<br>";
+
+
+
+
+            $url = "$domain_url/wp-json/wp/v2/haru_video/$wp_id" ;
+
+            $curl = curl_init();
+            curl_setopt_array($curl, array(                    
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'DELETE',
+            CURLOPT_POSTFIELDS => $data ,
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache",
+                    "content-type: application/json",
+                    'Authorization: Bearer '.$token_bearer.''
+                ),
+            ));
+
+            $response = curl_exec($curl);           
+            $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            $err = curl_error($curl);                    
+            curl_close($curl);
+
+            echo "<br>---------------POST-----------<br>";
+            echo "$url ::: $respCode";
+            echo "<br>--------------------------<br>";
+
+            
+
+          
 
             if($respCode == 200 || $respCode == 202  || $respCode == 204 )
             {
                 
 
-                $sql_del_web = "update web set wp_post_id = null where newsid = '$news_id' ";
-                $run_sql_del_web= mysqli_query($connection, $sql_del_web);
+                // $sql_del_web = "update web set wp_post_id = null where newsid = '$news_id' ";
+                // $run_sql_del_web= mysqli_query($connection, $sql_del_web);
 
-                if($run_sql_del_web)
-                {
+                // if($run_sql_del_web)
+                // {
                     $_SESSION['notice_remote'] = "success_remote_delete";
-                }
+                // }
 
             }
             else
             {
                 $_SESSION['notice_remote'] = "Error_remote_delete";
+            }
+
+
+
+            $sql_del_web = "delete from web where newsid = '$news_id' ";
+            $run_sql_del_web= mysqli_query($connection, $sql_del_web);
+
+
+
+            if($run_sql_del_web)
+            {
+                $_SESSION['notice_remote'] = "success_remotefile_delete";
+            }
+            else
+            {
+                $_SESSION['notice_remote'] = "failed_remotefile_delete";
             }
 
 
@@ -375,4 +295,3 @@ else
 header("Location: ". $location_redirect);
 
 exit();
-

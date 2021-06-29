@@ -35,7 +35,20 @@ $wp_media_id = $_POST['wp_media_id'] ;
 $wp_media_id = mysqli_real_escape_string($connection, $wp_media_id);
 
 
+$query_fetch_news = "select * from archives where archive_id = '$archive_id'";
+$run_sql_fetch_news= mysqli_query($connection, $query_fetch_news);
+$num_rows_news = mysqli_num_rows($run_sql_fetch_news);
+$news_row_details = mysqli_fetch_assoc($run_sql_fetch_news);
+$archive_path = $news_row_details['local_dir'] ;
+$archive_path_ftp = $news_row_details['ftp_dir'] ;
 
+$glob_path = $archive_path."/".$byline_dir ;
+
+
+if($num_rows_news <  1)
+{
+    exit("Error!");
+}
 
 
 
@@ -99,13 +112,21 @@ $query_del_archive = "delete from archives where archive_id = '$archive_id'";
 $run_query = mysqli_query($connection , $query_del_archive);
 
 
-$files = glob('../'.$archive_path_picture.'/'.$byline_dir.'/*'); // get all file names
-  foreach($files as $file){ // iterate files
-    if(is_file($file)) {
-      unlink($file); // delete file
+
+$dir = $glob_path;
+$it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
+$files = new RecursiveIteratorIterator($it,
+             RecursiveIteratorIterator::CHILD_FIRST);
+foreach($files as $file) {
+    if ($file->isDir()){
+        rmdir($file->getRealPath());
+    } else {
+        unlink($file->getRealPath());
     }
-  }
-  rmdir('../'.$archive_path_picture.'/'.$byline_dir);
+}
+rmdir($dir);
+
+
 
 
   $ftp = ftp_connect("$ftp_url");
@@ -113,23 +134,11 @@ $files = glob('../'.$archive_path_picture.'/'.$byline_dir.'/*'); // get all file
   ftp_pasv($ftp, true);
 
 
-  $files_list =  ftp_mlsd($ftp, "/$archive_path_ftp/$byline_dir");
-
-  foreach($files_list as $fl)
+  if(recursive_ftp_folder($ftp ,  $archive_path_ftp."/".$byline_dir))
   {
-      if($fl['name'] == '.' || $fl['name'] == '..') continue ;
-
-      $file_name = $fl['name'];
-      $path = "/$archive_path_ftp/$byline_dir/$file_name";
-      ftp_delete($ftp, $path);
+      ftp_rmdir($ftp, $archive_path_ftp."/".$byline_dir);
   }
 
-
-  
-  
-  
-  $dir = $archive_path_ftp.'/'.$byline_dir ;
-  ftp_rmdir($ftp, $dir);
 
   ftp_close($ftp);
 

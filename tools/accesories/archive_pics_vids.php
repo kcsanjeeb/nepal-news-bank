@@ -10,9 +10,20 @@ include "environment/wp_api_env.php";
 include "nas_function/functions.php";
 include "../global/timezone.php";
 
+include "../global/file_paths.php";
+
 // -------------- VARIABLE DECLARATION ----------------
-$archive_path = 'my_data/archive_data';
-$archive_path_ftp = 'archive_data';
+
+// $local_archive_all_path = "E:/archive_data" ;
+// $ftp_archive_all_path = "my_data/archive_data" ;
+
+
+
+// $archive_path = 'my_data/archive_data';
+// $archive_path_ftp = 'archive_data';
+
+$archive_path = $local_archive_all_path ;
+$archive_path_ftp = $ftp_archive_all_path ;
 // ----------------------------------------------------
 
 
@@ -105,14 +116,42 @@ if(isset($_POST['submit']))
     $logged_date = date('Y-m-d H:i:s');
     fwrite($myfile, "\n Logged Date: $logged_date \n");
 
+    $folder_root_exist_check_array = explode("/" ,$archive_path  );
+    $drive_root = $folder_root_exist_check_array[0];
+    if(!is_dir($drive_root))
+    {
+        $_SESSION['notice'] = 'Error';
+        goto error ;
+    }
+    else
+    {
+        array_shift($folder_root_exist_check_array);
+        $path_root_folders = $drive_root ;
+        foreach($folder_root_exist_check_array as $folder_name)
+        {
+            if(empty($folder_name)) continue ;
 
+            $path_root_folders = $path_root_folders.'/'.$folder_name ;
+            if(!is_dir($path_root_folders))
+            {
+                mkdir($path_root_folders, 0777 , true);                        
+                chmod($path_root_folders, 0777);
+            }
+
+        }
+    }
+
+   
+    
 
     $title_directory = remove_special_chars($title);
-    mkdir('../'.$archive_path.'/'.$title_directory, 0777 , true);    
-    chmod('../'.$archive_path.'/'.$title_directory, 0777);
 
-    $local_path = "../".$archive_path."/".$title_directory ;
-    $local_path_clean = "../".$archive_path."/".$title_directory ;
+
+    mkdir($path_root_folders.'/'.$title_directory, 0777 , true);    
+    chmod($path_root_folders.'/'.$title_directory, 0777);
+
+    $local_path = $path_root_folders."/".$title_directory ;
+    $local_path_clean = $path_root_folders."/".$title_directory ;
     $ftp_path = $archive_path_ftp."/".$title_directory;
 
 
@@ -145,6 +184,7 @@ if(isset($_POST['submit']))
             $thumbnail_path =$local_path."/".$file_name."_thumbnail.".$fileActualExt_thumbImg;
             $thumbnail_tmp_name = $_FILES['thumbImg']['tmp_name'] ;
             move_uploaded_file($thumbnail_tmp_name, $thumbnail_path) ;
+            $thumbnail_local_path = $thumbnail_path ;
 
             $sourceName = $file_name."_thumbnail.".$fileActualExt_thumbImg;
 
@@ -218,8 +258,8 @@ if(isset($_POST['submit']))
 
         $row_dir_name_root = "archive_videos";
 
-        mkdir('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root, 0777 , true);    
-        chmod('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root, 0777);
+        mkdir($path_root_folders.'/'.$title_directory.'/'.$row_dir_name_root, 0777 , true);    
+        chmod($path_root_folders.'/'.$title_directory.'/'.$row_dir_name_root, 0777);
 
         ftp_mkdir($ftp, "/".$ftp_path.'/'.$row_dir_name_root);
 
@@ -231,13 +271,7 @@ if(isset($_POST['submit']))
         foreach($_POST['video'] as $vid)
         {
     
-            $row_dir_name = "archive_video_$folder_counter";
-            $row_file_path = $row_dir_name_root."/".$row_dir_name;
-            
-            mkdir('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777 , true);    
-            chmod('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777);
-
-            ftp_mkdir($ftp,  "/".$ftp_path."/".$row_dir_name_root."/".$row_dir_name);
+           
 
 
        
@@ -265,6 +299,17 @@ if(isset($_POST['submit']))
                 $file_type_explode = explode("/" , $file_type);
                 $allowed = array('video'  );
 
+                $row_dir_name = "archive_video_$folder_counter";
+                $row_file_path = $row_dir_name_root."/".$row_dir_name;  
+                if(isset($fileName) && !empty($fileName) )
+                {
+                                  
+                    mkdir($path_root_folders.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777 , true);    
+                    chmod($path_root_folders.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777);    
+                    ftp_mkdir($ftp,  "/".$ftp_path."/".$row_dir_name_root."/".$row_dir_name);
+                    
+                }
+
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
 
@@ -282,6 +327,7 @@ if(isset($_POST['submit']))
                     array_push($videos_py , $sourceName) ;
 
                     $data_vids_row['video'] = $video_path_remote ;
+                    $data_vids_row['video_local'] = $video_path ;
 
                     // if(ftp_put($ftp, $ftp_path."/".$sourceName, $video_path , FTP_BINARY))
                     // {
@@ -300,14 +346,17 @@ if(isset($_POST['submit']))
                 }
 
 
-  
+            
+            if(isset($data_vids_row['video'] ) && !empty($data_vids_row['video'] ))
+            {
+                array_push($data_vids_rows , $data_vids_row);
 
-            array_push($data_vids_rows , $data_vids_row);
-
-            // array_push($data_videos , $data);
-            $counter++;
-            $folder_counter++;
-            $file_counter++;
+                // array_push($data_videos , $data);
+                $counter++;
+                $folder_counter++;
+                $file_counter++;
+            }
+                
 
         }
 
@@ -333,8 +382,8 @@ if(isset($_POST['submit']))
 
         $row_dir_name_root = "archive_pictures";
 
-        mkdir('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root, 0777 , true);    
-        chmod('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root, 0777);
+        mkdir($path_root_folders.'/'.$title_directory.'/'.$row_dir_name_root, 0777 , true);    
+        chmod($path_root_folders.'/'.$title_directory.'/'.$row_dir_name_root, 0777);
 
         ftp_mkdir($ftp, "/".$ftp_path.'/'.$row_dir_name_root);
 
@@ -345,15 +394,9 @@ if(isset($_POST['submit']))
         foreach($_POST['pic'] as $pic)
         {
             // $data_pics_row = array();
-            
+            // if(count($_POST['pic']))
 
-            $row_dir_name = "archive_picture_$folder_counter";
-            $row_file_path = $row_dir_name_root."/".$row_dir_name;
             
-            mkdir('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777 , true);    
-            chmod('../'.$archive_path.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777);
-
-            ftp_mkdir($ftp,  "/".$ftp_path."/".$row_dir_name_root."/".$row_dir_name);
 
 
 
@@ -370,14 +413,15 @@ if(isset($_POST['submit']))
             }
 
             $data_pics_row['photos'] = array();
+            $data_pics_row['photos_local'] = array();
 
             $key_file_pic = $pic_key[$counter];
 
             $multi_row = 0 ;
-              
+            
+            $folder_made = 0  ;
             foreach($_FILES['pic']['name'][$key_file_pic] as $files_row)
             {
-
                
 
                 $fileName = $_FILES['pic']['name'][$key_file_pic][$multi_row] ;
@@ -386,6 +430,17 @@ if(isset($_POST['submit']))
                 $file_type =    $_FILES['pic']['type'][$key_file_pic][$multi_row];
                 $file_type_explode = explode("/" , $file_type);
                 $allowed = array('image' );
+
+                $row_dir_name = "archive_picture_$folder_counter";
+                $row_file_path = $row_dir_name_root."/".$row_dir_name;  
+                if(isset($fileName) && !empty($fileName) && $folder_made == 0 )
+                {                                  
+                    mkdir($path_root_folders.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777 , true);    
+                    chmod($path_root_folders.'/'.$title_directory.'/'.$row_dir_name_root.'/'.$row_dir_name, 0777);
+                    ftp_mkdir($ftp,  "/".$ftp_path."/".$row_dir_name_root."/".$row_dir_name);
+                    $folder_made = 1 ;
+                }
+                   
 
                 if(empty($fileName)) continue ;
 
@@ -418,6 +473,8 @@ if(isset($_POST['submit']))
 
                     array_push($data_pics_row['photos'] , $pic_path_remote) ;
 
+                    array_push($data_pics_row['photos_local'] , $pic_path) ;
+
                     
                 }
                 else {
@@ -434,9 +491,14 @@ if(isset($_POST['submit']))
             // $data = $pic_path_remote."*`".$desc;
 
             // array_push($data_pics , $data);
-            array_push($data_pics_rows , $data_pics_row);
-            $counter++;
-            $folder_counter++;
+            if(count($data_pics_row['photos'] > 0))
+            {
+                array_push($data_pics_rows , $data_pics_row);
+                
+                $counter++;
+                $folder_counter++;
+            }
+              
 
         }
 
@@ -460,12 +522,22 @@ if(isset($_POST['submit']))
 
     $news_ftp_path_py  = "/$ftp_path";
     $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
-    $local_file_py = '../my_data'.$news_ftp_path_py.'/';
+
+    // $local_file_py = '../my_data'.$news_ftp_path_py.'/';
+
+    $local_file_py = $local_path.'/';
 
     $files_to_push_csv = implode("," , $files_to_push);
 
+    $local_file_py = str_replace(" ","`~",$local_file_py);
+
     $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
+
+
+
     $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
+
+
 
 
 
@@ -678,16 +750,16 @@ if(isset($_POST['submit']))
         }
 
         $connection= mysqli_connect($host , $user , $password , $db_name);
-
+ 
         $query_new_archives = "insert into archives(
             archive_id ,created_date ,  title , series ,tags ,
              thumbnail , categories ,archive_videos ,  archive_photos , published_date,
-            wp_id , wp_media_id
+            wp_id , wp_media_id ,  thumbnail_local_path , local_dir , ftp_dir
             ) 
             VALUES 
             ('$archive_id',  '$created_at_db' , '$title'  , $series,
                 '$tags' , $thumbnail_path_remote_sql , '$newsCategories' , '$data_videos' , '$data_pics' , '$created_at',
-                $post_new_id_sql,$featured_media_id_sql 
+                $post_new_id_sql,$featured_media_id_sql , '$thumbnail_local_path' , '$archive_path' , '$archive_path_ftp'
                 
                 )"; 
                 // echo   $query_new_archives ; 
@@ -699,7 +771,7 @@ if(isset($_POST['submit']))
 
 
 }
-
+error:
 fwrite($myfile, "------------------------------------------------------- "); 
 fclose($myfile);
 

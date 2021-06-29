@@ -486,3 +486,144 @@ my_data/news_data/2021-06-26/Test Prre/20210626_104527_32221_thumbnail.jpg : Thu
 Updated Attributes Folder Created
 my_data/news_data/2021-06-26/Updated Attributes/20210626_184423_25475_regular_feed.mp4 : Regular Field Uploaded
 ------------------------------------------------------- 
+---------------2021-06-28 / Test Any Folder ---------------- 
+
+ Logged Date: 2021-06-28 22:00:03 
+2021-06-28 : Folder Created
+2021-06-28/Test Any Folder : Folder Created
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220003_55609_audio_complete_story.mp3 : Audio Complete Story Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220003_55609_news_file.docx : News File Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220003_55609_regular_feed.mp4 : Regular Field Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220003_55609_thumbnail.jpg : Thumbnail Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220003_55609_ready_version.mp4 : Ready Version Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220003_55609_rough_cut.mp4 : Rough Cut Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/gallery/20210628_220003_55609_gallery_0.jpg : Gallery-0 Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/gallery/20210628_220003_55609_gallery_1.jpg : Gallery-1 Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/gallery/20210628_220003_55609_gallery_2.jpg : Gallery-2 Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/gallery/20210628_220003_55609_gallery_3.png : Gallery-3 Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220003_55609_extra_files.zip Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/audio_bites/20210628_220003_55609_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+E:/E:/my_data/news_data/2021-06-28/Test Any Folder/audio_bites/20210628_220003_55609_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 
+---------------2021-06-28 / Test Any Folder ---------------- 
+
+ Logged Date: 2021-06-28 22:03:32 
+2021-06-28 : Folder Created
+2021-06-28/Test Any Folder : Folder Created
+E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220332_85023_audio_complete_story.mp3 : Audio Complete Story Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220332_85023_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220332_85023_regular_feed.mp4 : Regular Field Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220332_85023_thumbnail.jpg : Thumbnail Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220332_85023_ready_version.mp4 : Ready Version Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220332_85023_rough_cut.mp4 : Rough Cut Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/gallery/20210628_220332_85023_gallery_0.jpg : Gallery-0 Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/gallery/20210628_220332_85023_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/gallery/20210628_220332_85023_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/gallery/20210628_220332_85023_gallery_3.jpg : Gallery-3 Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/20210628_220332_85023_extra_files.zip Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/audio_bites/20210628_220332_85023_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/audio_bites/20210628_220332_85023_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+E:/my_data/news_data/2021-06-28/Test Any Folder/audio_bites/20210628_220332_85023_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+------------------------------------------------------- 
+
+---------------2021-06-29 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-06-28 22:07:03 
+2021-06-29 : Folder Created
+2021-06-29/Updated Attributes : Folder Created
+E:/my_data/news_data/2021-06-29/Updated Attributes/20210629_220703_7947_audio_complete_story.mp3 : Audio Complete Story Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/20210629_220703_7947_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/20210629_220703_7947_regular_feed.mp4 : Regular Field Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/20210629_220703_7947_thumbnail.jpg : Thumbnail Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/20210629_220703_7947_ready_version.mp4 : Ready Version Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/20210629_220703_7947_rough_cut.mp4 : Rough Cut Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/gallery/20210629_220703_7947_gallery_0.jpg : Gallery-0 Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/gallery/20210629_220703_7947_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/gallery/20210629_220703_7947_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/20210629_220703_7947_extra_files.zip Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/audio_bites/20210629_220703_7947_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/audio_bites/20210629_220703_7947_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+E:/my_data/news_data/2021-06-29/Updated Attributes/audio_bites/20210629_220703_7947_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+------------------------------------------------------- 
+---------------2021-06-28 / आर्मी रोकिएपछि एपीएफ दुई खेलअघि नै च्याम्पियन ---------------- 
+
+ Logged Date: 2021-06-28 22:08:45 
+2021-06-28 : Folder Created
+2021-06-28/आर्मी रोकिएपछि एपीएफ दुई खेलअघि नै च्याम्पियन : Folder Created
+E:/dir_change/my_data/news_data/2021-06-28/आर्मी रोकिएपछि एपीएफ दुई खेलअघि नै च्याम्पियन/20210628_220845_14629_news_file.docx : News File Uploaded
+E:/dir_change/my_data/news_data/2021-06-28/आर्मी रोकिएपछि एपीएफ दुई खेलअघि नै च्याम्पियन/20210628_220845_14629_regular_feed.mp4 : Regular Field Uploaded
+------------------------------------------------------- 
+---------------2021-06-29 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-06-29 08:01:01 
+------------------------------------------------------- 
+---------------2021-06-29 / Fresh ---------------- 
+
+ Logged Date: 2021-06-29 12:48:43 
+Fresh Folder Created
+E:/my_data/news_data/2021-06-29/Fresh/20210629_124843_58768_audio_complete_story.mp3 : Audio Complete Story Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_124843_58768_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_124843_58768_regular_feed.mp4 : Regular Field Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_124843_58768_thumbnail.jpg : Thumbnail Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_124843_58768_ready_version.mp4 : Ready Version Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_124843_58768_rough_cut.mp4 : Rough Cut Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/gallery/20210629_124843_58768_gallery_0.jpg : Gallery-0 Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/gallery/20210629_124843_58768_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/gallery/20210629_124843_58768_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_124843_58768_extra_files.zip Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/audio_bites/20210629_124843_58768_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/audio_bites/20210629_124843_58768_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 
+---------------2021-06-29 / Fresh ---------------- 
+
+ Logged Date: 2021-06-29 12:52:08 
+Fresh Folder Created
+E:/my_data/news_data/2021-06-29/Fresh/20210629_125208_6690_audio_complete_story.mp3 : Audio Complete Story Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_125208_6690_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_125208_6690_regular_feed.mp4 : Regular Field Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_125208_6690_thumbnail.jpg : Thumbnail Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_125208_6690_ready_version.mp4 : Ready Version Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_125208_6690_rough_cut.mp4 : Rough Cut Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/gallery/20210629_125208_6690_gallery_0.jpg : Gallery-0 Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/gallery/20210629_125208_6690_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/gallery/20210629_125208_6690_gallery_2.png : Gallery-2 Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/20210629_125208_6690_extra_files.zip Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/audio_bites/20210629_125208_6690_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+E:/my_data/news_data/2021-06-29/Fresh/audio_bites/20210629_125208_6690_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 
+---------------2021-06-29 / उपत्यकामा चले सार्वजनिक सवारी ---------------- 
+
+ Logged Date: 2021-06-29 21:25:20 
+2021-06-29 : Folder Created
+2021-06-29/उपत्यकामा चले सार्वजनिक सवारी : Folder Created
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/20210629_212520_1311_audio_complete_story.mp3 : Audio Complete Story Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/20210629_212520_1311_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/20210629_212520_1311_regular_feed.mp4 : Regular Field Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/20210629_212520_1311_thumbnail.jpg : Thumbnail Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/20210629_212520_1311_ready_version.mp4 : Ready Version Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/20210629_212520_1311_rough_cut.mp4 : Rough Cut Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/gallery/20210629_212520_1311_gallery_0.jpg : Gallery-0 Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/gallery/20210629_212520_1311_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/gallery/20210629_212520_1311_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/20210629_212520_1311_extra_files.zip Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/audio_bites/20210629_212520_1311_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+E:/my_data/news_data/2021-06-29/उपत्यकामा चले सार्वजनिक सवारी/audio_bites/20210629_212520_1311_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 
+---------------2021-06-29 / हस्तलिखित भिसा विस्थापनको तयारी ---------------- 
+
+ Logged Date: 2021-06-29 21:41:54 
+2021-06-29 : Folder Created
+2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी : Folder Created
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/20210629_214154_24980_audio_complete_story.mp3 : Audio Complete Story Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/20210629_214154_24980_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/20210629_214154_24980_regular_feed.mp4 : Regular Field Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/20210629_214154_24980_thumbnail.jpg : Thumbnail Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/20210629_214154_24980_ready_version.mp4 : Ready Version Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/20210629_214154_24980_rough_cut.mp4 : Rough Cut Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/gallery/20210629_214154_24980_gallery_0.jpg : Gallery-0 Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/gallery/20210629_214154_24980_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/gallery/20210629_214154_24980_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/20210629_214154_24980_extra_files.zip Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/audio_bites/20210629_214154_24980_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/audio_bites/20210629_214154_24980_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 

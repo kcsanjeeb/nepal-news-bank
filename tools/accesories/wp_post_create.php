@@ -224,7 +224,7 @@ if(isset($_POST['submit_push']))
                 $thumbnail_path = $thumbnail_full ;
 
 
-                $file = file_get_contents( '../'.$thumbnail_path );
+                $file = file_get_contents( $thumbnail_path );
                 $file_name = explode("/" ,$thumbnail_path);
                 $file_name = end($file_name);
                     
@@ -260,7 +260,7 @@ if(isset($_POST['submit_push']))
                 if($newsbody_full != null)
                 {
                     $push_newsbody_json = str_replace("'","",$push_newsbody);
-                    $push_newsbody_disp =  $domain_url.'/'.$ftp_folder_name_in_server.'/'.$push_newsbody_json;
+                    $push_newsbody_disp =  $domain_url.'/'.$push_newsbody_json;
     
                     $content_json = "<div class='ead-preview'><div class='ead-document' style='position: relative;padding-top: 50%;'>
                                             <iframe src='//view.officeapps.live.com/op/embed.aspx?src=".$push_newsbody_disp."' 
@@ -292,7 +292,7 @@ if(isset($_POST['submit_push']))
 
                 $video_type = $video_type ;
 
-                $push_regularfeed_disp =  $domain_url.'/'.$ftp_folder_name_in_server.'/'.$push_regularFeed_json;
+                $push_regularfeed_disp =  $domain_url.'/'.$push_regularFeed_json;
 
                 if($video_type == 'selfhost')
                 {
@@ -314,9 +314,9 @@ if(isset($_POST['submit_push']))
                     $cmb2  = array('haru_video_metabox' => array('haru_video_server' => 'vimeo',
                     'haru_video_id'=> $vimeo_regularfeed
                 
-                ),
-                'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series_nas")
-                );
+                            ),
+                            'haru_video_attached_data_field' => array('haru_video_attached_seriess' => "$series_nas")
+                            );
 
                     $push_roughcut_json = "https://vimeo.com/".$vimeo_rough_cut ;
                     $push_readyVersion_json = "https://vimeo.com/".$vimeo_readyversion ;

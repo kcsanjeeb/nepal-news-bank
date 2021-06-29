@@ -7,7 +7,7 @@ include "nas_function/functions.php";
 
 include "../global/timezone.php";
 
-
+include "../global/file_paths.php";
 
 
 
@@ -15,8 +15,11 @@ include "../global/timezone.php";
 
 
 // -------------- VARIABLE DECLARATION ----------------
-$interview_path = 'my_data/interview_data';
-$news_path = 'my_data/news_data';
+// $interview_path = 'my_data/interview_data';
+// $news_path = 'my_data/news_data';
+
+$interview_path = $local_interview_path;
+$news_path = $local_news_collector_path ;
 // ----------------------------------------------------
 
 
@@ -241,43 +244,85 @@ if(!isset($location))
             {
                 $byLine_directory_clean = remove_special_chars($byLine_directory);
 
+
                 if($isInterview == 1 )
                 {
-                    if(!is_dir('../'.$interview_path.'/'.$byLine_directory_clean))
+                    $folder_root_exist_check = $interview_path;
+                }
+                else
+                {
+                    $folder_root_exist_check = $news_path;
+                }
+
+                $folder_root_exist_check_array = explode("/" ,$folder_root_exist_check );
+                $drive_root = $folder_root_exist_check_array[0];
+                if(!is_dir($drive_root))
+                {
+                    $_SESSION['notice'] = 'Error';
+                    goto error ;
+                }
+                else
+                {
+                    array_shift($folder_root_exist_check_array);
+                    $path_root_folders = $drive_root ;
+                    foreach($folder_root_exist_check_array as $folder_name)
                     {
-                        mkdir('../'.$interview_path.'/'.$byLine_directory_clean, 0777 , true);
+                        if(empty($folder_name)) continue ;
+
+                        $path_root_folders = $path_root_folders.'/'.$folder_name ;
+                        if(!is_dir($path_root_folders))
+                        {
+                            mkdir($path_root_folders, 0777 , true);                        
+                            chmod($path_root_folders, 0777);
+                        }
+
+                    }
+                }
+
+
+                
+
+
+                if($isInterview == 1 )
+                {
+
+
+
+                    if(!is_dir($path_root_folders.'/'.$byLine_directory_clean))
+                    {
+                        mkdir($path_root_folders.'/'.$byLine_directory_clean, 0777 , true);
                         
-                        chmod('../'.$interview_path.'/'.$byLine_directory_clean, 0777);
+                        chmod($path_root_folders.'/'.$byLine_directory_clean, 0777);
                      
                         $text = "$byLine_directory_clean : Folder Created\n";
                         fwrite($myfile, $text);
 
-                        $bonus_media_path = '../'.$interview_path.'/'.$byLine_directory_clean;
+                        $bonus_media_path = $path_root_folders.'/'.$byLine_directory_clean;
                     }
                 }
                 else
                 {
                  
-                    if(!is_dir('../'.$news_path.'/'.$newsdate))
+                    if(!is_dir($path_root_folders.'/'.$newsdate))
                     {
                     
                    
                    
-                        mkdir('../'.$news_path.'/'.$newsdate, 0777 , true);
+                        mkdir($path_root_folders.'/'.$newsdate, 0777 , true);
                         
-                        chmod('../'.$news_path.'/'.$newsdate, 0777);
+                        chmod($path_root_folders.'/'.$newsdate, 0777);
                         
                        
-                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777 , true);
+                        mkdir($path_root_folders.'/'.$newsdate."/".$byLine_directory_clean, 0777 , true);
                         
-                        chmod('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777);
+                        chmod($path_root_folders.'/'.$newsdate."/".$byLine_directory_clean, 0777);
                         
                         $text = "$newsdate : Folder Created\n";
                         fwrite($myfile, $text);
                         $text = $newsdate."/".$byLine_directory_clean." : Folder Created\n";
                         fwrite($myfile, $text);
 
-                        $bonus_media_path = '../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean;
+                        $bonus_media_path = $path_root_folders.'/'.$newsdate."/".$byLine_directory_clean;
                        
 
                     }
@@ -285,14 +330,14 @@ if(!isset($location))
                     {
                     
                         $byLine_directory_clean = remove_special_chars($byLine_directory);
-                        mkdir('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777 , true);
+                        mkdir($path_root_folders.'/'.$newsdate."/".$byLine_directory_clean, 0777 , true);
                         
-                        chmod('../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean, 0777);
+                        chmod($path_root_folders.'/'.$newsdate."/".$byLine_directory_clean, 0777);
                            
                         $text = "$byLine_directory_clean Folder Created\n";
                         fwrite($myfile, $text);
 
-                        $bonus_media_path = '../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean;
+                        $bonus_media_path = $path_root_folders.'/'.$newsdate."/".$byLine_directory_clean;
                     }
                 }
                 
@@ -313,9 +358,10 @@ if(!isset($location))
             if($isInterview == 1 )
             {
                 $file_name_nas = $date_file_name."_".$time_file_name."_".$news_id ;
-                $file_path_nas = $interview_path."/".$byLine_directory_clean ;
+                $file_path_nas = $path_root_folders."/".$byLine_directory_clean ;
 
-                $path_destination ="../".$file_path_nas."/".$file_name_nas;
+                $folder_path_destination = $file_path_nas;
+                $path_destination = $file_path_nas."/".$file_name_nas;
                 $path_sql = $file_path_nas."/".$file_name_nas;
 
 
@@ -323,10 +369,11 @@ if(!isset($location))
             else
             {
                 $file_name_nas = $date_file_name."_".$time_file_name."_".$news_id;
-                $file_path_nas = $news_path."/".$newsdate."/".$byLine_directory_clean ;
+                $file_path_nas = $path_root_folders."/".$newsdate."/".$byLine_directory_clean ;
 
-                $path_destination ="../".$file_path_nas."/".$file_name_nas;
-                $path_sql =$file_path_nas."/".$file_name_nas;
+                $folder_path_destination = $file_path_nas;
+                $path_destination = $file_path_nas."/".$file_name_nas;
+                $path_sql = $file_path_nas."/".$file_name_nas;
 
             }
 
@@ -386,12 +433,10 @@ if(!isset($location))
 
                 if (in_array($file_type , $allowed_body_type  ))
                 {
-                    // $body_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_body.".$fileActualExt_body;
                     $body_path =$path_destination."_news_file.".$fileActualExt_body;
 
                     $body_tmp_name = $_FILES['descFile']['tmp_name'] ;
                     move_uploaded_file($body_tmp_name, $body_path) ; 
-                    // $body_path = "news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_body.".$fileActualExt_body;
                     $body_path = $path_sql."_news_file.".$fileActualExt_body;
                     $text = "$body_path : News File Uploaded\n";
                     fwrite($myfile, $text);
@@ -460,11 +505,9 @@ if(!isset($location))
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
-                    // $thumbnail_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_thumbnail.".$fileActualExt_thumbImg;
                     $thumbnail_path =$path_destination."_thumbnail.".$fileActualExt_thumbImg;
                     $thumbnail_tmp_name = $_FILES['thumbImg']['tmp_name'] ;
                     move_uploaded_file($thumbnail_tmp_name, $thumbnail_path) ;
-                    // $thumbnail_path = "news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_thumbnail.".$fileActualExt_thumbImg;
                     $thumbnail_path = $path_sql."_thumbnail.".$fileActualExt_thumbImg;
 
                     $text = "$thumbnail_path : Thumbnail Uploaded\n";
@@ -583,18 +626,16 @@ if(!isset($location))
                     
                     if($counter == 0)
                     {
-                        mkdir('../'.$file_path_nas.'/gallery', 0777 , true);                        
-                        chmod('../'.$file_path_nas.'/gallery', 0777);
+                        mkdir($folder_path_destination.'/gallery', 0777 , true);                        
+                        chmod($folder_path_destination.'/gallery', 0777);
                     }
 
 
                     $fileTmpName_photo = $_FILES['galleryImage']['tmp_name'][$p];  
                     $fileActualExt_photo = strtolower(end($fileExt_photo));                     
-                    // $gallery_path ="../news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_gallery_".$counter.".".$fileActualExt_photo;
-                    $gallery_path ="../".$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
+                    $gallery_path =$folder_path_destination."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
 
                     move_uploaded_file($fileTmpName_photo, $gallery_path) ;
-                    // $gallery_path ="news_data/".$newsdate."/".$byLine_directory_clean."/".$date_file_name."_".$time_file_name."_".$news_id."_gallery_".$counter.".".$fileActualExt_photo;
                     $gallery_path =$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
 
                     array_push($gallery_arr , $gallery_path);    
@@ -625,8 +666,8 @@ if(!isset($location))
 
         if(!empty($_FILES['bonus_media']['name'][0]))
         {
-            mkdir($bonus_media_path.'/bonus_media', 0777 , true);                        
-            chmod($bonus_media_path.'/bonus_media', 0777);
+            mkdir($folder_path_destination.'/bonus_media', 0777 , true);                        
+            chmod($folder_path_destination.'/bonus_media', 0777);
             
            
           
@@ -649,7 +690,7 @@ if(!isset($location))
 
                     $file_name_final = $date_file_name."_".$time_file_name."_".$news_id."_".$fileName;
 
-                    $file_path =$bonus_media_path.'/bonus_media'.'/'.$file_name_final;
+                    $file_path =$folder_path_destination.'/bonus_media'.'/'.$file_name_final;
 
                     move_uploaded_file($fileTmpName, $file_path) ;                            
                     
@@ -776,15 +817,15 @@ if(!isset($location))
                 {     
                     if($counter == 0)
                     {
-                        mkdir('../'.$file_path_nas.'/audio_bites', 0777 , true);                        
-                        chmod('../'.$file_path_nas.'/audio_bites', 0777);
+                        mkdir($folder_path_destination.'/audio_bites', 0777 , true);                        
+                        chmod($folder_path_destination.'/audio_bites', 0777);
                     }
 
                     $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
                     $file_actual_ext_ab = strtolower(end($fileExt_photo));  
 
                     
-                    $audio_bites_path ="../".$file_path_nas."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
+                    $audio_bites_path =$folder_path_destination."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
 
                     move_uploaded_file($fileTmpName_photo, $audio_bites_path) ;
                     $audio_bites_path =$file_path_nas."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
@@ -833,7 +874,7 @@ if(!isset($location))
                 audio_complete_story ,  photos ,  news_file ,  rough_cut ,
                 tag_list , uploaded_by , reporter ,
                 camera_man , district , video_type, series ,  extra_files , extra_files_description,
-                audio_description , audio_bites_description , audio_bites , gallery_description
+                audio_description , audio_bites_description , audio_bites , gallery_description , dir_path
               
                 ) 
                 VALUES 
@@ -843,7 +884,7 @@ if(!isset($location))
                 $audio_complete_story_path , $gallery_csv , $body_path , $roughCut_path ,
                 $tags ,$uploaded_by ,  $reporter , 
                 $camera_man , $district,  $video_type, $series , $extra_files , $extra_files_description,
-                $audio_desc , $audio_bites_desc , $audio_bites_csv , $gallery_desc
+                $audio_desc , $audio_bites_desc , $audio_bites_csv , $gallery_desc , '$path_root_folders'
               
                 
                             
@@ -881,6 +922,8 @@ if(!isset($location))
     }
 
 }
+
+error:
 
 if(isset($location))
 {

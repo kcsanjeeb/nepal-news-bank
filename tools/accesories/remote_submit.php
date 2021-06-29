@@ -10,19 +10,16 @@ include "environment/vimeo.php";
 include "nas_function/functions.php";
 include "../global/timezone.php";
 
+include "../global/file_paths.php";
 
-
-
-
-
-
-
- 
 
 
 // -------------- VARIABLE DECLARATION ----------------
-$interview_path = 'interview_data';
-$news_path = 'news_data';
+// $interview_path_ftp = 'interview_data';
+// $news_path_ftp = 'news_data';
+
+$news_path_ftp = $ftp_news_collector_path ;
+$interview_path_ftp = $ftp_interview_path ;
 // ----------------------------------------------------
 
 
@@ -63,6 +60,8 @@ if(!isset($location))
                 $local_published_date = $row_content['local_published_date'];
 
                 $extra_file_full = $row_content['extra_files'];
+
+                $local_dir_path  = $row_content['dir_path'];
 
                
                 // if($category_full == '172')
@@ -192,6 +191,8 @@ if(!isset($location))
                 ftp_login($ftp, "$ftp_username", "$ftp_password");
                 ftp_pasv($ftp, true);
 
+                
+
 
 
                 $logged_date = date('Y-m-d H:i:s');
@@ -201,24 +202,62 @@ if(!isset($location))
                
                 if($isInterview)
                 {
+                    $ftp_path_exp = explode("/" , $interview_path_ftp);
+
+                    $folder = "/";
+                    foreach($ftp_path_exp as $fn)
+                    {
+                        $folders_in_ftp =  ftp_mlsd($ftp, $folder);
+                        $folder_exists = in_array($folders_in_ftp, array_column($fn, 'name'));
+                        if(!$folder_exists)
+                        {
+                            ftp_mkdir($ftp, "/".$fn);
+
+                        }
+                        $folder = $folder."/".$fn;
+
+                    }
+
+                    $news_path_ftp = $ftp_news_collector_path ;
+                    $interview_path_ftp = $ftp_interview_path ;
+
+
                     // $ftp = ftp_connect("$ftp_url");
                     // ftp_login($ftp, "$ftp_username", "$ftp_password");
                     // ftp_pasv($ftp, true);
-                    ftp_mkdir($ftp, "/".$interview_path."/".$dir_byline);
+                    ftp_mkdir($ftp, "/".$interview_path_ftp."/".$dir_byline);
                     // ftp_close($ftp);
 
-                    $news_ftp_path  = "/".$interview_path."/".$dir_byline;
-                    $news_ftp_path_sql  = $interview_path."/".$dir_byline;
+                    $news_ftp_path  = "/".$interview_path_ftp."/".$dir_byline;
+                    $news_ftp_path_sql  = $interview_path_ftp."/".$dir_byline;
+
+                    $local_root_path = $local_dir_path."/".$dir_byline."/" ;
 
                 }
                 else
                 {
 
                     // Folder Exist
-                    $contents =  ftp_mlsd($ftp, "/news_data");
+                    $contents =  ftp_mlsd($ftp, "/$news_path_ftp");
+
+                    $ftp_path_exp = explode("/" , $news_path_ftp);
+                    $folder = "/";
+                    foreach($ftp_path_exp as $fn)
+                    {
+                        $folders_in_ftp =  ftp_mlsd($ftp, $folder);
+                        $folder_exists = in_array($folders_in_ftp, array_column($fn, 'name'));
+                        if(!$folder_exists)
+                        {
+                            ftp_mkdir($ftp, $folder.$fn);
+
+                        }
+
+                        $folder = $folder.$fn."/";
+
+                    }
 
 
-                    // $folder_exists = is_dir('ftp://'.$ftp_un_prefix.':'.$ftp_password.'@'.$ftp_url.'/'.$news_path.'/'.$local_published_date);
+                    // $folder_exists = is_dir('ftp://'.$ftp_un_prefix.':'.$ftp_password.'@'.$ftp_url.'/'.$news_path_ftp.'/'.$local_published_date);
                     $folder_exists = in_array($local_published_date, array_column($contents, 'name'));
                     
                     
@@ -229,8 +268,8 @@ if(!isset($location))
                         // ftp_login($ftp, "$ftp_username", "$ftp_password");
                         // ftp_pasv($ftp, true);
                         $dir = $local_published_date;
-                        // echo "/".$news_path."/".$dir;
-                         ftp_mkdir($ftp, "/".$news_path."/".$dir);
+                        // echo "/".$news_path_ftp."/".$dir;
+                         ftp_mkdir($ftp, "/".$news_path_ftp."/".$dir);
                         // ftp_mkdir($ftp, "/hehehhe");
                         // ftp_close($ftp);
                     }
@@ -239,11 +278,13 @@ if(!isset($location))
                     // ftp_login($ftp, "$ftp_username", "$ftp_password");
                     // ftp_pasv($ftp, true);
                     $dir_byline = remove_special_chars($byline_full) ;
-                    ftp_mkdir($ftp, "/".$news_path."/".$local_published_date."/".$dir_byline);
+                    ftp_mkdir($ftp, "/".$news_path_ftp."/".$local_published_date."/".$dir_byline);
                     // ftp_close($ftp);
 
-                    $news_ftp_path  = "/".$news_path."/".$local_published_date."/".$dir_byline;
-                    $news_ftp_path_sql  = "$news_path/".$local_published_date."/".$dir_byline;
+                    $news_ftp_path  = "/".$news_path_ftp."/".$local_published_date."/".$dir_byline;
+                    $news_ftp_path_sql  = "$news_path_ftp/".$local_published_date."/".$dir_byline;
+
+                    $local_root_path = $local_dir_path."/".$local_published_date."/".$dir_byline."/";
 
                 }
 
@@ -260,14 +301,16 @@ if(!isset($location))
                     {
                         if($count_gall_push == 0)
                         {
-                            ftp_mkdir($ftp, "/".$news_path."/".$local_published_date."/".$dir_byline."/gallery");
+                            ftp_mkdir($ftp, "/".$news_path_ftp."/".$local_published_date."/".$dir_byline."/gallery");
                         }
-                        if(file_exists('../'.$gal_img_arr))
+                        if(file_exists($gal_img_arr))
                         {
 
                             $sourceName = explode("/" ,$gal_img_arr ) ;
                             $sourceName = end($sourceName );
                             $sourceName = "gallery/".$sourceName ;
+
+                            
 
 
                             // if(ftp_remote($news_ftp_path."/".$sourceName , "../".$gal_img_arr))
@@ -310,10 +353,10 @@ if(!isset($location))
                     {
                         if($count_ab_push == 0)
                         {
-                            ftp_mkdir($ftp, "/".$news_path."/".$local_published_date."/".$dir_byline."/audio_bites");
+                            ftp_mkdir($ftp, "/".$news_path_ftp."/".$local_published_date."/".$dir_byline."/audio_bites");
                         }
 
-                        if(file_exists('../'.$ab))
+                        if(file_exists($ab))
                         {
                             $sourceName = explode("/" ,$ab ) ;
                             $sourceName = end($sourceName );
@@ -342,7 +385,7 @@ if(!isset($location))
 
                     if(in_array('news_file' ,$file_type ))
                     {
-                        if(file_exists('../'.$newsbody_full))
+                        if(file_exists($newsbody_full))
                         {
                             $sourceName = explode("/" ,$newsbody_full ) ;
                             $sourceName = end($sourceName );
@@ -390,7 +433,7 @@ if(!isset($location))
                   
                     if(in_array('regularFeed' ,$file_type ))
                     {
-                        if(file_exists('../'.$regularfeed_full))
+                        if(file_exists($regularfeed_full))
                         {
                             $sourceName = explode("/" ,$regularfeed_full ) ;
                             $sourceName = end($sourceName );
@@ -486,7 +529,7 @@ if(!isset($location))
                     
                     if(in_array('ReadyVersion' ,$file_type ))
                     {
-                        if(file_exists('../'.$readyversion_full))
+                        if(file_exists($readyversion_full))
                         {
                             $sourceName = explode("/" ,$readyversion_full ) ;
                             $sourceName = end($sourceName );
@@ -575,7 +618,7 @@ if(!isset($location))
 
                     if(in_array('RoughCut' ,$file_type ))
                     {
-                        if(file_exists('../'.$roughcut_full))
+                        if(file_exists($roughcut_full))
                         {
                             $sourceName = explode("/" ,$roughcut_full ) ;
                             $sourceName = end($sourceName );
@@ -664,7 +707,7 @@ if(!isset($location))
               
                     if(in_array('thumbnail' ,$file_type ))
                     {
-                        if(file_exists('../'.$thumbnail_full))
+                        if(file_exists($thumbnail_full))
                         {
                             $sourceName = explode("/" ,$thumbnail_full ) ;
                             $sourceName = end($sourceName );
@@ -707,7 +750,7 @@ if(!isset($location))
 
                     if(in_array('audio' ,$file_type ))
                     {
-                        if(file_exists('../'.$audio_full))
+                        if(file_exists($audio_full))
                         {
                             $sourceName = explode("/" ,$audio_full ) ;
                             $sourceName = end($sourceName );
@@ -752,7 +795,7 @@ if(!isset($location))
                     
                     if(in_array('extra_files' ,$file_type ))
                     {
-                        if(file_exists('../'.$extra_file_full))
+                        if(file_exists($extra_file_full))
                         {
                             $sourceName = explode("/" ,$extra_file_full ) ;
                             $sourceName = end($sourceName );
@@ -813,15 +856,19 @@ if(!isset($location))
 
                  $news_ftp_path_py  = $news_ftp_path;
                  $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
-                 $local_file_py = '../my_data'.$news_ftp_path_py.'/';
+
+                //  $local_file_py = '../my_data'.$news_ftp_path_py.'/';
+
+                 $local_file_py = $local_root_path;
+                 $local_file_py = str_replace(" ","`~",$local_file_py);
                  
 
                  
 
                  $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
 
-               
-            
+                 
+
                  $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
                 //  $push_remote_py_resp_arr = explode("," , $push_remote_py_resp);
                         
@@ -1123,6 +1170,7 @@ if(!isset($location))
                        audio_complete_story = $push_audio  , photos = '$gall_img' , rough_cut = $push_roughcut, news_file = $push_newsbody,  
                          pushed_by = '$pushed_by' ,   pushed_date = '$pushed_at' ,
                          vimeo_regular_feed = $vimeo_regularfeed , vimeo_ready_version = $vimeo_readyversion , vimeo_rough_cut = $vimeo_roughcut, extra_files = $push_extra_file,
+                         ftp_dir = '$news_ftp_path' ,
                          audio_bites = $push_audio_bites
                          where newsid = '$news_id'  ;";
                         // ) 
@@ -1143,13 +1191,13 @@ if(!isset($location))
                         newsid ,  regular_feed , ready_version ,thumbnail ,
                         audio_complete_story   , photos , rough_cut, news_file ,  
                          pushed_by ,   pushed_date , wp_post_id,
-                         vimeo_regular_feed , vimeo_ready_version , vimeo_rough_cut , extra_files , audio_bites
+                         vimeo_regular_feed , vimeo_ready_version , vimeo_rough_cut , extra_files , audio_bites , ftp_dir
                         ) 
                         VALUES 
                         ('$news_id',  $push_regularFeed,$push_readyVesion  , $push_thumbnail,
                              $push_audio , '$gall_img', $push_roughcut , $push_newsbody , 
                             '$pushed_by' ,'$pushed_at' , $wp_post,
-                             $vimeo_regularfeed , $vimeo_readyversion , $vimeo_roughcut , $push_extra_file , $push_audio_bites
+                             $vimeo_regularfeed , $vimeo_readyversion , $vimeo_roughcut , $push_extra_file , $push_audio_bites , '$news_ftp_path'
                             
                             )";    
 
@@ -1245,51 +1293,24 @@ if(!isset($location))
 
                 $wp_id = $row_content['wp_post_id'];
 
+                $ftp_dir = $row_content['ftp_dir'];
+                $dir_del = "/".$ftp_dir;
+
 
                 $audio_bites = $row_content['audio_bites'];
                
 
                 if($category_nas ==  $_SESSION['interview_id'])
                 {
-                    $dir_del = "/".$interview_path."/$byline_ftp";
+                    $dir_del = "/".$interview_path_ftp."/$byline_ftp";
 
                 }
                 else
                 {
-                    $dir_del = "/".$news_path."/$date/$byline_ftp";
+                    $dir_del = "/".$news_path_ftp."/$date/$byline_ftp";
 
                 }
 
-
-
-                
-                if($video_type_nas == 'selfhost')
-                { 
-                    if($regularfeed_full != NULL)
-                    {
-                        echo $regularfeed_full;                                     
-                        ftp_delete_rem($regularfeed_full,'file');                                
-                    }
-
-                    if($readyversion_full != NULL)
-                    {          
-                        echo $readyversion_full;               
-                        ftp_delete_rem($readyversion_full  ,'file');
-                    }
-
-                    if($roughcut != NULL)
-                    {
-                        // $file = explode("/" , $roughcut);
-                        // $reverse_file = array_reverse($file);
-                        // $last = $reverse_file[1];
-                        // $end = $reverse_file[0];
-                        // $path =  "$last/$end";
-                        echo $roughcut; 
-                        ftp_delete_rem($roughcut  ,'file');
-                    }
-
-                }
-               
 
 
                 if($video_type_nas == 'vimeo')
@@ -1316,71 +1337,22 @@ if(!isset($location))
                 }
 
 
-
+            
+                $ftp = ftp_connect("$ftp_url");
+                ftp_login($ftp, "$ftp_username", "$ftp_password");
+                ftp_pasv($ftp, true);
+        
+        
+                if(recursive_ftp_folder($ftp ,  $dir_del))
+                {
+                    ftp_rmdir($ftp, $dir_del);
+                }
+        
+        
+                ftp_close($ftp);
                    
 
-                    if($thumbnail_full != NULL)
-                    {
-                        echo $thumbnail_full; 
-                        // $file = explode("/" , $thumbnail_full);
-                        // $reverse_file = array_reverse($file);
-                        // $last = $reverse_file[1];
-                        // $end = $reverse_file[0];
-                        // $path =  "$last/$end";
-                        
-                        ftp_delete_rem($thumbnail_full , 'file');
-                    }
-                    
-
                    
-
-                    if($newsbody_full != NULL)
-                    {echo $newsbody_full; 
-                        // $file = explode("/" , $newsbody_full);
-                        // $reverse_file = array_reverse($file);
-                        // $last = $reverse_file[1];
-                        // $end = $reverse_file[0];
-                        // $path =  "$last/$end";
-                      
-                        ftp_delete_rem($newsbody_full , 'file');
-                    }
-
-
-                    if($audio != NULL)
-                    {
-                        // $file = explode("/" , $audio);
-                        // $reverse_file = array_reverse($file);
-                        // $last = $reverse_file[1];
-                        // $end = $reverse_file[0];
-                        // $path =  "$last/$end";
-                        echo $audio; 
-                        ftp_delete_rem($audio , 'file');
-                    }
-
-                    if($extra_file_full != NULL)
-                    {
-                        // $file = explode("/" , $audio);
-                        // $reverse_file = array_reverse($file);
-                        // $last = $reverse_file[1];
-                        // $end = $reverse_file[0];
-                        // $path =  "$last/$end";
-                        echo $extra_file_full; 
-                        ftp_delete_rem($extra_file_full , 'file');
-                    }
-
-                   
-
-                    foreach($photos_array as $ph)
-                    {
-                        // $file = explode("/" , $ph);
-                        // $reverse_file = array_reverse($file);
-                        // $last = $reverse_file[1];
-                        // $end = $reverse_file[0];
-                        // $path =  "$last/$end";
-                        echo $ph; 
-                        ftp_delete_rem($ph , 'file');
-                    }    
-                    ftp_delete_rem($dir_del , 'folder');
                     
 
                     $sql_del_web = "delete from web where newsid = '$news_id' ";
