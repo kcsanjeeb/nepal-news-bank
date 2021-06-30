@@ -349,3 +349,19 @@ gallery/20210629_214154_24980_gallery_2.jpg Gallery Photo Pushed
 audio_bites/20210629_214154_24980_audio_bites_0.mp3 Audio Bites Pushed
 audio_bites/20210629_214154_24980_audio_bites_1.mp3 Audio Bites Pushed
 ------------------------------------------------------- 
+---------------2021-06-29 21:41:54 / हस्तलिखित भिसा विस्थापनको तयारी ---------------- 
+
+ Logged Date: 2021-06-30 12:35:08 
+20210629_214154_24980_news_file.docx News  Body Pushed
+20210629_214154_24980_regular_feed.mp4 Regular Feed Pushed
+20210629_214154_24980_ready_version.mp4 Ready Version Pushed
+20210629_214154_24980_rough_cut.mp4 Rough Cut Pushed
+20210629_214154_24980_thumbnail.jpg Thumbnail Pushed
+20210629_214154_24980_audio_complete_story.mp3 Audio Pushed
+gallery/20210629_214154_24980_gallery_0.jpg Gallery Photo Pushed
+gallery/20210629_214154_24980_gallery_1.jpg Gallery Photo Pushed
+gallery/20210629_214154_24980_gallery_2.jpg Gallery Photo Pushed
+20210629_214154_24980_extra_files.zip Extra Files Pushed
+audio_bites/20210629_214154_24980_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210629_214154_24980_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 

@@ -605,7 +605,7 @@ if(!isset($location))
 
 
             $gallery_arr = array();
-            $counter = 0 ;
+            $counter = 1 ;
             foreach ($_FILES["galleryImage"]["name"] as $p => $name)
             {        
                 
@@ -624,7 +624,7 @@ if(!isset($location))
                 if (in_array($file_type_explode[0] , $allowed ))
                 { 
                     
-                    if($counter == 0)
+                    if($counter == 1)
                     {
                         mkdir($folder_path_destination.'/gallery', 0777 , true);                        
                         chmod($folder_path_destination.'/gallery', 0777);
@@ -736,7 +736,7 @@ if(!isset($location))
 
                 if($zip->open($zip_name, ZIPARCHIVE::CREATE)===TRUE)
                 { 
-                    $counter_file_zip = 0;
+                    $counter_file_zip = 1;
                     foreach ($_FILES["extra_files"]["name"] as $p => $name)
                     { 
                         if(empty($_FILES['extra_files']['name'][$p])) continue ; 
