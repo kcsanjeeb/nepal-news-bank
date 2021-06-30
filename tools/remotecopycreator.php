@@ -1376,6 +1376,12 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
                                                             }
 
+                                                            $image = file_get_contents($ph_arr);
+                                                            $image_codes = base64_encode($image);
+
+
+
+
                                                 ?>
                                         <li>
                                             <input type="checkbox" name="gall_img[]" value="<?php echo $ph_arr ; ?>"
@@ -1383,7 +1389,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                                                 class="files <?php echo $class_gall ; ?>" <?php echo $selected ; ?>
                                                 <?php echo $input ; ?> />
                                             <label for="cb<?php echo $gal_counter ; ?>"><img
-                                                    src="E:/my_data/news_data/2021-06-29/Updated Attributes/gallery/20210629_220703_7947_gallery_0.jpg" /></label>
+                                src="data:image/*;charset=utf-8;base64,<?php echo $image_codes; ?>" /></label>
                                         </li>
                                         <?php
                                                         }

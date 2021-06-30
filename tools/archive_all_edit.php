@@ -384,11 +384,13 @@ foreach($result as $res)
                     <!-- Image preview -->
                     <div id="thumbnailIDa">
                         <?php
-                            if(isset($news_row_details['thumbnail']))
+                            if(isset($news_row_details['thumbnail_local_path']))
                             {
+                                $image = file_get_contents($news_row_details['thumbnail_local_path']);
+                                $image_codes = base64_encode($image);
                         ?>
                         <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow"
-                            src="<?php echo $archive_path_exp[0]."/".$news_row_details['thumbnail'] ; ?>" />
+                        src="data:image/*;charset=utf-8;base64,<?php echo $image_codes; ?>" />
                         <?php
                             }
                         ?>
@@ -441,6 +443,8 @@ foreach($result as $res)
                                                     $counter = 0 ;
                                                     foreach($json_decode_videos as  $video)
                                                     {
+                                                        $video = file_get_contents($video['video_local']);
+                                                        $video_codes = base64_encode($video);
                                                 ?>
 
 
@@ -458,7 +462,7 @@ foreach($result as $res)
                                                                     <video width="100%" height="160px" controls
                                                                         style="display:block">
                                                                         <source
-                                                                            src="<?php echo $archive_path_exp[0]."/".$video['video'] ; ?>"
+                                                                        src="data:video/*;charset=utf-8;base64,<?php echo $video_codes; ?>"
                                                                             type="video/mp4">
                                                                     </video>
 
@@ -570,6 +574,7 @@ foreach($result as $res)
                                                         <td data-name="name">
                                                             <?php
                                                                 $pics = $pictures['photos'];
+                                                                $photos_local = $pictures['photos_local'];
                                                             
                                                                 $pic_loop = 0 ;
 
@@ -582,11 +587,13 @@ foreach($result as $res)
                                                                     <?php
                                                                             foreach($pics as $pic)
                                                                             {
+                                                                                $image = file_get_contents($photos_local[$pic_loop]);
+                                                                                $image_codes = base64_encode($image);
                                                                         ?>
 
                                                                     <div
                                                                         class="carousel-item <?php if($pic_loop == 0) echo 'active' ; ?>">
-                                                                        <img src=<?php echo $archive_path_exp[0]."/".$pic ; ?>"
+                                                                        <img src="data:image/*;charset=utf-8;base64,<?php echo $image_codes; ?>" 
                                                                             class="d-block w-100" alt="...">
                                                                     </div>
 
