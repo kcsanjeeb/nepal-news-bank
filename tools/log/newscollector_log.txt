@@ -627,3 +627,19 @@ E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा वि�
 E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/audio_bites/20210629_214154_24980_audio_bites_0.mp3 : Audio Bites-0 Uploaded
 E:/my_data/news_data/2021-06-29/हस्तलिखित भिसा विस्थापनको तयारी/audio_bites/20210629_214154_24980_audio_bites_1.mp3 : Audio Bites-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-07-01 / linux test win ---------------- 
+
+ Logged Date: 2021-07-01 14:39:14 
+2021-07-01 : Folder Created
+2021-07-01/linux test win : Folder Created
+E:/my_data/news_data/2021-07-01/linux test win/20210701_143914_91648_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-07-01/linux test win/20210701_143914_91648_regular_feed.mp4 : Regular Field Uploaded
+------------------------------------------------------- 
+---------------2021-07-01 / New News up ---------------- 
+
+ Logged Date: 2021-07-01 14:57:54 
+New News up Folder Created
+E:/my_data/news_data/2021-07-01/New News up/20210701_145754_86856_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-07-01/New News up/20210701_145754_86856_regular_feed.mp4 : Regular Field Uploaded
+E:/my_data/news_data/2021-07-01/New News up/20210701_145754_86856_ready_version.mp4 : Ready Version Uploaded
+------------------------------------------------------- 
