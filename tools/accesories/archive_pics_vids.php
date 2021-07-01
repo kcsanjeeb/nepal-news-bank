@@ -116,8 +116,25 @@ if(isset($_POST['submit']))
     $logged_date = date('Y-m-d H:i:s');
     fwrite($myfile, "\n Logged Date: $logged_date \n");
 
+
+
+    
     $folder_root_exist_check_array = explode("/" ,$archive_path  );
     $drive_root = $folder_root_exist_check_array[0];
+
+    if(!isset($drive_root) && empty($drive_root))
+    {
+        $drive_root = $folder_root_exist_check_array[1];
+        array_shift($folder_root_exist_check_array);
+        $dir_lead = "/";
+
+    }
+    else
+    {
+        $dir_lead = "";
+    }
+
+
     if(!is_dir($drive_root))
     {
         $_SESSION['notice'] = 'Error';
@@ -126,7 +143,7 @@ if(isset($_POST['submit']))
     else
     {
         array_shift($folder_root_exist_check_array);
-        $path_root_folders = $drive_root ;
+        $path_root_folders = $dir_lead.$drive_root ;
         foreach($folder_root_exist_check_array as $folder_name)
         {
             if(empty($folder_name)) continue ;

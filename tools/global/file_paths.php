@@ -1,5 +1,7 @@
 <?php
 
+$platform = 'linux';
+
 
 $local_news_collector_path = "E:/my_data/news_data" ;
 $local_interview_path = "E:/my_data/interview_data" ;
