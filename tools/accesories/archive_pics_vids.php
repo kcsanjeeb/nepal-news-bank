@@ -122,7 +122,7 @@ if(isset($_POST['submit']))
     $folder_root_exist_check_array = explode("/" ,$archive_path  );
     $drive_root = $folder_root_exist_check_array[0];
 
-    if(!isset($drive_root) && empty($drive_root))
+    if(!isset($drive_root) || empty($drive_root))
     {
         $drive_root = $folder_root_exist_check_array[1];
         array_shift($folder_root_exist_check_array);
@@ -135,7 +135,7 @@ if(isset($_POST['submit']))
     }
 
 
-    if(!is_dir($drive_root))
+    if(!is_dir($dir_lead.$drive_root))
     {
         $_SESSION['notice'] = 'Error';
         goto error ;
