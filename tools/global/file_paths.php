@@ -1,6 +1,17 @@
 <?php
 
-$platform = 'linux';
+
+/*
+
+    1. Windows Format: E:/my_data/news_data
+
+    2. Linux Format: /home/news_data
+        Note:
+            -> Root Directore should have read and write access
+            -> For above path: home should have read and write access.
+
+
+*/
 
 
 $local_news_collector_path = "E:/my_data/news_data" ;
