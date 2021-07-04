@@ -169,6 +169,7 @@ if(isset($_POST['submit']))
 
     $local_path = $path_root_folders."/".$title_directory ;
     $local_path_clean = $path_root_folders."/".$title_directory ;
+
     $ftp_path = $archive_path_ftp."/".$title_directory;
 
 
@@ -176,7 +177,26 @@ if(isset($_POST['submit']))
     ftp_login($ftp, "$ftp_username", "$ftp_password");
     ftp_pasv($ftp, true);
 
-    ftp_mkdir($ftp, "/".$ftp_path);
+
+    $ftp_path_exp = explode("/" , $ftp_path);
+    $folder = "/";
+    foreach($ftp_path_exp as $fn)
+    {
+        // $folders_in_ftp =  ftp_mlsd($ftp, $folder);
+        // $folder_exists = in_array($folders_in_ftp, array_column($fn, 'name'));
+        $folder_exists = 0 ;
+
+        if(!$folder_exists)
+        {
+            ftp_mkdir($ftp, $folder.$fn);
+
+        }
+
+        $folder = $folder.$fn."/";
+
+    }
+
+    // ftp_mkdir($ftp, "/".$ftp_path);
 
     
 

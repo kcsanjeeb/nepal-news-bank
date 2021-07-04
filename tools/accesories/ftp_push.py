@@ -23,9 +23,6 @@ def save_ftp( filename , my_ftp_url ,my_ftp_username ,my_ftp_password ,  my_ftp_
 
 if __name__ == "__main__":
 
-  
-   
-    symss_array = symss.split(' ')
     my_ftp_url= sys.argv[2]
     my_ftp_username= sys.argv[3]
     my_ftp_password = sys.argv[4]

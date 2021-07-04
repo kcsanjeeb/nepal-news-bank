@@ -659,3 +659,59 @@
 
  20210629_215210_96089_thumbnail.jpg Pushed to remote Success
 ------------------------------------------------------- 
+--------------- 2021-07-04 / Win Test  ------------------ 
+
+ Logged Date: 2021-07-04 12:22:59 
+
+ archive_videos/archive_video_1/20210704_122259_33067_video_1.mp4 Pushed to remote Failes
+
+ archive_videos/archive_video_2/20210704_122259_33067_video_2.mp4 Pushed to remote Failes
+
+ archive_pictures/archive_picture_1/20210704_122259_33067_picture_1.jpg Pushed to remote Failes
+
+ archive_pictures/archive_picture_1/20210704_122259_33067_picture_2.jpg Pushed to remote Failes
+
+ 20210704_122259_33067_thumbnail.jpg Pushed to remote Failes
+------------------------------------------------------- 
+--------------- 2021-07-04 / win test  ------------------ 
+
+ Logged Date: 2021-07-04 12:37:12 
+
+ archive_videos/archive_video_1/20210704_123712_20561_video_1.mp4 Pushed to remote Failes
+
+ archive_pictures/archive_picture_1/20210704_123712_20561_picture_1.jpg Pushed to remote Failes
+
+ archive_pictures/archive_picture_1/20210704_123712_20561_picture_2.jpg Pushed to remote Failes
+
+ 20210704_123712_20561_thumbnail.jpg Pushed to remote Failes
+------------------------------------------------------- 
+--------------- 2021-07-04 / windows test  ------------------ 
+
+ Logged Date: 2021-07-04 12:40:57 
+
+ archive_videos/archive_video_1/20210704_124057_90265_video_1.mp4 Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210704_124057_90265_picture_1.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210704_124057_90265_picture_2.jpg Pushed to remote Success
+
+ 20210704_124057_90265_thumbnail.jpg Pushed to remote Success
+------------------------------------------------------- 
+--------------- 2021-07-04 / test  ------------------ 
+
+ Logged Date: 2021-07-04 13:03:23 
+
+--------------- 2021-07-04 / any dir  ------------------ 
+
+ Logged Date: 2021-07-04 13:11:27 
+
+ archive_videos/archive_video_1/20210704_131127_71442_video_1.mp4 Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210704_131127_71442_picture_1.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210704_131127_71442_picture_2.jpg Pushed to remote Success
+
+ archive_pictures/archive_picture_1/20210704_131127_71442_picture_3.jpg Pushed to remote Success
+
+ 20210704_131127_71442_thumbnail.jpg Pushed to remote Success
+------------------------------------------------------- 
