@@ -538,7 +538,7 @@ if(isset($_POST['submit']))
 
 
     $news_ftp_path_py  = "/$ftp_path";
-    $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
+    $news_ftp_path_py = str_replace(" ","+-*",$news_ftp_path_py);
 
     // $local_file_py = '../my_data'.$news_ftp_path_py.'/';
 
@@ -546,7 +546,7 @@ if(isset($_POST['submit']))
 
     $files_to_push_csv = implode("," , $files_to_push);
 
-    $local_file_py = str_replace(" ","`~",$local_file_py);
+    $local_file_py = str_replace(" ","+-*",$local_file_py);
 
     $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
 

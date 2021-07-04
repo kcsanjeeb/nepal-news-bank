@@ -655,10 +655,10 @@ if(isset($_POST['submit']))
 
 
     $news_ftp_path_py  = "/$ftp_path";
-    $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
+    $news_ftp_path_py = str_replace(" ","+-*",$news_ftp_path_py);
     // $local_file_py = '../my_data'.$news_ftp_path_py.'/';
     $local_file_py = $local_path.'/';
-    $local_file_py = str_replace(" ","`~",$local_file_py);
+    $local_file_py = str_replace(" ","+-*",$local_file_py);
 
     $files_to_push_csv = implode("," , $files_to_push);
 

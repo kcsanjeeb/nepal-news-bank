@@ -244,8 +244,10 @@ if(!isset($location))
                     $folder = "/";
                     foreach($ftp_path_exp as $fn)
                     {
-                        $folders_in_ftp =  ftp_mlsd($ftp, $folder);
-                        $folder_exists = in_array($folders_in_ftp, array_column($fn, 'name'));
+                        // $folders_in_ftp =  ftp_mlsd($ftp, $folder);
+                        // $folder_exists = in_array($folders_in_ftp, array_column($fn, 'name'));
+                        $folder_exists = 0 ;
+
                         if(!$folder_exists)
                         {
                             ftp_mkdir($ftp, $folder.$fn);
@@ -433,6 +435,7 @@ if(!isset($location))
                   
                     if(in_array('regularFeed' ,$file_type ))
                     {
+
                         if(file_exists($regularfeed_full))
                         {
                             $sourceName = explode("/" ,$regularfeed_full ) ;
@@ -855,12 +858,12 @@ if(!isset($location))
                 
 
                  $news_ftp_path_py  = $news_ftp_path;
-                 $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
+                 $news_ftp_path_py = str_replace(" ","+-*",$news_ftp_path_py);
 
                 //  $local_file_py = '../my_data'.$news_ftp_path_py.'/';
 
                  $local_file_py = $local_root_path;
-                 $local_file_py = str_replace(" ","`~",$local_file_py);
+                 $local_file_py = str_replace(" ","+-*",$local_file_py);
                  
 
                  
