@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(0);
+// error_reporting(0);
 ini_set('mysql.connect_timeout','0');   
 
 $path_root = $_SERVER['DOCUMENT_ROOT'];
@@ -18,7 +18,7 @@ include $path_root."/".$path_uri_exp[1]."/".$path_uri_exp[2]."/global/local_phpm
         $db_name= $phpmyadmin_db_name;
         $connection= mysqli_connect($host , $user , $password , $db_name);
 
-        
+
 
 
 

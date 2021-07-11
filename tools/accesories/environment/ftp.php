@@ -1,7 +1,14 @@
 <?php
 
 $ftp_folder_name_in_server = "my_data";
+
+// old 
 $domain_name_ftp = "nepalnewsbank.com";
+
+// new
+// $domain_name_ftp = "cyu.rne.mybluehostin.me";
+
+
 
 $ftp_url = "ftp.".$domain_name_ftp;
 

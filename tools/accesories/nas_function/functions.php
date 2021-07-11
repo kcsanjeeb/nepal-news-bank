@@ -211,6 +211,8 @@ function ftp_login_nas($username, $password)
     $ftp_user = $username."@$ftp_un_suffix";
     $ftp_pass = $password;
 
+    echo "<br>$ftp_server<br>$ftp_user<br>$ftp_pass!!!<br>";
+
     // set up a connection or die
     $conn_id = ftp_connect($ftp_server) or die("Couldn't connect to $ftp_server"); 
 
@@ -221,6 +223,7 @@ function ftp_login_nas($username, $password)
     } else {
         // echo "Couldn't connect as $ftp_user\n";
         $response = 0 ;
+      
     }
 
     // close the connection
