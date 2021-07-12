@@ -479,6 +479,7 @@ foreach($result as $res)
 
 
                                                         </td>
+                                                        
 
                                                         <td data-name="desc" data-desc="<?php echo $video['desc'] ; ?>"
                                                             data-type="video" data-index="<?php echo $counter ; ?>"

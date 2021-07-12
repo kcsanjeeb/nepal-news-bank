@@ -260,8 +260,8 @@ if(!isset($location))
 
 
                     // $folder_exists = is_dir('ftp://'.$ftp_un_prefix.':'.$ftp_password.'@'.$ftp_url.'/'.$news_path_ftp.'/'.$local_published_date);
-                    $folder_exists = in_array($local_published_date, array_column($contents, 'name'));
-                    
+                    // $folder_exists = in_array($local_published_date, array_column($contents, 'name'));
+                    $folder_exists = false ;
                     
                     if(!$folder_exists)
                     {
@@ -870,11 +870,16 @@ if(!isset($location))
 
                  $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
 
-                 
+                //  echo "<br>";echo "<br>";
+                echo $sym ; 
 
+                // echo "<br>";echo "<br>";
                  $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
                 //  $push_remote_py_resp_arr = explode("," , $push_remote_py_resp);
-                        
+                
+                // echo "<br>";echo "<br>";
+                // echo $push_remote_py_resp ;
+                // echo "<br>";echo "<br>";
 
                 
                  
@@ -1049,10 +1054,14 @@ if(!isset($location))
                     {
                         echo "7b<br>";
                             $gal_img_arr = "$news_ftp_path_sql/$sent_gal" ;
-                            array_push($gallery_full_web_arr , $gal_img_arr);
+                            if(!empty($sent_gal) && isset($sent_gal))
+                            {
+                                array_push($gallery_full_web_arr , $gal_img_arr);
 
-                            $text = "$sent_gal Gallery Photo Pushed\n";
-                            fwrite($myfile, $text);
+                                $text = "$sent_gal Gallery Photo Pushed\n";
+                                fwrite($myfile, $text);
+                            }
+                                
                     }
                     else 
                     {
@@ -1105,7 +1114,8 @@ if(!isset($location))
                             echo "7b<br>";
                                 $ab_arr = "$news_ftp_path_sql/$sent_ab" ;
 
-                                array_push($push_audio_bites_array , $ab_arr);
+                               
+                                    array_push($push_audio_bites_array , $ab_arr);
     
                                 $text = "$sent_ab Audio Bites Pushed\n";
                                 fwrite($myfile, $text);
@@ -1129,7 +1139,8 @@ if(!isset($location))
                     {
                         foreach($audio_bites_web_arr as $old_values)
                         {
-                            array_push($push_audio_bites_array ,$old_values );
+                            if(!empty($old_values) && isset($old_values))
+                                array_push($push_audio_bites_array ,$old_values );
                         }
 
                     }

@@ -32,6 +32,7 @@ $curl = curl_init();
     $respCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     $err = curl_error($curl);                    
 curl_close($curl);
+echo $respCode ."<br>".$err  ;
 
 
 $query_wp_id_upd = "update  web set  wp_post_type='$post_status'  where wp_post_id = '$post_id'  ;";                  

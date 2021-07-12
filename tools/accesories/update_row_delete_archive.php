@@ -102,7 +102,7 @@ if(isset($_POST['newsid']))
         
            
 
-
+            print_r($data_videos_rows);
 
             $data_videos = json_encode($data_videos_rows , JSON_UNESCAPED_UNICODE);
             $update_query .= "update archives set archive_videos = '$data_videos' where archive_id = '$news_id';";

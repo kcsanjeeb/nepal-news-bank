@@ -88,18 +88,18 @@ justify-content: space-around; color:#fff; font-size:25px; font-weight:600">
                 href="remotecopycreator.php">Remote-Copy-Creator</a>
         </li>
      
-        <li class="nav-item <?php echo $archivefootage_page ; ?>" >
+        <!-- <li class="nav-item <?php //echo $archivefootage_page ; ?>" >
             <a class="nav-link mr-3"
                 href="archivefootage.php">Archive-Video-Creator</a>
         </li>
-        <li class="nav-item <?php echo $archivepicture_page ; ?>">
+        <li class="nav-item <?php //echo $archivepicture_page ; ?>">
             <a class="nav-link mr-3"
                 href="archivepicture.php">Archive-Picture-Creator</a>
-        </li>
+        </li> -->
 
         <li class="nav-item <?php echo $archive_page ; ?>">
             <a class="nav-link mr-3"
-                href="archive.php">Archives</a>
+                href="archive.php">Archive-Creator</a>
         </li>
 
         <li class="nav-item <?php echo $newsticker_page ; ?>">
