@@ -7,7 +7,7 @@ import sys
 def save_ftp( filename , my_ftp_url ,my_ftp_username ,my_ftp_password ,  my_ftp_remote_path , my_local_path):
 
     ftp = FTP(my_ftp_url ) 
-    ftp.set_pasv(False)
+    ftp.set_pasv(True)
     ftp.login(my_ftp_username,  my_ftp_password)   
     ftp.cwd(my_ftp_remote_path)
     file = open(my_local_path+filename,'rb')                  
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
 
     while(len(rem_files) > 0):
-        for file_name in file_array:
+        for file_name in rem_files:
             thread_task = threading.Thread(target=save_ftp, args=(file_name ,my_ftp_url , my_ftp_username ,my_ftp_password ,  my_ftp_path , my_local_path))
             thread_task.start()
             threads.append(thread_task)     
