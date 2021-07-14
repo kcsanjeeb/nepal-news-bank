@@ -1,12 +1,7 @@
 import threading
 from ftplib import FTP
 import sys
-from itertools import islice
 
-
-def chunk(it, size):
-    it = iter(it)
-    return iter(lambda: tuple(islice(it, size)), ())
 
 
 def save_ftp( filename , my_ftp_url ,my_ftp_username ,my_ftp_password ,  my_ftp_remote_path , my_local_path):
@@ -41,18 +36,15 @@ if __name__ == "__main__":
 
     file_csv = sys.argv[1]
     file_array = file_csv.split(',')
-    file_name_chunks = list(chunk(file_array, 6))
-
     file_completed = []
 
 
     threads = []   
-    # rem_files = list(set(file_array) - set(file_completed) )
+    rem_files = list(set(file_array) - set(file_completed) )
 
 
-    # while(len(rem_files) > 0):
-    for file_name_chunk in file_name_chunks:
-        for file_name in file_name_chunk:
+    while(len(rem_files) > 0):
+        for file_name in rem_files:
             thread_task = threading.Thread(target=save_ftp, args=(file_name ,my_ftp_url , my_ftp_username ,my_ftp_password ,  my_ftp_path , my_local_path))
             thread_task.start()
             threads.append(thread_task)     
@@ -61,7 +53,7 @@ if __name__ == "__main__":
         for i in range(len(threads)):
             threads[i].join()
         
-        # rem_files = list(set(file_array) - set(file_completed) )
+        rem_files = list(set(file_array) - set(file_completed) )
 
     
 
