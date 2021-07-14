@@ -669,8 +669,16 @@ if(!isset($location))
             
 
             }
-            $gallery_csv = implode("," , $gallery_arr) ;
-            $gallery_csv = "'$gallery_csv'";
+
+            if(count($gallery_arr) > 0)
+            {
+                $gallery_csv = implode("," , $gallery_arr) ;
+                $gallery_csv = "'$gallery_csv'";
+            }
+            else
+            {
+                $gallery_csv = "NULL";
+            }
 
           
             if(count($gallery_arr) > 0 && $gallery_desc == 'NULL')
