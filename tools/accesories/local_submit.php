@@ -35,6 +35,11 @@ if(!isset($location))
         if(isset($_POST['byLine']) && isset($_POST['newsdate']) && isset($_POST['newsCategories']) && count($_POST['newsCategories']) > 0)   
         {
 
+            if(empty($_POST['byLine']) && empty($_POST['newsdate']))
+            {
+                goto error ;
+            }
+
             
             
             $byLine = $_POST['byLine'] ;
@@ -168,7 +173,7 @@ if(!isset($location))
 
 
 
-            if(isset($_POST['extra_files_description']))
+            if(!empty($_POST['extra_files_description']))
             {
                 $extra_files_description = $_POST['extra_files_description'];
                 $extra_files_description = mysqli_real_escape_string($connection, $extra_files_description);    
@@ -180,7 +185,7 @@ if(!isset($location))
             }
 
 
-            if(isset($_POST['audio_desc']))
+            if(!empty($_POST['audio_desc']))
             {
                 $audio_desc = $_POST['audio_desc'];
                 $audio_desc = mysqli_real_escape_string($connection, $audio_desc);    
@@ -193,7 +198,7 @@ if(!isset($location))
             
             }
 
-            if(isset($_POST['gallery_desc']))
+            if(!empty($_POST['gallery_desc']))
             {
                 $gallery_desc = $_POST['gallery_desc'];
                 $gallery_desc = mysqli_real_escape_string($connection, $gallery_desc);    
@@ -206,7 +211,7 @@ if(!isset($location))
             }
 
 
-            if(isset($_POST['audio_bites_desc']))
+            if(!empty($_POST['audio_bites_desc']))
             {
                 $audio_bites_desc = $_POST['audio_bites_desc'];
                 $audio_bites_desc = mysqli_real_escape_string($connection, $audio_bites_desc);    
@@ -363,9 +368,8 @@ if(!isset($location))
             }
 
             $date_file_name = str_replace("-","",$newsdate);
-            // $time_file_name = date('H:i:s');
-            $time_file_name = end(explode(" " , $created_at_value));
-            $time_file_name = str_replace(":","",$time_file_name);
+            $end_value = explode(" " , $created_at_value) ;
+            $time_file_name = str_replace(":","",$end_value);
 
             $news_id =  getId('nas');
         
@@ -420,9 +424,10 @@ if(!isset($location))
                     
                     $audio_complete_story_path = "'$audio_complete_story_path'";
 
-                    if($audio_desc == "NULL")
+                    if($audio_desc  == 'NULL' )
                     {
-                        $audio_desc = "Audio description.";
+                        $audio_desc = "Audio description";
+                        $audio_desc = "'$audio_desc'";
                     }
                 }
                 else
@@ -684,204 +689,207 @@ if(!isset($location))
             if(count($gallery_arr) > 0 && $gallery_desc == 'NULL')
             {
                 $gallery_desc = "Gallery description";
+                $gallery_desc = "'$gallery_desc'";
             }
 
 
         
 
-        if(!empty($_FILES['bonus_media']['name'][0]))
-        {
-            mkdir($folder_path_destination.'/bonus_media', 0777 , true);                        
-            chmod($folder_path_destination.'/bonus_media', 0777);
-            
-           
-          
-            foreach ($_FILES["bonus_media"]["name"] as $p => $name)
-            {  
-                if(empty($_FILES['bonus_media']['name'][$p])) continue ;
-
+            if(!empty($_FILES['bonus_media']['name'][0]))
+            {
+                mkdir($folder_path_destination.'/bonus_media', 0777 , true);                        
+                chmod($folder_path_destination.'/bonus_media', 0777);
                 
-                $fileName= $_FILES['bonus_media']['name'][$p];
-                $fileTmpName = $_FILES['bonus_media']['tmp_name'][$p];  
-                $fileSize = $_FILES['bonus_media']['size'][$p];
-                $fileType = $_FILES['bonus_media']['type'][$p];            
-
-                $fileExt = explode('.' , $fileName);            
+            
+            
+                foreach ($_FILES["bonus_media"]["name"] as $p => $name)
+                {  
+                    if(empty($_FILES['bonus_media']['name'][$p])) continue ;
 
                     
+                    $fileName= $_FILES['bonus_media']['name'][$p];
                     $fileTmpName = $_FILES['bonus_media']['tmp_name'][$p];  
+                    $fileSize = $_FILES['bonus_media']['size'][$p];
+                    $fileType = $_FILES['bonus_media']['type'][$p];            
 
-                    $fileName = str_replace(" ","_",$fileName);
+                    $fileExt = explode('.' , $fileName);            
 
-                    $file_name_final = $date_file_name."_".$time_file_name."_".$news_id."_".$fileName;
-
-                    $file_path =$folder_path_destination.'/bonus_media'.'/'.$file_name_final;
-
-                    move_uploaded_file($fileTmpName, $file_path) ;                            
-                    
-              
-           
-            
-
-            }
-        
-        
-        }
-
-
-        
-        // if(!empty($_FILES['extra_files']['name'][0]))
-        if(count($_FILES['extra_files']['name']) > 0)
-        {
-
-            
-            foreach ($_FILES["extra_files"]["name"] as $p => $name)
-            {
-                if(empty($_FILES['extra_files']['name'][$p])) continue ; 
-
-                $create_zip = 1;
-
-            }
-
-            if($create_zip)
-            {
-
-                $zip = new ZipArchive(); // Load zip library 
-                $zip_name =$path_destination."_extra_files.zip";
-                $extra_files = $path_sql."_extra_files.zip"; 
-                $extra_files = "'$extra_files'";
-
-                /*
-                    1. create zip folder -- done
-                    2. add all files to zip -- done
-                    3. store zip -- done
-                    4. add attribute in nas db
-                    5  store path in nas db
-                */ 
-
-                if($zip->open($zip_name, ZIPARCHIVE::CREATE)===TRUE)
-                { 
-                    $counter_file_zip = 1;
-                    foreach ($_FILES["extra_files"]["name"] as $p => $name)
-                    { 
-                        if(empty($_FILES['extra_files']['name'][$p])) continue ; 
                         
-                        $fileName= $_FILES['extra_files']['name'][$p];
-                        $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];  
-                        $fileSize = $_FILES['extra_files']['size'][$p];
-                        $fileType = $_FILES['extra_files']['type'][$p]; 
+                        $fileTmpName = $_FILES['bonus_media']['tmp_name'][$p];  
 
+                        $fileName = str_replace(" ","_",$fileName);
 
-                        $fileExt_exp = explode('.' , $fileName);
-                        $fileActualExt = strtolower(end($fileExt_exp));
-                                
+                        $file_name_final = $date_file_name."_".$time_file_name."_".$news_id."_".$fileName;
 
-                        $fileExt = explode('.' , $fileName);    
+                        $file_path =$folder_path_destination.'/bonus_media'.'/'.$file_name_final;
+
+                        move_uploaded_file($fileTmpName, $file_path) ;                            
                         
-                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_extra_file_".$counter_file_zip.".".$fileActualExt;
-
-                            
-                            $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];                  
-                            $zip->addFile($fileTmpName , $new_zip_file_name);
-                            $counter_file_zip++ ;
-                    }
+                
+            
                 
 
                 }
-
-                $zip->close();
-                $text = "$zip_name Uploaded\n";
-                fwrite($myfile, $text);
-
-                  
-                                
- 
-                    if($extra_files_description == "NULL")
-                    {
-                        $extra_files_description =  "Extra file description";
-                    }
-
-
+            
+            
             }
+
+
         
-        
-        }
-        else 
-        {
-            $extra_files = 'NULL';
-        }
+            // if(!empty($_FILES['extra_files']['name'][0]))
+            if(count($_FILES['extra_files']['name']) > 0)
+            {
 
-        if(empty($extra_files)) $extra_files = 'NULL';
-
-
-
-
-        if(!empty($_FILES['audio_bites']['name'][0]))
-        {
-            $counter = 0 ;
-            $audio_bites_arr = array();
-            foreach ($_FILES["audio_bites"]["name"] as $p => $name)
-            {      
-                if(empty($_FILES['audio_bites']['name'][$p])) continue ;  
                 
-               
-                
-                $fileName_photo= $_FILES['audio_bites']['name'][$p];
-                $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
-                $fileSize_photo = $_FILES['audio_bites']['size'][$p];
-                // $filenotice_photo = $_FILES['galleryImage']['notice'][$p];
-                $fileType_photo = $_FILES['audio_bites']['type'][$p];            
+                foreach ($_FILES["extra_files"]["name"] as $p => $name)
+                {
+                    if(empty($_FILES['extra_files']['name'][$p])) continue ; 
 
-                $fileExt_photo = explode('.' , $fileName_photo);
-                $file_actual_ext_ab = strtolower(end($fileExt_photo));
+                    $create_zip = 1;
 
-                $file_type_explode = explode("/" , $fileType_photo);
-                $allowed = array('audio'  );
+                }
 
-                if (in_array($file_type_explode[0] , $allowed ))
-                {     
-                    if($counter == 0)
-                    {
-                        mkdir($folder_path_destination.'/audio_bites', 0777 , true);                        
-                        chmod($folder_path_destination.'/audio_bites', 0777);
+                if($create_zip)
+                {
+
+                    $zip = new ZipArchive(); // Load zip library 
+                    $zip_name =$path_destination."_extra_files.zip";
+                    $extra_files = $path_sql."_extra_files.zip"; 
+                    $extra_files = "'$extra_files'";
+
+                    /*
+                        1. create zip folder -- done
+                        2. add all files to zip -- done
+                        3. store zip -- done
+                        4. add attribute in nas db
+                        5  store path in nas db
+                    */ 
+
+                    if($zip->open($zip_name, ZIPARCHIVE::CREATE)===TRUE)
+                    { 
+                        $counter_file_zip = 1;
+                        foreach ($_FILES["extra_files"]["name"] as $p => $name)
+                        { 
+                            if(empty($_FILES['extra_files']['name'][$p])) continue ; 
+                            
+                            $fileName= $_FILES['extra_files']['name'][$p];
+                            $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];  
+                            $fileSize = $_FILES['extra_files']['size'][$p];
+                            $fileType = $_FILES['extra_files']['type'][$p]; 
+
+
+                            $fileExt_exp = explode('.' , $fileName);
+                            $fileActualExt = strtolower(end($fileExt_exp));
+                                    
+
+                            $fileExt = explode('.' , $fileName);    
+                            
+                            $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_extra_file_".$counter_file_zip.".".$fileActualExt;
+
+                                
+                                $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];                  
+                                $zip->addFile($fileTmpName , $new_zip_file_name);
+                                $counter_file_zip++ ;
+                        }
+                    
+
                     }
 
-                    $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
-                    $file_actual_ext_ab = strtolower(end($fileExt_photo));  
-
-                    
-                    $audio_bites_path =$folder_path_destination."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
-
-                    move_uploaded_file($fileTmpName_photo, $audio_bites_path) ;
-                    $audio_bites_path =$file_path_nas."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
-
-                    array_push($audio_bites_arr , $audio_bites_path);    
-                    
-                    $text = "$audio_bites_path : Audio Bites-$counter Uploaded\n";
+                    $zip->close();
+                    $text = "$zip_name Uploaded\n";
                     fwrite($myfile, $text);
 
+                    
+                                    
+    
+                        if($extra_files_description == "NULL")
+                        {
+                            $extra_files_description =  "Extra file description";
+                            $extra_files_description = "'$extra_files_description'";
+                        }
 
-                    $counter++;   
-                    
-                    
 
                 }
             
-
+            
             }
-            $audio_bites_csv = implode("," , $audio_bites_arr) ;
-            $audio_bites_csv = "'$audio_bites_csv'";
-
-            if(count($audio_bites_arr) > 0 && $audio_bites_desc == "NULL")
+            else 
             {
-                $audio_bites_desc = "Audio bites description";
+                $extra_files = 'NULL';
             }
-        
-        }
-        else 
-        {
-            $audio_bites_csv = "NULL";
-        }
+
+            if(empty($extra_files)) $extra_files = 'NULL';
+
+
+
+
+            if(!empty($_FILES['audio_bites']['name'][0]))
+            {
+                $counter = 0 ;
+                $audio_bites_arr = array();
+                foreach ($_FILES["audio_bites"]["name"] as $p => $name)
+                {      
+                    if(empty($_FILES['audio_bites']['name'][$p])) continue ;  
+                    
+                
+                    
+                    $fileName_photo= $_FILES['audio_bites']['name'][$p];
+                    $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
+                    $fileSize_photo = $_FILES['audio_bites']['size'][$p];
+                    // $filenotice_photo = $_FILES['galleryImage']['notice'][$p];
+                    $fileType_photo = $_FILES['audio_bites']['type'][$p];            
+
+                    $fileExt_photo = explode('.' , $fileName_photo);
+                    $file_actual_ext_ab = strtolower(end($fileExt_photo));
+
+                    $file_type_explode = explode("/" , $fileType_photo);
+                    $allowed = array('audio'  );
+
+                    if (in_array($file_type_explode[0] , $allowed ))
+                    {     
+                        if($counter == 0)
+                        {
+                            mkdir($folder_path_destination.'/audio_bites', 0777 , true);                        
+                            chmod($folder_path_destination.'/audio_bites', 0777);
+                        }
+
+                        $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
+                        $file_actual_ext_ab = strtolower(end($fileExt_photo));  
+
+                        
+                        $audio_bites_path =$folder_path_destination."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
+
+                        move_uploaded_file($fileTmpName_photo, $audio_bites_path) ;
+                        $audio_bites_path =$file_path_nas."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
+
+                        array_push($audio_bites_arr , $audio_bites_path);    
+                        
+                        $text = "$audio_bites_path : Audio Bites-$counter Uploaded\n";
+                        fwrite($myfile, $text);
+
+
+                        $counter++;   
+                        
+                        
+
+                    }
+                
+
+                }
+                $audio_bites_csv = implode("," , $audio_bites_arr) ;
+                $audio_bites_csv = "'$audio_bites_csv'";
+
+                if(count($audio_bites_arr) > 0 && $audio_bites_desc == "NULL")
+                {
+                    $audio_bites_desc = "Audio bites description";
+                    $audio_bites_desc = "'$audio_bites_desc'";
+                }
+            
+            }
+            else 
+            {
+                $audio_bites_csv = "NULL";
+            }
 
 
 
@@ -916,6 +924,8 @@ if(!isset($location))
             )";    
 
             $run_query = mysqli_query($connection , $query_new_news);
+
+            echo $query_new_news ;
 
             if(!$run_query)
             {

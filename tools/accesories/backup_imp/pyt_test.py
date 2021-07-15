@@ -16,7 +16,7 @@ def save_ftp(file):
 
 if __name__ == "__main__":
 
-    file_list = ['file1','file2','file3','file4','file5','file6','file7','file8','file9']
+    file_list = ['यसरी गए ओली बालुवाटारबाट बालकोट ','file2','file3','file4','file5','file6','file7','file8','file9']
     file_name_csv = list(chunk(file_list, 6))
 
 

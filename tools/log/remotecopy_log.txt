@@ -80,3 +80,45 @@ gallery/20210713_214935_38758_gallery_3.jpg Gallery Photo Pushed
 audio_bites/20210713_214935_38758_audio_bites_0.mp3 Audio Bites Pushed
 audio_bites/20210713_214935_38758_audio_bites_1.mp3 Audio Bites Pushed
 ------------------------------------------------------- 
+---------------2021-07-14 13:21:47 / कोरोना ---------------- 
+
+ Logged Date: 2021-07-14 13:22:06 
+20210714_132147_96059_news_file.docx News  Body Pushed
+20210714_132147_96059_regular_feed.mp4 Regular Feed Pushed
+20210714_132147_96059_ready_version.mp4 Ready Version Pushed
+20210714_132147_96059_thumbnail.jpg Thumbnail Pushed
+20210714_132147_96059_audio_complete_story.mp3 Audio Pushed
+gallery/20210714_132147_96059_gallery_1.jpg Gallery Photo Pushed
+gallery/20210714_132147_96059_gallery_2.jpg Gallery Photo Pushed
+gallery/20210714_132147_96059_gallery_3.jpg Gallery Photo Pushed
+audio_bites/20210714_132147_96059_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210714_132147_96059_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 
+---------------2021-07-15 11:28:04 / ओली कूटनीति : न उत्तरमा सहज बन्यो न दक्षिणसँगै ---------------- 
+
+ Logged Date: 2021-07-15 11:28:32 
+20210801_112804_49809_news_file.docx News  Body Pushed
+20210801_112804_49809_regular_feed.mp4 Regular Feed Pushed
+20210801_112804_49809_ready_version.mp4 Ready Version Pushed
+20210801_112804_49809_thumbnail.jpg Thumbnail Pushed
+20210801_112804_49809_audio_complete_story.mp3 Audio Pushed
+gallery/20210801_112804_49809_gallery_1.jpg Gallery Photo Pushed
+gallery/20210801_112804_49809_gallery_2.jpg Gallery Photo Pushed
+gallery/20210801_112804_49809_gallery_3.jpg Gallery Photo Pushed
+20210801_112804_49809_extra_files.zip Extra Files Pushed
+audio_bites/20210801_112804_49809_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210801_112804_49809_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 
+---------------2021-07-15 13:28:30 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-07-15 13:28:55 
+20210715_Array_97835_news_file.docx News  Body Pushed
+20210715_Array_97835_regular_feed.mp4 Regular Feed Pushed
+20210715_Array_97835_thumbnail.jpg Thumbnail Pushed
+20210715_Array_97835_audio_complete_story.mp3 Audio Pushed
+gallery/20210715_Array_97835_gallery_1.jpg Gallery Photo Pushed
+gallery/20210715_Array_97835_gallery_2.jpg Gallery Photo Pushed
+20210715_Array_97835_extra_files.zip Extra Files Pushed
+audio_bites/20210715_Array_97835_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210715_Array_97835_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 
