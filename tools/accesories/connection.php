@@ -17,6 +17,7 @@ include $path_root."/".$path_uri_exp[1]."/".$path_uri_exp[2]."/global/local_phpm
         $password = $phpmyadmin_password;
         $db_name= $phpmyadmin_db_name;
         $connection= mysqli_connect($host , $user , $password , $db_name);
+        mysqli_set_charset($connection ,"utf8");
 
 
 

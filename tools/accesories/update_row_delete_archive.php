@@ -277,6 +277,7 @@ if(isset($_POST['newsid']))
 
 
         $connection= mysqli_connect($host , $user , $password , $db_name);
+        mysqli_set_charset($connection ,"utf8");
         $run_query = mysqli_multi_query($connection, $update_query);
 
 

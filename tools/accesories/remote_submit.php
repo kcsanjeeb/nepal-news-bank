@@ -1196,6 +1196,7 @@ if(!isset($location))
                 // if(!$connection)
                 // {
                     $connection= mysqli_connect($host , $user , $password , $db_name);
+                    mysqli_set_charset($connection ,"utf8");
                 // }
 
                 $sql_test_local = "select * from web where newsid = '$news_id' ";

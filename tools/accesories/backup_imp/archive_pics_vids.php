@@ -473,6 +473,7 @@ if(isset($_POST['submit']))
         }
 
         $connection= mysqli_connect($host , $user , $password , $db_name);
+        mysqli_set_charset($connection ,"utf8");
 
         $query_new_archives = "insert into archives(
             archive_id ,created_date ,  title , series ,tags ,

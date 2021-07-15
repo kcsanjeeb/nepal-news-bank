@@ -1478,6 +1478,7 @@ if(!isset($location))
             
             //echo $update_query ;
             $connection= mysqli_connect($host , $user , $password , $db_name);
+            mysqli_set_charset($connection ,"utf8");
             $run_query = mysqli_multi_query($connection, $update_query);
 
             if($wp_post_created)

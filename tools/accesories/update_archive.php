@@ -873,6 +873,7 @@ if(isset($_POST['submit']))
 
 
     $connection= mysqli_connect($host , $user , $password , $db_name);
+    mysqli_set_charset($connection ,"utf8");
 
 
     $update_query .= "update archives set series =  $series ,tags =  '$tags' , categories = '$newsCategories' where archive_id = '$news_id'; ";
