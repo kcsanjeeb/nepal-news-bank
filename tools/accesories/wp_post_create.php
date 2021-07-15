@@ -201,8 +201,10 @@ if(isset($_POST['submit_push']))
 
             $push_audio_bites = $audio_bites_web;
 
+            
             $gallery_full_web_json = str_replace("'","",$gallery_full_web);
             $gallery_full_web_json_exp = explode("," ,$gallery_full_web_json);
+
             if(count($gallery_full_web_json_exp) == 0)
             {
                 $gallery_full_web_json = "NULL";
