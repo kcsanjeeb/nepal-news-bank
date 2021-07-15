@@ -875,11 +875,13 @@ if(!isset($location))
 
                 // echo "<br>";echo "<br>";
                  $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
-                //  $push_remote_py_resp_arr = explode("," , $push_remote_py_resp);
+                 $push_remote_py_resp_arr = explode("," , $push_remote_py_resp);
                 
                 // echo "<br>";echo "<br>";
                 // echo $push_remote_py_resp ;
                 // echo "<br>";echo "<br>";
+
+              
 
                 
                  
@@ -1071,7 +1073,30 @@ if(!isset($location))
                             $_SESSION['notice_remote'] = "Error";
                     }
                 }
-                $gall_img = implode(',' , $gallery_full_web_arr) ;
+               
+                echo "<br>----------------------<br>";
+                echo "Gal push count ".count($gallery_full_web_arr) ;
+                echo "<br>----------------------<br>";
+
+                if(count($gallery_full_web_arr) == 0)
+                {
+                    $gall_img = "NULL";
+                }
+                else
+                {
+                    $gallery_full_web_arr_hold = array();
+                    foreach($gallery_full_web_arr as $gal)
+                    {
+                        if(!empty($gal)) array_push($gallery_full_web_arr_hold , $gal);
+                    }
+
+                    $gall_img = implode(',' , $gallery_full_web_arr_hold) ;
+                    $gall_img = "'$gall_img'";
+                }
+
+                echo "<br>----------------------<br>";
+                echo "gal image db: ".$gall_img ;
+                echo "<br>----------------------<br>";
 
                 
                 if(in_array($extra_file_py , $files_to_push))
@@ -1181,7 +1206,7 @@ if(!isset($location))
 
                     $query_new_news_update = "update  web set 
                        regular_feed = $push_regularFeed, ready_version = $push_readyVesion  ,thumbnail = $push_thumbnail ,
-                       audio_complete_story = $push_audio  , photos = '$gall_img' , rough_cut = $push_roughcut, news_file = $push_newsbody,  
+                       audio_complete_story = $push_audio  , photos = $gall_img , rough_cut = $push_roughcut, news_file = $push_newsbody,  
                          pushed_by = '$pushed_by' ,   pushed_date = '$pushed_at' ,
                          vimeo_regular_feed = $vimeo_regularfeed , vimeo_ready_version = $vimeo_readyversion , vimeo_rough_cut = $vimeo_roughcut, extra_files = $push_extra_file,
                          ftp_dir = '$news_ftp_path' ,
@@ -1209,7 +1234,7 @@ if(!isset($location))
                         ) 
                         VALUES 
                         ('$news_id',  $push_regularFeed,$push_readyVesion  , $push_thumbnail,
-                             $push_audio , '$gall_img', $push_roughcut , $push_newsbody , 
+                             $push_audio , $gall_img, $push_roughcut , $push_newsbody , 
                             '$pushed_by' ,'$pushed_at' , $wp_post,
                              $vimeo_regularfeed , $vimeo_readyversion , $vimeo_roughcut , $push_extra_file , $push_audio_bites , '$news_ftp_path'
                             
@@ -1220,15 +1245,25 @@ if(!isset($location))
 
                 
 
-                if($run_query)
+                
+
+                if(count($push_remote_py_resp_arr) == count($files_to_push))
                 {
+                    if($run_query)
+                    {
+                        
+                        $_SESSION['notice_remote'] = "Success";
+                
+                    }
+                    else
+                    { 
                     
-                    $_SESSION['notice_remote'] = "Success";
-               
+                        $_SESSION['notice_remote'] = "Error";
+                    }
+
                 }
                 else
-                { 
-                   
+                {
                     $_SESSION['notice_remote'] = "Error";
                 }
 

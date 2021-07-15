@@ -27,6 +27,7 @@ $response = curl_exec($ch);
 
 curl_close($ch);
 
+echo $response ;
 
 $myfile = fopen("../log/news_ticker_log.txt", "a") or die("Unable to open file!");  
 fwrite($myfile, "\n--------------- $title ------------------ \n");

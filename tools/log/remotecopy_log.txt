@@ -122,3 +122,98 @@ gallery/20210715_Array_97835_gallery_2.jpg Gallery Photo Pushed
 audio_bites/20210715_Array_97835_audio_bites_0.mp3 Audio Bites Pushed
 audio_bites/20210715_Array_97835_audio_bites_1.mp3 Audio Bites Pushed
 ------------------------------------------------------- 
+---------------2021-07-15 18:33:14 / test ---------------- 
+
+ Logged Date: 2021-07-15 19:28:12 
+20210715_Array_12055_regular_feed.mp4 News Body Failed to Pushed
+20210715_Array_12055_regular_feed.mp4 Regular Field Failed to Pushed
+------------------------------------------------------- 
+---------------2021-07-15 18:33:14 / test ---------------- 
+
+ Logged Date: 2021-07-15 19:28:28 
+20210715_Array_12055_news_file.docx News  Body Pushed
+20210715_Array_12055_regular_feed.mp4 Regular Feed Pushed
+------------------------------------------------------- 
+---------------2021-07-15 18:33:14 / test ---------------- 
+
+ Logged Date: 2021-07-15 19:34:58 
+20210715_Array_12055_news_file.docx News  Body Pushed
+20210715_Array_12055_regular_feed.mp4 Regular Feed Pushed
+------------------------------------------------------- 
+---------------2021-07-15 18:33:14 / test ---------------- 
+
+ Logged Date: 2021-07-15 19:36:26 
+20210715_Array_12055_news_file.docx News  Body Pushed
+20210715_Array_12055_regular_feed.mp4 Regular Feed Pushed
+------------------------------------------------------- 
+---------------2021-07-15 18:33:14 / test ---------------- 
+
+ Logged Date: 2021-07-15 19:38:20 
+20210715_Array_12055_news_file.docx News  Body Pushed
+20210715_Array_12055_regular_feed.mp4 Regular Feed Pushed
+------------------------------------------------------- 
+---------------2021-07-15 13:28:30 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-07-15 19:44:08 
+20210715_Array_97835_news_file.docx News  Body Pushed
+20210715_Array_97835_regular_feed.mp4 Regular Feed Pushed
+20210715_Array_97835_thumbnail.jpg Thumbnail Pushed
+20210715_Array_97835_audio_complete_story.mp3 Audio Pushed
+gallery/20210715_Array_97835_gallery_1.jpg Gallery Photo Pushed
+gallery/20210715_Array_97835_gallery_2.jpg Gallery Photo Pushed
+20210715_Array_97835_extra_files.zip Extra Files Pushed
+audio_bites/20210715_Array_97835_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210715_Array_97835_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 
+---------------2021-07-15 13:28:30 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-07-15 19:49:55 
+20210715_Array_97835_news_file.docx News  Body Pushed
+20210715_Array_97835_regular_feed.mp4 Regular Feed Pushed
+20210715_Array_97835_thumbnail.jpg Thumbnail Pushed
+20210715_Array_97835_audio_complete_story.mp3 Audio Pushed
+gallery/20210715_Array_97835_gallery_1.jpg Gallery Photo Pushed
+gallery/20210715_Array_97835_gallery_2.jpg Gallery Photo Pushed
+20210715_Array_97835_extra_files.zip Extra Files Pushed
+audio_bites/20210715_Array_97835_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210715_Array_97835_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 
+---------------2021-07-15 13:28:30 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-07-15 19:54:19 
+20210715_Array_97835_extra_files.zip News Body Failed to Pushed
+20210715_Array_97835_regular_feed.mp4 Regular Field Failed to Pushed
+20210715_Array_97835_thumbnail.jpg Thumbnail Failed to Pushed
+20210715_Array_97835_audio_complete_story.mp3 Audio Failed to Pushed
+gallery/20210715_Array_97835_gallery_1.jpg Gallery Photo Failed to Pushed
+gallery/20210715_Array_97835_gallery_2.jpg Gallery Photo Failed to Pushed
+20210715_Array_97835_extra_files.zip News Body Failed to Pushed
+audio_bites/20210715_Array_97835_audio_bites_0.mp3 Audio Bites Failed to Pushed
+audio_bites/20210715_Array_97835_audio_bites_1.mp3 Audio Bites Failed to Pushed
+------------------------------------------------------- 
+---------------2021-07-15 13:28:30 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-07-15 19:54:36 
+20210715_Array_97835_news_file.docx News  Body Pushed
+20210715_Array_97835_regular_feed.mp4 Regular Feed Pushed
+20210715_Array_97835_thumbnail.jpg Thumbnail Pushed
+20210715_Array_97835_audio_complete_story.mp3 Audio Pushed
+gallery/20210715_Array_97835_gallery_1.jpg Gallery Photo Pushed
+gallery/20210715_Array_97835_gallery_2.jpg Gallery Photo Pushed
+20210715_Array_97835_extra_files.zip Extra Files Pushed
+audio_bites/20210715_Array_97835_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210715_Array_97835_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 
+---------------2021-07-15 13:28:30 / Updated Attributes ---------------- 
+
+ Logged Date: 2021-07-15 20:30:18 
+20210715_Array_97835_news_file.docx News  Body Pushed
+20210715_Array_97835_regular_feed.mp4 Regular Feed Pushed
+20210715_Array_97835_thumbnail.jpg Thumbnail Pushed
+20210715_Array_97835_audio_complete_story.mp3 Audio Pushed
+gallery/20210715_Array_97835_gallery_1.jpg Gallery Photo Pushed
+gallery/20210715_Array_97835_gallery_2.jpg Gallery Photo Pushed
+20210715_Array_97835_extra_files.zip Extra Files Pushed
+audio_bites/20210715_Array_97835_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20210715_Array_97835_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 

@@ -159,3 +159,10 @@ E:/my_data/news_data/2021-07-15/Updated Attributes/20210715_Array_97835_extra_fi
 E:/my_data/news_data/2021-07-15/Updated Attributes/audio_bites/20210715_Array_97835_audio_bites_0.mp3 : Audio Bites-0 Uploaded
 E:/my_data/news_data/2021-07-15/Updated Attributes/audio_bites/20210715_Array_97835_audio_bites_1.mp3 : Audio Bites-1 Uploaded
 ------------------------------------------------------- 
+---------------2021-07-15 / test ---------------- 
+
+ Logged Date: 2021-07-15 18:33:14 
+test Folder Created
+E:/my_data/news_data/2021-07-15/test/20210715_Array_12055_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-07-15/test/20210715_Array_12055_regular_feed.mp4 : Regular Field Uploaded
+------------------------------------------------------- 

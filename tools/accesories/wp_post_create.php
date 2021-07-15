@@ -149,11 +149,15 @@ if(isset($_POST['submit_push']))
                         else
                             $roughcut_full_web = "'$roughcut_full_web'";
 
-                        if($gallery_full_web == '')
+                        if($gallery_full_web == '' || $gallery_full_web == NULL)
                             $gallery_full_web = "NULL";
 
                         else
+                        {
                             $gallery_full_web = "'$gallery_full_web'";
+                            $gallery_full_web_final = $row_content_web['photos'];
+                        }
+                            
                         
                         
 
@@ -202,16 +206,18 @@ if(isset($_POST['submit_push']))
             $push_audio_bites = $audio_bites_web;
 
             
-            $gallery_full_web_json = str_replace("'","",$gallery_full_web);
-            $gallery_full_web_json_exp = explode("," ,$gallery_full_web_json);
+            // $gallery_full_web_json = str_replace("'","",$gallery_full_web);
+            // $gallery_full_web_json_exp = explode("," ,$gallery_full_web_json);
 
-            if(count($gallery_full_web_json_exp) == 0)
-            {
-                $gallery_full_web_json = "NULL";
-            }
+            // if(count($gallery_full_web_json_exp) == 0)
+            // {
+            //     $gallery_full_web_json = "NULL";
+            // }
 
             // echo $gall_img ;
             // exit();
+            
+            $gallery_full_web_json = $gallery_full_web_final;
 
 
 
