@@ -185,15 +185,15 @@ if(!isset($location))
 
 
 
-            if(isset($_POST['additional_files_description']))
+            if(isset($_POST['extra_files_description']))
             {
-                $additional_files_description = $_POST['additional_files_description'];
-                $additional_files_description = mysqli_real_escape_string($connection, $additional_files_description);    
-                $additional_files_description = "'$additional_files_description'";
+                $extra_files_description = $_POST['extra_files_description'];
+                $extra_files_description = mysqli_real_escape_string($connection, $extra_files_description);    
+                $extra_files_description = "'$extra_files_description'";
             }
             else
             {
-                $additional_files_description = "NULL";
+                $extra_files_description = "NULL";
             }
 
 
@@ -1020,12 +1020,12 @@ if(!isset($location))
        
 
 
-            if(count($_FILES['additional_files']['name']) > 0)
+            if(count($_FILES['extra_files']['name']) > 0)
             {
 
-                foreach ($_FILES["additional_files"]["name"] as $p => $name)
+                foreach ($_FILES["extra_files"]["name"] as $p => $name)
                 {
-                    if(empty($_FILES['additional_files']['name'][$p])) continue ; 
+                    if(empty($_FILES['extra_files']['name'][$p])) continue ; 
 
                     $create_zip = 1;
 
@@ -1036,11 +1036,11 @@ if(!isset($location))
                 {
 
                         $zip = new ZipArchive(); // Load zip library 
-                        $zip_name =$path_destination."_additional_files.zip";
-                        $additional_path_sql_nc = $path_sql."_additional_files.zip"; 
-                        $additional_path_sql = "'$additional_path_sql_nc'";
+                        $zip_name =$path_destination."_extra_files.zip";
+                        $extra_path_sql_nc = $path_sql."_extra_files.zip"; 
+                        $extra_path_sql = "'$extra_path_sql_nc'";
 
-                        if($news_row_details['additional_file'] != null)
+                        if($news_row_details['extra_files'] != null)
                         {
                             $zip_file = $zip->open($zip_name);
                             $new_file = 0 ;
@@ -1054,16 +1054,16 @@ if(!isset($location))
 
                         if($zip_file === TRUE)
                         { 
-                            $counter_file_zip = 0;
+                            $counter_file_zip = 1;
 
-                            foreach ($_FILES["additional_files"]["name"] as $p => $name)
+                            foreach ($_FILES["extra_files"]["name"] as $p => $name)
                             { 
-                                if(empty($_FILES['additional_files']['name'][$p])) continue ; 
+                                if(empty($_FILES['extra_files']['name'][$p])) continue ; 
                                 
-                                $fileName= $_FILES['additional_files']['name'][$p];
-                                $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];  
-                                $fileSize = $_FILES['additional_files']['size'][$p];
-                                $fileType = $_FILES['additional_files']['type'][$p]; 
+                                $fileName= $_FILES['extra_files']['name'][$p];
+                                $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];  
+                                $fileSize = $_FILES['extra_files']['size'][$p];
+                                $fileType = $_FILES['extra_files']['type'][$p]; 
 
 
                                 $fileExt_exp = explode('.' , $fileName);
@@ -1071,7 +1071,7 @@ if(!isset($location))
 
                                 $fileExt = explode('.' , $fileName); 
 
-                                $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_additional_file_".$counter_file_zip.".".$fileActualExt;
+                                $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_extra_files_".$counter_file_zip.".".$fileActualExt;
    
                                 do
                                 {
@@ -1080,7 +1080,7 @@ if(!isset($location))
                                     if(!empty($locator))
                                     {
                                         $counter_file_zip++;
-                                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_additional_file_".$counter_file_zip.".".$fileActualExt;
+                                        $new_zip_file_name = $date_file_name."_".$time_file_name."_".$news_id."_extra_files_".$counter_file_zip.".".$fileActualExt;
                                         $status = 1 ;
                                     }
                                     else {
@@ -1089,7 +1089,7 @@ if(!isset($location))
             
                                 }while($status);
                                                                     
-                                    $fileTmpName = $_FILES['additional_files']['tmp_name'][$p];                  
+                                    $fileTmpName = $_FILES['extra_files']['tmp_name'][$p];                  
                                     $zip->addFile($fileTmpName , $new_zip_file_name);
                                     $counter_file_zip++ ;
                             }
@@ -1102,7 +1102,7 @@ if(!isset($location))
 
                     if($new_file)
                     {
-                        $update_query .= "update nas set additional_file = $additional_path_sql where newsid = '$news_id' ;";
+                        $update_query .= "update nas set extra_files = $extra_path_sql where newsid = '$news_id' ;";
                         $text = "$zip_name Uploaded\n";
                         fwrite($myfile, $text);
 
@@ -1119,27 +1119,27 @@ if(!isset($location))
                     {                                       
                         if(!$new_file)
                         {
-                            if($news_row_details_web['additional_file'] != null)
+                            if($news_row_details_web['extra_files'] != null)
                             {
-                                ftp_delete_rem('/'.$news_row_details_web['additional_file'] , 'file');                           
+                                ftp_delete_rem('/'.$news_row_details_web['extra_files'] , 'file');                           
                             }
 
-                            $file_name_to_push = end(explode("/" , $additional_path_sql_nc));
+                            $file_name_to_push = end(explode("/" , $extra_path_sql_nc));
                             array_push($files_to_push , $file_name_to_push );
                             
                             
                         }
                         else
                         {
-                            $file_name_to_push = end(explode("/" , $additional_path_sql_nc));
+                            $file_name_to_push = end(explode("/" , $extra_path_sql_nc));
                             array_push($files_to_push , $file_name_to_push );
 
-                            $additional_path_web = explode("/" , $additional_path_sql_nc);
-                            array_shift($additional_path_web);
-                            $additional_path_web = implode("/" , $additional_path_web);
+                            $extra_path_web = explode("/" , $extra_path_sql_nc);
+                            array_shift($extra_path_web);
+                            $extra_path_web = implode("/" , $extra_path_web);
                             
                                 
-                            $update_query_remote = "update web set additional_file = '$additional_path_web' where newsid = '$news_id' ;";
+                            $update_query_remote = "update web set extra_files = '$extra_path_web' where newsid = '$news_id' ;";
                             array_push($files_to_push_with_query , array('file_name' => $file_name_to_push , 'query' => $update_query_remote) );
 
                             if($wp_post_created)
@@ -1335,7 +1335,7 @@ if(!isset($location))
 
                         if(!$folder_exists)
                         {
-                            ftp_mkdir($ftp, "/".$file_path_web."/gallery");
+                            ftp_mkdir($ftp, "/".$file_path_web."/audio_bites");
                         }
 
                         ftp_close($ftp); 
@@ -1372,7 +1372,7 @@ if(!isset($location))
             
             $update_query.= "update nas set local_published_date = $newsdate , byline = $byLine , category_list = $newsCategories , tag_list = $tags,
                                 uploaded_by =$uploaded_by,  reporter = $reporter , camera_man = $camera_man, district = $district, 
-                                video_type = $video_type , series = $series ,additional_files_description =  $additional_files_description ,
+                                video_type = $video_type , series = $series ,extra_files_description =  $extra_files_description ,
                                 audio_description =  $audio_desc , audio_bites_description =  $audio_bites_desc where  newsid = $news_id;";
             
             

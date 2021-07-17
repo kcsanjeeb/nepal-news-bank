@@ -369,6 +369,7 @@ if(!isset($location))
 
             $date_file_name = str_replace("-","",$newsdate);
             $end_value = explode(" " , $created_at_value) ;
+            $end_value = end($end_value);
             $time_file_name = str_replace(":","",$end_value);
 
             $news_id =  getId('nas');
