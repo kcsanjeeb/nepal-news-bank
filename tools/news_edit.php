@@ -524,6 +524,7 @@ strong {
 
                                         if($news_row_details['regular_feed'] == null )
                                         {
+                                            
 
                                 ?>
                             <div id="regularfeedID">
@@ -533,11 +534,13 @@ strong {
                                     <?php
                                         }
                                         else {
+                                            $video = file_get_contents($news_row_details['regular_feed']);
+                                            $video_codes = base64_encode($video);
                                     ?>
 
                                         <div id="regularfeedID">
 
-                                            <video width="100%" height="160px" controls style="display:block"><source src="<?php echo $news_row_details['regular_feed'] ; ?>" type="video/mp4"> </video>
+                                            <video width="100%" height="160px" controls style="display:block"><source src="data:video/*;charset=utf-8;base64,<?php echo $video_codes; ?>" type="video/mp4"> </video>
 
                                         </div>
 
@@ -593,11 +596,13 @@ strong {
                                         <?php
                                         }
                                         else {
+                                            $video = file_get_contents($news_row_details['ready_version']);
+                                            $video_codes = base64_encode($video);
                                         ?>
 
                                         <div id="readyversionID">
 
-                                            <video width="100%" height="160px" controls style="display:block"><source src="<?php echo $news_row_details['ready_version'] ; ?>" type="video/mp4"> </video>
+                                        <video width="100%" height="160px" controls style="display:block"><source src="data:video/*;charset=utf-8;base64,<?php echo $video_codes; ?>" type="video/mp4"> </video>
 
                                         </div>
 
@@ -650,11 +655,13 @@ strong {
                                         <?php
                                         }
                                         else {
+                                            $video = file_get_contents($news_row_details['rough_cut']);
+                                            $video_codes = base64_encode($video);
                                         ?>
 
                                         <div id="roughcutID">
 
-                                            <video width="100%" height="160px" controls style="display:block"><source src="<?php echo $news_row_details['rough_cut'] ; ?>" type="video/mp4"> </video>
+                                        <video width="100%" height="160px" controls style="display:block"><source src="data:video/*;charset=utf-8;base64,<?php echo $video_codes; ?>" type="video/mp4"> </video>
 
                                         </div>
 
@@ -822,10 +829,23 @@ strong {
                                     </svg>
 
                                 </label><br>
-                                <input type="file" id="thumbnailimg" onchange="return thumbnailValidation()"
-                                    name="thumbImg" accept="image/*" xxx>
+                                <!-- <input type="file" id="thumbnailimg" onchange="return thumbnailValidation()"
+                                    name="thumbImg" accept="image/*" xxx> -->
                                 <!-- Image preview -->
-                                <div id="thumbnailID"></div>
+                                <div id="thumbnailID">
+                                <?php
+                                if($news_row_details['thumbnail'] != null)
+                                {
+                                    $thumb = file_get_contents($news_row_details['thumbnail']);
+                                    $photo_codes = base64_encode($thumb);
+                                ?>
+                                <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
+
+                                <?php
+                                }
+                                ?>
+                               
+                                </div>
                             </div>
 
 

@@ -871,7 +871,7 @@ if(!isset($location))
                  $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
 
                 //  echo "<br>";echo "<br>";
-                echo $sym ; 
+                // echo $sym ; 
 
                 // echo "<br>";echo "<br>";
                  $push_remote_py_resp = shell_exec("python ftp_push.py $sym");

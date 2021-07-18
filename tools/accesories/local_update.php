@@ -7,7 +7,7 @@ include "nas_function/functions.php";
 
 include "../global/timezone.php";
 include "environment/ftp.php";
-
+include "../global/file_paths.php";
 
 
 
@@ -15,8 +15,11 @@ include "environment/ftp.php";
 
 
 // -------------- VARIABLE DECLARATION ----------------
-$interview_path = 'my_data/interview_data';
-$news_path = 'my_data/news_data';
+// $interview_path = 'my_data/interview_data';
+// $news_path = 'my_data/news_data';
+
+$interview_path = $local_interview_path;
+$news_path = $local_news_collector_path ;
 // ----------------------------------------------------
 
 
@@ -38,6 +41,10 @@ if(!isset($location))
             $num_rows_news = mysqli_num_rows($run_sql_fetch_news);
             $news_row_details = mysqli_fetch_assoc($run_sql_fetch_news);
 
+            $news_local_existing_path = $news_row_details['dir_path'];
+            $news_local_published_path = $news_row_details['local_published_date'];
+           
+
             if($num_rows_news <  1)
             {
                 exit("Error!");
@@ -47,12 +54,16 @@ if(!isset($location))
             $run_sql_fetch_news_web= mysqli_query($connection, $query_fetch_news_web);
             $num_rows_news_web = mysqli_num_rows($run_sql_fetch_news_web);
             $news_row_details_web = mysqli_fetch_assoc($run_sql_fetch_news_web);
+
+            
             if($num_rows_news_web > 0)
             {
                 $remote_pushed = 1 ;
 
                 $wp_post_id = $news_row_details_web['wp_post_id'];
                 $wp_post_media_id = $news_row_details_web['wp_media_id'];
+
+                $news_remote_existing_path = $news_row_details_web['ftp_dir'];;
 
                 if(isset($wp_post_id))
                     $wp_post_created = 1 ;
@@ -225,7 +236,7 @@ if(!isset($location))
 
 
 
-            $newsdate = $_POST['newsdate'];
+            $newsdate = $news_local_published_path;
             if(validateDate(date('Y-m-d',strtotime($newsdate))) == 1 )
             {
                 $date_status = true;
@@ -243,16 +254,16 @@ if(!isset($location))
             if($date_status)
             {
                 $byLine_directory_clean = remove_special_chars($byLine_directory);
-                $bonus_media_path = '../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean;
+                $bonus_media_path = $news_local_existing_path.'/'.$newsdate."/".$byLine_directory_clean;
 
                 if($isInterview == 1 )
                 {
-                    $bonus_media_path = '../'.$interview_path.'/'.$byLine_directory_clean;
+                    $bonus_media_path =$news_local_existing_path.'/'.$byLine_directory_clean;
                 }
                 else
                 {              
 
-                    $bonus_media_path = '../'.$news_path.'/'.$newsdate."/".$byLine_directory_clean;                 
+                    $bonus_media_path = $news_local_existing_path.'/'.$newsdate."/".$byLine_directory_clean;                 
                 }
                 
                                             
@@ -275,9 +286,9 @@ if(!isset($location))
             if($isInterview == 1 )
             {
                 $file_name_nas = $date_file_name."_".$time_file_name."_".$news_id ;
-                $file_path_nas = $interview_path."/".$byLine_directory_clean ;
+                $file_path_nas = $news_local_existing_path."/".$byLine_directory_clean ;
 
-                $path_destination ="../".$file_path_nas."/".$file_name_nas;
+                $path_destination =$file_path_nas."/".$file_name_nas;
                 $path_sql = $file_path_nas."/".$file_name_nas;
 
 
@@ -285,9 +296,9 @@ if(!isset($location))
             else
             {
                 $file_name_nas = $date_file_name."_".$time_file_name."_".$news_id;
-                $file_path_nas = $news_path."/".$newsdate."/".$byLine_directory_clean ;
+                $file_path_nas =$news_local_existing_path."/".$newsdate."/".$byLine_directory_clean ;
 
-                $path_destination ="../".$file_path_nas."/".$file_name_nas;
+                $path_destination =$file_path_nas."/".$file_name_nas;
                 $path_sql =$file_path_nas."/".$file_name_nas;
 
             }
@@ -326,7 +337,7 @@ if(!isset($location))
                         $existing_file_name_exp = explode("." , $existing_file_name);
                         $existing_file_name_ext = end($existing_file_name_exp);
 
-                        if(file_exists('../'.$news_row_details['news_file'])) unlink('../'.$news_row_details['news_file']);
+                        if(file_exists($news_row_details['news_file'])) unlink($news_row_details['news_file']);
 
                             move_uploaded_file($body_tmp_name, $body_path) ; 
                             $body_path = $path_sql."_news_file.".$fileActualExt_body;
@@ -429,7 +440,7 @@ if(!isset($location))
                         $existing_file_name_exp = explode("." , $existing_file_name);
                         $existing_file_name_ext = end($existing_file_name_exp);
 
-                        if(file_exists('../'.$news_row_details['regular_feed'])) unlink('../'.$news_row_details['regular_feed']);
+                        if(file_exists($news_row_details['regular_feed'])) unlink($news_row_details['regular_feed']);
 
                         move_uploaded_file($regular_field_tmp_name, $regular_filed_path) ;  
                         $regular_filed_path = $path_sql."_regular_feed.".$fileActualExt_regularFeeddFile;
@@ -452,7 +463,8 @@ if(!isset($location))
                             if($news_row_details_web['regular_feed'] != null)
                                 ftp_delete_rem('/'.$news_row_details_web['regular_feed'] , 'file');
 
-                            $file_name_to_push = end(explode("/" , $regular_filed_path)); 
+                            $file_name_to_push = explode("/" , $regular_filed_path);
+                            $file_name_to_push = end($file_name_to_push); 
                             array_push($files_to_push , $file_name_to_push );
 
                             if($update_file_name_everywhere)
@@ -532,7 +544,7 @@ if(!isset($location))
                        
                         
 
-                        if(file_exists('../'.$news_row_details['thumbnail'])) unlink('../'.$news_row_details['thumbnail']);
+                        if(file_exists($news_row_details['thumbnail'])) unlink($news_row_details['thumbnail']);
 
                             move_uploaded_file($thumbnail_tmp_name, $thumbnail_path) ;
                             $thumbnail_path = $path_sql."_thumbnail.".$fileActualExt_thumbImg;
@@ -640,7 +652,7 @@ if(!isset($location))
                             $update_file_name_everywhere = 1;
                         }
 
-                        if(file_exists('../'.$news_row_details['ready_version'])) unlink('../'.$news_row_details['ready_version']);
+                        if(file_exists($news_row_details['ready_version'])) unlink($news_row_details['ready_version']);
 
                         move_uploaded_file($readyversion_tmp_path, $readyversion_path) ;
                         $readyVersion_path =$path_sql."_ready_version.".$fileActualExt_readyVersion;
@@ -846,7 +858,7 @@ if(!isset($location))
                             $update_file_name_everywhere = 1;
                         }
 
-                        if(file_exists('../'.$news_row_details['audio_complete_story'])) unlink('../'.$news_row_details['audio_complete_story']);
+                        if(file_exists($news_row_details['audio_complete_story'])) unlink($news_row_details['audio_complete_story']);
 
                       
                         move_uploaded_file($audio_complete_story_tmp_name, $audio_complete_story_path) ;
@@ -945,9 +957,9 @@ if(!isset($location))
                 if (in_array($file_type_explode[0] , $allowed ))
                 { 
                    
-                    if (!is_dir('../'.$file_path_nas.'/gallery')) {
-                        mkdir('../'.$file_path_nas.'/gallery', 0777 , true);                        
-                        chmod('../'.$file_path_nas.'/gallery', 0777);
+                    if (!is_dir($file_path_nas.'/gallery')) {
+                        mkdir($file_path_nas.'/gallery', 0777 , true);                        
+                        chmod($file_path_nas.'/gallery', 0777);
                     }
 
                     $fileTmpName_photo = $_FILES['galleryImage']['tmp_name'][$p];  
@@ -956,11 +968,11 @@ if(!isset($location))
 
                     do
                     {
-                        $gallery_path ="../".$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
+                        $gallery_path =$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
                         if(file_exists($gallery_path))
                         {
                             $counter++;
-                            $gallery_path ="../".$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
+                            $gallery_path =$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
                             $status = 1 ;
                         }
                         else {
@@ -1054,7 +1066,13 @@ if(!isset($location))
 
                         if($zip_file === TRUE)
                         { 
-                            $counter_file_zip = 1;
+                            $total_files = $zip->numFiles;
+
+
+                            $counter_file_zip = $total_files + 1 ;
+
+                            if(!isset($total_files)) $counter_file_zip = 0 ;
+
 
                             foreach ($_FILES["extra_files"]["name"] as $p => $name)
                             { 
@@ -1165,10 +1183,10 @@ if(!isset($location))
             if(count($_FILES['bonus_media']['name']) > 0)
             {
 
-                if (!is_dir('../'.$file_path_nas.'/bonus_media')) 
+                if (!is_dir($file_path_nas.'/bonus_media')) 
                 {
-                    mkdir('../'.$file_path_nas.'/bonus_media', 0777 , true);                        
-                    chmod('../'.$file_path_nas.'/bonus_media', 0777);
+                    mkdir($file_path_nas.'/bonus_media', 0777 , true);                        
+                    chmod($file_path_nas.'/bonus_media', 0777);
                 }
 
                 // mkdir($bonus_media_path.'/bonus_media', 0777 , true);                        
@@ -1201,7 +1219,7 @@ if(!isset($location))
 
 
                             $file_name_final = $date_file_name."_".$time_file_name."_".$news_id."_".$file_name_clean.".".$fileExt;
-                            $file_path ='../'.$file_path_nas.'/bonus_media'.'/'.$file_name_final;
+                            $file_path =$file_path_nas.'/bonus_media'.'/'.$file_name_final;
 
                             if(file_exists($file_path))
                             {
@@ -1235,7 +1253,7 @@ if(!isset($location))
 
             if(count($_FILES['audio_bites']['name']) > 0 )
             {
-                $counter = 0 ;
+                $counter = 1 ;
                 $audio_bites_arr = array();
                 $audio_bites_arr_pushed = array();
 
@@ -1257,9 +1275,9 @@ if(!isset($location))
                     if (in_array($file_type_explode[0] , $allowed ))
                     {     
                         
-                        if (!is_dir('../'.$file_path_nas.'/audio_bites')) {
-                            mkdir('../'.$file_path_nas.'/audio_bites', 0777 , true);                        
-                            chmod('../'.$file_path_nas.'/audio_bites', 0777);
+                        if (!is_dir($file_path_nas.'/audio_bites')) {
+                            mkdir($file_path_nas.'/audio_bites', 0777 , true);                        
+                            chmod($file_path_nas.'/audio_bites', 0777);
                         }
 
                         $fileTmpName_photo = $_FILES['audio_bites']['tmp_name'][$p];  
@@ -1269,7 +1287,7 @@ if(!isset($location))
                         do
                         {
                             $path_clean = $file_path_nas."/"."audio_bites/"."$file_name_nas"."_audio_bites_".$counter.".".$file_actual_ext_ab;
-                            $audio_bites_path ="../".$path_clean;
+                            $audio_bites_path =$path_clean;
 
                             if(file_exists($audio_bites_path))
                             {
@@ -1299,7 +1317,8 @@ if(!isset($location))
                     }                
 
                 }
-                if($counter > 0)
+
+                if($counter > 1)
                 {
 
                     $audio_bites_csv = implode("," , $audio_bites_arr) ;
@@ -1342,7 +1361,8 @@ if(!isset($location))
 
                         foreach($audio_bites_arr as $aba)
                         {
-                            $aba = end(explode("/" , $aba));
+                            $aba = explode("/" , $aba);
+                            $aba = end($aba);
                             $file_name_to_push = "audio_bites/".$aba ;
                             array_push($files_to_push , $file_name_to_push);
                             array_push($audio_bites_arr_pushed , $file_name_to_push);
@@ -1377,102 +1397,102 @@ if(!isset($location))
             
             
 
+            if(count( $files_to_push) > 0)
+            {                    
+                $files_to_push_csv = implode("," , $files_to_push);    
 
-                                
-            $files_to_push_csv = implode("," , $files_to_push);            
-            $file_path_web = explode("/" ,$file_path_nas );
-            array_shift($file_path_web);
-            $file_path_web = implode("/" , $file_path_web);
-            $news_ftp_path = $file_path_web ;
-            $news_ftp_path_py  = $news_ftp_path;
-            $news_ftp_path_py = str_replace(" ","`~",$news_ftp_path_py);
-            $local_file_py = '../my_data/'.$news_ftp_path_py.'/';
-            
+                $news_ftp_path_py  = $news_remote_existing_path."/";
+                $news_ftp_path_py = str_replace(" ","+-*",$news_ftp_path_py);
 
-            
+                $local_file_py = $file_path_nas."/";
+                $local_file_py = str_replace(" ","+-*",$local_file_py);           
 
-            $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
-            $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
+                
 
-            foreach($files_to_push as $ftp)
-            {
-                if (strpos( $push_remote_py_resp, $ftp) !== false)
+                $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
+                echo $sym ;
+                $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
+
+                foreach($files_to_push as $ftp)
                 {
-                    $key = array_search($ftp, array_column($files_to_push_with_query, 'file_name')); 
-                    if(isset($key) && isset($files_to_push_with_query[$key]['query']))              
-                     $update_query .= $files_to_push_with_query[$key]['query'];
-                   
-                    $text = "$ftp : Succesfully Pushed\n";
-                    fwrite($myfile, $text);
-
+                    if (strpos( $push_remote_py_resp, $ftp) !== false)
+                    {
+                        $key = array_search($ftp, array_column($files_to_push_with_query, 'file_name')); 
+                        if(isset($key) && isset($files_to_push_with_query[$key]['query']))              
+                        $update_query .= $files_to_push_with_query[$key]['query'];
                     
-                }
-            }
+                        $text = "$ftp : Succesfully Pushed\n";
+                        fwrite($myfile, $text);
 
-            $pushed_gallery = array();
-            foreach($gallery_arr_push as $gftp)
-            {
-                if (strpos( $push_remote_py_resp, $gftp) !== false)
+                        
+                    }
+                }
+
+                $pushed_gallery = array();
+                foreach($gallery_arr_push as $gftp)
                 {
+                    if (strpos( $push_remote_py_resp, $gftp) !== false)
+                    {
 
-                    array_push($pushed_gallery , $news_ftp_path.'/'.$gftp );
-                    $text = "$gftp : Succesfully Pushed\n";
-                    fwrite($myfile, $text);
+                        array_push($pushed_gallery , $news_ftp_path.'/'.$gftp );
+                        $text = "$gftp : Succesfully Pushed\n";
+                        fwrite($myfile, $text);
+                    }
                 }
-            }
-            if(count($pushed_gallery) > 0)
-            {
-                $new_gallery_csv = implode("," , $pushed_gallery);
-
-                if($news_row_details_web['photos'] == null && $news_row_details_web['photos'] == '')
+                if(count($pushed_gallery) > 0)
                 {
-                    $old_file = '';
+                    $new_gallery_csv = implode("," , $pushed_gallery);
+
+                    if($news_row_details_web['photos'] == null && $news_row_details_web['photos'] == '')
+                    {
+                        $old_file = '';
+                    }
+                    else
+                    {
+                        $old_file =  $news_row_details_web['photos'].",";
+                    }
+
+                    $new_galleries = $old_file.$new_gallery_csv ;
+                    $update_query .= "update web set photos = '$new_galleries' where newsid = $news_id ;";
+
+                    if($wp_post_created)
+                    {
+                        // update gallry in Wordpress
+                    }
+
                 }
-                else
+
+                $pushed_audio_bites = array();
+                foreach($audio_bites_arr_pushed as $abftp)
                 {
-                    $old_file =  $news_row_details_web['photos'].",";
+                    if (strpos( $push_remote_py_resp, $abftp) !== false)
+                    {
+                        array_push($pushed_audio_bites , $news_ftp_path.'/'.$abftp );
+                        $text = "$abftp : Succesfully Pushed\n";
+                        fwrite($myfile, $text);
+                    }
                 }
 
-                $new_galleries = $old_file.$new_gallery_csv ;
-                $update_query .= "update web set photos = '$new_galleries' where newsid = $news_id ;";
-
-                if($wp_post_created)
+                if(count($pushed_audio_bites) > 0)
                 {
-                    // update gallry in Wordpress
-                }
+                    $new_ab_csv = implode("," , $pushed_audio_bites);
+                    if($news_row_details_web['audio_bites'] == null && $news_row_details_web['audio_bites'] == '')
+                    {
+                        $old_file = '';
+                    }
+                    else
+                    {
+                        $old_file =  $news_row_details_web['audio_bites'].",";
+                    }
+                    $new_ab =$old_file.$new_ab_csv ;
+                    $update_query .= "update web set audio_bites = '$new_ab' where newsid = $news_id ;";
 
-            }
+                    if($wp_post_created)
+                    {
+                        // update audio bites in Wordpress
+                    }
 
-            $pushed_audio_bites = array();
-            foreach($audio_bites_arr_pushed as $abftp)
-            {
-                if (strpos( $push_remote_py_resp, $abftp) !== false)
-                {
-                    array_push($pushed_audio_bites , $news_ftp_path.'/'.$abftp );
-                    $text = "$abftp : Succesfully Pushed\n";
-                    fwrite($myfile, $text);
                 }
-            }
-
-            if(count($pushed_audio_bites) > 0)
-            {
-                $new_ab_csv = implode("," , $pushed_audio_bites);
-                if($news_row_details_web['audio_bites'] == null && $news_row_details_web['audio_bites'] == '')
-                {
-                    $old_file = '';
-                }
-                else
-                {
-                    $old_file =  $news_row_details_web['audio_bites'].",";
-                }
-                $new_ab =$old_file.$new_ab_csv ;
-                $update_query .= "update web set audio_bites = '$new_ab' where newsid = $news_id ;";
-
-                if($wp_post_created)
-                {
-                    // update audio bites in Wordpress
-                }
-
             }
             
             
@@ -1486,6 +1506,10 @@ if(!isset($location))
                 $new_series = $series_check ;
                 $new_series_array = explode("," ,$new_series );
                 $old_series = $news_row_details['series'] ;
+
+
+
+                
                 
                 
             }
