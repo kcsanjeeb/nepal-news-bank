@@ -265,12 +265,12 @@ if(!isset($location))
                     
                     if(!$folder_exists)
                     {
-                        // echo "here !";
+                        // // echo "here !";
                         // $ftp = ftp_connect("$ftp_url");
                         // ftp_login($ftp, "$ftp_username", "$ftp_password");
                         // ftp_pasv($ftp, true);
                         $dir = $local_published_date;
-                        // echo "/".$news_path_ftp."/".$dir;
+                        // // echo "/".$news_path_ftp."/".$dir;
                          ftp_mkdir($ftp, "/".$news_path_ftp."/".$dir);
                         // ftp_mkdir($ftp, "/hehehhe");
                         // ftp_close($ftp);
@@ -473,7 +473,7 @@ if(!isset($location))
 
                             if($video_type == 'vimeo')
                             {
-                                echo "Video Long Vime<br>";
+                                // echo "Video Long Vime<br>";
 
                                 $file_name = '../'.$regularfeed_full;
                                 $vimeo_vl_name = end(explode("/" ,$regularfeed_full ));
@@ -493,7 +493,7 @@ if(!isset($location))
                                 $vimeo_regularfeed =  "'$id'" ;
                                 print_r($response);
                                 
-                                echo "Video Long ID vimeo_regularfeed<br>";
+                                // echo "Video Long ID vimeo_regularfeed<br>";
                                 if(isset($vimeo_regularfeed))
                                 {
 
@@ -870,16 +870,16 @@ if(!isset($location))
 
                  $sym = "$files_to_push_csv $ftp_url $ftp_username $ftp_password $news_ftp_path_py $local_file_py";
 
-                //  echo "<br>";echo "<br>";
-                // echo $sym ; 
+                //  // echo "<br>";// echo "<br>";
+                // // echo $sym ; 
 
-                // echo "<br>";echo "<br>";
+                // // echo "<br>";// echo "<br>";
                  $push_remote_py_resp = shell_exec("python ftp_push.py $sym");
                  $push_remote_py_resp_arr = explode("," , $push_remote_py_resp);
                 
-                // echo "<br>";echo "<br>";
-                // echo $push_remote_py_resp ;
-                // echo "<br>";echo "<br>";
+                // // echo "<br>";// echo "<br>";
+                // // echo $push_remote_py_resp ;
+                // // echo "<br>";// echo "<br>";
 
               
 
@@ -887,15 +887,15 @@ if(!isset($location))
                  
                 if(in_array($news_body_py , $files_to_push))
                 {
-                    echo "1a<br>";
-                    // echo $news_body_py;
-                    echo '<br>';
+                    // echo "1a<br>";
+                    // // echo $news_body_py;
+                    // echo '<br>';
                     // print_r($push_remote_py_resp_arr);
                     
                     // if(in_array($news_body_py , $push_remote_py_resp_arr)) 
                     if (strpos( $push_remote_py_resp, $news_body_py) !== false)        
                     {
-                        echo "<br>1b<br>";
+                        // echo "<br>1b<br>";
 
                         $text = "$news_body_py News  Body Pushed\n";
                         fwrite($myfile, $text);
@@ -906,7 +906,7 @@ if(!isset($location))
 
                     else
                     {
-                        echo "1c<br>";
+                        // echo "1c<br>";
                         $push_newsbody = "NULL";
                         $text = "$sourceName News Body Failed to Pushed\n";
                         fwrite($myfile, $text);                            
@@ -917,10 +917,10 @@ if(!isset($location))
            
                 if(in_array($regularfeed_py , $files_to_push))
                 {
-                    echo "2a<br>";
+                    // echo "2a<br>";
                     if (strpos( $push_remote_py_resp, $regularfeed_py) !== false)
                     {
-                        echo "2b<br>";
+                        // echo "2b<br>";
 
                             $text = "$regularfeed_py Regular Feed Pushed\n";
                             fwrite($myfile, $text);                        
@@ -930,7 +930,7 @@ if(!isset($location))
                     }
                     else
                     {
-                        echo "2c<br>";
+                        // echo "2c<br>";
                         $push_regularFeed= "NULL";
                         $text = "$regularfeed_py Regular Field Failed to Pushed\n";
                         fwrite($myfile, $text);
@@ -944,11 +944,11 @@ if(!isset($location))
 
                 if(in_array($readyversion_py , $files_to_push))
                 {
-                    echo "3a<br>";
+                    // echo "3a<br>";
                     // if(in_array($readyversion_py , $push_remote_py_resp_arr))
                     if (strpos( $push_remote_py_resp, $readyversion_py) !== false)
                     {
-                        echo "3b<br>";
+                        // echo "3b<br>";
                             $text = "$readyversion_py Ready Version Pushed\n";
                             fwrite($myfile, $text);                        
 
@@ -957,7 +957,7 @@ if(!isset($location))
                     }
                     else
                     {
-                        echo "3c<br>";
+                        // echo "3c<br>";
                         $push_readyVesion = "NULL";
                         $text = "$readyversion_py Ready Version Failed to Pushed\n";
                         fwrite($myfile, $text);
@@ -970,11 +970,11 @@ if(!isset($location))
 
                 if(in_array($roughcut_py , $files_to_push))
                 {
-                    echo "4a<br>";
+                    // echo "4a<br>";
                     // if(in_array($roughcut_py , $push_remote_py_resp_arr))
                     if (strpos( $push_remote_py_resp, $roughcut_py) !== false)
                     {
-                        echo "4b<br>";
+                        // echo "4b<br>";
 
                             $text = "$roughcut_py Rough Cut Pushed\n";
                             fwrite($myfile, $text);                        
@@ -984,7 +984,7 @@ if(!isset($location))
                     }
                     else
                     {
-                        echo "4c<br>";
+                        // echo "4c<br>";
                         $push_roughcut = "NULL";
                         $text = "$roughcut_py Rough Cut Failed to Pushed\n";
                         fwrite($myfile, $text);
@@ -997,12 +997,12 @@ if(!isset($location))
 
                 if(in_array($thumb_py , $files_to_push))
                 {
-                    echo "5a<br>";
+                    // echo "5a<br>";
                     // if(in_array($thumb_py , $push_remote_py_resp_arr))
                     if (strpos( $push_remote_py_resp, $thumb_py) !== false)
                     {
 
-                        echo "5b<br>";
+                        // echo "5b<br>";
                             $text = "$thumb_py Thumbnail Pushed\n";
                             fwrite($myfile, $text);                        
 
@@ -1011,7 +1011,7 @@ if(!isset($location))
                     }
                     else
                     {
-                        echo "5c<br>";
+                        // echo "5c<br>";
                         $push_thumbnail = "NULL";
                         $text = "$thumb_py Thumbnail Failed to Pushed\n";
                         fwrite($myfile, $text);
@@ -1024,11 +1024,11 @@ if(!isset($location))
 
                 if(in_array($audio_py , $files_to_push))
                 {
-                    echo "6a<br>";
+                    // echo "6a<br>";
                     // if(in_array($audio_py , $push_remote_py_resp_arr))
                     if (strpos( $push_remote_py_resp, $audio_py) !== false)
                     {
-                        echo "6b<br>";
+                        // echo "6b<br>";
                             $text = "$audio_py Audio Pushed\n";
                             fwrite($myfile, $text);                        
 
@@ -1037,7 +1037,7 @@ if(!isset($location))
                     }
                     else
                     {
-                        echo "6c<br>";
+                        // echo "6c<br>";
                         $push_audio = "NULL";
                         $text = "$audio_py Audio Failed to Pushed\n";
                         fwrite($myfile, $text);
@@ -1050,11 +1050,11 @@ if(!isset($location))
 
                 foreach($file_to_push_gall as $sent_gal)
                 {
-                    echo "7aa<br>";
+                    // echo "7aa<br>";
                     // if(in_array($sent_gal ,$push_remote_py_resp_arr ))
                     if (strpos( $push_remote_py_resp, $sent_gal) !== false)
                     {
-                        echo "7b<br>";
+                        // echo "7b<br>";
                             $gal_img_arr = "$news_ftp_path_sql/$sent_gal" ;
                             if(!empty($sent_gal) && isset($sent_gal))
                             {
@@ -1067,16 +1067,16 @@ if(!isset($location))
                     }
                     else 
                     {
-                        echo "7c<br>";
+                        // echo "7c<br>";
                             $text = "$sent_gal Gallery Photo Failed to Pushed\n";                       
                             fwrite($myfile, $text);
                             $_SESSION['notice_remote'] = "Error";
                     }
                 }
                
-                echo "<br>----------------------<br>";
-                echo "Gal push count ".count($gallery_full_web_arr) ;
-                echo "<br>----------------------<br>";
+                // echo "<br>----------------------<br>";
+                // echo "Gal push count ".count($gallery_full_web_arr) ;
+                // echo "<br>----------------------<br>";
 
                 if(count($gallery_full_web_arr) == 0)
                 {
@@ -1094,9 +1094,9 @@ if(!isset($location))
                     $gall_img = "'$gall_img'";
                 }
 
-                echo "<br>----------------------<br>";
-                echo "gal image db: ".$gall_img ;
-                echo "<br>----------------------<br>";
+                // echo "<br>----------------------<br>";
+                // echo "gal image db: ".$gall_img ;
+                // echo "<br>----------------------<br>";
 
                 
                 if(in_array($extra_file_py , $files_to_push))
@@ -1106,7 +1106,7 @@ if(!isset($location))
                     // if(in_array($news_body_py , $push_remote_py_resp_arr)) 
                     if (strpos( $push_remote_py_resp, $extra_file_py) !== false)        
                     {
-                        echo "<br>1b<br>";
+                        // echo "<br>1b<br>";
 
                         $text = "$extra_file_py Extra Files Pushed\n";
                         fwrite($myfile, $text);
@@ -1117,7 +1117,7 @@ if(!isset($location))
 
                     else
                     {
-                        echo "1c<br>";
+                        // echo "1c<br>";
                         $push_extra_file = "NULL";
                         $text = "$sourceName News Body Failed to Pushed\n";
                         fwrite($myfile, $text);                            
@@ -1132,11 +1132,11 @@ if(!isset($location))
 
                     foreach($file_to_push_audio_bites as $sent_ab)
                     {
-                        echo "7aa<br>";
+                        // echo "7aa<br>";
                         // if(in_array($sent_gal ,$push_remote_py_resp_arr ))
                         if (strpos( $push_remote_py_resp, $sent_ab) !== false)
                         {
-                            echo "7b<br>";
+                            // echo "7b<br>";
                                 $ab_arr = "$news_ftp_path_sql/$sent_ab" ;
 
                                
@@ -1147,7 +1147,7 @@ if(!isset($location))
                         }
                         else 
                         {
-                            echo "7c<br>";
+                            // echo "7c<br>";
                                 $text = "$sent_ab Audio Bites Failed to Pushed\n";                       
                                 fwrite($myfile, $text);
                                 $_SESSION['notice_remote'] = "Error";

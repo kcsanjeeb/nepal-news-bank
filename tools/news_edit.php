@@ -1,16 +1,5 @@
 <?php
-
-/*
-    1. Completed File Insertion / Single file Replace in nas, web and mysql
-
-    1. Path dynamic of file ------- 1
-    2. Single File Deletion -- All Left -- extended
-    3. Updated ACF Fields in WP POST -- All Left ---------- 2 
-    4. On new series post on wp ---------- 3
-    gallery photo same name conflict
-
-*/
-
+    
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
 include "global/timezone.php";

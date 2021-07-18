@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 ini_set('max_execution_time', '300'); //300 seconds = 5 minutes
 include "session_handler/session_service.php";
 include "connection.php";
@@ -1505,10 +1508,19 @@ if(!isset($location))
             {
                 $new_series = $series_check ;
                 $new_series_array = explode("," ,$new_series );
+                
                 $old_series = $news_row_details['series'] ;
+                $old_series_array = explode("," ,$old_series );
+
+                $to_add_series = array_diff($new_series_array, $old_series_array);
+
+                $to_add_series_csv = implode("," , $to_add_series);
+                $news_id_update = str_replace("'", "" , $news_id ) ;
+
+                $location = "wp_post_update.php?news_id=$news_id_update&new_series=$to_add_series_csv" ;
 
 
-
+                
                 
                 
                 
