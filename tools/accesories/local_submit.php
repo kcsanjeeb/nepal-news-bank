@@ -181,7 +181,7 @@ if(!isset($location))
             }
             else
             {
-                $extra_files_description = "NULL";
+                $extra_files_description = "'Extra Files Description.'";
             }
 
 
@@ -193,7 +193,7 @@ if(!isset($location))
             }
             else
             {
-                $audio_desc = "NULL";
+                $audio_desc = "'Audio Description.'";
 
             
             }
@@ -206,7 +206,7 @@ if(!isset($location))
             }
             else
             {
-                $gallery_desc = "NULL";
+                $gallery_desc = "'Gallery Description.'";
                
             }
 
@@ -219,7 +219,7 @@ if(!isset($location))
             }
             else
             {
-                $audio_bites_desc = "NULL";
+                $audio_bites_desc = "'Audio Bites Description.'";
 
             
             }
@@ -899,6 +899,8 @@ if(!isset($location))
 
             $newsdate = "'$newsdate'";
             $news_id = "'$news_id'";
+
+        
 
 
             $query_new_news = "insert into nas(
