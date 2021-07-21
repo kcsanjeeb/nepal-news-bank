@@ -531,7 +531,7 @@ include "../global/timezone.php";
     }
 
 
-    header("Location: ../news_edit.php?id=".$news_id);
+    header("Location: ../remotecopycreator.php?news_id=".$news_id);
 
 
 

@@ -98,7 +98,15 @@ if(!isset($location))
                     $gallery_full_web_arr = explode(',' ,  $gallery_full_web) ;
 
                     $audio_bites_full_web = $row_content_web['audio_bites'];
-                    $audio_bites_web_arr = explode(',' ,  $audio_bites_full_web) ;
+                    if($row_content_web['audio_bites'] == null)
+                    {
+                        $audio_bites_web_arr = array();
+                    }
+                    else
+                    {
+                        $audio_bites_web_arr = explode(',' ,  $audio_bites_full_web) ;
+
+                    }
 
                     
 
@@ -177,6 +185,8 @@ if(!isset($location))
                     $extra_files_full_web = "NULL";
                     $gallery_full_web_arr = array();
                     $audio_bites_full_web = "NULL";
+
+                    $audio_bites_web_arr = array();
                 }
 
 
@@ -383,7 +393,10 @@ if(!isset($location))
                 $pushed_by = mysqli_real_escape_string($connection, $pushed_by);
                 
 
-                
+                if(!isset($file_type) || empty($file_type))
+                {
+                    $file_type = array();
+                }
 
                     if(in_array('news_file' ,$file_type ))
                     {
@@ -843,7 +856,7 @@ if(!isset($location))
                         $push_extra_file = $extra_files_full_web;
                     }
 
-
+               
                     
 
                     ftp_close($ftp); 
@@ -1160,7 +1173,8 @@ if(!isset($location))
 
                 if(count($push_audio_bites_array) > 0)
                 {
-                    if(count($audio_bites_web_arr > 0))
+                    // if(count($audio_bites_web_arr > 0))
+                    if($row_content_web['audio_bites'] != null)
                     {
                         foreach($audio_bites_web_arr as $old_values)
                         {
@@ -1244,7 +1258,7 @@ if(!isset($location))
                         $run_query = mysqli_query($connection , $query_new_news_push);
                 }
 
-                
+                echo $query_new_news_push ;
 
                 
 

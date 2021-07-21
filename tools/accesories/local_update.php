@@ -326,8 +326,11 @@ if(!isset($location))
                 {
                     $body_path =$path_destination."_news_file.".$fileActualExt_body;
                     $body_path_web = explode("/" , $body_path);
-                    array_shift($body_path_web);array_shift($body_path_web);
-                    $body_path_web = implode("/" , $body_path_web);
+                    $body_path_web = end($body_path_web);
+                    $body_path_web = $news_remote_existing_path."/".$body_path_web;
+                    
+                    // array_shift($body_path_web);array_shift($body_path_web);
+                    // $body_path_web = implode("/" , $body_path_web);
 
                     
                     $body_tmp_name = $_FILES['descFile']['tmp_name'] ;
@@ -369,6 +372,7 @@ if(!isset($location))
 
                             if($update_file_name_everywhere)
                             {
+
 
                                 $update_query_remote = "update web set news_file = '$body_path_web' where newsid = '$news_id' ;";
                                 array_push($files_to_push_with_query , array('file_name' => $file_name_to_push , 'query' => $update_query_remote) );
@@ -431,8 +435,11 @@ if(!isset($location))
                     $regular_field_tmp_name = $_FILES['regularFeeddFile']['tmp_name'] ;
 
                     $regular_filed_path_web = explode("/" , $regular_filed_path);
-                    array_shift($regular_filed_path_web);array_shift($regular_filed_path_web);
-                    $regular_filed_path_web = implode("/" , $regular_filed_path_web);
+                    // array_shift($regular_filed_path_web);array_shift($regular_filed_path_web);
+                    // $regular_filed_path_web = implode("/" , $regular_filed_path_web);
+
+                    $regular_filed_path_web = end($regular_filed_path_web);
+                    $regular_filed_path_web = $news_remote_existing_path."/".$regular_filed_path_web;
 
                     
                     if($news_row_details['regular_feed'] != null)
@@ -529,8 +536,12 @@ if(!isset($location))
                     $thumbnail_tmp_name = $_FILES['thumbImg']['tmp_name'] ;
 
                     $thumbnail_path_web = explode("/" , $thumbnail_path);
-                    array_shift($thumbnail_path_web);array_shift($thumbnail_path_web);
-                    $thumbnail_path_web = implode("/" , $thumbnail_path_web);
+                    // array_shift($thumbnail_path_web);array_shift($thumbnail_path_web);
+                    // $thumbnail_path_web = implode("/" , $thumbnail_path_web);
+
+                    
+                    $thumbnail_path_web = end($thumbnail_path_web);
+                    $thumbnail_path_web = $news_remote_existing_path."/".$thumbnail_path_web;
 
                     if($news_row_details['thumbnail'] != null)
                     {
@@ -539,6 +550,8 @@ if(!isset($location))
                         $existing_file_name = end($existing_file_path_exp);
                         $existing_file_name_exp = explode("." , $existing_file_name);
                         $existing_file_name_ext = end($existing_file_name_exp);
+
+
 
                         if($existing_file_name_ext != $fileActualExt_thumbImg)
                         {
@@ -639,8 +652,11 @@ if(!isset($location))
                     $readyversion_tmp_path = $_FILES['readyVersionFile']['tmp_name'] ;
 
                     $readyversion_path_web = explode("/" , $readyversion_path);
-                    array_shift($readyversion_path_web);array_shift($readyversion_path_web);
-                    $readyversion_path_web = implode("/" , $readyversion_path_web);
+                    // array_shift($readyversion_path_web);array_shift($readyversion_path_web);
+                    // $readyversion_path_web = implode("/" , $readyversion_path_web);
+
+                    $readyversion_path_web = end($readyversion_path_web);
+                    $readyversion_path_web = $news_remote_existing_path."/".$readyversion_path_web;
 
                     if($news_row_details['ready_version'] != null)
                     {
@@ -744,8 +760,11 @@ if(!isset($location))
                     $roughcut_tmp_name = $_FILES['roughCutFile']['tmp_name'] ;
 
                     $roughCut_path_web = explode("/" , $roughCut_path);
-                    array_shift($roughCut_path_web);array_shift($roughCut_path_web);
-                    $roughCut_path_web = implode("/" , $roughCut_path_web);
+                    // array_shift($roughCut_path_web);array_shift($roughCut_path_web);
+                    // $roughCut_path_web = implode("/" , $roughCut_path_web);
+
+                    $roughCut_path_web = end($roughCut_path_web);
+                    $roughCut_path_web = $news_remote_existing_path."/".$roughCut_path_web;
 
                     if($news_row_details['rough_cut'] != null)
                     {
@@ -845,8 +864,11 @@ if(!isset($location))
 
                     
                     $audio_complete_story_path_web = explode("/" , $audio_complete_story_path);
-                    array_shift($audio_complete_story_path_web);array_shift($audio_complete_story_path_web);
-                    $audio_complete_story_path_web = implode("/" , $audio_complete_story_path_web);
+                    // array_shift($audio_complete_story_path_web);array_shift($audio_complete_story_path_web);
+                    // $audio_complete_story_path_web = implode("/" , $audio_complete_story_path_web);
+
+                    $audio_complete_story_path_web = end($audio_complete_story_path_web);
+                    $audio_complete_story_path_web = $news_remote_existing_path."/".$audio_complete_story_path_web;
 
                     if($news_row_details['audio_complete_story'] != null)
                     {
@@ -941,9 +963,20 @@ if(!isset($location))
             $gallery_arr = array();
             $gallery_arr_push = array();
 
-            $old_gallery_arr = explode("," ,  $news_row_details['photos']);
-            $counter = count($old_gallery_arr) + 1 ; ;
+            if($news_row_details['photos'] == null)
+            {
+                $counter = 1 ;
+                $ftp_created = 0 ;
 
+
+            }
+            else
+            {
+                $old_gallery_arr = explode("," ,  $news_row_details['photos']);
+                $counter = count($old_gallery_arr) + 1 ; ;
+            }
+
+           
             foreach ($_FILES["galleryImage"]["name"] as $p => $name)
             {        
                 
@@ -959,6 +992,7 @@ if(!isset($location))
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 { 
+                   
                    
                     if (!is_dir($file_path_nas.'/gallery')) {
                         mkdir($file_path_nas.'/gallery', 0777 , true);                        
@@ -984,43 +1018,60 @@ if(!isset($location))
 
                     }while($status);
 
-                    move_uploaded_file($fileTmpName_photo, $gallery_path) ;
-                    $gallery_path =$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
-                    array_push($gallery_arr , $gallery_path);                        
-                    $text = "$gallery_path : Gallery-$counter Uploaded\n";
-                    fwrite($myfile, $text);
-                    $counter++;   
-
-                    if($remote_pushed)
+                    if($gallery_path != '' && !empty($gallery_path))
                     {
-                        // Push files to remote
-                        
-                            $ftp = ftp_connect("$ftp_url");
-                            ftp_login($ftp, "$ftp_username", "$ftp_password");
-                            ftp_pasv($ftp, true);
 
-                                $contents =  ftp_mlsd($ftp, "/".$file_path_web);
-                                $folder_exists = in_array('gallery', array_column($contents, 'name'));
+                        move_uploaded_file($fileTmpName_photo, $gallery_path) ;
+                        $gallery_path =$file_path_nas."/"."gallery/".$file_name_nas."_gallery_".$counter.".".$fileActualExt_photo;
+                        array_push($gallery_arr , $gallery_path);                        
+                        $text = "$gallery_path : Gallery-$counter Uploaded\n";
+                        fwrite($myfile, $text);
+                        $counter++;   
 
-                            if(!$folder_exists)
+
+                        if($remote_pushed)
+                        {
+                            echo "------------FTP PUSHING-----------";
+                            // Push files to remote
+
+                            if(!isset($folder_created_in_ftp))
                             {
-                                ftp_mkdir($ftp, "/".$file_path_web."/gallery");
+                            
+                                $ftp = ftp_connect("$ftp_url");
+                                ftp_login($ftp, "$ftp_username", "$ftp_password");
+                                ftp_pasv($ftp, true);
+
+                                    $contents =  ftp_mlsd($ftp, "/".$news_remote_existing_path);
+                                    $folder_exists = in_array('gallery', array_column($contents, 'name'));
+
+                                if(!$folder_exists)
+                                {
+                                    ftp_mkdir($ftp, "/".$news_remote_existing_path."/gallery");
+                                    $folder_created_in_ftp = 1 ;
+
+                                }
+
+                                ftp_close($ftp); 
+
                             }
-
-                            ftp_close($ftp); 
-
-                            $file_name_to_push = end(explode("/", $gallery_path));
-                            $file_name_to_push = "gallery/$file_name_to_push";
-                            array_push($files_to_push , $file_name_to_push );
-                            array_push($gallery_arr_push , $file_name_to_push );
-
-
-
                         
 
+                                $file_name_to_push = end(explode("/", $gallery_path));
+                                $file_name_to_push = "gallery/$file_name_to_push";
+                                // if(!empty($file_name_to_push) && $file_name_to_push != '')
+                                // {
+                                    array_push($files_to_push , $file_name_to_push );
+                                    array_push($gallery_arr_push , $file_name_to_push );
+                                // }
                         
+
+
+
+                            
+
+                            
+                        }
                     }
-
 
                 }
             
@@ -1029,8 +1080,21 @@ if(!isset($location))
             if(count($gallery_arr) > 0)
             {
                 $new_gallery_csv_nas = implode("," , $gallery_arr);
-                $new_galleries_nas = $news_row_details['photos'].",".$new_gallery_csv_nas ;
+                if($news_row_details['photos'] == null)
+                {
+                    $new_galleries_nas = $new_gallery_csv_nas ;
+                    
+                }
+                else
+                {
+                    $new_galleries_nas = $news_row_details['photos'].",".$new_gallery_csv_nas ;
+
+                }
                 $update_query .= "update nas set photos = '$new_galleries_nas' where newsid = '$news_id' ;";
+
+             
+
+               
             }
        
 
@@ -1352,12 +1416,12 @@ if(!isset($location))
                         ftp_login($ftp, "$ftp_username", "$ftp_password");
                         ftp_pasv($ftp, true);
 
-                            $contents =  ftp_mlsd($ftp, "/".$file_path_web);
+                            $contents =  ftp_mlsd($ftp, "/".$news_remote_existing_path);
                             $folder_exists = in_array('audio_bites', array_column($contents, 'name'));
 
                         if(!$folder_exists)
                         {
-                            ftp_mkdir($ftp, "/".$file_path_web."/audio_bites");
+                            ftp_mkdir($ftp, "/".$news_remote_existing_path."/audio_bites");
                         }
 
                         ftp_close($ftp); 
@@ -1436,8 +1500,8 @@ if(!isset($location))
                 {
                     if (strpos( $push_remote_py_resp, $gftp) !== false)
                     {
-
-                        array_push($pushed_gallery , $news_ftp_path.'/'.$gftp );
+                       
+                        array_push($pushed_gallery , $news_remote_existing_path.'/'.$gftp );
                         $text = "$gftp : Succesfully Pushed\n";
                         fwrite($myfile, $text);
                     }
@@ -1470,7 +1534,7 @@ if(!isset($location))
                 {
                     if (strpos( $push_remote_py_resp, $abftp) !== false)
                     {
-                        array_push($pushed_audio_bites , $news_ftp_path.'/'.$abftp );
+                        array_push($pushed_audio_bites , $news_remote_existing_path.'/'.$abftp );
                         $text = "$abftp : Succesfully Pushed\n";
                         fwrite($myfile, $text);
                     }
@@ -1565,7 +1629,7 @@ if(isset($location))
 }
 else
 {
-    $location_redirect = $_SERVER['HTTP_REFERER'];
+    $location_redirect = '../remotecopycreator.php?news_id='.$news_id;
 }
 
 
@@ -1575,7 +1639,7 @@ else
 fwrite($myfile, "------------------------------------------------------- "); 
 fclose($myfile);
 
-
+echo $location_redirect ;
 header("Location: ".$location_redirect);
 
 exit();

@@ -465,3 +465,125 @@ E:/my_data/news_data/2021-07-21/Hello world/20210721_093930_89924_news_file.docx
 E:/my_data/news_data/2021-07-21/Hello world/20210721_093930_89924_regular_feed.mp4 : Regular Field Uploaded
 E:/my_data/news_data/2021-07-21/Hello world/20210721_093930_89924_extra_files.zip Uploaded
 ------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:13:23 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_3.jpg : Gallery-3 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_4.jpg : Gallery-4 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:20:32 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_3.jpg : Gallery-3 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_4.jpg : Gallery-4 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:24:36 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_3.jpg : Gallery-3 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_4.jpg : Gallery-4 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:27:15 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_3.jpg : Gallery-3 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_4.jpg : Gallery-4 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:30:08 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_3.jpg : Gallery-3 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:32:51 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_3.jpg : Gallery-3 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:36:36 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_2.jpg : Gallery-2 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:39:20 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_3.jpg : Gallery-3 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:53:34 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_4.jpg : Gallery-4 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 10:56:05 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_5.jpg : Gallery-5 Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 11:00:22 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_6.jpg : Gallery-6 Uploaded
+gallery/20210721_093930_89924_gallery_6.jpg : Succesfully Pushed
+gallery/20210721_093930_89924_gallery_6.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 11:03:02 
+E:/my_data/news_data/2021-07-21/Hello world/audio_bites/20210721_093930_89924_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+ Uploaded
+audio_bites/20210721_093930_89924_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210721_093930_89924_audio_bites_1.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 11:06:48 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_7.jpg : Gallery-7 Uploaded
+gallery/20210721_093930_89924_gallery_7.jpg : Succesfully Pushed
+gallery/20210721_093930_89924_gallery_7.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 11:37:00 
+E:/my_data/news_data/2021-07-21/Hello world/audio_bites/20210721_093930_89924_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+ Uploaded
+audio_bites/20210721_093930_89924_audio_bites_2.mp3 : Succesfully Pushed
+audio_bites/20210721_093930_89924_audio_bites_2.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 11:37:51 
+E:/my_data/news_data/2021-07-21/Hello world/audio_bites/20210721_093930_89924_audio_bites_3.mp3 : Audio Bites-3 Uploaded
+ Uploaded
+audio_bites/20210721_093930_89924_audio_bites_3.mp3 : Succesfully Pushed
+audio_bites/20210721_093930_89924_audio_bites_3.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 11:54:02 
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 11:56:21 
+E:/my_data/news_data/2021-07-21/Hello world/gallery/20210721_093930_89924_gallery_8.png : Gallery-8 Uploaded
+gallery/20210721_093930_89924_gallery_8.png : Succesfully Pushed
+gallery/20210721_093930_89924_gallery_8.png : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 11:58:54 
+E:/my_data/news_data/2021-07-21/Hello world/audio_bites/20210721_093930_89924_audio_bites_4.mp3 : Audio Bites-4 Uploaded
+ Uploaded
+audio_bites/20210721_093930_89924_audio_bites_4.mp3 : Succesfully Pushed
+audio_bites/20210721_093930_89924_audio_bites_4.mp3 : Succesfully Pushed
+------------------------------------------------------- 
