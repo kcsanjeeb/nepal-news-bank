@@ -62,7 +62,7 @@ if(!isset($location))
             if($num_rows_news_web > 0)
             {
                 $remote_pushed = 1 ;
-
+                
                 $wp_post_id = $news_row_details_web['wp_post_id'];
                 $wp_post_media_id = $news_row_details_web['wp_media_id'];
 
@@ -134,7 +134,8 @@ if(!isset($location))
             }
             else
             {
-                $uploaded_by = "NULL";
+                $uploaded_by = $news_row_details['uploaded_by'];
+                $uploaded_by = "'$uploaded_by'";
             }
 
             if(isset($_POST['reporter']))
@@ -145,29 +146,36 @@ if(!isset($location))
             }
             else
             {
-                $reporter = "NULL";
+                $reporter = $news_row_details['reporter'];
+                $reporter = "'$reporter'";
             }
+            
+
 
             if(isset($_POST['camera_man']))
             {
                 $camera_man = $_POST['camera_man'];
                 $camera_man = mysqli_real_escape_string($connection, $camera_man);    
                 $camera_man = "'$camera_man'";
+               
             }
             else
             {
-                $camera_man = "NULL";
+                $camera_man = $news_row_details['camera_man'];
+                $camera_man = "'$camera_man'";
             }
 
             if(isset($_POST['district']))
             {
                 $district = $_POST['district'];
-                $district = mysqli_real_escape_string($connection, $district);    
-                $district = "'$district'";
+                $district = mysqli_real_escape_string($connection, $district);  
+                $district = "'$district'";  
+                
             }
             else
             {
-                $district = "NULL";
+                $district = $news_row_details['district'];
+                $district = "'$district'";
             }
 
   
@@ -207,7 +215,8 @@ if(!isset($location))
             }
             else
             {
-                $extra_files_description = "NULL";
+                $extra_files_description = $news_row_details['extra_files_description'];
+                $extra_files_description = "'$extra_files_description'";
             }
 
 
@@ -219,7 +228,8 @@ if(!isset($location))
             }
             else
             {
-                $audio_desc = "NULL";
+                $audio_desc = $news_row_details['audio_description'];
+                $audio_desc = "'$audio_desc'";
             }
 
 
@@ -231,7 +241,8 @@ if(!isset($location))
             }
             else
             {
-                $audio_bites_desc = "NULL";
+                $audio_bites_desc = $news_row_details['audio_bites_description'];
+                $audio_bites_desc = "'$audio_bites_desc'";
             }
 
 
@@ -322,6 +333,7 @@ if(!isset($location))
                 $file_type = $_FILES['descFile']['type'] ;
                 $allowed_body_type = array('application/vnd.openxmlformats-officedocument.wordprocessingml.document' , 'text/plain' , 'application/rtf', 'application/msword');
 
+                
                 if (in_array($file_type , $allowed_body_type  ))
                 {
                     $body_path =$path_destination."_news_file.".$fileActualExt_body;
@@ -431,6 +443,7 @@ if(!isset($location))
 
                 if (in_array($file_type_explode[0] , $allowed ))
                 {
+                   
                     $regular_filed_path =$path_destination."_regular_feed.".$fileActualExt_regularFeeddFile;
                     $regular_field_tmp_name = $_FILES['regularFeeddFile']['tmp_name'] ;
 
@@ -444,6 +457,7 @@ if(!isset($location))
                     
                     if($news_row_details['regular_feed'] != null)
                     {
+                        
                         $existing_file_path = $news_row_details['regular_feed'] ;
                         $existing_file_path_exp = explode("/" , $existing_file_path);
                         $existing_file_name = end($existing_file_path_exp);
@@ -453,9 +467,11 @@ if(!isset($location))
                         if(file_exists($news_row_details['regular_feed'])) unlink($news_row_details['regular_feed']);
 
                         move_uploaded_file($regular_field_tmp_name, $regular_filed_path) ;  
+                        
                         $regular_filed_path = $path_sql."_regular_feed.".$fileActualExt_regularFeeddFile;
                         $text = "$regular_filed_path : Regular Feed Replaced\n";
                         fwrite($myfile, $text);
+                      
 
                         if($existing_file_name_ext != $fileActualExt_regularFeeddFile)
                         {
@@ -465,9 +481,10 @@ if(!isset($location))
                         if($update_file_name_everywhere)
                             $update_query .= "update nas set regular_feed = '$regular_filed_path' where newsid = '$news_id' ;";
 
-
+                       
                         if($remote_pushed)
                         {
+                           
                             // Replace in WEB
                             // delete in remote
                             if($news_row_details_web['regular_feed'] != null)
@@ -475,6 +492,7 @@ if(!isset($location))
 
                             $file_name_to_push = explode("/" , $regular_filed_path);
                             $file_name_to_push = end($file_name_to_push); 
+                            echo "------------Checkkkk $file_name_to_push -------------------";
                             array_push($files_to_push , $file_name_to_push );
 
                             if($update_file_name_everywhere)
@@ -500,7 +518,8 @@ if(!isset($location))
                         if($remote_pushed)
                         {
                             // Upload in Remote
-                            $file_name_to_push = end(explode("/" , $body_path));
+
+                            $file_name_to_push = end(explode("/" , $regular_filed_path));
                             array_push($files_to_push , $file_name_to_push );
                             $update_query_remote = "update web set regular_feed = '$regular_filed_path_web' where newsid = '$news_id' ;";
                             array_push($files_to_push_with_query , array('file_name' => $file_name_to_push , 'query' => $update_query_remote) );
@@ -687,6 +706,7 @@ if(!isset($location))
                         {
                             // Replace in WEB
                             // delete in remote
+                            
                             if($news_row_details_web['ready_version'] != null)
                                 ftp_delete_rem('/'.$news_row_details_web['ready_version'] , 'file');
 
@@ -1463,7 +1483,6 @@ if(!isset($location))
                                 audio_description =  $audio_desc , audio_bites_description =  $audio_bites_desc where  newsid = $news_id;";
             
             
-
             if(count( $files_to_push) > 0)
             {                    
                 $files_to_push_csv = implode("," , $files_to_push);    
@@ -1622,14 +1641,14 @@ if(!isset($location))
     }
 
 }
-
+$news_id_update = str_replace("'", "" , $news_id ) ;
 if(isset($location))
 {
     $location_redirect = $location;
 }
 else
 {
-    $location_redirect = '../remotecopycreator.php?news_id='.$news_id;
+    $location_redirect = '../remotecopycreator.php?news_id='.$news_id_update;
 }
 
 
@@ -1640,6 +1659,6 @@ fwrite($myfile, "------------------------------------------------------- ");
 fclose($myfile);
 
 echo $location_redirect ;
-header("Location: ".$location_redirect);
+// header("Location: ".$location_redirect);
 
 exit();

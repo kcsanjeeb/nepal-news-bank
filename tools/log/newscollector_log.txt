@@ -587,3 +587,195 @@ E:/my_data/news_data/2021-07-21/Hello world/audio_bites/20210721_093930_89924_au
 audio_bites/20210721_093930_89924_audio_bites_4.mp3 : Succesfully Pushed
 audio_bites/20210721_093930_89924_audio_bites_4.mp3 : Succesfully Pushed
 ------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 13:05:12 
+E:/my_data/news_data/2021-07-21/Hello world/20210721_093930_89924_ready_version.mp4 : Ready Version Uplaoded
+20210721_093930_89924_ready_version.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Update test ---------------- 
+
+ Logged Date: 2021-07-21 20:23:33 
+Update test Folder Created
+E:/my_data/news_data/2021-07-21/Update test/20210721_202333_37745_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Update test ---------------- 
+
+ Logged Date: 2021-07-21 20:25:07 
+E:/my_data/news_data/2021-07-21/Update test/20210721_202333_37745_regular_feed.mp4 : Regular Feed Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / Update test ---------------- 
+
+ Logged Date: 2021-07-21 20:48:43 
+E:/my_data/news_data/2021-07-21/Update test/20210721_202333_37745_extra_files.zip Uploaded
+20210721_202333_37745_extra_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Update test ---------------- 
+
+ Logged Date: 2021-07-21 20:50:12 
+E:/my_data/news_data/2021-07-21/Update test/20210721_202333_37745_ready_version.mp4 : Ready Version Uplaoded
+20210721_202333_37745_ready_version.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Update test ---------------- 
+
+ Logged Date: 2021-07-21 20:51:17 
+E:/my_data/news_data/2021-07-21/Update test/20210721_202333_37745_rough_cut.mp4 : Rough Cut Uploaded
+20210721_202333_37745_rough_cut.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Update test ---------------- 
+
+ Logged Date: 2021-07-21 20:52:46 
+E:/my_data/news_data/2021-07-21/Update test/20210721_202333_37745_audio_complete_story.mp3 : Audio Complete Story Uploaded
+20210721_202333_37745_audio_complete_story.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Update test ---------------- 
+
+ Logged Date: 2021-07-21 20:53:49 
+E:/my_data/news_data/2021-07-21/Update test/audio_bites/20210721_202333_37745_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+E:/my_data/news_data/2021-07-21/Update test/audio_bites/20210721_202333_37745_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+ Uploaded
+audio_bites/20210721_202333_37745_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210721_202333_37745_audio_bites_2.mp3 : Succesfully Pushed
+audio_bites/20210721_202333_37745_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210721_202333_37745_audio_bites_2.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / Update test ---------------- 
+
+ Logged Date: 2021-07-21 20:55:44 
+E:/my_data/news_data/2021-07-21/Update test/gallery/20210721_202333_37745_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-07-21/Update test/gallery/20210721_202333_37745_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-21/Update test/gallery/20210721_202333_37745_gallery_3.jpg : Gallery-3 Uploaded
+gallery/20210721_202333_37745_gallery_1.jpg : Succesfully Pushed
+gallery/20210721_202333_37745_gallery_2.jpg : Succesfully Pushed
+gallery/20210721_202333_37745_gallery_3.jpg : Succesfully Pushed
+gallery/20210721_202333_37745_gallery_1.jpg : Succesfully Pushed
+gallery/20210721_202333_37745_gallery_2.jpg : Succesfully Pushed
+gallery/20210721_202333_37745_gallery_3.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Update again ---------------- 
+
+ Logged Date: 2021-07-21 20:56:44 
+2021-07-22 : Folder Created
+2021-07-22/Update again : Folder Created
+E:/my_data/news_data/2021-07-22/Update again/20210722_205644_87007_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-22 / Update again ---------------- 
+
+ Logged Date: 2021-07-21 20:59:33 
+E:/my_data/news_data/2021-07-22/Update again/20210722_205644_87007_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- ------------------------------------------------------- 
+---------------2021-07-22 / Hello Hello ---------------- 
+
+ Logged Date: 2021-07-21 21:35:06 
+Hello Hello Folder Created
+E:/my_data/news_data/2021-07-22/Hello Hello/20210722_213506_56718_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-22 / Hello Hello ---------------- 
+
+ Logged Date: 2021-07-21 21:45:19 
+E:/my_data/news_data/2021-07-22/Hello Hello/20210722_213506_56718_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Hello Hello ---------------- 
+
+ Logged Date: 2021-07-21 21:49:48 
+E:/my_data/news_data/2021-07-22/Hello Hello/20210722_213506_56718_ready_version.mp4 : Ready Version Uplaoded
+20210722_213506_56718_ready_version.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hi news ---------------- 
+
+ Logged Date: 2021-07-21 21:50:46 
+hi news Folder Created
+E:/my_data/news_data/2021-07-21/hi news/20210721_215046_69455_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / hi news ---------------- 
+
+ Logged Date: 2021-07-21 21:51:47 
+E:/my_data/news_data/2021-07-21/hi news/20210721_215046_69455_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 21:58:21 
+hehe Folder Created
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 21:59:24 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 21:59:27 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:00:34 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:02:19 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:06:12 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:06:34 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:07:31 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:07:57 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:08:22 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:08:47 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:09:00 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:10:29 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+ : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-21 / hehe ---------------- 
+
+ Logged Date: 2021-07-21 22:12:22 
+E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
+20210721_215821_32629_regular_feed.mp4 : Succesfully Pushed
+------------------------------------------------------- 

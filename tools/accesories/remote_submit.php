@@ -1213,6 +1213,13 @@ if(!isset($location))
                     mysqli_set_charset($connection ,"utf8");
                 // }
 
+                echo "-------- $news_ftp_path-----------";
+
+                // $news_ftp_path = explode("/" , $news_ftp_path);
+                // array_shift($news_path_ftp);
+                // $news_ftp_path = implode("/" , $news_ftp_path);
+                $news_ftp_path =  substr($news_ftp_path, 1);
+
                 $sql_test_local = "select * from web where newsid = '$news_id' ";
                 $run_sql_test_local= mysqli_query($connection, $sql_test_local);
                 $num_rows_content_local = mysqli_num_rows($run_sql_test_local);

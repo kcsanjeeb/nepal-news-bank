@@ -101,6 +101,8 @@ include "../global/timezone.php";
                         $wp_post_id = $row_content_web['wp_post_id'];
                         $featured_media_id = $row_content_web['wp_media_id'];
 
+                        $post_status = $row_content_web['wp_post_type'];
+
 
 
                         if($regularfeed_full_web == NULL)
@@ -341,17 +343,19 @@ include "../global/timezone.php";
                 {
                     $tags_full_arr = null ;
                 }
+
+                $status_post = $post_status;
                 
 
              if($thumbnail_full != null)
             {
                 $data_array =  array(
-                    "status" => "draft" , 
+                    "status" => "$status_post" , 
                     "title" => "$byline_full",
                     "slug" => "$byline_full",
-                    "acf_fields" => array('regular_feed_link'=>$push_regularFeed_json,'ready_version_link'=>$push_readyVersion_json,
-                                            'rough_cut_link' => $push_roughcut_json ,   'news_body_file' => $push_newsbody_json ,
-                                            'audio_complete_story' =>    $push_audio_json,
+                    "acf_fields" => array("regular_feed_link"=>$push_regularFeed_json,"ready_version_link"=>$push_readyVersion_json,
+                                            "rough_cut_link" => $push_roughcut_json ,   "news_body_file" => $push_newsbody_json ,
+                                            "audio_complete_story" =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
                                             "extra_files" => $push_extra_json,
@@ -378,12 +382,12 @@ include "../global/timezone.php";
             else
             {
                 $data_array =  array(
-                    "status" => "draft" , 
+                    "status" => "$status_post" , 
                     "title" => "$byline_full",
                     "slug" => "$byline_full",
-                    "acf_fields" => array('regular_feed_link'=>$push_regularFeed_json,'ready_version_link'=>$push_readyVersion_json,
-                                            'rough_cut_link' => $push_roughcut_json ,   'news_body_file' => $push_newsbody_json ,
-                                            'audio_complete_story' =>    $push_audio_json,
+                    "acf_fields" => array("regular_feed_link"=>$push_regularFeed_json,"ready_version_link"=>$push_readyVersion_json,
+                                            "rough_cut_link" => $push_roughcut_json ,   "news_body_file" => $push_newsbody_json ,
+                                            "audio_complete_story" =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
                                             "extra_files" => $push_extra_json,
