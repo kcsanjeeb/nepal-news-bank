@@ -456,3 +456,12 @@ E:/my_data/news_data/2021-07-18/स्वास्थ्यचौकीमै �
 gallery/20210718_133745_18953_gallery_9.jpg : Succesfully Pushed
 gallery/20210718_133745_18953_gallery_9.jpg : Succesfully Pushed
 ------------------------------------------------------- 
+---------------2021-07-21 / Hello world ---------------- 
+
+ Logged Date: 2021-07-21 09:39:30 
+2021-07-21 : Folder Created
+2021-07-21/Hello world : Folder Created
+E:/my_data/news_data/2021-07-21/Hello world/20210721_093930_89924_news_file.docx : News File Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/20210721_093930_89924_regular_feed.mp4 : Regular Field Uploaded
+E:/my_data/news_data/2021-07-21/Hello world/20210721_093930_89924_extra_files.zip Uploaded
+------------------------------------------------------- 

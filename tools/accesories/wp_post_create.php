@@ -150,8 +150,10 @@ if(isset($_POST['submit_push']))
                             $roughcut_full_web = "'$roughcut_full_web'";
 
                         if($gallery_full_web == '' || $gallery_full_web == NULL)
+                        {
                             $gallery_full_web = "NULL";
-
+                            $gallery_full_web_final = "NULL";
+                        }
                         else
                         {
                             $gallery_full_web = "'$gallery_full_web'";
@@ -291,6 +293,7 @@ if(isset($_POST['submit_push']))
                 $push_audio_json = str_replace("'","",$push_audio);
                 $push_extra_json = str_replace("'","",$push_extra);
                 $push_audio_bites_json = str_replace("'","",$push_audio_bites);
+
                 
 
                 
@@ -339,6 +342,8 @@ if(isset($_POST['submit_push']))
                 {
                     $tags_full_arr = null ;
                 }
+
+              
                 
 
              if($thumbnail_full != null)
@@ -349,7 +354,7 @@ if(isset($_POST['submit_push']))
                     "slug" => "$byline_full",
                     "acf_fields" => array('regular_feed_link'=>$push_regularFeed_json,'ready_version_link'=>$push_readyVersion_json,
                                             'rough_cut_link' => $push_roughcut_json ,   'news_body_file' => $push_newsbody_json ,
-                                            'audio_complete_story' =>    $push_audio_json,
+                                            'audio_complete_story' =>   $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
                                             "extra_files" => $push_extra_json,
@@ -381,7 +386,7 @@ if(isset($_POST['submit_push']))
                     "slug" => "$byline_full",
                     "acf_fields" => array('regular_feed_link'=>$push_regularFeed_json,'ready_version_link'=>$push_readyVersion_json,
                                             'rough_cut_link' => $push_roughcut_json ,   'news_body_file' => $push_newsbody_json ,
-                                            'audio' =>    $push_audio_json,
+                                            'audio_complete_story' =>    $push_audio_json,
                                             "gallery" => $gallery_full_web_json,                                                    
                                             "video_thumbnail" => $thumbnail_full_web_json,
                                             "extra_files" => $push_extra_json,
@@ -409,7 +414,9 @@ if(isset($_POST['submit_push']))
             
 
                     $data = json_encode($data_array);
-                    // echo $data ;
+                //     echo $data ;
+                    
+                // exit();
 
 
                 $curl = curl_init();
