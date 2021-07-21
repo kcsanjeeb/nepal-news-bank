@@ -38,6 +38,8 @@ include "../global/timezone.php";
             $video_type = $row_content['video_type'];
             $extra_file_full = $row_content['extra_files'];
             $extra_files_description_full = $row_content['extra_files_description'];
+            $news_local_published_path = $row_content['local_published_date'];
+
 
             $gallery_description_full = $row_content['gallery_description'];
 
@@ -535,7 +537,7 @@ include "../global/timezone.php";
     }
 
 
-    header("Location: ../remotecopycreator.php?news_id=".$news_id);
+    header("Location: ../remotecopycreator.php?news_id=".$news_id.'&date='.$news_local_published_path);
 
 
 

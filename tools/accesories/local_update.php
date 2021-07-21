@@ -1648,7 +1648,7 @@ if(isset($location))
 }
 else
 {
-    $location_redirect = '../remotecopycreator.php?news_id='.$news_id_update;
+    $location_redirect = '../remotecopycreator.php?news_id='.$news_id_update.'&date='.$news_local_published_path;
 }
 
 
@@ -1659,6 +1659,6 @@ fwrite($myfile, "------------------------------------------------------- ");
 fclose($myfile);
 
 echo $location_redirect ;
-// header("Location: ".$location_redirect);
+header("Location: ".$location_redirect);
 
 exit();
