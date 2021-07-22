@@ -818,8 +818,8 @@ strong {
                                     </svg>
 
                                 </label><br>
-                                <!-- <input type="file" id="thumbnailimg" onchange="return thumbnailValidation()"
-                                    name="thumbImg" accept="image/*" xxx> -->
+                                <input type="file" id="thumbnailimg" onchange="return thumbnailValidation()"
+                                    name="thumbImg" accept="image/*" xxx>
                                 <!-- Image preview -->
                                 <div id="thumbnailID">
                                 <?php
@@ -855,6 +855,8 @@ strong {
                                     </svg>
 
                                 </label><br>
+                                <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="gallery_desc"
+                                        rows="5" placeholder="Description"><?php echo $news_row_details['gallery_description'] ; ?></textarea>
                                 <input type="file" id="pro-image" name="galleryImage[]" accept="image/*" multiple>
                                 <!-- onclick="$('#pro-image').click()" -->
                                 <div class="preview-images-zone" style="display:none">

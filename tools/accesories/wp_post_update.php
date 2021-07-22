@@ -232,42 +232,57 @@ include "../global/timezone.php";
             $tags_full_arr = explode("," , $tags_full);
 
 
-            // if($thumbnail_full != null)
-            // {
+            if($thumbnail_full != null)
+            {
             
-            //     $thumbnail_path = $thumbnail_full ;
+                $thumbnail_path = $thumbnail_full ;
+
+                if( $featured_media_id != null)
+                {
+                    $url_api = $domain_url.'/wp-json/wp/v2/media/'.$featured_media_id ;
+                }
+                else
+                {
+                    $url_api = $domain_url.'/wp-json/wp/v2/media' ;
+                }
+                
 
 
-            //     $file = file_get_contents( $thumbnail_path );
-            //     $file_name = explode("/" ,$thumbnail_path);
-            //     $file_name = end($file_name);
+                $file = file_get_contents( $thumbnail_path );
+                $file_name = explode("/" ,$thumbnail_path);
+                $file_name = end($file_name);
                     
-            //         $url = $domain_url.'/wp-json/wp/v2/media';
-            //         $ch = curl_init();
-            //         curl_setopt( $ch, CURLOPT_URL, $url );
-            //         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-            //         curl_setopt( $ch, CURLOPT_POST, 1 );
-            //         curl_setopt( $ch, CURLOPT_POSTFIELDS, $file );
-            //         curl_setopt( $ch, CURLOPT_HTTPHEADER, [
-            //             'Content-Disposition: form-data; filename="'.$file_name.'"',
-            //             'Authorization: Bearer '.$token_bearer.''
-            //             ] );
+                    $url = $domain_url.'/wp-json/wp/v2/media';
+                    $ch = curl_init();
+                    curl_setopt( $ch, CURLOPT_URL, $url );
+                    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+                    curl_setopt( $ch, CURLOPT_POST, 1 );
+                    curl_setopt( $ch, CURLOPT_POSTFIELDS, $file );
+                    curl_setopt( $ch, CURLOPT_HTTPHEADER, [
+                        'Content-Disposition: form-data; filename="'.$file_name.'"',
+                        'Authorization: Bearer '.$token_bearer.''
+                        ] );
                     
-            //         $result = curl_exec( $ch );
-            //         $result = json_decode($result);
-            //         $result = json_decode(json_encode($result) , true);  
-            //         $respCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            //         $err = curl_error($ch);   
-            //         echo "<br>POST:<br> Error: $err <br> Resp Code:$respCode <br><br> ";                       
-            //         curl_close( $ch );
+                    $result = curl_exec( $ch );
+                    $result = json_decode($result);
+                    $result = json_decode(json_encode($result) , true);  
+                    $respCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                    $err = curl_error($ch);   
+                    echo "<br>POST:<br> Error: $err <br> Resp Code:$respCode <br><br> ";                       
+                    curl_close( $ch );
                     
-            //         $featured_media_id  = $result['id'];
+                    $featured_media_id  = $result['id'];
 
-            //     }
-            //     else
-            //     {
-            //         $featured_media_id = null;
-            //     }
+                    $update_query = "update web set wp_media_id = '$featured_media_id' where newsid = '$news_id' ;";
+                    mysqli_query($connection, $update_query);
+
+
+                }
+                else
+                {
+                    $featured_media_id = null;
+                }
+    
 
                 // echo "News Bodyyyyy $newsbody_full";
 

@@ -779,3 +779,110 @@ E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Re
 E:/my_data/news_data/2021-07-21/hehe/20210721_215821_32629_regular_feed.mp4 : Regular Feed Uploaded
 20210721_215821_32629_regular_feed.mp4 : Succesfully Pushed
 ------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 08:54:07 
+Fresh Update Folder Created
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 08:58:30 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_regular_feed.mp4 : Regular Feed Uploaded
+20210722_085407_42393_regular_feed.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 08:59:45 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_extra_files.zip Uploaded
+20210722_085407_42393_extra_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 09:00:32 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_ready_version.mp4 : Ready Version Uplaoded
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_rough_cut.mp4 : Rough Cut Uploaded
+20210722_085407_42393_ready_version.mp4 : Succesfully Pushed
+20210722_085407_42393_rough_cut.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 09:01:56 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_ready_version.mp4 : Ready Version Replaced
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_rough_cut.mp4 : Rough Cut Replaced
+20210722_085407_42393_ready_version.mp4 : Succesfully Pushed
+20210722_085407_42393_rough_cut.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 09:05:40 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_audio_complete_story.mp3 : Audio Complete Story Uploaded
+20210722_085407_42393_audio_complete_story.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 09:06:47 
+E:/my_data/news_data/2021-07-22/Fresh Update/audio_bites/20210722_085407_42393_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+E:/my_data/news_data/2021-07-22/Fresh Update/audio_bites/20210722_085407_42393_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+E:/my_data/news_data/2021-07-22/Fresh Update/audio_bites/20210722_085407_42393_audio_bites_3.mp3 : Audio Bites-3 Uploaded
+ Uploaded
+audio_bites/20210722_085407_42393_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210722_085407_42393_audio_bites_2.mp3 : Succesfully Pushed
+audio_bites/20210722_085407_42393_audio_bites_3.mp3 : Succesfully Pushed
+audio_bites/20210722_085407_42393_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210722_085407_42393_audio_bites_2.mp3 : Succesfully Pushed
+audio_bites/20210722_085407_42393_audio_bites_3.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 09:07:57 
+E:/my_data/news_data/2021-07-22/Fresh Update/gallery/20210722_085407_42393_gallery_1.jpg : Gallery-1 Uploaded
+E:/my_data/news_data/2021-07-22/Fresh Update/gallery/20210722_085407_42393_gallery_2.jpg : Gallery-2 Uploaded
+E:/my_data/news_data/2021-07-22/Fresh Update/gallery/20210722_085407_42393_gallery_3.jpg : Gallery-3 Uploaded
+E:/my_data/news_data/2021-07-22/Fresh Update/gallery/20210722_085407_42393_gallery_4.jpg : Gallery-4 Uploaded
+E:/my_data/news_data/2021-07-22/Fresh Update/gallery/20210722_085407_42393_gallery_5.jpg : Gallery-5 Uploaded
+gallery/20210722_085407_42393_gallery_1.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_2.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_3.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_4.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_5.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_1.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_2.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_3.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_4.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_5.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 09:09:08 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_extra_files.zip Updated
+20210722_085407_42393_extra_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 09:10:52 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_regular_feed.mp4 : Regular Feed Replaced
+20210722_085407_42393_regular_feed.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 09:12:35 
+E:/my_data/news_data/2021-07-22/Fresh Update/gallery/20210722_085407_42393_gallery_6.jpg : Gallery-6 Uploaded
+E:/my_data/news_data/2021-07-22/Fresh Update/gallery/20210722_085407_42393_gallery_7.jpg : Gallery-7 Uploaded
+gallery/20210722_085407_42393_gallery_6.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_7.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_6.jpg : Succesfully Pushed
+gallery/20210722_085407_42393_gallery_7.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 15:42:43 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_thumbnail.jpg : Thumbnail Uploaded
+20210722_085407_42393_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-22 15:46:16 
+E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_thumbnail.jpg : Thumbnail Replaced
+20210722_085407_42393_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 

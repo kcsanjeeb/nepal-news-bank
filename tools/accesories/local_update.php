@@ -245,7 +245,20 @@ if(!isset($location))
                 $audio_bites_desc = "'$audio_bites_desc'";
             }
 
+            if(!empty($_POST['gallery_desc']))
+            {
+                $gallery_desc = $_POST['gallery_desc'];
+                $gallery_desc = mysqli_real_escape_string($connection, $gallery_desc);    
+                $gallery_desc = "'$gallery_desc'";
+            }
+            else
+            {
+                $gallery_desc = $news_row_details['gallery_description'];
+                $gallery_desc = "'$gallery_desc'";
+               
+            }
 
+   
 
 
 
@@ -1240,8 +1253,11 @@ if(!isset($location))
                             array_push($files_to_push , $file_name_to_push );
 
                             $extra_path_web = explode("/" , $extra_path_sql_nc);
-                            array_shift($extra_path_web);
-                            $extra_path_web = implode("/" , $extra_path_web);
+                            // array_shift($extra_path_web);
+                            // $extra_path_web = implode("/" , $extra_path_web);
+
+                            $extra_path_web = end($extra_path_web);
+                            $extra_path_web = $news_remote_existing_path."/".$extra_path_web;
                             
                                 
                             $update_query_remote = "update web set extra_files = '$extra_path_web' where newsid = '$news_id' ;";
@@ -1476,11 +1492,10 @@ if(!isset($location))
 
  
             
-            
             $update_query.= "update nas set local_published_date = $newsdate , byline = $byLine , category_list = $newsCategories , tag_list = $tags,
                                 uploaded_by =$uploaded_by,  reporter = $reporter , camera_man = $camera_man, district = $district, 
                                 video_type = $video_type , series = $series ,extra_files_description =  $extra_files_description ,
-                                audio_description =  $audio_desc , audio_bites_description =  $audio_bites_desc where  newsid = $news_id;";
+                                audio_description =  $audio_desc , audio_bites_description =  $audio_bites_desc , gallery_description = $gallery_desc where  newsid = $news_id;";
             
             
             if(count( $files_to_push) > 0)
