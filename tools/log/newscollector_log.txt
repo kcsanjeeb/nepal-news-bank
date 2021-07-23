@@ -886,3 +886,60 @@ E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_thumbnail.jpg
 E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_thumbnail.jpg : Thumbnail Replaced
 20210722_085407_42393_thumbnail.jpg : Succesfully Pushed
 ------------------------------------------------------- 
+---------------2021-07-23 / new check friday ---------------- 
+
+ Logged Date: 2021-07-23 10:10:48 
+------------------------------------------------------- 
+---------------2021-07-23 / friday checking ---------------- 
+
+ Logged Date: 2021-07-23 10:13:16 
+2021-07-23 : Folder Created
+2021-07-23/friday checking : Folder Created
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-23 / friday checking ---------------- 
+
+ Logged Date: 2021-07-23 10:16:30 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_thumbnail.jpg : Thumbnail Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_extra_files.zip Uploaded
+20210723_101316_65511_thumbnail.jpg : Succesfully Pushed
+20210723_101316_65511_extra_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-23 / friday checking ---------------- 
+
+ Logged Date: 2021-07-23 10:18:07 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_regular_feed.mp4 : Regular Feed Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_ready_version.mp4 : Ready Version Uplaoded
+20210723_101316_65511_regular_feed.mp4 : Succesfully Pushed
+20210723_101316_65511_ready_version.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-23 / friday checking ---------------- 
+
+ Logged Date: 2021-07-23 10:21:44 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_thumbnail.png : Thumbnail Replaced
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_rough_cut.mp4 : Rough Cut Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_audio_complete_story.mp3 : Audio Complete Story Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/gallery/20210723_101316_65511_gallery_1.jpg : Gallery-1 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/audio_bites/20210723_101316_65511_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/audio_bites/20210723_101316_65511_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+ Uploaded
+20210723_101316_65511_thumbnail.png : Succesfully Pushed
+20210723_101316_65511_rough_cut.mp4 : Succesfully Pushed
+20210723_101316_65511_audio_complete_story.mp3 : Succesfully Pushed
+gallery/20210723_101316_65511_gallery_1.jpg : Succesfully Pushed
+audio_bites/20210723_101316_65511_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210723_101316_65511_audio_bites_2.mp3 : Succesfully Pushed
+gallery/20210723_101316_65511_gallery_1.jpg : Succesfully Pushed
+audio_bites/20210723_101316_65511_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210723_101316_65511_audio_bites_2.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-23 / friday checking ---------------- 
+
+ Logged Date: 2021-07-23 10:23:27 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/gallery/20210723_101316_65511_gallery_2.jpg : Gallery-2 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/gallery/20210723_101316_65511_gallery_3.jpg : Gallery-3 Uploaded
+gallery/20210723_101316_65511_gallery_2.jpg : Succesfully Pushed
+gallery/20210723_101316_65511_gallery_3.jpg : Succesfully Pushed
+gallery/20210723_101316_65511_gallery_2.jpg : Succesfully Pushed
+gallery/20210723_101316_65511_gallery_3.jpg : Succesfully Pushed
+------------------------------------------------------- 

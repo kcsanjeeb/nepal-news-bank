@@ -14,9 +14,9 @@
 */
 
 
-$local_news_collector_path = "E:/my_data/news_data" ;
-$local_interview_path = "E:/my_data/interview_data" ;
-$local_archive_all_path = "E:/my_data/archive_data" ;
+$local_news_collector_path = "C:/xampp/htdocs/nepal-news-bank/my_data/news_data" ;
+$local_interview_path = "C:/xampp/htdocs/nepal-news-bank/my_data/interview_data" ;
+$local_archive_all_path = "C:/xampp/htdocs/nepal-news-bank/my_data/archive_data" ;
 
 $ftp_news_collector_path = "my_data/news_data" ;
 $ftp_interview_path = "my_data/interview_data" ;
