@@ -925,8 +925,9 @@ strong {
                                     $photo = file_get_contents($gallery);
                                     $photo_codes = base64_encode($photo);
                                 ?>
-                                <div class="mr-1">
-                                <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
+                                
+                                <div class="m-3">
+                                    <img style="display:block;height:100px;width:auto;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
                                 </div>
                                 <?php
                                     }
