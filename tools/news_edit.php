@@ -777,19 +777,73 @@ strong {
                                     <div class="col-lg-6">
                                         <strong>8.1 Select Audio Complete Story</strong> 
                                         <div class="mt-2">
+                                      
                                         <input type="file" id="img" name="audio_complete_story">
                                         </div>
                                         <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_desc" rows="5" placeholder="Description"><?php echo $news_row_details['audio_description'] ; ?></textarea>
-                                        
+                                        <?php
+                                            if($news_row_details['audio_complete_story'] != null)
+                                            {
+                                                $audio = file_get_contents($news_row_details['audio_complete_story']);
+                                                $audio_codes = base64_encode($audio);
+                                        ?>
+                                      
+                                        <strong class="mt-3">Existing Audio Complete Story</strong> 
+                                        <br>
+                                                        <audio controls>
+                                                            <source src="data:audio/*;charset=utf-8;base64,<?php echo $audio_codes; ?>" type="audio/mp3">
+                                                            Your browser does not support the audio tag.
+                                                        </audio>
+                                                        
+                                        <?php
+                                            }
+
+                                        ?>
                                     </div>
                                     <div class="col-lg-6">
                                         <strong>8.2 Select Audio Bites</strong>
+                                       
                                         <div id="audio_bites_selector" class="mt-2" >
                                                 <input type="file"  class="audio_bites" id="img" name="audio_bites[]">
                                         </div> 
                                         <textarea class="form-control mt-2" id="exampleFormControlTextarea1" name="audio_bites_desc"  rows="5" placeholder="Description"><?php echo $news_row_details['audio_bites_description'] ; ?></textarea>
-                                    </div>    
+                                    
+                                        <?php
+                                            if($news_row_details['audio_bites'] != null)
+                                            {
+                                                $audio_bites_src = explode("," ,$news_row_details['audio_bites'] );
+                                                
+
+                                           
+                                        ?>
+                                        <strong class="mt-3">Existing Audio Bites</strong> 
+                                        <br>
+                                                    <div class="col-lg-6">
+                                                            <?php
+                                                                foreach($audio_bites_src as $ab)
+                                                                {
+                                                                    $audio = file_get_contents($ab);
+                                                                    $audio_codes = base64_encode($audio);
+                                                            ?>
+                                                                <audio controls>
+                                                                    <source src="data:audio/*;charset=utf-8;base64,<?php echo $audio_codes; ?>" type="audio/mp3">
+                                                                    Your browser does not support the audio tag.
+                                                                </audio>
+                                                            <?php
+                                                                }
+                                                            ?>
+                                                            
+                                                       </div>
+                                                        
+                                        <?php
+                                            }
+
+                                        ?> 
+                                    
+                                    </div>   
+                                  
                                 </div>
+                               
                              
                             </div>
 
@@ -860,6 +914,24 @@ strong {
                                 <input type="file" id="pro-image" name="galleryImage[]" accept="image/*" multiple>
                                 <!-- onclick="$('#pro-image').click()" -->
                                 <div class="preview-images-zone" style="display:none">
+                                </div>
+                                <div class="row">
+                                <?php
+                                if($news_row_details['photos'] != null)
+                                {
+                                    $photos_src = explode("," ,$news_row_details['photos'] );
+                                    foreach($photos_src as $gallery)
+                                    {
+                                    $photo = file_get_contents($gallery);
+                                    $photo_codes = base64_encode($photo);
+                                ?>
+                                <div class="mr-1">
+                                <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
+                                </div>
+                                <?php
+                                    }
+                                }
+                                ?>
                                 </div>
                             </div>
 
