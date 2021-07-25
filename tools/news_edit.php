@@ -309,7 +309,11 @@ strong {
             <div class="col-lg-12">
                 <div class="card shadow-lg  mb-5 bg-white rounded">
                     <div class="card-header bg-info ">
+                    <a href="remotecopycreator.php?news_id=<?php echo $news_id ; ?>&date=<?php echo $news_row_details['local_published_date'] ; ?>" ><button type="button"  class="btn btn-warning mr-5"> Back </button> </a>
+
                         <h4>News | <?php echo $news_row_details['byline'] ; ?></h4>
+                        
+
                     </div>
                     <div class="card-body">
 
@@ -364,6 +368,8 @@ strong {
 
                             <STRONG>NEWS </strong>
                             <HR style="    border-top: 1px solid rgba(0,0,0)">
+
+                        
 
                             <div class="form-group">
                                 <label class="col-lg-12 p-0 h5 text-info">Step 1. Select News Date*
@@ -451,6 +457,8 @@ strong {
                                 ?>
                                     <br>
                                     <small>Existing File: <?php echo $file_name ; ?></small>
+                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="news_file" data-type="single" class="del_single">Delete News File</button>
+                                    <br>
                                 <?php
                                     }
                                 ?>
@@ -484,6 +492,8 @@ strong {
 
                                 ?>
                                     <small>Existing File: <?php echo $file_name ; ?></small>
+                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="extra_files" data-type="single" class="del_single">Delete Extra File</button>
+
                                 <?php
                                     }
                                 ?>
@@ -513,6 +523,7 @@ strong {
 
                                         if($news_row_details['regular_feed'] == null )
                                         {
+                                            $exist = 0 ; 
                                             
 
                                 ?>
@@ -525,6 +536,7 @@ strong {
                                         else {
                                             $video = file_get_contents($news_row_details['regular_feed']);
                                             $video_codes = base64_encode($video);
+                                            $exist = 1 ; 
                                     ?>
 
                                         <div id="regularfeedID">
@@ -562,6 +574,19 @@ strong {
                                             <small id="emailHelp" class="form-text text-muted">5min to 7min
                                                 video</small>
 
+                                      
+                                            <?php
+                                            if($exist)
+                                            {
+                                            ?>
+                                                  <br>
+                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="regular_feed" data-type="single" class="del_single">Delete Regular Feed</button>
+
+                                            <?php
+                                            }
+                                            ?>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -575,6 +600,7 @@ strong {
 
                                         if($news_row_details['ready_version'] == null )
                                         {
+                                            $exist = 0 ; 
 
                                         ?>
                                         <div id="readyversionID">
@@ -587,6 +613,7 @@ strong {
                                         else {
                                             $video = file_get_contents($news_row_details['ready_version']);
                                             $video_codes = base64_encode($video);
+                                            $exist = 1 ; 
                                         ?>
 
                                         <div id="readyversionID">
@@ -620,6 +647,18 @@ strong {
                                             <small id="emailHelp" class="form-text text-muted">Video should be less than
                                                 3 minutes</small>
 
+                                            <?php
+                                            if($exist)
+                                            {
+                                            ?>
+                                            
+                                            <br>
+                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="ready_version" data-type="single" class="del_single">Delete Ready Version</button>
+
+                                            <?php
+                                            }
+                                            ?>
+
                                         </div>
                                     </div>
                                 </div>
@@ -634,6 +673,7 @@ strong {
 
                                         if($news_row_details['rough_cut'] == null )
                                         {
+                                            $exist = 0 ;
 
                                         ?>
                                         <div id="roughcutID">
@@ -646,6 +686,7 @@ strong {
                                         else {
                                             $video = file_get_contents($news_row_details['rough_cut']);
                                             $video_codes = base64_encode($video);
+                                            $exist = 1 ;
                                         ?>
 
                                         <div id="roughcutID">
@@ -679,6 +720,18 @@ strong {
                                                 onchange="return roughcutValidation()">
                                             <small id="emailHelp" class="form-text text-muted">Video should be less than
                                                 3 minutes</small>
+
+                                            
+                                                <?php
+                                            if($exist)
+                                            {
+                                            ?>
+                                            <br>
+                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="rough_cut" data-type="single" class="del_single">Delete Rough Cut</button>
+
+                                            <?php
+                                            }
+                                            ?>
 
                                         </div>
                                     </div>
@@ -794,6 +847,9 @@ strong {
                                                             <source src="data:audio/*;charset=utf-8;base64,<?php echo $audio_codes; ?>" type="audio/mp3">
                                                             Your browser does not support the audio tag.
                                                         </audio>
+                                                        <br>
+                                                        <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="audio_complete_story" data-type="single" class="del_single">Delete Audio Complete Story</button>
+
                                                         
                                         <?php
                                             }
@@ -883,6 +939,9 @@ strong {
                                     $photo_codes = base64_encode($thumb);
                                 ?>
                                 <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
+                                
+                                <br>
+                                <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="thumbnail" data-type="single" class="del_single">Delete Thumbnail</button>
 
                                 <?php
                                 }
@@ -1689,6 +1748,43 @@ strong {
         }
 
 });
+
+</script>
+
+<script>
+
+    $(document).on('click', '.del_single', function() {
+    
+
+        if (confirm("Are you sure you want to delete?") == true) 
+        {
+            var newsid = $( this ).data( "newsid" );
+            var attr = $( this ).data( "attr" );
+            var type = $( this ).data( "type" );
+
+            $form = $(`
+                        <form action="accesories/local_file_delete.php" method="POST" id="delete_single_form">                       
+
+
+                        </form>
+            `);
+
+            $form.append('<input type="hidden" name="newsid" value="'+newsid+'" >');
+            $form.append('<input type="hidden" name="attr"  value="'+attr+'" >');
+            $form.append('<input type="hidden" name="type" value="'+type+'" >');
+
+            $form.append('<input type="submit" >');
+            $('body').append($form);
+            $( "#delete_single_form" ).submit();
+            $("#delete_single_form").remove();
+
+
+
+        }
+        
+    
+
+    });
 
 
         </script>
