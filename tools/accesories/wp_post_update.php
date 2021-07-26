@@ -254,7 +254,7 @@ include "../global/timezone.php";
                     
                     $url = $domain_url.'/wp-json/wp/v2/media';
                     $ch = curl_init();
-                    curl_setopt( $ch, CURLOPT_URL, $url );
+                    curl_setopt( $ch, CURLOPT_URL, $url_ap );
                     curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
                     curl_setopt( $ch, CURLOPT_POST, 1 );
                     curl_setopt( $ch, CURLOPT_POSTFIELDS, $file );
@@ -551,8 +551,17 @@ include "../global/timezone.php";
     
     }
 
+    if(isset($_GET['redirect']))
+    {
+        $location = $_GET['redirect'] ;
+    }
+    else
+    {
+        $location = "../remotecopycreator.php?news_id=".$news_id.'&date='.$news_local_published_path ;
+    }
 
-    header("Location: ../remotecopycreator.php?news_id=".$news_id.'&date='.$news_local_published_path);
+
+    header("Location: $location");
 
 
 
