@@ -20,6 +20,18 @@ if(isset($_POST['newsid']) && isset($_POST['attr']) && isset($_POST['type']))
         $attr =  mysqli_real_escape_string($connection, $_POST['attr']);
         $type =  mysqli_real_escape_string($connection, $_POST['type']);
 
+
+        if($type == 'bonus')
+        {
+            $file =  mysqli_real_escape_string($connection, $_POST['file']);
+            if(file_exists($file)) unlink($file);
+            goto end ;
+        }
+
+
+
+
+
         $news_id =  mysqli_real_escape_string($connection, $_POST['newsid']);
         $query_fetch_news = "select * from nas where newsid = '$news_id'";
         $run_sql_fetch_news= mysqli_query($connection, $query_fetch_news);
@@ -46,26 +58,107 @@ if(isset($_POST['newsid']) && isset($_POST['attr']) && isset($_POST['type']))
 
 
 
+        $update_query = '' ;
 
         if($type == 'single')
         {
             $nas_file = $news_row_details[$attr];  
             $remote_file = $news_row_details_web[$attr]; 
-        }
-        else
-        {
-            $nas_file = $news_row_details[$attr];  
-            $remote_file = $news_row_details_web[$attr]; 
-        }
+            $value = 'null';
+            $value_nas = 'null';          
      
+        }
 
- 
+        if($type == 'multiple')
+        {
+            if(isset($_POST['file']))
+            {
+                $file =  mysqli_real_escape_string($connection, $_POST['file']);
 
+                $file_name_explode = explode("/" , $file);
+                $file_name_only = end($file_name_explode);
+                echo $file_name_only ; 
+
+                $nas_files = $news_row_details[$attr];  
+                $remote_files = $news_row_details_web[$attr]; 
+
+                $nas_file_explode = explode("," , $nas_files);
+                $remote_files_explode = explode("," , $remote_files);
+
+                $counter = -1 ;
+                foreach($remote_files_explode as $rf)
+                {
+                    $each_value = explode("/" ,$rf );
+                    $each_value_file_name = end($each_value);
+
+                    $counter++ ;
+                    if($each_value_file_name == $file_name_only)
+                    {
+                        
+                        break ;
+                    }
+                }
+
+                if($counter >= 0)
+                {
+                    $remote_file = $remote_files_explode[$counter] ;
+                    unset($remote_files_explode[$counter]);
+                    $remote_files_explode = array_values($remote_files_explode); 
+                    if(count($remote_files_explode) > 0)
+                    {
+                        $value = implode("," , $remote_files_explode);
+                        $value = "'$value'";
+                    }
+                    else
+                    {
+                        $value  = 'null';
+                    }
+                    
+              
+                    
+                }
+
+                $counter_nas = -1 ;
+                foreach($nas_file_explode as $nf)
+                {
+                    $each_value = explode("/" ,$nf );
+                    $each_value_file_name = end($each_value);
+                    $counter_nas++ ;
+                    if($each_value_file_name == $file_name_only)
+                    {                        
+                        break ;
+                    }
+                }
+
+                if($counter_nas >= 0)
+                {
+                    $nas_file = $nas_file_explode[$counter_nas] ;
+                    unset($nas_file_explode[$counter_nas]);
+                    $nas_file_explode = array_values($nas_file_explode); 
+                    if(count($nas_file_explode) > 0)
+                    {
+                        $value_nas = implode("," , $nas_file_explode);
+                        $value_nas = "'$value_nas'";
+                    }
+                    else
+                    {
+                        $value_nas  = 'null';
+                    }
+             
+                }
+
+
+
+
+            }
+        }
+        
+       
+
+  
         if(file_exists($nas_file)) unlink($nas_file);
 
-        $update_query = '' ;
-        $update_query .= "update nas set $attr = null where newsid = '$news_id' ;";
-
+        $update_query .= "update nas set $attr = $value_nas where newsid = '$news_id' ;";
 
        
 
@@ -75,7 +168,7 @@ if(isset($_POST['newsid']) && isset($_POST['attr']) && isset($_POST['type']))
             if($remote_file != null)
             {
                 ftp_delete_rem('/'.$remote_file , 'file');
-                $update_query .= "update web set $attr = null where newsid = '$news_id' ;";
+                $update_query .= "update web set $attr = $value where newsid = '$news_id' ;";
             }
 
 
@@ -121,6 +214,8 @@ if(isset($_POST['newsid']) && isset($_POST['attr']) && isset($_POST['type']))
         
     }
 }
+
+end: 
 
 if(!isset($location))
 {

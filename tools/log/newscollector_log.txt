@@ -886,3 +886,7 @@ E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_thumbnail.jpg
 E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_thumbnail.jpg : Thumbnail Replaced
 20210722_085407_42393_thumbnail.jpg : Succesfully Pushed
 ------------------------------------------------------- 
+---------------2021-07-22 / Fresh Update ---------------- 
+
+ Logged Date: 2021-07-26 10:41:45 
+------------------------------------------------------- 

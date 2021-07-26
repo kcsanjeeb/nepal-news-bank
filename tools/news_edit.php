@@ -2,6 +2,7 @@
     
 include "accesories/session_handler/session_views.php";
 include "accesories/environment/wp_api_env.php";
+include "accesories/nas_function/functions.php";
 include "global/timezone.php";
 
 include "global/district_data.php";
@@ -875,6 +876,7 @@ strong {
                                         <strong class="mt-3">Existing Audio Bites</strong> 
                                         <br>
                                                     <div class="col-lg-6">
+
                                                             <?php
                                                                 foreach($audio_bites_src as $ab)
                                                                 {
@@ -884,7 +886,9 @@ strong {
                                                                 <audio controls>
                                                                     <source src="data:audio/*;charset=utf-8;base64,<?php echo $audio_codes; ?>" type="audio/mp3">
                                                                     Your browser does not support the audio tag.
-                                                                </audio>
+                                                                </audio><button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="audio_bites" data-file="<?php echo $ab ; ?>" data-type="multiple" class="del_single">Delete</button>
+
+
                                                             <?php
                                                                 }
                                                             ?>
@@ -986,6 +990,7 @@ strong {
                                 ?>
                                 <div class="mr-1">
                                 <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
+                                <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="photos" data-file="<?php echo $gallery ; ?>" data-type="multiple" class="del_single">Delete</button>
                                 </div>
                                 <?php
                                     }
@@ -1063,6 +1068,42 @@ strong {
                                     <div>
                                         <input type="file" class="bonus_media" name="bonus_media[]" multiple >
                                      </div>
+
+                                </div>
+
+                                <div class="row">
+                                        
+                                    <?php
+                                        $byLine_directory_clean = remove_special_chars($news_row_details['byline']);
+                                        $path    = $news_row_details['dir_path']."/".$news_row_details['local_published_date']."/".$byLine_directory_clean;
+                                        $files = scandir($path);
+                                        $files = array_diff(scandir($path), array('.', '..'));
+                                        if(in_array('bonus_media' , $files))
+                                        {
+                                            $path = $path."/bonus_media";
+                                            $files = scandir($path);
+                                            $files = array_diff(scandir($path), array('.', '..'));
+
+                                            $count = 1 ;
+                                            foreach($files  as $bmf)
+                                            {
+                                        ?>
+                                                <div>
+                                                    <p class="mr-2"><?php echo $count.". ".$bmf ; ?></p>
+                                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="bonus_media" data-file="<?php echo $path."/". $bmf ; ?>" data-type="bonus" class="del_single">Delete</button>
+
+                                                </div>
+
+                                      
+                                        
+                                        
+                                        <?php
+$count++;
+
+                                            }
+                                        }
+
+                                    ?>
 
                                 </div>
                                
@@ -1762,6 +1803,8 @@ strong {
             var attr = $( this ).data( "attr" );
             var type = $( this ).data( "type" );
 
+           
+
             $form = $(`
                         <form action="accesories/local_file_delete.php" method="POST" id="delete_single_form">                       
 
@@ -1772,6 +1815,12 @@ strong {
             $form.append('<input type="hidden" name="newsid" value="'+newsid+'" >');
             $form.append('<input type="hidden" name="attr"  value="'+attr+'" >');
             $form.append('<input type="hidden" name="type" value="'+type+'" >');
+
+            if( $( this ).data( "file" ) )
+            {
+                var file = $( this ).data( "file" );
+                $form.append('<input type="hidden" name="file" value="'+file+'" >');
+            }
 
             $form.append('<input type="submit" >');
             $('body').append($form);
