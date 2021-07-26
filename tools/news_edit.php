@@ -307,9 +307,10 @@ strong {
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="card shadow-lg  mb-5 bg-white rounded">
-                    <div class="card-header bg-info ">
-                        <h4>News | <?php echo $news_row_details['byline'] ; ?></h4>
+                <div class="card shadow-lg  mb-5 bg-white rounded ">
+                    <div class="card-header bg-info row">
+                        <h4 class="col-lg-9">News | <?php echo $news_row_details['byline'] ; ?></h4>
+                        <a   class="btn btn-danger col-lg-3" href="./remotecopycreator.php" >Cancel edit & go back</a>
                     </div>
                     <div class="card-body">
 
@@ -359,7 +360,7 @@ strong {
 
                         <form method="POST" enctype="multipart/form-data" action="accesories/local_update.php">
                             <!-- <form method="POST" enctype="multipart/form-data" action="accesories/test.php"> -->
-                            <!-- The headline for news. -->
+                            <!-- The headline for news -->
                             <input type='hidden' name="newsid" value="<?php echo $news_id ; ?>">
 
                             <STRONG>NEWS </strong>
@@ -1216,7 +1217,7 @@ strong {
 
                             <label class="col-lg-12 p-0 h5 text-info">Step 13.</label>
 
-                            <button type="submit" class="btn btn-primary" name="submit">Edit news</button>
+                            <button type="submit" class="btn btn-primary" name="submit">Save Changes</button>
 
                             
 
