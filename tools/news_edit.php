@@ -180,6 +180,9 @@ foreach($result as $res)
     </script>
     <!---- filter multi-select-- -->
     <link rel="stylesheet" href="assets/css/filter-multi-select.css" />
+
+    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.7.min.css" rel="stylesheet" type="text/css"/>
+
     <script src="assets/js/filter-multi-select-bundle.min.js"></script>
     <script src="assets/js/multi-select-tags.js"></script>
 
@@ -309,13 +312,20 @@ strong {
             <div class="col-lg-12">
                 <div class="card shadow-lg  mb-5 bg-white rounded">
                     <div class="card-header bg-info ">
-                    <a href="remotecopycreator.php?news_id=<?php echo $news_id ; ?>&date=<?php echo $news_row_details['local_published_date'] ; ?>" ><button type="button"  class="btn btn-warning mr-5"> Back </button> </a>
-
-                        <h4>News | <?php echo $news_row_details['byline'] ; ?></h4>
-                        
+                    
+                    
+                    <h4>News | <?php echo $news_row_details['byline'] ; ?></h4>
+                    <a href="remotecopycreator.php?news_id=<?php echo $news_id ; ?>&date=<?php echo $news_row_details['local_published_date'] ; ?>" ><button type="button"  class="btn btn-danger mr-5"> Cancel and go back </button> </a>
+ 
 
                     </div>
                     <div class="card-body">
+
+                    
+                    <p>
+                        <input type="text" id="nepali-datepicker" placeholder="Select Nepali Date"/>
+                    </p>
+
 
                         <?php
 
@@ -457,7 +467,7 @@ strong {
                                 ?>
                                     <br>
                                     <small>Existing File: <?php echo $file_name ; ?></small>
-                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="news_file" data-type="single" class="del_single">Delete News File</button>
+                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="news_file" data-type="single" class="del_single btn btn-outline-danger btn-sm">Delete Previous News File</button>
                                     <br>
                                 <?php
                                     }
@@ -1790,6 +1800,13 @@ strong {
 
         </script>
 
+<script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.7.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+            window.onload = function() {
+                var mainInput = document.getElementById("nepali-datepicker");
+                mainInput.nepaliDatePicker();
+            };
+        </script>
 
 </body>
 
