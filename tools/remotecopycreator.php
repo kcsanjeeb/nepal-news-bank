@@ -198,8 +198,11 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                         </div>
                         <div class="form-group mx-sm-3 ">
                             <label for="inputPassword2" class="sr-only">Date</label>
-                            <input type="text" class="form-control form-control-sm"  id="date" placeholder="Date"
-                                value="<?php echo $selected_date ; ?>">
+                            <input type="text" class="form-control form-control-sm"  id="nepali-datepicker" placeholder="Select Date"
+                               >
+                            <input type="button" id="search_remote" value="Search">
+
+                    
                         </div>
 
                     </form>
@@ -1983,18 +1986,33 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 
     });
 
-    $("#date").change(function() {
+    // $("#nepali-datepicker").change(function() {
+    //     $("#nepali-datepicker").on("input", function() {
 
-        $(".collector").css("filter", "blur(2px)");
-        $("#preloader_boot").css("display", "");
-        $(':button').prop('disabled', true);
-
-        var selc_date = $('#date').val();
-        location.href = "remotecopycreator.php?date=" + selc_date;
+    //         $("#date").val($('#nepali-datepicker').val());
+        
 
 
 
-    });
+    // });
+
+
+    // $("#nepali-datepicker").change(function() {
+        $("#search_remote").on("click", function() {
+
+            
+                $(".collector").css("filter", "blur(2px)");
+                $("#preloader_boot").css("display", "");
+                $(':button').prop('disabled', true);
+
+                var selc_date = $('#nepali-datepicker').val();
+                location.href = "remotecopycreator.php?date=" + selc_date;
+          
+
+
+
+
+            });
 
     $(".preloader_on").click(function() {
 
@@ -2080,7 +2098,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.7.min.js" type="text/javascript"></script>
 <script type="text/javascript">
             window.onload = function() {
-                var mainInput = document.getElementById("date");
+                var mainInput = document.getElementById("nepali-datepicker");
                 mainInput.nepaliDatePicker();
             };
         </script>
