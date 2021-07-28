@@ -63,6 +63,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/remotecopycreator.css">
     <link rel="stylesheet" href="assets/progress/style.css">
+    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.7.min.css" rel="stylesheet" type="text/css"/>
 
     <title>NEPAL NEWS BANK DASHBOARD</title>
 
@@ -197,7 +198,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                         </div>
                         <div class="form-group mx-sm-3 ">
                             <label for="inputPassword2" class="sr-only">Date</label>
-                            <input type="date" class="form-control form-control-sm" id="date" placeholder="Date"
+                            <input type="text" class="form-control form-control-sm"  id="date" placeholder="Date"
                                 value="<?php echo $selected_date ; ?>">
                         </div>
 
@@ -2076,7 +2077,13 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
     </script>
 
 
-
+<script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.7.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+            window.onload = function() {
+                var mainInput = document.getElementById("date");
+                mainInput.nepaliDatePicker();
+            };
+        </script>
 
 
 </body>
