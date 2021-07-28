@@ -148,6 +148,8 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
     </script>
+        <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.7.min.css" rel="stylesheet" type="text/css"/>
+
     <!---- filter multi-select-- -->
     <link rel="stylesheet" href="assets/css/filter-multi-select.css" />
     <script src="assets/js/filter-multi-select-bundle.min.js"></script>
@@ -164,6 +166,10 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
   z-index: 9;
+}
+
+.form-nepali {
+    font-family: preeti;
 }
 </style>
 
@@ -187,6 +193,14 @@ $run_sql_content= mysqli_query($connection, $sql_content_archive);
         <div class="collector">
 
             <div class="container">
+
+             <!-- Title -->
+               <div class="form-group mt-3">
+                    <label class="col-lg-12 p-0  h5 text-info">Select Date</label>
+
+                    <input class=" form-control col-lg-2" type="text" name="newsdate" id="nepali-datepicker"
+                              placeholder="Select Date"          xxx>
+                </div>
 
 
                 <!-- Title -->
@@ -1012,6 +1026,14 @@ $("#preloader_boot").css("display", "");
 
 });
     </script>
+
+<script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.7.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+            window.onload = function() {
+                var mainInput = document.getElementById("nepali-datepicker");
+                mainInput.nepaliDatePicker();
+            };
+        </script>
 
 
 </body>

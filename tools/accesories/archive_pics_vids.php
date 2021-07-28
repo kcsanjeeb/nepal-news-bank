@@ -98,12 +98,12 @@ if(isset($_POST['submit']))
     $archive_id = getId('archives');
     $created_at = date('Y-m-d H:i:s');
 
-    $created_at_db = date('Y-m-d');
+    $created_at_db = $_POST['newsdate'];;
 
     $time_file_name = date('H:i:s');
     $time_file_name = str_replace(":","",$time_file_name);
 
-    $date_file_name =  date('Y-m-d');
+    $date_file_name =  $_POST['newsdate'];
     $date_file_name = str_replace("-","",$date_file_name);
 
     $file_name = $date_file_name."_".$time_file_name."_".$archive_id;

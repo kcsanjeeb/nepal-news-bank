@@ -6,7 +6,7 @@ include "accesories/session_handler/session_views.php";
   
 include "global/timezone.php";
 
-$selected_date = date("Y-m-d");
+$selected_date = '';
 
 if(isset($_GET['date']))
 {
