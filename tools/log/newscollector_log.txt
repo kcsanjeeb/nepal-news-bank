@@ -890,3 +890,44 @@ E:/my_data/news_data/2021-07-22/Fresh Update/20210722_085407_42393_thumbnail.jpg
 
  Logged Date: 2021-07-26 10:41:45 
 ------------------------------------------------------- 
+---------------2021-07-23 / friday checking ---------------- 
+
+ Logged Date: 2021-07-28 07:48:11 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_news_file.docx : News File Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_regular_feed.mp4 : Regular Feed Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_rough_cut.mp4 : Rough Cut Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/20210723_101316_65511_audio_complete_story.mp3 : Audio Complete Story Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/gallery/20210723_101316_65511_gallery_4.png : Gallery-4 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-23/friday checking/audio_bites/20210723_101316_65511_audio_bites_3.mp3 : Audio Bites-3 Uploaded
+ Uploaded
+20210723_101316_65511_news_file.docx : Succesfully Pushed
+20210723_101316_65511_regular_feed.mp4 : Succesfully Pushed
+20210723_101316_65511_rough_cut.mp4 : Succesfully Pushed
+20210723_101316_65511_audio_complete_story.mp3 : Succesfully Pushed
+gallery/20210723_101316_65511_gallery_4.png : Succesfully Pushed
+audio_bites/20210723_101316_65511_audio_bites_3.mp3 : Succesfully Pushed
+gallery/20210723_101316_65511_gallery_4.png : Succesfully Pushed
+audio_bites/20210723_101316_65511_audio_bites_3.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-23 / friday checking ---------------- 
+
+ Logged Date: 2021-07-28 07:53:24 
+------------------------------------------------------- 
+---------------2021-07-23 / friday checking ---------------- 
+
+ Logged Date: 2021-07-28 07:56:02 
+------------------------------------------------------- 
+---------------2021-07-28 / Wednersday checking news ---------------- 
+
+ Logged Date: 2021-07-28 07:57:15 
+2021-07-28 : Folder Created
+2021-07-28/Wednersday checking news : Folder Created
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/Wednersday checking news/20210728_075715_84226_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2078-04-13 / checking news test ---------------- 
+
+ Logged Date: 2021-07-28 08:50:48 
+2078-04-13 : Folder Created
+2078-04-13/checking news test : Folder Created
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-13/checking news test/20780413_085048_8136_news_file.docx : News File Uploaded
+------------------------------------------------------- 

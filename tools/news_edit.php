@@ -300,6 +300,22 @@ strong {
     color: #535a5c;
     font-weight: 700
 }
+
+.cont {
+  position: relative;
+  width: 100%;
+
+}
+
+
+.cont .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+
+}
 </style>
 
 <body>
@@ -314,19 +330,19 @@ strong {
                 <div class="card shadow-lg  mb-5 bg-white rounded">
                     <div class="card-header bg-info ">
                     
-                    
+                    <div class="row">
+                    <div class="col-lg-9">
                     <h4>News | <?php echo $news_row_details['byline'] ; ?></h4>
+                    </div>
+                    <div class="col-lg-3">
                     <a href="remotecopycreator.php?news_id=<?php echo $news_id ; ?>&date=<?php echo $news_row_details['local_published_date'] ; ?>" ><button type="button"  class="btn btn-danger mr-5"> Cancel and go back </button> </a>
- 
+</div>
+</div>
 
                     </div>
                     <div class="card-body">
 
                     
-                    <p>
-                        <input type="text" id="nepali-datepicker" placeholder="Select Nepali Date"/>
-                    </p>
-
 
                         <?php
 
@@ -419,14 +435,7 @@ strong {
                                     <input type="text" class="form-control col-lg-12 pl-0"
                                         placeholder="Enter / Paste news byline" name="byLine" id="input_box" xxx readonly
                                         value="<?php echo $news_row_details['byline'] ; ?>"  onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)">
-                                    <!-- <input type="text" class="form-control col-lg-10" placeholder="Enter news byline" name="byLine" id="input_box" xxx  onkeydown="limit(this);" onkeyup="limit(this);charcountupdate(this.value)"> -->
-                                    <!-- <div id="formByline" class="col-lg-10 pl-0">
-                                    </div> -->
-                                    <!-- <select class="custom-select my-1 col-lg-2" name='lang_selec'
-                                        onchange="changeOrg()">
-                                        <option value="nepali">Nepali Language</option>
-                                        <option value="english">English Language</option>
-                                    </select> -->
+                                   
                                 </div>
 
                                 <small id="emailHelp" class="form-text text-muted">
@@ -503,7 +512,7 @@ strong {
 
                                 ?>
                                     <small>Existing File: <?php echo $file_name ; ?></small>
-                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="extra_files" data-type="single" class="del_single">Delete Extra File</button>
+                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="extra_files" data-type="single" class="del_single btn btn-outline-danger btn-sm">Delete Extra File</button>
 
                                 <?php
                                     }
@@ -591,7 +600,7 @@ strong {
                                             {
                                             ?>
                                                   <br>
-                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="regular_feed" data-type="single" class="del_single">Delete Regular Feed</button>
+                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="regular_feed" data-type="single" class="del_single btn btn-outline-danger btn-sm">Delete Regular Feed</button>
 
                                             <?php
                                             }
@@ -664,7 +673,7 @@ strong {
                                             ?>
                                             
                                             <br>
-                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="ready_version" data-type="single" class="del_single">Delete Ready Version</button>
+                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="ready_version" data-type="single" class="del_single btn btn-outline-danger btn-sm">Delete Ready Version</button>
 
                                             <?php
                                             }
@@ -738,7 +747,7 @@ strong {
                                             {
                                             ?>
                                             <br>
-                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="rough_cut" data-type="single" class="del_single">Delete Rough Cut</button>
+                                            <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="rough_cut" data-type="single" class="del_single btn btn-outline-danger btn-sm">Delete Rough Cut</button>
 
                                             <?php
                                             }
@@ -859,7 +868,7 @@ strong {
                                                             Your browser does not support the audio tag.
                                                         </audio>
                                                         <br>
-                                                        <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="audio_complete_story" data-type="single" class="del_single">Delete Audio Complete Story</button>
+                                                        <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="audio_complete_story" data-type="single" class="del_single btn btn-outline-danger btn-sm">Delete Audio Complete Story</button>
 
                                                         
                                         <?php
@@ -883,9 +892,9 @@ strong {
 
                                            
                                         ?>
-                                        <strong class="mt-3">Existing Audio Bites</strong> 
-                                        <br>
-                                                    <div class="col-lg-6">
+                                        <p class="mt-3">Existing Audio Bites</p> 
+                                 
+                                                    <div class="mt-3">
 
                                                             <?php
                                                                 foreach($audio_bites_src as $ab)
@@ -893,11 +902,15 @@ strong {
                                                                     $audio = file_get_contents($ab);
                                                                     $audio_codes = base64_encode($audio);
                                                             ?>
-                                                                <audio controls>
-                                                                    <source src="data:audio/*;charset=utf-8;base64,<?php echo $audio_codes; ?>" type="audio/mp3">
-                                                                    Your browser does not support the audio tag.
-                                                                </audio><button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="audio_bites" data-file="<?php echo $ab ; ?>" data-type="multiple" class="del_single">Delete</button>
-
+                                                                <div class="d-flex flex-row mb-2">
+                                                                    <audio controls >
+                                                                        <source src="data:audio/*;charset=utf-8;base64,<?php echo $audio_codes; ?>" type="audio/mp3">
+                                                                        Your browser does not support the audio tag.
+                                                                    </audio>
+                                                             
+                                                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="audio_bites" data-file="<?php echo $ab ; ?>" data-type="multiple" class="ml-2 del_single btn btn-sm btn-outline-danger">Delete</button>
+                                                                
+                                                                </div>
 
                                                             <?php
                                                                 }
@@ -955,7 +968,7 @@ strong {
                                 <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
                                 
                                 <br>
-                                <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="thumbnail" data-type="single" class="del_single">Delete Thumbnail</button>
+                                <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="thumbnail" data-type="single" class="del_single btn btn-outline-danger btn-sm">Delete Thumbnail</button>
 
                                 <?php
                                 }
@@ -998,9 +1011,9 @@ strong {
                                     $photo = file_get_contents($gallery);
                                     $photo_codes = base64_encode($photo);
                                 ?>
-                                <div class="mr-1">
-                                <img style="display:block;height:150px;width:auto;padding-top:15px;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
-                                <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="photos" data-file="<?php echo $gallery ; ?>" data-type="multiple" class="del_single">Delete</button>
+                                <div class="cont col-lg-3">
+                                <img style="height:150px;width:auto;" class="shadow" src="data:image/jpeg;base64,<?php echo $photo_codes ; ?>">
+                                <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="photos" data-file="<?php echo $gallery ; ?>" data-type="multiple" class="del_single btn btn-danger btn-sm">Delete</button>
                                 </div>
                                 <?php
                                     }
@@ -1081,7 +1094,7 @@ strong {
 
                                 </div>
 
-                                <div class="row">
+                                <div class="">
                                         
                                     <?php
                                         $byLine_directory_clean = remove_special_chars($news_row_details['byline']);
@@ -1100,7 +1113,7 @@ strong {
                                         ?>
                                                 <div>
                                                     <p class="mr-2"><?php echo $count.". ".$bmf ; ?></p>
-                                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="bonus_media" data-file="<?php echo $path."/". $bmf ; ?>" data-type="bonus" class="del_single">Delete</button>
+                                                    <button type="button" data-newsid = "<?php echo $news_row_details['newsid'] ; ?>" data-attr="bonus_media" data-file="<?php echo $path."/". $bmf ; ?>" data-type="bonus" class="del_single btn btn-outline-danger btn-sm">Delete</button>
 
                                                 </div>
 
