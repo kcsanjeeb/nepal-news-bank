@@ -931,3 +931,77 @@ C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/Wednersday checking
 2078-04-13/checking news test : Folder Created
 C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-13/checking news test/20780413_085048_8136_news_file.docx : News File Uploaded
 ------------------------------------------------------- 
+---------------2078-04-13 / Check my_data news ---------------- 
+
+ Logged Date: 2021-07-28 09:25:41 
+Check my_data news Folder Created
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-13/Check my_data news/20780413_092541_80328_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 09:28:05 
+check my data news Folder Created
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/20210728_092805_41362_news_file.docx : News File Uploaded
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 09:45:34 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/20210728_092805_41362_extra_files.zip Uploaded
+20210728_092805_41362_extra_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 09:48:15 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/20210728_092805_41362_extra_files.zip Updated
+20210728_092805_41362_extra_files.zip : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 09:52:57 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/20210728_092805_41362_regular_feed.mp4 : Regular Feed Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/20210728_092805_41362_ready_version.mp4 : Ready Version Uplaoded
+20210728_092805_41362_regular_feed.mp4 : Succesfully Pushed
+20210728_092805_41362_ready_version.mp4 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 09:57:40 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/audio_bites/20210728_092805_41362_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/audio_bites/20210728_092805_41362_audio_bites_2.mp3 : Audio Bites-2 Uploaded
+ Uploaded
+audio_bites/20210728_092805_41362_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210728_092805_41362_audio_bites_2.mp3 : Succesfully Pushed
+audio_bites/20210728_092805_41362_audio_bites_1.mp3 : Succesfully Pushed
+audio_bites/20210728_092805_41362_audio_bites_2.mp3 : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 10:01:48 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/20210728_092805_41362_thumbnail.jpg : Thumbnail Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/20210728_092805_41362_audio_complete_story.mp3 : Audio Complete Story Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/gallery/20210728_092805_41362_gallery_1.jpg : Gallery-1 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/gallery/20210728_092805_41362_gallery_2.jpg : Gallery-2 Uploaded
+20210728_092805_41362_thumbnail.jpg : Succesfully Pushed
+20210728_092805_41362_audio_complete_story.mp3 : Succesfully Pushed
+gallery/20210728_092805_41362_gallery_1.jpg : Succesfully Pushed
+gallery/20210728_092805_41362_gallery_2.jpg : Succesfully Pushed
+gallery/20210728_092805_41362_gallery_1.jpg : Succesfully Pushed
+gallery/20210728_092805_41362_gallery_2.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 10:05:05 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/20210728_092805_41362_thumbnail.jpg : Thumbnail Replaced
+20210728_092805_41362_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 10:11:02 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2021-07-28/check my data news/gallery/20210728_092805_41362_gallery_3.jpg : Gallery-3 Uploaded
+gallery/20210728_092805_41362_gallery_3.jpg : Succesfully Pushed
+gallery/20210728_092805_41362_gallery_3.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2021-07-28 / check my data news ---------------- 
+
+ Logged Date: 2021-07-28 10:14:44 
+------------------------------------------------------- 

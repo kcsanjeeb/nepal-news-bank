@@ -1338,8 +1338,8 @@ $count++;
 
                             <label class="col-lg-12 p-0 h5 text-info">Step 13.</label>
 
-                            <button type="submit" class="btn btn-primary" name="submit">Save Changes</button>
-
+                            <button type="submit" class="btn btn-primary" name="submit">Post Changes</button>
+                            <p><strong>Note:</strong> Post description(s) separately. </p>
                             
 
                         </form>
