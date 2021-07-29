@@ -1905,6 +1905,10 @@ strong {
 
 
             if (confirm("Are you sure you want to delete?") == true) {
+                $(".collector").css("filter", "blur(2px)");
+                $("#preloader_boot").css("display", "");
+
+
                 var newsid = $(this).data("newsid");
                 var attr = $(this).data("attr");
                 var type = $(this).data("type");
