@@ -39,7 +39,7 @@ if(isset($_GET['nod']))
 }
 else
 {
-    $nod  = 10 ;
+    $nod  = 20 ;
 }
 
 
@@ -63,6 +63,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/remotecopycreator.css">
     <link rel="stylesheet" href="assets/progress/style.css">
+    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.7.min.css" rel="stylesheet" type="text/css"/>
 
     <title>NEPAL NEWS BANK DASHBOARD</title>
 
@@ -2070,7 +2071,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
         submitButton = $('.sub_push');
 
     if ($('.miss').length > 0) {
-        $("#error_push_miss").html("Error: Please copy the missing file in local and refresh the tool.").css("color", "red");
+        $("#error_push_miss").html("Error: Please copy the missing file and refresh the tool.").css("color", "red");
         submitButton.addClass('disabled');
 
     }

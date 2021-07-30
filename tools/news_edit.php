@@ -506,7 +506,7 @@ strong {
                                     <small>Existing File: <?php echo $file_name ; ?></small>
                                     <button type="button" data-newsid="<?php echo $news_row_details['newsid'] ; ?>"
                                         data-attr="news_file" data-type="single"
-                                        class="del_single btn btn-outline-danger btn-sm">Delete Previous News File</button>
+                                        class="del_single btn btn-outline-danger btn-sm">Delete News File</button>
                                     <br>
                                     <?php
                                         }

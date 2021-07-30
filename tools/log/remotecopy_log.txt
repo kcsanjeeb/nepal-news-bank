@@ -504,3 +504,19 @@ audio_bites/20210721_093930_89924_audio_bites_4.mp3 Audio Bites Pushed
  Logged Date: 2021-07-28 09:28:29 
 20210728_092805_41362_news_file.docx News  Body Pushed
 ------------------------------------------------------- 
+---------------2021-07-29 19:50:39 / test test test ---------------- 
+
+ Logged Date: 2021-07-29 19:51:14 
+20780414_195039_51859_news_file.docx News  Body Pushed
+20780414_195039_51859_regular_feed.mp4 Regular Feed Pushed
+20780414_195039_51859_ready_version.mp4 Ready Version Pushed
+20780414_195039_51859_rough_cut.mp4 Rough Cut Pushed
+20780414_195039_51859_thumbnail.png Thumbnail Pushed
+20780414_195039_51859_audio_complete_story.mp3 Audio Pushed
+gallery/20780414_195039_51859_gallery_1.jpg Gallery Photo Pushed
+gallery/20780414_195039_51859_gallery_2.jpg Gallery Photo Pushed
+gallery/20780414_195039_51859_gallery_3.jpg Gallery Photo Pushed
+20780414_195039_51859_extra_files.zip Extra Files Pushed
+audio_bites/20780414_195039_51859_audio_bites_0.mp3 Audio Bites Pushed
+audio_bites/20780414_195039_51859_audio_bites_1.mp3 Audio Bites Pushed
+------------------------------------------------------- 

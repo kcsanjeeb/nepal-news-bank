@@ -1005,3 +1005,33 @@ gallery/20210728_092805_41362_gallery_3.jpg : Succesfully Pushed
 
  Logged Date: 2021-07-28 10:14:44 
 ------------------------------------------------------- 
+---------------2078-04-14 / test test test ---------------- 
+
+ Logged Date: 2021-07-29 19:50:40 
+2078-04-14 : Folder Created
+2078-04-14/test test test : Folder Created
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_audio_complete_story.mp3 : Audio Complete Story Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_news_file.docx : News File Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_regular_feed.mp4 : Regular Field Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_thumbnail.png : Thumbnail Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_ready_version.mp4 : Ready Version Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_rough_cut.mp4 : Rough Cut Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/gallery/20780414_195039_51859_gallery_1.jpg : Gallery-1 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/gallery/20780414_195039_51859_gallery_2.jpg : Gallery-2 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/gallery/20780414_195039_51859_gallery_3.jpg : Gallery-3 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_extra_files.zip Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/audio_bites/20780414_195039_51859_audio_bites_0.mp3 : Audio Bites-0 Uploaded
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/audio_bites/20780414_195039_51859_audio_bites_1.mp3 : Audio Bites-1 Uploaded
+------------------------------------------------------- 
+---------------2078-04-14 / test test test ---------------- 
+
+ Logged Date: 2021-07-29 19:53:25 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_thumbnail.jpg : Thumbnail Replaced
+20780414_195039_51859_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
+---------------2078-04-14 / test test test ---------------- 
+
+ Logged Date: 2021-07-29 19:55:00 
+C:/xampp/htdocs/nepal-news-bank/my_data/news_data/2078-04-14/test test test/20780414_195039_51859_thumbnail.jpg : Thumbnail Replaced
+20780414_195039_51859_thumbnail.jpg : Succesfully Pushed
+------------------------------------------------------- 
