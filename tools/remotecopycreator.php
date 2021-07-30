@@ -6,11 +6,20 @@ include "accesories/session_handler/session_views.php";
   
 include "global/timezone.php";
 
-$selected_date = '';
+$selected_date_year = date("Y");
+$selected_date_month = date("m");
+$selected_date_day = date("d");
+
+
 
 if(isset($_GET['date']))
 {
     $selected_date  = $_GET['date'] ;
+    $is_get = 'yes';
+}
+else
+{
+    $is_get = 'no';
 }
 
 if(isset($_GET['news_id']))
@@ -164,6 +173,11 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
 <body>
 
 
+<input type="hidden" value="<?php echo $selected_date_year ; ?>" id="today_year">
+<input type="hidden" value="<?php echo $selected_date_month ; ?>"  id="today_month">
+<input type="hidden" value="<?php echo $selected_date_day ; ?>"  id="today_day">
+<input type="hidden" value="<?php echo $is_get ; ?>"  id="is_get">
+
 
 
 
@@ -199,7 +213,7 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                         <div class="form-group mx-sm-3 ">
                             <label for="inputPassword2" class="sr-only">Date</label>
                             <input type="text" class="form-control form-control-sm"  id="nepali-datepicker" placeholder="Select Date"
-                               >
+                              value="<?php echo $selected_date ; ?>" >
                             <input type="button" id="search_remote" value="Search">
 
                     
@@ -2101,7 +2115,30 @@ $run_sql_remote_top= mysqli_query($connection, $sql_remote_top);
                 var mainInput = document.getElementById("nepali-datepicker");
                 mainInput.nepaliDatePicker();
             };
-        </script>
+
+            var todays_date_year = $('#today_year').val();
+            var todays_date_month = $('#today_month').val();
+            var todays_date_day = $('#today_day').val();
+            var is_get = $('#is_get').val();
+            console.log(todays_date_year +todays_date_month+ todays_date_day)
+
+
+            var nep_date_ob = NepaliFunctions.AD2BS({year: todays_date_year, month: todays_date_month, day: todays_date_day});
+            var fulldate = nep_date_ob.year+"-"+nep_date_ob.month+"-"+nep_date_ob.day ;
+            
+            // $('#nepali-datepicker').val(fulldate);
+            // $('#search_remote').click();
+            if(is_get == 'no')
+            {
+                $(".collector").css("filter", "blur(2px)");
+                $("#preloader_boot").css("display", "");
+                $("#preloader_boot").removeClass( "imp" );
+                location.href = 'remotecopycreator.php?date='+fulldate;
+
+            }
+
+
+         </script>
 
 
 </body>

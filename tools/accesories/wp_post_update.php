@@ -254,7 +254,7 @@ include "../global/timezone.php";
                     
                     $url = $domain_url.'/wp-json/wp/v2/media';
                     $ch = curl_init();
-                    curl_setopt( $ch, CURLOPT_URL, $url_api );
+                    curl_setopt( $ch, CURLOPT_URL, $url );
                     curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
                     curl_setopt( $ch, CURLOPT_POST, 1 );
                     curl_setopt( $ch, CURLOPT_POSTFIELDS, $file );

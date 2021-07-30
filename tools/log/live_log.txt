@@ -1,0 +1,161 @@
+
+--------------- Table: new test  ------------------ 
+
+ Logged Date: 2021-07-29 20:12:57 
+Event:  new test
+Location:  test
+Date Time:  test
+new test Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: sort 1  ------------------ 
+
+ Logged Date: 2021-07-29 20:28:53 
+Event:  sort 1
+Location:  sort
+Date Time:  soet
+sort 1 Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: hello  ------------------ 
+
+ Logged Date: 2021-07-29 20:30:24 
+Event:  hello
+Location:  hello
+Date Time:  hello
+hello Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: runrun  ------------------ 
+
+ Logged Date: 2021-07-29 20:33:34 
+Event:  runrun
+Location:  runrun
+Date Time:  run
+runrun Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: runrun  ------------------ 
+
+ Logged Date: 2021-07-29 20:33:43 
+Event:  runrun
+Location:  runrun
+Date Time:  run
+runrun Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: dasda  ------------------ 
+
+ Logged Date: 2021-07-29 20:34:31 
+Event:  dasda
+Location:  dasda
+Date Time:  dasdsad
+dasda Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: dasda  ------------------ 
+
+ Logged Date: 2021-07-29 20:35:44 
+Event:  dasda
+Location:  dasda
+Date Time:  dasdsad
+dasda Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: hello  ------------------ 
+
+ Logged Date: 2021-07-29 20:35:48 
+Event:  hello
+Location:  hello
+Date Time:  hello
+hello Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: sort 1  ------------------ 
+
+ Logged Date: 2021-07-29 20:35:53 
+Event:  sort 1
+Location:  sort
+Date Time:  soet
+sort 1 Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: new test  ------------------ 
+
+ Logged Date: 2021-07-29 20:35:59 
+Event:  new test
+Location:  test
+Date Time:  test
+new test Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: test  ------------------ 
+
+ Logged Date: 2021-07-29 20:36:09 
+Event:  test
+Location:  test
+Date Time:  test
+test Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: test  ------------------ 
+
+ Logged Date: 2021-07-29 20:39:22 
+Event:  test
+Location:  test
+Date Time:  test
+test Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: test  ------------------ 
+
+ Logged Date: 2021-07-29 20:39:36 
+Event:  test
+Location:  test
+Date Time:  test
+test Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: fff  ------------------ 
+
+ Logged Date: 2021-07-29 20:40:30 
+Event:  fff
+Location:  ff
+Date Time:  fff
+fff Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: fff  ------------------ 
+
+ Logged Date: 2021-07-29 20:40:37 
+Event:  fff
+Location:  ff
+Date Time:  fff
+fff Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: test  ------------------ 
+
+ Logged Date: 2021-07-29 20:40:42 
+Event:  test
+Location:  test
+Date Time:  test
+test Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: dsadsa  ------------------ 
+
+ Logged Date: 2021-07-29 20:42:47 
+Event:  dsadsa
+Location:  dasda
+Date Time:  dadsa
+dsadsa Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: dsadsa  ------------------ 
+
+ Logged Date: 2021-07-29 20:43:07 
+Event:  dsadsa
+Location:  dasda
+Date Time:  dadsa
+dsadsa Deleted Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: dasda  ------------------ 
+
+ Logged Date: 2021-07-29 20:46:03 
+Event:  dasda
+Location:  dasdas
+Date Time:  dasdsa
+dasda Added Succesfully From Live Table
+------------------------------------------------------- 
+--------------- Table: dasda  ------------------ 
+
+ Logged Date: 2021-07-29 20:46:34 
+Event:  dasda
+Location:  dasdas
+Date Time:  dasdsa
+dasda Deleted Succesfully From Live Table
+------------------------------------------------------- 
