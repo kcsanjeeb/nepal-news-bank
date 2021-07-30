@@ -144,7 +144,6 @@ foreach($result as $res)
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>News Collector</title>
-    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.7.min.css" rel="stylesheet" type="text/css"/>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -156,6 +155,7 @@ foreach($result as $res)
     <link rel="stylesheet" href="assets/css/filter-multi-select.css" />
     <script src="assets/js/filter-multi-select-bundle.min.js"></script>
     <script src="assets/js/multi-select-tags.js"></script>
+    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.7.min.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <style>
@@ -314,8 +314,6 @@ strong {
                         </div>
                         <div class="card-body">
 
-
-
                             <?php
 
                                 if(isset($_SESSION['notice']) )
@@ -396,8 +394,8 @@ strong {
                                                 d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                         </svg>
                                     </label>
-                                    <input class=" form-control col-lg-2" type="text" name="newsdate" id="nepali-datepicker"
-                                        xxx>
+                                    <input class=" form-control col-lg-2" id="nepali-datepicker" type="text" name="newsdate"
+                                         xxx>
                                     <!-- make date today's date -->
 
 
@@ -1499,6 +1497,7 @@ strong {
                 mainInput.nepaliDatePicker();
             };
         </script>
+
 
 </body>
 
